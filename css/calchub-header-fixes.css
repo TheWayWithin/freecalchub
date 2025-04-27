@@ -1,68 +1,67 @@
-/* CalcHub Header and Navigation Fixes
- * This file contains fixes for the header, logo, navigation bar, breadcrumbs, and dark mode toggle
- * to ensure consistent styling across all pages of the CalcHub website.
- */
+/* CalcHub Header and Navigation Fixes - Updated */
 
-/* Header fixes */
-.navbar {
+/* Header container fixes */
+header {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
   position: relative;
-  width: 100%;
+  z-index: 1000;
 }
 
-.navbar .container {
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  padding: 0.5rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
 }
 
-/* Logo fixes */
-.navbar-brand {
+/* Logo container fixes */
+.logo-container {
   display: flex;
   align-items: center;
-  padding: 0;
 }
 
-.navbar-brand img.logo {
+.logo img {
   height: 40px;
-  width: 120px;
-  object-fit: contain;
+  width: auto;
 }
 
-/* Navigation menu fixes */
-.nav-container {
-  display: flex;
-  align-items: center;
+/* Main navigation fixes */
+.main-nav {
+  flex-grow: 1;
+  margin-left: 2rem;
 }
 
-.navbar-nav {
+.main-nav ul {
   display: flex;
   list-style: none;
-  margin: 0 0 0 50px;
+  margin: 0;
   padding: 0;
-  gap: 24px;
 }
 
-.nav-item {
-  position: relative;
+.main-nav li {
+  margin-right: 1.5rem;
 }
 
-.nav-link {
+.main-nav a {
   color: #333;
-  font-weight: 500;
   text-decoration: none;
+  font-weight: 500;
   padding: 0.5rem 0;
-  transition: color 0.3s ease;
+  transition: color 0.2s;
 }
 
-.nav-link:hover {
+.main-nav a:hover,
+.main-nav a.active {
   color: #4a6da7;
+}
+
+/* Header controls fixes */
+.header-controls {
+  display: flex;
+  align-items: center;
 }
 
 /* Dark mode toggle fixes */
@@ -70,10 +69,9 @@
   display: flex;
   align-items: center;
   margin-left: 20px;
-  position: relative;
 }
 
-.dark-mode-toggle {
+#dark-mode-toggle {
   background: none;
   border: none;
   cursor: pointer;
@@ -82,108 +80,84 @@
   justify-content: center;
   font-size: 1.25rem;
   color: #333;
-  padding: 4px 0 4px 4px;
-  position: relative;
-  z-index: 1;
+  padding: 4px;
 }
 
 /* Breadcrumb fixes */
 .breadcrumbs {
   background-color: #f8f9fa;
-  padding: 0.75rem 0;
+  padding: 0.5rem 0;
   border-bottom: 1px solid #e9ecef;
 }
 
-.breadcrumb {
+.breadcrumbs .container {
   display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.breadcrumbs a {
+  color: #4a6da7;
+  text-decoration: none;
   font-size: 0.9rem;
 }
 
-.breadcrumb-item {
-  display: flex;
-  align-items: center;
-}
-
-.breadcrumb-item + .breadcrumb-item::before {
-  content: "/";
-  display: inline-block;
+.breadcrumbs span {
+  color: #6c757d;
   margin: 0 0.5rem;
-  color: #6c757d;
-  font-weight: normal;
+  font-size: 0.9rem;
 }
 
-.breadcrumb-item a {
-  color: #4a6da7;
-  text-decoration: none;
-  font-weight: normal;
+/* Form input and select fixes */
+input[type="text"],
+input[type="number"],
+select {
+  width: 200px !important;
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  box-sizing: border-box;
 }
 
-.breadcrumb-item.active {
-  color: #6c757d;
-  font-weight: normal;
+select {
+  height: 38px;
+  appearance: menulist;
 }
 
-/* Finance navigation ribbon fixes */
-.finance-navigation {
-  background-color: #4a6da7;
-  padding: 0.5rem 0;
+/* Calculator grid layout */
+.calculator-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.finance-navigation .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
+.calculator-grid .form-group {
+  margin-bottom: 1rem;
 }
 
-.finance-navigation a {
-  color: #fff;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.finance-navigation a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .navbar-nav {
-    margin-left: 20px;
-    gap: 16px;
-  }
-  
-  .theme-toggle-container {
-    margin-left: 10px;
-  }
+/* Mobile menu button */
+#mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 1rem;
 }
 
 @media (max-width: 768px) {
-  .navbar .container {
-    flex-wrap: wrap;
+  .main-nav {
+    display: none;
   }
   
-  .nav-container {
-    margin-top: 10px;
-    width: 100%;
-    justify-content: space-between;
+  #mobile-menu-button {
+    display: block;
   }
   
-  .navbar-nav {
-    margin-left: 0;
-    gap: 12px;
+  .calculator-grid {
+    grid-template-columns: 1fr;
   }
 }

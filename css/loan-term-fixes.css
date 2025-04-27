@@ -1,0 +1,29 @@
+/* Specific fix for loan term dropdown length */
+select#loan-term {
+  width: 200px !important;
+  max-width: 200px !important;
+  box-sizing: border-box !important;
+}
+
+/* Override any conflicting styles */
+.form-control, 
+select.form-control,
+.calculator-form select,
+.calculator-form input {
+  width: 200px !important;
+  max-width: 200px !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure consistent styling across all inputs */
+.calculator-form .form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fix for any inline styles */
+[style*="width"] {
+  width: 200px !important;
+  max-width: 200px !important;
+}
