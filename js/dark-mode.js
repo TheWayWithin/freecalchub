@@ -8,12 +8,12 @@
     function initDarkMode() {
         console.log("Dark mode initialization started");
         
-        // Get the dark mode toggle button
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        // Get the dark mode toggle button - FIXED to look for class instead of id
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
         
         // Check if the toggle element exists
         if (!darkModeToggle) {
-            console.error('Dark mode toggle button not found. Make sure you have an element with id="dark-mode-toggle"');
+            console.error('Dark mode toggle button not found. Make sure you have an element with class="dark-mode-toggle"');
             // Try again in 500ms in case the DOM is still loading
             setTimeout(initDarkMode, 500);
             return;
