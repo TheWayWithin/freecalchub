@@ -1,0 +1,161 @@
+/* CalcHub Complete Layout Fix v4.3.0 */
+
+/* ===== LOGO AND NAVIGATION FIXES ===== */
+/* Fix logo positioning and prevent overlap */
+.navbar-brand {
+  margin-right: 80px !important;
+  max-width: 120px !important;
+  position: relative !important;
+  z-index: 1 !important;
+  float: left !important;
+}
+
+/* Push navigation items to the right */
+.navbar-nav {
+  margin-left: 60px !important;
+  position: relative !important;
+  z-index: 0 !important;
+}
+
+/* ===== BREADCRUMB FIXES ===== */
+/* Center all breadcrumbs */
+.breadcrumb-container,
+nav[aria-label="breadcrumb"],
+.breadcrumb,
+ol.breadcrumb {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  text-align: center !important;
+  background-color: #f8f9fa !important;
+  padding: 10px 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Style breadcrumb items */
+.breadcrumb-item {
+  display: inline-block !important;
+}
+
+/* ===== CATEGORY RIBBON FIXES ===== */
+/* Center all category ribbons */
+.category-navigation, 
+.subcategory-navigation, 
+.finance-navigation,
+.math-navigation, 
+.health-navigation, 
+.lifestyle-navigation,
+.business-navigation,
+.blog-navigation,
+.conversions-navigation,
+.date-time-navigation,
+nav[class*="-navigation"] {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  text-align: center !important;
+  background-color: #4a6da7 !important;
+  padding: 10px 0 !important;
+  margin-bottom: 30px !important;
+}
+
+/* Center all items within ribbons */
+.category-navigation a, 
+.subcategory-navigation a,
+.finance-navigation a,
+.math-navigation a, 
+.health-navigation a, 
+.lifestyle-navigation a,
+.business-navigation a,
+.blog-navigation a,
+.conversions-navigation a,
+.date-time-navigation a,
+nav[class*="-navigation"] a {
+  display: inline-block !important;
+  margin: 0 15px !important;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+/* ===== FOOTER FIXES ===== */
+/* Footer structure */
+footer, .footer {
+  background-color: #f8f9fa !important;
+  padding: 40px 0 20px !important;
+  margin-top: 50px !important;
+  border-top: 1px solid #e7e7e7 !important;
+}
+
+/* Footer columns */
+.footer-columns {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  margin-bottom: 30px !important;
+}
+
+.footer-column {
+  flex: 1 !important;
+  min-width: 200px !important;
+  margin-bottom: 20px !important;
+  padding: 0 15px !important;
+}
+
+/* Footer headings */
+.footer-column h4,
+footer h4 {
+  font-size: 18px !important;
+  margin-bottom: 15px !important;
+  color: #333 !important;
+}
+
+/* Footer lists */
+.footer-column ul,
+footer ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.footer-column ul li,
+footer ul li {
+  margin-bottom: 8px !important;
+}
+
+.footer-column ul li a,
+footer ul li a {
+  color: #555 !important;
+  text-decoration: none !important;
+}
+
+/* Footer bottom */
+.footer-bottom {
+  text-align: center !important;
+  padding-top: 20px !important;
+  border-top: 1px solid #e7e7e7 !important;
+  color: #777 !important;
+}
+
+.footer-bottom a {
+  color: #555 !important;
+  margin: 0 10px !important;
+  text-decoration: none !important;
+}
+
+/* ===== RESPONSIVE FIXES ===== */
+@media (max-width: 768px) {
+  .navbar-brand {
+    margin-right: 30px !important;
+    max-width: 100px !important;
+  }
+
+  .navbar-nav {
+    margin-left: 30px !important;
+  }
+
+  .category-navigation a, 
+  .subcategory-navigation a,
+  nav[class*="-navigation"] a {
+    margin: 5px 10px !important;
+  }
+}

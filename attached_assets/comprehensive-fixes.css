@@ -1,0 +1,462 @@
+/* 
+ * CalcHub Comprehensive Fixes - CSS
+ * Version: 4.1.0
+ * Last Updated: April 24, 2025
+ * 
+ * This file contains all CSS fixes for layout, alignment, and styling issues
+ * across the CalcHub website. It addresses header positioning, footer alignment,
+ * subcategory ribbon centering, and other layout concerns.
+ *
+ * DO NOT MODIFY THIS FILE DIRECTLY - Create a new version with incremented version number
+ */
+
+/* ===== HEADER FIXES ===== */
+/* Center the header logo and navigation */
+header, .header, nav, .navbar {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 10px 0 !important;
+}
+
+/* Create a container for the logo and dark mode toggle */
+header .container, .header .container, nav .container, .navbar .container {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 1140px !important;
+  margin: 0 auto !important;
+  padding: 0 15px !important;
+  flex-wrap: nowrap !important; /* Prevent wrapping of navigation items */
+}
+
+/* Position the logo to the left */
+.logo, header a:first-of-type, .header a:first-of-type, nav a:first-of-type {
+  margin-right: 20px !important;
+  padding-left: 0 !important;
+  flex-shrink: 0 !important; /* Prevent logo from shrinking */
+}
+
+/* Style the navigation items */
+header a, .header a, nav a, .navbar a {
+  padding: 0 10px !important;
+  white-space: nowrap !important; /* Prevent text wrapping within nav items */
+  text-decoration: none !important;
+  color: #333 !important;
+}
+
+/* Position the dark mode toggle to the right */
+#dark-mode-toggle, [aria-label="Toggle dark mode"], .dark-mode-toggle {
+  margin-left: 20px !important;
+  padding-right: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important; /* Prevent toggle from shrinking */
+  cursor: pointer !important;
+}
+
+/* Ensure dark mode icons are visible */
+#dark-mode-toggle i, [aria-label="Toggle dark mode"] i, .dark-mode-toggle i,
+#dark-mode-toggle svg, [aria-label="Toggle dark mode"] svg, .dark-mode-toggle svg,
+#dark-mode-toggle .fa-moon, [aria-label="Toggle dark mode"] .fa-moon, .dark-mode-toggle .fa-moon,
+#dark-mode-toggle .fa-sun, [aria-label="Toggle dark mode"] .fa-sun, .dark-mode-toggle .fa-sun {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-size: 18px !important;
+}
+
+/* Adjust spacing for Date & Time navigation item to prevent wrapping */
+header a:nth-of-type(8), .header a:nth-of-type(8), nav a:nth-of-type(8), .navbar a:nth-of-type(8),
+a[href*="date"], a:contains("Date & Time") {
+  padding: 0 8px !important; /* Slightly reduced padding */
+  font-size: 0.95em !important; /* Slightly smaller font */
+}
+
+/* ===== MAIN CONTENT FIXES ===== */
+/* Center all main content */
+main, .main, .content, #content, .page-content {
+  max-width: 1140px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure consistent container width */
+.container {
+  max-width: 1140px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* ===== BREADCRUMBS FIXES ===== */
+/* Center and style breadcrumbs */
+.breadcrumbs, .breadcrumb {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 10px 0 !important;
+  background-color: #f8f9fa !important;
+  border: none !important; /* Remove any borders */
+  box-shadow: none !important; /* Remove any shadows */
+  overflow: visible !important; /* Ensure content isn't cut off */
+}
+
+.breadcrumbs .container, .breadcrumb .container {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 1140px !important;
+  margin: 0 auto !important;
+  padding: 0 15px !important;
+}
+
+/* Style breadcrumb links */
+.breadcrumbs a, .breadcrumb a {
+  color: #4a76a8 !important;
+  text-decoration: none !important;
+  padding: 0 5px !important;
+}
+
+/* Style breadcrumb separators */
+.breadcrumbs span, .breadcrumb span {
+  color: #6c757d !important;
+  padding: 0 5px !important;
+}
+
+/* ===== SUBCATEGORY RIBBON FIXES ===== */
+/* Center the subcategory ribbon */
+.subcategory-nav, .category-nav, .sub-nav, .finance-nav, .math-nav, .health-nav,
+nav.blue-bg, .blue-bg, .subcategory-ribbon, .category-ribbon {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  background-color: #4a76a8 !important; /* Ensure consistent blue background */
+  border: none !important; /* Remove any borders */
+  box-shadow: none !important; /* Remove any shadows */
+  overflow: visible !important; /* Ensure content isn't cut off */
+}
+
+/* Create a container for the subcategory links */
+.subcategory-nav .container, .category-nav .container, .sub-nav .container,
+.finance-nav .container, .math-nav .container, .health-nav .container,
+nav.blue-bg .container, .blue-bg .container, .subcategory-ribbon .container, .category-ribbon .container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 1140px !important;
+  margin: 0 auto !important;
+  padding: 0 15px !important;
+}
+
+/* Style the subcategory links */
+.subcategory-nav a, .category-nav a, .sub-nav a, .finance-nav a, .math-nav a, .health-nav a,
+nav.blue-bg a, .blue-bg a, .subcategory-ribbon a, .category-ribbon a {
+  color: white !important;
+  padding: 10px 15px !important;
+  text-decoration: none !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* ===== FOOTER FIXES ===== */
+/* Center the footer content */
+footer, .footer {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 20px 0 !important;
+  background-color: #f8f9fa !important;
+  border-top: 1px solid #e9ecef !important; /* Add a subtle top border */
+}
+
+/* Create a container for the footer content */
+footer .container, .footer .container,
+footer .row, .footer .row,
+footer .footer-content, .footer .footer-content {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  max-width: 1140px !important;
+  margin: 0 auto !important;
+  padding: 0 15px !important;
+}
+
+/* Style the footer sections */
+footer > div, .footer > div {
+  width: 100% !important;
+  max-width: 1140px !important;
+  margin: 0 auto !important;
+  padding: 0 15px !important;
+}
+
+/* Style the footer columns */
+footer .col, .footer .col,
+footer .column, .footer .column,
+footer .footer-column, .footer .footer-column {
+  flex: 1 1 200px !important;
+  margin: 10px !important;
+  padding: 0 !important;
+  min-width: 200px !important; /* Ensure columns have a minimum width */
+}
+
+/* Style the footer headings */
+footer h3, .footer h3,
+footer h4, .footer h4,
+footer .footer-heading, .footer .footer-heading {
+  margin-top: 0 !important;
+  margin-bottom: 15px !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  color: #333 !important;
+}
+
+/* Style the footer links */
+footer a, .footer a,
+footer .footer-link, .footer .footer-link {
+  display: block !important;
+  margin-bottom: 8px !important;
+  color: #4a76a8 !important;
+  text-decoration: none !important;
+}
+
+/* Style the footer lists */
+footer ul, .footer ul {
+  list-style-type: none !important;
+  padding-left: 0 !important;
+  margin-top: 0 !important;
+}
+
+footer li, .footer li {
+  margin-bottom: 8px !important;
+}
+
+/* Style the footer social icons */
+footer .social, .footer .social,
+footer .social-icons, .footer .social-icons {
+  display: flex !important;
+  justify-content: flex-start !important;
+  margin-top: 10px !important;
+}
+
+footer .social a, .footer .social a,
+footer .social-icons a, .footer .social-icons a {
+  margin-right: 15px !important;
+  font-size: 20px !important;
+}
+
+/* Style the footer copyright */
+footer .copyright, .footer .copyright,
+footer .footer-bottom, .footer .footer-bottom {
+  width: 100% !important;
+  max-width: 1140px !important;
+  margin: 20px auto 0 !important;
+  padding: 15px !important;
+  text-align: center !important;
+  border-top: 1px solid #e9ecef !important;
+  color: #6c757d !important;
+}
+
+/* Style the footer bottom links */
+footer .copyright a, .footer .copyright a,
+footer .footer-bottom a, .footer .footer-bottom a {
+  display: inline-block !important;
+  margin: 0 10px !important;
+}
+
+/* Style the newsletter form */
+footer .newsletter, .footer .newsletter,
+footer .subscribe, .footer .subscribe {
+  margin-top: 15px !important;
+}
+
+footer .newsletter input, .footer .newsletter input,
+footer .subscribe input, .footer .subscribe input {
+  padding: 8px 12px !important;
+  border: 1px solid #ced4da !important;
+  border-radius: 4px !important;
+  margin-right: 5px !important;
+  width: 200px !important;
+}
+
+footer .newsletter button, .footer .newsletter button,
+footer .subscribe button, .footer .subscribe button {
+  padding: 8px 15px !important;
+  background-color: #4a76a8 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+}
+
+/* ===== RESPONSIVE FIXES ===== */
+@media (max-width: 992px) {
+  /* Adjust header for medium screens */
+  header .container, .header .container, nav .container, .navbar .container {
+    padding: 0 10px !important;
+  }
+  
+  /* Slightly reduce padding on navigation items */
+  header a, .header a, nav a, .navbar a {
+    padding: 0 8px !important;
+    font-size: 0.95em !important;
+  }
+  
+  /* Adjust footer columns for medium screens */
+  footer .col, .footer .col,
+  footer .column, .footer .column,
+  footer .footer-column, .footer .footer-column {
+    flex: 1 1 160px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Adjust header for small screens */
+  header .container, .header .container, nav .container, .navbar .container {
+    padding: 0 5px !important;
+  }
+  
+  /* Further reduce padding on navigation items */
+  header a, .header a, nav a, .navbar a {
+    padding: 0 5px !important;
+    font-size: 0.9em !important;
+  }
+  
+  /* Adjust footer for mobile */
+  footer .container, .footer .container,
+  footer .row, .footer .row,
+  footer .footer-content, .footer .footer-content {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  footer .col, .footer .col,
+  footer .column, .footer .column,
+  footer .footer-column, .footer .footer-column {
+    width: 100% !important;
+    text-align: center !important;
+    margin: 15px 0 !important;
+  }
+  
+  /* Center social icons on mobile */
+  footer .social, .footer .social,
+  footer .social-icons, .footer .social-icons {
+    justify-content: center !important;
+  }
+  
+  /* Center newsletter form on mobile */
+  footer .newsletter, .footer .newsletter,
+  footer .subscribe, .footer .subscribe {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  footer .newsletter input, .footer .newsletter input,
+  footer .subscribe input, .footer .subscribe input {
+    margin-right: 0 !important;
+    margin-bottom: 10px !important;
+    width: 100% !important;
+    max-width: 250px !important;
+  }
+  
+  footer .newsletter button, .footer .newsletter button,
+  footer .subscribe button, .footer .subscribe button {
+    width: 100% !important;
+    max-width: 250px !important;
+  }
+}
+
+/* ===== DARK MODE FIXES ===== */
+/* Ensure dark mode toggle is visible in both light and dark modes */
+body.dark-mode #dark-mode-toggle i, 
+body.dark-mode [aria-label="Toggle dark mode"] i, 
+body.dark-mode .dark-mode-toggle i,
+body.dark-mode #dark-mode-toggle svg, 
+body.dark-mode [aria-label="Toggle dark mode"] svg, 
+body.dark-mode .dark-mode-toggle svg,
+body.dark-mode #dark-mode-toggle .fa-moon, 
+body.dark-mode [aria-label="Toggle dark mode"] .fa-moon, 
+body.dark-mode .dark-mode-toggle .fa-moon,
+body.dark-mode #dark-mode-toggle .fa-sun, 
+body.dark-mode [aria-label="Toggle dark mode"] .fa-sun, 
+body.dark-mode .dark-mode-toggle .fa-sun {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: white !important;
+}
+
+/* Add smooth transitions for dark mode */
+body, body * {
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+/* ===== MOBILE MENU FIXES ===== */
+/* Hide mobile menu by default */
+.mobile-menu, #mobile-menu, .mobile-nav, #mobile-nav {
+  display: none !important;
+}
+
+/* Only show mobile menu when explicitly toggled */
+.mobile-menu.active, #mobile-menu.active, .mobile-nav.active, #mobile-nav.active {
+  display: block !important;
+}
+
+/* Prevent mobile menu flash on page load */
+.mobile-menu-container, #mobile-menu-container {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  transition: visibility 0s, opacity 0.3s !important;
+}
+
+.mobile-menu-container.initialized, #mobile-menu-container.initialized {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* ===== ACCESSIBILITY FIXES ===== */
+/* Add focus styles to interactive elements */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+  outline: 2px solid #4a76a8 !important;
+  outline-offset: 2px !important;
+}
+
+/* Style skip to content link */
+a[href="#content"] {
+  position: absolute !important;
+  top: -40px !important;
+  left: 0 !important;
+  background-color: #4a76a8 !important;
+  color: white !important;
+  padding: 8px 15px !important;
+  z-index: 100 !important;
+  transition: top 0.3s !important;
+  text-decoration: none !important;
+}
+
+a[href="#content"]:focus {
+  top: 0 !important;
+}

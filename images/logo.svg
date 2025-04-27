@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="200" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background shape -->
+  <rect x="10" y="10" width="180" height="40" rx="8" fill="#4a6fa5" />
+  
+  <!-- Calculator icon -->
+  <rect x="20" y="15" width="30" height="30" rx="4" fill="white" />
+  <rect x="25" y="20" width="20" height="5" rx="1" fill="#4a6fa5" />
+  <rect x="25" y="28" width="8" height="5" rx="1" fill="#4a6fa5" />
+  <rect x="37" y="28" width="8" height="5" rx="1" fill="#4a6fa5" />
+  <rect x="25" y="36" width="8" height="5" rx="1" fill="#4a6fa5" />
+  <rect x="37" y="36" width="8" height="5" rx="1" fill="#4a6fa5" />
+  
+  <!-- Text -->
+  <text x="60" y="35" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="white">CalcHub</text>
+</svg>

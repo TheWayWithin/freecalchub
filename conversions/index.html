@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversions Calculators - CalcHub</title>
+    <meta name="description" content="Free online conversion calculators for units, currency, temperature, time, and more. Get accurate results and educational insights for all your conversion needs.">
+    <link rel="canonical" href="https://www.freecalchub.com/conversions/">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <link rel="stylesheet" href="/css/navigation-ribbon.css">
+    <link rel="stylesheet" href="/css/breadcrumb-styles.css">
+    <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8PR7EB78N"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V8PR7EB78N');
+    </script>
+    <!-- End Google Analytics -->
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.freecalchub.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Conversions",
+          "item": "https://www.freecalchub.com/conversions/"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Unit Converter",
+          "url": "https://www.freecalchub.com/conversions/unit-converter/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Currency Converter",
+          "url": "https://www.freecalchub.com/conversions/currency/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Temperature Converter",
+          "url": "https://www.freecalchub.com/conversions/temperature/"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="../" class="logo">
+    <img src="../images/logo.svg" alt="CalcHub Logo" height="40">
+</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../finance/">Finance</a></li>
+                    <li><a href="../math/">Math</a></li>
+                    <li><a href="../health/">Health</a></li>
+                    <li><a href="../conversions/" class="active">Conversions</a></li>
+                    <li><a href="../date-time/">Date & Time</a></li>
+                    <li><a href="../business/">Business</a></li>
+                    <li><a href="../lifestyle/">Lifestyle</a></li>
+                    <li><a href="../blog/">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="mobile-menu-button" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-header">
+            <span>Menu</span>
+            <button id="mobile-menu-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="../finance/">Finance</a></li>
+                <li><a href="../math/">Math</a></li>
+                <li><a href="../health/">Health</a></li>
+                <li><a href="../conversions/" class="active">Conversions</a></li>
+                <li><a href="../date-time/">Date & Time</a></li>
+                <li><a href="../business/">Business</a></li>
+                <li><a href="../lifestyle/">Lifestyle</a></li>
+                <li><a href="../blog/">Blog</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <a href="../">Home</a>
+            <span class="separator">/</span>
+            <span class="current">Conversions</span>
+        </div>
+    </div>
+
+    <div class="navigation-ribbon">
+        <div class="navigation-ribbon-container">
+            <a href="length/"><i class="fas fa-ruler"></i>Length</a>
+            <a href="weight/"><i class="fas fa-weight"></i>Weight</a>
+            <a href="volume/"><i class="fas fa-flask"></i>Volume</a>
+            <a href="temperature/"><i class="fas fa-thermometer-half"></i>Temperature</a>
+            <a href="area/"><i class="fas fa-vector-square"></i>Area</a>
+            <a href="speed/"><i class="fas fa-tachometer-alt"></i>Speed</a>
+            <a href="time/"><i class="fas fa-clock"></i>Time</a>
+            <a href="currency/"><i class="fas fa-money-bill-wave"></i>Currency</a>
+        </div>
+    </div>
+
+    <main id="main-content" class="container py-5">
+        <section class="category-header">
+            <h1>Conversion Calculators</h1>
+            <p class="lead">Convert between different units of measurement with our free, easy-to-use calculators. Whether you need to convert length, weight, volume, temperature, or currency, our tools provide accurate results and educational insights.</p>
+        </section>
+
+        <section class="subcategory-section">
+            <h2>Length Converters</h2>
+            <p>Convert between different units of length and distance.</p>
+            <div class="calculator-grid">
+                <a href="length/length-converter/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-ruler"></i>
+                    </div>
+                    <h3>Length Converter</h3>
+                    <p>Convert between meters, feet, inches, kilometers, miles, and more.</p>
+                </a>
+                <a href="length/metric-imperial/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Metric to Imperial</h3>
+                    <p>Convert between metric and imperial units of length.</p>
+                </a>
+                <a href="length/nautical-miles/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <h3>Nautical Miles Converter</h3>
+                    <p>Convert between nautical miles, miles, and kilometers.</p>
+                </a>
+                <a href="length/astronomical/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Astronomical Units</h3>
+                    <p>Convert between light-years, astronomical units, parsecs, and kilometers.</p>
+                </a>
+            </div>
+            <div class="subcategory-cta">
+                <a href="length/" class="btn">View All Length Converters</a>
+            </div>
+        </section>
+
+        <section class="subcategory-section">
+            <h2>Weight Converters</h2>
+            <p>Convert between different units of weight and mass.</p>
+            <div class="calculator-grid">
+                <a href="weight/weight-converter/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-weight"></i>
+                    </div>
+                    <h3>Weight Converter</h3>
+                    <p>Convert between kilograms, pounds, ounces, grams, and more.</p>
+                </a>
+                <a href="weight/metric-imperial/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Metric to Imperial</h3>
+                    <p>Convert between metric and imperial units of weight.</p>
+                </a>
+                <a href="weight/troy-weight/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Troy Weight Converter</h3>
+                    <p>Convert between troy ounces, troy pounds, and grams.</p>
+                </a>
+                <a href="weight/atomic-mass/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <h3>Atomic Mass Units</h3>
+                    <p>Convert between atomic mass units and grams.</p>
+                </a>
+            </div>
+            <div class="subcategory-cta">
+                <a href="weight/" class="btn">View All Weight Converters</a>
+            </div>
+        </section>
+
+        <section class="subcategory-section">
+            <h2>Temperature Converters</h2>
+            <p>Convert between different temperature scales.</p>
+            <div class="calculator-grid">
+                <a href="temperature/temperature-converter/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <h3>Temperature Converter</h3>
+                    <p>Convert between Celsius, Fahrenheit, and Kelvin.</p>
+                </a>
+                <a href="temperature/celsius-fahrenheit/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-temperature-high"></i>
+                    </div>
+                    <h3>Celsius to Fahrenheit</h3>
+                    <p>Convert between Celsius and Fahrenheit with detailed explanations.</p>
+                </a>
+                <a href="temperature/kelvin-converter/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-temperature-low"></i>
+                    </div>
+                    <h3>Kelvin Converter</h3>
+                    <p>Convert between Kelvin and other temperature scales.</p>
+                </a>
+                <a href="temperature/rankine-converter/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-thermometer"></i>
+                    </div>
+                    <h3>Rankine Converter</h3>
+                    <p>Convert between Rankine and other temperature scales.</p>
+                </a>
+            </div>
+            <div class="subcategory-cta">
+                <a href="temperature/" class="btn">View All Temperature Converters</a>
+            </div>
+        </section>
+
+        <section class="subcategory-section">
+            <h2>Currency Converters</h2>
+            <p>Convert between different currencies with up-to-date exchange rates.</p>
+            <div class="calculator-grid">
+                <a href="currency/currency-converter/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Currency Converter</h3>
+                    <p>Convert between major world currencies with current exchange rates.</p>
+                </a>
+                <a href="currency/historical-rates/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>Historical Exchange Rates</h3>
+                    <p>View and convert using historical currency exchange rates.</p>
+                </a>
+                <a href="currency/cryptocurrency/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fab fa-bitcoin"></i>
+                    </div>
+                    <h3>Cryptocurrency Converter</h3>
+                    <p>Convert between cryptocurrencies and traditional currencies.</p>
+                </a>
+                <a href="currency/inflation-calculator/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Inflation Calculator</h3>
+                    <p>Calculate the inflation-adjusted value of money over time.</p>
+                </a>
+            </div>
+            <div class="subcategory-cta">
+                <a href="currency/" class="btn">View All Currency Converters</a>
+            </div>
+        </section>
+
+        <section class="conversion-education">
+            <h2>Understanding Unit Conversions</h2>
+            <div class="education-content">
+                <p>Unit conversions are essential for translating measurements from one system to another. Whether you're cooking with a recipe from another country, working on an international project, or studying science, understanding how to convert between different units is a valuable skill.</p>
+
+                <h3>Key Conversion Concepts</h3>
+                <ul>
+                    <li><strong>Conversion Factor</strong> - The numerical relationship between two different units of measurement.</li>
+                    <li><strong>Metric System</strong> - A decimal-based system of measurement used worldwide, based on powers of 10.</li>
+                    <li><strong>Imperial System</strong> - A system of weights and measures traditionally used in the United Kingdom and other English-speaking countries.</li>
+                    <li><strong>Base Units</strong> - The fundamental units in a measurement system from which other units are derived.</li>
+                    <li><strong>Dimensional Analysis</strong> - A method for converting units by multiplying by conversion factors that equal 1.</li>
+                </ul>
+
+                <h3>Tips for Accurate Conversions</h3>
+                <ol>
+                    <li>Always include units in your calculations to ensure dimensional consistency.</li>
+                    <li>Use reliable conversion factors from authoritative sources.</li>
+                    <li>Double-check your work, especially for critical applications.</li>
+                    <li>Be aware of significant figures to maintain appropriate precision.</li>
+                    <li>For currency conversions, use the most current exchange rates available.</li>
+                </ol>
+
+                <p>Our conversion calculators provide not just results but also explanations of the conversion process, helping you understand the relationships between different units of measurement.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="../finance/">Finance</a></li>
+                        <li><a href="../math/">Math</a></li>
+                        <li><a href="../health/">Health</a></li>
+                        <li><a href="../conversions/">Conversions</a></li>
+                        <li><a href="../date-time/">Date & Time</a></li>
+                        <li><a href="../business/">Business</a></li>
+                        <li><a href="../lifestyle/">Lifestyle</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Popular Calculators</h4>
+                    <ul>
+                        <li><a href="../finance/mortgage/mortgage-calculator/">Mortgage Calculator</a></li>
+                        <li><a href="../finance/investment/compound-interest/">Compound Interest</a></li>
+                        <li><a href="../health/bmi/bmi-calculator/">BMI Calculator</a></li>
+                        <li><a href="../conversions/currency/">Currency Converter</a></li>
+                        <li><a href="../math/percentages/percentage-calculator/">Percentage Calculator</a></li>
+                        <li><a href="../date-time/age/">Age Calculator</a></li>
+                        <li><a href="../business/roi/">ROI Calculator</a></li>
+                        <li><a href="../lifestyle/tip/">Tip Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="../about/">About Us</a></li>
+                        <li><a href="../contact/">Contact</a></li>
+                        <li><a href="../privacy/">Privacy Policy</a></li>
+                        <li><a href="../terms/">Terms of Use</a></li>
+                        <li><a href="../gdpr/">GDPR Compliance</a></li>
+                        <li><a href="../sitemap.xml">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Stay Updated</h4>
+                        <p>Subscribe to our newsletter for new calculators and articles</p>
+                        <form id="newsletter-form">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" class="btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; 2025 CalcHub. All rights reserved.</div>
+                <div class="footer-links">
+                    <a href="../terms/">Terms</a> | 
+                    <a href="../gdpr/">GDPR</a> | 
+                    <a href="../cookies/">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/dark-mode.js"></script>
+    <script src="/js/mobile-menu.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/calchub-consolidated-fixes.js"></script>
+
+</body>
+</html>

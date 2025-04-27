@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Calculators - CalcHub</title>
+    <meta name="description" content="Free online math calculators for basic math, algebra, geometry, statistics, and calculus. Get accurate results and educational insights for all your math problems.">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <link rel="stylesheet" href="/css/navigation-ribbon.css">
+    <link rel="stylesheet" href="/css/breadcrumb-styles.css">
+    <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8PR7EB78N"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V8PR7EB78N');
+    </script>
+    <!-- End Google Analytics -->
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.freecalchub.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Math",
+          "item": "https://www.freecalchub.com/math/"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Percentage Calculator",
+          "url": "https://www.freecalchub.com/math/percentages/percentage-calculator/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Fraction Calculator",
+          "url": "https://www.freecalchub.com/math/fractions/fraction-calculator/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Scientific Calculator",
+          "url": "https://www.freecalchub.com/math/scientific/scientific-calculator/"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="../" class="logo">
+                    <img src="../images/logo.svg" alt="CalcHub Logo" height="40">
+                </a>
+
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../finance/">Finance</a></li>
+                    <li><a href="../math/" class="active">Math</a></li>
+                    <li><a href="../health/">Health</a></li>
+                    <li><a href="../conversions/">Conversions</a></li>
+                    <li><a href="../date-time/">Date & Time</a></li>
+                    <li><a href="../business/">Business</a></li>
+                    <li><a href="../lifestyle/">Lifestyle</a></li>
+                    <li><a href="../blog/">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="mobile-menu-button" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-header">
+            <span>Menu</span>
+            <button id="mobile-menu-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="../finance/">Finance</a></li>
+                <li><a href="../math/" class="active">Math</a></li>
+                <li><a href="../health/">Health</a></li>
+                <li><a href="../conversions/">Conversions</a></li>
+                <li><a href="../date-time/">Date & Time</a></li>
+                <li><a href="../business/">Business</a></li>
+                <li><a href="../lifestyle/">Lifestyle</a></li>
+                <li><a href="../blog/">Blog</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <a href="../">Home</a>
+            <span class="separator">/</span>
+            <span class="current">Math</span>
+        </div>
+    </div>
+
+    <div class="navigation-ribbon">
+        <div class="navigation-ribbon-container">
+            <a href="basic/"><i class="fas fa-plus-minus"></i>Basic Math</a>
+            <a href="percentages/"><i class="fas fa-percent"></i>Percentages</a>
+            <a href="fractions/"><i class="fas fa-divide"></i>Fractions</a>
+            <a href="algebra/"><i class="fas fa-superscript"></i>Algebra</a>
+            <a href="geometry/"><i class="fas fa-shapes"></i>Geometry</a>
+            <a href="statistics/"><i class="fas fa-chart-bar"></i>Statistics</a>
+            <a href="calculus/"><i class="fas fa-integral"></i>Calculus</a>
+            <a href="scientific/"><i class="fas fa-calculator"></i>Scientific</a>
+        </div>
+    </div>
+
+    <main id="main-content" class="container py-5">
+        <section class="category-header">
+            <h1>Math Calculators</h1>
+            <p class="lead">Solve math problems quickly and accurately with our free, easy-to-use calculators. From basic arithmetic to advanced calculus, our tools provide step-by-step solutions and educational insights to help you understand the concepts.</p>
+        </section>
+
+        <section class="subcategory-section">
+            <h2>Basic Math Calculators</h2>
+            <p>Essential calculators for everyday math problems and basic arithmetic operations.</p>
+            <div class="calculator-grid">
+                <a href="basic/standard-calculator/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Standard Calculator</h3>
+                    <p>Perform basic arithmetic operations with a simple, easy-to-use calculator.</p>
+                </a>
+                <a href="basic/random-number-generator/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-dice"></i>
+                    </div>
+                    <h3>Random Number Generator</h3>
+                    <p>Generate random numbers within a specified range.</p>
+                </a>
+                <a href="basic/number-sequence/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-sort-numeric-up"></i>
+                    </div>
+                    <h3>Number Sequence Calculator</h3>
+                    <p>Generate and analyze number sequences with different patterns.</p>
+                </a>
+                <a href="basic/rounding/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-circle-notch"></i>
+                    </div>
+                    <h3>Rounding Calculator</h3>
+                    <p>Round numbers to a specified number of decimal places or significant figures.</p>
+                </a>
+            </div>
+            <div class="subcategory-cta">
+                <a href="basic/" class="btn">View All Basic Math Calculators</a>
+            </div>
+        </section>
+
+        <section class="subcategory-section">
+            <h2>Percentage Calculators</h2>
+            <p>Calculate percentages, increases, decreases, and more with these useful tools.</p>
+            <div class="calculator-grid">
+                <a href="percentages/percentage-calculator/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-percent"></i>
+                    </div>
+                    <h3>Percentage Calculator</h3>
+                    <p>Calculate percentages of numbers and find what percentage one number is of another.</p>
+                </a>
+                <a href="percentages/percentage-change/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Percentage Change</h3>
+                    <p>Calculate the percentage increase or decrease between two values.</p>
+                </a>
+                <a href="percentages/markup-calculator/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3>Markup Calculator</h3>
+                    <p>Calculate selling price based on cost and desired markup percentage.</p>
+                </a>
+                <a href="percentages/discount-calculator/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Discount Calculator</h3>
+                    <p>Calculate the sale price after applying a discount percentage.</p>
+                </a>
+            </div>
+            <div class="subcategory-cta">
+                <a href="percentages/" class="btn">View All Percentage Calculators</a>
+            </div>
+        </section>
+
+        <section class="subcategory-section">
+            <h2>Algebra Calculators</h2>
+            <p>Solve algebraic equations and expressions with these powerful tools.</p>
+            <div class="calculator-grid">
+                <a href="algebra/equation-solver/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-equals"></i>
+                    </div>
+                    <h3>Equation Solver</h3>
+                    <p>Solve linear, quadratic, and polynomial equations with step-by-step solutions.</p>
+                </a>
+                <a href="algebra/quadratic-formula/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-square-root-alt"></i>
+                    </div>
+                    <h3>Quadratic Formula</h3>
+                    <p>Find the roots of quadratic equations using the quadratic formula.</p>
+                </a>
+                <a href="algebra/factoring/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-grip-lines"></i>
+                    </div>
+                    <h3>Factoring Calculator</h3>
+                    <p>Factor polynomials and algebraic expressions with detailed steps.</p>
+                </a>
+                <a href="algebra/matrix/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-border-all"></i>
+                    </div>
+                    <h3>Matrix Calculator</h3>
+                    <p>Perform matrix operations including addition, multiplication, and finding determinants.</p>
+                </a>
+            </div>
+            <div class="subcategory-cta">
+                <a href="algebra/" class="btn">View All Algebra Calculators</a>
+            </div>
+        </section>
+
+        <section class="subcategory-section">
+            <h2>Geometry Calculators</h2>
+            <p>Calculate areas, volumes, and properties of geometric shapes and figures.</p>
+            <div class="calculator-grid">
+                <a href="geometry/area/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-vector-square"></i>
+                    </div>
+                    <h3>Area Calculator</h3>
+                    <p>Calculate the area of various 2D shapes including circles, triangles, and polygons.</p>
+                </a>
+                <a href="geometry/volume/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Volume Calculator</h3>
+                    <p>Calculate the volume of 3D shapes including spheres, cylinders, and prisms.</p>
+                </a>
+                <a href="geometry/pythagorean-theorem/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3>Pythagorean Theorem</h3>
+                    <p>Calculate the sides of a right triangle using the Pythagorean theorem.</p>
+                </a>
+                <a href="geometry/triangle/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-draw-polygon"></i>
+                    </div>
+                    <h3>Triangle Calculator</h3>
+                    <p>Calculate properties of triangles including area, perimeter, and angles.</p>
+                </a>
+            </div>
+            <div class="subcategory-cta">
+                <a href="geometry/" class="btn">View All Geometry Calculators</a>
+            </div>
+        </section>
+
+        <section class="math-education">
+            <h2>Understanding Mathematics</h2>
+            <div class="education-content">
+                <p>Mathematics is the language of logic and patterns that helps us understand the world around us. Whether you're a student, professional, or just curious, understanding mathematical concepts can enhance your problem-solving skills and analytical thinking.</p>
+
+                <h3>Key Mathematical Concepts</h3>
+                <ul>
+                    <li><strong>Variables and Constants</strong> - Variables are symbols that represent unknown values, while constants are fixed values that don't change.</li>
+                    <li><strong>Functions</strong> - Mathematical relationships that assign outputs to inputs according to specific rules.</li>
+                    <li><strong>Equations</strong> - Mathematical statements that assert the equality of two expressions.</li>
+                    <li><strong>Geometry</strong> - The study of shapes, sizes, positions, and dimensions of objects.</li>
+                    <li><strong>Statistics</strong> - The science of collecting, analyzing, and interpreting data.</li>
+                </ul>
+
+                <h3>Tips for Solving Math Problems</h3>
+                <ol>
+                    <li>Understand the problem before attempting to solve it.</li>
+                    <li>Break complex problems into smaller, manageable parts.</li>
+                    <li>Draw diagrams or visual representations when applicable.</li>
+                    <li>Check your work by verifying that your answer makes sense in the context of the problem.</li>
+                    <li>Practice regularly to build confidence and skill.</li>
+                </ol>
+
+                <p>Our calculators provide not just answers but also explanations and step-by-step solutions to help you understand the mathematical concepts behind the calculations.</p>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">How accurate are these math calculators?</div>
+                    <div class="faq-answer">
+                        <p>Our calculators use standard mathematical formulas and algorithms to provide accurate results. For most everyday calculations, they offer precision to several decimal places. However, for very complex calculations or those requiring extreme precision, specialized software may be more appropriate.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I see the steps used to solve equations?</div>
+                    <div class="faq-answer">
+                        <p>Yes, many of our calculators provide step-by-step solutions, especially for algebra, calculus, and other complex calculations. This feature helps you understand the process and learn the mathematical concepts involved in solving the problem.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What's the difference between basic and scientific calculators?</div>
+                    <div class="faq-answer">
+                        <p>Basic calculators handle simple arithmetic operations (addition, subtraction, multiplication, division), while scientific calculators include additional functions for trigonometry, logarithms, exponents, and other advanced mathematical operations. Scientific calculators are typically used for more complex calculations in science, engineering, and advanced mathematics.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do I calculate percentages?</div>
+                    <div class="faq-answer">
+                        <p>To calculate a percentage of a number, multiply the number by the percentage expressed as a decimal. For example, to find 15% of 80, multiply 80 by 0.15, which equals 12. To find what percentage one number is of another, divide the first number by the second and multiply by 100. For example, to find what percentage 15 is of 60, divide 15 by 60 to get 0.25, then multiply by 100 to get 25%.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How can I improve my math skills?</div>
+                    <div class="faq-answer">
+                        <p>To improve your math skills: practice regularly, understand concepts rather than memorizing formulas, use visual aids and real-world examples, break down complex problems, learn from mistakes, and use resources like our calculators to check your work and understand the steps involved in solving problems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-tools">
+            <h2>Related Tools</h2>
+            <div class="related-grid">
+                <a href="../finance/investment/compound-interest/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Compound Interest</h3>
+                    <p>Calculate how investments grow over time with compound interest.</p>
+                </a>
+                <a href="../conversions/length/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-ruler"></i>
+                    </div>
+                    <h3>Length Converter</h3>
+                    <p>Convert between different units of length and distance.</p>
+                </a>
+                <a href="../business/roi/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>ROI Calculator</h3>
+                    <p>Calculate return on investment using mathematical formulas.</p>
+                </a>
+                <a href="../date-time/date-calculator/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Date Calculator</h3>
+                    <p>Calculate the difference between dates or add/subtract days from a date.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="../finance/">Finance</a></li>
+                        <li><a href="../math/">Math</a></li>
+                        <li><a href="../health/">Health</a></li>
+                        <li><a href="../conversions/">Conversions</a></li>
+                        <li><a href="../date-time/">Date & Time</a></li>
+                        <li><a href="../business/">Business</a></li>
+                        <li><a href="../lifestyle/">Lifestyle</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Popular Calculators</h4>
+                    <ul>
+                        <li><a href="../finance/mortgage/mortgage-calculator/">Mortgage Calculator</a></li>
+                        <li><a href="../finance/investment/compound-interest/">Compound Interest</a></li>
+                        <li><a href="../health/bmi/bmi-calculator/">BMI Calculator</a></li>
+                        <li><a href="../conversions/currency/">Currency Converter</a></li>
+                        <li><a href="percentages/percentage-calculator/">Percentage Calculator</a></li>
+                        <li><a href="../date-time/age/">Age Calculator</a></li>
+                        <li><a href="../business/roi/">ROI Calculator</a></li>
+                        <li><a href="../lifestyle/tip/">Tip Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="../about/">About Us</a></li>
+                        <li><a href="../contact/">Contact</a></li>
+                        <li><a href="../privacy/">Privacy Policy</a></li>
+                        <li><a href="../terms/">Terms of Use</a></li>
+                        <li><a href="../gdpr/">GDPR Compliance</a></li>
+                        <li><a href="../sitemap.xml">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Stay Updated</h4>
+                        <p>Subscribe to our newsletter for new calculators and articles</p>
+                        <form id="newsletter-form">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" class="btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; 2025 CalcHub. All rights reserved.</div>
+                <div class="footer-links">
+                    <a href="../privacy/">Privacy</a> | 
+                    <a href="../terms/">Terms</a> | 
+                    <a href="../gdpr/">GDPR</a> | 
+                    <a href="../cookies/">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/dark-mode.js"></script>
+    <script src="/js/mobile-menu.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/calchub-consolidated-fixes.js"></script>
+
+</body>
+</html>
