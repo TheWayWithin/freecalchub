@@ -1,0 +1,112 @@
+/* CalcHub Header and Logo Fixes */
+
+/* Fix for the logo container to match finance page */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Fix for the logo to have blue background with white text */
+.logo {
+  display: flex;
+  align-items: center;
+  background-color: #4a76a8;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+/* Ensure logo image has correct styling */
+.logo img {
+  height: 30px;
+  filter: brightness(0) invert(1); /* Make SVG white */
+}
+
+/* Fix header container layout */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Fix main navigation styling */
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav ul li a {
+  padding: 0 15px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Fix header controls positioning */
+.header-controls {
+  display: flex;
+  align-items: center;
+}
+
+/* Fix dark mode toggle button */
+#dark-mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  color: #333;
+}
+
+/* Fix breadcrumb styling */
+.breadcrumbs {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  background-color: #f8f9fa;
+  margin: 0;
+}
+
+.breadcrumbs-container {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.breadcrumbs a {
+  color: #4a76a8;
+  text-decoration: none;
+  padding: 0 5px;
+}
+
+.breadcrumbs .separator {
+  margin: 0 5px;
+  color: #ccc;
+}
+
+.breadcrumbs .current {
+  color: #6c757d;
+}
+
+/* Fix loan term dropdown width */
+select#loan-term {
+  width: 200px !important;
+  max-width: 200px !important;
+}
