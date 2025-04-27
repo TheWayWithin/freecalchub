@@ -1,0 +1,53 @@
+/* Breadcrumb Styles for CalcHub */
+
+.breadcrumbs {
+    background-color: var(--background-alt);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 30px;
+}
+
+.breadcrumbs-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.breadcrumbs a, .breadcrumbs span {
+    font-size: 0.9rem;
+    margin-right: 5px;
+}
+
+.breadcrumbs a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.breadcrumbs a:hover {
+    color: var(--primary-color);
+}
+
+.breadcrumbs .separator {
+    color: var(--text-light);
+    margin: 0 5px;
+}
+
+.breadcrumbs .current {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* Responsive Breadcrumbs */
+@media (max-width: 480px) {
+    .breadcrumbs {
+        padding: 8px 0;
+    }
+    
+    .breadcrumbs a, .breadcrumbs span {
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,373 @@
+/* Dark Mode Styles for CalcHub */
+
+/* Add smooth transitions for dark mode */
+body, 
+header, 
+.main-nav a, 
+.logo,
+.header-controls button,
+.mobile-menu,
+.mobile-nav a,
+.category-card, 
+.calculator-card,
+.feature-card,
+.blog-card,
+.calculator-tool,
+input, 
+select, 
+textarea,
+button,
+table,
+th,
+td,
+code,
+pre,
+.breadcrumbs,
+.chart-container {
+    transition: background-color 0.3s ease, 
+                color 0.3s ease, 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+    --primary-color: #5a8ac5;
+    --primary-dark: #4a7ab5;
+    --primary-light: #7ba0d0;
+    --secondary-color: #f5b041;
+    --secondary-dark: #e59c2c;
+    --secondary-light: #f7c068;
+    --text-color: #e0e0e0;
+    --text-light: #b0b0b0;
+    --background-color: #1a1a1a;
+    --background-alt: #2a2a2a;
+    --border-color: #444;
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+    --warning-color: #f1c40f;
+    --info-color: #3498db;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --footer-background: #111;
+    --footer-text: #ddd;
+}
+
+/* Dark Mode Toggle */
+#dark-mode-toggle {
+    position: relative;
+    width: 40px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    border-radius: 12px;
+    background-color: var(--background-alt);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+/* Ensure icons are visible in both modes */
+body:not(.dark-mode) .fa-sun,
+body.dark-mode .fa-moon {
+    display: inline-block;
+}
+
+body:not(.dark-mode) .fa-moon,
+body.dark-mode .fa-sun {
+    display: none;
+}
+
+body:not(.dark-mode) #dark-mode-toggle .fa-sun,
+body.dark-mode #dark-mode-toggle .fa-moon {
+    display: none;
+}
+
+/* Header Dark Mode */
+body.dark-mode header {
+    background-color: var(--background-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .logo {
+    color: var(--primary-color);
+}
+
+body.dark-mode .main-nav a {
+    color: var(--text-color);
+}
+
+body.dark-mode .main-nav a:hover {
+    color: var(--primary-light);
+}
+
+body.dark-mode .header-controls button {
+    color: var(--text-color);
+}
+
+body.dark-mode .header-controls button:hover {
+    color: var(--primary-light);
+}
+
+/* Mobile Menu Dark Mode */
+body.dark-mode .mobile-menu {
+    background-color: var(--background-color);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .mobile-menu-header {
+    border-bottom-color: var(--border-color);
+}
+
+body.dark-mode .mobile-nav a {
+    color: var(--text-color);
+}
+
+body.dark-mode .mobile-nav a:hover {
+    color: var(--primary-light);
+}
+
+/* Hero Section Dark Mode */
+body.dark-mode .hero-section {
+    background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
+}
+
+/* Category Section Dark Mode */
+body.dark-mode .category-section {
+    background-color: var(--background-alt);
+}
+
+body.dark-mode .category-card {
+    background-color: var(--background-color);
+    box-shadow: var(--shadow);
+}
+
+body.dark-mode .category-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .category-icon {
+    color: var(--primary-light);
+}
+
+body.dark-mode .category-card h3 {
+    color: var(--text-color);
+}
+
+body.dark-mode .category-card p {
+    color: var(--text-light);
+}
+
+/* Calculator Cards Dark Mode */
+body.dark-mode .calculator-card {
+    background-color: var(--background-color);
+    box-shadow: var(--shadow);
+}
+
+body.dark-mode .calculator-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .calculator-icon {
+    color: var(--primary-light);
+}
+
+body.dark-mode .calculator-card h3 {
+    color: var(--text-color);
+}
+
+body.dark-mode .calculator-card p {
+    color: var(--text-light);
+}
+
+/* Features Section Dark Mode */
+body.dark-mode .features-section {
+    background-color: var(--background-alt);
+}
+
+body.dark-mode .feature-card {
+    background-color: var(--background-color);
+    box-shadow: var(--shadow);
+}
+
+body.dark-mode .feature-icon {
+    color: var(--primary-light);
+}
+
+/* Blog Cards Dark Mode */
+body.dark-mode .blog-preview {
+    background-color: var(--background-alt);
+}
+
+body.dark-mode .blog-card {
+    background-color: var(--background-color);
+    box-shadow: var(--shadow);
+}
+
+body.dark-mode .blog-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .blog-content h3 {
+    color: var(--text-color);
+}
+
+body.dark-mode .blog-date {
+    color: var(--text-light);
+}
+
+/* Calculator Tool Dark Mode */
+body.dark-mode .calculator-tool {
+    background-color: var(--background-color);
+    box-shadow: var(--shadow);
+}
+
+body.dark-mode .form-group label {
+    color: var(--text-color);
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select {
+    background-color: var(--background-alt);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+body.dark-mode .calculator-results {
+    border-top-color: var(--border-color);
+}
+
+body.dark-mode .result-item {
+    border-bottom-color: var(--border-color);
+}
+
+body.dark-mode .result-label {
+    color: var(--text-color);
+}
+
+body.dark-mode .result-value {
+    color: var(--primary-light);
+}
+
+/* FAQ Section Dark Mode */
+body.dark-mode .faq-item {
+    border-color: var(--border-color);
+}
+
+body.dark-mode .faq-question {
+    background-color: var(--background-alt);
+    color: var(--text-color);
+}
+
+/* Tables Dark Mode */
+body.dark-mode table {
+    border-color: var(--border-color);
+}
+
+body.dark-mode th {
+    background-color: var(--background-alt);
+    color: var(--text-color);
+}
+
+body.dark-mode td {
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+body.dark-mode tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Code Blocks Dark Mode */
+body.dark-mode code,
+body.dark-mode pre {
+    background-color: var(--background-alt);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+/* Breadcrumbs Dark Mode */
+body.dark-mode .breadcrumbs {
+    background-color: var(--background-color);
+    border-bottom-color: var(--border-color);
+}
+
+body.dark-mode .breadcrumbs a {
+    color: var(--text-light);
+}
+
+body.dark-mode .breadcrumbs a:hover {
+    color: var(--primary-light);
+}
+
+body.dark-mode .breadcrumbs .current {
+    color: var(--text-color);
+}
+
+/* Charts and Graphs Dark Mode */
+body.dark-mode .chart-container {
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+}
+
+/* Form Elements Dark Mode */
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background-color: var(--background-alt);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+body.dark-mode input:focus,
+body.dark-mode select:focus,
+body.dark-mode textarea:focus {
+    border-color: var(--primary-color);
+}
+
+body.dark-mode ::placeholder {
+    color: var(--text-light);
+    opacity: 0.7;
+}
+
+/* Buttons Dark Mode */
+body.dark-mode .btn {
+    background-color: var(--primary-color);
+}
+
+body.dark-mode .btn:hover {
+    background-color: var(--primary-dark);
+}
+
+body.dark-mode .btn-secondary {
+    background-color: var(--secondary-color);
+}
+
+body.dark-mode .btn-secondary:hover {
+    background-color: var(--secondary-dark);
+}
+
+/* Scrollbar Dark Mode */
+body.dark-mode::-webkit-scrollbar {
+    width: 12px;
+}
+
+body.dark-mode::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+body.dark-mode::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 6px;
+    border: 3px solid var(--background-color);
+}
+
+body.dark-mode::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-light);
+}
+
+/* Selection Dark Mode */
+body.dark-mode ::selection {
+    background-color: var(--primary-color);
+    color: white;
+}

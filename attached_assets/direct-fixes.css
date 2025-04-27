@@ -1,0 +1,155 @@
+/* CalcHub Direct Layout Fixes v1.0.0 */
+
+/* ===== LOGO AND NAVIGATION FIXES ===== */
+/* Fix logo positioning and prevent overlap */
+.logo {
+  margin-right: 40px !important;
+  padding-left: 0 !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Ensure main navigation has proper spacing */
+.main-nav ul {
+  margin-left: 20px !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+}
+
+/* Fix Date & Time item to prevent wrapping */
+.main-nav ul li a[href*="date-time"] {
+  padding: 0 8px !important;
+  font-size: 0.95em !important;
+  white-space: nowrap !important;
+}
+
+/* ===== BREADCRUMB FIXES ===== */
+/* Ensure breadcrumbs are centered */
+.breadcrumbs {
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  background-color: #f8f9fa !important;
+  padding: 10px 0 !important;
+  margin: 0 !important;
+}
+
+.breadcrumbs .container {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 1140px !important;
+  margin: 0 auto !important;
+  padding: 0 15px !important;
+  justify-content: center !important;
+}
+
+.breadcrumbs-container {
+  text-align: center !important;
+}
+
+/* ===== NAVIGATION RIBBON FIXES ===== */
+/* Center the blue navigation ribbon */
+.navigation-ribbon {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  background-color: #4a6da7 !important;
+  padding: 10px 0 !important;
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+.navigation-ribbon-container {
+  display: flex !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+  max-width: 1140px !important;
+  margin: 0 auto !important;
+}
+
+.navigation-ribbon a {
+  color: white !important;
+  text-decoration: none !important;
+  padding: 5px 15px !important;
+  margin: 0 5px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.navigation-ribbon a i {
+  margin-right: 5px !important;
+}
+
+/* ===== FOOTER FIXES ===== */
+/* Footer structure */
+footer, .footer {
+  background-color: #f8f9fa !important;
+  padding: 40px 0 20px !important;
+  margin-top: 50px !important;
+  border-top: 1px solid #e7e7e7 !important;
+}
+
+/* Footer columns */
+.footer-columns {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  margin-bottom: 30px !important;
+}
+
+.footer-column {
+  flex: 1 !important;
+  min-width: 200px !important;
+  margin-bottom: 20px !important;
+  padding: 0 15px !important;
+}
+
+/* Footer headings */
+.footer-column h4,
+footer h4 {
+  font-size: 18px !important;
+  margin-bottom: 15px !important;
+  color: #333 !important;
+}
+
+/* Footer lists */
+.footer-column ul,
+footer ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.footer-column ul li,
+footer ul li {
+  margin-bottom: 8px !important;
+}
+
+.footer-column ul li a,
+footer ul li a {
+  color: #555 !important;
+  text-decoration: none !important;
+}
+
+/* ===== RESPONSIVE FIXES ===== */
+@media (max-width: 768px) {
+  .logo {
+    margin-right: 20px !important;
+  }
+  
+  .main-nav ul {
+    margin-left: 10px !important;
+  }
+  
+  .navigation-ribbon a {
+    padding: 5px 10px !important;
+    margin: 2px !important;
+  }
+}

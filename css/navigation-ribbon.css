@@ -1,0 +1,87 @@
+/* Navigation Ribbon Styles for CalcHub */
+
+.navigation-ribbon {
+    background-color: var(--primary-light);
+    padding: 10px 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+}
+
+.navigation-ribbon::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
+
+.navigation-ribbon-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.navigation-ribbon a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    margin-right: 10px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+}
+
+.navigation-ribbon a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navigation-ribbon a.active {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.navigation-ribbon i {
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
+/* Dark Mode Navigation Ribbon */
+body.dark-mode .navigation-ribbon {
+    background-color: var(--primary-dark);
+}
+
+body.dark-mode .navigation-ribbon a.active {
+    color: var(--primary-dark);
+}
+
+/* Responsive Navigation Ribbon */
+@media (max-width: 768px) {
+    .navigation-ribbon a {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .navigation-ribbon i {
+        margin-right: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigation-ribbon-container {
+        padding: 0 10px;
+    }
+    
+    .navigation-ribbon a {
+        padding: 5px 10px;
+        margin-right: 5px;
+        font-size: 0.8rem;
+    }
+    
+    .navigation-ribbon i {
+        margin-right: 5px;
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalcHub - Free Online Calculators for Everyone</title>
+    <meta name="description" content="CalcHub offers free online calculators for finance, math, health, conversions, and more. Get accurate results and educational insights for everyday questions.">
+    <link rel="canonical" href="https://www.freecalchub.com/">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <link rel="stylesheet" href="/css/navigation-ribbon.css">
+    <link rel="stylesheet" href="/css/breadcrumb-styles.css">
+    <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8PR7EB78N"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V8PR7EB78N');
+    </script>
+    <!-- End Google Analytics -->
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CalcHub",
+      "url": "https://www.freecalchub.com",
+      "logo": "https://www.freecalchub.com/images/logo.png",
+      "sameAs": [
+        "https://twitter.com/freecalchub",
+        "https://www.facebook.com/freecalchub"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "CalcHub",
+      "url": "https://www.freecalchub.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.freecalchub.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="index" class="logo">
+    <img src="images/logo.svg" alt="CalcHub Logo" height="40">
+</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="finance/">Finance</a></li>
+                    <li><a href="math/">Math</a></li>
+                    <li><a href="health/">Health</a></li>
+                    <li><a href="conversions/">Conversions</a></li>
+                    <li><a href="date-time/">Date & Time</a></li>
+                    <li><a href="business/">Business</a></li>
+                    <li><a href="lifestyle/">Lifestyle</a></li>
+                    <li><a href="blog/">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="mobile-menu-button" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-header">
+            <span>Menu</span>
+            <button id="mobile-menu-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="finance/">Finance</a></li>
+                <li><a href="math/">Math</a></li>
+                <li><a href="health/">Health</a></li>
+                <li><a href="conversions/">Conversions</a></li>
+                <li><a href="date-time/">Date & Time</a></li>
+                <li><a href="business/">Business</a></li>
+                <li><a href="lifestyle/">Lifestyle</a></li>
+                <li><a href="blog/">Blog</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Free Online Calculators for Everyone</h1>
+            <p>Accurate calculations and educational insights to help you answer everyday questions</p>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search for calculators...">
+                <button id="search-button" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <section class="category-section">
+        <div class="container">
+            <h2>Calculator Categories</h2>
+            <div class="category-grid">
+                <a href="finance/" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Finance</h3>
+                    <p>Mortgage, loan, investment, retirement, and budgeting calculators</p>
+                </a>
+                <a href="math/" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Math</h3>
+                    <p>Basic math, algebra, geometry, statistics, and calculus calculators</p>
+                </a>
+                <a href="health/" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Health</h3>
+                    <p>BMI, calories, nutrition, fitness, and medical calculators</p>
+                </a>
+                <a href="conversions/" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Conversions</h3>
+                    <p>Currency, length, weight, volume, and temperature converters</p>
+                </a>
+                <a href="date-time/" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Date & Time</h3>
+                    <p>Date difference, time zone, countdown, and age calculators</p>
+                </a>
+                <a href="business/" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Business</h3>
+                    <p>ROI, profit margin, payroll, and inventory calculators</p>
+                </a>
+                <a href="lifestyle/" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Lifestyle</h3>
+                    <p>Real estate, recipes, travel, and everyday calculators</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="popular-calculators">
+        <div class="container">
+            <h2>Popular Calculators</h2>
+            <div class="calculator-grid">
+                <a href="finance/mortgage/mortgage-calculator/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Mortgage Calculator</h3>
+                    <p>Calculate monthly payments, interest, and amortization</p>
+                </a>
+                <a href="finance/investment/compound-interest/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Compound Interest</h3>
+                    <p>See how your investments grow over time</p>
+                </a>
+                <a href="health/bmi/bmi-calculator/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-weight"></i>
+                    </div>
+                    <h3>BMI Calculator</h3>
+                    <p>Check your body mass index and health range</p>
+                </a>
+                <a href="conversions/currency/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Currency Converter</h3>
+                    <p>Convert between different currencies with up-to-date rates</p>
+                </a>
+                <a href="math/percentages/percentage-calculator/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-percent"></i>
+                    </div>
+                    <h3>Percentage Calculator</h3>
+                    <p>Calculate percentages, increases, decreases, and more</p>
+                </a>
+                <a href="date-time/age/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3>Age Calculator</h3>
+                    <p>Calculate exact age in years, months, and days</p>
+                </a>
+                <a href="business/roi/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>ROI Calculator</h3>
+                    <p>Calculate return on investment for business decisions</p>
+                </a>
+                <a href="lifestyle/tip/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Tip Calculator</h3>
+                    <p>Calculate tips and split bills among multiple people</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <h2>Why Use CalcHub?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Free to Use</h3>
+                    <p>All calculators are completely free with no hidden fees or subscriptions required.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Access our calculators on any device with a responsive design that works everywhere.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Educational</h3>
+                    <p>Learn while you calculate with explanations, formulas, and helpful tips.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Private & Secure</h3>
+                    <p>Your data stays on your device. We don't store or track your calculations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Fast & Accurate</h3>
+                    <p>Get instant results with precise calculations you can trust.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Visual Results</h3>
+                    <p>Many calculators include charts and graphs to help visualize your results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>About CalcHub</h2>
+                <p>CalcHub was created with a simple mission: to help people answer everyday questions through free, accessible, and educational calculation tools. Whether you're planning your finances, working on homework, managing your health, or making everyday decisions, our calculators provide the accurate information you need.</p>
+                <p>We believe that everyone should have access to powerful calculation tools without barriers. That's why all our calculators are completely free to use, with no account required, no ads that interfere with usability, and no hidden fees.</p>
+                <p>Each calculator is designed not just to give you an answer, but to help you understand the concepts behind the calculations. We provide explanations, formulas, examples, and tips to enhance your knowledge while solving your problems.</p>
+                <a href="about/" class="btn">Learn More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-preview">
+        <div class="container">
+            <h2>Latest from Our Blog</h2>
+            <div class="blog-grid">
+                <a href="blog/articles/understanding-compound-interest/" class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog/compound-interest.jpg" alt="Compound Interest Concept" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Understanding Compound Interest: The Eighth Wonder of the World</h3>
+                        <p class="blog-date">April 15, 2025</p>
+                        <p>Learn how compound interest works and why Einstein called it the eighth wonder of the world. Discover strategies to maximize your investments.</p>
+                    </div>
+                </a>
+                <a href="blog/articles/bmi-myths-facts/" class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog/bmi-myths.jpg" alt="BMI Measurement" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <h3>BMI Myths and Facts: What Your BMI Really Tells You</h3>
+                        <p class="blog-date">April 10, 2025</p>
+                        <p>Explore the limitations and benefits of BMI as a health metric. Learn when it's useful and when other measurements might be more appropriate.</p>
+                    </div>
+                </a>
+                <a href="blog/articles/budgeting-tips/" class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog/budgeting.jpg" alt="Budgeting Concept" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <h3>5 Budgeting Tips That Actually Work in 2025</h3>
+                        <p class="blog-date">April 5, 2025</p>
+                        <p>Discover practical budgeting strategies that fit modern lifestyles. Learn how to use our calculators to create and maintain a successful budget.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="blog-cta">
+                <a href="blog/" class="btn">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>About CalcHub</h2>
+                <p>CalcHub was created with a simple mission: to help people answer everyday questions through free, accessible, and educational calculation tools. Whether you're planning your finances, working on homework, managing your health, or making everyday decisions, our calculators provide the accurate information you need.</p>
+                <p>We believe that everyone should have access to powerful calculation tools without barriers. That's why all our calculators are completely free to use, with no account required, no ads that interfere with usability, and no hidden fees.</p>
+                <p>Each calculator is designed not just to give you an answer, but to help you understand the concepts behind the calculations. We provide explanations, formulas, examples, and tips to enhance your knowledge while solving your problems.</p>
+                <a href="about/" class="btn">Learn More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="finance/">Finance</a></li>
+                    <li><a href="math/">Math</a></li>
+                    <li><a href="health/">Health</a></li>
+                    <li><a href="conversions/">Conversions</a></li>
+                    <li><a href="date-time/">Date & Time</a></li>
+                    <li><a href="business/">Business</a></li>
+                    <li><a href="lifestyle/">Lifestyle</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Popular Calculators</h4>
+                <ul>
+                    <li><a href="finance/mortgage/mortgage-calculator/">Mortgage Calculator</a></li>
+                    <li><a href="finance/investment/compound-interest/">Compound Interest</a></li>
+                    <li><a href="health/bmi/bmi-calculator/">BMI Calculator</a></li>
+                    <li><a href="conversions/currency/">Currency Converter</a></li>
+                    <li><a href="math/percentages/percentage-calculator/">Percentage Calculator</a></li>
+                    <li><a href="date-time/age/">Age Calculator</a></li>
+                    <li><a href="business/roi/">ROI Calculator</a></li>
+                    <li><a href="lifestyle/tip/">Tip Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="about/">About Us</a></li>
+                    <li><a href="contact/">Contact</a></li>
+                    <li><a href="privacy/">Privacy Policy</a></li>
+                    <li><a href="terms/">Terms of Use</a></li>
+                    <li><a href="gdpr/">GDPR Compliance</a></li>
+                    <li><a href="sitemap.xml">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for new calculators and articles</p>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CalcHub. All rights reserved.</p>
+            <p>
+                <a href="privacy/">Privacy</a> | 
+                <a href="terms/">Terms</a> | 
+                <a href="gdpr/">GDPR</a> | 
+                <a href="cookies/">Cookies</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="/js/dark-mode.js"></script>
+    <script src="/js/mobile-menu.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/calchub-consolidated-fixes.js"></script>
+
+</body>
+</html>
