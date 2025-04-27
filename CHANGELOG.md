@@ -3,7 +3,38 @@
 ## Overview
 This document tracks all improvements made to the Mortgage Calculator page. These changes should be used as a reference when creating new calculator pages to ensure consistent formatting, styling, and functionality across the entire CalcHub website.
 
-## Date: April 27, 2025
+## Date: April 27, 2025 - Latest Updates
+
+### Calculator Functionality Fixes
+- Fixed critical issue with input value retrieval that prevented user inputs from being used in calculations
+- Enhanced the connection between down payment amount and percentage fields to ensure they update each other correctly
+- Added console logging for debugging calculation inputs and results
+- Improved form submission handler to properly capture current input values
+- Fixed validation for numeric inputs to prevent calculation errors
+
+### Layout and Styling Improvements
+- Converted calculator inputs from single column to multi-column grid layout for better space utilization
+- Restructured HTML to properly utilize CSS Grid with two-column layout
+- Added proper grid column span for full-width elements
+- Improved visual organization of related input fields
+- Reduced need for scrolling by making better use of horizontal space
+- Added empty placeholder div to maintain grid alignment for odd number of inputs
+
+### Header and Navigation Fixes
+- Fixed header styling to properly display logo, navigation links, and dark mode toggle
+- Added inline CSS to ensure proper container alignment and display properties
+- Fixed breadcrumb styling to display correctly with proper spacing and separators
+- Ensured finance navigation ribbon displays correctly with proper alignment
+- Fixed container width and padding for consistent layout
+
+### Code Quality Improvements
+- Added clear HTML comments to indicate column placement for form elements
+- Enhanced JavaScript with additional logging for easier debugging
+- Improved code organization and readability
+- Added inline CSS fixes to address specific styling issues without modifying global styles
+- Ensured all resource URLs use absolute paths with domain name
+
+## Previous Updates (April 27, 2025)
 
 ### Header and Navigation Improvements
 - Fixed header styling to match other pages on the site
