@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mortgage Calculator - Calculate Monthly Payments & Interest | CalcHub</title>
-    <meta name="description" content="Free mortgage calculator to estimate monthly payments, total interest, and amortization schedule. See how extra payments can save you thousands. No ads or signup required.">
+    <title>Mortgage Calculator - Calculate Your Monthly Mortgage Payment | CalcHub</title>
+    <meta name="description" content="Use our free mortgage calculator to estimate your monthly mortgage payment, including principal, interest, taxes, insurance, and PMI. See how extra payments can reduce your loan term and save you thousands in interest.">
     
     <!-- Favicon -->
     <link rel="icon" href="https://freecalchub.com/favicon.ico" type="image/x-icon">
@@ -17,9 +17,6 @@
     <link rel="stylesheet" href="https://freecalchub.com/css/calchub-consolidated-fixes.css">
     <link rel="stylesheet" href="https://freecalchub.com/finance/mortgage/mortgage-calculator/css/mortgage-calculator.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <!-- Chart.js for visualizations -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
     
     <!-- Schema Markup for SEO -->
     <script src="https://freecalchub.com/js/schema-markup.js"></script>
@@ -71,7 +68,7 @@
         </div>
     </nav>
 
-    <!-- Subcategory Navigation -->
+    <!-- Finance Navigation Ribbon -->
     <nav class="finance-navigation">
         <div class="container">
             <a href="/finance/mortgage/"><i class="fas fa-home"></i> Mortgage</a>
@@ -89,12 +86,9 @@
     <main class="container">
         <h1>Mortgage Calculator</h1>
         
-        <div class="calculator-description">
-            <p>Use our free mortgage calculator to estimate your monthly mortgage payment, including principal, interest, taxes, insurance, and PMI. See how extra payments can reduce your loan term and save you thousands in interest. Adjust the inputs to see how different scenarios affect your mortgage costs.</p>
-        </div>
+        <p>Use our free mortgage calculator to estimate your monthly mortgage payment, including principal, interest, taxes, insurance, and PMI. See how extra payments can reduce your loan term and save you thousands in interest. Adjust the inputs to see how different scenarios affect your mortgage costs.</p>
 
-        <!-- Country Selection -->
-        <div class="country-selection">
+        <div class="select-country">
             <label for="country">Select Country:</label>
             <select id="country" class="form-control">
                 <option value="US" selected>United States</option>
@@ -558,54 +552,6 @@
     <script src="https://freecalchub.com/js/dark-mode.js"></script>
     <script src="https://freecalchub.com/js/mobile-menu.js"></script>
     <script src="https://freecalchub.com/js/main.js"></script>
-    <script>
-        // Set current date as default for loan start date
-        document.addEventListener('DOMContentLoaded', function() {
-            const today = new Date();
-            const year = today.getFullYear();
-            const month = String(today.getMonth() + 1).padStart(2, '0');
-            document.getElementById('loan-start-date').value = `${year}-${month}`;
-            
-            // Connect down payment amount and percentage fields
-            const homePriceInput = document.getElementById('home-price');
-            const downPaymentAmountInput = document.getElementById('down-payment-amount');
-            const downPaymentPercentInput = document.getElementById('down-payment-percent');
-            
-            // Update down payment amount when percentage changes
-            downPaymentPercentInput.addEventListener('input', function() {
-                const homePrice = parseFloat(homePriceInput.value) || 0;
-                const downPaymentPercent = parseFloat(this.value) || 0;
-                const downPaymentAmount = (homePrice * downPaymentPercent / 100).toFixed(0);
-                downPaymentAmountInput.value = downPaymentAmount;
-            });
-            
-            // Update down payment percentage when amount changes
-            downPaymentAmountInput.addEventListener('input', function() {
-                const homePrice = parseFloat(homePriceInput.value) || 0;
-                const downPaymentAmount = parseFloat(this.value) || 0;
-                if (homePrice > 0) {
-                    const downPaymentPercent = (downPaymentAmount / homePrice * 100).toFixed(1);
-                    downPaymentPercentInput.value = downPaymentPercent;
-                }
-            });
-            
-            // Update down payment amount when home price changes
-            homePriceInput.addEventListener('input', function() {
-                const homePrice = parseFloat(this.value) || 0;
-                const downPaymentPercent = parseFloat(downPaymentPercentInput.value) || 0;
-                const downPaymentAmount = (homePrice * downPaymentPercent / 100).toFixed(0);
-                downPaymentAmountInput.value = downPaymentAmount;
-            });
-            
-            // Initialize FAQ accordion
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', () => {
-                    const faqItem = question.parentElement;
-                    faqItem.classList.toggle('active');
-                });
-            });
-        });
-    </script>
+    <script src="https://freecalchub.com/finance/mortgage/mortgage-calculator/js/mortgage-calculator.js"></script>
 </body>
 </html>
