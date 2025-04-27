@@ -7,22 +7,31 @@
     <meta name="description" content="Free mortgage calculator to estimate monthly payments, total interest, and amortization schedule. See how extra payments can save you thousands. No ads or signup required.">
     
     <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://freecalchub.com/favicon.ico" type="image/x-icon">
     
     <!-- CSS Files -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/dark-mode.css">
-    <link rel="stylesheet" href="/css/navigation-ribbon.css">
-    <link rel="stylesheet" href="/css/breadcrumb-styles.css">
-    <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
-    <link rel="stylesheet" href="/css/mortgage-calculator.css">
+    <link rel="stylesheet" href="https://freecalchub.com/css/styles.css">
+    <link rel="stylesheet" href="https://freecalchub.com/css/dark-mode.css">
+    <link rel="stylesheet" href="https://freecalchub.com/css/navigation-ribbon.css">
+    <link rel="stylesheet" href="https://freecalchub.com/css/breadcrumb-styles.css">
+    <link rel="stylesheet" href="https://freecalchub.com/css/calchub-consolidated-fixes.css">
+    <link rel="stylesheet" href="https://freecalchub.com/finance/mortgage/mortgage-calculator/css/mortgage-calculator.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <!-- Chart.js for visualizations -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
     
     <!-- Schema Markup for SEO -->
-    <script src="/js/schema-markup.js"></script>
+    <script src="https://freecalchub.com/js/schema-markup.js"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R1QHNSSWTC');
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -30,7 +39,7 @@
         <nav class="navbar">
             <div class="container">
                 <a href="/" class="navbar-brand">
-                    <img src="/img/calchub-logo.svg" alt="CalcHub Logo" class="logo">
+                    <img src="https://freecalchub.com/img/calchub-logo.svg" alt="CalcHub Logo" class="logo">
                 </a>
                 <ul class="navbar-nav">
                     <li class="nav-item"><a href="/finance/" class="nav-link">Finance</a></li>
@@ -42,7 +51,7 @@
                     <li class="nav-item"><a href="/lifestyle/" class="nav-link">Lifestyle</a></li>
                     <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
                 </ul>
-                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                <button class="dark-mode-toggle" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
                     <i class="fas fa-sun"></i>
                 </button>
@@ -64,14 +73,16 @@
 
     <!-- Subcategory Navigation -->
     <nav class="finance-navigation">
-        <a href="/finance/mortgage/"><i class="fas fa-home"></i> Mortgage</a>
-        <a href="/finance/loan/"><i class="fas fa-file-invoice-dollar"></i> Loan</a>
-        <a href="/finance/investment/"><i class="fas fa-chart-line"></i> Investment</a>
-        <a href="/finance/retirement/"><i class="fas fa-umbrella-beach"></i> Retirement</a>
-        <a href="/finance/budgeting/"><i class="fas fa-wallet"></i> Budgeting</a>
-        <a href="/finance/savings/"><i class="fas fa-piggy-bank"></i> Savings</a>
-        <a href="/finance/cryptocurrency/"><i class="fas fa-coins"></i> Cryptocurrency</a>
-        <a href="/finance/tax/"><i class="fas fa-file-invoice"></i> Tax</a>
+        <div class="container">
+            <a href="/finance/mortgage/"><i class="fas fa-home"></i> Mortgage</a>
+            <a href="/finance/loan/"><i class="fas fa-file-invoice-dollar"></i> Loan</a>
+            <a href="/finance/investment/"><i class="fas fa-chart-line"></i> Investment</a>
+            <a href="/finance/retirement/"><i class="fas fa-umbrella-beach"></i> Retirement</a>
+            <a href="/finance/budgeting/"><i class="fas fa-wallet"></i> Budgeting</a>
+            <a href="/finance/savings/"><i class="fas fa-piggy-bank"></i> Savings</a>
+            <a href="/finance/cryptocurrency/"><i class="fas fa-coins"></i> Cryptocurrency</a>
+            <a href="/finance/tax/"><i class="fas fa-file-invoice"></i> Tax</a>
+        </div>
     </nav>
 
     <!-- Main Content -->
@@ -100,7 +111,7 @@
             <!-- Calculator Form -->
             <div class="calculator-form-container">
                 <form id="mortgage-calculator-form" class="calculator-form">
-                    <div class="form-group">
+                    <div class="form-group full-width">
                         <label for="home-price">Home Price</label>
                         <div class="input-group">
                             <span class="currency-symbol">$</span>
@@ -108,20 +119,19 @@
                         </div>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="down-payment-amount">Down Payment</label>
-                            <div class="input-group">
-                                <span class="currency-symbol">$</span>
-                                <input type="number" id="down-payment-amount" class="form-control" value="60000" min="0" step="1000" required>
-                            </div>
+                    <div class="form-group">
+                        <label for="down-payment-amount">Down Payment</label>
+                        <div class="input-group">
+                            <span class="currency-symbol">$</span>
+                            <input type="number" id="down-payment-amount" class="form-control" value="60000" min="0" step="1000" required>
                         </div>
-                        <div class="form-group">
-                            <label for="down-payment-percent">Down Payment %</label>
-                            <div class="input-group">
-                                <input type="number" id="down-payment-percent" class="form-control" value="20" min="0" max="100" step="0.1" required>
-                                <span class="input-group-text">%</span>
-                            </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="down-payment-percent">Down Payment %</label>
+                        <div class="input-group">
+                            <input type="number" id="down-payment-percent" class="form-control" value="20" min="0" max="100" step="0.1" required>
+                            <span class="input-group-text">%</span>
                         </div>
                     </div>
 
@@ -297,7 +307,7 @@
                                     <th>Balance</th>
                                 </tr>
                             </thead>
-                            <tbody id="amortization-table-body">
+                            <tbody>
                                 <!-- Amortization data will be populated by JavaScript -->
                             </tbody>
                         </table>
@@ -306,259 +316,178 @@
             </div>
         </div>
 
-        <!-- How to Use This Calculator -->
+        <!-- How to Use Section -->
         <section class="how-to-use">
             <h2>How to Use This Mortgage Calculator</h2>
             <ol>
-                <li><strong>Enter Home Price:</strong> Input the total purchase price of the home you're planning to buy.</li>
-                <li><strong>Enter Down Payment:</strong> Input your down payment amount either as a dollar amount or as a percentage of the home price. The other field will update automatically.</li>
-                <li><strong>Select Loan Term:</strong> Choose the length of your mortgage, typically 15, 20, or 30 years.</li>
-                <li><strong>Enter Interest Rate:</strong> Input the annual interest rate for your mortgage loan.</li>
-                <li><strong>Add Property Taxes and Insurance:</strong> Enter your annual property taxes and homeowners insurance to calculate your total monthly payment.</li>
-                <li><strong>Include Optional Payments:</strong> Add any HOA fees or extra monthly payments if applicable.</li>
-                <li><strong>Set Loan Start Date:</strong> Select the month and year when your mortgage payments will begin.</li>
-                <li><strong>Review Results:</strong> Examine your monthly payment breakdown, amortization schedule, and total interest costs.</li>
+                <li><strong>Enter your home price</strong> - The total purchase price of the property.</li>
+                <li><strong>Set your down payment</strong> - Either as a dollar amount or percentage of the home price.</li>
+                <li><strong>Select your loan term</strong> - Typically 15 or 30 years, but other options are available.</li>
+                <li><strong>Enter your interest rate</strong> - The annual interest rate for your mortgage.</li>
+                <li><strong>Add property tax and insurance</strong> - Annual amounts for property tax and homeowners insurance.</li>
+                <li><strong>Include HOA fees if applicable</strong> - Monthly homeowners association fees, if any.</li>
+                <li><strong>Consider extra payments</strong> - See how additional monthly payments can reduce your loan term and save on interest.</li>
+                <li><strong>Click "Calculate"</strong> - View your monthly payment breakdown, amortization schedule, and visualizations.</li>
             </ol>
-            <p>For the most accurate results, use current interest rates and get property tax estimates from your local tax assessor's office or real estate agent. Insurance costs can be estimated by contacting insurance providers.</p>
         </section>
 
-        <!-- Understanding Mortgage Payments -->
+        <!-- Understanding Mortgages Section -->
         <section class="understanding-mortgages">
-            <h2>Understanding Mortgage Payments</h2>
+            <h2>Understanding Mortgages</h2>
+            <p>A mortgage is a loan used to purchase or maintain a home, land, or other types of real estate. The borrower agrees to pay the lender over time, typically in a series of regular payments that are divided into principal and interest. The property serves as collateral to secure the loan.</p>
             
-            <h3>What Makes Up a Mortgage Payment</h3>
-            <p>A typical mortgage payment consists of several components, often referred to as PITI:</p>
+            <h3>Key Mortgage Terms</h3>
             <ul>
-                <li><strong>Principal:</strong> The portion of your payment that reduces the loan balance.</li>
-                <li><strong>Interest:</strong> The cost of borrowing money, calculated based on your remaining loan balance.</li>
-                <li><strong>Taxes:</strong> Property taxes collected by your local government, often held in an escrow account.</li>
-                <li><strong>Insurance:</strong> Homeowners insurance that protects your property, and possibly private mortgage insurance (PMI) if your down payment is less than 20%.</li>
+                <li><strong>Principal:</strong> The original amount of the loan.</li>
+                <li><strong>Interest:</strong> The cost of borrowing money, expressed as a percentage.</li>
+                <li><strong>Down Payment:</strong> The initial upfront payment, typically expressed as a percentage of the purchase price.</li>
+                <li><strong>Loan-to-Value (LTV) Ratio:</strong> The ratio of the loan amount to the appraised value of the property.</li>
+                <li><strong>Private Mortgage Insurance (PMI):</strong> Insurance required for conventional loans with an LTV higher than 80%.</li>
+                <li><strong>Escrow:</strong> An account where funds are held for property taxes and insurance.</li>
+                <li><strong>Amortization:</strong> The process of paying off a loan with regular payments over time.</li>
             </ul>
-            <p>Some mortgage payments may also include homeowners association (HOA) fees if you live in a community with shared amenities or services.</p>
-            
-            <h3>How Mortgage Interest Works</h3>
-            <p>Mortgage interest is typically calculated monthly based on your outstanding loan balance. This process, known as amortization, means that in the early years of your mortgage, a larger portion of each payment goes toward interest rather than principal.</p>
-            <p>As you continue making payments, more of each payment goes toward reducing the principal, which in turn reduces the amount of interest you pay. This is why making extra payments toward your principal can significantly reduce the total interest you pay over the life of the loan.</p>
-            
-            <h3>Impact of Different Factors on Your Payment</h3>
-            <p><strong>Loan Term:</strong> A shorter loan term (like 15 years instead of 30) means higher monthly payments but significantly less interest paid over the life of the loan.</p>
-            <p><strong>Interest Rate:</strong> Even a small difference in interest rate can have a substantial impact on both your monthly payment and the total interest paid. For example, on a $300,000 30-year mortgage, the difference between a 4% and 4.5% interest rate is about $86 per month, or over $30,000 over the life of the loan.</p>
-            <p><strong>Down Payment:</strong> A larger down payment reduces your loan amount, which lowers your monthly payment and may eliminate the need for private mortgage insurance.</p>
-            <p><strong>Property Taxes and Insurance:</strong> These costs vary by location and property value, and can significantly impact your total monthly payment.</p>
         </section>
 
-        <!-- Strategies to Save on Your Mortgage -->
-        <section class="mortgage-strategies">
-            <h2>Strategies to Save on Your Mortgage</h2>
-            
-            <h3>Making Extra Payments</h3>
-            <p>One of the most effective ways to save money on your mortgage is to make extra payments toward the principal. Even small additional payments can make a big difference over time:</p>
-            <ul>
-                <li><strong>Monthly Extra Payments:</strong> Adding even $100 extra to your monthly payment can save thousands in interest and shorten your loan term by years.</li>
-                <li><strong>Bi-weekly Payments:</strong> Making half your monthly payment every two weeks results in 26 half-payments per year, or 13 full monthly payments instead of 12. This simple change can save you thousands over the life of your loan.</li>
-                <li><strong>Lump Sum Payments:</strong> Applying windfalls like tax refunds, bonuses, or inheritance directly to your mortgage principal can significantly reduce your loan term.</li>
-            </ul>
-            <p>Use the "Extra Monthly Payment" field in our calculator to see exactly how much you could save with different payment strategies.</p>
-            
-            <h3>Refinancing Considerations</h3>
-            <p>Refinancing your mortgage can be beneficial in several scenarios:</p>
-            <ul>
-                <li><strong>Lower Interest Rate:</strong> If rates have dropped since you obtained your mortgage, refinancing could lower your monthly payment and total interest costs.</li>
-                <li><strong>Shorter Loan Term:</strong> Refinancing from a 30-year to a 15-year mortgage can save substantial interest, though your monthly payment will likely increase.</li>
-                <li><strong>Eliminating PMI:</strong> If your home has appreciated in value, refinancing might allow you to eliminate private mortgage insurance.</li>
-            </ul>
-            <p>When considering refinancing, calculate your break-even point by dividing the total closing costs by your monthly savings. This tells you how many months it will take to recoup the costs of refinancing.</p>
-            
-            <h3>Choosing the Right Mortgage Term</h3>
-            <p>The loan term you choose has a significant impact on your financial situation:</p>
-            <ul>
-                <li><strong>30-Year Mortgage:</strong> Offers lower monthly payments, providing more flexibility for other financial goals. Best for those who prioritize cash flow or want to invest the difference elsewhere.</li>
-                <li><strong>15-Year Mortgage:</strong> Typically offers lower interest rates and builds equity faster, but with higher monthly payments. Best for those who can comfortably afford the higher payments and want to minimize interest costs.</li>
-                <li><strong>20-Year Mortgage:</strong> A middle ground that balances monthly payment amount with total interest savings.</li>
-            </ul>
-            <p>Use our calculator to compare different loan terms and see which option best fits your financial goals.</p>
-        </section>
-
-        <!-- Common Mortgage Types -->
+        <!-- Mortgage Types Section -->
         <section class="mortgage-types">
-            <h2>Common Mortgage Types</h2>
+            <h2>Types of Mortgages</h2>
             
             <div class="mortgage-type">
-                <h3>Fixed-Rate Mortgages</h3>
-                <p>Loans with an interest rate that remains constant throughout the entire term of the loan.</p>
-                <p><strong>Pros:</strong> Predictable payments, protection from interest rate increases, easier budgeting</p>
-                <p><strong>Cons:</strong> Higher initial interest rates compared to ARMs, no automatic benefit if market rates drop</p>
-                <p><strong>Best for:</strong> Long-term homeowners, those who prefer payment stability, buyers during periods of low interest rates</p>
+                <h3>Fixed-Rate Mortgage</h3>
+                <p>A fixed-rate mortgage has an interest rate that remains the same for the entire term of the loan. This provides payment stability and makes budgeting easier, as your principal and interest payment will never change.</p>
+                <p><strong>Best for:</strong> Homebuyers who plan to stay in their home for a long time and want predictable payments.</p>
             </div>
             
             <div class="mortgage-type">
-                <h3>Adjustable-Rate Mortgages (ARMs)</h3>
-                <p>Loans with an interest rate that changes periodically based on market conditions, typically after an initial fixed-rate period.</p>
-                <p><strong>Pros:</strong> Lower initial interest rates, potential for lower payments if rates decrease, good for short-term homeownership</p>
-                <p><strong>Cons:</strong> Payment uncertainty after the fixed period, potential for significant payment increases if rates rise</p>
-                <p><strong>Best for:</strong> Those planning to move or refinance before the rate adjusts, buyers during periods of high interest rates</p>
+                <h3>Adjustable-Rate Mortgage (ARM)</h3>
+                <p>An adjustable-rate mortgage starts with a fixed interest rate for a specified period (typically 3, 5, 7, or 10 years), after which the rate adjusts periodically based on market indices. ARMs are usually expressed as two numbers, such as 5/1, where the first number represents the initial fixed period in years, and the second number indicates how often the rate adjusts afterward (in this case, annually).</p>
+                <p><strong>Best for:</strong> Homebuyers who plan to sell or refinance before the initial fixed period ends, or those who can handle payment changes and want to take advantage of lower initial rates.</p>
             </div>
             
             <div class="mortgage-type">
-                <h3>FHA Loans</h3>
-                <p>Loans insured by the Federal Housing Administration, designed for borrowers with lower credit scores or smaller down payments.</p>
-                <p><strong>Pros:</strong> Down payments as low as 3.5%, more lenient credit requirements, potentially lower interest rates</p>
-                <p><strong>Cons:</strong> Mandatory mortgage insurance for the life of the loan in most cases, higher overall costs long-term</p>
-                <p><strong>Best for:</strong> First-time homebuyers, those with limited savings for down payment, borrowers with lower credit scores</p>
+                <h3>FHA Loan</h3>
+                <p>FHA loans are insured by the Federal Housing Administration and designed for lower-income borrowers. They typically require a lower down payment (as low as 3.5%) and have more lenient credit requirements than conventional loans.</p>
+                <p><strong>Best for:</strong> First-time homebuyers or those with limited savings for a down payment or lower credit scores.</p>
             </div>
             
             <div class="mortgage-type">
-                <h3>VA Loans</h3>
-                <p>Loans guaranteed by the Department of Veterans Affairs for eligible service members, veterans, and surviving spouses.</p>
-                <p><strong>Pros:</strong> No down payment required, no private mortgage insurance, competitive interest rates</p>
-                <p><strong>Cons:</strong> VA funding fee required (though waived for some), limited to eligible military personnel</p>
-                <p><strong>Best for:</strong> Eligible veterans and service members who want to minimize upfront costs</p>
+                <h3>VA Loan</h3>
+                <p>VA loans are guaranteed by the Department of Veterans Affairs for service members, veterans, and eligible surviving spouses. They often require no down payment and have competitive interest rates.</p>
+                <p><strong>Best for:</strong> Eligible veterans and service members who want to maximize their purchasing power.</p>
             </div>
             
             <div class="mortgage-type">
-                <h3>Jumbo Loans</h3>
-                <p>Loans that exceed the conforming loan limits set by Fannie Mae and Freddie Mac, used for higher-priced properties.</p>
-                <p><strong>Pros:</strong> Ability to finance expensive properties, potentially competitive rates for well-qualified borrowers</p>
-                <p><strong>Cons:</strong> Stricter qualification requirements, larger down payments typically required, potentially higher interest rates</p>
-                <p><strong>Best for:</strong> Buyers of high-value properties, those with excellent credit and substantial income</p>
+                <h3>USDA Loan</h3>
+                <p>USDA loans are guaranteed by the U.S. Department of Agriculture for rural and suburban homebuyers. They often require no down payment and offer competitive interest rates.</p>
+                <p><strong>Best for:</strong> Moderate-income buyers purchasing homes in eligible rural or suburban areas.</p>
+            </div>
+            
+            <div class="mortgage-type">
+                <h3>Jumbo Loan</h3>
+                <p>Jumbo loans exceed the conforming loan limits set by Fannie Mae and Freddie Mac. They typically have stricter credit requirements and may require a larger down payment.</p>
+                <p><strong>Best for:</strong> Buyers purchasing high-value properties that exceed conforming loan limits.</p>
             </div>
         </section>
 
-        <!-- Mortgage Calculator Limitations -->
+        <!-- Calculator Limitations Section -->
         <section class="calculator-limitations">
-            <h2>Mortgage Calculator Limitations</h2>
-            <p>While our mortgage calculator provides accurate estimates based on the information you input, there are several factors it doesn't account for:</p>
+            <h2>Calculator Limitations</h2>
+            <p>While our mortgage calculator provides a good estimate of your monthly payments and overall costs, it has some limitations:</p>
             <ul>
-                <li><strong>Closing costs and fees:</strong> These upfront expenses typically range from 2-5% of the loan amount and are not included in the payment calculations.</li>
-                <li><strong>Mortgage insurance variations:</strong> PMI costs vary based on credit score, loan-to-value ratio, and other factors that may differ from our estimates.</li>
-                <li><strong>Property tax changes:</strong> Property taxes often increase over time, which would affect your monthly payment.</li>
-                <li><strong>Insurance premium adjustments:</strong> Homeowners insurance premiums may change annually.</li>
-                <li><strong>Adjustable-rate changes:</strong> For ARMs, future interest rate adjustments cannot be precisely predicted.</li>
-                <li><strong>Special loan programs:</strong> Some government or lender-specific programs may have unique terms not reflected in our calculations.</li>
+                <li>It assumes a fixed interest rate for the entire loan term.</li>
+                <li>It doesn't account for potential changes in property taxes or insurance premiums over time.</li>
+                <li>It doesn't include closing costs, which typically range from 2% to 5% of the loan amount.</li>
+                <li>It doesn't factor in potential tax benefits from mortgage interest deductions.</li>
+                <li>It assumes regular, consistent extra payments if that option is selected.</li>
+                <li>Actual loan terms and rates may vary based on your credit score, debt-to-income ratio, and other factors.</li>
             </ul>
-            <p>The results should be considered estimates and used for planning purposes only. For the most accurate information specific to your situation, consult with mortgage lenders, financial advisors, or real estate professionals.</p>
+            <p>For the most accurate information, consult with a mortgage lender or financial advisor.</p>
         </section>
 
         <!-- FAQ Section -->
-        <section class="faq-section" id="mortgage-calculator-faqs">
+        <section class="faq-section">
             <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <h3 class="faq-question">How is mortgage interest calculated?</h3>
-                <div class="faq-answer">
-                    <p>Mortgage interest is typically calculated monthly based on the outstanding principal balance. Each month, a portion of your payment goes toward the principal, and the rest goes toward interest. As you pay down the principal, more of each payment goes toward the principal and less toward interest. This process is called amortization. The formula used is: Monthly Interest = (Annual Interest Rate ÷ 12) × Outstanding Principal Balance.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <h3 class="faq-question">What's included in a monthly mortgage payment?</h3>
-                <div class="faq-answer">
-                    <p>A typical monthly mortgage payment includes four components, often referred to as PITI: Principal (the amount that goes toward paying off the loan balance), Interest (the cost of borrowing the money), Taxes (property taxes collected by your local government), and Insurance (homeowners insurance and possibly private mortgage insurance). Some payments may also include homeowners association (HOA) fees if applicable to your property.</p>
-                </div>
-            </div>
             
             <div class="faq-item">
                 <h3 class="faq-question">How much house can I afford?</h3>
                 <div class="faq-answer">
-                    <p>The amount of house you can afford depends on several factors, including your income, existing debt, down payment, credit score, and current interest rates. A common guideline is that your monthly housing costs (including mortgage, taxes, and insurance) should not exceed 28% of your gross monthly income, and your total debt payments (including your mortgage and all other debt) should not exceed 36% of your gross monthly income. For a more personalized estimate, use our <a href="/finance/mortgage/affordability-calculator/">Mortgage Affordability Calculator</a>.</p>
+                    <p>A common rule of thumb is that your monthly housing costs (including mortgage payment, property taxes, insurance, and HOA fees) should not exceed 28% of your gross monthly income. Additionally, your total debt payments (including housing costs, car loans, student loans, etc.) should not exceed 36% of your gross monthly income.</p>
+                    <p>For a more personalized assessment, use our <a href="/finance/mortgage/affordability-calculator/">Mortgage Affordability Calculator</a>.</p>
                 </div>
             </div>
             
             <div class="faq-item">
-                <h3 class="faq-question">How does making extra payments affect my mortgage?</h3>
+                <h3 class="faq-question">How much should I put down on a house?</h3>
                 <div class="faq-answer">
-                    <p>Making extra payments toward your mortgage principal can significantly reduce the total interest you pay over the life of the loan and help you pay off your mortgage earlier. Even small additional payments can make a big difference over time. For example, paying an extra $100 per month on a $250,000, 30-year mortgage at 4% interest could help you pay off your loan about 4 years earlier and save approximately $30,000 in interest. Our calculator allows you to see exactly how much you can save with different extra payment amounts.</p>
+                    <p>Traditionally, a 20% down payment is recommended as it allows you to avoid private mortgage insurance (PMI). However, many loan programs accept lower down payments:</p>
+                    <ul>
+                        <li>Conventional loans: As low as 3% for first-time homebuyers</li>
+                        <li>FHA loans: As low as 3.5%</li>
+                        <li>VA and USDA loans: Often 0% down</li>
+                    </ul>
+                    <p>Consider your financial situation, including savings, income stability, and how long you plan to stay in the home when deciding on a down payment amount.</p>
                 </div>
             </div>
             
             <div class="faq-item">
-                <h3 class="faq-question">What is an amortization schedule?</h3>
+                <h3 class="faq-question">What is PMI and how can I avoid it?</h3>
                 <div class="faq-answer">
-                    <p>An amortization schedule is a table that shows the breakdown of each mortgage payment into principal and interest over the life of the loan. It details how much of each payment goes toward reducing the principal balance and how much goes toward interest. The schedule also shows the remaining loan balance after each payment. In the early years of a mortgage, a larger portion of each payment goes toward interest, while in later years, more goes toward principal. This schedule helps you understand how your loan balance decreases over time.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <h3 class="faq-question">How accurate is this mortgage calculator?</h3>
-                <div class="faq-answer">
-                    <p>Our mortgage calculator uses standard financial formulas to provide accurate estimates based on the information you input. It accounts for principal, interest, property taxes, homeowners insurance, and optional inputs like PMI and HOA fees. However, the results should be considered estimates and may not reflect the exact terms offered by specific lenders. Actual loan terms, interest rates, and fees can vary based on your credit score, loan-to-value ratio, and other factors. For the most accurate information, consult with mortgage lenders directly.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <h3 class="faq-question">What is PMI and when do I need to pay it?</h3>
-                <div class="faq-answer">
-                    <p>Private Mortgage Insurance (PMI) is an insurance policy that protects the lender if you default on your mortgage payments. PMI is typically required when you make a down payment of less than 20% on a conventional loan. The cost of PMI varies based on your loan amount, credit score, and down payment, but it generally ranges from 0.3% to 1.5% of your loan amount annually. PMI can be removed once you reach 20% equity in your home based on the original purchase price, or you can request cancellation when you reach 22% equity. FHA loans have their own mortgage insurance requirements that differ from conventional loans.</p>
+                    <p>Private Mortgage Insurance (PMI) is insurance that protects the lender if you default on your loan. It's typically required for conventional loans when the down payment is less than 20% of the home's purchase price.</p>
+                    <p>To avoid PMI, you can:</p>
+                    <ul>
+                        <li>Make a down payment of at least 20%</li>
+                        <li>Choose a government-backed loan like a VA loan, which doesn't require PMI</li>
+                        <li>Use a piggyback loan (taking out a second loan to cover part of the down payment)</li>
+                        <li>Request PMI cancellation once you reach 20% equity in your home</li>
+                    </ul>
                 </div>
             </div>
             
             <div class="faq-item">
                 <h3 class="faq-question">Should I choose a 15-year or 30-year mortgage?</h3>
                 <div class="faq-answer">
-                    <p>The choice between a 15-year and 30-year mortgage depends on your financial goals and situation:</p>
-                    <p>A 15-year mortgage typically offers:</p>
-                    <ul>
-                        <li>Lower interest rates</li>
-                        <li>Faster equity building</li>
-                        <li>Less total interest paid over the life of the loan</li>
-                        <li>Higher monthly payments</li>
-                    </ul>
-                    <p>A 30-year mortgage typically offers:</p>
-                    <ul>
-                        <li>Lower monthly payments</li>
-                        <li>More flexibility for other financial goals</li>
-                        <li>Potential to invest the difference elsewhere</li>
-                        <li>Easier qualification due to lower payment-to-income ratio</li>
-                    </ul>
-                    <p>If you can comfortably afford the higher payments of a 15-year mortgage, you'll save significantly on interest. If you prefer lower monthly payments or want to maximize cash flow for other investments or expenses, a 30-year mortgage might be better. Our calculator allows you to compare different loan terms to see which option works best for your situation.</p>
+                    <p>A 15-year mortgage typically offers a lower interest rate but higher monthly payments. You'll build equity faster and pay significantly less interest over the life of the loan.</p>
+                    <p>A 30-year mortgage has lower monthly payments but a higher interest rate. This gives you more flexibility in your monthly budget but costs more in total interest over time.</p>
+                    <p>Consider your financial goals, income stability, and other financial obligations when choosing a loan term. You can also take a 30-year loan and make extra payments to pay it off sooner without being locked into the higher payment of a 15-year loan.</p>
                 </div>
             </div>
             
             <div class="faq-item">
-                <h3 class="faq-question">How do property taxes and insurance affect my mortgage payment?</h3>
+                <h3 class="faq-question">How do extra payments affect my mortgage?</h3>
                 <div class="faq-answer">
-                    <p>Property taxes and homeowners insurance can significantly impact your total monthly mortgage payment. In many cases, these costs are collected monthly by your mortgage servicer and held in an escrow account, from which the servicer pays your property tax bills and insurance premiums when they're due. This ensures these important expenses are paid on time. Property taxes vary widely by location, typically ranging from 0.5% to 2.5% of your home's assessed value annually. Homeowners insurance costs also vary based on location, home value, coverage levels, and other factors. Together, these expenses can add hundreds of dollars to your monthly payment, which is why it's important to include them when calculating your total housing costs.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <h3 class="faq-question">Can I use this calculator for refinancing?</h3>
-                <div class="faq-answer">
-                    <p>Yes, our mortgage calculator can be used to evaluate refinancing options. To do so:</p>
-                    <ol>
-                        <li>Enter your current home value instead of purchase price</li>
-                        <li>Enter your desired loan amount (typically your current mortgage balance, unless you're cashing out equity)</li>
-                        <li>Input the new interest rate and loan term you're considering</li>
-                        <li>Compare the new monthly payment and total interest to your current mortgage</li>
-                    </ol>
-                    <p>This will help you determine if refinancing would save you money in monthly payments or total interest over the life of the loan. For a more detailed refinancing analysis, including break-even calculations that account for closing costs, use our dedicated <a href="/finance/mortgage/refinance-calculator/">Refinance Calculator</a>.</p>
+                    <p>Making extra payments toward your mortgage principal can significantly reduce the total interest paid and shorten your loan term. Even small additional amounts can make a big difference over time.</p>
+                    <p>For example, on a $300,000, 30-year mortgage at 4.5%, paying an extra $100 per month could save you over $30,000 in interest and help you pay off your loan about 4 years earlier.</p>
+                    <p>Use the "Extra Monthly Payment" option in our calculator to see how additional payments would affect your specific loan.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Related Calculators -->
+        <!-- Related Calculators Section -->
         <section class="related-calculators">
             <h2>Related Calculators</h2>
             <div class="calculator-grid">
                 <div class="calculator-card">
                     <div class="calculator-icon"><i class="fas fa-home"></i></div>
                     <h3><a href="/finance/mortgage/affordability-calculator/">Mortgage Affordability Calculator</a></h3>
-                    <p>Determine how much house you can afford based on your income, debt, and down payment.</p>
+                    <p>Determine how much house you can afford based on your income, expenses, and down payment.</p>
                 </div>
+                
                 <div class="calculator-card">
-                    <div class="calculator-icon"><i class="fas fa-sync-alt"></i></div>
-                    <h3><a href="/finance/mortgage/refinance-calculator/">Refinance Calculator</a></h3>
-                    <p>Evaluate if refinancing your mortgage makes financial sense and calculate your break-even point.</p>
+                    <div class="calculator-icon"><i class="fas fa-exchange-alt"></i></div>
+                    <h3><a href="/finance/mortgage/refinance-calculator/">Mortgage Refinance Calculator</a></h3>
+                    <p>See if refinancing your mortgage makes financial sense and how much you could save.</p>
                 </div>
+                
                 <div class="calculator-card">
                     <div class="calculator-icon"><i class="fas fa-plus-circle"></i></div>
                     <h3><a href="/finance/mortgage/extra-payment-calculator/">Extra Payment Calculator</a></h3>
-                    <p>See how making additional payments can reduce your mortgage term and save on interest.</p>
+                    <p>Calculate how much you can save by making extra payments toward your mortgage principal.</p>
                 </div>
+                
                 <div class="calculator-card">
-                    <div class="calculator-icon"><i class="fas fa-balance-scale"></i></div>
-                    <h3><a href="/finance/mortgage/loan-comparison-calculator/">Loan Comparison Calculator</a></h3>
-                    <p>Compare different mortgage options side by side to find the best loan for your needs.</p>
+                    <div class="calculator-icon"><i class="fas fa-percentage"></i></div>
+                    <h3><a href="/finance/loan/amortization-calculator/">Loan Amortization Calculator</a></h3>
+                    <p>See a detailed breakdown of your loan payments over time, including principal and interest.</p>
                 </div>
             </div>
         </section>
@@ -567,8 +496,8 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
+            <div class="footer-top">
+                <div class="footer-section">
                     <h4>Categories</h4>
                     <ul>
                         <li><a href="/finance/">Finance</a></li>
@@ -580,17 +509,19 @@
                         <li><a href="/lifestyle/">Lifestyle</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
+                
+                <div class="footer-section">
                     <h4>Popular Calculators</h4>
                     <ul>
                         <li><a href="/finance/mortgage/mortgage-calculator/">Mortgage Calculator</a></li>
-                        <li><a href="/finance/investment/compound-interest-calculator/">Compound Interest</a></li>
-                        <li><a href="/health/fitness/bmi-calculator/">BMI Calculator</a></li>
                         <li><a href="/finance/loan/loan-calculator/">Loan Calculator</a></li>
-                        <li><a href="/math/percentage/percentage-calculator/">Percentage Calculator</a></li>
+                        <li><a href="/health/bmi-calculator/">BMI Calculator</a></li>
+                        <li><a href="/conversions/currency-converter/">Currency Converter</a></li>
+                        <li><a href="/math/percentage-calculator/">Percentage Calculator</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
+                
+                <div class="footer-section">
                     <h4>About</h4>
                     <ul>
                         <li><a href="/about/">About Us</a></li>
@@ -600,42 +531,81 @@
                         <li><a href="/sitemap/">Sitemap</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h4>Connect</h4>
-                    <ul class="social-links">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-                        <li><a href="#"><i class="fab fa-pinterest"></i> Pinterest</a></li>
-                    </ul>
-                    <div class="newsletter">
-                        <h4>Newsletter</h4>
-                        <p>Get the latest calculator updates and financial tips.</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Your email address" required>
-                            <button type="submit">Subscribe</button>
-                        </form>
+                
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
                     </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 CalcHub. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="/privacy/">Privacy</a>
                     <a href="/terms/">Terms</a>
-                    <a href="/contact/">Contact</a>
+                    <a href="/sitemap/">Sitemap</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript Files -->
-    <script src="/js/dark-mode.js"></script>
-    <script src="/js/mobile-menu.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/chart-mini.js"></script>
-    <script src="/js/mortgage-calculator.js"></script>
-    <script src="/js/schema-markup.js"></script>
-    <script src="/js/analytics-tracking.js"></script>
+    <!-- JavaScript -->
+    <script src="https://freecalchub.com/js/dark-mode.js"></script>
+    <script src="https://freecalchub.com/js/mobile-menu.js"></script>
+    <script src="https://freecalchub.com/js/main.js"></script>
+    <script>
+        // Set current date as default for loan start date
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            document.getElementById('loan-start-date').value = `${year}-${month}`;
+            
+            // Connect down payment amount and percentage fields
+            const homePriceInput = document.getElementById('home-price');
+            const downPaymentAmountInput = document.getElementById('down-payment-amount');
+            const downPaymentPercentInput = document.getElementById('down-payment-percent');
+            
+            // Update down payment amount when percentage changes
+            downPaymentPercentInput.addEventListener('input', function() {
+                const homePrice = parseFloat(homePriceInput.value) || 0;
+                const downPaymentPercent = parseFloat(this.value) || 0;
+                const downPaymentAmount = (homePrice * downPaymentPercent / 100).toFixed(0);
+                downPaymentAmountInput.value = downPaymentAmount;
+            });
+            
+            // Update down payment percentage when amount changes
+            downPaymentAmountInput.addEventListener('input', function() {
+                const homePrice = parseFloat(homePriceInput.value) || 0;
+                const downPaymentAmount = parseFloat(this.value) || 0;
+                if (homePrice > 0) {
+                    const downPaymentPercent = (downPaymentAmount / homePrice * 100).toFixed(1);
+                    downPaymentPercentInput.value = downPaymentPercent;
+                }
+            });
+            
+            // Update down payment amount when home price changes
+            homePriceInput.addEventListener('input', function() {
+                const homePrice = parseFloat(this.value) || 0;
+                const downPaymentPercent = parseFloat(downPaymentPercentInput.value) || 0;
+                const downPaymentAmount = (homePrice * downPaymentPercent / 100).toFixed(0);
+                downPaymentAmountInput.value = downPaymentAmount;
+            });
+            
+            // Initialize FAQ accordion
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    faqItem.classList.toggle('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
