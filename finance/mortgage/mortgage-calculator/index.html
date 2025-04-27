@@ -33,6 +33,13 @@
     <!-- Additional CSS to fix header and layout issues -->
     <style>
         /* Fix header container alignment */
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
         .navbar .container {
             display: flex;
             justify-content: space-between;
@@ -43,20 +50,110 @@
             padding: 0 15px;
         }
         
+        /* Fix logo styling */
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+        
+        .navbar-brand img.logo {
+            height: 40px;
+            width: auto;
+        }
+        
         /* Fix navigation menu display */
         .navbar-nav {
             display: flex;
             list-style: none;
             margin: 0;
             padding: 0;
+            gap: 1.5rem;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            color: #333;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #4a6da7;
+        }
+        
+        /* Fix navigation container */
+        .nav-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Fix theme toggle container */
+        .theme-toggle-container {
+            display: flex;
+            align-items: center;
+            margin-left: 1.5rem;
+        }
+        
+        /* Fix dark mode toggle */
+        .dark-mode-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: #333;
+            padding: 0.25rem;
+            position: relative;
+            z-index: 1;
         }
         
         /* Fix breadcrumb display */
+        .breadcrumbs {
+            background-color: #f8f9fa;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
         .breadcrumb {
             display: flex;
+            flex-wrap: wrap;
             list-style: none;
             margin: 0;
             padding: 0;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: "/";
+            display: inline-block;
+            margin: 0 0.5rem;
+            color: #6c757d;
+            font-weight: normal;
+        }
+        
+        .breadcrumb-item a {
+            color: #4a6da7;
+            text-decoration: none;
+            font-weight: normal;
+        }
+        
+        .breadcrumb-item.active {
+            color: #6c757d;
+            font-weight: normal;
         }
         
         /* Ensure calculator form uses grid layout */
@@ -93,20 +190,24 @@
                 <a href="/" class="navbar-brand">
                     <img src="https://freecalchub.com/img/calchub-logo.svg" alt="CalcHub Logo" class="logo">
                 </a>
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a href="/finance/" class="nav-link">Finance</a></li>
-                    <li class="nav-item"><a href="/math/" class="nav-link">Math</a></li>
-                    <li class="nav-item"><a href="/health/" class="nav-link">Health</a></li>
-                    <li class="nav-item"><a href="/conversions/" class="nav-link">Conversions</a></li>
-                    <li class="nav-item"><a href="/date-time/" class="nav-link">Date & Time</a></li>
-                    <li class="nav-item"><a href="/business/" class="nav-link">Business</a></li>
-                    <li class="nav-item"><a href="/lifestyle/" class="nav-link">Lifestyle</a></li>
-                    <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
-                </ul>
-                <button class="dark-mode-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                </button>
+                <div class="nav-container">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="/finance/" class="nav-link">Finance</a></li>
+                        <li class="nav-item"><a href="/math/" class="nav-link">Math</a></li>
+                        <li class="nav-item"><a href="/health/" class="nav-link">Health</a></li>
+                        <li class="nav-item"><a href="/conversions/" class="nav-link">Conversions</a></li>
+                        <li class="nav-item"><a href="/date-time/" class="nav-link">Date & Time</a></li>
+                        <li class="nav-item"><a href="/business/" class="nav-link">Business</a></li>
+                        <li class="nav-item"><a href="/lifestyle/" class="nav-link">Lifestyle</a></li>
+                        <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
+                    </ul>
+                    <div class="theme-toggle-container">
+                        <button class="dark-mode-toggle" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-sun"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
@@ -174,7 +275,7 @@
                         <label for="down-payment-amount">Down Payment</label>
                         <div class="input-group">
                             <span class="currency-symbol">$</span>
-                            <input type="number" id="down-payment-amount" class="form-control" value="60000" min="0" step="1000" required>
+                            <input type="number" id="down-payment-amount" class="form-control" value="60000" min="0" step="1" required>
                         </div>
                     </div>
 
