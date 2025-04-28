@@ -1,0 +1,48 @@
+/* Page Alignment Fix CSS
+ * This CSS file fixes the page alignment issue by ensuring content is properly centered
+ */
+
+/* Center the main content container */
+html body main#main-content.main-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    display: block !important;
+}
+
+html body main#main-content.main-content .content-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 2rem 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Fix form layout to use two columns on desktop */
+@media (min-width: 768px) {
+    html body main#main-content.main-content .calculator-container form#mortgage-calculator-form.calculator-form .form-group.half-width {
+        width: 50% !important;
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        float: left !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* Clear floats */
+html body main#main-content.main-content .calculator-container form#mortgage-calculator-form.calculator-form::after {
+    content: "" !important;
+    display: table !important;
+    clear: both !important;
+}
+
+/* Ensure form buttons span full width */
+html body main#main-content.main-content .calculator-container form#mortgage-calculator-form.calculator-form .form-buttons {
+    width: 100% !important;
+    clear: both !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    padding: 0 15px !important;
+    margin-top: 1.5rem !important;
+}

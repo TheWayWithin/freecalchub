@@ -45,10 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeForm();
     
     // Force initial calculation to ensure results are shown
+    /*
     setTimeout(function() {
-        console.log('Forcing initial calculation');
+        console.log("Forcing initial calculation");
         calculateMortgage();
     }, 500);
+    */
 });
 
 function ensureResultsContainerExists() {
