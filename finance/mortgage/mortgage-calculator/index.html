@@ -4,26 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mortgage Calculator | CalcHub</title>
+    <!-- Global styles -->
     <link rel="stylesheet" href="/css/styles.css">
+    <!-- General calculator styles -->
     <link rel="stylesheet" href="/css/calculator.css">
+    <!-- Specific mortgage calculator styles -->
     <link rel="stylesheet" href="css/mortgage-calculator.css">
-    <!-- Replace with definitive CSS fix -->
-    <link rel="stylesheet" href="css/definitive-calculator-fix.css">
-    <!-- Add Font Awesome for icons -->
+    <!-- Page alignment and form layout fixes -->
+    <link rel="stylesheet" href="css/page-alignment-fix.css">
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Specific mortgage calculator script -->
     <script src="js/mortgage-calculator.js" defer></script>
-    <!-- Keep refined JS fix -->
+    <!-- Amortization table script -->
     <script src="js/refined-amortization-fix.js" defer></script>
+    <!-- Global script (for dark mode, mobile menu) -->
+    <script src="/js/main.js" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
     
-    <header class="site-header" style="background-color: #4a76a8 !important; color: white !important;">
+    <!-- Removed inline style from header -->
+    <header class="site-header">
         <div class="header-container">
             <div class="logo-container">
-                <!-- Corrected logo path -->
+                <!-- Removed inline style from logo -->
                 <a href="/" class="logo">
-                    <img src="/images/logo.svg" alt="CalcHub Logo" style="display: block !important; height: 40px !important; width: auto !important; visibility: visible !important; opacity: 1 !important;">
+                    <img src="/images/logo.svg" alt="CalcHub Logo">
                 </a>
             </div>
             
@@ -40,7 +47,8 @@
                 </ul>
             </nav>
             
-            <div class="header-controls" style="display: flex !important; align-items: center !important;">
+            <!-- Removed inline style from header controls -->
+            <div class="header-controls">
                 <button id="dark-mode-toggle" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
                     <i class="fas fa-sun"></i>
@@ -80,14 +88,15 @@
     
     <div class="navigation-ribbon">
         <div class="navigation-ribbon-container">
-            <a href="/finance/mortgage/"><i class="fas fa-home" style="display: inline-block !important; margin-right: 0.5rem !important; color: white !important; visibility: visible !important; opacity: 1 !important;"></i>Mortgage</a>
-            <a href="/finance/loan/"><i class="fas fa-file-invoice-dollar" style="display: inline-block !important; margin-right: 0.5rem !important; color: white !important; visibility: visible !important; opacity: 1 !important;"></i>Loan</a>
-            <a href="/finance/investment/"><i class="fas fa-chart-line" style="display: inline-block !important; margin-right: 0.5rem !important; color: white !important; visibility: visible !important; opacity: 1 !important;"></i>Investment</a>
-            <a href="/finance/retirement/"><i class="fas fa-umbrella-beach" style="display: inline-block !important; margin-right: 0.5rem !important; color: white !important; visibility: visible !important; opacity: 1 !important;"></i>Retirement</a>
-            <a href="/finance/budgeting/"><i class="fas fa-wallet" style="display: inline-block !important; margin-right: 0.5rem !important; color: white !important; visibility: visible !important; opacity: 1 !important;"></i>Budgeting</a>
-            <a href="/finance/savings/"><i class="fas fa-piggy-bank" style="display: inline-block !important; margin-right: 0.5rem !important; color: white !important; visibility: visible !important; opacity: 1 !important;"></i>Savings</a>
-            <a href="/finance/cryptocurrency/"><i class="fas fa-coins" style="display: inline-block !important; margin-right: 0.5rem !important; color: white !important; visibility: visible !important; opacity: 1 !important;"></i>Cryptocurrency</a>
-            <a href="/finance/tax/"><i class="fas fa-receipt" style="display: inline-block !important; margin-right: 0.5rem !important; color: white !important; visibility: visible !important; opacity: 1 !important;"></i>Tax</a>
+            <!-- Removed inline styles from icons -->
+            <a href="/finance/mortgage/"><i class="fas fa-home"></i>Mortgage</a>
+            <a href="/finance/loan/"><i class="fas fa-file-invoice-dollar"></i>Loan</a>
+            <a href="/finance/investment/"><i class="fas fa-chart-line"></i>Investment</a>
+            <a href="/finance/retirement/"><i class="fas fa-umbrella-beach"></i>Retirement</a>
+            <a href="/finance/budgeting/"><i class="fas fa-wallet"></i>Budgeting</a>
+            <a href="/finance/savings/"><i class="fas fa-piggy-bank"></i>Savings</a>
+            <a href="/finance/cryptocurrency/"><i class="fas fa-coins"></i>Cryptocurrency</a>
+            <a href="/finance/tax/"><i class="fas fa-receipt"></i>Tax</a>
         </div>
     </div>
     
@@ -100,7 +109,8 @@
             </p>
             
             <div class="calculator-container">
-                <form id="mortgage-calculator-form" class="calculator-form" style="display: flex !important; flex-wrap: wrap !important; margin-right: -15px !important; margin-left: -15px !important;">
+                <!-- Removed inline style from form -->
+                <form id="mortgage-calculator-form" class="calculator-form">
                     <div class="form-group">
                         <label for="country">Select Country:</label>
                         <select id="country" name="country" class="form-control">
@@ -111,8 +121,8 @@
                         </select>
                     </div>
                     
-                    <!-- Apply inline styles for half-width on desktop -->
-                    <div class="form-group half-width" style="padding-right: 15px !important; padding-left: 15px !important; box-sizing: border-box !important; width: 100% !important;" data-desktop-style="width: 50% !important; flex: 0 0 50% !important; max-width: 50% !important;">
+                    <!-- Removed inline styles and data-desktop-style attributes -->
+                    <div class="form-group half-width">
                         <label for="home_price">Home Price</label>
                         <div class="input-group">
                             <span class="input-group-text">$</span>
@@ -120,12 +130,12 @@
                         </div>
                     </div>
                     
-                    <div class="form-group half-width" style="padding-right: 15px !important; padding-left: 15px !important; box-sizing: border-box !important; width: 100% !important;" data-desktop-style="width: 50% !important; flex: 0 0 50% !important; max-width: 50% !important;">
+                    <div class="form-group half-width">
                         <label for="loan_start_date">Loan Start Date</label>
                         <input type="date" id="loan_start_date" name="loan_start_date" class="form-control">
                     </div>
                     
-                    <div class="form-group half-width" style="padding-right: 15px !important; padding-left: 15px !important; box-sizing: border-box !important; width: 100% !important;" data-desktop-style="width: 50% !important; flex: 0 0 50% !important; max-width: 50% !important;">
+                    <div class="form-group half-width">
                         <label for="down_payment">Down Payment</label>
                         <div class="input-group">
                             <span class="input-group-text">$</span>
@@ -133,7 +143,7 @@
                         </div>
                     </div>
                     
-                    <div class="form-group half-width" style="padding-right: 15px !important; padding-left: 15px !important; box-sizing: border-box !important; width: 100% !important;" data-desktop-style="width: 50% !important; flex: 0 0 50% !important; max-width: 50% !important;">
+                    <div class="form-group half-width">
                         <label for="down_payment_percent">Down Payment %</label>
                         <div class="input-group">
                             <input type="text" id="down_payment_percent" name="down_payment_percent" class="form-control" value="20">
@@ -141,7 +151,7 @@
                         </div>
                     </div>
                     
-                    <div class="form-group half-width" style="padding-right: 15px !important; padding-left: 15px !important; box-sizing: border-box !important; width: 100% !important;" data-desktop-style="width: 50% !important; flex: 0 0 50% !important; max-width: 50% !important;">
+                    <div class="form-group half-width">
                         <label for="loan_term">Loan Term</label>
                         <select id="loan_term" name="loan_term" class="form-control">
                             <option value="30">30 years</option>
@@ -151,7 +161,7 @@
                         </select>
                     </div>
                     
-                    <div class="form-group half-width" style="padding-right: 15px !important; padding-left: 15px !important; box-sizing: border-box !important; width: 100% !important;" data-desktop-style="width: 50% !important; flex: 0 0 50% !important; max-width: 50% !important;">
+                    <div class="form-group half-width">
                         <label for="interest_rate">Interest Rate</label>
                         <div class="input-group">
                             <input type="text" id="interest_rate" name="interest_rate" class="form-control" value="4.5">
@@ -159,7 +169,7 @@
                         </div>
                     </div>
                     
-                    <div class="form-group half-width" style="padding-right: 15px !important; padding-left: 15px !important; box-sizing: border-box !important; width: 100% !important;" data-desktop-style="width: 50% !important; flex: 0 0 50% !important; max-width: 50% !important;">
+                    <div class="form-group half-width">
                         <label for="property_tax">Annual Property Tax</label>
                         <div class="input-group">
                             <span class="input-group-text">$</span>
@@ -167,7 +177,7 @@
                         </div>
                     </div>
                     
-                    <div class="form-group half-width" style="padding-right: 15px !important; padding-left: 15px !important; box-sizing: border-box !important; width: 100% !important;" data-desktop-style="width: 50% !important; flex: 0 0 50% !important; max-width: 50% !important;">
+                    <div class="form-group half-width">
                         <label for="home_insurance">Annual Home Insurance</label>
                         <div class="input-group">
                             <span class="input-group-text">$</span>
@@ -175,7 +185,7 @@
                         </div>
                     </div>
                     
-                    <div class="form-group half-width" style="padding-right: 15px !important; padding-left: 15px !important; box-sizing: border-box !important; width: 100% !important;" data-desktop-style="width: 50% !important; flex: 0 0 50% !important; max-width: 50% !important;">
+                    <div class="form-group half-width">
                         <label for="hoa_fees">Monthly HOA Fees</label>
                         <div class="input-group">
                             <span class="input-group-text">$</span>
@@ -183,7 +193,7 @@
                         </div>
                     </div>
                     
-                    <div class="form-group half-width" style="padding-right: 15px !important; padding-left: 15px !important; box-sizing: border-box !important; width: 100% !important;" data-desktop-style="width: 50% !important; flex: 0 0 50% !important; max-width: 50% !important;">
+                    <div class="form-group half-width">
                         <label for="extra_payment">Extra Monthly Payment</label>
                         <div class="input-group">
                             <span class="input-group-text">$</span>
@@ -198,6 +208,7 @@
                 </form>
                 
                 <!-- Results will be dynamically inserted here by JavaScript -->
+                <div id="results-container"></div>
             </div>
             
             <section class="calculator-info">
@@ -237,12 +248,11 @@
     
     <footer class="site-footer">
         <div class="footer-container">
-            <div class="footer-section">
+            <div class="footer-column">
                 <h3>CalcHub</h3>
                 <p>Free online calculators for all your needs.</p>
             </div>
-            
-            <div class="footer-section">
+            <div class="footer-column">
                 <h3>Categories</h3>
                 <ul>
                     <li><a href="/finance/">Finance</a></li>
@@ -254,8 +264,7 @@
                     <li><a href="/lifestyle/">Lifestyle</a></li>
                 </ul>
             </div>
-            
-            <div class="footer-section">
+            <div class="footer-column">
                 <h3>Resources</h3>
                 <ul>
                     <li><a href="/blog/">Blog</a></li>
@@ -263,8 +272,7 @@
                     <li><a href="/contact/">Contact</a></li>
                 </ul>
             </div>
-            
-            <div class="footer-section">
+            <div class="footer-column">
                 <h3>Legal</h3>
                 <ul>
                     <li><a href="/privacy-policy/">Privacy Policy</a></li>
@@ -272,30 +280,11 @@
                 </ul>
             </div>
         </div>
-        
-        <div class="footer-bottom" style="text-align: center !important; width: 100% !important;">
-            <p style="margin: 0 auto !important; text-align: center !important; width: 100% !important;">&copy; 2025 CalcHub. All rights reserved.</p>
+        <div class="footer-bottom">
+            <p>© 2025 CalcHub. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- JavaScript to apply desktop styles for form layout -->
-    <script>
-        function applyDesktopStyles() {
-            if (window.innerWidth >= 768) {
-                const elements = document.querySelectorAll("[data-desktop-style]");
-                elements.forEach(el => {
-                    el.style.cssText += el.getAttribute("data-desktop-style");
-                });
-            }
-        }
-        applyDesktopStyles(); // Apply on initial load
-        window.addEventListener("resize", applyDesktopStyles); // Apply on resize
-    </script>
 </body>
 </html>
-
-    <script src="/js/main.js" defer></script>
-
-
-    <link rel="stylesheet" href="css/page-alignment-fix.css">
 
