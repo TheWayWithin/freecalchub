@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.8.0] - 2025-04-28
+### Fixed
+- Implemented aggressive fixes for mortgage calculator page
+- Restored amortization table functionality with comprehensive JavaScript solution
+- Fixed mobile menu display on calculator page
+- Fixed form layout and button positioning
+- Ensured proper display of all calculator outputs
+- Added high-specificity CSS selectors with !important declarations to override conflicting styles
+
 ## [1.7.0] - 2025-04-28
 ### Fixed
 - Completely restructured mortgage pages to match finance page template

@@ -4,32 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mortgage Calculator | CalcHub</title>
-    <meta name="description" content="Calculate your monthly mortgage payment, including principal, interest, taxes, and insurance. See amortization schedule and loan summary.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/calculator.css">
     <link rel="stylesheet" href="css/mortgage-calculator.css">
-    <link rel="stylesheet" href="css/navigation-ribbon-fix.css">
-    <link rel="stylesheet" href="css/mobile-menu-fix.css">
-    <link rel="stylesheet" href="css/breadcrumb-styling-fix.css">
-    <link rel="stylesheet" href="css/button-positioning-fix.css">
-    <link rel="stylesheet" href="css/page-container-fix.css">
-    <link rel="stylesheet" href="css/dropdown-display-fix.css">
+    <link rel="stylesheet" href="css/aggressive-calculator-fix.css">
+    <script src="js/mortgage-calculator.js" defer></script>
+    <script src="js/aggressive-amortization-fix.js" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
     
-    <header>
+    <header class="site-header">
         <div class="header-container">
             <div class="logo-container">
                 <a href="/" class="logo">
-                    <img src="/images/logo.svg" alt="CalcHub Logo" height="40">
+                    <img src="/images/calchub-logo.svg" alt="CalcHub Logo">
                 </a>
             </div>
             
             <nav class="main-nav">
                 <ul>
-                    <li><a href="/finance/" class="active">Finance</a></li>
+                    <li><a href="/finance/">Finance</a></li>
                     <li><a href="/math/">Math</a></li>
                     <li><a href="/health/">Health</a></li>
                     <li><a href="/conversions/">Conversions</a></li>
@@ -41,38 +36,30 @@
             </nav>
             
             <div class="header-controls">
-                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
+                <button class="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <span class="toggle-icon"></span>
                 </button>
-                <button id="mobile-menu-button" aria-label="Open menu">
-                    <i class="fas fa-bars"></i>
+                <button id="mobile-menu-button" aria-label="Toggle menu">
+                    <span class="menu-icon"></span>
                 </button>
             </div>
         </div>
     </header>
-
+    
     <div id="mobile-menu" class="mobile-menu">
-        <div class="mobile-menu-header">
-            <span>Menu</span>
-            <button id="mobile-menu-close" aria-label="Close menu">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <nav class="mobile-nav">
-            <ul>
-                <li><a href="/finance/" class="active">Finance</a></li>
-                <li><a href="/math/">Math</a></li>
-                <li><a href="/health/">Health</a></li>
-                <li><a href="/conversions/">Conversions</a></li>
-                <li><a href="/date-time/">Date & Time</a></li>
-                <li><a href="/business/">Business</a></li>
-                <li><a href="/lifestyle/">Lifestyle</a></li>
-                <li><a href="/blog/">Blog</a></li>
-            </ul>
-        </nav>
+        <button class="close-menu" aria-label="Close menu">×</button>
+        <ul>
+            <li><a href="/finance/">Finance</a></li>
+            <li><a href="/math/">Math</a></li>
+            <li><a href="/health/">Health</a></li>
+            <li><a href="/conversions/">Conversions</a></li>
+            <li><a href="/date-time/">Date & Time</a></li>
+            <li><a href="/business/">Business</a></li>
+            <li><a href="/lifestyle/">Lifestyle</a></li>
+            <li><a href="/blog/">Blog</a></li>
+        </ul>
     </div>
-
+    
     <div class="breadcrumbs">
         <div class="breadcrumbs-container">
             <a href="/">Home</a>
@@ -84,214 +71,168 @@
             <span class="current">Mortgage Calculator</span>
         </div>
     </div>
-
+    
     <div class="navigation-ribbon">
         <div class="navigation-ribbon-container">
-            <a href="/finance/mortgage/" class="active"><i class="fas fa-home"></i> Mortgage</a>
-            <a href="/finance/loan/"><i class="fas fa-file-invoice-dollar"></i> Loan</a>
-            <a href="/finance/investment/"><i class="fas fa-chart-line"></i> Investment</a>
-            <a href="/finance/retirement/"><i class="fas fa-umbrella-beach"></i> Retirement</a>
-            <a href="/finance/budgeting/"><i class="fas fa-wallet"></i> Budgeting</a>
-            <a href="/finance/savings/"><i class="fas fa-piggy-bank"></i> Savings</a>
-            <a href="/finance/cryptocurrency/"><i class="fas fa-coins"></i> Cryptocurrency</a>
-            <a href="/finance/tax/"><i class="fas fa-receipt"></i> Tax</a>
+            <a href="/finance/mortgage/"><i class="icon-mortgage"></i>Mortgage</a>
+            <a href="/finance/loan/"><i class="icon-loan"></i>Loan</a>
+            <a href="/finance/investment/"><i class="icon-investment"></i>Investment</a>
+            <a href="/finance/retirement/"><i class="icon-retirement"></i>Retirement</a>
+            <a href="/finance/budgeting/"><i class="icon-budgeting"></i>Budgeting</a>
+            <a href="/finance/savings/"><i class="icon-savings"></i>Savings</a>
+            <a href="/finance/cryptocurrency/"><i class="icon-cryptocurrency"></i>Cryptocurrency</a>
+            <a href="/finance/tax/"><i class="icon-tax"></i>Tax</a>
         </div>
     </div>
-
-    <main id="main-content" class="container py-5">
-        <section class="calculator-header">
+    
+    <main id="main-content" class="main-content">
+        <div class="content-container">
             <h1>Mortgage Calculator</h1>
-            <p class="lead">Use our free mortgage calculator to estimate your monthly mortgage payment, including principal, interest, taxes, insurance, and PMI. See how extra payments can reduce your loan term and save you thousands in interest. Adjust the inputs to see how different scenarios affect your mortgage costs.</p>
-        </section>
-
-        <div class="calculator-container">
-            <form id="mortgage-calculator-form" class="calculator-form">
-                <div class="form-group">
-                    <label for="country">Select Country:</label>
-                    <select id="country" class="form-control">
-                        <option value="us" selected>United States</option>
-                        <option value="ca">Canada</option>
-                        <option value="uk">United Kingdom</option>
-                        <option value="au">Australia</option>
-                    </select>
-                </div>
-
-                <div class="form-group half-width">
-                    <label for="home-price">Home Price</label>
-                    <div class="input-group">
-                        <span class="input-group-text">$</span>
-                        <input type="number" id="home-price" class="form-control" value="300000" min="0" step="1000">
+            
+            <p class="intro-text">
+                Use our free mortgage calculator to estimate your monthly mortgage payment, including principal, interest, taxes, insurance, and PMI. See how extra payments can reduce your loan term and save you thousands in interest. Adjust the inputs to see how different scenarios affect your mortgage costs.
+            </p>
+            
+            <div class="calculator-container">
+                <form id="mortgage-calculator-form" class="calculator-form">
+                    <div class="form-group">
+                        <label for="country">Select Country:</label>
+                        <select id="country" name="country" class="form-control">
+                            <option value="us">United States</option>
+                            <option value="ca">Canada</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="au">Australia</option>
+                        </select>
                     </div>
-                </div>
-
-                <div class="form-group half-width">
-                    <label for="loan-start-date">Loan Start Date</label>
-                    <input type="date" id="loan-start-date" class="form-control" value="2025-04-01">
-                </div>
-
-                <div class="form-group half-width">
-                    <label for="down-payment">Down Payment</label>
-                    <div class="input-group">
-                        <span class="input-group-text">$</span>
-                        <input type="number" id="down-payment" class="form-control" value="60000" min="0" step="1000">
+                    
+                    <div class="form-group half-width">
+                        <label for="home_price">Home Price</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="text" id="home_price" name="home_price" class="form-control" value="300000">
+                        </div>
                     </div>
-                </div>
-
-                <div class="form-group half-width">
-                    <label for="down-payment-percent">Down Payment %</label>
-                    <div class="input-group">
-                        <input type="number" id="down-payment-percent" class="form-control" value="20" min="0" max="100" step="1">
-                        <span class="input-group-text">%</span>
+                    
+                    <div class="form-group half-width">
+                        <label for="loan_start_date">Loan Start Date</label>
+                        <input type="date" id="loan_start_date" name="loan_start_date" class="form-control">
                     </div>
-                </div>
-
-                <div class="form-group half-width">
-                    <label for="loan-term">Loan Term</label>
-                    <select id="loan-term" class="form-control">
-                        <option value="30" selected>30 years</option>
-                        <option value="20">20 years</option>
-                        <option value="15">15 years</option>
-                        <option value="10">10 years</option>
-                    </select>
-                </div>
-
-                <div class="form-group half-width">
-                    <label for="interest-rate">Interest Rate</label>
-                    <div class="input-group">
-                        <input type="number" id="interest-rate" class="form-control" value="4.5" min="0" max="20" step="0.125">
-                        <span class="input-group-text">%</span>
+                    
+                    <div class="form-group half-width">
+                        <label for="down_payment">Down Payment</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="text" id="down_payment" name="down_payment" class="form-control" value="60000">
+                        </div>
                     </div>
-                </div>
-
-                <div class="form-group half-width">
-                    <label for="property-tax">Annual Property Tax</label>
-                    <div class="input-group">
-                        <span class="input-group-text">$</span>
-                        <input type="number" id="property-tax" class="form-control" value="3600" min="0" step="100">
+                    
+                    <div class="form-group half-width">
+                        <label for="down_payment_percent">Down Payment %</label>
+                        <div class="input-group">
+                            <input type="text" id="down_payment_percent" name="down_payment_percent" class="form-control" value="20">
+                            <span class="input-group-text">%</span>
+                        </div>
                     </div>
-                </div>
-
-                <div class="form-group half-width">
-                    <label for="home-insurance">Annual Home Insurance</label>
-                    <div class="input-group">
-                        <span class="input-group-text">$</span>
-                        <input type="number" id="home-insurance" class="form-control" value="1200" min="0" step="100">
+                    
+                    <div class="form-group half-width">
+                        <label for="loan_term">Loan Term</label>
+                        <select id="loan_term" name="loan_term" class="form-control">
+                            <option value="30">30 years</option>
+                            <option value="20">20 years</option>
+                            <option value="15">15 years</option>
+                            <option value="10">10 years</option>
+                        </select>
                     </div>
-                </div>
-
-                <div class="form-group half-width">
-                    <label for="hoa-fees">Monthly HOA Fees</label>
-                    <div class="input-group">
-                        <span class="input-group-text">$</span>
-                        <input type="number" id="hoa-fees" class="form-control" value="0" min="0" step="10">
+                    
+                    <div class="form-group half-width">
+                        <label for="interest_rate">Interest Rate</label>
+                        <div class="input-group">
+                            <input type="text" id="interest_rate" name="interest_rate" class="form-control" value="4.5">
+                            <span class="input-group-text">%</span>
+                        </div>
                     </div>
-                </div>
-
-                <div class="form-group half-width">
-                    <label for="extra-payment">Extra Monthly Payment</label>
-                    <div class="input-group">
-                        <span class="input-group-text">$</span>
-                        <input type="number" id="extra-payment" class="form-control" value="0" min="0" step="10">
+                    
+                    <div class="form-group half-width">
+                        <label for="property_tax">Annual Property Tax</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="text" id="property_tax" name="property_tax" class="form-control" value="3600">
+                        </div>
                     </div>
-                </div>
-
-                <div class="form-buttons">
-                    <button type="button" id="calculate-button" class="btn-primary">Calculate</button>
-                    <button type="reset" class="btn-secondary">Reset</button>
-                </div>
-            </form>
+                    
+                    <div class="form-group half-width">
+                        <label for="home_insurance">Annual Home Insurance</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="text" id="home_insurance" name="home_insurance" class="form-control" value="1200">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group half-width">
+                        <label for="hoa_fees">Monthly HOA Fees</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="text" id="hoa_fees" name="hoa_fees" class="form-control" value="0">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group half-width">
+                        <label for="extra_payment">Extra Monthly Payment</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="text" id="extra_payment" name="extra_payment" class="form-control" value="0">
+                        </div>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="submit" id="calculate-button" class="btn-primary">Calculate</button>
+                        <button type="reset" class="btn-secondary">Reset</button>
+                    </div>
+                </form>
+                
+                <!-- Results will be dynamically inserted here by JavaScript -->
+            </div>
+            
+            <section class="calculator-info">
+                <h2>How to Use This Mortgage Calculator</h2>
+                <ol>
+                    <li>Enter the home price</li>
+                    <li>Adjust the down payment amount or percentage</li>
+                    <li>Select your preferred loan term</li>
+                    <li>Enter the interest rate</li>
+                    <li>Add property tax, home insurance, and HOA fees if applicable</li>
+                    <li>Click "Calculate" to see your results</li>
+                </ol>
+                
+                <h2>Understanding Your Results</h2>
+                <p>
+                    The mortgage calculator provides a comprehensive breakdown of your monthly payment, including:
+                </p>
+                <ul>
+                    <li><strong>Principal and Interest:</strong> The amount that goes toward paying off your loan and the cost of borrowing.</li>
+                    <li><strong>Property Tax:</strong> Annual property taxes divided by 12 for monthly payment.</li>
+                    <li><strong>Home Insurance:</strong> Annual insurance premium divided by 12 for monthly payment.</li>
+                    <li><strong>PMI (Private Mortgage Insurance):</strong> Required if your down payment is less than 20% of the home price.</li>
+                    <li><strong>HOA Fees:</strong> Monthly homeowners association fees, if applicable.</li>
+                </ul>
+                
+                <p>
+                    The loan summary shows the total cost of your mortgage over the full term, including the total interest paid. The amortization schedule breaks down how your payments reduce your loan balance over time.
+                </p>
+                
+                <h2>Benefits of Extra Payments</h2>
+                <p>
+                    Making extra payments toward your mortgage principal can significantly reduce your loan term and save you thousands in interest. Even small additional monthly payments can make a big difference over time. Use the "Extra Monthly Payment" field to see how much you could save.
+                </p>
+            </section>
         </div>
-
-        <div id="results" class="results-section" style="display: none;">
-            <h2>Monthly Payment Breakdown</h2>
-            <div class="result-grid">
-                <div class="result-item">
-                    <span class="result-label">Principal & Interest:</span>
-                    <span id="principal-interest" class="result-value">$0.00</span>
-                </div>
-                <div class="result-item">
-                    <span class="result-label">Property Tax:</span>
-                    <span id="monthly-tax" class="result-value">$0.00</span>
-                </div>
-                <div class="result-item">
-                    <span class="result-label">Home Insurance:</span>
-                    <span id="monthly-insurance" class="result-value">$0.00</span>
-                </div>
-                <div class="result-item">
-                    <span class="result-label">PMI:</span>
-                    <span id="monthly-pmi" class="result-value">$0.00</span>
-                </div>
-                <div class="result-item">
-                    <span class="result-label">HOA Fees:</span>
-                    <span id="monthly-hoa" class="result-value">$0.00</span>
-                </div>
-                <div class="result-item total">
-                    <span class="result-label">Total Monthly Payment:</span>
-                    <span id="total-payment" class="result-value">$0.00</span>
-                </div>
-            </div>
-
-            <h2>Loan Summary</h2>
-            <div class="loan-summary">
-                <p>Loan Amount: <span id="loan-amount">$0.00</span></p>
-                <p>Total Interest Paid: <span id="total-interest">$0.00</span></p>
-                <p>Total Cost of Loan: <span id="total-cost">$0.00</span></p>
-                <p>Payoff Date: <span id="payoff-date">January 2055</span></p>
-            </div>
-
-            <h2>Amortization Schedule</h2>
-            <p>This table shows how your loan balance decreases over time as you make payments.</p>
-            <div class="amortization-table-container">
-                <table id="amortization-table" class="amortization-table">
-                    <thead>
-                        <tr>
-                            <th>Year</th>
-                            <th>Principal Paid</th>
-                            <th>Interest Paid</th>
-                            <th>Total Paid</th>
-                            <th>Remaining Balance</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Amortization data will be inserted here by JavaScript -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <section class="calculator-info">
-            <h2>How to Use This Mortgage Calculator</h2>
-            <ol>
-                <li>Enter the home price</li>
-                <li>Adjust the down payment amount or percentage</li>
-                <li>Select your preferred loan term</li>
-                <li>Enter the interest rate</li>
-                <li>Add property tax, home insurance, and HOA fees if applicable</li>
-                <li>Click "Calculate" to see your results</li>
-            </ol>
-
-            <h2>Understanding Your Results</h2>
-            <p>The mortgage calculator provides a comprehensive breakdown of your monthly payment, including:</p>
-            <ul>
-                <li><strong>Principal and Interest:</strong> The amount that goes toward paying off your loan and the cost of borrowing.</li>
-                <li><strong>Property Tax:</strong> Annual property taxes divided by 12 for monthly payment.</li>
-                <li><strong>Home Insurance:</strong> Annual insurance premium divided by 12 for monthly payment.</li>
-                <li><strong>PMI (Private Mortgage Insurance):</strong> Required if your down payment is less than 20% of the home price.</li>
-                <li><strong>HOA Fees:</strong> Monthly homeowners association fees, if applicable.</li>
-            </ul>
-
-            <p>The loan summary shows the total cost of your mortgage over the full term, including the total interest paid. The amortization schedule breaks down how your payments reduce your loan balance over time.</p>
-
-            <h2>Benefits of Extra Payments</h2>
-            <p>Making extra payments toward your mortgage principal can significantly reduce your loan term and save you thousands in interest. Even small additional monthly payments can make a big difference over time. Use the "Extra Monthly Payment" field to see how much you could save.</p>
-        </section>
     </main>
     
-    <footer>
+    <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-section">
                 <h3>CalcHub</h3>
-                <p>Free online calculators for all your needs. Simple, accurate, and easy to use.</p>
+                <p>Free online calculators for all your needs.</p>
             </div>
             
             <div class="footer-section">
@@ -313,19 +254,15 @@
                     <li><a href="/blog/">Blog</a></li>
                     <li><a href="/about/">About Us</a></li>
                     <li><a href="/contact/">Contact</a></li>
-                    <li><a href="/privacy-policy/">Privacy Policy</a></li>
-                    <li><a href="/terms-of-service/">Terms of Service</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
-                <h3>Connect</h3>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-                </div>
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="/privacy-policy/">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service/">Terms of Service</a></li>
+                </ul>
             </div>
         </div>
         
@@ -333,9 +270,5 @@
             <p>&copy; 2025 CalcHub. All rights reserved.</p>
         </div>
     </footer>
-    
-    <script src="/js/main.js"></script>
-    <script src="js/mortgage-calculator.js"></script>
-    <script src="js/amortization-table-fix.js"></script>
 </body>
 </html>
