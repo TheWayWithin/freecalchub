@@ -1,5 +1,22 @@
 # CalcHub Change Log - Mortgage Calculator Fixes
 
+## April 28, 2025 - Additional Styling Fixes
+
+### Fixed Issues
+- Fixed logo styling to properly display "CalcHub" text in white on blue background
+- Made font sizes consistent across all input fields and dropdowns
+- Aligned breadcrumbs with main content area while maintaining left alignment
+- Fixed dropdown heights for Select Country and Loan Term to properly display text
+- Applied consistent styling across both mortgage calculator and mortgage category pages
+
+### Technical Changes
+- Created dedicated CSS files for specific fixes:
+  - logo-fixes.css: Ensures proper logo styling with white text on blue background
+  - font-size-fixes.css: Makes all form inputs and dropdowns use consistent font size
+  - breadcrumb-fixes.css: Aligns breadcrumbs with main content area
+- Added inline CSS for immediate fixes to ensure proper styling
+- Verified all changes work correctly in browser testing
+
 ## April 28, 2025 - Logo and Header Styling Fixes
 
 ### Fixed Issues

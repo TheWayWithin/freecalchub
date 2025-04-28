@@ -26,11 +26,25 @@
           color: white;
           text-decoration: none;
           margin-right: 20px;
+          height: 40px;
+          box-sizing: border-box;
+        }
+
+        /* Add CalcHub text to logo */
+        .logo::after {
+            content: "CalcHub";
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            margin-left: 5px;
         }
 
         .logo img {
-          height: 30px;
+          height: 24px;
+          width: auto;
           filter: brightness(0) invert(1); /* Make SVG white */
+          margin-right: 5px;
         }
 
         /* Fix header container layout */
@@ -81,39 +95,52 @@
           color: #333;
         }
 
-        /* Fix dropdown height issues */
+        /* Font size consistency fixes */
+        input,
+        select,
+        textarea,
+        button {
+          font-size: 16px !important;
+          line-height: 1.5 !important;
+          padding: 8px 12px !important;
+          height: auto !important;
+          min-height: 40px !important;
+          box-sizing: border-box !important;
+        }
+
+        /* Ensure dropdown menus match other inputs */
         select {
-          height: 38px !important; /* Increase height for better text display */
-          padding: 6px 12px !important; /* Add more padding */
-          font-size: 16px !important; /* Ensure text is readable */
-          line-height: 1.5 !important; /* Improve line height */
-          appearance: menulist !important; /* Ensure native dropdown appearance */
+          appearance: menulist !important;
+          -webkit-appearance: menulist !important;
+          -moz-appearance: menulist !important;
+          background-image: none !important;
+          padding-right: 30px !important; /* Space for dropdown arrow */
         }
 
-        /* Specific fixes for country and loan term dropdowns */
-        select#country, 
-        select#loan-term {
-          height: 40px !important; /* Make slightly taller than other selects */
-          width: 200px !important;
-          max-width: 200px !important;
-        }
-
-        /* Keep breadcrumbs left-aligned */
-        .breadcrumbs {
+        /* Breadcrumb alignment fixes */
+        .breadcrumbs,
+        .breadcrumbs-container,
+        nav[aria-label="breadcrumb"] {
+          max-width: 1140px !important;
+          width: 100% !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          padding-left: 15px !important;
+          padding-right: 15px !important;
+          box-sizing: border-box !important;
           display: flex;
           justify-content: flex-start !important; /* Ensure left alignment */
-          padding: 10px 20px !important; /* Add horizontal padding */
-          background-color: #f8f9fa;
-          margin: 0;
         }
 
-        .breadcrumbs-container {
-          display: flex;
-          list-style: none;
-          margin: 0;
-          padding: 0;
-          width: 100%;
-          justify-content: flex-start !important; /* Ensure left alignment */
+        /* Container alignment */
+        .container {
+          max-width: 1140px !important;
+          width: 100% !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          padding-left: 15px !important;
+          padding-right: 15px !important;
+          box-sizing: border-box !important;
         }
     </style>
 </head>
