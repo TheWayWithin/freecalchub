@@ -13,40 +13,151 @@
     <link rel="stylesheet" href="/css/breadcrumb-styles.css">
     <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Inline CSS to fix the logo styling and header structure -->
+    <style>
+        /* Logo and header styling fixes */
+        .logo {
+          display: flex;
+          align-items: center;
+          background-color: #4a76a8;
+          padding: 8px 12px;
+          border-radius: 4px;
+          color: white;
+          text-decoration: none;
+          margin-right: 20px;
+        }
+
+        .logo img {
+          height: 30px;
+          filter: brightness(0) invert(1); /* Make SVG white */
+        }
+
+        /* Fix header container layout */
+        .header-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px 20px;
+          background-color: #ffffff;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Fix main navigation styling */
+        .main-nav ul {
+          display: flex;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        .main-nav ul li {
+          margin: 0;
+          padding: 0;
+        }
+
+        .main-nav ul li a {
+          padding: 0 15px;
+          color: #333;
+          text-decoration: none;
+          font-weight: 500;
+        }
+
+        /* Fix header controls positioning */
+        .header-controls {
+          display: flex;
+          align-items: center;
+        }
+
+        /* Fix dark mode toggle button */
+        #dark-mode-toggle {
+          background: none;
+          border: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 10px;
+          color: #333;
+        }
+
+        /* Fix dropdown height issues */
+        select {
+          height: 38px !important; /* Increase height for better text display */
+          padding: 6px 12px !important; /* Add more padding */
+          font-size: 16px !important; /* Ensure text is readable */
+          line-height: 1.5 !important; /* Improve line height */
+          appearance: menulist !important; /* Ensure native dropdown appearance */
+        }
+
+        /* Specific fixes for country and loan term dropdowns */
+        select#country, 
+        select#loan-term {
+          height: 40px !important; /* Make slightly taller than other selects */
+          width: 200px !important;
+          max-width: 200px !important;
+        }
+
+        /* Keep breadcrumbs left-aligned */
+        .breadcrumbs {
+          display: flex;
+          justify-content: flex-start !important; /* Ensure left alignment */
+          padding: 10px 20px !important; /* Add horizontal padding */
+          background-color: #f8f9fa;
+          margin: 0;
+        }
+
+        .breadcrumbs-container {
+          display: flex;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          justify-content: flex-start !important; /* Ensure left alignment */
+        }
+    </style>
 </head>
 <body>
-    <!-- Header (copy from your homepage)  -->
+    <!-- Header -->
     <header>
-        <nav class="navbar">
-            <div class="container">
-                <a href="/" class="navbar-brand">
-                    <img src="/images/calchub-logo.svg" alt="CalcHub Logo" class="logo">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="/" class="logo">
+                    <img src="/images/logo.svg" alt="CalcHub Logo" height="40">
                 </a>
-                <div class="navbar-links">
-                    <a href="/finance/">Finance</a>
-                    <a href="/math/">Math</a>
-                    <a href="/health/">Health</a>
-                    <a href="/conversions/">Conversions</a>
-                    <a href="/date-time/">Date & Time</a>
-                    <a href="/business/">Business</a>
-                    <a href="/lifestyle/">Lifestyle</a>
-                    <a href="/blog/">Blog</a>
-                </div>
-                <button class="dark-mode-toggle" aria-label="Toggle dark mode">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/finance/" class="active">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="mobile-menu-button" aria-label="Open menu" class="d-md-none">
+                    <i class="fas fa-bars"></i>
                 </button>
             </div>
-        </nav>
+        </div>
     </header>
     
     <!-- Breadcrumbs -->
     <nav aria-label="breadcrumb" class="breadcrumbs">
-        <div class="container">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item"><a href="/finance/">Finance</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Mortgage</li>
-            </ol>
+        <div class="breadcrumbs-container">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <a href="/finance/">Finance</a>
+            <span class="separator">/</span>
+            <span class="current">Mortgage</span>
         </div>
     </nav>
     
@@ -120,7 +231,7 @@
         </section>
     </main>
     
-    <!-- Footer (copy from your homepage) -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
