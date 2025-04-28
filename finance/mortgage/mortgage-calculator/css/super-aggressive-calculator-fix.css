@@ -1,0 +1,564 @@
+/* Super Aggressive Calculator Page Fix
+ * This CSS file uses extremely high-specificity selectors and !important declarations
+ * to override any conflicting styles and ensure proper display
+ */
+
+/* Force hide mobile menu on desktop */
+html body .mobile-menu,
+html body #mobile-menu,
+html body div.mobile-menu,
+html body div#mobile-menu,
+html body .mobile-menu *,
+html body #mobile-menu *,
+html body div.mobile-menu *,
+html body div#mobile-menu * {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}
+
+/* Force hide mobile menu button on desktop */
+@media (min-width: 768px) {
+    html body #mobile-menu-button,
+    html body button#mobile-menu-button,
+    html body .header-controls #mobile-menu-button,
+    html body div.header-controls button#mobile-menu-button,
+    html body header .header-controls #mobile-menu-button,
+    html body header div.header-controls button#mobile-menu-button {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        top: -9999px !important;
+        left: -9999px !important;
+    }
+}
+
+/* Fix header and logo styling */
+html body header,
+html body .site-header,
+html body header.site-header {
+    background-color: #4a76a8 !important;
+    color: white !important;
+    padding: 0.5rem 0 !important;
+    border: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    position: relative !important;
+    z-index: 1000 !important;
+}
+
+html body .header-container,
+html body header .header-container,
+html body .site-header .header-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+html body .logo-container,
+html body header .logo-container,
+html body .site-header .logo-container {
+    display: flex !important;
+    align-items: center !important;
+}
+
+html body .logo,
+html body a.logo,
+html body .logo-container a.logo,
+html body header .logo-container a.logo {
+    display: flex !important;
+    align-items: center !important;
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-size: 1.5rem !important;
+}
+
+html body .logo img,
+html body a.logo img,
+html body .logo-container a.logo img,
+html body header .logo-container a.logo img {
+    height: 40px !important;
+    width: auto !important;
+    display: block !important;
+}
+
+/* Fix main navigation styling */
+html body .main-nav,
+html body nav.main-nav,
+html body header nav.main-nav {
+    display: flex !important;
+    align-items: center !important;
+}
+
+html body .main-nav ul,
+html body nav.main-nav ul,
+html body header nav.main-nav ul {
+    display: flex !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+html body .main-nav ul li,
+html body nav.main-nav ul li,
+html body header nav.main-nav ul li {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+html body .main-nav ul li a,
+html body nav.main-nav ul li a,
+html body header nav.main-nav ul li a {
+    color: white !important;
+    text-decoration: none !important;
+    padding: 0.5rem 1rem !important;
+    display: block !important;
+    font-size: 1rem !important;
+    font-weight: normal !important;
+    transition: background-color 0.2s !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+html body .main-nav ul li a:hover,
+html body nav.main-nav ul li a:hover,
+html body header nav.main-nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html body .main-nav ul li a.active,
+html body nav.main-nav ul li a.active,
+html body header nav.main-nav ul li a.active {
+    font-weight: bold !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Fix breadcrumb styling */
+html body .breadcrumbs,
+html body div.breadcrumbs {
+    background-color: #f8f9fa !important;
+    padding: 0.5rem 0 !important;
+    border-bottom: 1px solid #e9ecef !important;
+    margin: 0 !important;
+}
+
+html body .breadcrumbs-container,
+html body div.breadcrumbs-container,
+html body .breadcrumbs div.breadcrumbs-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+}
+
+html body .breadcrumbs a,
+html body .breadcrumbs .separator,
+html body .breadcrumbs .current,
+html body div.breadcrumbs a,
+html body div.breadcrumbs span.separator,
+html body div.breadcrumbs span.current {
+    color: #007bff !important;
+    text-decoration: none !important;
+    font-size: 0.9rem !important;
+    font-weight: normal !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+html body .breadcrumbs .current,
+html body div.breadcrumbs span.current {
+    color: #6c757d !important;
+}
+
+html body .breadcrumbs .separator,
+html body div.breadcrumbs span.separator {
+    margin: 0 0.5rem !important;
+    color: #6c757d !important;
+}
+
+/* Fix navigation ribbon */
+html body .navigation-ribbon,
+html body div.navigation-ribbon {
+    background-color: #4a76a8 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+}
+
+html body .navigation-ribbon-container,
+html body div.navigation-ribbon-container,
+html body .navigation-ribbon div.navigation-ribbon-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    overflow-x: auto !important;
+}
+
+html body .navigation-ribbon a,
+html body div.navigation-ribbon a,
+html body .navigation-ribbon-container a,
+html body div.navigation-ribbon-container a {
+    color: white !important;
+    padding: 0.75rem 1rem !important;
+    text-decoration: none !important;
+    font-size: 0.9rem !important;
+    display: flex !important;
+    align-items: center !important;
+    transition: background-color 0.2s !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    white-space: nowrap !important;
+}
+
+html body .navigation-ribbon a:hover,
+html body div.navigation-ribbon a:hover,
+html body .navigation-ribbon-container a:hover,
+html body div.navigation-ribbon-container a:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html body .navigation-ribbon a i,
+html body div.navigation-ribbon a i,
+html body .navigation-ribbon-container a i,
+html body div.navigation-ribbon-container a i {
+    margin-right: 0.5rem !important;
+}
+
+/* Fix main content container */
+html body .main-content,
+html body main.main-content,
+html body #main-content,
+html body main#main-content {
+    padding: 2rem 0 !important;
+}
+
+html body .content-container,
+html body .main-content .content-container,
+html body main.main-content .content-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
+}
+
+/* Fix calculator container */
+html body .calculator-container,
+html body div.calculator-container,
+html body .content-container .calculator-container,
+html body .main-content .content-container .calculator-container {
+    background-color: #f8f9fa !important;
+    border-radius: 0.5rem !important;
+    padding: 2rem !important;
+    margin-bottom: 2rem !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+/* Fix form layout */
+html body .calculator-form,
+html body form.calculator-form,
+html body #mortgage-calculator-form,
+html body form#mortgage-calculator-form {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin-right: -15px !important;
+    margin-left: -15px !important;
+}
+
+html body .form-group,
+html body .calculator-form .form-group,
+html body form.calculator-form .form-group {
+    margin-bottom: 1rem !important;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+html body .form-group.half-width,
+html body .calculator-form .form-group.half-width,
+html body form.calculator-form .form-group.half-width {
+    width: 50% !important;
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    box-sizing: border-box !important;
+}
+
+/* Fix label styling */
+html body .form-group label,
+html body .calculator-form .form-group label,
+html body form.calculator-form .form-group label {
+    display: block !important;
+    margin-bottom: 0.5rem !important;
+    font-weight: 500 !important;
+    font-size: 0.9rem !important;
+    color: #212529 !important;
+}
+
+/* Fix input styling */
+html body .form-control,
+html body input.form-control,
+html body select.form-control,
+html body .calculator-form .form-control,
+html body form.calculator-form .form-control {
+    display: block !important;
+    width: 100% !important;
+    height: calc(1.5em + 0.75rem + 2px) !important;
+    padding: 0.375rem 0.75rem !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: #495057 !important;
+    background-color: #fff !important;
+    background-clip: padding-box !important;
+    border: 1px solid #ced4da !important;
+    border-radius: 0.25rem !important;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+    box-sizing: border-box !important;
+}
+
+html body .input-group,
+html body .form-group .input-group,
+html body .calculator-form .form-group .input-group {
+    position: relative !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: stretch !important;
+    width: 100% !important;
+}
+
+html body .input-group-text,
+html body .input-group .input-group-text,
+html body .form-group .input-group .input-group-text {
+    display: flex !important;
+    align-items: center !important;
+    padding: 0.375rem 0.75rem !important;
+    margin-bottom: 0 !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: #495057 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    background-color: #e9ecef !important;
+    border: 1px solid #ced4da !important;
+    border-radius: 0.25rem !important;
+}
+
+html body .input-group > .form-control,
+html body .input-group > input.form-control,
+html body .form-group .input-group > .form-control {
+    position: relative !important;
+    flex: 1 1 auto !important;
+    width: 1% !important;
+    min-width: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+html body .input-group > .input-group-text:first-child,
+html body .form-group .input-group > .input-group-text:first-child {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+html body .input-group > .form-control:not(:first-child),
+html body .input-group > input.form-control:not(:first-child) {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+html body .input-group > .input-group-text:last-child,
+html body .form-group .input-group > .input-group-text:last-child {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+html body .input-group > .form-control:not(:last-child),
+html body .input-group > input.form-control:not(:last-child) {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+/* Fix button styling */
+html body .form-buttons,
+html body .calculator-form .form-buttons,
+html body form.calculator-form .form-buttons {
+    display: flex !important;
+    justify-content: space-between !important;
+    margin-top: 1.5rem !important;
+    width: 100% !important;
+    padding: 0 15px !important;
+}
+
+html body .btn-primary, 
+html body button[type="submit"],
+html body #calculate-button,
+html body .calculator-form .btn-primary,
+html body form.calculator-form button[type="submit"],
+html body form.calculator-form #calculate-button {
+    background-color: #4a76a8 !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 0.25rem !important;
+    font-size: 1rem !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s !important;
+    width: 48% !important;
+    text-align: center !important;
+    display: inline-block !important;
+    font-weight: 400 !important;
+    text-decoration: none !important;
+    vertical-align: middle !important;
+    user-select: none !important;
+    line-height: 1.5 !important;
+}
+
+html body .btn-secondary,
+html body button[type="reset"],
+html body .reset-button,
+html body .calculator-form .btn-secondary,
+html body form.calculator-form button[type="reset"],
+html body form.calculator-form .reset-button {
+    background-color: #6c757d !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 0.25rem !important;
+    font-size: 1rem !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s !important;
+    width: 48% !important;
+    text-align: center !important;
+    display: inline-block !important;
+    font-weight: 400 !important;
+    text-decoration: none !important;
+    vertical-align: middle !important;
+    user-select: none !important;
+    line-height: 1.5 !important;
+}
+
+/* Fix results section */
+html body .results-container,
+html body div.results-container,
+html body .calculator-container .results-container {
+    margin-top: 2rem !important;
+    border-top: 1px solid #dee2e6 !important;
+    padding-top: 2rem !important;
+}
+
+html body .results-section,
+html body div.results-section,
+html body .results-container .results-section {
+    margin-bottom: 2rem !important;
+}
+
+html body .results-section h2,
+html body div.results-section h2,
+html body .results-container .results-section h2 {
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    color: #212529 !important;
+}
+
+/* Fix amortization table */
+html body .amortization-table-container,
+html body div.amortization-table-container,
+html body .results-section .amortization-table-container {
+    overflow-x: auto !important;
+    margin-top: 1rem !important;
+    margin-bottom: 2rem !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+html body .amortization-table,
+html body table.amortization-table,
+html body .amortization-table-container .amortization-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-bottom: 1rem !important;
+    border: 1px solid #dee2e6 !important;
+}
+
+html body .amortization-table th,
+html body table.amortization-table th,
+html body .amortization-table td,
+html body table.amortization-table td {
+    padding: 0.75rem !important;
+    vertical-align: top !important;
+    border-top: 1px solid #dee2e6 !important;
+    text-align: right !important;
+    font-size: 0.9rem !important;
+}
+
+html body .amortization-table th,
+html body table.amortization-table th {
+    background-color: #f8f9fa !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    border-bottom: 2px solid #dee2e6 !important;
+}
+
+html body .amortization-table tbody tr:nth-of-type(odd),
+html body table.amortization-table tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    html body .form-group.half-width,
+    html body .calculator-form .form-group.half-width,
+    html body form.calculator-form .form-group.half-width {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    
+    html body .calculator-container,
+    html body div.calculator-container {
+        padding: 1rem !important;
+    }
+    
+    html body .form-buttons,
+    html body .calculator-form .form-buttons,
+    html body form.calculator-form .form-buttons {
+        flex-direction: column !important;
+    }
+    
+    html body .btn-primary, 
+    html body button[type="submit"],
+    html body #calculate-button,
+    html body .btn-secondary,
+    html body button[type="reset"],
+    html body .reset-button {
+        width: 100% !important;
+        margin-bottom: 0.5rem !important;
+    }
+}
