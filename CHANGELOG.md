@@ -1,51 +1,53 @@
 # Changelog
 
+## [1.5.0] - 2025-04-28
+### Fixed
+- Completely restructured the header and logo implementation on both mortgage category and mortgage calculator pages
+- Fixed breadcrumb styling and consistency across all pages
+- Removed all previous CSS fixes that were causing issues
+- Ensured consistent navigation styling and font usage
+- Restored proper calculator card layout on mortgage category page (3+1 grid)
+- Fixed form alignment issues on mortgage calculator page
+- Improved amortization table functionality and styling
+
+### Changed
+- Adopted a comprehensive approach by using the correct HTML structure from the finance page
+- Simplified CSS by removing unnecessary overrides and fixes
+- Improved responsive design for better mobile experience
+- Enhanced form layout with proper spacing and alignment
+
 ## [1.4.0] - 2025-04-28
 ### Fixed
-- Completely revised logo styling to ensure "CalcHub" text appears properly in white on blue background on all pages
-- Fixed calculator layout on mortgage category page to properly display in a 3+1 grid layout
-- Fixed form alignment issues, particularly for the "Extra Monthly Payment" field
-- Removed "(optional)" text from form labels to prevent wrapping
-- Added more robust CSS selectors with higher specificity to ensure styles are applied correctly
+- Added definitive logo fix to ensure "CalcHub" appears in white on blue background
+- Fixed calculator layout on mortgage category page
+- Fixed form alignment issues on mortgage calculator page
+- Updated CHANGELOG to track all changes
 
-### Added
-- Created definitive-logo-fix.css with comprehensive selectors and reset properties
-- Created fixed-calculator-layout.css for proper grid layout on mortgage category page
-- Created fixed-form-alignment.css to prevent label wrapping and ensure consistent alignment
-
-## [1.3.0] - 2025-04-28
+## [1.3.0] - 2025-04-27
 ### Fixed
-- Enhanced logo styling to ensure "CalcHub" text appears properly in white on blue background on both mortgage calculator and mortgage category pages
-- Fixed breadcrumb consistency with proper font styling and alignment across both pages
-- Fixed amortization schedule functionality to properly populate with data when calculator is used
-- Improved mortgage calculator form layout to make better use of space with side-by-side fields
-- Restored proper calculator card layout on mortgage category page with 3 cards on first row and 1 card on second row
-- Fixed dropdown heights for country selection and loan term to properly display text
-- Ensured consistent font sizes across all form inputs and dropdowns
-
-### Added
-- Created enhanced-logo-fix.css with robust selectors to ensure logo displays correctly
-- Created enhanced-breadcrumb-fix.css for consistent breadcrumb styling
-- Created fixed-amortization.js to ensure amortization table populates with data
-- Created improved-form-layout.css for better space utilization in calculator form
-- Created mortgage-category-layout.css for consistent calculator card layout
+- Enhanced logo styling with proper blue background and white text
+- Fixed breadcrumb consistency issues
+- Improved amortization functionality
+- Enhanced form layout for better usability
+- Fixed mortgage category layout with proper card arrangement
 
 ## [1.2.0] - 2025-04-27
 ### Fixed
-- Improved form layout with better spacing and alignment
-- Fixed dropdown styling for consistent appearance
-- Updated breadcrumb styling for better navigation
-- Enhanced header structure for consistent appearance across pages
-
-### Added
-- Enhanced form layout with side-by-side fields
-- Added amortization schedule functionality
+- Implemented logo fixes for consistent branding
+- Improved header styling across pages
+- Enhanced breadcrumb navigation
+- Fixed dropdown styling issues
+- Adjusted font sizes for better readability
+- Improved form layout on calculator pages
 
 ## [1.1.0] - 2025-04-26
-### Fixed
-- Initial fixes for logo and header styling
-- Improved navigation menu alignment
-- Fixed dark mode toggle positioning
-
 ### Added
-- Basic CSS fixes for consistent styling across pages
+- Initial implementation of mortgage calculator functionality
+- Basic styling for calculator forms and results
+- Amortization schedule display
+
+## [1.0.0] - 2025-04-25
+### Added
+- Initial project structure
+- Basic HTML templates for finance category pages
+- Core CSS styling
