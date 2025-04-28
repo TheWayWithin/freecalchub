@@ -2,6 +2,18 @@
 
 All notable changes to the CalcHub project will be documented in this file.
 
+## [1.7.0] - 2025-04-28
+
+### Fixed
+- Implemented definitive CSS fixes for the mortgage calculator page with high specificity and !important declarations.
+- Added inline styles to critical elements (header, logo, dark mode button, navigation ribbon, form layout, footer copyright) to ensure proper display.
+- Corrected logo image path in HTML to `/images/logo.svg`.
+- Ensured dark mode toggle button is visible and correctly styled.
+- Restored blue background for the navigation ribbon.
+- Forced two-column form layout on desktop using CSS and inline styles.
+- Centered footer copyright text.
+- Maintained fixes for mobile menu hiding, breadcrumb styling, and amortization table functionality.
+
 ## [1.6.0] - 2025-04-28
 
 ### Fixed
