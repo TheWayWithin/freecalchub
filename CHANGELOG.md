@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.10.0] - 2025-04-28
+
+### Fixed
+- **Navigation Header Styling:** Created `navigation-header-fix.css` with high specificity selectors and !important declarations to ensure the header has a white background, matching the style of other pages.
+- **Header Components:** Fixed styling for logo, main navigation, header controls, dark mode toggle button, and navigation ribbon.
+
 ## [1.9.0] - 2025-04-28
 
 ### Fixed
@@ -88,4 +94,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial setup for mortgage calculator functionality fixes.
 - Copied relevant files to `mortgage-calculator-fix-functionality` directory.
-
