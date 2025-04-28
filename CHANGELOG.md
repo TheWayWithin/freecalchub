@@ -2,6 +2,18 @@
 
 All notable changes to the CalcHub project will be documented in this file.
 
+## [1.6.0] - 2025-04-28
+
+### Fixed
+- Implemented refined CSS fixes for the mortgage calculator page to address regressions from previous aggressive fix.
+- Restored correct logo image display.
+- Restored dark mode toggle button visibility and functionality.
+- Restored navigation ribbon icons using Font Awesome.
+- Restored two-column form layout for better ergonomics on desktop.
+- Fixed footer layout and styling to be consistent with other pages.
+- Maintained fixes for mobile menu hiding, breadcrumb styling, and amortization table functionality.
+- Updated JavaScript for amortization table with refined logic.
+
 ## [1.5.0] - 2025-04-28
 
 ### Fixed
