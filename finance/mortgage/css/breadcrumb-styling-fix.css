@@ -1,0 +1,72 @@
+/* Breadcrumb Styling Fix
+ * Ensures breadcrumbs are properly styled and consistent across pages
+ */
+
+/* Reset breadcrumb container styling */
+.breadcrumbs {
+    background-color: #f8f9fa;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.breadcrumbs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Style breadcrumb links */
+.breadcrumbs a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: normal;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+/* Style breadcrumb separators */
+.breadcrumbs .separator {
+    margin: 0 0.5rem;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* Style current page indicator */
+.breadcrumbs .current {
+    color: #6c757d;
+    font-size: 0.9rem;
+    font-weight: normal;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Remove any icons or images in breadcrumbs */
+.breadcrumbs img,
+.breadcrumbs i,
+.breadcrumbs svg {
+    display: none;
+}
+
+/* Ensure consistent spacing */
+.breadcrumbs + .navigation-ribbon {
+    margin-top: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .breadcrumbs-container {
+        padding: 0 0.5rem;
+    }
+    
+    .breadcrumbs a,
+    .breadcrumbs .separator,
+    .breadcrumbs .current {
+        font-size: 0.8rem;
+    }
+}
