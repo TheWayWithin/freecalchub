@@ -1,0 +1,161 @@
+/* Calculator Template - CSS Grid Layout System */
+
+/* Base grid container for calculator forms */
+.calculator-grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Mobile first - single column by default */
+.calculator-grid-item {
+    grid-column: span 1;
+    padding: 0.75rem;
+    box-sizing: border-box;
+}
+
+/* Medium screens - two columns */
+@media (min-width: 768px) {
+    .calculator-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large screens - three columns */
+@media (min-width: 1024px) {
+    .calculator-grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Full width items that span all columns */
+.calculator-grid-full {
+    grid-column: 1 / -1;
+}
+
+/* Button container at the bottom of the form */
+.calculator-button-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Input group styling */
+.calculator-input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.calculator-input-group .input-prefix,
+.calculator-input-group .input-suffix {
+    background-color: #f5f5f5;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+.calculator-input-group .input-suffix {
+    border-radius: 0 4px 4px 0;
+    border-left: none;
+}
+
+.calculator-input-group input,
+.calculator-input-group select {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0;
+}
+
+.calculator-input-group input:first-child,
+.calculator-input-group select:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.calculator-input-group input:last-child,
+.calculator-input-group select:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.calculator-input-group input:only-child,
+.calculator-input-group select:only-child {
+    border-radius: 4px;
+}
+
+/* Results container styling */
+.calculator-results {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-results h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--primary-color, #4a6fa5);
+}
+
+.calculator-results-summary {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .calculator-results-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.calculator-result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.calculator-result-label {
+    font-weight: 600;
+}
+
+.calculator-result-value {
+    font-weight: 700;
+    color: var(--primary-color, #4a6fa5);
+}
+
+/* Table styling for detailed results */
+.calculator-results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+.calculator-results-table th,
+.calculator-results-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.calculator-results-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+}
+
+.calculator-results-table tr:last-child td {
+    border-bottom: none;
+}
+
+.calculator-results-table tr:hover td {
+    background-color: #f9f9f9;
+}
