@@ -1,8 +1,11 @@
 # CalcHub Change Log - Mortgage Calculator Fixes
 
-## April 28, 2025 - Additional Styling Fixes
+## April 28, 2025 - Form Layout and Amortization Schedule Fixes
 
 ### Fixed Issues
+- Improved form layout by making Home Price field take up half the width
+- Moved Loan Start Date field up beside Home Price for better space utilization
+- Fixed amortization schedule to properly populate with data
 - Fixed logo styling to properly display "CalcHub" text in white on blue background
 - Made font sizes consistent across all input fields and dropdowns
 - Aligned breadcrumbs with main content area while maintaining left alignment
@@ -14,6 +17,8 @@
   - logo-fixes.css: Ensures proper logo styling with white text on blue background
   - font-size-fixes.css: Makes all form inputs and dropdowns use consistent font size
   - breadcrumb-fixes.css: Aligns breadcrumbs with main content area
+  - form-layout-fixes.css: Improves form layout for better space utilization
+- Completely rewrote the amortization schedule generation function in JavaScript
 - Added inline CSS for immediate fixes to ensure proper styling
 - Verified all changes work correctly in browser testing
 

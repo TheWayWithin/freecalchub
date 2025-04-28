@@ -118,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('monthly-insurance').textContent = '$' + monthlyInsurance.toFixed(2);
         document.getElementById('total-payment').textContent = '$' + totalMonthlyPayment.toFixed(2);
         document.getElementById('loan-amount').textContent = '$' + loanAmount.toFixed(2);
-        document.getElementById('total-principal').textContent = '$' + loanAmount.toFixed(2);
         document.getElementById('total-interest').textContent = '$' + totalInterest.toFixed(2);
         document.getElementById('total-cost').textContent = '$' + (loanAmount + totalInterest).toFixed(2);
         
@@ -130,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
             monthlyHoa.textContent = '$' + hoaFees.toFixed(2);
         } else {
             hoaContainer.style.display = 'none';
+            monthlyHoa.textContent = '$0.00';
         }
         
         // Calculate and display loan payoff date
@@ -197,11 +197,101 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to generate amortization schedule
     function generateAmortizationSchedule(loanAmount, monthlyInterestRate, monthlyPayment, numberOfPayments, extraPayment, loanStartDate) {
-        // Implementation would go here
-        // For now, we'll just add a placeholder
-        const amortizationTable = document.getElementById('amortization-table');
-        const tbody = amortizationTable.querySelector('tbody');
-        tbody.innerHTML = '<tr><td colspan="7">Amortization schedule will be displayed here</td></tr>';
+        const tableBody = document.getElementById('amortization-table-body');
+        tableBody.innerHTML = ''; // Clear existing rows
+        
+        let balance = loanAmount;
+        let totalInterestPaid = 0;
+        let totalPrincipalPaid = 0;
+        let totalPaid = 0;
+        
+        // Create yearly amortization data
+        const yearlyData = [];
+        const startDate = new Date(loanStartDate);
+        const currentYear = startDate.getFullYear();
+        
+        for (let year = 1; year <= Math.ceil(numberOfPayments / 12); year++) {
+            let yearlyPrincipalPaid = 0;
+            let yearlyInterestPaid = 0;
+            
+            // Process 12 months for each year (or fewer for the final year)
+            const monthsInYear = (year === Math.ceil(numberOfPayments / 12)) ? (numberOfPayments % 12 || 12) : 12;
+            
+            for (let month = 1; month <= monthsInYear; month++) {
+                if (balance <= 0) break;
+                
+                // Calculate interest for this month
+                const interestPayment = balance * monthlyInterestRate;
+                
+                // Calculate principal for this month (including any extra payment)
+                let principalPayment = monthlyPayment - interestPayment;
+                if (extraPayment > 0) {
+                    principalPayment += extraPayment;
+                }
+                
+                // Ensure we don't pay more than the remaining balance
+                principalPayment = Math.min(principalPayment, balance);
+                
+                // Update running totals
+                yearlyInterestPaid += interestPayment;
+                yearlyPrincipalPaid += principalPayment;
+                balance -= principalPayment;
+                
+                if (balance <= 0) {
+                    balance = 0;
+                    break;
+                }
+            }
+            
+            // Update totals
+            totalInterestPaid += yearlyInterestPaid;
+            totalPrincipalPaid += yearlyPrincipalPaid;
+            totalPaid = totalPrincipalPaid + totalInterestPaid;
+            
+            // Add yearly data to array
+            yearlyData.push({
+                year: currentYear + year - 1,
+                principalPaid: yearlyPrincipalPaid,
+                interestPaid: yearlyInterestPaid,
+                totalPaid: yearlyPrincipalPaid + yearlyInterestPaid,
+                remainingBalance: balance
+            });
+            
+            // Stop if balance is paid off
+            if (balance <= 0) break;
+        }
+        
+        // Create table rows for each year
+        yearlyData.forEach(data => {
+            const row = document.createElement('tr');
+            
+            // Year
+            const yearCell = document.createElement('td');
+            yearCell.textContent = data.year;
+            row.appendChild(yearCell);
+            
+            // Principal Paid
+            const principalCell = document.createElement('td');
+            principalCell.textContent = '$' + data.principalPaid.toFixed(2);
+            row.appendChild(principalCell);
+            
+            // Interest Paid
+            const interestCell = document.createElement('td');
+            interestCell.textContent = '$' + data.interestPaid.toFixed(2);
+            row.appendChild(interestCell);
+            
+            // Total Paid
+            const totalPaidCell = document.createElement('td');
+            totalPaidCell.textContent = '$' + data.totalPaid.toFixed(2);
+            row.appendChild(totalPaidCell);
+            
+            // Remaining Balance
+            const balanceCell = document.createElement('td');
+            balanceCell.textContent = '$' + data.remainingBalance.toFixed(2);
+            row.appendChild(balanceCell);
+            
+            tableBody.appendChild(row);
+        });
     }
     
     // Function to update charts

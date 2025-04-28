@@ -1,0 +1,64 @@
+/* Form Layout Improvements */
+
+/* Make Home Price field shorter to allow for side-by-side layout */
+.calculator-form .form-group.full-width {
+  width: 50% !important;
+  display: inline-block !important;
+  vertical-align: top !important;
+  padding-right: 15px !important;
+  box-sizing: border-box !important;
+}
+
+/* Style for two-column layout */
+.calculator-form .form-group {
+  margin-bottom: 15px !important;
+  width: 50% !important;
+  display: inline-block !important;
+  vertical-align: top !important;
+  box-sizing: border-box !important;
+}
+
+/* Left column padding */
+.calculator-form .form-group:nth-child(odd) {
+  padding-right: 15px !important;
+}
+
+/* Right column padding */
+.calculator-form .form-group:nth-child(even) {
+  padding-left: 15px !important;
+}
+
+/* Ensure consistent input heights */
+.calculator-form input,
+.calculator-form select {
+  height: 40px !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure consistent button styling */
+.calculator-form button {
+  height: 40px !important;
+  font-size: 16px !important;
+  padding: 0 20px !important;
+  margin-right: 10px !important;
+}
+
+/* Form actions container */
+.calculator-form .form-actions {
+  width: 100% !important;
+  margin-top: 20px !important;
+  text-align: center !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .calculator-form .form-group,
+  .calculator-form .form-group.full-width {
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
