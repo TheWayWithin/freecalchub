@@ -4,41 +4,41 @@
  * and displayed when the calculator is used, with additional fallback mechanisms
  */
 
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Refined amortization fix loaded');
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("Refined amortization fix loaded");
     
-    // Force create results container if it doesn't exist
+    // Force create results container if it doesn"t exist
     ensureResultsContainerExists();
     
     // Get the calculate button with multiple fallback selectors
-    const calculateButton = document.querySelector('#calculate-button') || 
-                           document.querySelector('button[type="submit"]') ||
-                           document.querySelector('.btn-primary') ||
-                           document.querySelector('form button');
+    const calculateButton = document.querySelector("#calculate-button") || 
+                           document.querySelector("button[type=\"submit\"]") ||
+                           document.querySelector(".btn-primary") ||
+                           document.querySelector("form button");
     
     if (calculateButton) {
-        console.log('Calculate button found, adding event listener');
+        console.log("Calculate button found, adding event listener");
         // Add event listener to the calculate button
-        calculateButton.addEventListener('click', function(e) {
+        calculateButton.addEventListener("click", function(e) {
             e.preventDefault();
-            console.log('Calculate button clicked');
+            console.log("Calculate button clicked");
             calculateMortgage();
         });
         
         // Also trigger calculation on form submission
-        const form = document.querySelector('#mortgage-calculator-form') || 
-                    document.querySelector('form.calculator-form') ||
-                    document.querySelector('form');
+        const form = document.querySelector("#mortgage-calculator-form") || 
+                    document.querySelector("form.calculator-form") ||
+                    document.querySelector("form");
         
         if (form) {
-            form.addEventListener('submit', function(e) {
+            form.addEventListener("submit", function(e) {
                 e.preventDefault();
-                console.log('Form submitted');
+                console.log("Form submitted");
                 calculateMortgage();
             });
         }
     } else {
-        console.error('Calculate button not found');
+        console.error("Calculate button not found");
     }
     
     // Initialize the form with default values
@@ -55,33 +55,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function ensureResultsContainerExists() {
     // Check if results container exists, create it if not
-    let resultsContainer = document.querySelector('.results-container');
+    let resultsContainer = document.querySelector("#results-container"); // Changed selector to ID
     if (!resultsContainer) {
-        console.log('Creating results container');
-        resultsContainer = document.createElement('div');
-        resultsContainer.className = 'results-container';
+        console.log("Creating results container");
+        resultsContainer = document.createElement("div");
+        resultsContainer.id = "results-container"; // Set ID instead of class
+        resultsContainer.className = "results-container"; // Keep class for styling if needed
         
-        const calculatorContainer = document.querySelector('.calculator-container');
+        const calculatorContainer = document.querySelector(".calculator-container");
         if (calculatorContainer) {
             calculatorContainer.appendChild(resultsContainer);
         } else {
-            console.error('Calculator container not found');
+            console.error("Calculator container not found");
             // Fallback: append to form or main content
-            const form = document.querySelector('#mortgage-calculator-form') || 
-                        document.querySelector('form.calculator-form') ||
-                        document.querySelector('form');
+            const form = document.querySelector("#mortgage-calculator-form") || 
+                        document.querySelector("form.calculator-form") ||
+                        document.querySelector("form");
             
             if (form) {
                 form.parentNode.insertBefore(resultsContainer, form.nextSibling);
             } else {
-                const mainContent = document.querySelector('.main-content') || 
-                                   document.querySelector('#main-content') ||
-                                   document.querySelector('main');
+                const mainContent = document.querySelector(".main-content") || 
+                                   document.querySelector("#main-content") ||
+                                   document.querySelector("main");
                 
                 if (mainContent) {
                     mainContent.appendChild(resultsContainer);
                 } else {
-                    console.error('No suitable container found for results');
+                    console.error("No suitable container found for results");
                     // Last resort: append to body
                     document.body.appendChild(resultsContainer);
                 }
@@ -91,65 +92,65 @@ function ensureResultsContainerExists() {
 }
 
 function initializeForm() {
-    console.log('Initializing form');
+    console.log("Initializing form");
     
     // Set default values if not already set
-    const homePrice = document.querySelector('input[name="home_price"]');
+    const homePrice = document.querySelector("input[name=\"home_price\"]");
     if (homePrice && !homePrice.value) {
-        homePrice.value = '300000';
+        homePrice.value = "300000";
     }
     
-    const downPayment = document.querySelector('input[name="down_payment"]');
+    const downPayment = document.querySelector("input[name=\"down_payment\"]");
     if (downPayment && !downPayment.value) {
-        downPayment.value = '60000';
+        downPayment.value = "60000";
     }
     
-    const downPaymentPercent = document.querySelector('input[name="down_payment_percent"]');
+    const downPaymentPercent = document.querySelector("input[name=\"down_payment_percent\"]");
     if (downPaymentPercent && !downPaymentPercent.value) {
-        downPaymentPercent.value = '20';
+        downPaymentPercent.value = "20";
     }
     
-    const interestRate = document.querySelector('input[name="interest_rate"]');
+    const interestRate = document.querySelector("input[name=\"interest_rate\"]");
     if (interestRate && !interestRate.value) {
-        interestRate.value = '4.5';
+        interestRate.value = "4.5";
     }
     
-    const propertyTax = document.querySelector('input[name="property_tax"]');
+    const propertyTax = document.querySelector("input[name=\"property_tax\"]");
     if (propertyTax && !propertyTax.value) {
-        propertyTax.value = '3600';
+        propertyTax.value = "3600";
     }
     
-    const homeInsurance = document.querySelector('input[name="home_insurance"]');
+    const homeInsurance = document.querySelector("input[name=\"home_insurance\"]");
     if (homeInsurance && !homeInsurance.value) {
-        homeInsurance.value = '1200';
+        homeInsurance.value = "1200";
     }
     
     // Set loan start date to today if not set
-    const loanStartDate = document.querySelector('input[name="loan_start_date"]');
+    const loanStartDate = document.querySelector("input[name=\"loan_start_date\"]");
     if (loanStartDate && !loanStartDate.value) {
         const today = new Date();
         const year = today.getFullYear();
-        const month = String(today.getMonth() + 1).padStart(2, '0');
-        const day = String(today.getDate()).padStart(2, '0');
+        const month = String(today.getMonth() + 1).padStart(2, "0");
+        const day = String(today.getDate()).padStart(2, "0");
         loanStartDate.value = `${year}-${month}-${day}`;
     }
     
     // Add event listeners for linked fields
     if (homePrice && downPayment && downPaymentPercent) {
-        homePrice.addEventListener('input', updateDownPaymentPercent);
-        downPayment.addEventListener('input', updateDownPaymentPercent);
-        downPaymentPercent.addEventListener('input', updateDownPayment);
+        homePrice.addEventListener("input", updateDownPaymentPercent);
+        downPayment.addEventListener("input", updateDownPaymentPercent);
+        downPaymentPercent.addEventListener("input", updateDownPayment);
     }
 }
 
 function updateDownPaymentPercent() {
-    const homePrice = document.querySelector('input[name="home_price"]');
-    const downPayment = document.querySelector('input[name="down_payment"]');
-    const downPaymentPercent = document.querySelector('input[name="down_payment_percent"]');
+    const homePrice = document.querySelector("input[name=\"home_price\"]");
+    const downPayment = document.querySelector("input[name=\"down_payment\"]");
+    const downPaymentPercent = document.querySelector("input[name=\"down_payment_percent\"]");
     
     if (homePrice && downPayment && downPaymentPercent) {
-        const homePriceValue = parseFloat(homePrice.value.replace(/[^0-9.]/g, '')) || 0;
-        const downPaymentValue = parseFloat(downPayment.value.replace(/[^0-9.]/g, '')) || 0;
+        const homePriceValue = parseFloat(homePrice.value.replace(/[^0-9.]/g, "")) || 0;
+        const downPaymentValue = parseFloat(downPayment.value.replace(/[^0-9.]/g, "")) || 0;
         
         if (homePriceValue > 0) {
             const percent = (downPaymentValue / homePriceValue) * 100;
@@ -159,13 +160,13 @@ function updateDownPaymentPercent() {
 }
 
 function updateDownPayment() {
-    const homePrice = document.querySelector('input[name="home_price"]');
-    const downPayment = document.querySelector('input[name="down_payment"]');
-    const downPaymentPercent = document.querySelector('input[name="down_payment_percent"]');
+    const homePrice = document.querySelector("input[name=\"home_price\"]");
+    const downPayment = document.querySelector("input[name=\"down_payment\"]");
+    const downPaymentPercent = document.querySelector("input[name=\"down_payment_percent\"]");
     
     if (homePrice && downPayment && downPaymentPercent) {
-        const homePriceValue = parseFloat(homePrice.value.replace(/[^0-9.]/g, '')) || 0;
-        const percentValue = parseFloat(downPaymentPercent.value.replace(/[^0-9.]/g, '')) || 0;
+        const homePriceValue = parseFloat(homePrice.value.replace(/[^0-9.]/g, "")) || 0;
+        const percentValue = parseFloat(downPaymentPercent.value.replace(/[^0-9.]/g, "")) || 0;
         
         if (homePriceValue > 0 && percentValue > 0) {
             const downPaymentValue = (homePriceValue * percentValue) / 100;
@@ -175,22 +176,22 @@ function updateDownPayment() {
 }
 
 function calculateMortgage() {
-    console.log('Calculating mortgage');
+    console.log("Calculating mortgage");
     
     // Ensure results container exists
     ensureResultsContainerExists();
     
     // Get input values with fallbacks
-    const homePrice = parseFloat(document.querySelector('input[name="home_price"]')?.value.replace(/[^0-9.]/g, '')) || 300000;
-    const downPayment = parseFloat(document.querySelector('input[name="down_payment"]')?.value.replace(/[^0-9.]/g, '')) || 60000;
-    const loanTerm = parseInt(document.querySelector('select[name="loan_term"]')?.value) || 30;
-    const interestRate = parseFloat(document.querySelector('input[name="interest_rate"]')?.value.replace(/[^0-9.]/g, '')) || 4.5;
-    const propertyTax = parseFloat(document.querySelector('input[name="property_tax"]')?.value.replace(/[^0-9.]/g, '')) || 3600;
-    const homeInsurance = parseFloat(document.querySelector('input[name="home_insurance"]')?.value.replace(/[^0-9.]/g, '')) || 1200;
-    const hoaFees = parseFloat(document.querySelector('input[name="hoa_fees"]')?.value.replace(/[^0-9.]/g, '')) || 0;
-    const extraPayment = parseFloat(document.querySelector('input[name="extra_payment"]')?.value.replace(/[^0-9.]/g, '')) || 0;
+    const homePrice = parseFloat(document.querySelector("input[name=\"home_price\"]")?.value.replace(/[^0-9.]/g, "")) || 300000;
+    const downPayment = parseFloat(document.querySelector("input[name=\"down_payment\"]")?.value.replace(/[^0-9.]/g, "")) || 60000;
+    const loanTerm = parseInt(document.querySelector("select[name=\"loan_term\"]")?.value) || 30;
+    const interestRate = parseFloat(document.querySelector("input[name=\"interest_rate\"]")?.value.replace(/[^0-9.]/g, "")) || 4.5;
+    const propertyTax = parseFloat(document.querySelector("input[name=\"property_tax\"]")?.value.replace(/[^0-9.]/g, "")) || 3600;
+    const homeInsurance = parseFloat(document.querySelector("input[name=\"home_insurance\"]")?.value.replace(/[^0-9.]/g, "")) || 1200;
+    const hoaFees = parseFloat(document.querySelector("input[name=\"hoa_fees\"]")?.value.replace(/[^0-9.]/g, "")) || 0;
+    const extraPayment = parseFloat(document.querySelector("input[name=\"extra_payment\"]")?.value.replace(/[^0-9.]/g, "")) || 0;
     
-    console.log('Input values:', {
+    console.log("Input values:", {
         homePrice,
         downPayment,
         loanTerm,
@@ -228,7 +229,7 @@ function calculateMortgage() {
     // Calculate total monthly payment
     const totalMonthlyPayment = monthlyPrincipalAndInterest + monthlyPropertyTax + monthlyHomeInsurance + monthlyPMI + hoaFees;
     
-    console.log('Calculated values:', {
+    console.log("Calculated values:", {
         loanAmount,
         monthlyPrincipalAndInterest,
         monthlyPropertyTax,
@@ -254,7 +255,7 @@ function calculateMortgage() {
 }
 
 function generateAmortizationSchedule(loanAmount, monthlyInterestRate, numberOfPayments, monthlyPayment, extraPayment) {
-    console.log('Generating amortization schedule');
+    console.log("Generating amortization schedule");
     
     const schedule = [];
     let remainingBalance = loanAmount;
@@ -270,7 +271,7 @@ function generateAmortizationSchedule(loanAmount, monthlyInterestRate, numberOfP
         // Calculate principal for this month (including extra payment)
         let principalPayment = monthlyPayment - interestPayment + extraPayment;
         
-        // Adjust principal if it's more than the remaining balance
+        // Adjust principal if it"s more than the remaining balance
         if (principalPayment > remainingBalance) {
             principalPayment = remainingBalance;
         }
@@ -316,27 +317,27 @@ function generateAmortizationSchedule(loanAmount, monthlyInterestRate, numberOfP
 }
 
 function displayResults(principalAndInterest, propertyTax, homeInsurance, pmi, hoaFees, totalMonthlyPayment, loanAmount, amortizationData) {
-    console.log('Displaying results');
+    console.log("Displaying results");
     
     // Create or get results container
-    let resultsContainer = document.querySelector('.results-container');
+    let resultsContainer = document.querySelector("#results-container"); // Changed selector to ID
     if (!resultsContainer) {
-        console.error('Results container not found, creating one');
+        console.error("Results container not found, creating one");
         ensureResultsContainerExists();
-        resultsContainer = document.querySelector('.results-container');
+        resultsContainer = document.querySelector("#results-container"); // Changed selector to ID
     }
     
     // Clear previous results
     if (resultsContainer) {
-        resultsContainer.innerHTML = '';
+        resultsContainer.innerHTML = "";
     } else {
-        console.error('Results container still not found after ensuring it exists');
+        console.error("Results container still not found after ensuring it exists");
         return;
     }
     
     // Create monthly payment breakdown section
-    const paymentBreakdown = document.createElement('div');
-    paymentBreakdown.className = 'payment-breakdown results-section';
+    const paymentBreakdown = document.createElement("div");
+    paymentBreakdown.className = "payment-breakdown results-section";
     paymentBreakdown.innerHTML = `
         <h2>Monthly Payment Breakdown</h2>
         <div class="breakdown-item">
@@ -356,13 +357,13 @@ function displayResults(principalAndInterest, propertyTax, homeInsurance, pmi, h
             <span>PMI:</span>
             <span>$${pmi.toFixed(2)}</span>
         </div>
-        ` : ''}
+        ` : ""}
         ${hoaFees > 0 ? `
         <div class="breakdown-item">
             <span>HOA Fees:</span>
             <span>$${hoaFees.toFixed(2)}</span>
         </div>
-        ` : ''}
+        ` : ""}
         <div class="breakdown-item total">
             <span>Total Monthly Payment:</span>
             <span>$${totalMonthlyPayment.toFixed(2)}</span>
@@ -371,8 +372,8 @@ function displayResults(principalAndInterest, propertyTax, homeInsurance, pmi, h
     resultsContainer.appendChild(paymentBreakdown);
     
     // Create loan summary section
-    const loanSummary = document.createElement('div');
-    loanSummary.className = 'loan-summary results-section';
+    const loanSummary = document.createElement("div");
+    loanSummary.className = "loan-summary results-section";
     loanSummary.innerHTML = `
         <h2>Loan Summary</h2>
         <div class="summary-item">
@@ -389,14 +390,14 @@ function displayResults(principalAndInterest, propertyTax, homeInsurance, pmi, h
         </div>
         <div class="summary-item">
             <span>Payoff Date:</span>
-            <span>${amortizationData.payoffDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+            <span>${amortizationData.payoffDate.toLocaleDateString("en-US", { month: "long", year: "numeric" })}</span>
         </div>
     `;
     resultsContainer.appendChild(loanSummary);
     
     // Create amortization schedule section
-    const amortizationSection = document.createElement('div');
-    amortizationSection.className = 'amortization-schedule results-section';
+    const amortizationSection = document.createElement("div");
+    amortizationSection.className = "amortization-schedule results-section";
     amortizationSection.innerHTML = `
         <h2>Amortization Schedule</h2>
         <p>This table shows how your loan balance decreases over time as you make payments.</p>
@@ -412,85 +413,19 @@ function displayResults(principalAndInterest, propertyTax, homeInsurance, pmi, h
                     </tr>
                 </thead>
                 <tbody>
-                    ${amortizationData.schedule.map(entry => `
+                    ${amortizationData.schedule.map(row => `
                         <tr>
-                            <td>${entry.year}</td>
-                            <td>$${entry.principalPaid.toFixed(2)}</td>
-                            <td>$${entry.interestPaid.toFixed(2)}</td>
-                            <td>$${entry.totalPaid.toFixed(2)}</td>
-                            <td>$${entry.remainingBalance.toFixed(2)}</td>
+                            <td>${row.year}</td>
+                            <td>$${row.principalPaid.toFixed(2)}</td>
+                            <td>$${row.interestPaid.toFixed(2)}</td>
+                            <td>$${row.totalPaid.toFixed(2)}</td>
+                            <td>$${row.remainingBalance.toFixed(2)}</td>
                         </tr>
-                    `).join('')}
+                    `).join("")}
                 </tbody>
             </table>
         </div>
     `;
     resultsContainer.appendChild(amortizationSection);
-    
-    // Add styling to results
-    const style = document.createElement('style');
-    style.textContent = `
-        .results-container {
-            margin-top: 2rem !important;
-            border-top: 1px solid #dee2e6 !important;
-            padding-top: 2rem !important;
-        }
-        .results-section {
-            margin-bottom: 2rem !important;
-        }
-        .results-section h2 {
-            margin-top: 0 !important;
-            margin-bottom: 1rem !important;
-            font-size: 1.5rem !important;
-            font-weight: 600 !important;
-            color: #212529 !important;
-        }
-        .breakdown-item, .summary-item {
-            display: flex !important;
-            justify-content: space-between !important;
-            margin-bottom: 0.5rem !important;
-            padding: 0.5rem 0 !important;
-            border-bottom: 1px solid #f0f0f0 !important;
-        }
-        .breakdown-item.total, .summary-item.total {
-            font-weight: bold !important;
-            border-top: 2px solid #dee2e6 !important;
-            margin-top: 0.5rem !important;
-        }
-        .amortization-table-container {
-            overflow-x: auto !important;
-            margin-top: 1rem !important;
-            margin-bottom: 2rem !important;
-            display: block !important;
-            width: 100% !important;
-        }
-        .amortization-table {
-            width: 100% !important;
-            border-collapse: collapse !important;
-            margin-bottom: 1rem !important;
-            border: 1px solid #dee2e6 !important;
-        }
-        .amortization-table th, .amortization-table td {
-            padding: 0.75rem !important;
-            vertical-align: top !important;
-            border-top: 1px solid #dee2e6 !important;
-            text-align: right !important;
-            font-size: 0.9rem !important;
-        }
-        .amortization-table th {
-            background-color: #f8f9fa !important;
-            font-weight: 600 !important;
-            text-align: center !important;
-            border-bottom: 2px solid #dee2e6 !important;
-        }
-        .amortization-table tbody tr:nth-of-type(odd) {
-            background-color: rgba(0, 0, 0, 0.05) !important;
-        }
-    `;
-    document.head.appendChild(style);
-    
-    // Scroll to results
-    resultsContainer.scrollIntoView({ behavior: 'smooth' });
-    
-    console.log('Results displayed successfully');
 }
+

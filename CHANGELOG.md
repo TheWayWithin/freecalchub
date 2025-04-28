@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.11.0] - 2025-04-28
+
+### Fixed
+- **Amortization Results:** Fixed issue where amortization results were not displaying. Updated JavaScript (`refined-amortization-fix.js`) to consistently use the ID selector `#results-container` instead of the class selector `.results-container` when finding or creating the results display area, aligning with the HTML structure.
+
 ## [1.10.0] - 2025-04-28
 
 ### Fixed
@@ -18,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **File Cleanup:** Removed numerous old/unused CSS and JS files from previous fix attempts within `finance/mortgage/mortgage-calculator/`.
 - **HTML Cleanup:** Removed conflicting inline styles from `header`, logo, navigation icons, and form elements in `index.html`.
 - **HTML Structure:** Added explicit `<div id="results-container"></div>` for JavaScript to insert results.
-- **CSS/JS Links:** Corrected and simplified CSS and JS links in `index.html` head to reference only necessary files (`styles.css`, `calculator.css`, `mortgage-calculator.css`, `page-alignment-fix.css`, `mortgage-calculator.js`, `refined-amortization-fix.js`, `main.js`).
+- **CSS/JS Links:** Corrected and simplified CSS and JS links in `index.html` head to reference only necessary files (`styles.css`, `calculator.css`, `mortgage-calculator.css`, `page-alignment-fix.css`, `navigation-header-fix.css`, `mortgage-calculator.js`, `refined-amortization-fix.js`, `main.js`).
 
 ## [1.8.0] - 2025-04-28
 
