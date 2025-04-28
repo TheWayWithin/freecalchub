@@ -1,0 +1,67 @@
+/* Mobile Menu Fix
+ * Ensures mobile menu is properly hidden on desktop view
+ * and only appears when toggled via the mobile menu button
+ */
+
+/* Hide mobile menu by default on all screen sizes */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+/* Only show mobile menu when it has the 'active' class */
+.mobile-menu.active {
+    display: block;
+}
+
+/* Remove any 'Menu' text that might be showing */
+.menu-text {
+    display: none;
+}
+
+/* Hide any bullet points in mobile menu */
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Ensure mobile menu button only shows on small screens */
+@media (min-width: 992px) {
+    #mobile-menu-button {
+        display: none;
+    }
+}
+
+/* Ensure proper styling for mobile menu on small screens */
+@media (max-width: 991px) {
+    .mobile-menu {
+        padding: 1rem;
+    }
+    
+    .mobile-menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 1rem;
+    }
+    
+    .mobile-nav ul li {
+        margin-bottom: 1rem;
+    }
+    
+    .mobile-nav ul li a {
+        display: block;
+        padding: 0.5rem 0;
+        font-size: 1.1rem;
+    }
+}

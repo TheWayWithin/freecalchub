@@ -1,0 +1,73 @@
+/* Button Positioning Fix
+ * Ensures calculate and reset buttons are properly positioned
+ * and styled consistently across pages
+ */
+
+/* Container for form buttons */
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+/* Primary button styling (Calculate) */
+.btn-primary, 
+button[type="submit"],
+#calculate-button {
+    background-color: #4a76a8;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 48%;
+    text-align: center;
+}
+
+.btn-primary:hover,
+button[type="submit"]:hover,
+#calculate-button:hover {
+    background-color: #3a5f8a;
+}
+
+/* Secondary button styling (Reset) */
+.btn-secondary,
+button[type="reset"],
+.reset-button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 48%;
+    text-align: center;
+}
+
+.btn-secondary:hover,
+button[type="reset"]:hover,
+.reset-button:hover {
+    background-color: #5a6268;
+}
+
+/* Ensure buttons are full width on mobile */
+@media (max-width: 576px) {
+    .form-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-primary, 
+    button[type="submit"],
+    #calculate-button,
+    .btn-secondary,
+    button[type="reset"],
+    .reset-button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
