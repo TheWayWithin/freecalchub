@@ -1,0 +1,22 @@
+/* Navigation Ribbon Fix
+ * Fixes the white box issue in the navigation ribbon
+ */
+
+.navigation-ribbon-container a {
+    background-color: transparent !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.navigation-ribbon-container a.active {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Ensure no white backgrounds on hover */
+.navigation-ribbon-container a:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border: none !important;
+}
