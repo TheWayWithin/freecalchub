@@ -1,73 +1,82 @@
 # Changelog
 
-All notable changes to the CalcHub project will be documented in this file.
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.8.0] - 2025-04-28
+
+### Fixed
+- **Page Scrolling:** Removed JavaScript `setTimeout` that forced initial calculation and caused page to scroll down on load.
+- **Navigation Styling:** Removed conflicting inline styles on navigation ribbon to allow external CSS to apply correctly, restoring blue background.
+- **Dark Mode Button:** Corrected HTML structure (using ID instead of class, adding sun icon) and included `/js/main.js` to restore functionality.
+- **Page Alignment:** Created `page-alignment-fix.css` with specific rules to center the main content container (`.content-container`) with `max-width: 1200px` and `margin: 0 auto`.
+- **Form Layout:** Included rules in `page-alignment-fix.css` to ensure form inputs (`.form-group.half-width`) display in a two-column layout on desktop screens (min-width: 768px).
 
 ## [1.7.0] - 2025-04-28
 
 ### Fixed
-- Implemented definitive CSS fixes for the mortgage calculator page with high specificity and !important declarations.
-- Added inline styles to critical elements (header, logo, dark mode button, navigation ribbon, form layout, footer copyright) to ensure proper display.
-- Corrected logo image path in HTML to `/images/logo.svg`.
-- Ensured dark mode toggle button is visible and correctly styled.
-- Restored blue background for the navigation ribbon.
-- Forced two-column form layout on desktop using CSS and inline styles.
-- Centered footer copyright text.
-- Maintained fixes for mobile menu hiding, breadcrumb styling, and amortization table functionality.
+- **Definitive Fixes:** Implemented definitive CSS fixes (`definitive-calculator-fix.css`) with high specificity and inline styles in `index.html` to address persistent issues.
+- **Logo:** Corrected logo path in `index.html` to `/images/logo.svg` and added inline styles to ensure visibility.
+- **Dark Mode Button:** Added inline styles to ensure visibility and basic structure. (Functionality fix pending)
+- **Navigation Ribbon:** Added inline styles for blue background and icon visibility.
+- **Form Layout:** Added inline styles and `data-desktop-style` attributes with JavaScript to attempt two-column layout.
+- **Footer Copyright:** Added inline styles to center copyright text.
 
 ## [1.6.0] - 2025-04-28
 
 ### Fixed
-- Implemented refined CSS fixes for the mortgage calculator page to address regressions from previous aggressive fix.
-- Restored correct logo image display.
-- Restored dark mode toggle button visibility and functionality.
-- Restored navigation ribbon icons using Font Awesome.
-- Restored two-column form layout for better ergonomics on desktop.
-- Fixed footer layout and styling to be consistent with other pages.
-- Maintained fixes for mobile menu hiding, breadcrumb styling, and amortization table functionality.
-- Updated JavaScript for amortization table with refined logic.
+- **Refined Fixes:** Implemented refined CSS (`refined-calculator-fix.css`) and JavaScript (`refined-amortization-fix.js`) to address regressions from previous aggressive fixes.
+- **Logo Display:** Attempted to fix logo display.
+- **Dark Mode Button:** Attempted to restore dark mode button.
+- **Navigation Ribbon Icons:** Added Font Awesome icons back to navigation ribbon links.
+- **Form Layout:** Attempted to restore two-column form layout.
+- **Footer Alignment:** Attempted to fix footer alignment.
 
 ## [1.5.0] - 2025-04-28
 
 ### Fixed
-- Implemented super-aggressive CSS fixes for the mortgage calculator page to properly hide mobile menu on desktop view
-- Fixed breadcrumb styling and navigation ribbon appearance on the mortgage calculator page
-- Corrected form layout and button positioning on the mortgage calculator page
-- Implemented super-aggressive JavaScript fixes to ensure the amortization table displays properly
-- Added fallback mechanisms and error handling to ensure calculator results always display
-- Ensured consistent styling across all elements to match the finance page reference
+- **Super-Aggressive Fixes:** Implemented super-aggressive CSS (`super-aggressive-calculator-fix.css`) and JavaScript (`super-aggressive-amortization-fix.js`) to override conflicting styles and ensure functionality.
+- **Mobile Menu:** Ensured mobile menu is hidden on desktop.
+- **Breadcrumbs & Navigation:** Fixed styling for breadcrumbs and navigation ribbon.
+- **Form Layout & Buttons:** Corrected form layout and button positioning.
+- **Amortization Table:** Implemented robust JavaScript with fallbacks to ensure amortization table always displays and calculates correctly.
 
 ## [1.4.0] - 2025-04-27
 
 ### Fixed
-- Created definitive logo fix to ensure "CalcHub" appears properly in white text on blue background
-- Fixed calculator layout on mortgage category page to display in a 3+1 grid
-- Fixed form alignment issues on mortgage calculator page
-- Removed "(optional)" text from form labels to prevent wrapping
+- **Mobile Menu:** Fixed mobile menu display issue on mortgage category page (`finance/mortgage/css/mobile-menu-fix.css`).
+- **Breadcrumb Styling:** Fixed breadcrumb styling on mortgage category page (`finance/mortgage/css/breadcrumb-styling-fix.css`).
+- **Button Positioning:** Fixed button positioning on mortgage category page (`finance/mortgage/css/button-positioning-fix.css`).
+- **Page Container:** Fixed page container width on mortgage category page (`finance/mortgage/css/page-container-fix.css`).
 
 ## [1.3.0] - 2025-04-27
 
 ### Fixed
-- Restructured both mortgage category and mortgage calculator pages to match finance page template
-- Removed conflicting CSS fixes and implemented consistent styling
-- Fixed logo implementation with white text on blue background
-- Corrected breadcrumb styling without "CalcHub" text in breadcrumbs
-- Implemented uniform navigation styling and font usage
+- **Dropdown Display:** Fixed dropdown display issue on mortgage calculator page (`finance/mortgage/mortgage-calculator/css/dropdown-display-fix.css`).
+- **Amortization Table:** Fixed amortization table population issue on mortgage calculator page (`finance/mortgage/mortgage-calculator/js/amortization-table-fix.js`).
+- **Navigation Ribbon:** Fixed navigation ribbon styling on mortgage category page (`finance/mortgage/css/navigation-ribbon-fix.css`).
 
 ## [1.2.0] - 2025-04-27
 
 ### Fixed
-- Enhanced logo styling with more robust solution
-- Fixed breadcrumb consistency across pages
-- Fixed amortization functionality to properly populate data
-- Improved form layout with side-by-side fields
-- Fixed mortgage category layout with 3 cards on first row and 1 card on second row
+- **Logo Styling:** Implemented definitive logo fix (`definitive-logo-fix.css`) for consistent display.
+- **Form Alignment:** Fixed form alignment issues (`fixed-form-alignment.css`).
+- **Calculator Layout:** Fixed calculator layout on mortgage category page (`fixed-calculator-layout.css`).
 
-## [1.1.0] - 2025-04-26
-
-### Added
-- Initial implementation of mortgage calculator
-- Added amortization schedule functionality
-- Created mortgage category page with calculator cards
+## [1.1.0] - 2025-04-27
 
 ### Fixed
-- Various styling and layout issues
+- **Enhanced Logo Styling:** Created `enhanced-logo-fix.css` for better logo display.
+- **Enhanced Breadcrumb Fix:** Created `enhanced-breadcrumb-fix.css` for consistent breadcrumbs.
+- **Fixed Amortization Functionality:** Created `fixed-amortization.js` to ensure amortization table populates.
+- **Improved Form Layout:** Created `improved-form-layout.css` for side-by-side fields.
+- **Fixed Mortgage Category Layout:** Created `mortgage-category-layout.css` to restore correct card layout.
+
+## [1.0.0] - 2025-04-27
+
+### Added
+- Initial setup for mortgage calculator functionality fixes.
+- Copied relevant files to `mortgage-calculator-fix-functionality` directory.
+

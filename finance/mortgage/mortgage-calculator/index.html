@@ -41,8 +41,9 @@
             </nav>
             
             <div class="header-controls" style="display: flex !important; align-items: center !important;">
-                <button class="dark-mode-toggle" aria-label="Toggle dark mode" style="display: inline-flex !important; align-items: center !important; justify-content: center !important; visibility: visible !important; opacity: 1 !important; height: 40px !important; width: 40px !important; background: none !important; border: none !important; color: white !important; cursor: pointer !important; padding: 0 !important; margin-left: 1rem !important;">
-                    <i class="fas fa-moon toggle-icon" style="display: inline-block !important; font-size: 1.2rem !important; color: white !important; visibility: visible !important; opacity: 1 !important;"></i>
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
                 </button>
                 <button id="mobile-menu-button" aria-label="Toggle menu">
                     <i class="fas fa-bars menu-icon"></i>
@@ -77,7 +78,7 @@
         </div>
     </div>
     
-    <div class="navigation-ribbon" style="background-color: #4a76a8 !important; display: block !important;">
+    <div class="navigation-ribbon">
         <div class="navigation-ribbon-container">
             <a href="/finance/mortgage/"><i class="fas fa-home" style="display: inline-block !important; margin-right: 0.5rem !important; color: white !important; visibility: visible !important; opacity: 1 !important;"></i>Mortgage</a>
             <a href="/finance/loan/"><i class="fas fa-file-invoice-dollar" style="display: inline-block !important; margin-right: 0.5rem !important; color: white !important; visibility: visible !important; opacity: 1 !important;"></i>Loan</a>
@@ -292,3 +293,9 @@
     </script>
 </body>
 </html>
+
+    <script src="/js/main.js" defer></script>
+
+
+    <link rel="stylesheet" href="css/page-alignment-fix.css">
+
