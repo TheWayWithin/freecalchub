@@ -113,3 +113,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Dark Mode Functionality:** Linked `dark-mode-button-fix.css` in `index.html` and ensured the global `main.js` script is correctly referenced to enable dark mode toggling.
 - **Breadcrumb Alignment:** Created `breadcrumb-alignment-fix.css` with specific rules to ensure breadcrumbs are properly aligned within the container, matching the style of other pages.
 
+
+
+## [1.15.0] - 2025-04-28
+
+### Fixed
+- **Three-Column Layout:** Created `enhanced-three-column-form-fix.css` with higher specificity selectors (using `#mortgage-calculator-form` ID) and `!important` declarations to ensure the three-column responsive layout applies correctly, overriding potential conflicts.
+- **HTML Update:** Linked `enhanced-three-column-form-fix.css` in `index.html`.
+
