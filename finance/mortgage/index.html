@@ -7,32 +7,24 @@
     <meta name="description" content="Free mortgage calculators to help you plan your home purchase and understand your mortgage options. Calculate monthly payments, affordability, refinancing options, and more.">
     
     <!-- Favicon -->
-    <link rel="icon" href="https://freecalchub.com/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     
     <!-- CSS Files -->
-    <link rel="stylesheet" href="https://freecalchub.com/css/styles.css">
-    <link rel="stylesheet" href="https://freecalchub.com/css/dark-mode.css">
-    <link rel="stylesheet" href="https://freecalchub.com/css/navigation-ribbon.css">
-    <link rel="stylesheet" href="https://freecalchub.com/css/breadcrumb-styles.css">
-    <link rel="stylesheet" href="https://freecalchub.com/css/calchub-consolidated-fixes.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <link rel="stylesheet" href="/css/navigation-ribbon.css">
+    <link rel="stylesheet" href="/css/breadcrumb-styles.css">
+    <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <!-- Previous CSS fixes -->
-    <link rel="stylesheet" href="https://freecalchub.com/finance/mortgage/mortgage-calculator/css/calchub-header-fixes.css">
-    <link rel="stylesheet" href="https://freecalchub.com/finance/mortgage/mortgage-calculator/css/breadcrumb-fixes.css">
-    
-    <!-- New definitive fixes -->
-    <link rel="stylesheet" href="https://freecalchub.com/finance/mortgage/mortgage-calculator/css/definitive-logo-fix.css">
-    <link rel="stylesheet" href="https://freecalchub.com/finance/mortgage/css/fixed-calculator-layout.css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
     
-    <header class="header">
+    <header>
         <div class="header-container">
             <div class="logo-container">
-                <a href="/">
-                    <img src="https://freecalchub.com/images/logo.svg" alt="CalcHub Logo">
+                <a href="/" class="logo">
+                    <img src="/images/logo.svg" alt="CalcHub Logo" height="40">
                 </a>
             </div>
             
@@ -54,7 +46,7 @@
                     <i class="fas fa-moon"></i>
                     <i class="fas fa-sun"></i>
                 </button>
-                <button id="mobile-menu-button" aria-label="Open menu" class="d-md-none">
+                <button id="mobile-menu-button" aria-label="Open menu">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -92,9 +84,8 @@
         </div>
     </div>
 
-    <!-- Finance Navigation Ribbon -->
-    <nav class="finance-navigation">
-        <div class="container">
+    <div class="navigation-ribbon">
+        <div class="navigation-ribbon-container">
             <a href="/finance/mortgage/" class="active"><i class="fas fa-home"></i> Mortgage</a>
             <a href="/finance/loan/"><i class="fas fa-file-invoice-dollar"></i> Loan</a>
             <a href="/finance/investment/"><i class="fas fa-chart-line"></i> Investment</a>
@@ -102,56 +93,48 @@
             <a href="/finance/budgeting/"><i class="fas fa-wallet"></i> Budgeting</a>
             <a href="/finance/savings/"><i class="fas fa-piggy-bank"></i> Savings</a>
             <a href="/finance/cryptocurrency/"><i class="fas fa-coins"></i> Cryptocurrency</a>
-            <a href="/finance/tax/"><i class="fas fa-file-invoice"></i> Tax</a>
+            <a href="/finance/tax/"><i class="fas fa-receipt"></i> Tax</a>
         </div>
-    </nav>
+    </div>
 
-    <!-- Main Content -->
-    <main id="main-content" class="container">
-        <h1>Mortgage Calculators</h1>
-        
-        <p>Plan your home purchase and understand your mortgage options with these essential calculators.</p>
+    <main id="main-content" class="container py-5">
+        <section class="category-header">
+            <h1>Mortgage Calculators</h1>
+            <p class="lead">Plan your home purchase and understand your mortgage options with these essential calculators.</p>
+        </section>
 
         <div class="calculator-grid">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="calculator-card">
-                        <i class="fas fa-home icon"></i>
-                        <h3>Mortgage Calculator</h3>
-                        <p>Calculate monthly payments, interest, and amortization schedule for your mortgage.</p>
-                        <a href="/finance/mortgage/mortgage-calculator/">Use Calculator</a>
-                    </div>
+            <a href="/finance/mortgage/mortgage-calculator/" class="calculator-card">
+                <div class="calculator-icon">
+                    <i class="fas fa-home"></i>
                 </div>
-                
-                <div class="col-md-4">
-                    <div class="calculator-card">
-                        <i class="fas fa-dollar-sign icon"></i>
-                        <h3>Affordability Calculator</h3>
-                        <p>Find out how much house you can afford based on your income and expenses.</p>
-                        <a href="/finance/mortgage/affordability-calculator/">Use Calculator</a>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="calculator-card">
-                        <i class="fas fa-exchange-alt icon"></i>
-                        <h3>Refinance Calculator</h3>
-                        <p>See if refinancing your mortgage makes financial sense for your situation.</p>
-                        <a href="/finance/mortgage/refinance-calculator/">Use Calculator</a>
-                    </div>
-                </div>
-            </div>
+                <h3>Mortgage Calculator</h3>
+                <p>Calculate monthly payments, interest, and amortization schedule for your mortgage.</p>
+            </a>
             
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="calculator-card">
-                        <i class="fas fa-plus icon"></i>
-                        <h3>Extra Payment Calculator</h3>
-                        <p>Calculate how much you can save by making extra payments on your mortgage.</p>
-                        <a href="/finance/mortgage/extra-payment-calculator/">Use Calculator</a>
-                    </div>
+            <a href="/finance/mortgage/affordability-calculator/" class="calculator-card">
+                <div class="calculator-icon">
+                    <i class="fas fa-dollar-sign"></i>
                 </div>
-            </div>
+                <h3>Affordability Calculator</h3>
+                <p>Find out how much house you can afford based on your income and expenses.</p>
+            </a>
+            
+            <a href="/finance/mortgage/refinance-calculator/" class="calculator-card">
+                <div class="calculator-icon">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <h3>Refinance Calculator</h3>
+                <p>See if refinancing your mortgage makes financial sense for your situation.</p>
+            </a>
+            
+            <a href="/finance/mortgage/extra-payment-calculator/" class="calculator-card">
+                <div class="calculator-icon">
+                    <i class="fas fa-plus-circle"></i>
+                </div>
+                <h3>Extra Payment Calculator</h3>
+                <p>Calculate how much you can save by making extra payments on your mortgage.</p>
+            </a>
         </div>
 
         <section class="content-section">
@@ -214,7 +197,7 @@
     </footer>
 
     <!-- JavaScript Files -->
-    <script src="https://freecalchub.com/js/dark-mode.js"></script>
-    <script src="https://freecalchub.com/js/mobile-menu.js"></script>
+    <script src="/js/dark-mode.js"></script>
+    <script src="/js/mobile-menu.js"></script>
 </body>
 </html>
