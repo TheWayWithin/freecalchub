@@ -1,0 +1,80 @@
+/* Mobile Menu Fix CSS
+ * This CSS ensures the mobile menu is hidden on desktop view
+ * and only appears when toggled on mobile devices
+ */
+
+/* Hide mobile menu by default on all screen sizes */
+#mobile-menu {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #fff !important;
+    z-index: 1000 !important;
+    overflow-y: auto !important;
+    transform: translateX(-100%) !important;
+    transition: transform 0.3s ease-in-out !important;
+}
+
+/* Only show mobile menu when it has the 'active' class */
+#mobile-menu.active {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+/* Style the mobile menu when it's visible */
+#mobile-menu.active ul {
+    padding: 20px !important;
+    margin: 0 !important;
+    list-style-type: none !important;
+}
+
+#mobile-menu.active li {
+    margin-bottom: 15px !important;
+    padding-left: 0 !important;
+}
+
+#mobile-menu.active a {
+    color: #333 !important;
+    text-decoration: none !important;
+    font-size: 18px !important;
+    display: block !important;
+    padding: 10px 0 !important;
+}
+
+/* Style the close button */
+#mobile-menu .close-menu {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    background: none !important;
+    border: none !important;
+    font-size: 24px !important;
+    cursor: pointer !important;
+    color: #333 !important;
+}
+
+/* Ensure mobile menu button is only visible on mobile */
+@media (min-width: 768px) {
+    #mobile-menu-button {
+        display: none !important;
+    }
+}
+
+/* Make sure mobile menu is properly hidden in all cases */
+body:not(.mobile-menu-active) #mobile-menu {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Override any conflicting styles */
+.mobile-menu:not(.active) {
+    display: none !important;
+}
