@@ -1,63 +1,49 @@
 # Changelog
 
-## [1.8.0] - 2025-04-28
-### Fixed
-- Implemented aggressive fixes for mortgage calculator page
-- Restored amortization table functionality with comprehensive JavaScript solution
-- Fixed mobile menu display on calculator page
-- Fixed form layout and button positioning
-- Ensured proper display of all calculator outputs
-- Added high-specificity CSS selectors with !important declarations to override conflicting styles
-
-## [1.7.0] - 2025-04-28
-### Fixed
-- Completely restructured mortgage pages to match finance page template
-- Fixed mobile menu display issues (now properly hidden on desktop view)
-- Fixed breadcrumb styling and consistency across pages
-- Fixed button positioning and styling on calculator page
-- Fixed page width and container styling for proper layout
-- Fixed dropdown display issues for country and loan term selectors
-- Fixed amortization table display and functionality
-- Ensured responsive design works across all viewport sizes
-
-## [1.6.0] - 2025-04-28
-### Fixed
-- Fixed white box in navigation ribbon
-- Fixed dropdown display issues
-- Fixed amortization table display
-- Updated mortgage calculator page with improved form layout
+All notable changes to the CalcHub project will be documented in this file.
 
 ## [1.5.0] - 2025-04-28
-### Fixed
-- Complete restructure of mortgage pages using finance page template
-- Fixed logo styling issues
-- Fixed breadcrumb consistency
-- Fixed navigation styling
 
-## [1.4.0] - 2025-04-28
 ### Fixed
-- Enhanced logo styling with more robust solution
-- Fixed breadcrumb consistency issues
-- Fixed calculator layout on mortgage category page
+- Implemented super-aggressive CSS fixes for the mortgage calculator page to properly hide mobile menu on desktop view
+- Fixed breadcrumb styling and navigation ribbon appearance on the mortgage calculator page
+- Corrected form layout and button positioning on the mortgage calculator page
+- Implemented super-aggressive JavaScript fixes to ensure the amortization table displays properly
+- Added fallback mechanisms and error handling to ensure calculator results always display
+- Ensured consistent styling across all elements to match the finance page reference
+
+## [1.4.0] - 2025-04-27
+
+### Fixed
+- Created definitive logo fix to ensure "CalcHub" appears properly in white text on blue background
+- Fixed calculator layout on mortgage category page to display in a 3+1 grid
 - Fixed form alignment issues on mortgage calculator page
+- Removed "(optional)" text from form labels to prevent wrapping
 
 ## [1.3.0] - 2025-04-27
+
 ### Fixed
-- Implemented enhanced amortization schedule functionality
-- Improved form layout for better user experience
-- Fixed logo styling and header consistency
-- Fixed breadcrumb styling
+- Restructured both mortgage category and mortgage calculator pages to match finance page template
+- Removed conflicting CSS fixes and implemented consistent styling
+- Fixed logo implementation with white text on blue background
+- Corrected breadcrumb styling without "CalcHub" text in breadcrumbs
+- Implemented uniform navigation styling and font usage
 
 ## [1.2.0] - 2025-04-27
-### Fixed
-- Fixed logo styling in header
-- Fixed breadcrumb styling
-- Fixed dropdown menu styling
-- Adjusted font sizes for better readability
-- Improved form layout
 
-## [1.1.0] - 2025-04-27
 ### Fixed
-- Initial fixes for CalcHub header styling
-- Added logo fixes
-- Improved navigation consistency
+- Enhanced logo styling with more robust solution
+- Fixed breadcrumb consistency across pages
+- Fixed amortization functionality to properly populate data
+- Improved form layout with side-by-side fields
+- Fixed mortgage category layout with 3 cards on first row and 1 card on second row
+
+## [1.1.0] - 2025-04-26
+
+### Added
+- Initial implementation of mortgage calculator
+- Added amortization schedule functionality
+- Created mortgage category page with calculator cards
+
+### Fixed
+- Various styling and layout issues
