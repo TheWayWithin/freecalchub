@@ -104,3 +104,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial setup for mortgage calculator functionality fixes.
 - Copied relevant files to `mortgage-calculator-fix-functionality` directory.
+
+
+## [1.13.0] - 2025-04-28
+
+### Fixed
+- **Dark Mode Button Styling:** Created `dark-mode-button-fix.css` with high specificity rules to ensure the dark mode button styling matches other pages, including icon display and hover effects. Also fixed the site header background color to be white.
+- **Dark Mode Functionality:** Linked `dark-mode-button-fix.css` in `index.html` and ensured the global `main.js` script is correctly referenced to enable dark mode toggling.
+- **Breadcrumb Alignment:** Created `breadcrumb-alignment-fix.css` with specific rules to ensure breadcrumbs are properly aligned within the container, matching the style of other pages.
+

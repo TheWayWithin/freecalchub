@@ -1,0 +1,41 @@
+/* Breadcrumb Alignment Fix for Mortgage Calculator Page */
+
+/* Ensure breadcrumbs are properly aligned and styled */
+.breadcrumbs {
+    background-color: var(--background-alt) !important;
+    padding: 10px 0 !important;
+    margin-bottom: 20px !important;
+}
+
+.breadcrumbs-container {
+    max-width: var(--container-width, 1200px) !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.breadcrumbs a, 
+.breadcrumbs span {
+    color: var(--text-color) !important;
+    font-size: 0.9rem !important;
+}
+
+.breadcrumbs a {
+    text-decoration: none !important;
+}
+
+.breadcrumbs a:hover {
+    color: var(--primary-color) !important;
+    text-decoration: underline !important;
+}
+
+.breadcrumbs .separator {
+    margin: 0 8px !important;
+    color: var(--text-light) !important;
+}
+
+.breadcrumbs .current {
+    color: var(--primary-color) !important;
+    font-weight: 600 !important;
+}
