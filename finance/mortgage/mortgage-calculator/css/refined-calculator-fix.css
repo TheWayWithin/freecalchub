@@ -1,0 +1,384 @@
+/* Refined Calculator Page Fix
+ * This CSS file addresses regressions caused by the previous aggressive fix
+ * while maintaining the fixes that worked (mobile menu, breadcrumbs, amortization).
+ */
+
+/* === WORKING FIXES (Copied from super-aggressive) === */
+
+/* Force hide mobile menu on desktop */
+@media (min-width: 768px) {
+    html body .mobile-menu,
+    html body #mobile-menu,
+    html body div.mobile-menu,
+    html body div#mobile-menu {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        top: -9999px !important;
+        left: -9999px !important;
+    }
+
+    html body #mobile-menu-button,
+    html body button#mobile-menu-button,
+    html body .header-controls #mobile-menu-button,
+    html body div.header-controls button#mobile-menu-button,
+    html body header .header-controls #mobile-menu-button,
+    html body header div.header-controls button#mobile-menu-button {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        top: -9999px !important;
+        left: -9999px !important;
+    }
+}
+
+/* Fix breadcrumb styling */
+html body .breadcrumbs,
+html body div.breadcrumbs {
+    background-color: #f8f9fa !important;
+    padding: 0.5rem 0 !important;
+    border-bottom: 1px solid #e9ecef !important;
+    margin: 0 !important;
+}
+
+html body .breadcrumbs-container,
+html body div.breadcrumbs-container,
+html body .breadcrumbs div.breadcrumbs-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+}
+
+html body .breadcrumbs a,
+html body .breadcrumbs .separator,
+html body .breadcrumbs .current,
+html body div.breadcrumbs a,
+html body div.breadcrumbs span.separator,
+html body div.breadcrumbs span.current {
+    color: #007bff !important;
+    text-decoration: none !important;
+    font-size: 0.9rem !important;
+    font-weight: normal !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+html body .breadcrumbs .current,
+html body div.breadcrumbs span.current {
+    color: #6c757d !important;
+}
+
+html body .breadcrumbs .separator,
+html body div.breadcrumbs span.separator {
+    margin: 0 0.5rem !important;
+    color: #6c757d !important;
+}
+
+/* === REFINED FIXES for Regressions === */
+
+/* Restore Logo Image */
+html body .logo img,
+html body a.logo img,
+html body .logo-container a.logo img,
+html body header .logo-container a.logo img {
+    display: block !important; /* Ensure image is displayed */
+    height: 40px !important;
+    width: auto !important;
+}
+/* Remove text override if logo is just an image */
+html body .logo,
+html body a.logo,
+html body .logo-container a.logo,
+html body header .logo-container a.logo {
+    font-size: 0 !important; /* Hide text if image is present */
+    line-height: 0 !important;
+}
+
+/* Restore Dark Mode Button */
+html body .header-controls,
+html body header .header-controls,
+html body .site-header .header-controls {
+    display: flex !important;
+    align-items: center !important;
+}
+
+html body .dark-mode-toggle,
+html body button.dark-mode-toggle,
+html body .header-controls .dark-mode-toggle,
+html body header .header-controls .dark-mode-toggle {
+    display: inline-block !important; /* Ensure button is visible */
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    width: auto !important;
+    overflow: visible !important;
+    position: static !important;
+    background: none !important;
+    border: none !important;
+    color: white !important; /* Match header text color */
+    cursor: pointer !important;
+    padding: 0.5rem !important;
+    margin-left: 0.5rem !important;
+}
+/* Add styles for icon inside dark mode toggle if needed */
+html body .dark-mode-toggle .toggle-icon {
+    /* Add styles if the icon itself was hidden */
+    display: inline-block !important; 
+}
+
+/* Restore Navigation Ribbon Icons */
+html body .navigation-ribbon a i,
+html body div.navigation-ribbon a i,
+html body .navigation-ribbon-container a i,
+html body div.navigation-ribbon-container a i {
+    display: inline-block !important; /* Ensure icons are displayed */
+    margin-right: 0.5rem !important;
+    /* Add font-family if using an icon font like Font Awesome */
+    /* font-family: "Font Awesome 6 Free"; */ 
+    /* font-weight: 900; */
+    width: 1em !important; /* Ensure space for icon */
+    height: 1em !important;
+    line-height: 1 !important;
+    vertical-align: middle !important;
+}
+
+/* Restore Two-Column Form Layout */
+html body .calculator-form,
+html body form.calculator-form,
+html body #mortgage-calculator-form,
+html body form#mortgage-calculator-form {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin-right: -15px !important;
+    margin-left: -15px !important;
+}
+
+html body .form-group,
+html body .calculator-form .form-group,
+html body form.calculator-form .form-group {
+    margin-bottom: 1rem !important;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    width: 100% !important; /* Default to full width */
+    box-sizing: border-box !important;
+}
+
+/* Ensure half-width class applies correctly */
+@media (min-width: 768px) { /* Apply half-width only on larger screens */
+    html body .form-group.half-width,
+    html body .calculator-form .form-group.half-width,
+    html body form.calculator-form .form-group.half-width {
+        width: 50% !important;
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+}
+
+/* Restore Footer Layout (Based on typical structure) */
+html body .site-footer,
+html body footer.site-footer {
+    background-color: #f8f9fa !important; /* Example background */
+    color: #6c757d !important; /* Example text color */
+    padding: 2rem 0 0 0 !important;
+    margin-top: 2rem !important;
+    border-top: 1px solid #e9ecef !important;
+}
+
+html body .footer-container,
+html body .site-footer .footer-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 1rem 2rem 1rem !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+}
+
+html body .footer-section,
+html body .site-footer .footer-section {
+    flex: 1 !important;
+    min-width: 150px !important; /* Prevent sections from becoming too narrow */
+    margin-bottom: 1rem !important;
+    padding: 0 15px !important; /* Add spacing between sections */
+}
+
+html body .footer-section h3,
+html body .site-footer .footer-section h3 {
+    color: #343a40 !important; /* Example heading color */
+    font-size: 1.1rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+html body .footer-section p,
+html body .site-footer .footer-section p {
+    margin-bottom: 0.5rem !important;
+    font-size: 0.9rem !important;
+}
+
+html body .footer-section ul,
+html body .site-footer .footer-section ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+html body .footer-section ul li,
+html body .site-footer .footer-section ul li {
+    margin-bottom: 0.5rem !important;
+}
+
+html body .footer-section ul li a,
+html body .site-footer .footer-section ul li a {
+    color: #007bff !important; /* Example link color */
+    text-decoration: none !important;
+    font-size: 0.9rem !important;
+}
+
+html body .footer-section ul li a:hover,
+html body .site-footer .footer-section ul li a:hover {
+    text-decoration: underline !important;
+}
+
+html body .footer-bottom,
+html body .site-footer .footer-bottom {
+    background-color: #e9ecef !important; /* Example bottom background */
+    padding: 1rem 0 !important;
+    text-align: center !important;
+    font-size: 0.85rem !important;
+    color: #6c757d !important;
+}
+
+html body .footer-bottom p,
+html body .site-footer .footer-bottom p {
+    margin: 0 !important;
+}
+
+/* Ensure other aggressive styles don't interfere */
+/* Re-apply necessary base styles if overridden */
+html body .form-control {
+    display: block !important;
+    width: 100% !important;
+    height: calc(1.5em + 0.75rem + 2px) !important;
+    padding: 0.375rem 0.75rem !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: #495057 !important;
+    background-color: #fff !important;
+    background-clip: padding-box !important;
+    border: 1px solid #ced4da !important;
+    border-radius: 0.25rem !important;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+    box-sizing: border-box !important;
+}
+
+html body .input-group {
+    position: relative !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: stretch !important;
+    width: 100% !important;
+}
+
+html body .input-group-text {
+    display: flex !important;
+    align-items: center !important;
+    padding: 0.375rem 0.75rem !important;
+    margin-bottom: 0 !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: #495057 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    background-color: #e9ecef !important;
+    border: 1px solid #ced4da !important;
+    border-radius: 0.25rem !important;
+}
+
+html body .input-group > .form-control {
+    position: relative !important;
+    flex: 1 1 auto !important;
+    width: 1% !important;
+    min-width: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+html body .input-group > .input-group-text:first-child { border-top-right-radius: 0 !important; border-bottom-right-radius: 0 !important; }
+html body .input-group > .form-control:not(:first-child) { border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important; }
+html body .input-group > .input-group-text:last-child { border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important; }
+html body .input-group > .form-control:not(:last-child) { border-top-right-radius: 0 !important; border-bottom-right-radius: 0 !important; }
+
+html body .form-buttons {
+    display: flex !important;
+    justify-content: space-between !important;
+    margin-top: 1.5rem !important;
+    width: 100% !important;
+    padding: 0 15px !important;
+}
+
+html body .btn-primary, html body button[type="submit"], html body #calculate-button {
+    background-color: #4a76a8 !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 0.25rem !important;
+    font-size: 1rem !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s !important;
+    width: 48% !important;
+    text-align: center !important;
+    display: inline-block !important;
+    font-weight: 400 !important;
+    text-decoration: none !important;
+    vertical-align: middle !important;
+    user-select: none !important;
+    line-height: 1.5 !important;
+}
+
+html body .btn-secondary, html body button[type="reset"], html body .reset-button {
+    background-color: #6c757d !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 0.25rem !important;
+    font-size: 1rem !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s !important;
+    width: 48% !important;
+    text-align: center !important;
+    display: inline-block !important;
+    font-weight: 400 !important;
+    text-decoration: none !important;
+    vertical-align: middle !important;
+    user-select: none !important;
+    line-height: 1.5 !important;
+}
+
+/* Responsive adjustments for buttons */
+@media (max-width: 767.98px) {
+    html body .form-buttons {
+        flex-direction: column !important;
+    }
+    html body .btn-primary, html body button[type="submit"], html body #calculate-button,
+    html body .btn-secondary, html body button[type="reset"], html body .reset-button {
+        width: 100% !important;
+        margin-bottom: 0.5rem !important;
+    }
+}
+
