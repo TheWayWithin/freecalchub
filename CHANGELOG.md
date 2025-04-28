@@ -1,55 +1,38 @@
-# CalcHub Change Log - Mortgage Calculator Fixes
+# Changelog
 
-## April 28, 2025 - Form Layout and Amortization Schedule Fixes
+## [1.3.0] - 2025-04-28
+### Fixed
+- Enhanced logo styling to ensure "CalcHub" text appears properly in white on blue background on both mortgage calculator and mortgage category pages
+- Fixed breadcrumb consistency with proper font styling and alignment across both pages
+- Fixed amortization schedule functionality to properly populate with data when calculator is used
+- Improved mortgage calculator form layout to make better use of space with side-by-side fields
+- Restored proper calculator card layout on mortgage category page with 3 cards on first row and 1 card on second row
+- Fixed dropdown heights for country selection and loan term to properly display text
+- Ensured consistent font sizes across all form inputs and dropdowns
 
-### Fixed Issues
-- Improved form layout by making Home Price field take up half the width
-- Moved Loan Start Date field up beside Home Price for better space utilization
-- Fixed amortization schedule to properly populate with data
-- Fixed logo styling to properly display "CalcHub" text in white on blue background
-- Made font sizes consistent across all input fields and dropdowns
-- Aligned breadcrumbs with main content area while maintaining left alignment
-- Fixed dropdown heights for Select Country and Loan Term to properly display text
-- Applied consistent styling across both mortgage calculator and mortgage category pages
+### Added
+- Created enhanced-logo-fix.css with robust selectors to ensure logo displays correctly
+- Created enhanced-breadcrumb-fix.css for consistent breadcrumb styling
+- Created fixed-amortization.js to ensure amortization table populates with data
+- Created improved-form-layout.css for better space utilization in calculator form
+- Created mortgage-category-layout.css for consistent calculator card layout
 
-### Technical Changes
-- Created dedicated CSS files for specific fixes:
-  - logo-fixes.css: Ensures proper logo styling with white text on blue background
-  - font-size-fixes.css: Makes all form inputs and dropdowns use consistent font size
-  - breadcrumb-fixes.css: Aligns breadcrumbs with main content area
-  - form-layout-fixes.css: Improves form layout for better space utilization
-- Completely rewrote the amortization schedule generation function in JavaScript
-- Added inline CSS for immediate fixes to ensure proper styling
-- Verified all changes work correctly in browser testing
+## [1.2.0] - 2025-04-27
+### Fixed
+- Improved form layout with better spacing and alignment
+- Fixed dropdown styling for consistent appearance
+- Updated breadcrumb styling for better navigation
+- Enhanced header structure for consistent appearance across pages
 
-## April 28, 2025 - Logo and Header Styling Fixes
+### Added
+- Enhanced form layout with side-by-side fields
+- Added amortization schedule functionality
 
-### Fixed Issues
-- Fixed logo styling on mortgage calculator page to display proper blue box with white text
-- Fixed logo styling on mortgage category page to match the calculator page
-- Increased height of dropdown fields (Select Country and Loan Term) to properly display text
-- Maintained left-aligned breadcrumbs as per user preference
-- Standardized header structure across both mortgage calculator and mortgage category pages
+## [1.1.0] - 2025-04-26
+### Fixed
+- Initial fixes for logo and header styling
+- Improved navigation menu alignment
 - Fixed dark mode toggle positioning
 
-### Technical Changes
-- Created dedicated CSS files for header and logo fixes
-- Created dedicated CSS file for dropdown height fixes
-- Implemented inline CSS for mortgage category page to ensure proper styling
-- Updated HTML structure to ensure consistency across pages
-- Verified all changes work correctly in browser testing
-
-## April 27, 2025 - Mortgage Calculator Input Fixes
-
-### Fixed Issues
-- Fixed issue with mortgage calculator not accepting input changes
-- Enhanced input value retrieval process
-- Added extensive console logging for debugging
-- Improved connection between down payment amount and percentage fields
-- Added additional validation to prevent calculation errors
-
-### Technical Changes
-- Updated JavaScript code to properly process form input values
-- Fixed event listeners to correctly handle user input
-- Improved error handling and validation
-- Verified all changes work correctly in browser testing
+### Added
+- Basic CSS fixes for consistent styling across pages
