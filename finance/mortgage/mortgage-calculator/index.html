@@ -17,8 +17,53 @@
     <link rel="stylesheet" href="https://freecalchub.com/css/calchub-consolidated-fixes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://freecalchub.com/finance/mortgage/mortgage-calculator/css/mortgage-calculator.css">
+    
+    <!-- New CSS fixes -->
     <link rel="stylesheet" href="https://freecalchub.com/finance/mortgage/mortgage-calculator/css/calchub-header-fixes.css">
     <link rel="stylesheet" href="https://freecalchub.com/finance/mortgage/mortgage-calculator/css/dropdown-fixes.css">
+    <link rel="stylesheet" href="https://freecalchub.com/finance/mortgage/mortgage-calculator/css/logo-fixes.css">
+    <link rel="stylesheet" href="https://freecalchub.com/finance/mortgage/mortgage-calculator/css/font-size-fixes.css">
+    <link rel="stylesheet" href="https://freecalchub.com/finance/mortgage/mortgage-calculator/css/breadcrumb-fixes.css">
+    
+    <!-- Inline styles for immediate fixes -->
+    <style>
+        /* Logo text fix */
+        .logo::after {
+            content: "CalcHub" !important;
+            color: white !important;
+            font-weight: bold !important;
+            font-size: 18px !important;
+            font-family: Arial, sans-serif !important;
+            margin-left: 5px !important;
+        }
+        
+        /* Ensure consistent font sizes */
+        input, select, textarea, button {
+            font-size: 16px !important;
+            line-height: 1.5 !important;
+            min-height: 40px !important;
+        }
+        
+        /* Align breadcrumbs with main content */
+        .breadcrumbs, .breadcrumbs-container {
+            max-width: 1140px !important;
+            width: 100% !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+        
+        /* Container alignment */
+        .container {
+            max-width: 1140px !important;
+            width: 100% !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+    </style>
     
     <!-- Schema Markup for SEO -->
     <script src="https://freecalchub.com/js/schema-markup.js"></script>
@@ -327,8 +372,9 @@
             <p>Adjust any of these values to see how they affect your monthly payment and long-term costs.</p>
         </div>
 
-        <div class="calculator-faq">
+        <div class="faq-section">
             <h2>Mortgage Calculator FAQ</h2>
+            
             <div class="faq-item">
                 <h3>What is included in a mortgage payment?</h3>
                 <p>A typical mortgage payment consists of four components, often referred to as PITI:</p>
@@ -340,6 +386,7 @@
                 </ul>
                 <p>Additionally, you may have PMI (Private Mortgage Insurance) if your down payment is less than 20%, and HOA fees if your property is part of a homeowners association.</p>
             </div>
+            
             <div class="faq-item">
                 <h3>How does changing my loan term affect my mortgage?</h3>
                 <p>Shorter loan terms (like 15 years instead of 30 years) typically offer:</p>
@@ -352,6 +399,7 @@
                 </ul>
                 <p>Longer loan terms offer lower monthly payments but cost more in total interest over time.</p>
             </div>
+            
             <div class="faq-item">
                 <h3>How do extra payments affect my mortgage?</h3>
                 <p>Making extra payments toward your principal can:</p>
@@ -365,12 +413,12 @@
         </div>
     </main>
 
-    <footer class="footer">
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>CalcHub</h3>
-                    <p>Free online calculators for all your needs. Simple, accurate, and easy to use.</p>
+                    <p>Free online calculators for everyone. No ads, no signups, just helpful tools.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Categories</h3>
@@ -380,22 +428,28 @@
                         <li><a href="/health/">Health</a></li>
                         <li><a href="/conversions/">Conversions</a></li>
                         <li><a href="/date-time/">Date & Time</a></li>
+                        <li><a href="/business/">Business</a></li>
+                        <li><a href="/lifestyle/">Lifestyle</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Resources</h3>
+                    <h3>Popular Calculators</h3>
                     <ul>
-                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/finance/mortgage/mortgage-calculator/">Mortgage Calculator</a></li>
+                        <li><a href="/finance/investment/compound-interest-calculator/">Compound Interest</a></li>
+                        <li><a href="/health/bmi-calculator/">BMI Calculator</a></li>
+                        <li><a href="/conversions/currency-converter/">Currency Converter</a></li>
+                        <li><a href="/math/percentage-calculator/">Percentage Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <ul>
                         <li><a href="/about/">About Us</a></li>
                         <li><a href="/contact/">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="/terms/">Terms of Service</a></li>
                         <li><a href="/privacy/">Privacy Policy</a></li>
-                        <li><a href="/gdpr/">GDPR</a></li>
+                        <li><a href="/terms/">Terms of Use</a></li>
+                        <li><a href="/sitemap/">Sitemap</a></li>
                     </ul>
                 </div>
             </div>
@@ -405,7 +459,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript Files -->
+    <!-- JavaScript -->
     <script src="https://freecalchub.com/js/dark-mode.js"></script>
     <script src="https://freecalchub.com/js/mobile-menu.js"></script>
     <script src="js/mortgage-calculator.js"></script>
