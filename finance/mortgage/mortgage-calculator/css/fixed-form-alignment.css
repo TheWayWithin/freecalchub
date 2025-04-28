@@ -1,0 +1,145 @@
+/* Fixed Form Alignment Issues
+ * This file addresses the alignment issues with form labels and inputs
+ * particularly for the "Extra Monthly Payment (optional)" field
+ */
+
+/* Form container styling */
+.calculator-form-container {
+  margin-bottom: 30px !important;
+}
+
+/* Form row styling for two-column layout */
+.form-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  margin-right: -15px !important;
+  margin-left: -15px !important;
+  margin-bottom: 0 !important;
+}
+
+/* Form group styling for consistent spacing */
+.form-group {
+  margin-bottom: 20px !important;
+  padding: 0 15px !important;
+  box-sizing: border-box !important;
+}
+
+/* Half-width form groups for side-by-side layout */
+.form-group.half-width {
+  width: 50% !important;
+  flex: 0 0 50% !important;
+  max-width: 50% !important;
+}
+
+/* Label styling to prevent wrapping */
+.form-group label {
+  display: block !important;
+  margin-bottom: 8px !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Specific fix for Extra Monthly Payment label */
+label[for="extra-payment"],
+#extra-payment-container label,
+.form-group:has(#extra-payment) label {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  font-size: 14px !important; /* Slightly smaller font to fit */
+}
+
+/* Input styling for consistent appearance */
+.form-control {
+  display: block !important;
+  width: 100% !important;
+  height: 40px !important;
+  padding: 0.375rem 0.75rem !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: #495057 !important;
+  background-color: #fff !important;
+  background-clip: padding-box !important;
+  border: 1px solid #ced4da !important;
+  border-radius: 0.25rem !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+
+/* Input group styling */
+.input-group {
+  position: relative !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: stretch !important;
+  width: 100% !important;
+}
+
+.input-group .form-control {
+  position: relative !important;
+  flex: 1 1 auto !important;
+  width: 1% !important;
+  margin-bottom: 0 !important;
+}
+
+/* Currency symbol styling */
+.currency-symbol {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0.375rem 0.75rem !important;
+  margin-bottom: 0 !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: #495057 !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  background-color: #e9ecef !important;
+  border: 1px solid #ced4da !important;
+  border-radius: 0.25rem 0 0 0.25rem !important;
+  border-right: 0 !important;
+}
+
+.input-group .form-control:not(:first-child) {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+/* Input group text styling */
+.input-group-text {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0.375rem 0.75rem !important;
+  margin-bottom: 0 !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: #495057 !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  background-color: #e9ecef !important;
+  border: 1px solid #ced4da !important;
+  border-radius: 0 0.25rem 0.25rem 0 !important;
+  border-left: 0 !important;
+}
+
+.input-group .form-control:not(:last-child) {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .form-group.half-width {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* On mobile, allow labels to wrap */
+  .form-group label {
+    white-space: normal !important;
+  }
+}

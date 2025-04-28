@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.4.0] - 2025-04-28
+### Fixed
+- Completely revised logo styling to ensure "CalcHub" text appears properly in white on blue background on all pages
+- Fixed calculator layout on mortgage category page to properly display in a 3+1 grid layout
+- Fixed form alignment issues, particularly for the "Extra Monthly Payment" field
+- Removed "(optional)" text from form labels to prevent wrapping
+- Added more robust CSS selectors with higher specificity to ensure styles are applied correctly
+
+### Added
+- Created definitive-logo-fix.css with comprehensive selectors and reset properties
+- Created fixed-calculator-layout.css for proper grid layout on mortgage category page
+- Created fixed-form-alignment.css to prevent label wrapping and ensure consistent alignment
+
 ## [1.3.0] - 2025-04-28
 ### Fixed
 - Enhanced logo styling to ensure "CalcHub" text appears properly in white on blue background on both mortgage calculator and mortgage category pages
