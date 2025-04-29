@@ -1,43 +1,72 @@
-/* Standardized Dark Mode Button Styles */
+/* Dark Mode Button Standardization */
 
+/* Create a consistent dark mode toggle button across all pages */
 #dark-mode-toggle {
-    background: none !important;
-    border: none !important;
-    cursor: pointer !important;
-    padding: 5px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-size: 1.2em !important; /* Adjust size as needed */
-    color: var(--text-color) !important; /* Use CSS variable for color */
-    transition: color 0.3s ease !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    border: 2px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Dark mode toggle hover effect */
 #dark-mode-toggle:hover {
-    color: var(--primary-color) !important; /* Use CSS variable for hover color */
+    transform: scale(1.05);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Hide the inactive icon */
-body:not(.dark-mode) #dark-mode-toggle .fa-sun {
-    display: none !important;
+/* Dark mode toggle active effect */
+#dark-mode-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Icon styling */
+#dark-mode-toggle i {
+    font-size: 18px;
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+/* Moon icon (dark mode) */
+#dark-mode-toggle .fa-moon {
+    color: #4a6fa5;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sun icon (light mode) */
+#dark-mode-toggle .fa-sun {
+    color: #f39c12;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* When dark mode is active, swap the icons */
+body.dark-mode #dark-mode-toggle {
+    background-color: #2c3e50;
+    border-color: #4a6fa5;
 }
 
 body.dark-mode #dark-mode-toggle .fa-moon {
-    display: none !important;
+    opacity: 0;
+    transform: translateY(-20px);
 }
 
-/* Ensure the active icon is displayed */
-body:not(.dark-mode) #dark-mode-toggle .fa-moon,
 body.dark-mode #dark-mode-toggle .fa-sun {
-    display: inline-block !important;
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Dark mode specific color */
-body.dark-mode #dark-mode-toggle {
-    color: var(--text-color) !important;
-}
-
+/* Ensure the button is visible in both light and dark modes */
 body.dark-mode #dark-mode-toggle:hover {
-    color: var(--primary-light) !important;
+    background-color: #34495e;
 }
 

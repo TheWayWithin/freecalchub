@@ -1,0 +1,129 @@
+/* Three-Column Form Layout for Calculator - Final Version */
+
+/* Main form container */
+#mortgage-calculator-form {
+    display: grid !important;
+    gap: 20px !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+/* Default styling for all form groups */
+#mortgage-calculator-form .form-group {
+    margin-bottom: 0 !important;
+    width: 100% !important;
+}
+
+/* Form group label styling */
+#mortgage-calculator-form .form-group label {
+    display: block !important;
+    margin-bottom: 8px !important;
+    font-weight: 600 !important;
+}
+
+/* Input group styling */
+#mortgage-calculator-form .input-group {
+    display: flex !important;
+    width: 100% !important;
+}
+
+/* Input styling */
+#mortgage-calculator-form input,
+#mortgage-calculator-form select {
+    padding: 10px 12px !important;
+    border-radius: 4px !important;
+    border: 1px solid var(--border-color) !important;
+    width: 100% !important;
+    font-size: 16px !important;
+}
+
+/* Input group text ($ and % symbols) */
+#mortgage-calculator-form .input-group-text {
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 12px !important;
+    background-color: #f5f5f5 !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 4px 0 0 4px !important;
+}
+
+/* Adjust input when it has a prefix */
+#mortgage-calculator-form .input-group .input-group-text + input {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+/* Form buttons container */
+#mortgage-calculator-form .form-buttons {
+    grid-column: 1 / -1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    margin-top: 10px !important;
+}
+
+/* Button styling */
+#mortgage-calculator-form button {
+    padding: 12px 24px !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+#mortgage-calculator-form .btn-primary {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border: none !important;
+}
+
+#mortgage-calculator-form .btn-secondary {
+    background-color: #6c757d !important;
+    color: white !important;
+    border: none !important;
+}
+
+#mortgage-calculator-form .btn-primary:hover {
+    background-color: var(--primary-dark) !important;
+}
+
+#mortgage-calculator-form .btn-secondary:hover {
+    background-color: #5a6268 !important;
+}
+
+/* Responsive grid layout */
+/* Mobile (1 column) */
+@media (max-width: 767px) {
+    #mortgage-calculator-form {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Tablet (2 columns) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    #mortgage-calculator-form {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Desktop (3 columns) */
+@media (min-width: 1024px) {
+    #mortgage-calculator-form {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+/* Dark mode adjustments */
+body.dark-mode #mortgage-calculator-form .input-group-text {
+    background-color: #4a6fa5 !important;
+    color: white !important;
+    border-color: var(--primary-dark) !important;
+}
+
+body.dark-mode #mortgage-calculator-form input,
+body.dark-mode #mortgage-calculator-form select {
+    background-color: #34495e !important;
+    color: var(--text-color) !important;
+    border-color: var(--border-color) !important;
+}

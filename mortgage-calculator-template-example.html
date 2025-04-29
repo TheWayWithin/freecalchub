@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mortgage Calculator | CalcHub</title>
+    <meta name="description" content="Use our free mortgage calculator to estimate your monthly mortgage payment, including principal, interest, taxes, insurance, and PMI.">
+    
     <!-- Global styles -->
     <link rel="stylesheet" href="/css/styles.css">
     <!-- Dark mode styles -->
@@ -12,41 +14,33 @@
     <link rel="stylesheet" href="/css/dark-mode-button.css">
     <!-- General calculator styles -->
     <link rel="stylesheet" href="/css/calculator.css">
-    <!-- Specific mortgage calculator styles -->
-    <link rel="stylesheet" href="css/mortgage-calculator.css">
-    <!-- Page alignment and form layout fixes -->
-    <link rel="stylesheet" href="css/page-alignment-fix.css">
+    <!-- Calculator Template Grid Layout -->
+    <link rel="stylesheet" href="/css/calculator-template-grid.css">
+    <!-- Category specific CSS -->
+    <link rel="stylesheet" href="/finance/mortgage/css/mortgage-category.css">
+    <!-- Calculator specific CSS -->
+    <link rel="stylesheet" href="/finance/mortgage/mortgage-calculator/css/mortgage-calculator.css">
+    
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Specific mortgage calculator script -->
-    <script src="js/mortgage-calculator.js" defer></script>
-    <!-- Amortization table script -->
-    <script src="js/refined-amortization-fix.js" defer></script>
+    
     <!-- Global script (for dark mode, mobile menu) -->
     <script src="/js/main.js" defer></script>
-    <script src="/js/dark-mode.js" defer></script>
-    <!-- Dark mode button fix -->
-    <link rel="stylesheet" href="css/dark-mode-button-fix.css">
-    <!-- Breadcrumb alignment fix -->
-    <link rel="stylesheet" href="css/breadcrumb-alignment-fix.css">
-    <!-- Three-column form layout fix -->
-    <link rel="stylesheet" href="css/final-three-column-form.css">
-    <!-- Enhanced three-column form layout fix -->
-    <link rel="stylesheet" href="css/enhanced-three-column-form-fix.css">
+    <!-- Calculator specific JS -->
+    <script src="/finance/mortgage/mortgage-calculator/js/mortgage-calculator.js" defer></script>
+    <script src="/finance/mortgage/mortgage-calculator/js/refined-amortization-fix.js" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
     
-    <!-- Removed inline style from header -->
+    <!-- Header -->
     <header class="site-header">
         <div class="header-container">
             <div class="logo-container">
-                <!-- Removed inline style from logo -->
                 <a href="/" class="logo">
                     <img src="/images/logo.svg" alt="CalcHub Logo">
                 </a>
             </div>
-            
             <nav class="main-nav">
                 <ul>
                     <li><a href="/finance/">Finance</a></li>
@@ -59,8 +53,6 @@
                     <li><a href="/blog/">Blog</a></li>
                 </ul>
             </nav>
-            
-            <!-- Removed inline style from header controls -->
             <div class="header-controls">
                 <button id="dark-mode-toggle" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
@@ -73,6 +65,7 @@
         </div>
     </header>
     
+    <!-- Mobile Menu -->
     <div id="mobile-menu" class="mobile-menu">
         <button class="close-menu" aria-label="Close menu">×</button>
         <ul>
@@ -87,6 +80,7 @@
         </ul>
     </div>
     
+    <!-- Breadcrumbs -->
     <div class="breadcrumbs">
         <div class="breadcrumbs-container">
             <a href="/">Home</a>
@@ -99,9 +93,9 @@
         </div>
     </div>
     
+    <!-- Navigation Ribbon -->
     <div class="navigation-ribbon">
         <div class="navigation-ribbon-container">
-            <!-- Removed inline styles from icons -->
             <a href="/finance/mortgage/"><i class="fas fa-home"></i>Mortgage</a>
             <a href="/finance/loan/"><i class="fas fa-file-invoice-dollar"></i>Loan</a>
             <a href="/finance/investment/"><i class="fas fa-chart-line"></i>Investment</a>
@@ -113,6 +107,7 @@
         </div>
     </div>
     
+    <!-- Main Content -->
     <main id="main-content" class="main-content">
         <div class="content-container">
             <h1>Mortgage Calculator</h1>
@@ -122,108 +117,127 @@
             </p>
             
             <div class="calculator-container">
-                <!-- Removed inline style from form -->
-                <form id="mortgage-calculator-form" class="calculator-form">
-                    <div class="form-group">
+                <!-- Calculator Form using CSS Grid -->
+                <form id="mortgage-calculator-form" class="calculator-form calculator-grid-container">
+                    
+                    <!-- Country Selection (full width) -->
+                    <div class="calculator-grid-full">
                         <label for="country">Select Country:</label>
-                        <select id="country" name="country" class="form-control">
-                            <option value="us">United States</option>
-                            <option value="ca">Canada</option>
-                            <option value="uk">United Kingdom</option>
-                            <option value="au">Australia</option>
-                        </select>
+                        <div class="calculator-input-group">
+                            <select id="country" name="country" class="form-control">
+                                <option value="us">United States</option>
+                                <option value="ca">Canada</option>
+                                <option value="uk">United Kingdom</option>
+                                <option value="au">Australia</option>
+                            </select>
+                        </div>
                     </div>
                     
-                    <!-- Removed inline styles and data-desktop-style attributes -->
-                    <div class="form-group half-width">
+                    <!-- Home Price -->
+                    <div class="calculator-grid-item">
                         <label for="home_price">Home Price</label>
-                        <div class="input-group">
-                            <span class="input-group-text">$</span>
+                        <div class="calculator-input-group">
+                            <span class="input-prefix">$</span>
                             <input type="text" id="home_price" name="home_price" class="form-control" value="300000">
                         </div>
                     </div>
                     
-                    <div class="form-group half-width">
+                    <!-- Loan Start Date -->
+                    <div class="calculator-grid-item">
                         <label for="loan_start_date">Loan Start Date</label>
-                        <input type="date" id="loan_start_date" name="loan_start_date" class="form-control">
+                        <div class="calculator-input-group">
+                            <input type="date" id="loan_start_date" name="loan_start_date" class="form-control">
+                        </div>
                     </div>
                     
-                    <div class="form-group half-width">
+                    <!-- Down Payment -->
+                    <div class="calculator-grid-item">
                         <label for="down_payment">Down Payment</label>
-                        <div class="input-group">
-                            <span class="input-group-text">$</span>
+                        <div class="calculator-input-group">
+                            <span class="input-prefix">$</span>
                             <input type="text" id="down_payment" name="down_payment" class="form-control" value="60000">
                         </div>
                     </div>
                     
-                    <div class="form-group half-width">
+                    <!-- Down Payment % -->
+                    <div class="calculator-grid-item">
                         <label for="down_payment_percent">Down Payment %</label>
-                        <div class="input-group">
+                        <div class="calculator-input-group">
                             <input type="text" id="down_payment_percent" name="down_payment_percent" class="form-control" value="20">
-                            <span class="input-group-text">%</span>
+                            <span class="input-suffix">%</span>
                         </div>
                     </div>
                     
-                    <div class="form-group half-width">
+                    <!-- Loan Term -->
+                    <div class="calculator-grid-item">
                         <label for="loan_term">Loan Term</label>
-                        <select id="loan_term" name="loan_term" class="form-control">
-                            <option value="30">30 years</option>
-                            <option value="20">20 years</option>
-                            <option value="15">15 years</option>
-                            <option value="10">10 years</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group half-width">
-                        <label for="interest_rate">Interest Rate</label>
-                        <div class="input-group">
-                            <input type="text" id="interest_rate" name="interest_rate" class="form-control" value="4.5">
-                            <span class="input-group-text">%</span>
+                        <div class="calculator-input-group">
+                            <select id="loan_term" name="loan_term" class="form-control">
+                                <option value="30">30 years</option>
+                                <option value="20">20 years</option>
+                                <option value="15">15 years</option>
+                                <option value="10">10 years</option>
+                            </select>
                         </div>
                     </div>
                     
-                    <div class="form-group half-width">
+                    <!-- Interest Rate -->
+                    <div class="calculator-grid-item">
+                        <label for="interest_rate">Interest Rate</label>
+                        <div class="calculator-input-group">
+                            <input type="text" id="interest_rate" name="interest_rate" class="form-control" value="4.5">
+                            <span class="input-suffix">%</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Annual Property Tax -->
+                    <div class="calculator-grid-item">
                         <label for="property_tax">Annual Property Tax</label>
-                        <div class="input-group">
-                            <span class="input-group-text">$</span>
+                        <div class="calculator-input-group">
+                            <span class="input-prefix">$</span>
                             <input type="text" id="property_tax" name="property_tax" class="form-control" value="3600">
                         </div>
                     </div>
                     
-                    <div class="form-group half-width">
+                    <!-- Annual Home Insurance -->
+                    <div class="calculator-grid-item">
                         <label for="home_insurance">Annual Home Insurance</label>
-                        <div class="input-group">
-                            <span class="input-group-text">$</span>
+                        <div class="calculator-input-group">
+                            <span class="input-prefix">$</span>
                             <input type="text" id="home_insurance" name="home_insurance" class="form-control" value="1200">
                         </div>
                     </div>
                     
-                    <div class="form-group half-width">
+                    <!-- Monthly HOA Fees -->
+                    <div class="calculator-grid-item">
                         <label for="hoa_fees">Monthly HOA Fees</label>
-                        <div class="input-group">
-                            <span class="input-group-text">$</span>
+                        <div class="calculator-input-group">
+                            <span class="input-prefix">$</span>
                             <input type="text" id="hoa_fees" name="hoa_fees" class="form-control" value="0">
                         </div>
                     </div>
                     
-                    <div class="form-group half-width">
+                    <!-- Extra Monthly Payment -->
+                    <div class="calculator-grid-item">
                         <label for="extra_payment">Extra Monthly Payment</label>
-                        <div class="input-group">
-                            <span class="input-group-text">$</span>
+                        <div class="calculator-input-group">
+                            <span class="input-prefix">$</span>
                             <input type="text" id="extra_payment" name="extra_payment" class="form-control" value="0">
                         </div>
                     </div>
                     
-                    <div class="form-buttons">
+                    <!-- Buttons (span full width) -->
+                    <div class="calculator-button-container">
                         <button type="submit" id="calculate-button" class="btn-primary">Calculate</button>
                         <button type="reset" class="btn-secondary">Reset</button>
                     </div>
                 </form>
                 
-                <!-- Results will be dynamically inserted here by JavaScript -->
-                <div id="results-container"></div>
+                <!-- Results will be dynamically inserted here -->
+                <div id="results-container" class="calculator-results"></div>
             </div>
             
+            <!-- Calculator-specific informational content -->
             <section class="calculator-info">
                 <h2>How to Use This Mortgage Calculator</h2>
                 <ol>
@@ -259,6 +273,7 @@
         </div>
     </main>
     
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-column">
@@ -300,10 +315,3 @@
 
 </body>
 </html>
-
-
-    <link rel="stylesheet" href="css/navigation-header-fix.css">
-
-
-    <link rel="stylesheet" href="css/mobile-menu-fix.css">
-
