@@ -1,0 +1,43 @@
+/* Standardized Dark Mode Button Styles */
+
+#dark-mode-toggle {
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 5px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.2em !important; /* Adjust size as needed */
+    color: var(--text-color) !important; /* Use CSS variable for color */
+    transition: color 0.3s ease !important;
+}
+
+#dark-mode-toggle:hover {
+    color: var(--primary-color) !important; /* Use CSS variable for hover color */
+}
+
+/* Hide the inactive icon */
+body:not(.dark-mode) #dark-mode-toggle .fa-sun {
+    display: none !important;
+}
+
+body.dark-mode #dark-mode-toggle .fa-moon {
+    display: none !important;
+}
+
+/* Ensure the active icon is displayed */
+body:not(.dark-mode) #dark-mode-toggle .fa-moon,
+body.dark-mode #dark-mode-toggle .fa-sun {
+    display: inline-block !important;
+}
+
+/* Dark mode specific color */
+body.dark-mode #dark-mode-toggle {
+    color: var(--text-color) !important;
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+    color: var(--primary-light) !important;
+}
+
