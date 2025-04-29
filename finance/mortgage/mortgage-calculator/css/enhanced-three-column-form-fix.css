@@ -1,0 +1,55 @@
+/* Three-Column Form Layout Fix for Mortgage Calculator - Enhanced Specificity */
+
+/* Use Flexbox for the form container with !important to override any conflicting styles */
+#mortgage-calculator-form {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    gap: 20px 0 !important;
+    width: 100% !important;
+}
+
+/* Default: Single column for small screens */
+#mortgage-calculator-form .form-group {
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    padding: 0 10px !important;
+    box-sizing: border-box !important;
+    float: none !important;
+    margin-bottom: 15px !important;
+}
+
+/* Two columns for medium screens */
+@media (min-width: 768px) {
+    #mortgage-calculator-form .form-group {
+        width: calc(50% - 10px) !important;
+        flex: 0 0 calc(50% - 10px) !important;
+        max-width: calc(50% - 10px) !important;
+    }
+}
+
+/* Three columns for large screens */
+@media (min-width: 1024px) {
+    #mortgage-calculator-form .form-group {
+        width: calc(33.333% - 14px) !important;
+        flex: 0 0 calc(33.333% - 14px) !important;
+        max-width: calc(33.333% - 14px) !important;
+    }
+}
+
+/* Ensure form buttons span full width and clear properly */
+#mortgage-calculator-form .form-buttons {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    clear: both !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 15px !important;
+    padding: 0 10px !important;
+    margin-top: 1.5rem !important;
+    box-sizing: border-box !important;
+}
+
+/* Add inline styles directly to the form element */
