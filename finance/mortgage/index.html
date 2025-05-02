@@ -1,1 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculators | CalcHub</title>
+    <meta name="description" content="Plan your home purchase and understand your mortgage options with these essential calculators.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <link rel="stylesheet" href="/css/dark-mode-button.css">
+    <link rel="stylesheet" href="/finance/mortgage/css/mortgage-category-layout.css">
+    <link rel="stylesheet" href="/finance/mortgage/css/navigation-ribbon-fix.css">
+    <link rel="stylesheet" href="/finance/mortgage/css/mobile-menu-fix.css">
+    <link rel="stylesheet" href="/finance/mortgage/css/breadcrumb-styling-fix.css">
+    <link rel="stylesheet" href="/finance/mortgage/css/page-container-fix.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="/" class="logo">
+                    <img src="/images/logo.svg" alt="CalcHub Logo" height="40">
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/finance/" class="active">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-controls">
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="mobile-menu-button" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
 
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-header">
+            <span>Menu</span>
+            <button id="mobile-menu-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="/finance/" class="active">Finance</a></li>
+                <li><a href="/math/">Math</a></li>
+                <li><a href="/health/">Health</a></li>
+                <li><a href="/conversions/">Conversions</a></li>
+                <li><a href="/date-time/">Date & Time</a></li>
+                <li><a href="/business/">Business</a></li>
+                <li><a href="/lifestyle/">Lifestyle</a></li>
+                <li><a href="/blog/">Blog</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <a href="/finance/">Finance</a>
+            <span class="separator">/</span>
+            <span class="current">Mortgage</span>
+        </div>
+    </div>
+
+    <div class="navigation-ribbon">
+        <div class="navigation-ribbon-container">
+            <a href="/finance/mortgage/" class="active"><i class="fas fa-home"></i> Mortgage</a>
+            <a href="/finance/loan/"><i class="fas fa-file-invoice-dollar"></i> Loan</a>
+            <a href="/finance/investment/"><i class="fas fa-chart-line"></i> Investment</a>
+            <a href="/finance/retirement/"><i class="fas fa-umbrella-beach"></i> Retirement</a>
+            <a href="/finance/budgeting/"><i class="fas fa-wallet"></i> Budgeting</a>
+            <a href="/finance/savings/"><i class="fas fa-piggy-bank"></i> Savings</a>
+            <a href="/finance/cryptocurrency/"><i class="fas fa-coins"></i> Cryptocurrency</a>
+            <a href="/finance/tax/"><i class="fas fa-receipt"></i> Tax</a>
+        </div>
+    </div>
+
+    <main id="main-content" class="container py-5 mortgage-calculators">
+        <section class="category-header">
+            <h1>Mortgage Calculators</h1>
+            <p class="lead">Plan your home purchase and understand your mortgage options with these essential calculators.</p>
+        </section>
+
+        <div class="calculator-grid">
+            <a href="/finance/mortgage/mortgage-calculator/" class="calculator-card">
+                <div class="calculator-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3>Mortgage Calculator</h3>
+                <p>Calculate monthly payments, interest, and amortization schedule for your mortgage.</p>
+            </a>
+            
+            <a href="/finance/mortgage/affordability-calculator/" class="calculator-card">
+                <div class="calculator-icon">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <h3>Affordability Calculator</h3>
+                <p>Find out how much house you can afford based on your income and expenses.</p>
+            </a>
+            
+            <a href="/finance/mortgage/refinance-calculator/" class="calculator-card">
+                <div class="calculator-icon">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <h3>Refinance Calculator</h3>
+                <p>See if refinancing your mortgage makes financial sense for your situation.</p>
+            </a>
+            
+            <a href="/finance/mortgage/extra-payment-calculator/" class="calculator-card">
+                <div class="calculator-icon">
+                    <i class="fas fa-plus-circle"></i>
+                </div>
+                <h3>Extra Payment Calculator</h3>
+                <p>Calculate how much you can save by making extra payments on your mortgage.</p>
+            </a>
+        </div>
+        
+        <section class="category-info">
+            <h2>Understanding Mortgages</h2>
+            <p>A mortgage is a loan used to purchase or maintain a home, land, or other types of real estate. The borrower agrees to pay the lender over time, typically in a series of regular payments that are divided into principal and interest. The property serves as collateral to secure the loan.</p>
+            
+            <h3>Types of Mortgages</h3>
+            <ul>
+                <li><strong>Fixed-Rate Mortgage:</strong> The interest rate remains the same for the entire term of the loan.</li>
+                <li><strong>Adjustable-Rate Mortgage (ARM):</strong> The interest rate is fixed for an initial term, then varies with market interest rates.</li>
+                <li><strong>FHA Loan:</strong> Insured by the Federal Housing Administration, designed for low-to-moderate income borrowers.</li>
+                <li><strong>VA Loan:</strong> Guaranteed by the U.S. Department of Veterans Affairs, available to veterans, service members, and eligible surviving spouses.</li>
+                <li><strong>Jumbo Loan:</strong> Exceeds the conforming loan limits set by the Federal Housing Finance Agency.</li>
+            </ul>
+            
+            <h3>Key Mortgage Terms</h3>
+            <ul>
+                <li><strong>Principal:</strong> The original amount of the loan.</li>
+                <li><strong>Interest:</strong> The cost of borrowing money, expressed as a percentage rate.</li>
+                <li><strong>Down Payment:</strong> The initial upfront payment, typically expressed as a percentage of the purchase price.</li>
+                <li><strong>Loan-to-Value (LTV) Ratio:</strong> The ratio of the loan amount to the appraised value of the property.</li>
+                <li><strong>Amortization:</strong> The process of paying off a loan with regular payments over time.</li>
+                <li><strong>Escrow:</strong> An account where funds are held for property taxes and insurance premiums.</li>
+            </ul>
+            
+            <h3>Mortgage Application Process</h3>
+            <ol>
+                <li>Check your credit score and financial health</li>
+                <li>Determine your budget and how much house you can afford</li>
+                <li>Research different mortgage options and lenders</li>
+                <li>Get pre-approved for a mortgage</li>
+                <li>Find a home and make an offer</li>
+                <li>Complete a full mortgage application</li>
+                <li>Go through the underwriting process</li>
+                <li>Close on your new home</li>
+            </ol>
+            
+            <p>Our mortgage calculators can help you understand different aspects of the mortgage process, from determining how much house you can afford to calculating your monthly payments and understanding the impact of refinancing or making extra payments.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>CalcHub</h3>
+                <p>Free online calculators for all your needs. Simple, accurate, and easy to use.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/finance/">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="/privacy-policy/">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service/">Terms of Service</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 CalcHub. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="/js/main.js"></script>
+    <script src="/js/dark-mode.js"></script>
+</body>
+</html>
