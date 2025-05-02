@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.24.0] - 2025-05-02
+
+### Fixed
+- **Site-Wide Dark Mode Button Consistency:** Ensured the dark mode toggle button has a consistent appearance across all pages by adding the missing `/css/dark-mode-button.css` link to the `<head>` of the following pages: Conversions, Date & Time, Business, Lifestyle, Blog, About, Privacy, Terms, and GDPR.
+- **Mortgage Calculator Layout:** Resolved layout issues on the mortgage calculator page (`/finance/mortgage/mortgage-calculator/`) by adding missing global CSS file links (`/css/navigation-ribbon.css`, `/css/breadcrumb-styles.css`, `/css/calchub-consolidated-fixes.css`) to the page's `<head>`.
+- **Header and Navigation Consistency:** Ensured the header, logo, navigation ribbon, and breadcrumbs display correctly and consistently on the mortgage calculator page.
+
 ## [1.23.0] - 2025-05-02
 
 ### Fixed
