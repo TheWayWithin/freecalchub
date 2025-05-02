@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.25.0] - 2025-05-02
+
+### Fixed
+- **Dark Mode Persistence:** Resolved issue where dark mode setting was not persisting when navigating between pages. Implemented an immediate-execution script in `dark-mode.js` to apply the `dark-mode` class to the `<html>` element based on `localStorage` before the page content loads, preventing the flash of light mode.
+- **Dark Mode Navigation Text Color:** Fixed the main navigation link text color remaining black in dark mode. This was resolved by the persistence fix and by updating `dark-mode.css` and `dark-mode-button.css` to use `html.dark-mode` selectors instead of `body.dark-mode`.
+
+
 ## [1.24.0] - 2025-05-02
 
 ### Fixed
