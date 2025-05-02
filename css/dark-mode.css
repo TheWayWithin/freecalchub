@@ -1,5 +1,5 @@
 /* Dark Mode Styles */
-body.dark-mode {
+html.dark-mode {
     --text-color: #ecf0f1; /* Light text for dark background */
     --text-light: #bdc3c7; /* Lighter grey text */
     --background-color: #2c3e50; /* Dark background */
@@ -11,187 +11,187 @@ body.dark-mode {
 }
 
 /* Override specific elements for dark mode */
-body.dark-mode header {
+html.dark-mode header {
     background-color: var(--background-alt);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-body.dark-mode .main-nav a {
+html.dark-mode .main-nav a {
     color: var(--text-color);
 }
 
-body.dark-mode .main-nav a:hover {
+html.dark-mode .main-nav a:hover {
     color: var(--primary-light);
 }
 
-body.dark-mode .main-nav a::after {
+html.dark-mode .main-nav a::after {
     background-color: var(--primary-light);
 }
 
-body.dark-mode .header-controls button {
+html.dark-mode .header-controls button {
     color: var(--text-color);
 }
 
-body.dark-mode .header-controls button:hover {
+html.dark-mode .header-controls button:hover {
     color: var(--primary-light);
 }
 
-body.dark-mode .logo {
+html.dark-mode .logo {
     color: var(--primary-light);
 }
 
-body.dark-mode .breadcrumbs a,
-body.dark-mode .breadcrumbs span {
+html.dark-mode .breadcrumbs a,
+html.dark-mode .breadcrumbs span {
     color: var(--text-light);
 }
 
-body.dark-mode .breadcrumbs a:hover {
+html.dark-mode .breadcrumbs a:hover {
     color: var(--primary-light);
 }
 
-body.dark-mode .navigation-ribbon {
+html.dark-mode .navigation-ribbon {
     background-color: var(--primary-dark);
 }
 
-body.dark-mode .navigation-ribbon a {
+html.dark-mode .navigation-ribbon a {
     color: var(--footer-text);
 }
 
-body.dark-mode .navigation-ribbon a:hover {
+html.dark-mode .navigation-ribbon a:hover {
     background-color: var(--primary-color);
     color: white;
 }
 
-body.dark-mode .calculator-container,
-body.dark-mode .calculator-info,
-body.dark-mode .calculator-tool {
+html.dark-mode .calculator-container,
+html.dark-mode .calculator-info,
+html.dark-mode .calculator-tool {
     background-color: var(--background-alt);
     border: 1px solid var(--border-color);
 }
 
-body.dark-mode .form-group label {
+html.dark-mode .form-group label {
     color: var(--text-light);
 }
 
-body.dark-mode .form-group input,
-body.dark-mode .form-group select {
+html.dark-mode .form-group input,
+html.dark-mode .form-group select {
     background-color: #34495e; /* Match background-alt */
     color: var(--text-color);
     border: 1px solid var(--border-color);
 }
 
-body.dark-mode .input-group-text {
+html.dark-mode .input-group-text {
     background-color: #4a6fa5; /* Primary color */
     color: white;
     border-color: var(--primary-dark);
 }
 
-body.dark-mode .btn-primary {
+html.dark-mode .btn-primary {
     background-color: var(--primary-light);
     color: #2c3e50;
 }
 
-body.dark-mode .btn-primary:hover {
+html.dark-mode .btn-primary:hover {
     background-color: #8faad1; /* Lighter primary */
 }
 
-body.dark-mode .btn-secondary {
+html.dark-mode .btn-secondary {
     background-color: var(--secondary-light);
     color: #2c3e50;
 }
 
-body.dark-mode .btn-secondary:hover {
+html.dark-mode .btn-secondary:hover {
     background-color: #f7c971; /* Lighter secondary */
 }
 
-body.dark-mode .calculator-results {
+html.dark-mode .calculator-results {
     background-color: var(--background-color);
     border-top: 1px solid var(--border-color);
 }
 
-body.dark-mode .result-item {
+html.dark-mode .result-item {
     border-bottom: 1px solid var(--border-color);
 }
 
-body.dark-mode .result-value {
+html.dark-mode .result-value {
     color: var(--primary-light);
 }
 
-body.dark-mode footer {
+html.dark-mode footer {
     background-color: var(--footer-background);
     color: var(--footer-text);
 }
 
-body.dark-mode .footer-section h4 {
+html.dark-mode .footer-section h4 {
     color: white;
 }
 
-body.dark-mode .footer-section a {
+html.dark-mode .footer-section a {
     color: var(--footer-text);
 }
 
-body.dark-mode .footer-section a:hover {
+html.dark-mode .footer-section a:hover {
     color: white;
 }
 
-body.dark-mode .footer-bottom {
+html.dark-mode .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-body.dark-mode .footer-bottom p,
-body.dark-mode .footer-bottom a {
+html.dark-mode .footer-bottom p,
+html.dark-mode .footer-bottom a {
     color: var(--footer-text);
 }
 
 /* Dark mode toggle button icon state */
-body.dark-mode #dark-mode-toggle .fa-moon {
+html.dark-mode #dark-mode-toggle .fa-moon {
     display: none;
 }
 
-body:not(.dark-mode) #dark-mode-toggle .fa-sun {
+html:not(.dark-mode) #dark-mode-toggle .fa-sun {
     display: none;
 }
 
 /* Dark mode specific styles for calculator template grid */
-body.dark-mode .calculator-input-group .input-prefix,
-body.dark-mode .calculator-input-group .input-suffix {
+html.dark-mode .calculator-input-group .input-prefix,
+html.dark-mode .calculator-input-group .input-suffix {
     background-color: #4a6fa5; /* Primary color */
     color: white;
     border-color: var(--primary-dark);
 }
 
-body.dark-mode .calculator-results {
+html.dark-mode .calculator-results {
     background-color: var(--background-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-body.dark-mode .calculator-results h3 {
+html.dark-mode .calculator-results h3 {
     color: var(--primary-light);
 }
 
-body.dark-mode .calculator-result-item {
+html.dark-mode .calculator-result-item {
     background-color: var(--background-alt);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-body.dark-mode .calculator-result-value {
+html.dark-mode .calculator-result-value {
     color: var(--primary-light);
 }
 
-body.dark-mode .calculator-results-table th {
+html.dark-mode .calculator-results-table th {
     background-color: #4a6fa5; /* Primary color */
     color: white;
 }
 
-body.dark-mode .calculator-results-table td {
+html.dark-mode .calculator-results-table td {
     border-bottom: 1px solid var(--border-color);
 }
 
-body.dark-mode .calculator-results-table tr:last-child td {
+html.dark-mode .calculator-results-table tr:last-child td {
     border-bottom: none;
 }
 
-body.dark-mode .calculator-results-table tr:hover td {
+html.dark-mode .calculator-results-table tr:hover td {
     background-color: #34495e; /* Slightly lighter dark background */
 }
 
