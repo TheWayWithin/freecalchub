@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.38.0] - 2025-05-03
+
+### Fixed
+- Integrated essential mobile menu display and layout styles from `/finance/mortgage/css/mobile-menu-fix.css` into the global `/css/styles.css`.
+- This ensures the mobile menu container and its internal links (`.mobile-nav a`) have the correct CSS rules applied on all pages (including Homepage, Finance category, etc.), resolving the "blank menu" issue.
+- The mobile menu button should now function correctly on all pages as the underlying menu structure is properly styled globally to respond to the JavaScript toggle.
+- Removed page-specific CSS dependencies for core mobile menu functionality, promoting consistency.
+- Verified dark mode styles for the mobile menu are correctly applied within the updated `styles.css`.
+
 ## [1.37.0] - 2025-05-03
 
 ### Fixed
