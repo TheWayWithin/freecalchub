@@ -168,9 +168,9 @@ header {
     justify-content: center; /* Center nav items */
 }
 
-.main-nav ul {
+header .header-container .main-nav ul {
     display: flex;
-    flex-wrap: wrap !important; /* Allow nav items to wrap */
+    flex-wrap: wrap !important; /* Allow nav items to wrap, override consolidated */
     list-style: none;
     padding: 0;
     margin: 0;
