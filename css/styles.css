@@ -177,7 +177,7 @@ header .header-container .main-nav ul {
 }
 
 .main-nav li {
-    margin-left: 20px;
+    margin-left: 15px !important; /* Adjust spacing, override consolidated */
 }
 
 .main-nav li:first-child {
@@ -552,7 +552,7 @@ footer {
     align-items: center;
     justify-content: center;
     width: 40px;
-    height: 40px;
+    height: 40px !important; /* Ensure consistent logo height */
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     transition: var(--transition);
@@ -852,3 +852,10 @@ html.dark-mode textarea:focus {
 .px-4 { padding-left: 2rem; padding-right: 2rem; }
 .px-5 { padding-left: 3rem; padding-right: 3rem; }
 
+
+
+header .logo-container a.logo img {
+    height: 40px !important; /* Ensure consistent height */
+    max-width: none !important; /* Override max-width from consolidated fixes */
+    width: auto !important; /* Allow natural width based on height */
+}
