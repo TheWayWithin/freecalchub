@@ -8,7 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.30.0] - 2025-05-03
 
 ### Fixed
-- **Header Responsiveness (Final Fix):** Further improved header responsiveness in `css/styles.css` to prevent logo, navigation links, and dark mode button from compressing or disappearing on smaller screens before the mobile menu breakpoint (768px). Adjusted flexbox properties (`flex-wrap: wrap` on `.main-nav ul`), set `min-width` on `.logo-container`, and reverted `white-space: normal` on `.main-nav a` to `white-space: nowrap` to prevent unwanted text wrapping while ensuring elements remain visible.
+- **Header Responsiveness (Final Fix):** Resolved inconsistent header responsiveness across pages. The issue was caused by an `!important` rule (`flex-wrap: nowrap !important;`) in `css/calchub-consolidated-fixes.css` overriding the intended wrapping behavior from `css/styles.css` on pages where the consolidated file was loaded. Fixed by adding `!important` to the `flex-wrap: wrap !important;` rule for `.main-nav ul` in `css/styles.css` to ensure consistent wrapping behavior. Also retained the `min-width` on `.logo-container` and `white-space: nowrap` on `.main-nav a` from the previous attempt to ensure elements remain visible and text doesn't wrap inappropriately.
+
+## [1.29.0] - 2025-05-03
+
+### Fixed
+- **Navigation Text Color (Dark Mode Final Fix):** Resolved persistent issue where navigation text color did not change in dark mode on most pages. Added `!important` flag to the `html.dark-mode header .main-nav a` rule in `css/dark-mode.css` to forcefully override conflicting CSS rules with higher specificity, ensuring consistent white text color in dark mode across all pages.
 
 ## [1.29.0] - 2025-05-03
 
