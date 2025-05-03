@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.31.0] - 2025-05-03
+
+### Fixed
+- **Header Responsiveness with Navigation Ribbon:** Resolved inconsistent header responsiveness caused by the interaction between the header and the blue subcategory navigation ribbon. The ribbon's presence affected layout calculations. Increased the specificity of the header navigation wrapping rule (`header .header-container .main-nav ul { flex-wrap: wrap !important; }`) in `css/styles.css` to ensure it overrides conflicting rules (`flex-wrap: nowrap !important;`) from `css/calchub-consolidated-fixes.css` even when the navigation ribbon is present. This allows header elements (logo, navigation, controls) to wrap correctly on smaller screens before the mobile menu breakpoint, ensuring consistent behavior across all pages.
+
 ## [1.30.0] - 2025-05-03
 
 ### Fixed
