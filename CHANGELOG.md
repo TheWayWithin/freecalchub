@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.33.0] - 2025-05-03
+
+### Fixed
+- **Mobile Menu Functionality:** Resolved issue where the mobile menu button (hamburger icon) was not working on most pages (except the mortgage category page). The root cause was identified as a conflict within the original `js/main.js` script, likely related to dynamic script loading or search initialization, which prevented the mobile menu event listeners from being attached correctly on affected pages. The fix involved:
+    - Temporarily simplifying `main.js` to isolate the core mobile menu logic.
+    - Verifying script execution using inline scripts and console logs.
+    - Restructuring `main.js` to ensure all initialization code runs within the `DOMContentLoaded` event listener.
+    - Confirming the simplified script worked, then carefully restoring the full functionality (dynamic script loading, search initialization) within the `DOMContentLoaded` listener.
+    - Ensuring script tags in HTML do not use `defer` attribute where `DOMContentLoaded` is used internally.
+- **Removed Test Code:** Removed temporary inline script tag from `finance/index.html` used for debugging.
+
 ## [1.32.0] - 2025-05-03
 
 ### Fixed
