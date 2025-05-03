@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.39.0] - 2025-05-03
+
+### Fixed
+- Refactored `/css/calchub-consolidated-fixes.css` (to v5.0.1):
+  - Removed aggressive `display: none !important` and `display: block !important` rules targeting mobile menu elements (`.mobile-menu`, `#mobile-menu`, etc.). These were likely preventing the menu from ever displaying correctly on pages where this file is loaded, overriding the intended behavior controlled by `styles.css` and `main.js`.
+  - Reduced the use of `!important` on various layout, color, and transition rules to minimize conflicts with `styles.css` and `dark-mode.css`.
+- This aims to resolve the inactive mobile menu button on the homepage and the blank menu / broken dark mode on the Finance category page by removing the conflicting overrides from the consolidated fixes file.
+
 ## [1.38.0] - 2025-05-03
 
 ### Fixed
