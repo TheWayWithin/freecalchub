@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.28.0] - 2025-05-03
+
+### Fixed
+- **Navigation Text Color (Dark Mode Consistency):** Resolved inconsistent navigation text color in dark mode across different pages. Removed an overly specific CSS selector (`html.dark-mode header nav.main-nav ul li a`) from `css/dark-mode.css` that was causing conflicts due to minor HTML structure variations. Relied on the more general `html.dark-mode .main-nav a` selector which now applies consistently across all pages.
+
 ## [1.27.0] - 2025-05-03
 
 ### Fixed
