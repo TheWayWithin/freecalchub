@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.34.0] - 2025-05-03
+
+### Fixed
+- **Mobile Menu Display:** Resolved issue where the mobile menu would only partially display when opened. Added comprehensive CSS rules for `.mobile-menu` and `.mobile-menu.active` to `css/styles.css` to ensure correct positioning (fixed, left: 0), height (100vh), width, z-index (above header), background, and overflow, allowing the full menu to slide in and be scrollable.
+- **Main Navigation Hiding:** Ensured the main top navigation bar (`.main-nav`) correctly hides on smaller screens (max-width: 768px) when the mobile menu button becomes visible. Verified the `display: none !important;` rule within the relevant media query in `css/styles.css` is effective.
+
 ## [1.33.0] - 2025-05-03
 
 ### Fixed
