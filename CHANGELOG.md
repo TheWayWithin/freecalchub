@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.37.0] - 2025-05-03
+
+### Fixed
+- Removed potentially problematic `!important` flags from mobile menu link styles (`.mobile-menu a`) and their dark mode overrides in `styles.css` to prevent conflicts and restore dark mode functionality on the Finance category page.
+- Refined CSS selectors for mobile menu content (`.mobile-menu .mobile-nav a`) and header (`.mobile-menu-header`) to ensure consistent styling and visibility across all pages.
+- Ensured mobile menu header has a defined height and sticky positioning to remain visible while scrolling the menu content.
+- Verified mobile menu JavaScript (`main.js`) correctly targets elements and adds/removes the `.active` class on all relevant pages.
+
 ## [1.36.0] - 2025-05-03
 
 ### Fixed
