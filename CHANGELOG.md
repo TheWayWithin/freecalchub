@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.35.0] - 2025-05-03
+
+### Fixed
+- Resolved issue where mobile menu appeared blank by adding specific styles for menu links (`.mobile-menu a`) to ensure visibility (color, padding) in both light and dark modes within `styles.css`.
+- Ensured mobile menu container (`.mobile-menu`) has correct positioning, dimensions, background, and overflow properties.
+- Fixed issue where main top navigation (`.main-nav`) failed to hide on small screens by increasing the specificity of the CSS selector in the media query (`@media (max-width: 768px)`) within `styles.css` to `header .header-container .main-nav { display: none !important; }`.
+
 ## [1.34.0] - 2025-05-03
 
 ### Fixed
