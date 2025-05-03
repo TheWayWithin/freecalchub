@@ -154,6 +154,19 @@ header {
     align-items: center;
     min-width: 100px; /* Ensure logo has minimum space */
     flex-shrink: 0; /* Prevent logo from shrinking */
+    height: 100%; /* Ensure container takes full header height */
+}
+
+.logo-container a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-container img {
+    height: 40px !important; /* Consistent logo height */
+    width: auto;
+    max-height: 100%;
 }
 
 .logo {
@@ -233,6 +246,75 @@ header .header-container .main-nav ul {
 
 #mobile-menu-button {
     display: none;
+    font-size: 1.5rem; /* Ensure button is large enough */
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Start off-screen */
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--background-color);
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1100; /* Above header */
+    transition: left 0.3s ease;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    padding-top: var(--header-height); /* Space for header */
+}
+
+.mobile-menu.active {
+    left: 0; /* Slide in */
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--background-alt);
+}
+
+.mobile-menu-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+#close-menu-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Styles for links inside mobile menu */
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu li {
+    margin: 0;
+}
+
+.mobile-menu a {
+    display: block; /* Make links take full width */
+    padding: 15px 20px;
+    color: var(--text-color); /* Ensure text color is visible */
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.mobile-menu a:hover {
+    background-color: var(--background-alt);
+    color: var(--primary-color);
 }
 
 /* Hero Section */
@@ -741,25 +823,26 @@ footer {
     .hero-content h1 {
         font-size: 2.5rem;
     }
-    
+
     .category-grid, .calculator-grid, .features-grid {
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     }
-    
+
     .blog-grid {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 }
 
 @media (max-width: 768px) {
-    .main-nav {
-        display: none !important; /* Hide main nav, show mobile menu button */
+    /* Increase specificity to ensure hiding */
+    header .header-container .main-nav {
+        display: none !important;
     }
-    
+
     #mobile-menu-button {
         display: block;
     }
-    
+
     .header-container {
         justify-content: space-between; /* Ensure space between logo and controls */
     }
@@ -767,19 +850,19 @@ footer {
     .hero-content h1 {
         font-size: 2rem;
     }
-    
+
     .hero-content p {
         font-size: 1rem;
     }
-    
+
     .category-section, .popular-calculators, .features-section, .about-section, .blog-preview {
         padding: 60px 0;
     }
-    
+
     .footer-container {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
-    
+
     .footer-bottom {
         flex-direction: column;
         text-align: center;
@@ -790,15 +873,15 @@ footer {
     .hero-content h1 {
         font-size: 1.8rem;
     }
-    
+
     .search-container input {
         padding: 12px;
     }
-    
+
     .category-grid, .calculator-grid, .features-grid, .blog-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .footer-container {
         grid-template-columns: 1fr;
     }
@@ -852,74 +935,28 @@ html.dark-mode textarea:focus {
 .px-4 { padding-left: 2rem; padding-right: 2rem; }
 .px-5 { padding-left: 3rem; padding-right: 3rem; }
 
-
-
-header .logo-container a.logo img {
-    height: 40px !important; /* Ensure consistent height */
-    max-width: none !important; /* Override max-width from consolidated fixes */
-    width: auto !important; /* Allow natural width based on height */
+/* Dark Mode Styles (Placeholder - actual styles in dark-mode.css) */
+/* Ensure mobile menu links are visible in dark mode */
+html.dark-mode .mobile-menu a {
+    color: var(--dm-text-color, #ecf0f1); /* Use dark mode text color variable or fallback */
+    border-bottom-color: var(--dm-border-color, #444); /* Use dark mode border color or fallback */
 }
 
-
-/* Mobile Menu Styles */
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    left: -100%; /* Start off-screen */
-    width: 80%;
-    max-width: 300px;
-    height: 100vh;
-    background-color: var(--background-color);
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
-    z-index: 1100; /* Ensure it's above header */
-    transition: left 0.3s ease;
-    padding: 20px;
-    overflow-y: auto;
+html.dark-mode .mobile-menu a:hover {
+    background-color: var(--dm-background-alt, #3a3a3a); /* Use dark mode alt background or fallback */
+    color: var(--primary-light, #6b8cb8); /* Use primary light color */
 }
 
-.mobile-menu.active {
-    left: 0; /* Slide in */
+html.dark-mode .mobile-menu {
+    background-color: var(--dm-background-color, #2c3e50); /* Use dark mode background or fallback */
 }
 
-.mobile-menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid var(--border-color);
+html.dark-mode .mobile-menu-header {
+    background-color: var(--dm-background-alt, #3a3a3a);
+    border-bottom-color: var(--dm-border-color, #444);
 }
 
-.mobile-menu-header h3 {
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-#mobile-menu-close {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--text-color);
-}
-
-.mobile-menu ul {
-    list-style: none;
-}
-
-.mobile-menu li {
-    margin-bottom: 15px;
-}
-
-.mobile-menu a {
-    color: var(--text-color);
-    font-weight: 600;
-    font-size: 1.1rem;
-    display: block;
-    padding: 5px 0;
-}
-
-.mobile-menu a:hover {
-    color: var(--primary-color);
+html.dark-mode #close-menu-button {
+    color: var(--dm-text-color, #ecf0f1);
 }
 
