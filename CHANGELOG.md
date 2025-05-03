@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.30.0] - 2025-05-03
+
+### Fixed
+- **Header Responsiveness (Final Fix):** Further improved header responsiveness in `css/styles.css` to prevent logo, navigation links, and dark mode button from compressing or disappearing on smaller screens before the mobile menu breakpoint (768px). Adjusted flexbox properties (`flex-wrap: wrap` on `.main-nav ul`), set `min-width` on `.logo-container`, and reverted `white-space: normal` on `.main-nav a` to `white-space: nowrap` to prevent unwanted text wrapping while ensuring elements remain visible.
+
 ## [1.29.0] - 2025-05-03
 
 ### Fixed
