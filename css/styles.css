@@ -249,7 +249,7 @@ header .header-container .main-nav ul {
     font-size: 1.5rem; /* Ensure button is large enough */
 }
 
-/* Mobile Menu Styles */
+/* Mobile Menu Styles - Integrated from mobile-menu-fix.css */
 .mobile-menu {
     position: fixed;
     top: 0;
@@ -262,11 +262,14 @@ header .header-container .main-nav ul {
     z-index: 1100; /* Above header */
     transition: left 0.3s ease;
     overflow-y: auto; /* Allow scrolling if content overflows */
-    padding-top: 0; /* Remove padding-top, header handles space */
+    padding-top: 0; /* Header handles space */
+    /* display: none; /* Initially hidden - JS will handle via .active */
+    /* Note: display:none conflicts with transition. Using left: -100% instead. */
 }
 
 .mobile-menu.active {
     left: 0; /* Slide in */
+    /* display: block; /* Show when active - JS handles this */
 }
 
 .mobile-menu-header {
