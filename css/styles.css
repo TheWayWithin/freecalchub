@@ -262,7 +262,7 @@ header .header-container .main-nav ul {
     z-index: 1100; /* Above header */
     transition: left 0.3s ease;
     overflow-y: auto; /* Allow scrolling if content overflows */
-    padding-top: var(--header-height); /* Space for header */
+    padding-top: 0; /* Remove padding-top, header handles space */
 }
 
 .mobile-menu.active {
@@ -276,11 +276,16 @@ header .header-container .main-nav ul {
     padding: 15px 20px;
     border-bottom: 1px solid var(--border-color);
     background-color: var(--background-alt);
+    height: var(--header-height); /* Match header height */
+    position: sticky; /* Keep header visible when scrolling menu */
+    top: 0;
+    z-index: 1; /* Ensure header is above links */
 }
 
-.mobile-menu-header h3 {
-    margin: 0;
+.mobile-menu-header span { /* Target the 'Menu' text */
     font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color); /* Ensure visible */
 }
 
 #close-menu-button {
@@ -292,34 +297,35 @@ header .header-container .main-nav ul {
 }
 
 /* Styles for links inside mobile menu */
-.mobile-menu ul {
+.mobile-menu .mobile-nav { /* Target the nav container */
+    padding-top: 10px; /* Add some space below the header */
+}
+
+.mobile-menu .mobile-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.mobile-menu li {
+.mobile-menu .mobile-nav li {
     margin: 0;
 }
 
-.mobile-menu a {
-    display: block !important; /* Make links take full width */
-    padding: 15px 20px !important;
-    color: var(--text-color) !important; /* Ensure text color is visible */
-    font-weight: 600 !important;
-    border-bottom: 1px solid var(--border-color) !important;
-    transition: var(--transition) !important;
-    text-decoration: none !important;
-    background-color: transparent !important; /* Ensure no conflicting background */
-    opacity: 1 !important; /* Ensure not transparent */
-    visibility: visible !important; /* Ensure visible */
-    position: relative !important; /* Ensure not absolutely positioned off-screen */
-    z-index: 1 !important; /* Ensure above background */
+.mobile-menu .mobile-nav a {
+    display: block; /* Make links take full width */
+    padding: 15px 20px;
+    color: var(--text-color); /* Ensure text color is visible */
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+    text-decoration: none;
+    position: relative; /* Ensure links are normally positioned */
+    z-index: 0; /* Ensure links are below header */
 }
 
-.mobile-menu a:hover {
-    background-color: var(--background-alt) !important;
-    color: var(--primary-color) !important;
+.mobile-menu .mobile-nav a:hover {
+    background-color: var(--background-alt);
+    color: var(--primary-color);
 }
 
 /* Hero Section */
@@ -948,26 +954,30 @@ html.dark-mode textarea:focus {
 
 /* Dark Mode Styles (Placeholder - actual styles in dark-mode.css) */
 /* Ensure mobile menu links are visible in dark mode */
-html.dark-mode .mobile-menu a {
-    color: var(--dm-text-color, #ecf0f1) !important; /* Use dark mode text color variable or fallback */
-    border-bottom-color: var(--dm-border-color, #444) !important; /* Use dark mode border color or fallback */
-}
-
-html.dark-mode .mobile-menu a:hover {
-    background-color: var(--dm-background-alt, #3a3a3a) !important; /* Use dark mode alt background or fallback */
-    color: var(--primary-light, #6b8cb8) !important; /* Use primary light color */
-}
-
 html.dark-mode .mobile-menu {
-    background-color: var(--dm-background-color, #2c3e50) !important; /* Use dark mode background or fallback */
+    background-color: var(--dm-background-color, #2c3e50);
 }
 
 html.dark-mode .mobile-menu-header {
-    background-color: var(--dm-background-alt, #3a3a3a) !important;
-    border-bottom-color: var(--dm-border-color, #444) !important;
+    background-color: var(--dm-background-alt, #3a3a3a);
+    border-bottom-color: var(--dm-border-color, #444);
+}
+
+html.dark-mode .mobile-menu-header span {
+    color: var(--dm-text-color, #ecf0f1);
 }
 
 html.dark-mode #close-menu-button {
-    color: var(--dm-text-color, #ecf0f1) !important;
+    color: var(--dm-text-color, #ecf0f1);
+}
+
+html.dark-mode .mobile-menu .mobile-nav a {
+    color: var(--dm-text-color, #ecf0f1); /* Use dark mode text color variable or fallback */
+    border-bottom-color: var(--dm-border-color, #444); /* Use dark mode border color or fallback */
+}
+
+html.dark-mode .mobile-menu .mobile-nav a:hover {
+    background-color: var(--dm-background-alt, #3a3a3a); /* Use dark mode alt background or fallback */
+    color: var(--primary-light, #6b8cb8); /* Use primary light color */
 }
 
