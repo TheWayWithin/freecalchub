@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.36.0] - 2025-05-03
+
+### Fixed
+- Adjusted the media query breakpoint for hiding the main navigation and showing the mobile menu button from `768px` to `991px` in `styles.css` to prevent navigation items wrapping over breadcrumbs.
+- Added `!important` flags to styles for mobile menu links (`.mobile-menu a`) and their dark mode overrides in `styles.css` to forcefully ensure content visibility and override potential conflicts.
 ## [1.35.0] - 2025-05-03
 
 ### Fixed
