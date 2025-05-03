@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.27.0] - 2025-05-03
+
+### Fixed
+- **Navigation Text Color (Dark Mode):** Ensured main navigation link text correctly changes to a light color in dark mode by adding a more specific CSS rule in `css/dark-mode.css` to override potential conflicts.
+- **Header Responsiveness:** Improved the responsiveness of the header by adjusting flexbox properties (`flex-shrink`, `flex-grow`) and adding intermediate breakpoints in `css/styles.css`. This prevents the logo, navigation links, and dark mode button from compressing or disappearing abruptly on smaller screen sizes before the mobile menu transition.
+
 ## [1.26.0] - 2025-05-03
 
 ### Fixed
