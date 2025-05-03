@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.32.0] - 2025-05-03
+
+### Fixed
+- **Header Cosmetic Consistency:** Harmonized the header appearance across all pages to match the preferred layout observed on the mortgage category page. This resolved inconsistencies in navigation link spacing, logo size, and dark mode button icon display.
+    - Adjusted left margin for `.main-nav li` in `css/styles.css` and added `!important` to ensure consistent spacing.
+    - Added `!important` to the logo container height (`#dark-mode-toggle`) in `css/styles.css`.
+    - Added a specific rule (`header .logo-container a.logo img`) in `css/styles.css` with `!important` for height, max-width, and width to ensure consistent logo image sizing, overriding conflicting rules from `calchub-consolidated-fixes.css`.
+    - Added `!important` to the `opacity` rule for the sun icon (`#dark-mode-toggle .fa-sun`) in `css/dark-mode-button.css` to fix the issue where both icons were partially visible.
+
 ## [1.31.0] - 2025-05-03
 
 ### Fixed
