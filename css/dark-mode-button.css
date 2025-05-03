@@ -45,7 +45,7 @@
 /* Sun icon (light mode) */
 #dark-mode-toggle .fa-sun {
     color: #f39c12;
-    opacity: 0;
+    opacity: 0 !important;
     transform: translateY(20px);
 }
 
