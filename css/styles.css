@@ -303,18 +303,23 @@ header .header-container .main-nav ul {
 }
 
 .mobile-menu a {
-    display: block; /* Make links take full width */
-    padding: 15px 20px;
-    color: var(--text-color); /* Ensure text color is visible */
-    font-weight: 600;
-    border-bottom: 1px solid var(--border-color);
-    transition: var(--transition);
-    text-decoration: none;
+    display: block !important; /* Make links take full width */
+    padding: 15px 20px !important;
+    color: var(--text-color) !important; /* Ensure text color is visible */
+    font-weight: 600 !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    transition: var(--transition) !important;
+    text-decoration: none !important;
+    background-color: transparent !important; /* Ensure no conflicting background */
+    opacity: 1 !important; /* Ensure not transparent */
+    visibility: visible !important; /* Ensure visible */
+    position: relative !important; /* Ensure not absolutely positioned off-screen */
+    z-index: 1 !important; /* Ensure above background */
 }
 
 .mobile-menu a:hover {
-    background-color: var(--background-alt);
-    color: var(--primary-color);
+    background-color: var(--background-alt) !important;
+    color: var(--primary-color) !important;
 }
 
 /* Hero Section */
@@ -811,6 +816,7 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
+    /* Styles for larger tablets / smaller desktops */
     .main-nav li {
         margin-left: 10px; /* Reduce spacing between nav items */
     }
@@ -833,20 +839,24 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
-    /* Increase specificity to ensure hiding */
+/* Breakpoint for switching to mobile menu */
+@media (max-width: 991px) {
+    /* Hide main navigation */
     header .header-container .main-nav {
         display: none !important;
     }
 
+    /* Show mobile menu button */
     #mobile-menu-button {
         display: block;
     }
 
+    /* Adjust header layout */
     .header-container {
         justify-content: space-between; /* Ensure space between logo and controls */
     }
 
+    /* Adjustments for smaller screens (previously under 768px) */
     .hero-content h1 {
         font-size: 2rem;
     }
@@ -869,6 +879,7 @@ footer {
     }
 }
 
+/* Breakpoint for very small screens */
 @media (max-width: 480px) {
     .hero-content h1 {
         font-size: 1.8rem;
@@ -938,25 +949,25 @@ html.dark-mode textarea:focus {
 /* Dark Mode Styles (Placeholder - actual styles in dark-mode.css) */
 /* Ensure mobile menu links are visible in dark mode */
 html.dark-mode .mobile-menu a {
-    color: var(--dm-text-color, #ecf0f1); /* Use dark mode text color variable or fallback */
-    border-bottom-color: var(--dm-border-color, #444); /* Use dark mode border color or fallback */
+    color: var(--dm-text-color, #ecf0f1) !important; /* Use dark mode text color variable or fallback */
+    border-bottom-color: var(--dm-border-color, #444) !important; /* Use dark mode border color or fallback */
 }
 
 html.dark-mode .mobile-menu a:hover {
-    background-color: var(--dm-background-alt, #3a3a3a); /* Use dark mode alt background or fallback */
-    color: var(--primary-light, #6b8cb8); /* Use primary light color */
+    background-color: var(--dm-background-alt, #3a3a3a) !important; /* Use dark mode alt background or fallback */
+    color: var(--primary-light, #6b8cb8) !important; /* Use primary light color */
 }
 
 html.dark-mode .mobile-menu {
-    background-color: var(--dm-background-color, #2c3e50); /* Use dark mode background or fallback */
+    background-color: var(--dm-background-color, #2c3e50) !important; /* Use dark mode background or fallback */
 }
 
 html.dark-mode .mobile-menu-header {
-    background-color: var(--dm-background-alt, #3a3a3a);
-    border-bottom-color: var(--dm-border-color, #444);
+    background-color: var(--dm-background-alt, #3a3a3a) !important;
+    border-bottom-color: var(--dm-border-color, #444) !important;
 }
 
 html.dark-mode #close-menu-button {
-    color: var(--dm-text-color, #ecf0f1);
+    color: var(--dm-text-color, #ecf0f1) !important;
 }
 
