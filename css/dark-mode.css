@@ -195,11 +195,3 @@ html.dark-mode .calculator-results-table tr:hover td {
     background-color: #34495e; /* Slightly lighter dark background */
 }
 
-
-
-
-/* Ensure main navigation link color is overridden in dark mode */
-html.dark-mode header nav.main-nav ul li a {
-    color: var(--text-color);
-}
-
