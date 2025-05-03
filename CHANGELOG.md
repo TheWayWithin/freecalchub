@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.29.0] - 2025-05-03
+
+### Fixed
+- **Navigation Text Color (Dark Mode Final Fix):** Resolved persistent issue where navigation text color did not change in dark mode on most pages. Added `!important` flag to the `html.dark-mode header .main-nav a` rule in `css/dark-mode.css` to forcefully override conflicting CSS rules with higher specificity, ensuring consistent white text color in dark mode across all pages.
+
 ## [1.28.0] - 2025-05-03
 
 ### Fixed
