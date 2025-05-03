@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-  console.log("Main.js DOMContentLoaded event fired. [Simplified]"); // Moved inside
+  console.log("Main.js DOMContentLoaded event fired."); // Moved inside
 
-  /* // Temporarily commented out dynamic script loading
   // Load performance optimizations
   const performanceScript = document.createElement("script");
   performanceScript.src = "/js/performance-optimization.js";
@@ -21,33 +20,30 @@ document.addEventListener("DOMContentLoaded", function() {
   const internalLinkingScript = document.createElement("script");
   internalLinkingScript.src = "/js/internal-linking.js";
   document.body.appendChild(internalLinkingScript);
-  */
   
   // Initialize mobile menu functionality
-  console.log("Attempting to initialize mobile menu... [Simplified]"); // Added log
+  console.log("Attempting to initialize mobile menu..."); // Added log
   initMobileMenu();
   
-  /* // Temporarily commented out search initialization
   // Initialize search functionality
   initSearch();
-  */
   
   // Helper functions
   function initMobileMenu() {
-    console.log("Inside initMobileMenu function. [Simplified]"); // Added log
+    console.log("Inside initMobileMenu function."); // Added log
     const mobileMenuButton = document.getElementById("mobile-menu-button");
     const mobileMenuClose = document.getElementById("mobile-menu-close");
     const mobileMenu = document.getElementById("mobile-menu");
     
     if (mobileMenuButton && mobileMenuClose && mobileMenu) {
-      console.log("Mobile menu elements found. Adding listeners. [Simplified]"); // Added log
+      console.log("Mobile menu elements found. Adding listeners."); // Added log
       mobileMenuButton.addEventListener("click", function() {
-        console.log("Mobile menu button clicked. [Simplified]"); // Added log
+        console.log("Mobile menu button clicked."); // Added log
         mobileMenu.classList.add("active");
       });
       
       mobileMenuClose.addEventListener("click", function() {
-        console.log("Mobile menu close button clicked. [Simplified]"); // Added log
+        console.log("Mobile menu close button clicked."); // Added log
         mobileMenu.classList.remove("active");
       });
     } else {
@@ -55,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
   
-  /* // Temporarily commented out search function definition
   function initSearch() {
     const searchInput = document.getElementById("search-input");
     const searchButton = document.getElementById("search-button");
@@ -78,8 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     }
   }
-  */
   
-  console.log("Main.js script fully processed within DOMContentLoaded. [Simplified]"); // Moved inside
+  console.log("Main.js script fully processed within DOMContentLoaded."); // Moved inside
 });
 
