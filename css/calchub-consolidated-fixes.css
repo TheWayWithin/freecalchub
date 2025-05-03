@@ -1,70 +1,75 @@
 /* 
  * CalcHub Consolidated Fixes - CSS
- * Version: 5.0.0
- * Last Updated: April 24, 2025
+ * Version: 5.0.1
+ * Last Updated: May 03, 2025
  * 
  * This file combines all previous fixes (comprehensive, targeted, direct)
  * into a single, well-organized CSS file that addresses all layout issues
  * across the CalcHub website.
  *
  * DO NOT MODIFY THIS FILE DIRECTLY - Create a new version with incremented version number
+ * 
+ * v5.0.1 Changes:
+ * - Removed aggressive `display: none !important` and `display: block !important` rules for mobile menu elements.
+ *   Visibility is now handled by `styles.css` using `left` property and `.active` class.
+ * - Removed `!important` from some dark mode and layout rules to reduce conflicts.
  */
 
 /* ===== HEADER AND NAVIGATION FIXES ===== */
 /* Center the header and set max width */
 header, .header, nav, .navbar, .main-nav {
-  display: flex !important;
-  justify-content: center !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  padding: 10px 0 !important;
+  display: flex !important; /* Keep flex for alignment */
+  justify-content: center !important; /* Keep centering */
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 0;
 }
 
 /* Create a container for the logo and navigation */
 header .container, .header .container, nav .container, .navbar .container, .main-nav .container {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  width: 100% !important;
-  max-width: 1140px !important;
-  margin: 0 auto !important;
-  padding: 0 15px !important;
+  display: flex !important; /* Keep flex */
+  justify-content: space-between !important; /* Keep spacing */
+  align-items: center !important; /* Keep alignment */
+  width: 100%;
+  max-width: 1140px; /* Removed !important */
+  margin: 0 auto;
+  padding: 0 15px;
   flex-wrap: nowrap !important; /* Prevent wrapping of navigation items */
 }
 
 /* Position the logo to the left with proper spacing */
 .logo, .navbar-brand, header a:first-of-type, .header a:first-of-type, nav a:first-of-type {
-  margin-right: 60px !important;
-  padding-left: 0 !important;
+  margin-right: 60px !important; /* Keep spacing */
+  padding-left: 0;
   flex-shrink: 0 !important; /* Prevent logo from shrinking */
-  position: relative !important;
-  z-index: 1 !important;
-  float: left !important;
-  max-width: 120px !important;
+  position: relative;
+  z-index: 1;
+  float: left;
+  max-width: 120px;
 }
 
 /* Style the navigation items */
 .main-nav ul, .navbar-nav {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  margin-left: 50px !important;
-  position: relative !important;
-  z-index: 0 !important;
-  padding-left: 0 !important;
-  list-style: none !important;
+  display: flex !important; /* Keep flex */
+  flex-wrap: nowrap !important; /* Keep nowrap */
+  margin-left: 50px !important; /* Keep spacing */
+  position: relative;
+  z-index: 0;
+  padding-left: 0;
+  list-style: none;
 }
 
 .main-nav ul li, .navbar-nav .nav-item {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
 }
 
 .main-nav ul li a, .navbar-nav .nav-item a, header a, .header a, nav a, .navbar a {
-  padding: 0 10px !important;
+  padding: 0 10px;
   white-space: nowrap !important; /* Prevent text wrapping within nav items */
-  text-decoration: none !important;
-  color: #333 !important;
-  display: block !important;
+  text-decoration: none;
+  color: #333; /* Removed !important */
+  display: block;
 }
 
 /* Adjust spacing for Date & Time navigation item to prevent wrapping */
@@ -75,23 +80,23 @@ header a:nth-of-type(8),
 .header a:nth-of-type(8), 
 nav a:nth-of-type(8), 
 .navbar a:nth-of-type(8) {
-  padding: 0 8px !important; /* Slightly reduced padding */
-  font-size: 0.95em !important; /* Slightly smaller font */
-  white-space: nowrap !important;
+  padding: 0 8px !important; /* Keep reduced padding */
+  font-size: 0.95em !important; /* Keep smaller font */
+  white-space: nowrap !important; /* Keep nowrap */
 }
 
 /* Position the dark mode toggle to the right */
 #dark-mode-toggle, [aria-label="Toggle dark mode"], .dark-mode-toggle {
-  margin-left: 20px !important;
-  padding-right: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  margin-left: 20px !important; /* Keep spacing */
+  padding-right: 0;
+  display: flex !important; /* Keep flex */
+  align-items: center !important; /* Keep alignment */
+  justify-content: center !important; /* Keep centering */
   flex-shrink: 0 !important; /* Prevent toggle from shrinking */
-  cursor: pointer !important;
-  background: none !important;
-  border: none !important;
-  color: #333 !important;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #333; /* Removed !important */
 }
 
 /* Ensure dark mode icons are visible */
@@ -99,72 +104,72 @@ nav a:nth-of-type(8),
 #dark-mode-toggle svg, [aria-label="Toggle dark mode"] svg, .dark-mode-toggle svg,
 #dark-mode-toggle .fa-moon, [aria-label="Toggle dark mode"] .fa-moon, .dark-mode-toggle .fa-moon,
 #dark-mode-toggle .fa-sun, [aria-label="Toggle dark mode"] .fa-sun, .dark-mode-toggle .fa-sun {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  font-size: 18px !important;
+  display: block !important; /* Keep block */
+  visibility: visible !important; /* Keep visible */
+  opacity: 1 !important; /* Keep opacity */
+  font-size: 18px !important; /* Keep size */
 }
 
 /* ===== MAIN CONTENT FIXES ===== */
 /* Center all main content */
 main, .main, .content, #content, .page-content {
-  max-width: 1140px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 15px !important;
-  padding-right: 15px !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
+  max-width: 1140px; /* Removed !important */
+  margin-left: auto !important; /* Keep centering */
+  margin-right: auto !important; /* Keep centering */
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Ensure consistent container width */
 .container {
-  max-width: 1140px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 15px !important;
-  padding-right: 15px !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
+  max-width: 1140px; /* Removed !important */
+  margin-left: auto !important; /* Keep centering */
+  margin-right: auto !important; /* Keep centering */
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* ===== BREADCRUMBS FIXES ===== */
 /* Center and style breadcrumbs */
 .breadcrumbs, .breadcrumb, .breadcrumb-container, nav[aria-label="breadcrumb"], ol.breadcrumb {
-  display: flex !important;
-  justify-content: center !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 10px 0 !important;
-  background-color: #f8f9fa !important;
-  border: none !important; /* Remove any borders */
-  box-shadow: none !important; /* Remove any shadows */
-  overflow: visible !important; /* Ensure content isn't cut off */
-  text-align: center !important;
+  display: flex !important; /* Keep flex */
+  justify-content: center !important; /* Keep centering */
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 10px 0;
+  background-color: #f8f9fa; /* Removed !important */
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+  text-align: center;
 }
 
 .breadcrumbs .container, .breadcrumb .container, .breadcrumb-container .container {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 100% !important;
-  max-width: 1140px !important;
-  margin: 0 auto !important;
-  padding: 0 15px !important;
+  display: flex !important; /* Keep flex */
+  align-items: center !important; /* Keep alignment */
+  justify-content: center !important; /* Keep centering */
+  width: 100%;
+  max-width: 1140px; /* Removed !important */
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 /* Style breadcrumb links */
 .breadcrumbs a, .breadcrumb a, .breadcrumb-item a {
-  color: #4a76a8 !important;
-  text-decoration: none !important;
-  padding: 0 5px !important;
+  color: #4a76a8; /* Removed !important */
+  text-decoration: none;
+  padding: 0 5px;
 }
 
 /* Style breadcrumb separators */
 .breadcrumbs span, .breadcrumb span, .breadcrumb-item + .breadcrumb-item::before {
-  color: #6c757d !important;
-  padding: 0 5px !important;
+  color: #6c757d; /* Removed !important */
+  padding: 0 5px;
 }
 
 /* ===== SUBCATEGORY RIBBON FIXES ===== */
@@ -174,17 +179,17 @@ nav.blue-bg, .blue-bg, .subcategory-ribbon, .category-ribbon, .navigation-ribbon
 .business-navigation, .blog-navigation, .lifestyle-navigation, .health-navigation,
 .math-navigation, .finance-navigation, .conversions-navigation, .date-time-navigation,
 nav[class*="-navigation"], .category-navigation, .subcategory-navigation {
-  display: flex !important;
-  justify-content: center !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 auto !important;
-  padding: 10px 0 !important;
-  background-color: #4a76a8 !important; /* Ensure consistent blue background */
-  border: none !important; /* Remove any borders */
-  box-shadow: none !important; /* Remove any shadows */
-  overflow: visible !important; /* Ensure content isn't cut off */
-  text-align: center !important;
+  display: flex !important; /* Keep flex */
+  justify-content: center !important; /* Keep centering */
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px 0;
+  background-color: #4a76a8; /* Removed !important */
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+  text-align: center;
 }
 
 /* Create a container for the subcategory links */
@@ -196,14 +201,14 @@ nav.blue-bg .container, .blue-bg .container, .subcategory-ribbon .container,
 .health-navigation .container, .math-navigation .container, .finance-navigation .container,
 .conversions-navigation .container, .date-time-navigation .container,
 nav[class*="-navigation"] .container {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: center !important;
-  align-items: center !important;
-  width: 100% !important;
-  max-width: 1140px !important;
-  margin: 0 auto !important;
-  padding: 0 15px !important;
+  display: flex !important; /* Keep flex */
+  flex-wrap: wrap !important; /* Keep wrap */
+  justify-content: center !important; /* Keep centering */
+  align-items: center !important; /* Keep alignment */
+  width: 100%;
+  max-width: 1140px; /* Removed !important */
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 /* Style the subcategory links */
@@ -212,12 +217,12 @@ nav.blue-bg a, .blue-bg a, .subcategory-ribbon a, .category-ribbon a, .navigatio
 .business-navigation a, .blog-navigation a, .lifestyle-navigation a, .health-navigation a,
 .math-navigation a, .finance-navigation a, .conversions-navigation a, .date-time-navigation a,
 nav[class*="-navigation"] a {
-  color: white !important;
-  padding: 5px 15px !important;
-  text-decoration: none !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  margin: 0 15px !important;
+  color: white !important; /* Keep white text */
+  padding: 5px 15px;
+  text-decoration: none;
+  display: inline-flex !important; /* Keep flex */
+  align-items: center !important; /* Keep alignment */
+  margin: 0 15px;
 }
 
 /* Style icons in navigation ribbon */
@@ -226,22 +231,22 @@ nav.blue-bg a i, .blue-bg a i, .subcategory-ribbon a i, .category-ribbon a i, .n
 .business-navigation a i, .blog-navigation a i, .lifestyle-navigation a i, .health-navigation a i,
 .math-navigation a i, .finance-navigation a i, .conversions-navigation a i, .date-time-navigation a i,
 nav[class*="-navigation"] a i {
-  margin-right: 5px !important;
+  margin-right: 5px !important; /* Keep spacing */
 }
 
 /* ===== FOOTER FIXES ===== */
 /* Center the footer content */
 footer, .footer {
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  align-items: center !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 auto !important;
-  padding: 40px 0 20px !important;
-  background-color: #f8f9fa !important;
-  border-top: 1px solid #e7e7e7 !important; /* Add a subtle top border */
+  display: flex !important; /* Keep flex */
+  flex-direction: column !important; /* Keep column */
+  justify-content: center !important; /* Keep centering */
+  align-items: center !important; /* Keep centering */
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 40px 0 20px;
+  background-color: #f8f9fa; /* Removed !important */
+  border-top: 1px solid #e7e7e7; /* Removed !important */
 }
 
 /* Create a container for the footer content */
@@ -249,21 +254,21 @@ footer .container, .footer .container,
 footer .row, .footer .row,
 footer .footer-content, .footer .footer-content,
 .footer-columns {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: space-between !important;
-  width: 100% !important;
-  max-width: 1140px !important;
-  margin: 0 auto !important;
-  padding: 0 15px !important;
+  display: flex !important; /* Keep flex */
+  flex-wrap: wrap !important; /* Keep wrap */
+  justify-content: space-between !important; /* Keep spacing */
+  width: 100%;
+  max-width: 1140px; /* Removed !important */
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 /* Style the footer sections */
 footer > div, .footer > div {
-  width: 100% !important;
-  max-width: 1140px !important;
-  margin: 0 auto !important;
-  padding: 0 15px !important;
+  width: 100%;
+  max-width: 1140px; /* Removed !important */
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 /* Style the footer columns */
@@ -271,10 +276,10 @@ footer .col, .footer .col,
 footer .column, .footer .column,
 footer .footer-column, .footer .footer-column,
 .footer-column {
-  flex: 1 1 200px !important;
-  margin: 10px !important;
-  padding: 0 15px !important;
-  min-width: 200px !important; /* Ensure columns have a minimum width */
+  flex: 1 1 200px !important; /* Keep flex sizing */
+  margin: 10px;
+  padding: 0 15px;
+  min-width: 200px !important; /* Keep min width */
 }
 
 /* Style the footer headings */
@@ -282,112 +287,112 @@ footer h3, .footer h3,
 footer h4, .footer h4,
 footer .footer-heading, .footer .footer-heading,
 .footer-column h4 {
-  margin-top: 0 !important;
-  margin-bottom: 15px !important;
-  font-size: 18px !important;
-  font-weight: bold !important;
-  color: #333 !important;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333; /* Removed !important */
 }
 
 /* Style the footer links */
 footer a, .footer a,
 footer .footer-link, .footer .footer-link,
 .footer-column a {
-  display: block !important;
-  margin-bottom: 8px !important;
-  color: #4a76a8 !important;
-  text-decoration: none !important;
+  display: block;
+  margin-bottom: 8px;
+  color: #4a76a8; /* Removed !important */
+  text-decoration: none;
 }
 
 /* Style the footer lists */
 footer ul, .footer ul,
 .footer-column ul {
-  list-style-type: none !important;
-  padding-left: 0 !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 footer li, .footer li,
 .footer-column li {
-  margin-bottom: 8px !important;
+  margin-bottom: 8px;
 }
 
 /* Style the footer social icons */
 footer .social, .footer .social,
 footer .social-icons, .footer .social-icons,
 .social-icons {
-  display: flex !important;
-  justify-content: flex-start !important;
-  margin-top: 15px !important;
+  display: flex !important; /* Keep flex */
+  justify-content: flex-start !important; /* Keep alignment */
+  margin-top: 15px;
 }
 
 footer .social a, .footer .social a,
 footer .social-icons a, .footer .social-icons a,
 .social-icons a {
-  margin-right: 15px !important;
-  font-size: 20px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 36px !important;
-  height: 36px !important;
-  background-color: #4a76a8 !important;
-  color: white !important;
-  border-radius: 50% !important;
-  text-decoration: none !important;
+  margin-right: 15px !important; /* Keep spacing */
+  font-size: 20px;
+  display: inline-flex !important; /* Keep flex */
+  align-items: center !important; /* Keep alignment */
+  justify-content: center !important; /* Keep centering */
+  width: 36px !important; /* Keep size */
+  height: 36px !important; /* Keep size */
+  background-color: #4a76a8 !important; /* Keep color */
+  color: white !important; /* Keep color */
+  border-radius: 50% !important; /* Keep shape */
+  text-decoration: none;
 }
 
 /* Style the footer copyright */
 footer .copyright, .footer .copyright,
 footer .footer-bottom, .footer .footer-bottom,
 .footer-bottom {
-  width: 100% !important;
-  max-width: 1140px !important;
-  margin: 20px auto 0 !important;
-  padding: 15px !important;
-  text-align: center !important;
-  border-top: 1px solid #e9ecef !important;
-  color: #6c757d !important;
+  width: 100%;
+  max-width: 1140px; /* Removed !important */
+  margin: 20px auto 0;
+  padding: 15px;
+  text-align: center;
+  border-top: 1px solid #e9ecef; /* Removed !important */
+  color: #6c757d; /* Removed !important */
 }
 
 /* Style the footer bottom links */
 footer .copyright a, .footer .copyright a,
 footer .footer-bottom a, .footer .footer-bottom a,
 .footer-bottom a {
-  display: inline-block !important;
-  margin: 0 10px !important;
-  color: #555 !important;
+  display: inline-block;
+  margin: 0 10px;
+  color: #555; /* Removed !important */
 }
 
 /* Style the newsletter form */
 footer .newsletter, .footer .newsletter,
 footer .subscribe, .footer .subscribe,
 .newsletter-form {
-  margin-top: 15px !important;
+  margin-top: 15px;
 }
 
 footer .newsletter input, .footer .newsletter input,
 footer .subscribe input, .footer .subscribe input,
 .newsletter-form input[type="email"] {
-  padding: 8px 12px !important;
-  border: 1px solid #ced4da !important;
-  border-radius: 4px !important;
-  margin-right: 5px !important;
-  margin-bottom: 10px !important;
-  width: 100% !important;
-  max-width: 200px !important;
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 200px;
 }
 
 footer .newsletter button, .footer .newsletter button,
 footer .subscribe button, .footer .subscribe button,
 .newsletter-form button {
-  padding: 8px 15px !important;
-  background-color: #4a76a8 !important;
-  color: white !important;
-  border: none !important;
-  border-radius: 4px !important;
-  cursor: pointer !important;
+  padding: 8px 15px;
+  background-color: #4a76a8; /* Removed !important */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 /* ===== DARK MODE FIXES ===== */
@@ -404,78 +409,79 @@ body.dark-mode .dark-mode-toggle .fa-moon,
 body.dark-mode #dark-mode-toggle .fa-sun, 
 body.dark-mode [aria-label="Toggle dark mode"] .fa-sun, 
 body.dark-mode .dark-mode-toggle .fa-sun {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  color: white !important;
+  display: block !important; /* Keep block */
+  visibility: visible !important; /* Keep visible */
+  opacity: 1 !important; /* Keep opacity */
+  color: white !important; /* Keep color */
 }
 
 /* Add smooth transitions for dark mode */
 body, body * {
-  transition: background-color 0.3s ease, color 0.3s ease !important;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Removed !important */
 }
 
 /* ===== MOBILE MENU FIXES ===== */
-/* Hide mobile menu by default */
-.mobile-menu, #mobile-menu, .mobile-nav, #mobile-nav {
+/* REMOVED: display: none !important rules for mobile menu elements */
+/* .mobile-menu, #mobile-menu, .mobile-nav, #mobile-nav {
   display: none !important;
-}
+} */
 
-/* Only show mobile menu when explicitly toggled */
-.mobile-menu.active, #mobile-menu.active, .mobile-nav.active, #mobile-nav.active {
+/* REMOVED: display: block !important rules for active mobile menu */
+/* .mobile-menu.active, #mobile-menu.active, .mobile-nav.active, #mobile-nav.active {
   display: block !important;
-}
+} */
 
 /* Prevent mobile menu flash on page load */
+/* Keep this section for potential FOUC prevention, but remove !important */
 .mobile-menu-container, #mobile-menu-container {
-  visibility: hidden !important;
-  opacity: 0 !important;
-  transition: visibility 0s, opacity 0.3s !important;
-  height: 0 !important; /* Prevent taking up space when hidden */
-  overflow: hidden !important;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s;
+  height: 0;
+  overflow: hidden;
 }
 
 .mobile-menu-container.initialized, #mobile-menu-container.initialized {
-  visibility: visible !important;
-  opacity: 1 !important;
-  height: auto !important; /* Allow proper height when visible */
+  visibility: visible;
+  opacity: 1;
+  height: auto;
 }
 
 /* ===== ACCESSIBILITY FIXES ===== */
 /* Add focus styles to interactive elements */
 a:focus, button:focus, input:focus, select:focus, textarea:focus {
-  outline: 2px solid #4a76a8 !important;
-  outline-offset: 2px !important;
+  outline: 2px solid #4a76a8; /* Removed !important */
+  outline-offset: 2px;
 }
 
 /* Style skip to content link */
 a[href="#content"], .skip-to-content {
-  position: absolute !important;
-  top: -40px !important;
-  left: 0 !important;
-  background-color: #4a76a8 !important;
-  color: white !important;
-  padding: 8px 15px !important;
-  z-index: 100 !important;
-  transition: top 0.3s !important;
-  text-decoration: none !important;
+  position: absolute !important; /* Keep absolute positioning */
+  top: -40px !important; /* Keep off-screen position */
+  left: 0 !important; /* Keep left alignment */
+  background-color: #4a76a8 !important; /* Keep color */
+  color: white !important; /* Keep color */
+  padding: 8px 15px;
+  z-index: 100 !important; /* Keep high z-index */
+  transition: top 0.3s !important; /* Keep transition */
+  text-decoration: none;
 }
 
 a[href="#content"]:focus, .skip-to-content:focus {
-  top: 0 !important;
+  top: 0 !important; /* Keep focus behavior */
 }
 
 /* ===== RESPONSIVE FIXES ===== */
 @media (max-width: 992px) {
   /* Adjust header for medium screens */
   header .container, .header .container, nav .container, .navbar .container, .main-nav .container {
-    padding: 0 10px !important;
+    padding: 0 10px;
   }
   
   /* Slightly reduce padding on navigation items */
   header a, .header a, nav a, .navbar a, .main-nav ul li a {
-    padding: 0 8px !important;
-    font-size: 0.95em !important;
+    padding: 0 8px;
+    font-size: 0.95em;
   }
   
   /* Adjust footer columns for medium screens */
@@ -483,89 +489,51 @@ a[href="#content"]:focus, .skip-to-content:focus {
   footer .column, .footer .column,
   footer .footer-column, .footer .footer-column,
   .footer-column {
-    flex: 1 1 160px !important;
+    flex: 1 1 160px !important; /* Keep flex sizing */
   }
   
   /* Adjust logo spacing */
   .logo, .navbar-brand, header a:first-of-type, .header a:first-of-type, nav a:first-of-type {
-    margin-right: 30px !important;
+    margin-right: 30px !important; /* Keep spacing */
   }
 }
 
 @media (max-width: 768px) {
   /* Adjust header for small screens */
   header .container, .header .container, nav .container, .navbar .container, .main-nav .container {
-    padding: 0 5px !important;
+    flex-wrap: wrap !important; /* Allow wrapping */
+    justify-content: space-between !important; /* Space out logo and toggle */
   }
   
-  /* Further reduce padding on navigation items */
-  header a, .header a, nav a, .navbar a, .main-nav ul li a {
-    padding: 0 5px !important;
-    font-size: 0.9em !important;
+  /* Hide main navigation on small screens (handled by styles.css now) */
+  /* .main-nav ul, .navbar-nav {
+    display: none !important;
+  } */
+  
+  /* Show mobile menu toggle button (handled by styles.css now) */
+  /* #mobile-menu-toggle, .mobile-menu-toggle {
+    display: block !important;
+  } */
+  
+  /* Adjust logo spacing */
+  .logo, .navbar-brand, header a:first-of-type, .header a:first-of-type, nav a:first-of-type {
+    margin-right: 15px !important; /* Reduce spacing */
   }
   
-  /* Adjust footer for mobile */
-  footer .container, .footer .container,
-  footer .row, .footer .row,
-  footer .footer-content, .footer .footer-content,
-  .footer-columns {
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-  
+  /* Adjust footer columns for small screens */
   footer .col, .footer .col,
   footer .column, .footer .column,
   footer .footer-column, .footer .footer-column,
   .footer-column {
-    width: 100% !important;
-    text-align: center !important;
-    margin: 15px 0 !important;
+    flex: 1 1 100% !important; /* Full width columns */
+    text-align: center !important; /* Center text */
   }
   
-  /* Center social icons on mobile */
+  /* Center social icons */
   footer .social, .footer .social,
   footer .social-icons, .footer .social-icons,
   .social-icons {
-    justify-content: center !important;
-  }
-  
-  /* Center newsletter form on mobile */
-  footer .newsletter, .footer .newsletter,
-  footer .subscribe, .footer .subscribe,
-  .newsletter-form {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-  
-  footer .newsletter input, .footer .newsletter input,
-  footer .subscribe input, .footer .subscribe input,
-  .newsletter-form input[type="email"] {
-    margin-right: 0 !important;
-    margin-bottom: 10px !important;
-    width: 100% !important;
-    max-width: 250px !important;
-  }
-  
-  footer .newsletter button, .footer .newsletter button,
-  footer .subscribe button, .footer .subscribe button,
-  .newsletter-form button {
-    width: 100% !important;
-    max-width: 250px !important;
-  }
-  
-  /* Adjust ribbon links on mobile */
-  .subcategory-nav a, .category-nav a, .sub-nav a, .finance-nav a, .math-nav a, .health-nav a,
-  nav.blue-bg a, .blue-bg a, .subcategory-ribbon a, .category-ribbon a, .navigation-ribbon a,
-  .business-navigation a, .blog-navigation a, .lifestyle-navigation a, .health-navigation a,
-  .math-navigation a, .finance-navigation a, .conversions-navigation a, .date-time-navigation a,
-  nav[class*="-navigation"] a {
-    margin: 5px 10px !important;
-  }
-  
-  /* Adjust logo spacing */
-  .logo, .navbar-brand, header a:first-of-type, .header a:first-of-type, nav a:first-of-type {
-    margin-right: 20px !important;
-    max-width: 100px !important;
+    justify-content: center !important; /* Center icons */
   }
 }
+
