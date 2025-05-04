@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.46.0] - 2025-05-04
+
+### Fixed
+- Refactored `/index.html` and `/finance/index.html` to use absolute paths (e.g., `/css/styles.css`, `/js/main.js`, `/images/logo.svg`, `/finance/`) for all CSS, JavaScript, image, and internal link references. This ensures consistent asset loading and navigation regardless of the page's directory level.
+- Verified the presence of the correct mobile menu button markup (`<button id="mobile-menu-button">`) and required JavaScript includes (`main.js`, `dark-mode.js`) in the HTML structure of key pages (`/index.html`, `/finance/index.html`, `/finance/mortgage/index.html`) to ensure consistent mobile menu and dark mode functionality across the site, addressing issues identified in the provided analysis.
+
 ## [1.45.0] - 2025-05-04
 
 ### Fixed
