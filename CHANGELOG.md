@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.45.0] - 2025-05-04
+
+### Fixed
+- Increased specificity and added `!important` to the `left: 0` rule for `.mobile-menu.active` in `styles.css` to ensure the mobile menu reliably slides into view when activated, resolving issues where the menu remained hidden despite JS adding the active class.
+
 ## [1.44.0] - 2025-05-04
 
 ### Fixed
