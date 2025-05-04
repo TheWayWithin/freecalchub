@@ -1,6 +1,7 @@
+
 /* 
  * CalcHub Consolidated Fixes - CSS
- * Version: 5.0.3
+ * Version: 5.0.4
  * Last Updated: May 04, 2025
  * 
  * This file combines all previous fixes (comprehensive, targeted, direct)
@@ -12,7 +13,7 @@
  * v5.0.1 Changes:
  * - Removed aggressive `display: none !important` and `display: block !important` rules for mobile menu elements.
  *   Visibility is now handled by `styles.css` using `left` property and `.active` class.
- * - Removed `!important` from some dark mode and layout rules to reduce conflicts.
+ * - Removed `!important` from some dark mode and layout rules (e.g., max-width) to reduce conflicts.
  * 
  * v5.0.2 Changes:
  * - Removed `!important` from subcategory/navigation ribbon link color (`color: white !important;`) 
@@ -20,6 +21,11 @@
  * 
  * v5.0.3 Changes:
  * - Removed `!important` from footer social icon background-color and color rules to prevent conflicts with dark mode styles.
+ * 
+ * v5.0.4 Changes:
+ * - Removed `!important` from main content and container centering rules (`margin-left`, `margin-right`).
+ * - Removed `!important` from subcategory/navigation ribbon `background-color` rule.
+ * - These changes further reduce forceful overrides, aiming to resolve the dark mode conflict on the Finance page.
  */
 
 /* ===== HEADER AND NAVIGATION FIXES ===== */
@@ -121,8 +127,8 @@ nav a:nth-of-type(8),
 /* Center all main content */
 main, .main, .content, #content, .page-content {
   max-width: 1140px; /* Removed !important */
-  margin-left: auto !important; /* Keep centering */
-  margin-right: auto !important; /* Keep centering */
+  margin-left: auto; /* REMOVED !important */
+  margin-right: auto; /* REMOVED !important */
   padding-left: 15px;
   padding-right: 15px;
   width: 100%;
@@ -132,8 +138,8 @@ main, .main, .content, #content, .page-content {
 /* Ensure consistent container width */
 .container {
   max-width: 1140px; /* Removed !important */
-  margin-left: auto !important; /* Keep centering */
-  margin-right: auto !important; /* Keep centering */
+  margin-left: auto; /* REMOVED !important */
+  margin-right: auto; /* REMOVED !important */
   padding-left: 15px;
   padding-right: 15px;
   width: 100%;
@@ -192,7 +198,7 @@ nav[class*="-navigation"], .category-navigation, .subcategory-navigation {
   max-width: 100%;
   margin: 0 auto;
   padding: 10px 0;
-  background-color: #4a76a8; /* Removed !important */
+  background-color: #4a76a8; /* REMOVED !important */
   border: none;
   box-shadow: none;
   overflow: visible;
