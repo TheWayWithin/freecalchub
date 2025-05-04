@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.44.0] - 2025-05-04
+
+### Fixed
+- Restored missing `<html>`, `<head>`, and `<body>` structure to `/finance/index.html`.
+- Added standard CSS and JS includes (`styles.css`, `dark-mode.css`, `dark-mode.js`, `main.js`, etc.) to `/finance/index.html` using correct relative paths.
+- Corrected internal link paths within `/finance/index.html` to use relative paths.
+- This addresses the root cause of dark mode and other global features failing on the Finance category page, as identified by external analysis.
+
 ## [1.43.0] - 2025-05-04
 
 ### Fixed
