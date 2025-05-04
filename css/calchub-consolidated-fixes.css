@@ -1,7 +1,6 @@
-
 /* 
  * CalcHub Consolidated Fixes - CSS
- * Version: 5.0.4
+ * Version: 5.0.5
  * Last Updated: May 04, 2025
  * 
  * This file combines all previous fixes (comprehensive, targeted, direct)
@@ -258,7 +257,7 @@ footer, .footer {
   max-width: 100%;
   margin: 0 auto;
   padding: 40px 0 20px;
-  background-color: #f8f9fa; /* Removed !important */
+  /* background-color: #f8f9fa; /* Removed !important */ /* Commented out to allow styles.css variable */
   border-top: 1px solid #e7e7e7; /* Removed !important */
 }
 
