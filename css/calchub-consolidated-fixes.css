@@ -1,6 +1,6 @@
 /* 
  * CalcHub Consolidated Fixes - CSS
- * Version: 5.0.2
+ * Version: 5.0.3
  * Last Updated: May 04, 2025
  * 
  * This file combines all previous fixes (comprehensive, targeted, direct)
@@ -17,6 +17,9 @@
  * v5.0.2 Changes:
  * - Removed `!important` from subcategory/navigation ribbon link color (`color: white !important;`) 
  *   to allow dark mode styles (`dark-mode.css`) to correctly set the text color.
+ * 
+ * v5.0.3 Changes:
+ * - Removed `!important` from footer social icon background-color and color rules to prevent conflicts with dark mode styles.
  */
 
 /* ===== HEADER AND NAVIGATION FIXES ===== */
@@ -341,8 +344,8 @@ footer .social-icons a, .footer .social-icons a,
   justify-content: center !important; /* Keep centering */
   width: 36px !important; /* Keep size */
   height: 36px !important; /* Keep size */
-  background-color: #4a76a8 !important; /* Keep color */
-  color: white !important; /* Keep color */
+  background-color: #4a76a8; /* REMOVED !important */
+  color: white; /* REMOVED !important */
   border-radius: 50% !important; /* Keep shape */
   text-decoration: none;
 }
