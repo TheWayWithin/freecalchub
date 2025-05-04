@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.48.0] - 2025-05-04
+
+### Fixed
+- Commented out the conflicting `background-color: #f8f9fa;` rule for the `footer` element within `calchub-consolidated-fixes.css`. This allows the intended dark footer background (defined by `--footer-background` variable in `styles.css` and `dark-mode.css`) to apply correctly, resolving the issue of unreadable light text on a light background on most pages.
+
 ## [1.47.0] - 2025-05-04
 
 ### Fixed
