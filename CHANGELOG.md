@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.47.0] - 2025-05-04
+
+### Fixed
+- Applied absolute path refactoring to all existing category pages (`/math/`, `/health/`, `/conversions/`, `/date-time/`, `/business/`, `/lifestyle/`) and the mortgage subcategory page (`/finance/mortgage/`) for consistent asset loading and navigation across the site. This ensures CSS, JS, images, and internal links use root-relative paths (e.g., `/css/styles.css`).
+- Verified that the existing mortgage calculator page (`/finance/mortgage/mortgage-calculator/`) already uses absolute paths.
+
 ## [1.46.0] - 2025-05-04
 
 ### Fixed
