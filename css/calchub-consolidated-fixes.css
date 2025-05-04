@@ -301,9 +301,9 @@ footer .footer-heading, .footer .footer-heading,
 .footer-column h4 {
   margin-top: 0;
   margin-bottom: 15px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333; /* Removed !important */
+  /* font-size: 18px; /* Let styles.css control size */
+  /* font-weight: bold; /* Let styles.css control weight */
+  /* color: #333; /* Removed !important */ /* Let styles.css control color */
 }
 
 /* Style the footer links */
