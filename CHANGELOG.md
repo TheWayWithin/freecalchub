@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.43.0] - 2025-05-04
+
+### Fixed
+- Refactored `/css/calchub-consolidated-fixes.css` (to v5.0.4):
+  - Removed `!important` from main content and container centering rules (`margin-left`, `margin-right`).
+  - Removed `!important` from subcategory/navigation ribbon `background-color` rule.
+  - These changes further reduce forceful overrides, specifically targeting the blue navigation ribbon and broad container styles as potential sources of the dark mode conflict on the Finance category page.
+
 ## [1.42.0] - 2025-05-04
 
 ### Fixed
