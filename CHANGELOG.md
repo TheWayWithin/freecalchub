@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.49.0] - 2025-05-04
+
+### Changed
+- Increased `font-size` to `1.4rem` and ensured `font-weight` is `700` for footer column headings (`.footer-section h4` in `styles.css`) to improve clarity and prominence against the dark background.
+
 ## [1.48.0] - 2025-05-04
 
 ### Fixed
