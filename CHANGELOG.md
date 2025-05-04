@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.41.0] - 2025-05-04
+
+### Fixed
+- Refactored `/css/calchub-consolidated-fixes.css` (to v5.0.2):
+  - Removed `!important` from the `color: white` rule applied to subcategory/navigation ribbon links (`.navigation-ribbon a`, etc.). This was likely overriding the text color set by `dark-mode.css` on the Finance category page, causing dark mode to fail there.
+- This change aims specifically to restore dark mode functionality on the Finance category page.
+
 ## [1.40.0] - 2025-05-03
 
 ### Fixed
