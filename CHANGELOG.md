@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.42.0] - 2025-05-04
+
+### Fixed
+- Refactored `/css/calchub-consolidated-fixes.css` (to v5.0.3):
+  - Removed `!important` from footer social icon `background-color` and `color` rules. This is another attempt to remove overrides that might conflict with dark mode styles, specifically targeting the Finance category page where dark mode is still failing.
+- This change aims specifically to restore dark mode functionality on the Finance category page.
+
 ## [1.41.0] - 2025-05-04
 
 ### Fixed
