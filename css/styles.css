@@ -614,6 +614,8 @@ footer {
 .footer-section h4 {
     margin-bottom: 20px;
     color: white;
+    font-size: 1.4rem; /* Increased size */
+    font-weight: 700; /* Ensure bold */
 }
 
 .footer-section ul {
