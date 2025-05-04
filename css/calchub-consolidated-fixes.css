@@ -1,7 +1,7 @@
 /* 
  * CalcHub Consolidated Fixes - CSS
- * Version: 5.0.1
- * Last Updated: May 03, 2025
+ * Version: 5.0.2
+ * Last Updated: May 04, 2025
  * 
  * This file combines all previous fixes (comprehensive, targeted, direct)
  * into a single, well-organized CSS file that addresses all layout issues
@@ -13,6 +13,10 @@
  * - Removed aggressive `display: none !important` and `display: block !important` rules for mobile menu elements.
  *   Visibility is now handled by `styles.css` using `left` property and `.active` class.
  * - Removed `!important` from some dark mode and layout rules to reduce conflicts.
+ * 
+ * v5.0.2 Changes:
+ * - Removed `!important` from subcategory/navigation ribbon link color (`color: white !important;`) 
+ *   to allow dark mode styles (`dark-mode.css`) to correctly set the text color.
  */
 
 /* ===== HEADER AND NAVIGATION FIXES ===== */
@@ -217,7 +221,7 @@ nav.blue-bg a, .blue-bg a, .subcategory-ribbon a, .category-ribbon a, .navigatio
 .business-navigation a, .blog-navigation a, .lifestyle-navigation a, .health-navigation a,
 .math-navigation a, .finance-navigation a, .conversions-navigation a, .date-time-navigation a,
 nav[class*="-navigation"] a {
-  color: white !important; /* Keep white text */
+  color: white; /* REMOVED !important */
   padding: 5px 15px;
   text-decoration: none;
   display: inline-flex !important; /* Keep flex */
