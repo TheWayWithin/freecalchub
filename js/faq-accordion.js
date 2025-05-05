@@ -1,51 +1,46 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const faqItems = document.querySelectorAll(".faq-item");
+    const accordions = document.querySelectorAll(".faq-accordion .accordion");
 
-    faqItems.forEach(item => {
-        const questionButton = item.querySelector(".faq-question");
-        const answerPanel = item.querySelector(".faq-answer");
-        const icon = questionButton.querySelector(".faq-icon");
+    accordions.forEach(accordion => {
+        const panel = accordion.nextElementSibling;
+        const icon = accordion.querySelector(".faq-icon"); // Assuming the icon span is still inside the button
 
-        if (!questionButton || !answerPanel) {
-            console.warn("FAQ item missing question button or answer panel:", item);
+        if (!panel || !panel.classList.contains("panel")) {
+            console.warn("Accordion button is not immediately followed by a .panel element:", accordion);
             return;
         }
 
         // Ensure initial state is closed based on presence of 'active' class in HTML (if needed)
-        const isInitiallyOpen = item.classList.contains("active"); 
-        questionButton.setAttribute("aria-expanded", isInitiallyOpen);
-        if (icon) icon.textContent = isInitiallyOpen ? "\t−" : "+";
+        const isInitiallyOpen = accordion.classList.contains("active"); 
+        accordion.setAttribute("aria-expanded", isInitiallyOpen);
+        if (icon) icon.textContent = isInitiallyOpen ? "−" : "+"; // Update icon based on initial state
         // CSS handles initial collapsed state via max-height: 0 when .active is absent
-        // No need to set answerPanel.hidden = true here; CSS handles it.
 
-        questionButton.addEventListener("click", () => {
-            const isCurrentlyOpen = questionButton.getAttribute("aria-expanded") === "true";
+        accordion.addEventListener("click", () => {
+            const isCurrentlyOpen = accordion.classList.contains("active");
 
             // Toggle ARIA attribute
-            questionButton.setAttribute("aria-expanded", !isCurrentlyOpen);
+            accordion.setAttribute("aria-expanded", !isCurrentlyOpen);
 
-            // Toggle active class for styling/transitions - CSS will handle visibility via max-height
-            item.classList.toggle("active", !isCurrentlyOpen);
+            // Toggle active class on the button itself
+            accordion.classList.toggle("active", !isCurrentlyOpen);
 
             // Toggle icon
             if (icon) {
-                icon.textContent = isCurrentlyOpen ? "+" : "\t−";
+                icon.textContent = isCurrentlyOpen ? "+" : "−"; // Update icon based on new state
             }
 
+            // CSS handles the panel visibility based on the button's active class and the adjacent sibling selector (+)
+            
             // Optional: Close others when one opens (Uncomment if needed)
             /*
             if (!isCurrentlyOpen) { // Only close others if we are opening this one
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        const otherButton = otherItem.querySelector(".faq-question");
-                        const otherAnswer = otherItem.querySelector(".faq-answer");
-                        const otherIcon = otherButton.querySelector(".faq-icon");
-
-                        if (otherButton && otherAnswer) {
-                            otherButton.setAttribute("aria-expanded", "false");
-                            otherItem.classList.remove("active");
-                            if (otherIcon) otherIcon.textContent = "+";
-                        }
+                accordions.forEach(otherAccordion => {
+                    if (otherAccordion !== accordion) {
+                        const otherIcon = otherAccordion.querySelector(".faq-icon");
+                        otherAccordion.classList.remove("active");
+                        otherAccordion.setAttribute("aria-expanded", "false");
+                        if (otherIcon) otherIcon.textContent = "+";
                     }
                 });
             }
