@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.58.0] - 2025-05-05
+
+### Fixed
+- Refactored the FAQ accordion on the mortgage calculator page (`/finance/mortgage/mortgage-calculator/index.html`) to align with the pattern recommended by ChatGPT for robust visibility control.
+- **HTML:** Changed structure to use `<button class="accordion">` immediately followed by `<div class="panel">` for each FAQ item, removing the wrapping `.faq-item` div.
+- **CSS:** Removed previous `.faq-item`, `.faq-question`, `.faq-answer`, and `.faq-section details` styles from `styles.css`. Added new styles targeting `.faq-accordion .accordion` and `.faq-accordion .panel`. The `.panel` now uses `max-height: 0` and `overflow: hidden` when collapsed, and `max-height: 1000px` with padding when the preceding button has the `.active` class (`.accordion.active + .panel`). This ensures the answer is completely hidden when collapsed.
+- **JS:** Updated `/js/faq-accordion.js` to target the new `.accordion` buttons, toggle the `.active` class directly on the button upon click, update `aria-expanded`, and use `nextElementSibling` to implicitly control the panel via the CSS adjacent sibling selector.
+
 ## [1.57.0] - 2025-05-05
 
 ### Fixed
