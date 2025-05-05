@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.56.0] - 2025-05-05
+
+### Changed
+- Updated the HTML structure of the mortgage calculator form (`/finance/mortgage/mortgage-calculator/index.html`) to align with the new CSS Grid layout:
+    - Wrapped all `.form-group` elements within a new `<div class="input-grid">`.
+    - Renamed the button container div from `.form-buttons` to `.form-actions`.
+    - Removed the `.half-width` class from all `.form-group` elements as it is no longer needed for the grid layout.
+
 ## [1.55.0] - 2025-05-05
 
 ### Changed
