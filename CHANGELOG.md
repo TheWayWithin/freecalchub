@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.52.0] - 2025-05-05
+
+### Fixed
+- Corrected CSS for the FAQ accordion (`<details>`/`<summary>`) on the mortgage calculator page to ensure the answer section expands fully and content is not cut off.
+- Moved FAQ and formula box styles from inline `<style>` block in `/finance/mortgage/mortgage-calculator/index.html` to the global `styles.css` file for better organization and maintainability.
+
 ## [1.51.0] - 2025-05-05
 
 ### Fixed
