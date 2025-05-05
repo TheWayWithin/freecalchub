@@ -126,96 +126,98 @@
             
             <div class="calculator-container">
                 <form id="mortgage-calculator-form" class="calculator-form">
-                    <div class="form-group">
-                        <label for="country">Select Country:</label>
-                        <select id="country" name="country" class="form-control">
-                            <option value="us">United States</option>
-                            <option value="ca">Canada</option>
-                            <option value="uk">United Kingdom</option>
-                            <option value="au">Australia</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group half-width">
-                        <label for="home_price">Home Price</label>
-                        <div class="input-group">
-                            <span class="input-group-text">$</span>
-                            <input type="text" id="home_price" name="home_price" class="form-control" value="300000">
+                    <div class="input-grid"> <!-- Added input-grid wrapper -->
+                        <div class="form-group"> <!-- Removed half-width -->
+                            <label for="country">Select Country:</label>
+                            <select id="country" name="country" class="form-control">
+                                <option value="us">United States</option>
+                                <option value="ca">Canada</option>
+                                <option value="uk">United Kingdom</option>
+                                <option value="au">Australia</option>
+                            </select>
                         </div>
-                    </div>
-                    
-                    <div class="form-group half-width">
-                        <label for="loan_start_date">Loan Start Date</label>
-                        <input type="date" id="loan_start_date" name="loan_start_date" class="form-control">
-                    </div>
-                    
-                    <div class="form-group half-width">
-                        <label for="down_payment">Down Payment</label>
-                        <div class="input-group">
-                            <span class="input-group-text">$</span>
-                            <input type="text" id="down_payment" name="down_payment" class="form-control" value="60000">
+                        
+                        <div class="form-group"> <!-- Removed half-width -->
+                            <label for="home_price">Home Price</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="text" id="home_price" name="home_price" class="form-control" value="300000">
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="form-group half-width">
-                        <label for="down_payment_percent">Down Payment %</label>
-                        <div class="input-group">
-                            <input type="text" id="down_payment_percent" name="down_payment_percent" class="form-control" value="20">
-                            <span class="input-group-text">%</span>
+                        
+                        <div class="form-group"> <!-- Removed half-width -->
+                            <label for="loan_start_date">Loan Start Date</label>
+                            <input type="date" id="loan_start_date" name="loan_start_date" class="form-control">
                         </div>
-                    </div>
-                    
-                    <div class="form-group half-width">
-                        <label for="loan_term">Loan Term</label>
-                        <select id="loan_term" name="loan_term" class="form-control">
-                            <option value="30">30 years</option>
-                            <option value="20">20 years</option>
-                            <option value="15">15 years</option>
-                            <option value="10">10 years</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group half-width">
-                        <label for="interest_rate">Interest Rate</label>
-                        <div class="input-group">
-                            <input type="text" id="interest_rate" name="interest_rate" class="form-control" value="4.5">
-                            <span class="input-group-text">%</span>
+                        
+                        <div class="form-group"> <!-- Removed half-width -->
+                            <label for="down_payment">Down Payment</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="text" id="down_payment" name="down_payment" class="form-control" value="60000">
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="form-group half-width">
-                        <label for="property_tax">Annual Property Tax</label>
-                        <div class="input-group">
-                            <span class="input-group-text">$</span>
-                            <input type="text" id="property_tax" name="property_tax" class="form-control" value="3600">
+                        
+                        <div class="form-group"> <!-- Removed half-width -->
+                            <label for="down_payment_percent">Down Payment %</label>
+                            <div class="input-group">
+                                <input type="text" id="down_payment_percent" name="down_payment_percent" class="form-control" value="20">
+                                <span class="input-group-text">%</span>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="form-group half-width">
-                        <label for="home_insurance">Annual Home Insurance</label>
-                        <div class="input-group">
-                            <span class="input-group-text">$</span>
-                            <input type="text" id="home_insurance" name="home_insurance" class="form-control" value="1200">
+                        
+                        <div class="form-group"> <!-- Removed half-width -->
+                            <label for="loan_term">Loan Term</label>
+                            <select id="loan_term" name="loan_term" class="form-control">
+                                <option value="30">30 years</option>
+                                <option value="20">20 years</option>
+                                <option value="15">15 years</option>
+                                <option value="10">10 years</option>
+                            </select>
                         </div>
-                    </div>
-                    
-                    <div class="form-group half-width">
-                        <label for="hoa_fees">Monthly HOA Fees</label>
-                        <div class="input-group">
-                            <span class="input-group-text">$</span>
-                            <input type="text" id="hoa_fees" name="hoa_fees" class="form-control" value="0">
+                        
+                        <div class="form-group"> <!-- Removed half-width -->
+                            <label for="interest_rate">Interest Rate</label>
+                            <div class="input-group">
+                                <input type="text" id="interest_rate" name="interest_rate" class="form-control" value="4.5">
+                                <span class="input-group-text">%</span>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="form-group half-width">
-                        <label for="extra_payment">Extra Monthly Payment</label>
-                        <div class="input-group">
-                            <span class="input-group-text">$</span>
-                            <input type="text" id="extra_payment" name="extra_payment" class="form-control" value="0">
+                        
+                        <div class="form-group"> <!-- Removed half-width -->
+                            <label for="property_tax">Annual Property Tax</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="text" id="property_tax" name="property_tax" class="form-control" value="3600">
+                            </div>
                         </div>
-                    </div>
+                        
+                        <div class="form-group"> <!-- Removed half-width -->
+                            <label for="home_insurance">Annual Home Insurance</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="text" id="home_insurance" name="home_insurance" class="form-control" value="1200">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group"> <!-- Removed half-width -->
+                            <label for="hoa_fees">Monthly HOA Fees</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="text" id="hoa_fees" name="hoa_fees" class="form-control" value="0">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group"> <!-- Removed half-width -->
+                            <label for="extra_payment">Extra Monthly Payment</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="text" id="extra_payment" name="extra_payment" class="form-control" value="0">
+                            </div>
+                        </div>
+                    </div> <!-- Closed input-grid wrapper -->
                     
-                    <div class="form-buttons">
+                    <div class="form-actions"> <!-- Changed from form-buttons -->
                         <button type="submit" id="calculate-button" class="btn-primary">Calculate</button>
                         <button type="reset" class="btn-secondary">Reset</button>
                     </div>
