@@ -5,11 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.55.0] - 2025-05-05
+
+### Changed
+- Replaced the previous Flexbox-based multi-column layout for the mortgage calculator form (`#mortgage-calculator-form`) with a responsive CSS Grid layout in `/finance/mortgage/mortgage-calculator/css/enhanced-three-column-form-fix.css`.
+- The new layout uses `display: grid` and `grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))` to automatically adjust the number of columns (from 1 up to potentially 4 or more, depending on screen width and a minimum item width of 250px) for a more ergonomic and space-efficient presentation on wider screens.
+- Removed previous media queries for fixed 2 and 3-column layouts.
+- Ensured form buttons (`.form-buttons`) span the full width of the grid using `grid-column: 1 / -1`.
+
 ## [1.54.0] - 2025-05-05
 
 ### Fixed
 - Ensured the mortgage calculator HTML (`/finance/mortgage/mortgage-calculator/index.html`) includes the necessary script tag `<script src="/js/faq-accordion.js" defer></script>` before the closing `</body>` tag. This was missing in previous updates provided to the user, preventing the accordion JavaScript from loading and executing.
-
 
 ## [1.53.0] - 2025-05-05
 
@@ -17,7 +24,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Replaced the native `<details>`/`<summary>` FAQ implementation on the mortgage calculator page with a JavaScript-controlled accordion using `<button>` and `<div>` elements for better reliability and accessibility.
 - Updated `/js/faq-accordion.js` with robust logic to handle toggling visibility (`hidden` attribute), ARIA attributes (`aria-expanded`), and icon rotation (`+` to `x`) for the new accordion structure.
 - Refined CSS styles in `styles.css` for the `.faq-item`, `.faq-question`, `.faq-answer`, and `.faq-icon` classes to provide smooth transitions, appropriate spacing, clear focus states, and visual feedback for the JS-controlled accordion.
-
 
 ## [1.52.0] - 2025-05-05
 
@@ -200,13 +206,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - **Dark Mode JS Conflicts:** Resolved inconsistent dark mode persistence and disappearing button issues by removing redundant/conflicting dark mode logic from `js/main.js` and `js/calchub-consolidated-fixes.js`. Ensured `js/dark-mode.js` is the single source of truth for managing dark mode state and persistence, using the `html.dark-mode` selector consistently.
 
-
 ## [1.25.0] - 2025-05-02
 
 ### Fixed
 - **Dark Mode Persistence:** Resolved issue where dark mode setting was not persisting when navigating between pages. Implemented an immediate-execution script in `dark-mode.js` to apply the `dark-mode` class to the `<html>` element based on `localStorage` before the page content loads, preventing the flash of light mode.
 - **Dark Mode Navigation Text Color:** Fixed the main navigation link text color remaining black in dark mode. This was resolved by the persistence fix and by updating `dark-mode.css` and `dark-mode-button.css` to use `html.dark-mode` selectors instead of `body.dark-mode`.
-
 
 ## [1.24.0] - 2025-05-02
 
@@ -221,6 +225,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Mortgage Calculator Layout:** Resolved layout issues on the mortgage calculator page (`/finance/mortgage/mortgage-calculator/`) by adding missing global CSS file links (`/css/navigation-ribbon.css`, `/css/breadcrumb-styles.css`, `/css/calchub-consolidated-fixes.css`) to the page's `<head>`.
 - **Header and Navigation Consistency:** Ensured the header, logo, navigation ribbon, and breadcrumbs display correctly and consistently with other pages.
 - **Dark Mode Button Visibility:** Confirmed the dark mode button appears correctly in the header.
+
+## [1.15.0] - 2025-04-28
+
+### Fixed
+- **Three-Column Layout:** Created `enhanced-three-column-form-fix.css` with higher specificity selectors (using `#mortgage-calculator-form` ID) and `!important` declarations to ensure the three-column responsive layout applies correctly, overriding potential conflicts.
+- **HTML Update:** Linked `enhanced-three-column-form-fix.css` in `index.html`.
+
+## [1.13.0] - 2025-04-28
+
+### Fixed
+- **Dark Mode Button Styling:** Created `dark-mode-button-fix.css` with high specificity rules to ensure the dark mode button styling matches other pages, including icon display and hover effects. Also fixed the site header background color to be white.
+- **Dark Mode Functionality:** Linked `dark-mode-button-fix.css` in `index.html` and ensured the global `main.js` script is correctly referenced to enable dark mode toggling.
+- **Breadcrumb Alignment:** Created `breadcrumb-alignment-fix.css` with specific rules to ensure breadcrumbs are properly aligned within the container, matching the style of other pages.
 
 ## [1.12.0] - 2025-04-28
 
@@ -321,20 +338,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial setup for mortgage calculator functionality fixes.
 - Copied relevant files to `mortgage-calculator-fix-functionality` directory.
-
-
-## [1.13.0] - 2025-04-28
-
-### Fixed
-- **Dark Mode Button Styling:** Created `dark-mode-button-fix.css` with high specificity rules to ensure the dark mode button styling matches other pages, including icon display and hover effects. Also fixed the site header background color to be white.
-- **Dark Mode Functionality:** Linked `dark-mode-button-fix.css` in `index.html` and ensured the global `main.js` script is correctly referenced to enable dark mode toggling.
-- **Breadcrumb Alignment:** Created `breadcrumb-alignment-fix.css` with specific rules to ensure breadcrumbs are properly aligned within the container, matching the style of other pages.
-
-
-
-## [1.15.0] - 2025-04-28
-
-### Fixed
-- **Three-Column Layout:** Created `enhanced-three-column-form-fix.css` with higher specificity selectors (using `#mortgage-calculator-form` ID) and `!important` declarations to ensure the three-column responsive layout applies correctly, overriding potential conflicts.
-- **HTML Update:** Linked `enhanced-three-column-form-fix.css` in `index.html`.
 
