@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.54.0] - 2025-05-05
+
+### Fixed
+- Ensured the mortgage calculator HTML (`/finance/mortgage/mortgage-calculator/index.html`) includes the necessary script tag `<script src="/js/faq-accordion.js" defer></script>` before the closing `</body>` tag. This was missing in previous updates provided to the user, preventing the accordion JavaScript from loading and executing.
+
+
 ## [1.53.0] - 2025-05-05
 
 ### Fixed
