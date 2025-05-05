@@ -841,9 +841,11 @@ body.dark-mode .faq-question:hover {
 }
 
 /* Ensure hidden attribute works if needed, though JS manages visibility */
+/* 
 .faq-answer[hidden] {
     display: none;
 }
+*/
 
 /* Related Calculators */
 .related-calculators {
