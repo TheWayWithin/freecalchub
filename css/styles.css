@@ -952,3 +952,16 @@ footer {
     }
 }
 
+
+
+/* Fix list alignment */
+.main-content ul, 
+.main-content ol {
+    list-style-position: inside; /* Place markers inside the text block */
+    padding-left: 1em; /* Add some padding for visual separation */
+}
+
+.main-content li {
+    margin-bottom: 0.5em; /* Add space between list items */
+}
+
