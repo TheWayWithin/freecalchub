@@ -995,7 +995,7 @@ body.dark-mode .faq-question:hover {
 /* Fix list alignment */
 .main-content ul, 
 .main-content ol {
-    list-style-position: inside; /* Place markers inside the text block */
+    list-style-position: inside !important; /* Place markers inside the text block - Added !important */
     padding-left: 1em; /* Add some padding for visual separation */
 }
 
