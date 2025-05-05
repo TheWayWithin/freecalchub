@@ -1,0 +1,48 @@
+/* Responsive Grid Form Layout Fix for Mortgage Calculator */
+
+/* Use CSS Grid for the form container */
+#mortgage-calculator-form {
+    display: grid !important; /* Override previous display: flex */
+    /* Create flexible columns: min 250px wide, max 1fr */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    gap: 20px !important; /* Consistent gap between grid items */
+    width: 100% !important;
+    /* Remove flex properties */
+    flex-wrap: unset !important;
+    justify-content: unset !important;
+}
+
+/* Reset form group styles from previous flex/column layout */
+#mortgage-calculator-form .form-group {
+    width: auto !important; /* Let grid handle width */
+    flex: unset !important;
+    max-width: none !important;
+    padding: 0 !important; /* Remove previous padding */
+    box-sizing: border-box !important;
+    float: none !important;
+    margin-bottom: 0 !important; /* Grid gap handles spacing */
+}
+
+/* Remove media queries for fixed column counts */
+/* @media (min-width: 768px) { ... } */
+/* @media (min-width: 1024px) { ... } */
+
+/* Ensure form buttons span the full grid width */
+#mortgage-calculator-form .form-buttons {
+    grid-column: 1 / -1 !important; /* Span all columns */
+    width: auto !important; /* Let grid handle width */
+    flex: unset !important;
+    max-width: none !important;
+    clear: none !important; /* Not needed for grid */
+    display: flex !important; /* Keep flex for button alignment within the container */
+    justify-content: flex-end !important;
+    gap: 15px !important;
+    padding: 0 !important; /* Remove previous padding */
+    margin-top: 1.5rem !important;
+    box-sizing: border-box !important;
+}
+
+/* Note: The use of !important is maintained to override potentially conflicting styles 
+   from other stylesheets, as observed in the previous implementation. 
+   Ideally, these conflicts would be resolved for cleaner CSS. */
+
