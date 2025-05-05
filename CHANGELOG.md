@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.57.0] - 2025-05-05
+
+### Fixed
+- Adjusted CSS for the FAQ accordion (`.faq-answer` in `styles.css`) to ensure the answer text is completely hidden when collapsed.
+- Set `padding-top: 0;` and `padding-bottom: 0;` for the collapsed state and ensured `overflow: hidden;` and `max-height: 0;` are applied.
+- Vertical padding is now only applied via `padding: 20px;` when the `.faq-item.active` class is present, resolving the issue where the top of the answer text was previously visible.
+
 ## [1.56.0] - 2025-05-05
 
 ### Changed
