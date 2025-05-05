@@ -1005,51 +1005,6 @@ body.dark-mode .faq-question:hover {
 
 
 
-/* FAQ Accordion Styles */
-.faq-section details {
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    margin-bottom: 1rem;
-    background-color: var(--background-alt);
-    overflow: hidden; /* Prevent content overflow before animation */
-}
-
-.faq-section summary {
-    padding: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none; /* Remove default marker */
-}
-
-.faq-section summary::-webkit-details-marker { /* Remove default marker for Chrome/Safari */
-    display: none;
-}
-
-.faq-section summary::after { /* Custom marker */
-    content: '+';
-    font-size: 1.5rem;
-    transition: transform 0.2s ease-out;
-}
-
-.faq-section details[open] summary {
-    border-bottom: 1px solid var(--border-color);
-}
-
-.faq-section details[open] summary::after {
-    content: '−'; /* Use minus sign for open state */
-    /* transform: rotate(180deg); Removed as minus sign is sufficient */
-}
-
-.faq-answer {
-    padding: 1rem;
-    background-color: var(--background-color);
-    /* Ensure content is visible when details is open */
-    /* No max-height or overflow: hidden needed here as <details> handles it */
-}
-
 /* Formula Box Style */
 .formula-box {
     background-color: var(--background-alt);
@@ -1061,4 +1016,73 @@ body.dark-mode .faq-question:hover {
     white-space: pre-wrap;
     word-wrap: break-word;
 }
+
+
+
+/* --- New FAQ Accordion Styles (Based on ChatGPT Suggestion) --- */
+
+.faq-accordion .accordion {
+    background-color: var(--background-alt);
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--border-color); /* Separator line */
+    text-align: left;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-accordion .accordion:hover {
+    background-color: #e9ecef; /* Slightly darker background on hover */
+}
+
+/* Dark mode hover */
+body.dark-mode .faq-accordion .accordion:hover {
+    background-color: #495057;
+}
+
+.faq-accordion .faq-icon {
+    font-style: normal; /* Ensure icon is not italic */
+    font-weight: bold;
+    transition: transform 0.3s ease; /* Animate icon rotation */
+    display: inline-block; /* Needed for transform */
+    margin-left: 10px; /* Space between text and icon */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+/* Rotate icon when active */
+.faq-accordion .accordion.active .faq-icon {
+    transform: rotate(45deg); /* Rotate '+' to 'x' */
+}
+
+/* Style the panel (answer) */
+.faq-accordion .panel {
+    padding: 0 18px; /* Horizontal padding only */
+    background-color: var(--background-color);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Smooth transition */
+}
+
+/* When the button is active, expand the panel */
+.faq-accordion .accordion.active + .panel {
+    max-height: 1000px; /* Adjust if answers are very long */
+    padding: 18px; /* Add vertical padding when open */
+    border-bottom: 1px solid var(--border-color); /* Add border to bottom of open panel */
+}
+
+/* Remove default outline on focus for button, add custom */
+.faq-accordion .accordion:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-light); /* Custom focus ring */
+}
+
+/* --- End New FAQ Accordion Styles --- */
 
