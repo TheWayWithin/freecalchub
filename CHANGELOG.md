@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.59.0] - 2025-05-05
+
+### Fixed
+- Added `!important` to the `list-style-position: inside;` rule for `.main-content ul` and `.main-content ol` in `styles.css`. This ensures that list markers (bullets, numbers) consistently appear inside the text block across all pages (category, blurb, etc.) by overriding any potentially conflicting styles from other stylesheets.
+
 ## [1.58.0] - 2025-05-05
 
 ### Fixed
