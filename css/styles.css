@@ -771,45 +771,78 @@ footer {
 
 /* FAQ Section */
 .faq-section {
-    margin: 60px 0;
+    margin: 40px 0; /* Adjusted margin */
 }
 
 .faq-item {
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Adjusted spacing */
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
-    overflow: hidden;
+    overflow: hidden; /* Keep this for border-radius and transition */
 }
 
 .faq-question {
-    padding: 20px;
+    width: 100%; /* Ensure button takes full width */
+    padding: 15px 20px; /* Adjusted padding */
     background-color: var(--background-alt);
     font-weight: 600;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: none; /* Remove default button border */
+    text-align: left; /* Align text left */
+    font-size: 1rem; /* Match body font size */
+    color: var(--text-color); /* Ensure text color */
+    transition: background-color 0.2s ease; /* Add transition for hover */
 }
 
-.faq-question:after {
-    content: "+";
-    font-size: 1.5rem;
+.faq-question:hover {
+    background-color: #e9ecef; /* Slightly darker background on hover */
 }
 
-.faq-question.active:after {
-    content: "-";
+/* Dark mode hover */
+body.dark-mode .faq-question:hover {
+    background-color: #495057;
+}
+
+.faq-icon {
+    font-style: normal; /* Ensure icon is not italic */
+    font-weight: bold;
+    transition: transform 0.3s ease; /* Animate icon rotation */
+    display: inline-block; /* Needed for transform */
+    margin-left: 10px; /* Space between text and icon */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+/* Rotate icon when open */
+.faq-item.active .faq-icon {
+    transform: rotate(45deg); /* Rotate '+' to 'x' - using transform */
 }
 
 .faq-answer {
-    padding: 0 20px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
+    padding: 0 20px; /* Padding only when open */
+    background-color: var(--background-color);
+    overflow: hidden; /* Needed for smooth transition */
+    transition: padding 0.3s ease, max-height 0.3s ease; /* Transition padding and max-height */
+    max-height: 0; /* Start collapsed */
 }
 
-.faq-answer.active {
+/* Styles when the answer is visible (JS removes 'hidden' and adds 'active' to parent) */
+.faq-item.active .faq-answer {
     padding: 20px;
-    max-height: 1000px;
+    max-height: 1000px; /* Set a large max-height to allow expansion */
+}
+
+/* Remove default outline on focus for button, add custom */
+.faq-question:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-light); /* Custom focus ring */
+}
+
+/* Ensure hidden attribute works if needed, though JS manages visibility */
+.faq-answer[hidden] {
+    display: none;
 }
 
 /* Related Calculators */
