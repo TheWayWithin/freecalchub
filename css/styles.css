@@ -821,16 +821,19 @@ body.dark-mode .faq-question:hover {
 }
 
 .faq-answer {
-    padding: 0 20px; /* Padding only when open */
+    padding: 0 20px; /* Keep horizontal padding, remove vertical */
     background-color: var(--background-color);
     overflow: hidden; /* Needed for smooth transition */
-    transition: padding 0.3s ease, max-height 0.3s ease; /* Transition padding and max-height */
+    transition: padding-top 0.3s ease, padding-bottom 0.3s ease, max-height 0.3s ease; /* Transition padding and max-height */
     max-height: 0; /* Start collapsed */
+    /* Explicitly set vertical padding to 0 */
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
-/* Styles when the answer is visible (JS removes 'hidden' and adds 'active' to parent) */
+/* Styles when the answer is visible */
 .faq-item.active .faq-answer {
-    padding: 20px;
+    padding: 20px; /* Apply full padding when active */
     max-height: 1000px; /* Set a large max-height to allow expansion */
 }
 
