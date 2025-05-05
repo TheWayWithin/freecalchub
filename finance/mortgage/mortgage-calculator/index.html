@@ -74,17 +74,24 @@
     </header>
     
     <div id="mobile-menu" class="mobile-menu">
-        <button id="mobile-menu-close" class="close-menu" aria-label="Close menu">×</button>
-        <ul>
-            <li><a href="/finance/">Finance</a></li>
-            <li><a href="/math/">Math</a></li>
-            <li><a href="/health/">Health</a></li>
-            <li><a href="/conversions/">Conversions</a></li>
-            <li><a href="/date-time/">Date & Time</a></li>
-            <li><a href="/business/">Business</a></li>
-            <li><a href="/lifestyle/">Lifestyle</a></li>
-            <li><a href="/blog/">Blog</a></li>
-        </ul>
+        <div class="mobile-menu-header">
+            <span>Menu</span>
+            <button id="mobile-menu-close" aria-label="Close menu">
+                <i class="fas fa-times"></i> <!-- Use icon instead of '×' -->
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="/finance/">Finance</a></li>
+                <li><a href="/math/">Math</a></li>
+                <li><a href="/health/">Health</a></li>
+                <li><a href="/conversions/">Conversions</a></li>
+                <li><a href="/date-time/">Date & Time</a></li>
+                <li><a href="/business/">Business</a></li>
+                <li><a href="/lifestyle/">Lifestyle</a></li>
+                <li><a href="/blog/">Blog</a></li>
+            </ul>
+        </nav>
     </div>
     
     <div class="breadcrumbs">
@@ -290,7 +297,7 @@
                 <ul>
                     <li><a href="/privacy/">Privacy Policy</a></li>
                     <li><a href="/terms/">Terms of Service</a></li>
-                    <li><a href="/GDPR/">Data Protection</a></li>
+                    <li><a href="/gpdr/">Data Protection</a></li>
                 </ul>
             </div>
         </div>
