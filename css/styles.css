@@ -965,3 +965,62 @@ footer {
     margin-bottom: 0.5em; /* Add space between list items */
 }
 
+
+
+/* FAQ Accordion Styles */
+.faq-section details {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    background-color: var(--background-alt);
+    overflow: hidden; /* Prevent content overflow before animation */
+}
+
+.faq-section summary {
+    padding: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none; /* Remove default marker */
+}
+
+.faq-section summary::-webkit-details-marker { /* Remove default marker for Chrome/Safari */
+    display: none;
+}
+
+.faq-section summary::after { /* Custom marker */
+    content: '+';
+    font-size: 1.5rem;
+    transition: transform 0.2s ease-out;
+}
+
+.faq-section details[open] summary {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.faq-section details[open] summary::after {
+    content: '−'; /* Use minus sign for open state */
+    /* transform: rotate(180deg); Removed as minus sign is sufficient */
+}
+
+.faq-answer {
+    padding: 1rem;
+    background-color: var(--background-color);
+    /* Ensure content is visible when details is open */
+    /* No max-height or overflow: hidden needed here as <details> handles it */
+}
+
+/* Formula Box Style */
+.formula-box {
+    background-color: var(--background-alt);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    font-family: monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
