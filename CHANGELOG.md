@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.60.0] - 2025-05-05
+
+### Fixed
+- Reverted previous list alignment fix (`list-style-position: inside !important;`) in `styles.css`.
+- Implemented new list alignment fix based on ChatGPT recommendation (v2) to ensure consistent list marker alignment across all pages.
+- Targets `.main-content ul/ol` and `.content ul/ol`.
+- Uses `list-style-position: outside;`, `padding-left: 1.5rem;`, and `margin: 0 0 1rem 0;` to align markers slightly outside the main text block, matching the desired style.
+- Updated `.main-content li` and `.content li` with `margin-bottom: 0.5rem;` for consistent spacing.
+
 ## [1.59.0] - 2025-05-05
 
 ### Fixed
