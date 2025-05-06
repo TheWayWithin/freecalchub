@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculators & Resources | CalcHub</title>
+    <meta name="description" content="Explore various loan options, understand loan terms, and use our calculators to plan your finances. Covers personal, auto, student loans, and more.">
+    <link rel="canonical" href="/finance/loan/">
+    
+    <!-- Global styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <link rel="stylesheet" href="/css/dark-mode-button.css">
+    <link rel="stylesheet" href="/css/navigation-ribbon.css">
+    <link rel="stylesheet" href="/css/breadcrumb-styles.css">
+    <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
+    
+    <!-- Specific category styles (can reuse or adapt from mortgage category) -->
+    <link rel="stylesheet" href="/finance/mortgage/css/mortgage-category-layout.css"> <!-- Reusing for now, can be specific if needed -->
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8PR7EB78N"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-V8PR7EB78N");
+    </script>
+    <!-- End Google Analytics -->
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "name": "Loan Calculators & Resources",
+          "description": "Find tools and information for various types of loans including personal, auto, and student loans. Calculate payments, understand terms, and plan your borrowing.",
+          "url": "/finance/loan/",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Finance",
+                "item": "/finance/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Loan",
+                "item": "/finance/loan/"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Finance",
+              "item": "/finance/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Loan",
+              "item": "/finance/loan/"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="/" class="logo">
+                    <img src="/images/logo.svg" alt="CalcHub Logo">
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/finance/" class="active">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-controls">
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="mobile-menu-button" aria-label="Toggle menu">
+                    <i class="fas fa-bars menu-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-header">
+            <span>Menu</span>
+            <button id="mobile-menu-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="/finance/" class="active">Finance</a></li>
+                <li><a href="/math/">Math</a></li>
+                <li><a href="/health/">Health</a></li>
+                <li><a href="/conversions/">Conversions</a></li>
+                <li><a href="/date-time/">Date & Time</a></li>
+                <li><a href="/business/">Business</a></li>
+                <li><a href="/lifestyle/">Lifestyle</a></li>
+                <li><a href="/blog/">Blog</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <a href="../">Finance</a>
+            <span class="separator">/</span>
+            <span class="current">Loan</span>
+        </div>
+    </div>
+    
+    <div class="navigation-ribbon">
+        <div class="navigation-ribbon-container">
+            <a href="/finance/mortgage/"><i class="fas fa-home"></i>Mortgage</a>
+            <a href="/finance/loan/" class="active"><i class="fas fa-file-invoice-dollar"></i>Loan</a>
+            <a href="/finance/investment/"><i class="fas fa-chart-line"></i>Investment</a>
+            <a href="/finance/retirement/"><i class="fas fa-umbrella-beach"></i>Retirement</a>
+            <a href="/finance/budgeting/"><i class="fas fa-wallet"></i>Budgeting</a>
+            <a href="/finance/savings/"><i class="fas fa-piggy-bank"></i>Savings</a>
+            <a href="/finance/cryptocurrency/"><i class="fas fa-coins"></i>Cryptocurrency</a>
+            <a href="/finance/tax/"><i class="fas fa-receipt"></i>Tax</a>
+        </div>
+    </div>
+    
+    <main id="main-content" class="container py-5 loan-category">
+        <section class="category-header">
+            <h1>Loan Calculators & Resources</h1>
+            <p class="lead">Navigate the world of loans with our comprehensive calculators and guides. Whether you are considering a personal loan, auto financing, or student aid, our tools can help you understand your options, estimate payments, and plan your borrowing strategy effectively.</p>
+        </section>
+
+        <div class="calculator-grid">
+            <a href="/finance/loan/loan-calculator/" class="calculator-card">
+                <div class="calculator-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h3>Loan Calculator</h3>
+                <p>Estimate monthly payments, total interest, and amortization for various loan types.</p>
+            </a>
+            <!-- Add other loan-related calculators here as they are developed -->
+            <!-- Example:
+            <a href="/finance/loan/auto-loan-calculator/" class="calculator-card">
+                <div class="calculator-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3>Auto Loan Calculator</h3>
+                <p>Calculate payments and costs specific to car loans.</p>
+            </a>
+            -->
+        </div>
+        
+        <section class="category-info enhanced-content">
+            <h2>Understanding Different Types of Loans</h2>
+            <p>A loan is a fundamental financial tool that allows individuals and businesses to access funds for various purposes. It involves borrowing a sum of money that must be repaid over an agreed period, along with interest and potentially other fees. Understanding the nuances of different loan types is crucial for making informed financial decisions.</p>
+            
+            <h4>Common Loan Categories</h4>
+            <ul>
+                <li><strong>Personal Loans:</strong> These are versatile loans that can be used for a wide range of expenses, such as consolidating debt, financing a large purchase, covering emergency costs, or funding home improvements. Personal loans can be secured (backed by collateral like a car or savings account) or unsecured (no collateral required, typically resulting in higher interest rates).</li>
+                <li><strong>Auto Loans:</strong> Specifically designed for purchasing a new or used vehicle. The vehicle itself usually serves as collateral for the loan. Auto loan terms and interest rates can vary based on the vehicle's age, price, and the borrower's creditworthiness.</li>
+                <li><strong>Student Loans:</strong> These loans help students and their families cover the costs of higher education, including tuition, fees, books, and living expenses. Student loans can be federal (offered by the government with specific benefits like income-driven repayment plans) or private (offered by banks and other financial institutions).</li>
+                <li><strong>Mortgage Loans:</strong> Used to finance the purchase of real estate, such as a house or condominium. Mortgages are typically long-term loans secured by the property itself. For detailed mortgage calculations and information, please visit our dedicated <a href="/finance/mortgage/">Mortgage section</a>.</li>
+                <li><strong>Business Loans:</strong> Provided to businesses for various purposes, including startup costs, expansion, equipment purchase, or working capital. Business loans come in many forms, such as term loans, lines of credit, and SBA loans.</li>
+                <li><strong>Payday Loans:</strong> Short-term, high-interest loans designed to cover a borrower's expenses until their next payday. These loans are often criticized for their predatory lending practices and extremely high costs.</li>
+            </ul>
+            
+            <h3>Key Loan Terminology Explained</h3>
+            <p>Familiarizing yourself with common loan terms will help you better understand loan agreements and compare offers:</p>
+            <ul>
+                <li><strong>Principal:</strong> The original amount of money borrowed from the lender.</li>
+                <li><strong>Interest Rate:</strong> The percentage of the principal charged by the lender for the use of their money. This is usually expressed as an annual rate.</li>
+                <li><strong>APR (Annual Percentage Rate):</strong> A broader measure of the cost of borrowing, as it includes the interest rate plus any additional fees or costs associated with the loan (e.g., origination fees, closing costs). APR provides a more comprehensive way to compare loan offers.</li>
+                <li><strong>Loan Term:</strong> The duration over which the loan is scheduled to be repaid. Common terms vary by loan type (e.g., 3-7 years for auto loans, 10-30 years for student loans or mortgages).</li>
+                <li><strong>Amortization:</strong> The process of paying off a debt over time through regular, equal payments. Each payment consists of a portion that covers the interest accrued and a portion that reduces the principal balance.</li>
+                <li><strong>Collateral:</strong> An asset that a borrower pledges to a lender to secure a loan. If the borrower defaults on the loan, the lender can seize the collateral to recover their losses.</li>
+                <li><strong>Origination Fee:</strong> A fee charged by a lender for processing a new loan application, often expressed as a percentage of the loan amount.</li>
+                <li><strong>Prepayment Penalty:</strong> A fee that some lenders charge if you pay off all or part of your loan early.</li>
+            </ul>
+            
+            <h3>The Loan Application and Approval Process</h3>
+            <p>Securing a loan typically involves several steps:</p>
+            <ol>
+                <li><strong>Assess Your Financial Situation:</strong> Review your income, expenses, debts, and credit score to determine how much you can afford to borrow and repay.</li>
+                <li><strong>Research Lenders and Loan Options:</strong> Compare offers from different banks, credit unions, and online lenders. Consider interest rates, APR, fees, loan terms, and lender reputation.</li>
+                <li><strong>Get Pre-qualified or Pre-approved (if applicable):</strong> For some loans like mortgages or auto loans, getting pre-qualified or pre-approved can give you an estimate of how much you can borrow and strengthen your negotiating position.</li>
+                <li><strong>Complete the Loan Application:</strong> Provide detailed personal and financial information, including proof of income, employment verification, and identification.</li>
+                <li><strong>Underwriting:</strong> The lender will review your application, credit history, and other factors to assess your creditworthiness and decide whether to approve the loan and under what terms.</li>
+                <li><strong>Loan Agreement and Closing:</strong> If approved, you will receive a loan agreement outlining all terms and conditions. Review it carefully before signing. For some loans, a formal closing process may be required.</li>
+                <li><strong>Disbursement of Funds:</strong> Once the agreement is signed, the lender will disburse the loan funds to you or directly to the seller/institution (e.g., car dealership, university).</li>
+            </ol>
+            
+            <p>Our loan calculators are designed to help you at various stages of this process, from estimating potential payments to understanding the long-term costs of borrowing. By using these tools, you can approach borrowing with greater confidence and make choices that align with your financial goals.</p>
+        </section>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>CalcHub</h3>
+                <p>Your source for free, accurate, and easy-to-use online calculators.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/privacy/">Privacy Policy</a></li>
+                    <li><a href="/terms/">Terms of Service</a></li>
+                    <li><a href="/gdpr/">GDPR</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/finance/">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <!-- Add social media links here if desired -->
+                <p>Stay connected for updates and new calculators.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CalcHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Global script (for dark mode, mobile menu) -->
+    <script src="/js/main.js" defer></script>
+    <script src="/js/dark-mode.js" defer></script>
+    <!-- No FAQ accordion on this page, so no faq-accordion.js needed -->
+
+</body>
+</html>
