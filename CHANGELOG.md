@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 docs: update CHANGELOG for v1.61.0 container list alignment
 
+## [1.62.0] - 2025-05-06
+
+### Fixed
+- Reverted previous list alignment fix targeting only `.container`.
+- Implemented a universal list alignment fix targeting `.container ul/ol/li`, `.main-content ul/ol/li`, and `.content ul/ol/li` in `styles.css`.
+- This ensures consistent list marker alignment (`list-style-position: outside;`, `padding-left: 1.5rem;`) across all page types (calculator, category, blurb, etc.) by targeting all relevant content wrappers.
+
 ## [1.61.0] - 2025-05-06
 
 ### Fixed
