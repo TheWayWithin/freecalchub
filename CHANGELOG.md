@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 docs: update CHANGELOG for v1.61.0 container list alignment
 
+## [1.67.0] - 2024-05-06
+
+### Added
+- New Loan Calculator at `/finance/loan/loan-calculator/` with comprehensive features:
+    - Calculates monthly payments, total principal, total interest, and total loan cost.
+    - Supports various loan terms (years/months), interest rates, and loan types.
+    - Allows for optional extra monthly payments and shows interest savings.
+    - Displays an amortization schedule.
+    - Includes interactive charts for payment breakdown and loan balance over time.
+    - Features detailed educational content about loans and responsible borrowing.
+    - Implements schema markup (SoftwareApplication, FAQPage, HowTo, BreadcrumbList) for SEO.
+    - Includes a comprehensive FAQ section.
+- New Loan subcategory page at `/finance/loan/` with educational content and links to loan calculators.
+
+### Changed
+- Updated main Finance category page (`/finance/index.html`) to include the new Loan subcategory in navigation and content.
+- Updated navigation ribbons and breadcrumbs across relevant pages to reflect the new Loan calculator and subcategory.
+
 ## [1.66.0] - 2024-05-06
 
 ### Added
