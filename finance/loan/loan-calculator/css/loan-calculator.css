@@ -1,0 +1,419 @@
+/* Loan Calculator Specific Styles */
+
+/* Ensure consistency with global styles and other calculators */
+.calculator-form .input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.calculator-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator-form .form-group.full-width {
+    grid-column: 1 / -1; /* Make element span full width */
+}
+
+.calculator-form label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--text-color-light);
+}
+
+.calculator-form .form-control,
+.calculator-form select {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color-light);
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: var(--input-bg-light);
+    color: var(--input-text-color-light);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calculator-form .form-control:focus,
+.calculator-form select:focus {
+    border-color: var(--primary-color-light);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.calculator-form .input-group {
+    display: flex;
+}
+
+.calculator-form .input-group .input-group-text {
+    padding: 0.75rem;
+    background-color: var(--secondary-bg-light);
+    border: 1px solid var(--border-color-light);
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    color: var(--text-color-light);
+}
+
+.calculator-form .input-group .form-control {
+    border-radius: 0 4px 4px 0;
+}
+
+.calculator-form .input-group .form-control:not(:first-child) {
+    border-left: none;
+}
+
+.calculator-form .input-group input[type="text"]:focus + .input-group-text,
+.calculator-form .input-group input[type="number"]:focus + .input-group-text {
+     border-color: var(--primary-color-light);
+}
+
+/* Dark Mode Specific Input Styles */
+body.dark-mode .calculator-form label {
+    color: var(--text-color-dark);
+}
+
+body.dark-mode .calculator-form .form-control,
+body.dark-mode .calculator-form select {
+    background-color: var(--input-bg-dark);
+    color: var(--input-text-color-dark);
+    border-color: var(--border-color-dark);
+}
+
+body.dark-mode .calculator-form .form-control:focus,
+body.dark-mode .calculator-form select:focus {
+    border-color: var(--primary-color-dark);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25); /* Adjust focus color for dark mode if needed */
+}
+
+body.dark-mode .calculator-form .input-group .input-group-text {
+    background-color: var(--secondary-bg-dark);
+    border-color: var(--border-color-dark);
+    color: var(--text-color-dark);
+}
+
+/* Form Actions (Buttons) */
+.calculator-form .form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: flex-start;
+}
+
+.calculator-form .btn-primary,
+.calculator-form .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+}
+
+.calculator-form .btn-primary {
+    background-color: var(--primary-color-light);
+    color: #fff;
+    border: 1px solid var(--primary-color-light);
+}
+
+.calculator-form .btn-primary:hover {
+    background-color: #0056b3; /* Darken primary color on hover */
+    border-color: #0056b3;
+}
+
+.calculator-form .btn-secondary {
+    background-color: var(--secondary-bg-light);
+    color: var(--text-color-light);
+    border: 1px solid var(--border-color-light);
+}
+
+.calculator-form .btn-secondary:hover {
+    background-color: #e2e6ea; /* Slightly darken secondary bg on hover */
+    border-color: #dae0e5;
+}
+
+/* Dark Mode Button Styles */
+body.dark-mode .calculator-form .btn-primary {
+    background-color: var(--primary-color-dark);
+    border-color: var(--primary-color-dark);
+    color: #fff; /* Ensure text is readable */
+}
+
+body.dark-mode .calculator-form .btn-primary:hover {
+    background-color: #0a58ca; /* Adjust hover color for dark mode */
+    border-color: #0a58ca;
+}
+
+body.dark-mode .calculator-form .btn-secondary {
+    background-color: var(--secondary-bg-dark);
+    color: var(--text-color-dark);
+    border: 1px solid var(--border-color-dark);
+}
+
+body.dark-mode .calculator-form .btn-secondary:hover {
+    background-color: #495057; /* Adjust hover color for dark mode */
+    border-color: #495057;
+}
+
+/* Results Section */
+#results-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--content-bg-light);
+    border: 1px solid var(--border-color-light);
+    border-radius: 8px;
+}
+
+body.dark-mode #results-container {
+    background-color: var(--content-bg-dark);
+    border-color: var(--border-color-dark);
+}
+
+#results-container h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    color: var(--heading-color-light);
+}
+
+body.dark-mode #results-container h2 {
+    color: var(--heading-color-dark);
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.results-grid div {
+    padding: 1rem;
+    background-color: var(--secondary-bg-light);
+    border-radius: 4px;
+    border: 1px solid var(--border-color-light);
+}
+
+body.dark-mode .results-grid div {
+    background-color: var(--secondary-bg-dark);
+    border-color: var(--border-color-dark);
+}
+
+.results-grid div strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color-light-secondary);
+}
+
+body.dark-mode .results-grid div strong {
+    color: var(--text-color-dark-secondary);
+}
+
+.results-grid div span {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--text-color-light);
+}
+
+body.dark-mode .results-grid div span {
+    color: var(--text-color-dark);
+}
+
+/* Charts Container */
+#charts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+#charts-container h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: var(--heading-color-light);
+}
+
+body.dark-mode #charts-container h3 {
+    color: var(--heading-color-dark);
+}
+
+/* Amortization Table */
+#amortization-schedule-container h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--heading-color-light);
+}
+
+body.dark-mode #amortization-schedule-container h3 {
+    color: var(--heading-color-dark);
+}
+
+.amortization-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.amortization-table th,
+.amortization-table td {
+    border: 1px solid var(--border-color-light);
+    padding: 0.75rem;
+    text-align: right;
+}
+
+.amortization-table th {
+    background-color: var(--table-header-bg-light);
+    color: var(--table-header-text-light);
+    font-weight: bold;
+}
+
+.amortization-table tbody tr:nth-child(even) {
+    background-color: var(--table-row-even-bg-light);
+}
+
+.amortization-table tbody tr:hover {
+    background-color: var(--table-row-hover-bg-light);
+}
+
+/* Dark Mode Table Styles */
+body.dark-mode .amortization-table th,
+body.dark-mode .amortization-table td {
+    border-color: var(--border-color-dark);
+}
+
+body.dark-mode .amortization-table th {
+    background-color: var(--table-header-bg-dark);
+    color: var(--table-header-text-dark);
+}
+
+body.dark-mode .amortization-table tbody tr:nth-child(even) {
+    background-color: var(--table-row-even-bg-dark);
+}
+
+body.dark-mode .amortization-table tbody tr:hover {
+    background-color: var(--table-row-hover-bg-dark);
+}
+
+/* Enhanced Content Sections (like mortgage calculator) */
+.calculator-info.enhanced-content {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--content-bg-light);
+    border: 1px solid var(--border-color-light);
+    border-radius: 8px;
+}
+
+body.dark-mode .calculator-info.enhanced-content {
+    background-color: var(--content-bg-dark);
+    border-color: var(--border-color-dark);
+}
+
+.calculator-info.enhanced-content h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--heading-color-light);
+}
+
+body.dark-mode .calculator-info.enhanced-content h2 {
+    color: var(--heading-color-dark);
+}
+
+.calculator-info.enhanced-content h3 {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--heading-color-light);
+}
+
+body.dark-mode .calculator-info.enhanced-content h3 {
+    color: var(--heading-color-dark);
+}
+
+.calculator-info.enhanced-content h4 {
+    font-size: 1.2rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--heading-color-light);
+}
+
+body.dark-mode .calculator-info.enhanced-content h4 {
+    color: var(--heading-color-dark);
+}
+
+.calculator-info.enhanced-content p,
+.calculator-info.enhanced-content ul,
+.calculator-info.enhanced-content ol {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.calculator-info.enhanced-content ul,
+.calculator-info.enhanced-content ol {
+    padding-left: 1.5rem;
+}
+
+.calculator-info.enhanced-content li {
+    margin-bottom: 0.5rem;
+}
+
+.calculator-info.enhanced-content strong {
+    font-weight: bold;
+    color: var(--text-color-light);
+}
+
+body.dark-mode .calculator-info.enhanced-content strong {
+    color: var(--text-color-dark);
+}
+
+.calculator-info.enhanced-content a {
+    color: var(--link-color-light);
+    text-decoration: underline;
+}
+
+body.dark-mode .calculator-info.enhanced-content a {
+    color: var(--link-color-dark);
+}
+
+.calculator-info.enhanced-content .formula-box {
+    background-color: var(--secondary-bg-light);
+    border: 1px solid var(--border-color-light);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
+
+body.dark-mode .calculator-info.enhanced-content .formula-box {
+    background-color: var(--secondary-bg-dark);
+    border-color: var(--border-color-dark);
+}
+
+/* FAQ Section (reusing global FAQ styles from styles.css, but can add specifics here if needed) */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .calculator-form .input-grid {
+        grid-template-columns: 1fr; /* Stack inputs on smaller screens */
+    }
+
+    .results-grid {
+        grid-template-columns: 1fr; /* Stack results on smaller screens */
+    }
+
+    #charts-container {
+        grid-template-columns: 1fr; /* Stack charts on smaller screens */
+    }
+
+    .amortization-table {
+        font-size: 0.8rem;
+    }
+
+    .amortization-table th,
+    .amortization-table td {
+        padding: 0.5rem;
+    }
+}
+
