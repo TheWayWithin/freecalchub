@@ -1,0 +1,150 @@
+/* Percentage Calculator Specific Styles */
+
+/* Tab Interface */
+.calculator-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allow tabs to wrap on smaller screens */
+}
+
+.tab-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px; /* Overlap border */
+    font-size: 1em;
+    color: var(--text-color);
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-button:hover,
+.tab-button:focus {
+    color: var(--primary-color);
+    outline: none;
+}
+
+.tab-button.active {
+    border-bottom-color: var(--primary-color);
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.tab-content {
+    display: none; /* Hide inactive tabs */
+    padding: 20px 0; /* Add some padding below tabs */
+}
+
+.tab-content.active {
+    display: block; /* Show active tab */
+}
+
+/* Calculator Form Styles (Leveraging existing styles where possible) */
+.calculator-form h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.calculator-form .form-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Space between form groups */
+    margin-bottom: 20px;
+}
+
+.calculator-form .form-group {
+    flex: 1 1 200px; /* Allow groups to grow and shrink, base width 200px */
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.calculator-form input[type="number"] {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1em;
+    width: 100%; /* Make input take full width of its container */
+    box-sizing: border-box; /* Include padding and border in width */
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
+}
+
+.calculator-form .input-unit {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted-color);
+}
+
+/* Adjust form group with unit */
+.calculator-form .form-group:has(.input-unit) {
+    position: relative;
+}
+
+.calculator-form .form-group:has(.input-unit) input[type="number"] {
+    padding-right: 30px; /* Make space for the unit */
+}
+
+.calculator-form .form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Results Area */
+.results-area {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-alt-color);
+    min-height: 50px; /* Ensure it has some height even when empty */
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.results-area p {
+    margin: 0 0 10px 0;
+}
+
+.results-area strong {
+    font-size: 1.2em;
+    color: var(--primary-color);
+}
+
+/* Responsive adjustments if needed */
+@media (max-width: 600px) {
+    .calculator-tabs {
+        justify-content: center; /* Center tabs on small screens */
+    }
+    .tab-button {
+        flex-grow: 1; /* Make tabs take equal width */
+        text-align: center;
+    }
+    .calculator-form .form-row {
+        flex-direction: column; /* Stack form groups vertically */
+        gap: 15px;
+    }
+    .calculator-form .form-group {
+        flex-basis: auto; /* Reset flex basis */
+    }
+    .calculator-form .form-actions {
+        flex-direction: column; /* Stack buttons */
+    }
+    .calculator-form .form-actions button {
+        width: 100%; /* Make buttons full width */
+    }
+}
+
