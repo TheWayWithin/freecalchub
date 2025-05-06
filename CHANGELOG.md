@@ -7,6 +7,40 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 docs: update CHANGELOG for v1.61.0 container list alignment
 
+## [1.66.0] - 2024-05-06
+
+### Added
+- Added new BMI Calculator page (`/health/fitness/bmi-calculator/index.html`) with:
+  - Full content structure based on provided markdown (`03_bmi_calculator.md`).
+  - Integrated FAQ section using standard accordion (`calculator_faqs.md` Section 3).
+  - Comprehensive schema markup (SoftwareApplication, FAQPage, HowTo, BreadcrumbList, WebPage).
+  - Calculator form with Metric/Imperial unit switching.
+  - Input fields for height, weight, age, sex, and activity level.
+- Added specific CSS (`/health/fitness/bmi-calculator/css/bmi-calculator.css`) for styling the BMI calculator form, unit switcher, and results area, ensuring responsive design.
+- Added JavaScript (`/health/fitness/bmi-calculator/js/bmi-calculator.js`) for:
+  - Unit switching logic (Metric/Imperial).
+  - BMI calculation for both unit systems.
+  - Input validation and error handling.
+  - Displaying BMI value, category, and healthy weight range.
+  - Basic handling for child/teen BMI interpretation note.
+
+### Changed
+- Updated navigation ribbon in BMI calculator HTML to highlight the 'Fitness' subcategory.
+
+## [1.65.0] - 2024-05-06
+
+### Added
+- Implemented tabbed interface for Percentage Calculator with three modes:
+  - What is X% of Y?
+  - X is what % of Y?
+  - Percentage Change
+- Added specific CSS (`/math/percentages/percentage-calculator/css/percentage-calculator.css`) for styling the tabbed interface and forms.
+- Added JavaScript (`/math/percentages/percentage-calculator/js/percentage-calculator.js`) for:
+  - Tab switching logic (click and keyboard navigation).
+  - Calculation logic for all three percentage modes.
+  - Input validation and error handling.
+  - Displaying results dynamically.
+
 ## [1.64.0] - 2025-05-06
 
 ### Added
