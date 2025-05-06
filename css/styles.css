@@ -992,18 +992,15 @@ body.dark-mode .faq-question:hover {
 
 
 
-/* Fix list alignment (ChatGPT Recommendation v2) */
-.main-content ul,
-.main-content ol,
-.content ul, /* Added .content selector as per recommendation */
-.content ol {
+/* Fix list alignment (ChatGPT Recommendation v3 - Target .container) */
+.container ul,
+.container ol {
     margin: 0 0 1rem 0; /* Consistent bottom margin, remove default left margin */
     padding-left: 1.5rem; /* Space for bullet/number to "hang" */
     list-style-position: outside; /* Places bullet/number in the padding area */
 }
 
-.main-content li,
-.content li {
+.container li {
     margin-bottom: 0.5rem; /* Consistent spacing between list items */
 }
 
