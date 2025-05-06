@@ -1,0 +1,140 @@
+/* BMI Calculator Specific Styles */
+
+/* Unit Selector */
+.unit-selector {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.unit-selector label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.unit-toggle {
+    padding: 8px 15px;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-alt-color);
+    color: var(--text-color);
+    border-radius: 4px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.unit-toggle:hover {
+    background-color: var(--hover-bg-color);
+}
+
+.unit-toggle.active {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    border-color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Input Grid Layout (Leveraging Mortgage Calc styles if applicable) */
+.calculator-form .input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Form Group and Input Styles (Mostly inherited, but can add specifics) */
+.calculator-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.calculator-form input[type="number"],
+.calculator-form select {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1em;
+    width: 100%; 
+    box-sizing: border-box; 
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
+}
+
+.calculator-form select {
+    /* Adjust appearance for consistency */
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'8\' viewBox=\'0 0 12 8\'%3E%3Cpath fill=\'%236c757d\' d=\'M6 8L0 2 1.4 0 6 4.6 10.6 0 12 2z\'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px; /* Space for dropdown arrow */
+}
+
+.calculator-form .form-group small {
+    font-size: 0.85em;
+    color: var(--text-muted-color);
+    margin-top: 5px;
+}
+
+/* Imperial height inputs side-by-side (adjust grid if needed) */
+/* This might require adjustments based on how they render within the auto-fit grid */
+
+/* Results Area */
+.results-area {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-alt-color);
+    min-height: 50px; 
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.results-area h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    color: var(--primary-color);
+}
+
+.results-area p {
+    margin: 0 0 10px 0;
+}
+
+.results-area strong {
+    font-weight: bold;
+}
+
+.results-area .bmi-value {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.results-area .bmi-category {
+    font-weight: bold;
+}
+
+/* Add styles for BMI scale/visualizations later */
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .calculator-form .input-grid {
+        grid-template-columns: 1fr; /* Stack inputs on small screens */
+    }
+    .unit-selector {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .unit-toggle {
+        text-align: center;
+    }
+}
+
