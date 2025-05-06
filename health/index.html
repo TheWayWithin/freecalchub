@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Calculators - CalcHub</title>
-    <meta name="description" content="Free online health calculators for BMI, calories, nutrition, fitness, and medical calculations. Get accurate results and educational insights for your health decisions.">
-    <link rel="canonical" href="https://www.freecalchub.com/health/">
-    <!-- Use absolute paths -->
+    <title>Health Calculators - BMI, Nutrition, Weight & More | CalcHub</title>
+    <meta name="description" content="Free online health calculators for BMI, calories, nutrition, weight management, pregnancy, medical metrics, and mental well-being. Accurate tools and insights.">
+    <link rel="canonical" href="/health/"> <!-- Assuming production URL -->
+    <!-- Global styles -->
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/dark-mode.css">
     <link rel="stylesheet" href="/css/dark-mode-button.css">
@@ -14,16 +14,16 @@
     <link rel="stylesheet" href="/css/breadcrumb-styles.css">
     <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
 
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8PR7EB78N"></script> <!-- Use correct GA ID -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag("js", new Date());
-      gtag("config", "G-R1QHNSSWTC");
+      gtag("config", "G-V8PR7EB78N");
     </script>
     <!-- End Google Analytics -->
 
@@ -37,13 +37,13 @@
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.freecalchub.com/"
+          "item": "/" 
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Health",
-          "item": "https://www.freecalchub.com/health/"
+          "item": "/health/"
         }
       ]
     }
@@ -52,24 +52,44 @@
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
+      "name": "Health Subcategories",
+      "description": "Browse health calculators by subcategory: BMI, Nutrition, Weight, Pregnancy, Medical, and Mental Health.",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "BMI Calculator",
-          "url": "https://www.freecalchub.com/health/bmi/bmi-calculator/"
+          "name": "BMI Calculators",
+          "url": "/health/bmi/"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Calorie Calculator",
-          "url": "https://www.freecalchub.com/health/calories/calorie-calculator/"
+          "name": "Nutrition Calculators",
+          "url": "/health/nutrition/"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Ideal Weight Calculator",
-          "url": "https://www.freecalchub.com/health/weight/ideal-weight-calculator/"
+          "name": "Weight Management Calculators",
+          "url": "/health/weight/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Pregnancy Calculators",
+          "url": "/health/pregnancy/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Medical Calculators",
+          "url": "/health/medical/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Mental Health Calculators",
+          "url": "/health/mental-health/"
         }
       ]
     }
@@ -77,17 +97,15 @@
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
-    <header>
+    <header class="site-header">
         <div class="header-container">
             <div class="logo-container">
-                <!-- Use absolute paths -->
                 <a href="/" class="logo">
                     <img src="/images/logo.svg" alt="CalcHub Logo" height="40">
                 </a>
             </div>
             <nav class="main-nav">
                 <ul>
-                    <!-- Use absolute paths -->
                     <li><a href="/finance/">Finance</a></li>
                     <li><a href="/math/">Math</a></li>
                     <li><a href="/health/" class="active">Health</a></li>
@@ -119,7 +137,6 @@
         </div>
         <nav class="mobile-nav">
             <ul>
-                <!-- Use absolute paths -->
                 <li><a href="/finance/">Finance</a></li>
                 <li><a href="/math/">Math</a></li>
                 <li><a href="/health/" class="active">Health</a></li>
@@ -134,7 +151,6 @@
 
     <div class="breadcrumbs">
         <div class="breadcrumbs-container">
-            <!-- Use absolute paths -->
             <a href="/">Home</a>
             <span class="separator">/</span>
             <span class="current">Health</span>
@@ -143,14 +159,12 @@
 
     <div class="navigation-ribbon">
         <div class="navigation-ribbon-container">
-            <!-- Use absolute paths -->
-            <a href="/health/bmi/"><i class="fas fa-weight"></i>BMI</a>
-            <a href="/health/calories/"><i class="fas fa-fire"></i>Calories</a>
+            <!-- Updated Health Subcategories -->
+            <a href="/health/bmi/"><i class="fas fa-weight-scale"></i>BMI</a>
             <a href="/health/nutrition/"><i class="fas fa-apple-alt"></i>Nutrition</a>
-            <a href="/health/fitness/"><i class="fas fa-running"></i>Fitness</a>
-            <a href="/health/weight/"><i class="fas fa-balance-scale"></i>Weight</a>
+            <a href="/health/weight/"><i class="fas fa-weight-hanging"></i>Weight</a>
             <a href="/health/pregnancy/"><i class="fas fa-baby"></i>Pregnancy</a>
-            <a href="/health/medical/"><i class="fas fa-heartbeat"></i>Medical</a>
+            <a href="/health/medical/"><i class="fas fa-notes-medical"></i>Medical</a>
             <a href="/health/mental-health/"><i class="fas fa-brain"></i>Mental Health</a>
         </div>
     </div>
@@ -158,166 +172,103 @@
     <main id="main-content" class="container py-5">
         <section class="category-header">
             <h1>Health Calculators</h1>
-            <p class="lead">Make informed health decisions with our free, easy-to-use calculators. Whether you're tracking fitness goals, planning nutrition, or monitoring health metrics, our tools provide accurate calculations and educational insights.</p>
+            <p class="lead">Make informed health decisions with our free, easy-to-use calculators. Whether you're tracking fitness goals, planning nutrition, managing weight, or monitoring health metrics, our tools provide accurate calculations and educational insights.</p>
         </section>
 
+        <!-- Subcategory Sections -->
         <section class="subcategory-section">
-            <h2>BMI Calculators</h2>
+            <h2><a href="/health/bmi/">BMI Calculators</a></h2>
             <p>Calculate and understand your body mass index and related health metrics.</p>
             <div class="calculator-grid">
-                <!-- Use absolute paths -->
                 <a href="/health/bmi/bmi-calculator/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-weight"></i>
-                    </div>
+                    <div class="calculator-icon"><i class="fas fa-calculator"></i></div>
                     <h3>BMI Calculator</h3>
-                    <p>Calculate your body mass index and determine your weight category.</p>
+                    <p>Calculate your Body Mass Index (BMI).</p>
                 </a>
-                <a href="/health/bmi/body-fat-calculator/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-percentage"></i>
-                    </div>
-                    <h3>Body Fat Calculator</h3>
-                    <p>Estimate your body fat percentage using different measurement methods.</p>
-                </a>
-                <a href="/health/bmi/waist-hip-ratio/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-ruler"></i>
-                    </div>
-                    <h3>Waist-to-Hip Ratio</h3>
-                    <p>Calculate your waist-to-hip ratio and assess health risks.</p>
-                </a>
-                <a href="/health/bmi/bmi-for-children/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-child"></i>
-                    </div>
-                    <h3>BMI for Children</h3>
-                    <p>Calculate BMI for children and teens with age-specific percentiles.</p>
-                </a>
+                <!-- Add more BMI calculator cards here -->
             </div>
             <div class="subcategory-cta">
-                <!-- Use absolute paths -->
                 <a href="/health/bmi/" class="btn">View All BMI Calculators</a>
             </div>
         </section>
 
         <section class="subcategory-section">
-            <h2>Calorie Calculators</h2>
-            <p>Track and plan your calorie intake and expenditure for weight management.</p>
+            <h2><a href="/health/nutrition/">Nutrition Calculators</a></h2>
+            <p>Tools to help you understand and manage your dietary intake, including calories and macronutrients.</p>
             <div class="calculator-grid">
-                <!-- Use absolute paths -->
-                <a href="/health/calories/calorie-calculator/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-fire"></i>
-                    </div>
-                    <h3>Calorie Calculator</h3>
-                    <p>Calculate your daily calorie needs based on activity level and goals.</p>
-                </a>
-                <a href="/health/calories/bmr-calculator/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <h3>BMR Calculator</h3>
-                    <p>Calculate your Basal Metabolic Rate - calories burned at complete rest.</p>
-                </a>
-                <a href="/health/calories/tdee-calculator/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-running"></i>
-                    </div>
-                    <h3>TDEE Calculator</h3>
-                    <p>Calculate your Total Daily Energy Expenditure including activity.</p>
-                </a>
-                <a href="/health/calories/calorie-deficit/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Calorie Deficit Calculator</h3>
-                    <p>Calculate the calorie deficit needed to reach your weight loss goals.</p>
-                </a>
+                <div class="calculator-card placeholder">
+                    <div class="calculator-icon"><i class="fas fa-fire"></i></div>
+                    <h3>Calorie Calculator (Coming Soon)</h3>
+                    <p>Estimate your daily calorie needs.</p>
+                </div>
+                <!-- Add more Nutrition calculator cards here -->
             </div>
             <div class="subcategory-cta">
-                <!-- Use absolute paths -->
-                <a href="/health/calories/" class="btn">View All Calorie Calculators</a>
+                <a href="/health/nutrition/" class="btn">View All Nutrition Calculators</a>
             </div>
         </section>
 
         <section class="subcategory-section">
-            <h2>Fitness Calculators</h2>
-            <p>Plan and track your fitness journey with these specialized calculators.</p>
+            <h2><a href="/health/weight/">Weight Management Calculators</a></h2>
+            <p>Tools to help you understand ideal weight, track weight loss or gain, and estimate body fat.</p>
             <div class="calculator-grid">
-                <!-- Use absolute paths -->
-                <a href="/health/fitness/one-rep-max/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-dumbbell"></i>
-                    </div>
-                    <h3>One-Rep Max Calculator</h3>
-                    <p>Estimate your one-repetition maximum for various lifts.</p>
-                </a>
-                <a href="/health/fitness/pace-calculator/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-stopwatch"></i>
-                    </div>
-                    <h3>Pace Calculator</h3>
-                    <p>Calculate running pace, time, and distance for training and races.</p>
-                </a>
-                <a href="/health/fitness/target-heart-rate/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Target Heart Rate</h3>
-                    <p>Calculate your target heart rate zones for optimal exercise intensity.</p>
-                </a>
-                <a href="/health/fitness/calories-burned/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-fire-alt"></i>
-                    </div>
-                    <h3>Calories Burned Calculator</h3>
-                    <p>Estimate calories burned during different types of exercise.</p>
-                </a>
+                <div class="calculator-card placeholder">
+                    <div class="calculator-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Ideal Weight Calculator (Coming Soon)</h3>
+                    <p>Estimate your ideal body weight range.</p>
+                </div>
+                <!-- Add more Weight calculator cards here -->
             </div>
             <div class="subcategory-cta">
-                <!-- Use absolute paths -->
-                <a href="/health/fitness/" class="btn">View All Fitness Calculators</a>
+                <a href="/health/weight/" class="btn">View All Weight Calculators</a>
             </div>
         </section>
 
         <section class="subcategory-section">
-            <h2>Medical Calculators</h2>
-            <p>Monitor important health metrics with these medical calculators.</p>
+            <h2><a href="/health/pregnancy/">Pregnancy Calculators</a></h2>
+            <p>Tools to support your pregnancy journey, from conception planning to due date estimation.</p>
             <div class="calculator-grid">
-                <!-- Use absolute paths -->
-                <a href="/health/medical/blood-pressure/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <h3>Blood Pressure</h3>
-                    <p>Understand your blood pressure readings and health implications.</p>
-                </a>
-                <a href="/health/medical/blood-sugar/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-tint"></i>
-                    </div>
-                    <h3>Blood Sugar Converter</h3>
-                    <p>Convert between mg/dL and mmol/L blood glucose measurements.</p>
-                </a>
-                <a href="/health/medical/due-date/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-baby"></i>
-                    </div>
-                    <h3>Due Date Calculator</h3>
-                    <p>Calculate pregnancy due date based on last menstrual period.</p>
-                </a>
-                <a href="/health/medical/medication-dosage/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-pills"></i>
-                    </div>
-                    <h3>Medication Dosage</h3>
-                    <p>Calculate medication dosages based on weight and other factors.</p>
-                </a>
+                <div class="calculator-card placeholder">
+                    <div class="calculator-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <h3>Due Date Calculator (Coming Soon)</h3>
+                    <p>Estimate your baby's due date.</p>
+                </div>
+                <!-- Add more Pregnancy calculator cards here -->
             </div>
             <div class="subcategory-cta">
-                <!-- Use absolute paths -->
+                <a href="/health/pregnancy/" class="btn">View All Pregnancy Calculators</a>
+            </div>
+        </section>
+
+        <section class="subcategory-section">
+            <h2><a href="/health/medical/">Medical Calculators</a></h2>
+            <p>Calculators for various medical metrics, risk assessments, and clinical data interpretation (for informational purposes).</p>
+            <div class="calculator-grid">
+                <div class="calculator-card placeholder">
+                    <div class="calculator-icon"><i class="fas fa-heart-pulse"></i></div>
+                    <h3>Heart Risk Calculator (Coming Soon)</h3>
+                    <p>Estimate cardiovascular disease risk.</p>
+                </div>
+                <!-- Add more Medical calculator cards here -->
+            </div>
+            <div class="subcategory-cta">
                 <a href="/health/medical/" class="btn">View All Medical Calculators</a>
+            </div>
+        </section>
+
+        <section class="subcategory-section">
+            <h2><a href="/health/mental-health/">Mental Health Tools</a></h2>
+            <p>Resources related to mental well-being, stress assessment, and mood tracking (for informational purposes).</p>
+            <div class="calculator-grid">
+                <div class="calculator-card placeholder">
+                    <div class="calculator-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <h3>Stress Level Assessment (Coming Soon)</h3>
+                    <p>Gauge your current stress levels.</p>
+                </div>
+                <!-- Add more Mental Health calculator cards here -->
+            </div>
+            <div class="subcategory-cta">
+                <a href="/health/mental-health/" class="btn">View All Mental Health Tools</a>
             </div>
         </section>
 
@@ -325,36 +276,32 @@
             <h2>Understanding Health Metrics</h2>
             <div class="education-content">
                 <p>Health metrics provide valuable insights into your overall wellbeing and can help you make informed decisions about your lifestyle and healthcare. Understanding these metrics is the first step toward improving your health.</p>
-
-                <h3>Key Health Concepts</h3>
-                <ul>
-                    <li><strong>Body Mass Index (BMI)</strong> - A measure of body fat based on height and weight. While useful as a screening tool, BMI has limitations and should be considered alongside other health metrics.</li>
-                    <li><strong>Basal Metabolic Rate (BMR)</strong> - The number of calories your body needs to maintain basic functions at rest, such as breathing and circulation.</li>
-                    <li><strong>Macronutrients</strong> - The three main nutrients your body needs in large quantities: proteins, carbohydrates, and fats.</li>
-                    <li><strong>Heart Rate Zones</strong> - Different levels of exercise intensity based on your maximum heart rate, used to optimize training and fitness goals.</li>
-                    <li><strong>Caloric Deficit/Surplus</strong> - The difference between calories consumed and calories burned, which determines whether you lose, maintain, or gain weight.</li>
-                </ul>
-
-                <h3>Tips for Improving Health Metrics</h3>
-                <ol>
-                    <li>Focus on sustainable lifestyle changes rather than quick fixes.</li>
-                    <li>Combine regular physical activity with balanced nutrition for best results.</li>
-                    <li>Track your metrics consistently but avoid obsessing over daily fluctuations.</li>
-                    <li>Consult healthcare professionals for personalized advice, especially for medical metrics.</li>
-                    <li>Remember that health is multidimensional and includes physical, mental, and social wellbeing.</li>
-                </ol>
-
-                <p>Our calculators provide not just numbers but context and education to help you understand what these metrics mean and how you can use them to support your health goals.</p>
+                <p>Our calculators cover a wide range of health topics, from physical fitness and nutrition to specific medical conditions and mental well-being. Use these tools to gain knowledge, track progress, and support conversations with healthcare professionals.</p>
+                <!-- Keep or expand general health education content -->
             </div>
         </section>
+
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <div class="footer-container">
-            <div class="footer-section">
-                <h3>Calculators</h3>
+            <div class="footer-column">
+                <h3>CalcHub</h3>
+                <p>Your source for free, accurate, and easy-to-use online calculators.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
                 <ul>
-                    <!-- Use absolute paths -->
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/privacy/">Privacy Policy</a></li>
+                    <li><a href="/terms/">Terms of Service</a></li>
+                    <li><a href="/gdpr/">GDPR</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Categories</h3>
+                <ul>
                     <li><a href="/finance/">Finance</a></li>
                     <li><a href="/math/">Math</a></li>
                     <li><a href="/health/">Health</a></li>
@@ -364,39 +311,18 @@
                     <li><a href="/lifestyle/">Lifestyle</a></li>
                 </ul>
             </div>
-            
-            <div class="footer-section">
-                <h3>Company</h3>
-                <ul>
-                    <!-- Use absolute paths -->
-                    <li><a href="/blog/">Blog</a></li>
-                    <li><a href="/about/">About Us</a></li>
-                    <li><a href="/contact/">Contact</a></li>
-                    <li><a href="/privacy/">Privacy Policy</a></li>
-                    <li><a href="/terms/">Terms of Use</a></li>
-                    <li><a href="/gdpr/">GDPR Compliance</a></li>
-                    <li><a href="/sitemap.xml">Sitemap</a></li>                
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Connect</h3>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-                </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <!-- Add social media links here if desired -->
+                <p>Stay connected for updates and new calculators.</p>
             </div>
         </div>
-        
         <div class="footer-bottom">
-            <p>&copy; 2025 CalcHub. All rights reserved.</p>
+            <p>&copy; 2024 CalcHub. All rights reserved.</p>
         </div>
     </footer>
-    
-    <!-- Added required JS includes with absolute paths -->
-    <script src="/js/main.js"></script>
-    <script src="/js/dark-mode.js"></script>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/dark-mode.js" defer></script>
 </body>
 </html>
