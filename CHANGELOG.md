@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 docs: update CHANGELOG for v1.61.0 container list alignment
 
+## [1.63.0] - 2025-05-06
+
+### Added
+- Created new Percentage Calculator page (`/math/percentages/percentage-calculator/index.html`) based on the Mortgage Calculator template.
+- Integrated content from `02_percentage_calculator.md` including calculator description, how-to-use guide, educational sections (Understanding Percentages, Conversions, Basic Calculations, Applications, Formulas, Tips).
+- Implemented functional FAQ accordion using the standard JS (`faq-accordion.js`) and CSS (`styles.css`) with FAQs from `calculator_faqs.md` (Section 2).
+- Added comprehensive schema markup (SoftwareApplication, FAQPage, HowTo, BreadcrumbList, WebPage) based on `schema_markup_templates.md`.
+- Included basic calculator interface structure (currently only basic percentage calculation form).
+- Ensured page uses global styles and scripts for consistency (dark mode, mobile menu, list alignment).
+
 ## [1.62.0] - 2025-05-06
 
 ### Fixed
