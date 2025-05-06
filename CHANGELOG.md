@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 docs: update CHANGELOG for v1.61.0 container list alignment
 
+## [1.61.0] - 2025-05-06
+
+### Fixed
+- Reverted previous list alignment fix targeting `.main-content` and `.content`.
+- Implemented new list alignment fix based on ChatGPT recommendation (v3) targeting `.container ul` and `.container ol` in `styles.css`.
+- This correctly targets lists within the main page container used on category and blurb pages.
+- Uses `list-style-position: outside;`, `padding-left: 1.5rem;`, and `margin: 0 0 1rem 0;` to align markers slightly outside the main text block.
+- Updated `.container li` with `margin-bottom: 0.5rem;` for consistent spacing.
+
 ## [1.60.0] - 2025-05-05
 
 ### Fixed
