@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 docs: update CHANGELOG for v1.61.0 container list alignment
 
+## [1.64.0] - 2025-05-06
+
+### Added
+- Created new Percentages subcategory page (`/math/percentages/index.html`) based on the Math category page template.
+- Updated title, meta description, breadcrumbs (Home > Math > Percentages), navigation ribbon (Percentages active), and schema markup (BreadcrumbList, ItemList) for the subcategory.
+- Added introductory content and educational section specific to percentages.
+- Included a calculator grid listing the existing Percentage Calculator (`./percentage-calculator/`) and placeholders for future percentage calculators.
+- Removed FAQ section as it's not typically needed on category pages.
+- Ensured correct relative paths for header/footer links and assets.
+
 ## [1.63.0] - 2025-05-06
 
 ### Added
