@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Calculators - BMI, Nutrition, Weight & More | CalcHub</title>
-    <meta name="description" content="Free online health calculators for BMI, calories, nutrition, weight management, pregnancy, medical metrics, and mental well-being. Accurate tools and insights.">
+    <title>Health Calculators - BMI, Nutrition, Fitness & More | CalcHub</title> <!-- Updated Title -->
+    <meta name="description" content="Free online health calculators for BMI, calories, nutrition, fitness, weight management, pregnancy, medical metrics, and mental well-being. Accurate tools and insights."> <!-- Updated Description -->
     <link rel="canonical" href="/health/"> <!-- Assuming production URL -->
     <!-- Global styles -->
     <link rel="stylesheet" href="/css/styles.css">
@@ -53,7 +53,7 @@
       "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "Health Subcategories",
-      "description": "Browse health calculators by subcategory: BMI, Nutrition, Weight, Pregnancy, Medical, and Mental Health.",
+      "description": "Browse health calculators by subcategory: BMI, Nutrition, Weight, Fitness, Pregnancy, Medical, and Mental Health.", /* Updated Description */
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -76,18 +76,24 @@
         {
           "@type": "ListItem",
           "position": 4,
+          "name": "Fitness Calculators", /* Added Fitness */
+          "url": "/health/fitness/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
           "name": "Pregnancy Calculators",
           "url": "/health/pregnancy/"
         },
         {
           "@type": "ListItem",
-          "position": 5,
+          "position": 6,
           "name": "Medical Calculators",
           "url": "/health/medical/"
         },
         {
           "@type": "ListItem",
-          "position": 6,
+          "position": 7,
           "name": "Mental Health Calculators",
           "url": "/health/mental-health/"
         }
@@ -159,10 +165,11 @@
 
     <div class="navigation-ribbon">
         <div class="navigation-ribbon-container">
-            <!-- Updated Health Subcategories -->
+            <!-- Updated Health Subcategories with Fitness -->
             <a href="/health/bmi/"><i class="fas fa-weight-scale"></i>BMI</a>
             <a href="/health/nutrition/"><i class="fas fa-apple-alt"></i>Nutrition</a>
             <a href="/health/weight/"><i class="fas fa-weight-hanging"></i>Weight</a>
+            <a href="/health/fitness/"><i class="fas fa-dumbbell"></i>Fitness</a> <!-- Added Fitness -->
             <a href="/health/pregnancy/"><i class="fas fa-baby"></i>Pregnancy</a>
             <a href="/health/medical/"><i class="fas fa-notes-medical"></i>Medical</a>
             <a href="/health/mental-health/"><i class="fas fa-brain"></i>Mental Health</a>
@@ -221,6 +228,22 @@
             </div>
             <div class="subcategory-cta">
                 <a href="/health/weight/" class="btn">View All Weight Calculators</a>
+            </div>
+        </section>
+
+        <section class="subcategory-section"> <!-- Added Fitness Section -->
+            <h2><a href="/health/fitness/">Fitness Calculators</a></h2>
+            <p>Tools to help you plan, track, and optimize your physical fitness journey.</p>
+            <div class="calculator-grid">
+                <div class="calculator-card placeholder">
+                    <div class="calculator-icon"><i class="fas fa-stopwatch"></i></div>
+                    <h3>Pace Calculator (Coming Soon)</h3>
+                    <p>Calculate running pace, time, and distance.</p>
+                </div>
+                <!-- Add more Fitness calculator cards here -->
+            </div>
+            <div class="subcategory-cta">
+                <a href="/health/fitness/" class="btn">View All Fitness Calculators</a>
             </div>
         </section>
 
