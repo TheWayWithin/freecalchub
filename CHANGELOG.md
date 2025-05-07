@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 docs: update CHANGELOG for v1.61.0 container list alignment
 
+## [1.68.0] - 2024-05-06
+
+### Added
+- New Compound Interest Calculator at `/finance/investment/compound-interest-calculator/` with comprehensive features:
+    - Calculates future value, total principal, total interest, and effective annual rate.
+    - Supports initial investment, regular contributions (monthly, quarterly, annually), various interest rates, and compounding frequencies (daily, monthly, quarterly, annually).
+    - Allows for optional inflation and tax rate inputs for more realistic projections.
+    - Displays a year-by-year growth table.
+    - Includes interactive charts for investment growth over time and principal vs. interest breakdown.
+    - Features detailed educational content about compound interest, its factors, and practical applications.
+    - Implements schema markup (SoftwareApplication, FAQPage, HowTo, BreadcrumbList, WebPage) for SEO.
+    - Includes a comprehensive FAQ section.
+    - Uses Google Analytics ID G-R1QHNSSWTC.
+- New Investment subcategory page at `/finance/investment/` with educational content and links to investment calculators.
+
+### Changed
+- Updated main Finance category page (`/finance/index.html`) to include the new Investment subcategory in navigation and content.
+- Updated navigation ribbons and breadcrumbs across relevant pages to reflect the new Compound Interest calculator and Investment subcategory.
+- Ensured Google Analytics ID G-R1QHNSSWTC is consistently used across new finance pages.
+
 ## [1.67.0] - 2024-05-06
 
 ### Added
