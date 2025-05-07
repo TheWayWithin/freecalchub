@@ -1,0 +1,202 @@
+/* Compound Interest Calculator Specific Styles */
+
+/* Ensure consistency with other calculator styles */
+.calculator-container {
+    background-color: var(--calculator-bg-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.calculator-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--text-color-strong);
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color-medium);
+}
+
+.input-group {
+    display: flex;
+}
+
+.input-group .input-group-text {
+    background-color: var(--input-group-text-bg);
+    border: 1px solid var(--input-border-color);
+    border-right: none;
+    padding: 10px 12px;
+    border-radius: 4px 0 0 4px;
+    color: var(--text-color-medium);
+    display: flex;
+    align-items: center;
+}
+
+.form-control {
+    flex-grow: 1;
+    padding: 10px 12px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 4px;
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.input-group .form-control {
+    border-radius: 0 4px 4px 0;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.25);
+}
+
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 16 16\'%3e%3cpath fill=\'none\' stroke=\'%23343a40\' stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M2 5l6 6 6-6\'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    padding-right: 2.5rem; /* Make space for the arrow */
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color-dark);
+    border-color: var(--primary-color-dark);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-button-bg);
+    color: var(--secondary-button-text);
+    border-color: var(--secondary-button-border);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-button-bg-hover);
+    border-color: var(--secondary-button-border-hover);
+}
+
+/* Results Section */
+.results-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--results-bg-color);
+    border: 1px solid var(--results-border-color);
+    border-radius: 8px;
+}
+
+.results-section h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-color-strong);
+}
+
+.results-summary p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.results-summary strong {
+    color: var(--text-color-strong);
+}
+
+#growth-chart-container,
+#principal-interest-breakdown-container,
+#yearly-growth-table-container {
+    margin-top: 30px;
+}
+
+#growth-chart-container h4,
+#principal-interest-breakdown-container h4,
+#yearly-growth-table-container h4 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--text-color-medium);
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.results-table th,
+.results-table td {
+    border: 1px solid var(--table-border-color);
+    padding: 10px;
+    text-align: right;
+    color: var(--text-color);
+}
+
+.results-table th {
+    background-color: var(--table-header-bg);
+    color: var(--table-header-text);
+    font-weight: 600;
+}
+
+.results-table tbody tr:nth-child(even) {
+    background-color: var(--table-row-even-bg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .input-grid {
+        grid-template-columns: 1fr; /* Stack inputs on smaller screens */
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Dark mode specific select arrow */
+[data-theme="dark"] select.form-control {
+    background-image: url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 16 16\'%3e%3cpath fill=\'none\' stroke=\'%23adb5bd\' stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M2 5l6 6 6-6\'/%3e%3c/svg%3e");
+}
+
