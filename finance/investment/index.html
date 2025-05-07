@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Calculators & Resources | CalcHub</title>
+    <meta name="description" content="Explore investment strategies, understand financial growth, and use our calculators to plan your investments. Covers compound interest, retirement, and more.">
+    <link rel="canonical" href="/finance/investment/">
+    
+    <!-- Global styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <link rel="stylesheet" href="/css/dark-mode-button.css">
+    <link rel="stylesheet" href="/css/navigation-ribbon.css">
+    <link rel="stylesheet" href="/css/breadcrumb-styles.css">
+    <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
+    
+    <!-- Specific category styles (can reuse or adapt from mortgage/loan category) -->
+    <link rel="stylesheet" href="/finance/mortgage/css/mortgage-category-layout.css"> <!-- Reusing for now -->
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-R1QHNSSWTC");
+    </script>
+    <!-- End Google Analytics -->
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "name": "Investment Calculators & Resources",
+          "description": "Find tools and information for various types of investments including compound interest, retirement planning, and portfolio growth. Calculate potential returns, understand risks, and plan your financial future.",
+          "url": "/finance/investment/",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Finance",
+                "item": "/finance/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Investment",
+                "item": "/finance/investment/"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Finance",
+              "item": "/finance/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Investment",
+              "item": "/finance/investment/"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="/" class="logo">
+                    <img src="/images/logo.svg" alt="CalcHub Logo">
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/finance/" class="active">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-controls">
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="mobile-menu-button" aria-label="Toggle menu">
+                    <i class="fas fa-bars menu-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-header">
+            <span>Menu</span>
+            <button id="mobile-menu-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="/finance/" class="active">Finance</a></li>
+                <li><a href="/math/">Math</a></li>
+                <li><a href="/health/">Health</a></li>
+                <li><a href="/conversions/">Conversions</a></li>
+                <li><a href="/date-time/">Date & Time</a></li>
+                <li><a href="/business/">Business</a></li>
+                <li><a href="/lifestyle/">Lifestyle</a></li>
+                <li><a href="/blog/">Blog</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <a href="../">Finance</a>
+            <span class="separator">/</span>
+            <span class="current">Investment</span>
+        </div>
+    </div>
+    
+    <div class="navigation-ribbon">
+        <div class="navigation-ribbon-container">
+            <a href="/finance/mortgage/"><i class="fas fa-home"></i>Mortgage</a>
+            <a href="/finance/loan/"><i class="fas fa-file-invoice-dollar"></i>Loan</a>
+            <a href="/finance/investment/" class="active"><i class="fas fa-chart-line"></i>Investment</a>
+            <a href="/finance/retirement/"><i class="fas fa-umbrella-beach"></i>Retirement</a>
+            <a href="/finance/budgeting/"><i class="fas fa-wallet"></i>Budgeting</a>
+            <a href="/finance/savings/"><i class="fas fa-piggy-bank"></i>Savings</a>
+            <a href="/finance/cryptocurrency/"><i class="fas fa-coins"></i>Cryptocurrency</a>
+            <a href="/finance/tax/"><i class="fas fa-receipt"></i>Tax</a>
+        </div>
+    </div>
+    
+    <main id="main-content" class="container py-5 investment-category">
+        <section class="category-header">
+            <h1>Investment Calculators & Resources</h1>
+            <p class="lead">Unlock the potential of your financial future with our suite of investment calculators and insightful resources. Whether you are planning for retirement, aiming to grow your wealth, or simply curious about how investments work, our tools are designed to provide clarity and empower your decisions.</p>
+        </section>
+
+        <div class="calculator-grid">
+            <a href="/finance/investment/compound-interest-calculator/" class="calculator-card">
+                <div class="calculator-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <h3>Compound Interest Calculator</h3>
+                <p>See how your savings can grow over time with the power of compound interest.</p>
+            </a>
+            <!-- Add other investment-related calculators here as they are developed -->
+            <!-- Example:
+            <a href="/finance/investment/retirement-calculator/" class="calculator-card">
+                <div class="calculator-icon">
+                    <i class="fas fa-umbrella-beach"></i>
+                </div>
+                <h3>Retirement Savings Calculator</h3>
+                <p>Estimate how much you need to save for a comfortable retirement.</p>
+            </a>
+            -->
+        </div>
+        
+        <section class="category-info enhanced-content">
+            <h2>Mastering the Art of Investment</h2>
+            <p>Investing is a crucial component of building long-term wealth and achieving financial independence. It involves committing capital to an asset or endeavor with the expectation of generating income or appreciation. Understanding the principles of investment can transform your financial outlook and help you reach your goals faster.</p>
+            
+            <h4>Key Investment Concepts</h4>
+            <ul>
+                <li><strong>Compound Interest:</strong> Often called the eighth wonder of the world, compound interest is the interest earned on your initial principal and the accumulated interest from previous periods. It allows your investments to grow exponentially over time. Our <a href="/finance/investment/compound-interest-calculator/">Compound Interest Calculator</a> can illustrate this powerful concept.</li>
+                <li><strong>Risk and Return:</strong> A fundamental principle in investing is that higher potential returns usually come with higher risk. Understanding your risk tolerance is key to choosing appropriate investments. Diversification can help manage risk.</li>
+                <li><strong>Asset Allocation:</strong> This refers to how your investment portfolio is divided among different asset classes, such as stocks, bonds, real estate, and cash. A well-thought-out asset allocation strategy is crucial for balancing risk and reward according to your financial goals and time horizon.</li>
+                <li><strong>Diversification:</strong> Spreading your investments across various asset classes, industries, and geographic regions to reduce overall risk. The idea is that if one investment performs poorly, others may perform well, offsetting potential losses.</li>
+                <li><strong>Time Horizon:</strong> The length of time you plan to keep your money invested. Longer time horizons generally allow for taking on more risk for potentially higher returns, as there is more time to recover from market downturns.</li>
+            </ul>
+            
+            <h3>Popular Investment Vehicles</h3>
+            <p>There are numerous ways to invest your money, each with its own characteristics:</p>
+            <ul>
+                <li><strong>Stocks (Equities):</strong> Represent ownership in a company. Stock prices can be volatile but offer the potential for significant growth and dividend income.</li>
+                <li><strong>Bonds (Fixed Income):</strong> Essentially loans made to governments or corporations, which pay a fixed interest rate over a set period. Generally considered less risky than stocks.</li>
+                <li><strong>Mutual Funds:</strong> Pool money from many investors to invest in a diversified portfolio of stocks, bonds, or other assets. Professionally managed, offering instant diversification.</li>
+                <li><strong>Exchange-Traded Funds (ETFs):</strong> Similar to mutual funds but trade on stock exchanges like individual stocks. Often have lower fees than actively managed mutual funds.</li>
+                <li><strong>Real Estate:</strong> Investing in physical property, either directly (buying a rental property) or indirectly (through Real Estate Investment Trusts - REITs).</li>
+                <li><strong>Retirement Accounts:</strong> Tax-advantaged accounts like 401(k)s, IRAs (Traditional and Roth) designed specifically for long-term retirement savings.</li>
+                <li><strong>Cryptocurrencies:</strong> Digital or virtual currencies secured by cryptography. Highly volatile and speculative but have attracted significant investor interest.</li>
+            </ul>
+            
+            <h3>Developing an Investment Strategy</h3>
+            <p>A successful investment journey starts with a clear strategy:</p>
+            <ol>
+                <li><strong>Define Your Financial Goals:</strong> What are you investing for? Retirement, a down payment, education, or general wealth growth? Clear goals will guide your investment choices.</li>
+                <li><strong>Assess Your Risk Tolerance:</strong> How comfortable are you with the possibility of losing money in exchange for potentially higher returns? Your risk tolerance will influence your asset allocation.</li>
+                <li><strong>Determine Your Time Horizon:</strong> How long do you plan to invest? Short-term goals require different strategies than long-term ones.</li>
+                <li><strong>Create a Diversified Portfolio:</strong> Don’t put all your eggs in one basket. Spread your investments to manage risk.</li>
+                <li><strong>Invest Consistently:</strong> Regular contributions, even small ones, can add up significantly over time, especially with compound interest. Consider strategies like dollar-cost averaging.</li>
+                <li><strong>Review and Rebalance Periodically:</strong> Your financial situation and market conditions change. Review your portfolio at least annually and rebalance it to maintain your desired asset allocation.</li>
+                <li><strong>Stay Informed but Avoid Emotional Decisions:</strong> Keep up with financial news, but don’t let short-term market fluctuations derail your long-term strategy.</li>
+            </ol>
+            
+            <p>Our investment calculators are designed to help you explore different scenarios, understand the potential growth of your investments, and make more informed decisions. Whether you are just starting or are a seasoned investor, these tools can provide valuable insights for your financial journey.</p>
+        </section>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>CalcHub</h3>
+                <p>Your source for free, accurate, and easy-to-use online calculators.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/privacy/">Privacy Policy</a></li>
+                    <li><a href="/terms/">Terms of Service</a></li>
+                    <li><a href="/gdpr/">GDPR</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/finance/">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <p>Stay connected for updates and new calculators.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CalcHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Global script (for dark mode, mobile menu) -->
+    <script src="/js/main.js" defer></script>
+    <script src="/js/dark-mode.js" defer></script>
+    <script src="/js/faq-accordion.js" defer></script>
+
+</body>
+</html>
