@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 docs: update CHANGELOG for v1.61.0 container list alignment
 
+## [1.69.0] - 2024-05-07
+
+### Fixed
+- Corrected visibility issue for "Calculate" and "Reset" buttons on the Loan Calculator page (`/finance/loan/loan-calculator/index.html`).
+- Applied the base `btn` class in addition to `btn-primary` and `btn-secondary` respectively to ensure proper styling and padding were applied, making the buttons visible and consistent with site-wide button styles. This was based on user-provided ChatGPT analysis.
+
 ## [1.68.0] - 2024-05-06
 
 ### Added
