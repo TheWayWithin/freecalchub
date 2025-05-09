@@ -4,234 +4,221 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mortgage Calculators | CalcHub</title>
-    <meta name="description" content="Plan your home purchase and understand your mortgage options with these essential calculators.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="description" content="Explore a comprehensive suite of mortgage calculators to plan your home purchase, understand affordability, and manage your home loan effectively. Includes payment, affordability, and refinance calculators.">
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/dark-mode.css">
-    <link rel="stylesheet" href="/css/dark-mode-button.css">
-    <link rel="stylesheet" href="/finance/mortgage/css/mortgage-category-layout.css">
-    <link rel="stylesheet" href="/finance/mortgage/css/navigation-ribbon-fix.css">
-    <link rel="stylesheet" href="/finance/mortgage/css/breadcrumb-styling-fix.css">
-    <link rel="stylesheet" href="/finance/mortgage/css/page-container-fix.css">
-    <!-- Google Analytics -->
+    <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag("js", new Date());
-      gtag("config", "G-R1QHNSSWTC");
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-R1QHNSSWTC');
     </script>
-    <!-- End Google Analytics -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "name": "Mortgage Calculators | CalcHub",
+          "description": "Explore a comprehensive suite of mortgage calculators to plan your home purchase, understand affordability, and manage your home loan effectively. Includes payment, affordability, and refinance calculators.",
+          "url": "https://www.calchub.com/finance/mortgage/",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.calchub.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Finance Calculators",
+                "item": "https://www.calchub.com/finance/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Mortgage Calculators",
+                "item": "https://www.calchub.com/finance/mortgage/"
+              }
+            ]
+          },
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".page-title", ".category-description"]
+          }
+        },
+        {
+          "@type": "CollectionPage",
+          "name": "Mortgage Calculators | CalcHub",
+          "description": "A collection of calculators to help with mortgage planning, including payment estimation, affordability analysis, and refinance decisions.",
+          "hasPart": [
+            {
+              "@type": "SoftwareApplication",
+              "name": "Mortgage Calculator",
+              "url": "https://www.calchub.com/finance/mortgage/mortgage-calculator/",
+              "applicationCategory": "FinanceApplication",
+              "operatingSystem": "Web",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "Calculate monthly mortgage payments, interest, and amortization schedule."
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Mortgage Affordability Calculator",
+              "url": "https://www.calchub.com/finance/mortgage/affordability-calculator/",
+              "applicationCategory": "FinanceApplication",
+              "operatingSystem": "Web",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "Determine how much house you can afford based on your income and expenses."
+            }
+            // Add other mortgage calculators here as they are created
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to content</a>
-    
-    <header>
-        <div class="header-container">
-            <div class="logo-container">
-                <a href="/" class="logo">
-                    <img src="/images/logo.svg" alt="CalcHub Logo" height="40">
-                </a>
+    <header class="site-header">
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="/"><img src="/images/logo.svg" alt="CalcHub Logo"></a>
             </div>
-            
             <nav class="main-nav">
                 <ul>
+                    <li><a href="/">Home</a></li>
                     <li><a href="/finance/" class="active">Finance</a></li>
                     <li><a href="/math/">Math</a></li>
                     <li><a href="/health/">Health</a></li>
                     <li><a href="/conversions/">Conversions</a></li>
                     <li><a href="/date-time/">Date & Time</a></li>
-                    <li><a href="/business/">Business</a></li>
-                    <li><a href="/lifestyle/">Lifestyle</a></li>
-                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/more/">More</a></li>
                 </ul>
             </nav>
-            
-            <div class="header-controls">
+            <div class="header-actions">
                 <button id="dark-mode-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
+                    <img src="/images/moon-icon.svg" alt="Dark mode" class="dark-mode-icon">
+                    <img src="/images/sun-icon.svg" alt="Light mode" class="light-mode-icon">
                 </button>
-                <button id="mobile-menu-button" aria-label="Open menu">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <button id="mobile-menu-button" aria-label="Open menu">☰</button>
             </div>
         </div>
-    </header>
-
-    <div id="mobile-menu" class="mobile-menu">
-        <div class="mobile-menu-header">
-            <span>Menu</span>
-            <button id="mobile-menu-close" aria-label="Close menu">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <nav class="mobile-nav">
+        <div class="mobile-menu" id="mobile-menu-panel">
             <ul>
+                <li><a href="/">Home</a></li>
                 <li><a href="/finance/" class="active">Finance</a></li>
                 <li><a href="/math/">Math</a></li>
                 <li><a href="/health/">Health</a></li>
                 <li><a href="/conversions/">Conversions</a></li>
                 <li><a href="/date-time/">Date & Time</a></li>
-                <li><a href="/business/">Business</a></li>
-                <li><a href="/lifestyle/">Lifestyle</a></li>
-                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/more/">More</a></li>
             </ul>
-        </nav>
-    </div>
-
-    <div class="breadcrumbs">
-        <div class="breadcrumbs-container">
-            <a href="/">Home</a>
-            <span class="separator">/</span>
-            <a href="/finance/">Finance</a>
-            <span class="separator">/</span>
-            <span class="current">Mortgage</span>
         </div>
-    </div>
+    </header>
 
-    <div class="navigation-ribbon">
-        <div class="navigation-ribbon-container">
-            <a href="/finance/mortgage/" class="active"><i class="fas fa-home"></i> Mortgage</a>
-            <a href="/finance/loan/"><i class="fas fa-file-invoice-dollar"></i> Loan</a>
-            <a href="/finance/investment/"><i class="fas fa-chart-line"></i> Investment</a>
-            <a href="/finance/retirement/"><i class="fas fa-umbrella-beach"></i> Retirement</a>
-            <a href="/finance/budgeting/"><i class="fas fa-wallet"></i> Budgeting</a>
-            <a href="/finance/savings/"><i class="fas fa-piggy-bank"></i> Savings</a>
-            <a href="/finance/cryptocurrency/"><i class="fas fa-coins"></i> Cryptocurrency</a>
-            <a href="/finance/tax/"><i class="fas fa-receipt"></i> Tax</a>
-        </div>
-    </div>
-
-    <main id="main-content" class="container py-5 mortgage-calculators">
-        <section class="category-header">
-            <h1>Mortgage Calculators</h1>
-            <p class="lead">Plan your home purchase and understand your mortgage options with these essential calculators.</p>
-        </section>
-
-        <div class="calculator-grid">
-            <a href="/finance/mortgage/mortgage-calculator/" class="calculator-card">
-                <div class="calculator-icon">
-                    <i class="fas fa-home"></i>
-                </div>
-                <h3>Mortgage Calculator</h3>
-                <p>Calculate monthly payments, interest, and amortization schedule for your mortgage.</p>
-            </a>
-            
-            <a href="/finance/mortgage/affordability-calculator/" class="calculator-card">
-                <div class="calculator-icon">
-                    <i class="fas fa-dollar-sign"></i>
-                </div>
-                <h3>Affordability Calculator</h3>
-                <p>Find out how much house you can afford based on your income and expenses.</p>
-            </a>
-            
-            <a href="/finance/mortgage/refinance-calculator/" class="calculator-card">
-                <div class="calculator-icon">
-                    <i class="fas fa-exchange-alt"></i>
-                </div>
-                <h3>Refinance Calculator</h3>
-                <p>See if refinancing your mortgage makes financial sense for your situation.</p>
-            </a>
-            
-            <a href="/finance/mortgage/extra-payment-calculator/" class="calculator-card">
-                <div class="calculator-icon">
-                    <i class="fas fa-plus-circle"></i>
-                </div>
-                <h3>Extra Payment Calculator</h3>
-                <p>Calculate how much you can save by making extra payments on your mortgage.</p>
-            </a>
-        </div>
-        
-        <section class="category-info">
-            <h2>Understanding Mortgages</h2>
-            <p>A mortgage is a loan used to purchase or maintain a home, land, or other types of real estate. The borrower agrees to pay the lender over time, typically in a series of regular payments that are divided into principal and interest. The property serves as collateral to secure the loan.</p>
-            
-            <h3>Types of Mortgages</h3>
-            <ul>
-                <li><strong>Fixed-Rate Mortgage:</strong> The interest rate remains the same for the entire term of the loan.</li>
-                <li><strong>Adjustable-Rate Mortgage (ARM):</strong> The interest rate is fixed for an initial term, then varies with market interest rates.</li>
-                <li><strong>FHA Loan:</strong> Insured by the Federal Housing Administration, designed for low-to-moderate income borrowers.</li>
-                <li><strong>VA Loan:</strong> Guaranteed by the U.S. Department of Veterans Affairs, available to veterans, service members, and eligible surviving spouses.</li>
-                <li><strong>Jumbo Loan:</strong> Exceeds the conforming loan limits set by the Federal Housing Finance Agency.</li>
-            </ul>
-            
-            <h3>Key Mortgage Terms</h3>
-            <ul>
-                <li><strong>Principal:</strong> The original amount of the loan.</li>
-                <li><strong>Interest:</strong> The cost of borrowing money, expressed as a percentage rate.</li>
-                <li><strong>Down Payment:</strong> The initial upfront payment, typically expressed as a percentage of the purchase price.</li>
-                <li><strong>Loan-to-Value (LTV) Ratio:</strong> The ratio of the loan amount to the appraised value of the property.</li>
-                <li><strong>Amortization:</strong> The process of paying off a loan with regular payments over time.</li>
-                <li><strong>Escrow:</strong> An account where funds are held for property taxes and insurance premiums.</li>
-            </ul>
-            
-            <h3>Mortgage Application Process</h3>
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+        <div class="container">
             <ol>
-                <li>Check your credit score and financial health</li>
-                <li>Determine your budget and how much house you can afford</li>
-                <li>Research different mortgage options and lenders</li>
-                <li>Get pre-approved for a mortgage</li>
-                <li>Find a home and make an offer</li>
-                <li>Complete a full mortgage application</li>
-                <li>Go through the underwriting process</li>
-                <li>Close on your new home</li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/finance/">Finance</a></li>
+                <li><span aria-current="page">Mortgage Calculators</span></li>
             </ol>
-            
-            <p>Our mortgage calculators can help you understand different aspects of the mortgage process, from determining how much house you can afford to calculating your monthly payments and understanding the impact of refinancing or making extra payments.</p>
-        </section>
+        </div>
+    </nav>
+
+    <main class="container page-container">
+        <article class="category-page-content">
+            <h1 class="page-title">Mortgage Calculators</h1>
+            <p class="category-description">Plan your home purchase and understand your mortgage options with these essential calculators. Whether you're figuring out how much house you can afford, estimating monthly payments, or considering a refinance, our tools provide clear insights to help you make informed financial decisions.</p>
+
+            <section class="calculator-grid">
+                <div class="calculator-card">
+                    <a href="/finance/mortgage/mortgage-calculator/">
+                        <h3 class="calculator-title">Mortgage Payment Calculator</h3>
+                        <p class="calculator-summary">Estimate your monthly mortgage payments, including principal, interest, taxes, and insurance. See a full amortization schedule.</p>
+                    </a>
+                </div>
+                <div class="calculator-card">
+                    <a href="/finance/mortgage/affordability-calculator/">
+                        <h3 class="calculator-title">Mortgage Affordability Calculator</h3>
+                        <p class="calculator-summary">Determine how much house you can realistically afford based on your income, debts, down payment, and desired loan terms.</p>
+                    </a>
+                </div>
+                <!-- Add more mortgage calculator cards here as they are developed -->
+                <!-- Example for a future calculator:
+                <div class="calculator-card">
+                    <a href="/finance/mortgage/refinance-calculator/">
+                        <h3 class="calculator-title">Refinance Calculator</h3>
+                        <p class="calculator-summary">Analyze if refinancing your current mortgage can save you money or meet other financial goals.</p>
+                    </a>
+                </div>
+                -->
+            </section>
+
+            <section class="educational-content content-section">
+                <h2 class="section-title">Understanding Mortgages</h2>
+                <p>A mortgage is a significant financial commitment, essentially a loan used to purchase or maintain a home, land, or other types of real estate. The borrower agrees to repay the lender over an agreed period, typically in a series of regular payments that are divided into principal (the original loan amount) and interest (the cost of borrowing). The property itself serves as collateral to secure the loan, meaning if the borrower defaults, the lender can take possession of the property.</p>
+
+                <h3>Key Aspects of Mortgages:</h3>
+                <ul>
+                    <li><strong>Loan Types:</strong> Mortgages come in various forms, such as Fixed-Rate Mortgages (where the interest rate stays the same throughout the loan term) and Adjustable-Rate Mortgages (ARMs, where the interest rate can change periodically). Government-backed loans like FHA, VA, and USDA loans offer specific benefits for eligible borrowers.</li>
+                    <li><strong>Down Payment:</strong> This is the initial upfront cash payment a buyer makes towards the purchase price of a home. The size of the down payment can affect loan terms and the need for Private Mortgage Insurance (PMI).</li>
+                    <li><strong>Interest Rates:</strong> The interest rate determines the cost of borrowing and significantly impacts the monthly payment and total interest paid over the life of the loan. Rates are influenced by market conditions, the borrower's creditworthiness, and the loan type.</li>
+                    <li><strong>Loan Term:</strong> This is the length of time over which the loan will be repaid, commonly 15 or 30 years. Shorter terms mean higher monthly payments but less total interest paid.</li>
+                    <li><strong>PITI:</strong> This acronym stands for Principal, Interest, Taxes (property taxes), and Insurance (homeowners insurance). These components typically make up the total monthly mortgage payment.</li>
+                </ul>
+
+                <h3>The Mortgage Process:</h3>
+                <p>The journey to securing a mortgage involves several steps, starting with assessing your financial health and getting pre-approved to understand your borrowing capacity. This is followed by finding a home, making an offer, completing a formal mortgage application, undergoing the underwriting process (where the lender verifies your information and assesses risk), and finally, closing on the loan and the home.</p>
+                <p>Our suite of mortgage calculators is designed to assist you at various stages of this process. From estimating your affordability to calculating potential payments and exploring refinance options, these tools can provide valuable insights to support your homeownership goals.</p>
+            </section>
+        </article>
     </main>
-    
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>CalcHub</h3>
-                <p>Free online calculators for all your needs. Simple, accurate, and easy to use.</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Categories</h3>
-                <ul>
-                    <li><a href="/finance/">Finance</a></li>
-                    <li><a href="/math/">Math</a></li>
-                    <li><a href="/health/">Health</a></li>
-                    <li><a href="/conversions/">Conversions</a></li>
-                    <li><a href="/date-time/">Date & Time</a></li>
-                    <li><a href="/business/">Business</a></li>
-                    <li><a href="/lifestyle/">Lifestyle</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="/blog/">Blog</a></li>
-                    <li><a href="/about/">About Us</a></li>
-                    <li><a href="/contact/">Contact</a></li>
-                    <li><a href="/privacy/">Privacy Policy</a></li>
-                    <li><a href="/terms/">Terms of Use</a></li>
-                    <li><a href="/gdpr/">GDPR Compliance</a></li>
-                    <li><a href="/sitemap.xml">Sitemap</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Connect</h3>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>CalcHub</h3>
+                    <p>Your one-stop destination for a wide variety of free online calculators.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="/finance/">Finance</a></li>
+                        <li><a href="/math/">Math</a></li>
+                        <li><a href="/health/">Health</a></li>
+                        <li><a href="/conversions/">Conversions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/privacy/">Privacy Policy</a></li>
+                        <li><a href="/terms/">Terms of Service</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 CalcHub. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CalcHub. All rights reserved.</p>
+            </div>
         </div>
     </footer>
-    
-    <script src="/js/main.js"></script>
-    <script src="/js/dark-mode.js"></script>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/dark-mode.js" defer></script>
 </body>
 </html>
