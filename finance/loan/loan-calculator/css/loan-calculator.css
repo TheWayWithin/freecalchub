@@ -417,3 +417,16 @@ body.dark-mode .calculator-info.enhanced-content .formula-box {
     }
 }
 
+
+
+/* make sure our buttons stay blue (and white text) by default */
+.calculator-form .form-actions .btn {
+  background-color: var(--primary-color) !important;
+  color: white                 !important;
+}
+
+/* preserve the hover shade */
+.calculator-form .form-actions .btn:hover {
+  background-color: var(--primary-dark) !important;
+}
+
