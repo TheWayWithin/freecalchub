@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 docs: update CHANGELOG for v1.61.0 container list alignment
 
+## [1.71.0] - 2024-05-09
+
+### Added
+- New Mortgage Affordability Calculator at `/finance/mortgage/affordability-calculator/`:
+    - Calculates maximum affordable home price, estimated monthly payments (PITI + HOA), and debt-to-income ratios.
+    - Inputs include annual income, monthly debts, down payment, interest rate, loan term, property tax rate, homeowners insurance, HOA fees, and credit score range.
+    - Features detailed educational content on mortgage affordability, tips to increase affordability, and common mistakes to avoid.
+    - Includes an illustrative table for affordability by income level.
+    - Implements comprehensive schema markup (SoftwareApplication, FAQPage, HowTo, BreadcrumbList, WebPage) for SEO.
+    - Includes a dynamically generated FAQ section based on calculator context.
+    - Uses Google Analytics ID `G-R1QHNSSWTC`.
+- Generated 10 FAQs specifically for the Mortgage Affordability Calculator, covering common user questions.
+
+### Changed
+- Updated Mortgage category page (`/finance/mortgage/index.html`):
+    - Added a card and link for the new Mortgage Affordability Calculator.
+    - Updated educational content and schema markup (WebPage, CollectionPage, BreadcrumbList) to reflect the new calculator and maintain consistency.
+- Updated Finance category page (`/finance/index.html`):
+    - Added a link to the new Mortgage Affordability Calculator under the Mortgage subcategory section.
+    - Updated schema markup (CollectionPage, BreadcrumbList, ItemList) to include the new calculator and ensure accuracy.
+- Ensured all new and updated pages use the correct Google Analytics ID `G-R1QHNSSWTC`.
+- Standardized URL for the affordability calculator to `/finance/mortgage/affordability-calculator/`.
+
 ## [1.70.0] - 2024-05-09
 
 ### Fixed
