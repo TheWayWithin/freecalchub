@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 docs: update CHANGELOG for v1.61.0 container list alignment
 
+## [1.70.0] - 2024-05-09
+
+### Fixed
+- Resolved an issue on the Loan Calculator page (`/finance/loan/loan-calculator/index.html`) where the "Calculate" and "Reset" buttons were not visible by default and only appeared on hover.
+- Applied a more specific CSS rule in `/finance/loan/loan-calculator/css/loan-calculator.css` to ensure the buttons have the correct background color and text color, overriding conflicting styles from `calchub-consolidated-fixes.css`. This ensures buttons are always visible, as per user-provided ChatGPT analysis.
+
 ## [1.69.0] - 2024-05-07
 
 ### Fixed
