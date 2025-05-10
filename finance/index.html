@@ -9,8 +9,12 @@
     
     <!-- Global styles -->
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <link rel="stylesheet" href="/css/dark-mode-button.css">
+    <link rel="stylesheet" href="/css/navigation-ribbon.css">
+    <link rel="stylesheet" href="/css/breadcrumb-styles.css">
     <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
-
+    
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -33,22 +37,27 @@
           "@type": "CollectionPage",
           "name": "Finance Calculators",
           "description": "A comprehensive collection of free online finance calculators for mortgage, loan, investment, retirement, budgeting, and more. Make informed financial decisions with CalcHub.",
-          "url": "https://www.calchub.com/finance/",
+          "url": "/finance/",
           "hasPart": [
             {
               "@type": "WebPage",
               "name": "Mortgage Calculators",
-              "url": "https://www.calchub.com/finance/mortgage/"
+              "url": "/finance/mortgage/"
             },
             {
               "@type": "WebPage",
               "name": "Loan Calculators",
-              "url": "https://www.calchub.com/finance/loan/"
+              "url": "/finance/loan/"
             },
             {
               "@type": "WebPage",
               "name": "Investment Calculators",
-              "url": "https://www.calchub.com/finance/investment/"
+              "url": "/finance/investment/"
+            },
+            {
+              "@type": "WebPage",
+              "name": "Retirement Calculators",
+              "url": "/finance/retirement/"
             }
             // Add other subcategories as they are created
           ]
@@ -111,163 +120,227 @@
     </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    
     <header class="site-header">
-        <div class="container header-flex">
-            <div class="logo">
-                <a href="/"><img src="/images/logo.svg" alt="CalcHub Logo"></a>
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="/" class="logo">
+                    <img src="/images/logo.svg" alt="CalcHub Logo">
+                </a>
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="/">Home</a></li>
                     <li><a href="/finance/" class="active">Finance</a></li>
                     <li><a href="/math/">Math</a></li>
                     <li><a href="/health/">Health</a></li>
                     <li><a href="/conversions/">Conversions</a></li>
                     <li><a href="/date-time/">Date & Time</a></li>
-                    <li><a href="/more/">More</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                    <li><a href="/blog/">Blog</a></li>
                 </ul>
             </nav>
-            <div class="header-actions">
+            <div class="header-controls">
                 <button id="dark-mode-toggle" aria-label="Toggle dark mode">
-                    <img src="/images/moon-icon.svg" alt="Dark mode" class="dark-mode-icon">
-                    <img src="/images/sun-icon.svg" alt="Light mode" class="light-mode-icon">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
                 </button>
-                <button id="mobile-menu-button" aria-label="Open menu">☰</button>
+                <button id="mobile-menu-button" aria-label="Toggle menu">
+                    <i class="fas fa-bars menu-icon"></i>
+                </button>
             </div>
         </div>
-        <div class="mobile-menu" id="mobile-menu-panel">
+    </header>
+
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-header">
+            <span>Menu</span>
+            <button id="mobile-menu-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
             <ul>
-                <li><a href="/">Home</a></li>
                 <li><a href="/finance/" class="active">Finance</a></li>
                 <li><a href="/math/">Math</a></li>
                 <li><a href="/health/">Health</a></li>
                 <li><a href="/conversions/">Conversions</a></li>
                 <li><a href="/date-time/">Date & Time</a></li>
-                <li><a href="/more/">More</a></li>
+                <li><a href="/business/">Business</a></li>
+                <li><a href="/lifestyle/">Lifestyle</a></li>
+                <li><a href="/blog/">Blog</a></li>
             </ul>
+        </nav>
+    </div>
+    
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <span class="current">Finance</span>
         </div>
-    </header>
+    </div>
 
-    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
-        <div class="container">
-            <ol>
-                <li><a href="/">Home</a></li>
-                <li><span aria-current="page">Finance Calculators</span></li>
-            </ol>
+    <div class="navigation-ribbon">
+        <div class="navigation-ribbon-container">
+            <a href="/finance/mortgage/"><i class="fas fa-home"></i>Mortgage</a>
+            <a href="/finance/loan/"><i class="fas fa-file-invoice-dollar"></i>Loan</a>
+            <a href="/finance/investment/" class="active"><i class="fas fa-chart-line"></i>Investment</a>
+            <a href="/finance/retirement/"><i class="fas fa-umbrella-beach"></i>Retirement</a>
+            <a href="/finance/budgeting/"><i class="fas fa-wallet"></i>Budgeting</a>
+            <a href="/finance/savings/"><i class="fas fa-piggy-bank"></i>Savings</a>
+            <a href="/finance/cryptocurrency/"><i class="fas fa-coins"></i>Cryptocurrency</a>
+            <a href="/finance/tax/"><i class="fas fa-receipt"></i>Tax</a>
         </div>
-    </nav>
+    </div>
 
-    <main class="container page-container">
-        <article class="category-page-content">
-            <h1 class="page-title">Finance Calculators</h1>
-            <p class="category-description">Make informed financial decisions with our free, easy-to-use calculators. Whether you are planning to buy a home, invest for the future, manage loans, or prepare for retirement, our tools provide accurate calculations and educational insights to empower your financial journey.</p>
+    <main id="main-content" class="container py-5">
+        <section class="category-header">
+            <h1>Finance Calculators</h1>
+            <p class="lead">Make informed financial decisions with our free, easy-to-use calculators. Whether you are planning to buy a home, invest for the future, manage loans, or prepare for retirement, our tools provide accurate calculations and educational insights to empower your financial journey.</p>
+        </section>
 
-            <section class="subcategory-grid">
-                <div class="subcategory-card">
-                    <a href="/finance/mortgage/">
-                        <h2 class="subcategory-title"><i class="fas fa-home"></i> Mortgage Calculators</h2>
-                        <p class="subcategory-summary">Plan your home purchase, estimate payments, and explore affordability with our comprehensive mortgage tools.</p>
-                    </a>
-                    <ul class="calculator-links">
-                        <li><a href="/finance/mortgage/mortgage-calculator/">Mortgage Payment Calculator</a></li>
-                        <li><a href="/finance/mortgage/affordability-calculator/">Mortgage Affordability Calculator</a></li>
-                        <li><a href="/finance/mortgage/refinance-calculator/">Mortgage Refinance Calculator</a></li>
-                    </ul>
-                </div>
+        <section class="subcategory-section">
+            <h2>Mortgage Calculators</h2>
+            <p>Plan your home purchase and understand your mortgage options with these essential calculators.</p>
+          
+            <div class="calculator-grid">
+              <!-- Existing Mortgage Payment Calculator -->
+              <a href="/finance/mortgage/mortgage-calculator/" class="calculator-card">
+                <div class="calculator-icon"><i class="fas fa-home"></i></div>
+                <h3>Mortgage Calculator</h3>
+                <p>Calculate monthly payments, interest, and amortization schedule for your mortgage.</p>
+              </a>
+          
+              <!-- New: Affordability Calculator -->
+              <a href="/finance/mortgage/affordability-calculator/" class="calculator-card">
+                <div class="calculator-icon"><i class="fas fa-dollar-sign"></i></div>
+                <h3>Mortgage Affordability Calculator</h3>
+                <p>Determine how much house you can afford based on your income, debts, and down payment.</p>
+              </a>
+          
+              <!-- New: Refinance Calculator -->
+              <a href="/finance/mortgage/refinance-calculator/" class="calculator-card">
+                <div class="calculator-icon"><i class="fas fa-sync-alt"></i></div>
+                <h3>Mortgage Refinance Calculator</h3>
+                <p>Analyze whether refinancing your current mortgage can save you money or shorten your term.</p>
+              </a>
+            </div>
+          
+            <div class="subcategory-cta">
+              <a href="/finance/mortgage/" class="btn">View All Mortgage Calculators</a>
+            </div>
+          </section>
 
-                <div class="subcategory-card">
-                    <a href="/finance/loan/">
-                        <h2 class="subcategory-title"><i class="fas fa-file-invoice-dollar"></i> Loan Calculators</h2>
-                        <p class="subcategory-summary">Understand loan options, calculate payments, and make informed borrowing decisions for various loan types.</p>
-                    </a>
-                    <ul class="calculator-links">
-                        <li><a href="/finance/loan/loan-calculator/">Loan Payment Calculator</a></li>
-                        <!-- Add more loan calculators here -->
-                    </ul>
-                </div>
+        <section class="subcategory-section">
+            <h2>Loan Calculators</h2>
+            <p>Understand your loan options, calculate payments, and make informed borrowing decisions for personal, auto, or student loans.</p>
+            <div class="calculator-grid">
+                <a href="/finance/loan/loan-calculator/" class="calculator-card">
+                    <div class="calculator-icon"><i class="fas fa-calculator"></i></div>
+                    <h3>Loan Calculator</h3>
+                    <p>Estimate monthly payments, total interest, and amortization for various loan types.</p>
+                </a>
+                <!-- Add more loan calculators as they are developed -->
+            </div>
+            <div class="subcategory-cta">
+                <a href="/finance/loan/" class="btn">View All Loan Calculators</a>
+            </div>
+        </section>
 
-                <div class="subcategory-card">
-                    <a href="/finance/investment/">
-                        <h2 class="subcategory-title"><i class="fas fa-chart-line"></i> Investment Calculators</h2>
-                        <p class="subcategory-summary">Grow your wealth and plan for the future with these investment planning and projection tools.</p>
-                    </a>
-                    <ul class="calculator-links">
-                        <li><a href="/finance/investment/compound-interest-calculator/">Compound Interest Calculator</a></li>
-                        <!-- Add more investment calculators here -->
-                    </ul>
-                </div>
+        <section class="subcategory-section">
+            <h2>Investment Calculators</h2>
+            <p>Grow your wealth and plan for the future with these investment planning tools.</p>
+            <div class="calculator-grid">
+                <a href="/finance/investment/compound-interest-calculator/" class="calculator-card">
+                    <div class="calculator-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>Compound Interest Calculator</h3>
+                    <p>See how your investments grow over time with the power of compound interest.</p>
+                </a>
+                <!-- Add more investment calculators as needed -->
+            </div>
+            <div class="subcategory-cta">
+                <a href="/finance/investment/" class="btn">View All Investment Calculators</a>
+            </div>
+        </section>
 
-                <div class="subcategory-card">
-                    <a href="/finance/retirement/">
-                        <h2 class="subcategory-title"><i class="fas fa-umbrella-beach"></i> Retirement Calculators</h2>
-                        <p class="subcategory-summary">Plan for a secure retirement by estimating savings needs and projecting income.</p>
-                    </a>
-                    <ul class="calculator-links">
-                        <li><a href="/finance/retirement/retirement-calculator/">Retirement Savings Calculator</a></li>
-                        <!-- Add more retirement calculators here -->
-                    </ul>
-                </div>
-                <!-- Add more subcategory cards as they are developed -->
-            </section>
+        <section class="subcategory-section">
+            <h2>Retirement Calculators</h2>
+            <p>Plan for a secure retirement with these essential financial tools.</p>
+            <div class="calculator-grid">
+                <a href="/finance/retirement/retirement-calculator/" class="calculator-card">
+                    <div class="calculator-icon"><i class="fas fa-umbrella-beach"></i></div>
+                    <h3>Retirement Calculator</h3>
+                    <p>Estimate how much you need to save for retirement and if you are on track.</p>
+                </a>
+                <!-- Add more retirement calculators as needed -->
+            </div>
+            <div class="subcategory-cta">
+                <a href="/finance/retirement/" class="btn">View All Retirement Calculators</a>
+            </div>
+        </section>
 
-            <section class="educational-content content-section">
-                <h2 class="section-title">Understanding Personal Finance</h2>
-                <p>Personal finance is the strategic management of your monetary resources through budgeting, saving, investing, and spending. Effective personal finance management helps you achieve your short-term and long-term financial goals, whether it is buying a home, saving for retirement, paying off debt, or building an emergency fund. Understanding key financial concepts is the first step towards financial literacy and empowerment.</p>
+        <section class="finance-education enhanced-content">
+            <h2>Understanding Personal Finance</h2>
+            <p>Personal finance is the strategic management of your monetary resources through budgeting, saving, investing, and spending. Effective personal finance management helps you achieve your short-term and long-term financial goals, whether it is buying a home, saving for retirement, paying off debt, or building an emergency fund. Understanding key financial concepts is the first step towards financial literacy and empowerment.</p>
 
-                <h3>Key Financial Concepts:</h3>
-                <ul>
-                    <li><strong>Budgeting:</strong> Creating a plan for how to spend your money. A budget helps track income and expenses, ensuring you live within your means and allocate funds towards your goals.</li>
-                    <li><strong>Saving:</strong> Setting aside a portion of your income for future use. Savings can be for short-term goals (like a vacation) or long-term goals (like a down payment or retirement).</li>
-                    <li><strong>Investing:</strong> Using your money to purchase assets with the expectation that they will generate income or appreciate in value over time. Investing involves risk but offers the potential for higher returns than saving.</li>
-                    <li><strong>Compound Interest:</strong> Interest calculated on the initial principal, which also includes all of the accumulated interest from previous periods on a deposit or loan. It is often called "interest on interest" and is a powerful force in wealth accumulation.</li>
-                    <li><strong>Debt Management:</strong> Strategies for handling borrowed money, including understanding interest rates, repayment terms, and creating plans to pay off debts efficiently.</li>
-                    <li><strong>Credit Score:</strong> A numerical representation of your creditworthiness, based on your credit history. A good credit score is crucial for obtaining loans, mortgages, and favorable interest rates.</li>
-                    <li><strong>Risk Management:</strong> Protecting your financial well-being through insurance (health, life, auto, home) and maintaining an emergency fund to cover unexpected expenses.</li>
-                </ul>
-                <p>Our suite of finance calculators is designed to assist you in navigating these concepts and making sound financial decisions. Explore our tools to gain clarity and control over your financial future.</p>
-            </section>
-        </article>
+            <h3>Key Financial Concepts</h3>
+            <ul>
+                <li><strong>Budgeting:</strong> Creating a plan for how to spend your money. A budget helps track income and expenses, ensuring you live within your means and allocate funds towards your goals.</li>
+                <li><strong>Saving:</strong> Setting aside a portion of your income for future use. Savings can be for short-term goals (like a vacation) or long-term goals (like a down payment or retirement).</li>
+                <li><strong>Investing:</strong> Using your money to purchase assets with the expectation that they will generate income or appreciate in value over time. Investing involves risk but offers the potential for higher returns than saving.</li>
+                <li><strong>Compound Interest:</strong> Interest calculated on the initial principal, which also includes all of the accumulated interest from previous periods on a deposit or loan. It is often called "interest on interest" and is a powerful force in wealth accumulation.</li>
+                <li><strong>Debt Management:</strong> Strategies for handling borrowed money, including understanding interest rates, repayment terms, and creating plans to pay off debts efficiently.</li>
+                <li><strong>Credit Score:</strong> A numerical representation of your creditworthiness, based on your credit history. A good credit score is crucial for obtaining loans, mortgages, and favorable interest rates.</li>
+                <li><strong>Risk Management:</strong> Protecting your financial well-being through insurance (health, life, auto, home) and maintaining an emergency fund to cover unexpected expenses.</li>
+            </ul>
+            <p>Our suite of finance calculators is designed to assist you in navigating these concepts and making sound financial decisions. Explore our tools to gain clarity and control over your financial future.</p>
+        </section>
     </main>
-
+    
     <footer class="site-footer">
-        <div class="container">
-            <div class="footer-columns">
-                <div class="footer-column">
-                    <h3>CalcHub</h3>
-                    <p>Your one-stop destination for a wide variety of free online calculators.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Categories</h3>
-                    <ul>
-                        <li><a href="/finance/">Finance</a></li>
-                        <li><a href="/math/">Math</a></li>
-                        <li><a href="/health/">Health</a></li>
-                        <li><a href="/conversions/">Conversions</a></li>
-                        <li><a href="/date-time/">Date & Time</a></li>
-                        <li><a href="/more/">More</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="/about/">About Us</a></li>
-                        <li><a href="/contact/">Contact</a></li>
-                        <li><a href="/privacy/">Privacy Policy</a></li>
-                        <li><a href="/terms/">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Connect</h3>
-                    <p>Follow us on social media for updates and new calculators.</p>
-                </div>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>CalcHub</h3>
+                <p>Your source for free, accurate, and easy-to-use online calculators.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> CalcHub. All rights reserved.</p>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/privacy/">Privacy Policy</a></li>
+                    <li><a href="/terms/">Terms of Service</a></li>
+                    <li><a href="/gdpr/">GDPR</a></li>
+                </ul>
             </div>
+            <div class="footer-column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/finance/">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <p>Stay connected for updates and new calculators.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CalcHub. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Global script (for dark mode, mobile menu) -->
     <script src="/js/main.js" defer></script>
     <script src="/js/dark-mode.js" defer></script>
+    <script src="/js/faq-accordion.js" defer></script>
+
 </body>
 </html>
