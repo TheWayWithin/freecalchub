@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 docs: update CHANGELOG for v1.61.0 container list alignment
 
+## [1.72.0] - 2025-05-10
+
+### Fixed
+- Restored header and navigation functionality across finance and mortgage pages:
+    - Fixed dark mode toggle functionality.
+    - Ensured mobile menu operates correctly.
+    - Corrected logo display.
+    - Fixed breadcrumbs displaying as a numbered list; they now display correctly.
+    - Restored the third blue navigation ribbon (sub-navigation) on relevant finance and mortgage pages.
+- Ensured correct JavaScript files (`main.js`, `dark-mode.js`) are linked in the Mortgage Affordability and Mortgage Refinance calculator pages.
+- Added `breadcrumb-styles.css` and `navigation-ribbon.css` to the Mortgage Affordability and Mortgage Refinance calculator pages to ensure consistent styling.
+- Removed any placeholder links or sections for unreleased calculators on category pages.
+- Ensured all affected pages use the correct Google Analytics ID `G-R1QHNSSWTC`.
+
 ## [1.71.0] - 2024-05-09
 
 ### Added
