@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mortgage Affordability Calculator: How Much House Can You Afford? | CalcHub</title>
-  <meta name="description" content="Use our free Mortgage Affordability Calculator…">
+  <meta name="description" content="Use our free Mortgage Affordability Calculator…" />
 
-  <!-- global styles -->
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="/css/dark-mode.css">
-  <link rel="stylesheet" href="/css/dark-mode-button.css">
-  <link rel="stylesheet" href="/css/navigation-ribbon.css">
-  <link rel="stylesheet" href="/css/breadcrumb-styles.css">
-  <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
+  <!-- 1) Base Styles -->
+  <link rel="stylesheet" href="/css/styles.css" />
+  <!-- 2) Dark Mode -->
+  <link rel="stylesheet" href="/css/dark-mode.css" />
+  <link rel="stylesheet" href="/css/dark-mode-button.css" />
+  <!-- 3) Icons -->
+  <link rel="stylesheet" href="/css/all.min.css" />
+  <!-- 4) Navigation & fixes -->
+  <link rel="stylesheet" href="/css/navigation-ribbon.css" />
+  <link rel="stylesheet" href="/css/breadcrumb-styles.css" />
+  <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css" />
+  <!-- 5) Page-specific CSS -->
+  <link rel="stylesheet" href="/finance/mortgage/affordability-calculator/css/mortgage-affordability-calculator.css" />
 
-  <!-- page-specific styles -->
-  <link rel="stylesheet" href="/finance/mortgage/affordability-calculator/css/mortgage-affordability-calculator.css">
-
-  <!-- Google Analytics -->
+  <!-- 6) Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
   <script>
     window.dataLayer = window.dataLayer||[];
@@ -25,7 +28,198 @@
     gtag('js', new Date());
     gtag('config','G-R1QHNSSWTC');
   </script>
-  <!-- …any structured data here… -->
+
+  <!-- 7) Your JSON-LD: copy *this entire block* verbatim from your old page -->
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Mortgage Affordability Calculator",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Web",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "description": "Use our free Mortgage Affordability Calculator to determine how much house you can afford based on your income, debt, down payment, and credit score. Get personalized results instantly.",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "215"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How much house can I afford with a specific income (e.g., $70,000 income)?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Determining affordability on a $70,000 income involves looking at your gross monthly income (approx. $5,833), the 28/36 rule (housing costs <28% GMI, total debt <36% GMI), your down payment, existing debts, credit score, current interest rates, loan term, property taxes, and insurance. Our calculator provides a personalized estimate based on these factors."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the 28/36 rule for mortgage affordability?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The 28/36 rule suggests your total housing expenses (PITI + HOA) shouldn't exceed 28% of your gross monthly income (front-end ratio), and your total monthly debt obligations (including housing) shouldn't exceed 36% of your gross monthly income (back-end ratio). Lenders use this to assess your ability to manage payments."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does my credit score affect how much house I can afford?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A higher credit score generally qualifies you for lower interest rates, reducing your monthly mortgage payment and increasing the home price you can afford. It can also provide access to better loan terms and lower PMI costs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much down payment do I need to afford a $400,000 house?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For a $400,000 house, a 20% down payment ($80,000) avoids PMI on conventional loans. However, FHA loans might require as little as 3.5% ($14,000), and VA/USDA loans may require 0%. The down payment affects your loan amount and monthly payments."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What debt-to-income ratio (DTI) do I need to qualify for a mortgage?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most lenders prefer a DTI of 43% or less. Conventional loans often cap around 43-50% with compensating factors. FHA loans may go up to 43-50%+. VA loans are more flexible but often prefer <41% and consider residual income. USDA loans typically require <41%."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do property taxes and insurance affect my home affordability?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Property taxes and homeowners insurance (T&I) are part of your monthly PITI payment. Higher T&I costs increase your PITI, reducing the principal and interest portion you can afford, thus lowering the overall home price you can manage for a given total payment."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Should I include HOA fees in my mortgage affordability calculation?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, HOA fees are a recurring monthly expense and must be included. Lenders add HOA fees to your PITI when calculating your debt-to-income ratios, which directly impacts your affordability."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much should I spend on a house based on my salary?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A general guideline is 2.5 to 4 times your gross annual income. However, this varies greatly based on your down payment, debts, interest rates, credit score, and local property taxes/insurance. Use an affordability calculator for a personalized estimate."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What's the difference between pre-qualification and pre-approval?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Pre-qualification is an informal estimate based on self-reported data, without a hard credit check. Pre-approval is a more formal, conditional commitment from a lender after verifying your income, assets, debts, and performing a hard credit check. Pre-approval is stronger when making an offer on a home."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How can I afford more house than what the calculator shows?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "To afford more, you can: increase your down payment, improve your credit score (for better rates), reduce existing debts (lower DTI), increase your income, shop for lower interest rates, consider a longer loan term, or look for homes with lower property taxes/HOA fees."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Use the Mortgage Affordability Calculator",
+          "description": "Step-by-step guide to determining how much house you can afford using our Mortgage Affordability Calculator.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "Enter Financial Information",
+              "text": "Input your annual income (before taxes), total monthly debt payments (like credit cards, loans), and the amount you have for a down payment."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Provide Loan Details",
+              "text": "Enter the estimated interest rate you expect to get, the desired loan term in years (e.g., 30 or 15)."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Estimate Housing Expenses",
+              "text": "Input the estimated annual property tax rate (as a percentage of home value), annual homeowners insurance cost, and any monthly HOA fees if applicable."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Calculate Affordability",
+              "text": "Click the 'Calculate Affordability' button to see your results."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Review Results",
+              "text": "The calculator will display the maximum home price you can likely afford, your estimated total monthly payment (PITI), and your front-end and back-end debt-to-income ratios."
+            }
+          ],
+          "tool": {
+            "@type": "HowToTool",
+            "name": "Mortgage Affordability Calculator"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.calchub.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Finance Calculators",
+              "item": "https://www.calchub.com/finance/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Mortgage Calculators",
+              "item": "https://www.calchub.com/finance/mortgage/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Mortgage Affordability Calculator",
+              "item": "https://www.calchub.com/finance/mortgage/mortgage-affordability-calculator/"
+            }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "name": "Mortgage Affordability Calculator: How Much House Can You Afford? | CalcHub",
+          "description": "Use our free Mortgage Affordability Calculator to determine how much house you can afford based on your income, debt, down payment, and credit score. Get personalized results instantly.",
+          "url": "https://www.calchub.com/finance/mortgage/mortgage-affordability-calculator/",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".page-title", ".calculator-description-section", ".how-to-use-section"]
+          },
+          "mainEntity": {
+            "@type": "SoftwareApplication",
+            "name": "Mortgage Affordability Calculator"
+          }
+        }
+      ]
+    }
+  </script>
+  <!-- end JSON-LD -->
+
 </head>
 
 <body>
