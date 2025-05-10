@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Mortgage Affordability Calculator: How Much House Can You Afford? | CalcHub</title>
-  <meta name="description" content="Use our free Mortgage Affordability Calculator…" />
+  <meta name="description" content="Use our free Mortgage Affordability Calculator to determine how much house you can afford…" />
 
-  <!-- 1) Base Styles -->
+  <!-- 1) Global Styles -->
   <link rel="stylesheet" href="/css/styles.css" />
-  <!-- 2) Dark Mode -->
+  <!-- 2) Dark-mode -->
   <link rel="stylesheet" href="/css/dark-mode.css" />
   <link rel="stylesheet" href="/css/dark-mode-button.css" />
-  <!-- 3) Icons -->
+  <!-- 3) FontAwesome (all.min.css) -->
   <link rel="stylesheet" href="/css/all.min.css" />
-  <!-- 4) Navigation & fixes -->
+  <!-- 4) Ribbon, Breadcrumb, Fixes -->
   <link rel="stylesheet" href="/css/navigation-ribbon.css" />
   <link rel="stylesheet" href="/css/breadcrumb-styles.css" />
   <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css" />
@@ -25,7 +25,7 @@
   <script>
     window.dataLayer = window.dataLayer||[];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    gtag('js',new Date());
     gtag('config','G-R1QHNSSWTC');
   </script>
 
@@ -225,8 +225,8 @@
 <body>
   <header class="site-header">
     <div class="container header-flex">
-      <div class="logo">
-        <a href="/"><img src="/images/logo.svg" alt="CalcHub Logo"></a>
+      <div class="logo-container">
+        <a href="/"><img src="/images/logo.svg" alt="CalcHub Logo" /></a>
       </div>
       <nav class="main-nav">
         <ul>
@@ -235,14 +235,14 @@
           <li><a href="/math/">Math</a></li>
           <li><a href="/health/">Health</a></li>
           <li><a href="/conversions/">Conversions</a></li>
-          <li><a href="/date-time/">Date &amp; Time</a></li>
+          <li><a href="/date-time/">Date & Time</a></li>
           <li><a href="/more/">More</a></li>
         </ul>
       </nav>
-      <div class="header-actions">
+      <div class="header-controls">
         <button id="dark-mode-toggle" aria-label="Toggle dark mode">
-          <img src="/images/moon-icon.svg" class="dark-mode-icon" alt="">
-          <img src="/images/sun-icon.svg" class="light-mode-icon" alt="">
+          <img src="/images/moon-icon.svg" class="dark-mode-icon" alt="Dark" />
+          <img src="/images/sun-icon.svg" class="light-mode-icon" alt="Light" />
         </button>
         <button id="mobile-menu-button" aria-label="Open menu">☰</button>
       </div>
@@ -251,7 +251,11 @@
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/finance/">Finance</a></li>
-        <!-- …etc… -->
+        <li><a href="/math/">Math</a></li>
+        <li><a href="/health/">Health</a></li>
+        <li><a href="/conversions/">Conversions</a></li>
+        <li><a href="/date-time/">Date & Time</a></li>
+        <li><a href="/more/">More</a></li>
       </ul>
     </div>
   </header>
@@ -277,6 +281,8 @@
       <a href="/finance/savings/"><i class="fas fa-piggy-bank"></i>Savings</a>
       <a href="/finance/cryptocurrency/"><i class="fas fa-coins"></i>Cryptocurrency</a>
       <a href="/finance/tax/"><i class="fas fa-receipt"></i>Tax</a>
+      <a href="/finance/mortgage/affordability-calculator/" class="active"><i class="fas fa-check-circle"></i>Affordability</a>
+      <a href="/finance/mortgage/refinance-calculator/"><i class="fas fa-exchange-alt"></i>Refinance</a>
     </div>
   </div>
 
@@ -306,6 +312,7 @@
 
   <!-- ==================== SCRIPTS ==================== -->
   <script src="/js/main.js"                        defer></script>
+  <script src="/js/dark-mode.js" defer></script>
   <script src="/js/faq-accordion.js"               defer></script>
   <script src="/finance/mortgage/affordability-calculator/js/mortgage-affordability-calculator.js" defer></script>
 </body>
