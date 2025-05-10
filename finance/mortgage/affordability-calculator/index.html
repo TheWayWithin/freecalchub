@@ -11,8 +11,8 @@
   <!-- 2) Dark-mode -->
   <link rel="stylesheet" href="/css/dark-mode.css" />
   <link rel="stylesheet" href="/css/dark-mode-button.css" />
-  <!-- 3) FontAwesome (all.min.css) -->
-  <link rel="stylesheet" "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- 3. Font Awesome for ribbon icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <!-- 4) Ribbon, Breadcrumb, Fixes -->
   <link rel="stylesheet" href="/css/navigation-ribbon.css" />
   <link rel="stylesheet" href="/css/breadcrumb-styles.css" />
@@ -223,10 +223,11 @@
 </head>
 
 <body>
+  <!-- ==== SITE HEADER ==== -->
   <header class="site-header">
     <div class="container header-flex">
-      <div class="logo-container">
-        <a href="/"><img src="/images/logo.svg" alt="CalcHub Logo" /></a>
+      <div class="logo">
+        <a href="/"><img src="/images/logo.svg" alt="CalcHub Logo"></a>
       </div>
       <nav class="main-nav">
         <ul>
@@ -235,14 +236,14 @@
           <li><a href="/math/">Math</a></li>
           <li><a href="/health/">Health</a></li>
           <li><a href="/conversions/">Conversions</a></li>
-          <li><a href="/date-time/">Date & Time</a></li>
+          <li><a href="/date-time/">Date &amp; Time</a></li>
           <li><a href="/more/">More</a></li>
         </ul>
       </nav>
-      <div class="header-controls">
+      <div class="header-actions">
         <button id="dark-mode-toggle" aria-label="Toggle dark mode">
-          <img src="/images/moon-icon.svg" class="dark-mode-icon" alt="Dark" />
-          <img src="/images/sun-icon.svg" class="light-mode-icon" alt="Light" />
+          <img src="/images/moon-icon.svg" class="dark-mode-icon" alt="Dark mode">
+          <img src="/images/sun-icon.svg" class="light-mode-icon" alt="Light mode">
         </button>
         <button id="mobile-menu-button" aria-label="Open menu">☰</button>
       </div>
@@ -254,12 +255,13 @@
         <li><a href="/math/">Math</a></li>
         <li><a href="/health/">Health</a></li>
         <li><a href="/conversions/">Conversions</a></li>
-        <li><a href="/date-time/">Date & Time</a></li>
+        <li><a href="/date-time/">Date &amp; Time</a></li>
         <li><a href="/more/">More</a></li>
       </ul>
     </div>
   </header>
 
+  <!-- ==== BREADCRUMB ==== -->
   <nav aria-label="Breadcrumb" class="breadcrumb-nav">
     <div class="container">
       <ol>
@@ -271,6 +273,7 @@
     </div>
   </nav>
 
+  <!-- ==== NAVIGATION RIBBON ==== -->
   <div class="navigation-ribbon">
     <div class="navigation-ribbon-container">
       <a href="/finance/mortgage/" class="active"><i class="fas fa-home"></i>Mortgage</a>
@@ -281,8 +284,8 @@
       <a href="/finance/savings/"><i class="fas fa-piggy-bank"></i>Savings</a>
       <a href="/finance/cryptocurrency/"><i class="fas fa-coins"></i>Cryptocurrency</a>
       <a href="/finance/tax/"><i class="fas fa-receipt"></i>Tax</a>
-      <a href="/finance/mortgage/affordability-calculator/" class="active"><i class="fas fa-check-circle"></i>Affordability</a>
-      <a href="/finance/mortgage/refinance-calculator/"><i class="fas fa-exchange-alt"></i>Refinance</a>
+      <a href="/finance/mortgage/affordability-calculator/" class="current"><i class="fas fa-calculator"></i>Affordability</a>
+      <a href="/finance/mortgage/refinance-calculator/"><i class="fas fa-file-invoice"></i>Refinance</a>
     </div>
   </div>
 
