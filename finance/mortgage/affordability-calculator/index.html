@@ -214,42 +214,76 @@
     </script>
 </head>
 <body>
-    <header class="site-header">
-        <div class="container header-flex">
-            <div class="logo">
-                <a href="/"><img src="/images/logo.svg" alt="CalcHub Logo"></a>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/finance/">Finance</a></li>
-                    <li><a href="/math/">Math</a></li>
-                    <li><a href="/health/">Health</a></li>
-                    <li><a href="/conversions/">Conversions</a></li>
-                    <li><a href="/date-time/">Date & Time</a></li>
-                    <li><a href="/more/">More</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
-                    <img src="/images/moon-icon.svg" alt="Dark mode" class="dark-mode-icon">
-                    <img src="/images/sun-icon.svg" alt="Light mode" class="light-mode-icon">
-                </button>
-                <button id="mobile-menu-button" aria-label="Open menu">☰</button>
-            </div>
-        </div>
-        <div class="mobile-menu" id="mobile-menu-panel">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/finance/">Finance</a></li>
-                <li><a href="/math/">Math</a></li>
-                <li><a href="/health/">Health</a></li>
-                <li><a href="/conversions/">Conversions</a></li>
-                <li><a href="/date-time/">Date & Time</a></li>
-                <li><a href="/more/">More</a></li>
-            </ul>
-        </div>
-    </header>
+
+  <!-- ===== GLOBAL HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-flex">
+      <div class="logo">
+        <a href="/"><img src="/images/logo.svg" alt="CalcHub Logo"></a>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/finance/">Finance</a></li>
+          <li><a href="/math/">Math</a></li>
+          <li><a href="/health/">Health</a></li>
+          <li><a href="/conversions/">Conversions</a></li>
+          <li><a href="/date-time/">Date & Time</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+          <img src="/images/moon-icon.svg" class="dark-mode-icon" alt="Dark">
+          <img src="/images/sun-icon.svg"  class="light-mode-icon" alt="Light">
+        </button>
+        <button id="mobile-menu-button"    aria-label="Open menu">☰</button>
+      </div>
+    </div>
+    <!-- Mobile slide-out -->
+    <div class="mobile-menu" id="mobile-menu-panel">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/finance/">Finance</a></li>
+        <li><a href="/math/">Math</a></li>
+        <li><a href="/health/">Health</a></li>
+        <li><a href="/conversions/">Conversions</a></li>
+        <li><a href="/date-time/">Date & Time</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== BREADCRUMB ===== -->
+  <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/finance/">Finance</a></li>
+        <li><a href="/finance/mortgage/">Mortgage</a></li>
+        <li><span aria-current="page">Mortgage Affordability Calculator</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ===== SUB-CATEGORY RIBBON ===== -->
+  <div class="navigation-ribbon">
+    <div class="navigation-ribbon-container">
+      <a href="/finance/mortgage/"                           class="ribbon-item">Mortgage</a>
+      <a href="/finance/loan/loan-calculator/"                class="ribbon-item">Loan</a>
+      <a href="/finance/mortgage/mortgage-calculator/"       class="ribbon-item">Payment</a>
+      <a href="/finance/mortgage/affordability-calculator/"   class="ribbon-item active">Affordability</a>
+      <a href="/finance/mortgage/refinance-calculator/"       class="ribbon-item">Refinance</a>
+      <a href="/finance/investment/"                          class="ribbon-item">Investment</a>
+      <a href="/finance/retirement/"                          class="ribbon-item">Retirement</a>
+      <a href="/finance/budgeting/"                           class="ribbon-item">Budgeting</a>
+      <a href="/finance/savings/"                             class="ribbon-item">Savings</a>
+      <a href="/finance/cryptocurrency/"                      class="ribbon-item">Cryptocurrency</a>
+      <a href="/finance/tax/"                                 class="ribbon-item">Tax</a>
+    </div>
+  </div>
+
+  <!-- ===== BEGIN MAIN CONTENT ===== -->
+  <main class="container page-container">
+    <!-- your existing <article>… -->
 
     <nav aria-label="Breadcrumb" class="breadcrumb-nav">
         <div class="container">
