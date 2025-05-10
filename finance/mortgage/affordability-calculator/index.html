@@ -224,54 +224,74 @@
 
 <body>
   <!-- ==== SITE HEADER ==== -->
-  <header class="site-header">
-    <div class="container header-flex">
-      <div class="logo">
-        <a href="/"><img src="/images/logo.svg" alt="CalcHub Logo"></a>
-      </div>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/finance/">Finance</a></li>
-          <li><a href="/math/">Math</a></li>
-          <li><a href="/health/">Health</a></li>
-          <li><a href="/conversions/">Conversions</a></li>
-          <li><a href="/date-time/">Date &amp; Time</a></li>
-          <li><a href="/more/">More</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions">
-        <button id="dark-mode-toggle" aria-label="Toggle dark mode">
-          <img src="/images/moon-icon.svg" class="dark-mode-icon" alt="Dark mode">
-          <img src="/images/sun-icon.svg" class="light-mode-icon" alt="Light mode">
-        </button>
-        <button id="mobile-menu-button" aria-label="Open menu">☰</button>
-      </div>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+    
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="/" class="logo">
+                    <img src="/images/logo.svg" alt="CalcHub Logo">
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/finance/">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-controls">
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="mobile-menu-button" aria-label="Toggle menu">
+                    <i class="fas fa-bars menu-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-header">
+            <span>Menu</span>
+            <button id="mobile-menu-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="/finance/">Finance</a></li>
+                <li><a href="/math/">Math</a></li>
+                <li><a href="/health/">Health</a></li>
+                <li><a href="/conversions/">Conversions</a></li>
+                <li><a href="/date-time/">Date & Time</a></li>
+                <li><a href="/business/">Business</a></li>
+                <li><a href="/lifestyle/">Lifestyle</a></li>
+                <li><a href="/blog/">Blog</a></li>
+            </ul>
+        </nav>
     </div>
-    <div class="mobile-menu" id="mobile-menu-panel">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/finance/">Finance</a></li>
-        <li><a href="/math/">Math</a></li>
-        <li><a href="/health/">Health</a></li>
-        <li><a href="/conversions/">Conversions</a></li>
-        <li><a href="/date-time/">Date &amp; Time</a></li>
-        <li><a href="/more/">More</a></li>
-      </ul>
-    </div>
-  </header>
 
   <!-- ==== BREADCRUMB ==== -->
-  <nav aria-label="Breadcrumb" class="breadcrumb-nav">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li><a href="/finance/">Finance</a></li>
-        <li><a href="/finance/mortgage/">Mortgage</a></li>
-        <li><span aria-current="page">Mortgage Affordability Calculator</span></li>
-      </ol>
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <a href="/finance/">Finance</a>
+            <span class="separator">/</span>
+            <a href="/finance/mortgage/">Mortgage</a>
+            <span class="separator">/</span>
+            <span class="current">Affordability Calculator</span>
+        </div>
     </div>
-  </nav>
 
   <!-- ==== NAVIGATION RIBBON ==== -->
   <div class="navigation-ribbon">
@@ -289,28 +309,299 @@
     </div>
   </div>
 
-  <main class="container page-container">
-    <article class="calculator-page-content">
+  <main id="main-content" class="main-content">
+      <div class="content-container">
       <h1 class="page-title">Mortgage Affordability Calculator: How Much House Can You Afford?</h1>
 
-      <section class="calculator-description-section content-section">
-        <p>Understanding how much house you can realistically afford…</p>
-        <p>This tool considers key factors…</p>
-      </section>
+            <section class="calculator-description-section content-section">
+                <p>Understanding how much house you can realistically afford is a critical first step in the home-buying journey. Our Mortgage Affordability Calculator helps you estimate a comfortable home price based on your unique financial situation, including your income, monthly debts, down payment, and expected loan terms. Knowing your budget upfront empowers you to search for homes with confidence and avoid the stress of overextending yourself financially.</p>
+                <p>This tool considers key factors like interest rates, property taxes, and homeowners insurance to provide a comprehensive affordability estimate. By inputting your details, you'll get a clearer picture of your potential monthly mortgage payments and the maximum home value you should aim for.</p>
+            </section>
 
-      <!-- NOW insert your “Estimate Your Home Affordability” form section here -->
-      <section id="calculator-section" class="calculator-interface content-section card">
-        <!-- your form markup goes here -->
-      </section>
+            <section id="calculator-section" class="calculator-interface content-section card">
+                <h2 class="section-title">Estimate Your Home Affordability</h2>
+                <form id="affordabilityForm" class="input-grid calculator-form">
+                    <div class="form-group">
+                        <label for="annualIncome">Annual Income (before taxes):</label>
+                        <input type="number" id="annualIncome" value="70000" placeholder="e.g., 70000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="monthlyDebts">Monthly Debt Payments:</label>
+                        <input type="number" id="monthlyDebts" value="500" placeholder="e.g., 500 (car, student loan, credit cards)">
+                    </div>
+                    <div class="form-group">
+                        <label for="downPayment">Down Payment Amount:</label>
+                        <input type="number" id="downPayment" value="20000" placeholder="e.g., 20000">
+                    </div>
+                    <div class="form-group">
+                        <label for="interestRate">Interest Rate (%):</label>
+                        <input type="number" id="interestRate" step="0.01" value="6.5" placeholder="e.g., 6.5">
+                    </div>
+                    <div class="form-group">
+                        <label for="loanTermYears">Loan Term (Years):</label>
+                        <select id="loanTermYears">
+                            <option value="30">30 Years</option>
+                            <option value="20">20 Years</option>
+                            <option value="15">15 Years</option>
+                            <option value="10">10 Years</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="propertyTaxRate">Property Tax Rate (% of home value per year):</label>
+                        <input type="number" id="propertyTaxRate" step="0.01" value="1.2" placeholder="e.g., 1.2">
+                    </div>
+                    <div class="form-group">
+                        <label for="homeownersInsurance">Homeowners Insurance (annual):</label>
+                        <input type="number" id="homeownersInsurance" value="1500" placeholder="e.g., 1500">
+                    </div>
+                    <div class="form-group">
+                        <label for="hoaFees">HOA Fees (monthly, if applicable):</label>
+                        <input type="number" id="hoaFees" value="0" placeholder="e.g., 0 or 250">
+                    </div>
+                     <div class="form-group">
+                        <label for="creditScore">Credit Score Range:</label>
+                        <select id="creditScore">
+                            <option value="740+">Excellent (740+)</option>
+                            <option value="680-739">Good (680-739)</option>
+                            <option value="620-679">Fair (620-679)</option>
+                            <option value="580-619">Poor (580-619)</option>
+                            <option value="<580">Very Poor (<580)</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" id="calculateAffordabilityButton" class="btn btn-primary">Calculate Affordability</button>
+                        <button type="reset" id="resetButton" class="btn btn-secondary">Reset</button>
+                    </div>
+                </form>
+            </section>
 
-      <!-- then continue with your results, how-to, FAQs, etc. -->
+            <section id="results-section" class="results-display content-section card" style="display:none;">
+                <h2 class="section-title">Your Affordability Estimate</h2>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <p class="result-label">Maximum Affordable Home Price:</p>
+                        <p class="result-value" id="maxHomePrice">--</p>
+                    </div>
+                    <div class="result-item">
+                        <p class="result-label">Estimated Monthly Payment (PITI + HOA):</p>
+                        <p class="result-value" id="monthlyPayment">--</p>
+                    </div>
+                    <div class="result-item">
+                        <p class="result-label">Front-End Ratio (Housing):</p>
+                        <p class="result-value" id="frontEndRatio">--</p>
+                    </div>
+                    <div class="result-item">
+                        <p class="result-label">Back-End Ratio (Total Debt):</p>
+                        <p class="result-value" id="backEndRatio">--</p>
+                    </div>
+                </div>
+                <div id="resultsBreakdown" class="results-breakdown" style="margin-top:20px;">
+                    <h4>Monthly Payment Breakdown (Estimated):</h4>
+                    <ul>
+                        <li>Principal & Interest: <span id="breakdownPandI">--</span></li>
+                        <li>Property Taxes: <span id="breakdownTaxes">--</span></li>
+                        <li>Homeowners Insurance: <span id="breakdownInsurance">--</span></li>
+                        <li>HOA Fees: <span id="breakdownHOA">--</span></li>
+                    </ul>
+                </div>
+                <p class="disclaimer">This calculation is an estimate and for informational purposes only. Consult with a financial advisor and mortgage lender for personalized advice.</p>
+            </section>
 
-    </article>
-  </main>
+            <section class="how-to-use-section content-section">
+                <h2 class="section-title">How to Use This Calculator</h2>
+                <ol>
+                    <li><strong>Enter Your Financials:</strong> Start by inputting your gross annual income, total monthly debt payments (excluding rent/current mortgage), and the amount you plan to use as a down payment.</li>
+                    <li><strong>Provide Loan Preferences:</strong> Specify the estimated annual interest rate you anticipate, the loan term in years (e.g., 30 or 15), and your general credit score range.</li>
+                    <li><strong>Estimate Housing Costs:</strong> Add the annual property tax rate for your desired area (as a percentage of home value), your estimated annual homeowners insurance premium, and any monthly HOA fees if applicable.</li>
+                    <li><strong>Calculate:</strong> Click the "Calculate Affordability" button.</li>
+                    <li><strong>Review Your Estimate:</strong> The calculator will display the maximum home price you might be able to afford, your estimated total monthly payment (including principal, interest, taxes, insurance, and HOA), and your front-end and back-end debt-to-income ratios.</li>
+                </ol>
+            </section>
 
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="site-footer">
-    <!-- your existing footer markup -->
+            <section class="understanding-affordability-section content-section">
+                <h2 class="section-title">Understanding Mortgage Affordability</h2>
+                <p>Mortgage affordability is determined by how much a lender believes you can comfortably repay each month. They primarily use debt-to-income (DTI) ratios. The <strong>28/36 rule</strong> is a common benchmark: your housing costs (PITI + HOA) shouldn't exceed 28% of your gross monthly income (front-end ratio), and your total debts (including housing) shouldn't exceed 36% of your gross monthly income (back-end ratio). Some lenders may allow higher ratios, up to 43% or more for the back-end, depending on your overall financial profile.</p>
+                <p>Key factors influencing affordability include:</p>
+                <ul>
+                    <li><strong>Income and Employment Stability:</strong> Lenders look for stable, verifiable income.</li>
+                    <li><strong>Debt-to-Income Ratio (DTI):</strong> A lower DTI generally means better affordability.</li>
+                    <li><strong>Credit Score and History:</strong> Higher scores typically lead to lower interest rates.</li>
+                    <li><strong>Down Payment Amount:</strong> A larger down payment reduces the loan amount and monthly payments.</li>
+                    <li><strong>Interest Rates and Loan Terms:</strong> Market rates and the length of your loan significantly impact payments.</li>
+                    <li><strong>Property Taxes and Homeowners Insurance:</strong> These vary by location and add to your monthly housing cost.</li>
+                </ul>
+            </section>
+
+            <section class="tips-increase-affordability-section content-section">
+                <h2 class="section-title">Tips to Increase Your Mortgage Affordability</h2>
+                <ul>
+                    <li><strong>Improve Your Credit Score:</strong> Pay bills on time and reduce credit card balances.</li>
+                    <li><strong>Pay Down Existing Debt:</strong> Lowering your DTI can significantly boost affordability.</li>
+                    <li><strong>Save for a Larger Down Payment:</strong> This reduces the loan principal and monthly payments.</li>
+                    <li><strong>Shop Around for Mortgages:</strong> Compare rates and terms from multiple lenders.</li>
+                    <li><strong>Consider Different Loan Types:</strong> FHA, VA, or USDA loans might offer more favorable terms if you qualify.</li>
+                    <li><strong>Look into First-Time Homebuyer Programs:</strong> These can offer down payment assistance or grants.</li>
+                    <li><strong>Consider a Co-borrower:</strong> Adding another qualified borrower can increase your combined income and borrowing power, but also means shared responsibility.</li>
+                    <li><strong>Extend Your Loan Term:</strong> A longer term (e.g., 30 years vs. 15) lowers monthly payments but increases total interest paid.</li>
+                </ul>
+            </section>
+
+            <section class="common-mistakes-section content-section">
+                <h2 class="section-title">Common Mistakes to Avoid</h2>
+                <ul>
+                    <li><strong>Not Accounting for All Homeownership Costs:</strong> Beyond PITI, consider maintenance, repairs, utilities, and potential HOA special assessments.</li>
+                    <li><strong>Borrowing the Maximum Amount Offered:</strong> Just because you *can* borrow a certain amount doesn't mean you *should*. Ensure the payment is comfortable for your lifestyle.</li>
+                    <li><strong>Ignoring Future Life Changes:</strong> Consider potential changes in income, family size, or career that could affect your ability to pay.</li>
+                    <li><strong>Not Shopping Around for the Best Mortgage Rate:</strong> Even a small difference in rates can save thousands over the life of the loan.</li>
+                    <li><strong>Overlooking the Impact of Your Credit Score:</strong> A low score can significantly increase your interest rate and reduce affordability.</li>
+                    <li><strong>Draining Savings for the Down Payment:</strong> Ensure you have an emergency fund left after closing costs and down payment.</li>
+                </ul>
+            </section>
+
+            <section class="affordability-by-income-section content-section">
+                <h2 class="section-title">Mortgage Affordability by Income Level (Illustrative Examples)</h2>
+                <p>The table below provides a general illustration of potential home affordability based on different annual income levels. These are estimates and assume a 6.5% interest rate, 30-year term, $500 monthly debts, 1.2% property tax, $1500 annual insurance, and a 10% down payment. Your actual affordability will vary.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Annual Income</th>
+                            <th>Est. Max Home Price</th>
+                            <th>Est. Monthly PITI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$50,000</td>
+                            <td>~$180,000 - $220,000</td>
+                            <td>~$1,150 - $1,400</td>
+                        </tr>
+                        <tr>
+                            <td>$75,000</td>
+                            <td>~$280,000 - $340,000</td>
+                            <td>~$1,750 - $2,150</td>
+                        </tr>
+                        <tr>
+                            <td>$100,000</td>
+                            <td>~$380,000 - $460,000</td>
+                            <td>~$2,400 - $2,900</td>
+                        </tr>
+                        <tr>
+                            <td>$150,000</td>
+                            <td>~$580,000 - $700,000</td>
+                            <td>~$3,600 - $4,400</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><em>Note: These figures are highly simplified and for illustrative purposes only. Use the calculator above with your specific details for a more accurate estimate.</em></p>
+            </section>
+
+            <section class="related-calculators-section content-section">
+                <h2 class="section-title">Related Calculators</h2>
+                <ul>
+                    <li><a href="/finance/mortgage/mortgage-calculator/">Mortgage Payment Calculator</a></li>
+                    <li><a href="/finance/mortgage/down-payment-calculator/">Down Payment Calculator</a> (To be created)</li>
+                    <li><a href="/finance/debt/debt-to-income-ratio-calculator/">Debt-to-Income Ratio Calculator</a> (To be created)</li>
+                    <li><a href="/finance/mortgage/mortgage-refinance-calculator/">Mortgage Refinance Calculator</a> (To be created)</li>
+                    <li><a href="/finance/taxes/property-tax-calculator/">Property Tax Calculator</a> (To be created)</li>
+                </ul>
+            </section>
+
+            <section class="faq-accordion-section content-section">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <button class="accordion" aria-expanded="false">How much house can I afford with a specific income (e.g., $70,000 income)?</button>
+                    <div class="panel">
+                        <p>Determining affordability on a $70,000 income involves looking at your gross monthly income (approx. $5,833), the 28/36 rule (housing costs <28% GMI, total debt <36% GMI), your down payment, existing debts, credit score, current interest rates, loan term, property taxes, and insurance. Our calculator provides a personalized estimate based on these factors.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="accordion" aria-expanded="false">What is the 28/36 rule for mortgage affordability?</button>
+                    <div class="panel">
+                        <p>The 28/36 rule suggests your total housing expenses (PITI + HOA) shouldn't exceed 28% of your gross monthly income (front-end ratio), and your total monthly debt obligations (including housing) shouldn't exceed 36% of your gross monthly income (back-end ratio). Lenders use this to assess your ability to manage payments.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="accordion" aria-expanded="false">How does my credit score affect how much house I can afford?</button>
+                    <div class="panel">
+                        <p>A higher credit score generally qualifies you for lower interest rates, reducing your monthly mortgage payment and increasing the home price you can afford. It can also provide access to better loan terms and lower PMI costs.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="accordion" aria-expanded="false">How much down payment do I need to afford a $400,000 house?</button>
+                    <div class="panel">
+                        <p>For a $400,000 house, a 20% down payment ($80,000) avoids PMI on conventional loans. However, FHA loans might require as little as 3.5% ($14,000), and VA/USDA loans may require 0%. The down payment affects your loan amount and monthly payments.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="accordion" aria-expanded="false">What debt-to-income ratio (DTI) do I need to qualify for a mortgage?</button>
+                    <div class="panel">
+                        <p>Most lenders prefer a DTI of 43% or less. Conventional loans often cap around 43-50% with compensating factors. FHA loans may go up to 43-50%+. VA loans are more flexible but often prefer <41% and consider residual income. USDA loans typically require <41%.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="accordion" aria-expanded="false">How do property taxes and insurance affect my home affordability?</button>
+                    <div class="panel">
+                        <p>Property taxes and homeowners insurance (T&I) are part of your monthly PITI payment. Higher T&I costs increase your PITI, reducing the principal and interest portion you can afford, thus lowering the overall home price you can manage for a given total payment.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="accordion" aria-expanded="false">Should I include HOA fees in my mortgage affordability calculation?</button>
+                    <div class="panel">
+                        <p>Yes, HOA fees are a recurring monthly expense and must be included. Lenders add HOA fees to your PITI when calculating your debt-to-income ratios, which directly impacts your affordability.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="accordion" aria-expanded="false">How much should I spend on a house based on my salary?</button>
+                    <div class="panel">
+                        <p>A general guideline is 2.5 to 4 times your gross annual income. However, this varies greatly based on your down payment, debts, interest rates, credit score, and local property taxes/insurance. Use an affordability calculator for a personalized estimate.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="accordion" aria-expanded="false">What's the difference between pre-qualification and pre-approval?</button>
+                    <div class="panel">
+                        <p>Pre-qualification is an informal estimate based on self-reported data, without a hard credit check. Pre-approval is a more formal, conditional commitment from a lender after verifying your income, assets, debts, and performing a hard credit check. Pre-approval is stronger when making an offer on a home.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="accordion" aria-expanded="false">How can I afford more house than what the calculator shows?</button>
+                    <div class="panel">
+                        <p>To afford more, you can: increase your down payment, improve your credit score (for better rates), reduce existing debts (lower DTI), increase your income, shop for lower interest rates, consider a longer loan term, or look for homes with lower property taxes/HOA fees.</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>CalcHub</h3>
+                    <p>Your one-stop destination for a wide variety of free online calculators.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="/finance/">Finance</a></li>
+                        <li><a href="/math/">Math</a></li>
+                        <li><a href="/health/">Health</a></li>
+                        <li><a href="/conversions/">Conversions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/privacy/">Privacy Policy</a></li>
+                        <li><a href="/terms/">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CalcHub. All rights reserved.</p>
+            </div>
+          
   </footer>
 
   <!-- ==================== SCRIPTS ==================== -->
