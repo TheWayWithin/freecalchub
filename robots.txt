@@ -1,3 +1,5 @@
+# Allow all well-behaved bots to crawl everything
 User-agent: *
 Allow: /
-Sitemap: https://www.freecalchub.com/sitemap.xml
+# Point to your XML sitemap
+Sitemap: https://freecalchub.com/sitemap.xml
