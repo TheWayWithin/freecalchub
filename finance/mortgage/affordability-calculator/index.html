@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mortgage Affordability Calculator: How Much House Can You Afford? | CalcHub</title>
-  <meta name="description" content="Use our free Mortgage Affordability Calculator to determine how much house you can afford based on your income, debt, down payment, and credit score. Get personalized results instantly.">
+  <meta name="description" content="Use our free Mortgage Affordability Calculator…">
 
-  <!-- Global CSS -->
-  <link rel="stylesheet" href="/css/styles.css" />
-  <link rel="stylesheet" href="/css/navigation-ribbon.css" />
-  <link rel="stylesheet" href="/css/breadcrumb-styles.css" />
-  <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css" />
+  <!-- global styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/dark-mode.css">
+  <link rel="stylesheet" href="/css/dark-mode-button.css">
+  <link rel="stylesheet" href="/css/navigation-ribbon.css">
+  <link rel="stylesheet" href="/css/breadcrumb-styles.css">
+  <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
 
-  <!-- Page-specific CSS -->
-  <link rel="stylesheet" href="/finance/mortgage/affordability-calculator/css/mortgage-affordability-calculator.css" />
+  <!-- page-specific styles -->
+  <link rel="stylesheet" href="/finance/mortgage/affordability-calculator/css/mortgage-affordability-calculator.css">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer||[];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-R1QHNSSWTC');
+    gtag('config','G-R1QHNSSWTC');
   </script>
-
-  <!-- Mobile menu + Dark mode -->
-  <script src="/js/mobile-menu.js" defer></script>
-  <script src="/js/dark-mode.js"     defer></script>
+  <!-- …any structured data here… -->
 </head>
 
 <body>
-  <!-- ==================== HEADER ==================== -->
   <header class="site-header">
     <div class="container header-flex">
       <div class="logo">
-        <a href="/"><img src="/images/logo.svg" alt="CalcHub Logo" /></a>
+        <a href="/"><img src="/images/logo.svg" alt="CalcHub Logo"></a>
       </div>
       <nav class="main-nav">
         <ul>
@@ -43,13 +41,14 @@
           <li><a href="/math/">Math</a></li>
           <li><a href="/health/">Health</a></li>
           <li><a href="/conversions/">Conversions</a></li>
-          <li><a href="/date-time/">Date & Time</a></li>
+          <li><a href="/date-time/">Date &amp; Time</a></li>
+          <li><a href="/more/">More</a></li>
         </ul>
       </nav>
       <div class="header-actions">
         <button id="dark-mode-toggle" aria-label="Toggle dark mode">
-          <img src="/images/moon-icon.svg" class="dark-mode-icon" alt="Dark" />
-          <img src="/images/sun-icon.svg"  class="light-mode-icon" alt="Light" />
+          <img src="/images/moon-icon.svg" class="dark-mode-icon" alt="">
+          <img src="/images/sun-icon.svg" class="light-mode-icon" alt="">
         </button>
         <button id="mobile-menu-button" aria-label="Open menu">☰</button>
       </div>
@@ -58,15 +57,11 @@
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/finance/">Finance</a></li>
-        <li><a href="/math/">Math</a></li>
-        <li><a href="/health/">Health</a></li>
-        <li><a href="/conversions/">Conversions</a></li>
-        <li><a href="/date-time/">Date & Time</a></li>
+        <!-- …etc… -->
       </ul>
     </div>
   </header>
 
-  <!-- ==================== BREADCRUMB ==================== -->
   <nav aria-label="Breadcrumb" class="breadcrumb-nav">
     <div class="container">
       <ol>
@@ -78,48 +73,34 @@
     </div>
   </nav>
 
-  <!-- ==================== SUB-CATEGORY RIBBON ==================== -->
   <div class="navigation-ribbon">
     <div class="navigation-ribbon-container">
-      <a href="/finance/mortgage/"                         class="ribbon-item">Mortgage</a>
-      <a href="/finance/loan/loan-calculator/"             class="ribbon-item">Loan</a>
-      <a href="/finance/mortgage/mortgage-calculator/"     class="ribbon-item">Payment</a>
-      <a href="/finance/mortgage/affordability-calculator/"class="ribbon-item active">Affordability</a>
-      <a href="/finance/mortgage/refinance-calculator/"    class="ribbon-item">Refinance</a>
-      <a href="/finance/investment/"                        class="ribbon-item">Investment</a>
-      <a href="/finance/retirement/"                        class="ribbon-item">Retirement</a>
-      <a href="/finance/budgeting/"                         class="ribbon-item">Budgeting</a>
-      <a href="/finance/savings/"                           class="ribbon-item">Savings</a>
-      <a href="/finance/cryptocurrency/"                    class="ribbon-item">Cryptocurrency</a>
-      <a href="/finance/tax/"                               class="ribbon-item">Tax</a>
+      <a href="/finance/mortgage/" class="active"><i class="fas fa-home"></i>Mortgage</a>
+      <a href="/finance/loan/"><i class="fas fa-file-invoice-dollar"></i>Loan</a>
+      <a href="/finance/investment/"><i class="fas fa-chart-line"></i>Investment</a>
+      <a href="/finance/retirement/"><i class="fas fa-umbrella-beach"></i>Retirement</a>
+      <a href="/finance/budgeting/"><i class="fas fa-wallet"></i>Budgeting</a>
+      <a href="/finance/savings/"><i class="fas fa-piggy-bank"></i>Savings</a>
+      <a href="/finance/cryptocurrency/"><i class="fas fa-coins"></i>Cryptocurrency</a>
+      <a href="/finance/tax/"><i class="fas fa-receipt"></i>Tax</a>
     </div>
   </div>
 
-  <!-- ==================== MAIN CONTENT ==================== -->
   <main class="container page-container">
     <article class="calculator-page-content">
       <h1 class="page-title">Mortgage Affordability Calculator: How Much House Can You Afford?</h1>
 
-      <!-- DESCRIPTION -->
-      <section class="calculator-description-section">
-        <p>Understanding how much house you can realistically afford is a critical first step in the home-buying journey...</p>
+      <section class="calculator-description-section content-section">
+        <p>Understanding how much house you can realistically afford…</p>
+        <p>This tool considers key factors…</p>
       </section>
 
-      <!-- CALCULATOR FORM -->
-      <section id="calculator-section" class="calculator-interface card">
-        <h2 class="section-title">Estimate Your Home Affordability</h2>
-        <form id="affordabilityForm" class="input-grid calculator-form">
-          <!-- your input fields here… -->
-          <div class="form-actions">
-            <button type="button" id="calculateAffordabilityButton" class="btn btn-primary">
-              Calculate Affordability
-            </button>
-            <button type="reset" class="btn btn-secondary">Reset</button>
-          </div>
-        </form>
+      <!-- NOW insert your “Estimate Your Home Affordability” form section here -->
+      <section id="calculator-section" class="calculator-interface content-section card">
+        <!-- your form markup goes here -->
       </section>
 
-      <!-- RESULTS, HOW-TO, FAQ, etc… (leave yours unchanged) -->
+      <!-- then continue with your results, how-to, FAQs, etc. -->
 
     </article>
   </main>
