@@ -2,233 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mortgage Refinance Calculator: Is Refinancing Worth It? | CalcHub</title>
-  <meta name="description" content="Thinking about refinancing your mortgage? Our Mortgage Refinance Calculator helps you compare your current loan to potential new loan options and see if refinancing saves you money." />
+  <meta name="description" content="Thinking about refinancing your mortgage? Our Mortgage Refinance Calculator helps you compare your current loan to potential new loan options and see if refinancing makes sense." />
 
-  <!-- 1) Font Awesome (for ribbon icons + header icons) -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-  <!-- 2) Core styles -->
+  <!-- Core styles -->
   <link rel="stylesheet" href="/css/styles.css" />
   <link rel="stylesheet" href="/css/dark-mode.css" />
   <link rel="stylesheet" href="/css/dark-mode-button.css" />
 
-  <!-- 3) Shared ribbon & breadcrumb CSS -->
+  <!-- Navigation Ribbon and Breadcrumb CSS -->
   <link rel="stylesheet" href="/css/navigation-ribbon.css" />
   <link rel="stylesheet" href="/css/breadcrumb-styles.css" />
 
-  <!-- 4) Any global CalcHub fixes -->
+  <!-- CalcHub Fixes -->
   <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css" />
 
-  <!-- 5) This page’s styles last -->
-  <link rel="stylesheet"
-        href="/finance/mortgage/refinance-calculator/css/mortgage-refinance-calculator.css" />
+  <!-- Page-specific styles -->
+  <link rel="stylesheet" href="/finance/mortgage/refinance-calculator/css/refinance-calculator.css" />
 
-  <!-- 6) Google Analytics -->
-  <script async
-          src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
   <script>
-    window.dataLayer = window.dataLayer||[];
-    function gtag(){dataLayer.push(arguments);}
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config','G-R1QHNSSWTC');
+    gtag('config', 'G-R1QHNSSWTC');
   </script>
-  <!-- 7) JSON-LD: copy this block verbatim from your existing refinance page -->  
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "Mortgage Refinance Calculator",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "Web",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "description": "Use our free Mortgage Refinance Calculator to see if refinancing your home loan makes sense. Compare rates, calculate savings, and find your break-even point instantly.",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.7",
-        "ratingCount": "185"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "When is it worth refinancing a mortgage?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Refinancing your mortgage is generally considered worthwhile if you can secure a new interest rate that is significantly lower than your current rate, typically by at least 0.5% to 1%. However, the decision also depends on how long you plan to stay in your home, as you'll need enough time to recoup the closing costs associated with the refinance. Other factors include your current financial situation, credit score, and whether you want to change your loan term (e.g., from a 30-year to a 15-year mortgage) or tap into your home equity."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I calculate if refinancing is worth it?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "To determine if refinancing is worth it, you need to compare the total costs of your current mortgage over your remaining loan term with the total costs of a new refinanced mortgage (including closing costs) over its term. Key steps include calculating your current monthly payment, getting new refinance quotes, estimating closing costs, calculating the new payment, and determining the break-even point. Our calculator automates this comparison for you."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the break-even point in mortgage refinancing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The break-even point is the number of months it will take for the cumulative savings from your lower monthly mortgage payment (after refinancing) to cover the total closing costs of the refinance. If you sell your home or refinance again before this point, you might not recover the costs."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does it cost to refinance a mortgage?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The cost to refinance a mortgage, known as closing costs, typically ranges from 2% to 6% of the new loan amount. These costs can include appraisal fees, title insurance, lender origination fees, recording fees, and sometimes points to lower your interest rate."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Should I refinance to a 15-year mortgage from a 30-year mortgage?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Refinancing from a 30-year to a 15-year mortgage means higher monthly payments but paying off the loan much faster, building equity quicker, and paying significantly less interest overall. Rates on 15-year loans are also typically lower. Consider if you can comfortably afford the higher payments."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I refinance with bad credit?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Refinancing with bad credit (typically a FICO score below 620) can be challenging and may result in higher interest rates. Some government-backed programs like FHA streamline refinances might have more lenient criteria. Improving your credit score before applying is advisable."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Should I pay points when refinancing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Paying points (discount points) lowers your interest rate. One point typically costs 1% of the loan amount. Whether to pay points depends on how long you plan to keep the new mortgage; if long enough for interest savings to exceed the cost of points, it can be beneficial."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How soon can I refinance after purchasing a home?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The waiting period varies. Conventional loans might require 6 months to a year for some lenders. Government-backed loans (FHA, VA, USDA) often have specific 'seasoning' requirements, like 6 months of on-time payments."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Will refinancing hurt my credit score?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Refinancing can have a temporary minor impact. Lenders make a hard inquiry, which can slightly lower your score. Closing an old account and opening a new one can also affect the average age of your accounts. Consistent, on-time payments on the new mortgage will help your score recover."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I refinance with no closing costs?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, 'no-closing-cost' refinances are available. However, costs are either covered by a higher interest rate or rolled into the new loan principal. This avoids upfront expenses but means paying more over time or having a larger loan."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "HowTo",
-      "name": "How to Use the Mortgage Refinance Calculator",
-      "description": "Step-by-step guide to comparing your current mortgage with a potential new one using our Mortgage Refinance Calculator.",
-      "step": [
-        {
-          "@type": "HowToStep",
-          "name": "Enter Current Mortgage Details",
-          "text": "Provide your original loan amount, current outstanding balance, the original term of your loan in years, the number of years remaining, your current interest rate, and your current monthly principal and interest (P&I) payment."
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Input New Mortgage Information",
-          "text": "Fill in the details for the potential new loan. This includes the new loan amount (you can choose to roll closing costs into this), the new loan term in years, the new interest rate, estimated closing costs for the refinance, and any points you might pay to reduce the rate."
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Calculate",
-          "text": "Click the 'Calculate Refinance' button."
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Review Your Results",
-          "text": "The calculator will display a summary including your new estimated monthly payment, potential monthly savings, total lifetime savings (or cost), and the crucial break-even point in months. It will also compare the total interest paid over the life of both loans."
-        }
-      ],
-      "tool": {
-        "@type": "HowToTool",
-        "name": "Mortgage Refinance Calculator"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.calchub.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Finance Calculators",
-          "item": "https://www.calchub.com/finance/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Mortgage Calculators",
-          "item": "https://www.calchub.com/finance/mortgage/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Mortgage Refinance Calculator",
-          "item": "https://www.calchub.com/finance/mortgage/refinance-calculator/"
-        }
-      ]
-    },
-    {
-      "@type": "WebPage",
-      "name": "Mortgage Refinance Calculator: Is Refinancing Worth It? | CalcHub",
-      "description": "Use our free Mortgage Refinance Calculator to see if refinancing your home loan makes sense. Compare rates, calculate savings, and find your break-even point instantly.",
-      "url": "https://www.calchub.com/finance/mortgage/refinance-calculator/",
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": [".page-title", ".calculator-description-section", ".how-to-use-section"]
-      },
-      "mainEntity": {
-        "@type": "SoftwareApplication",
-        "name": "Mortgage Refinance Calculator"
-      }
-    }
-  ]
-}
-</script>
 </head>
-
 <body>
-  <!-- SKIP LINK -->
+  <!-- Skip Link -->
   <a href="#main-content" class="skip-link">Skip to content</a>
 
-  <!-- SITE HEADER -->
+  <!-- Header -->
   <header class="site-header">
-    <div class="container header-flex">
-      <div class="logo">
+    <div class="header-container">
+      <div class="logo-container">
         <a href="/"><img src="/images/logo.svg" alt="CalcHub Logo" /></a>
       </div>
       <nav class="main-nav">
@@ -243,43 +55,53 @@
           <li><a href="/date-time/">Date & Time</a></li>
         </ul>
       </nav>
-      <div class="header-actions">
+      <div class="header-controls">
         <button id="dark-mode-toggle" aria-label="Toggle dark mode">
-          <img src="/images/moon-icon.svg" alt="Dark mode" class="dark-mode-icon" />
-          <img src="/images/sun-icon.svg"  alt="Light mode" class="light-mode-icon" />
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
         </button>
-        <button id="mobile-menu-button" aria-label="Open menu">☰</button>
+        <button id="mobile-menu-button" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </div>
-
-    <!-- MOBILE MENU PANEL -->
-    <div class="mobile-menu" id="mobile-menu-panel">
-      <ul>
-        <li><a href="/finance/">Finance</a></li>
-        <li><a href="/business/">Business</a></li>
-        <li><a href="/math/">Math</a></li>
-        <li><a href="/lifestyle/">Lifestyle</a></li>
-        <li><a href="/health/">Health</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/conversions/">Conversions</a></li>
-        <li><a href="/date-time/">Date & Time</a></li>
-      </ul>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="mobile-menu-header">
+        <span>Menu</span>
+        <button id="mobile-menu-close" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <nav class="mobile-nav">
+        <ul>
+          <li><a href="/finance/">Finance</a></li>
+          <li><a href="/business/">Business</a></li>
+          <li><a href="/math/">Math</a></li>
+          <li><a href="/lifestyle/">Lifestyle</a></li>
+          <li><a href="/health/">Health</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/conversions/">Conversions</a></li>
+          <li><a href="/date-time/">Date & Time</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <!-- BREADCRUMB -->
-  <nav aria-label="Breadcrumb" class="breadcrumb-nav">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li><a href="/finance/">Finance</a></li>
-        <li><a href="/finance/mortgage/">Mortgage</a></li>
-        <li><span aria-current="page">Mortgage Refinance Calculator</span></li>
-      </ol>
+  <!-- Breadcrumb -->
+  <nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <div class="breadcrumbs-container">
+      <a href="/">Home</a>
+      <span class="separator">/</span>
+      <a href="/finance/">Finance</a>
+      <span class="separator">/</span>
+      <a href="/finance/mortgage/">Mortgage</a>
+      <span class="separator">/</span>
+      <span class="current">Mortgage Refinance Calculator</span>
     </div>
   </nav>
 
-  <!-- NAVIGATION RIBBON -->
+  <!-- Navigation Ribbon -->
   <div class="navigation-ribbon">
     <div class="navigation-ribbon-container">
       <a href="/finance/mortgage/" class="active"><i class="fas fa-home"></i>Mortgage</a>
@@ -290,116 +112,116 @@
       <a href="/finance/savings/"><i class="fas fa-piggy-bank"></i>Savings</a>
       <a href="/finance/cryptocurrency/"><i class="fas fa-coins"></i>Cryptocurrency</a>
       <a href="/finance/tax/"><i class="fas fa-receipt"></i>Tax</a>
-      <a href="/finance/mortgage/affordability-calculator/">
-        <i class="fas fa-calculator"></i>Affordability
-      </a>
-      <a href="/finance/mortgage/refinance-calculator/" class="current">
-        <i class="fas fa-file-invoice"></i>Refinance
-      </a>
+      <a href="/finance/mortgage/affordability-calculator/"><i class="fas fa-calculator"></i>Affordability</a>
+      <a href="/finance/mortgage/refinance-calculator/" class="current"><i class="fas fa-file-invoice"></i>Refinance</a>
     </div>
   </div>
 
-  <!-- MAIN CONTENT -->
+  <!-- Main Content -->
   <main id="main-content" class="main-content">
-    <div class="container page-container">
-      <article class="calculator-page-content">
-        <h1 class="page-title">Mortgage Refinance Calculator: Is Refinancing Worth It?</h1>
+    <div class="content-container">
+      <h1 class="page-title">Mortgage Refinance Calculator: Is Refinancing Worth It?</h1>
+      <section class="calculator-description-section content-section">
+        <p>Thinking about refinancing your mortgage? Our Mortgage Refinance Calculator can help you determine if it’s the right financial move. By comparing your current loan with potential new loan options, you can see potential savings, understand your break-even point, and make an informed decision.</p>
+      </section>
 
-        <section class="calculator-description-section content-section">
-          <p>Thinking about refinancing your mortgage? Our Mortgage Refinance Calculator can
-          help you determine if it’s the right financial move. By comparing your current loan
-          with potential new loan options, you can see potential savings, understand your
-          break-even point, and make an informed decision.</p>
-        </section>
-
-        <!-- ====== FORM ====== -->
-        <section id="calculator-section" class="calculator-interface content-section card">
-          <h2 class="section-title">Compare Your Refinance Options</h2>
-          <form id="refinanceForm" class="input-grid calculator-form">
-            <div class="form-group">
-              <label for="originalLoanAmount">Original Loan Amount:</label>
-              <input type="number" id="originalLoanAmount" placeholder="e.g., 250000" />
-            </div>
-            <div class="form-group">
-              <label for="currentBalance">Current Balance:</label>
-              <input type="number" id="currentBalance" placeholder="e.g., 220000" />
-            </div>
-            <div class="form-group">
-              <label for="originalLoanTerm">Original Loan Term (Years):</label>
-              <input type="number" id="originalLoanTerm" placeholder="e.g., 30" />
-            </div>
-            <div class="form-group">
-              <label for="remainingTerm">Time Remaining on Loan (Years):</label>
-              <input type="number" id="remainingTerm" placeholder="e.g., 25" />
-            </div>
-            <div class="form-group">
-              <label for="currentInterestRate">Current Interest Rate (%):</label>
-              <input type="number" id="currentInterestRate" step="0.01" placeholder="e.g., 3.5" />
-            </div>
-            <div class="form-group">
-              <label for="newInterestRate">New Interest Rate (%):</label>
-              <input type="number" id="newInterestRate" step="0.01" placeholder="e.g., 2.75" />
-            </div>
-            <div class="form-group">
-              <label for="newLoanTerm">New Loan Term (Years):</label>
-              <select id="newLoanTerm">
-                <option value="30">30 Years</option>
-                <option value="15">15 Years</option>
-                <option value="10">10 Years</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="closingCosts">Closing Costs ($):</label>
-              <input type="number" id="closingCosts" placeholder="e.g., 3000" />
-            </div>
-            <div class="form-group">
-              <label for="extraPayment">Extra Monthly Payment (Optional):</label>
-              <input type="number" id="extraPayment" placeholder="e.g., 0" />
-            </div>
-
-            <div class="form-actions">
-              <button type="button" id="calculateRefinanceBtn" class="btn btn-primary">
-                Calculate Refinance
-              </button>
-              <button type="reset" class="btn btn-secondary">
-                Reset
-              </button>
-            </div>
-          </form>
-        </section>
-
-        <!-- ====== RESULTS ====== -->
-        <section id="results-section" class="results-display content-section card" style="display:none;">
-          <h2 class="section-title">Your Refinance Summary</h2>
-          <div class="results-grid">
-            <div class="result-item">
-              <p class="result-label">New Monthly Payment:</p>
-              <p class="result-value" id="newMonthlyPayment">--</p>
-            </div>
-            <div class="result-item">
-              <p class="result-label">Monthly Savings:</p>
-              <p class="result-value" id="monthlySavings">--</p>
-            </div>
-            <div class="result-item">
-              <p class="result-label">Break-Even Point (Months):</p>
-              <p class="result-value" id="breakEvenMonths">--</p>
-            </div>
-            <div class="result-item">
-              <p class="result-label">Total Interest Savings:</p>
-              <p class="result-value" id="totalInterestSavings">--</p>
-            </div>
+      <!-- Calculator Section -->
+      <section id="calculator-section" class="calculator-interface content-section card">
+        <h2 class="section-title">Compare Your Refinance Options</h2>
+        <form id="refinanceForm" class="input-grid calculator-form">
+          <div class="form-group">
+            <label for="originalLoanAmount">Original Loan Amount:</label>
+            <input type="number" id="originalLoanAmount" placeholder="e.g., 250000" />
           </div>
-          <p class="disclaimer">
-            This calculation is an estimate only. Consult with a mortgage advisor for exact figures.
-          </p>
-        </section>
+          <div class="form-group">
+            <label for="currentBalance">Current Balance:</label>
+            <input type="number" id="currentBalance" placeholder="e.g., 220000" />
+          </div>
+          <div class="form-group">
+            <label for="originalLoanTerm">Original Loan Term (Years):</label>
+            <input type="number" id="originalLoanTerm" placeholder="e.g., 30" />
+          </div>
+          <div class="form-group">
+            <label for="remainingTerm">Time Remaining on Loan (Years):</label>
+            <input type="number" id="remainingTerm" placeholder="e.g., 25" />
+          </div>
+          <div class="form-group">
+            <label for="currentInterestRate">Current Interest Rate (%):</label>
+            <input type="number" id="currentInterestRate" step="0.01" placeholder="e.g., 3.5" />
+          </div>
+          <div class="form-group">
+            <label for="newInterestRate">New Interest Rate (%):</label>
+            <input type="number" id="newInterestRate" step="0.01" placeholder="e.g., 2.75" />
+          </div>
+          <div class="form-group">
+            <label for="newLoanTerm">New Loan Term (Years):</label>
+            <select id="newLoanTerm">
+              <option value="30">30 Years</option>
+              <option value="15">15 Years</option>
+              <option value="10">10 Years</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="closingCosts">Closing Costs ($):</label>
+            <input type="number" id="closingCosts" placeholder="e.g., 3000" />
+          </div>
+          <div class="form-group">
+            <label for="extraPayment">Extra Monthly Payment (Optional):</label>
+            <input type="number" id="extraPayment" placeholder="e.g., 0" />
+          </div>
 
-        <!-- (You can add your explanatory sections / FAQs below, exactly as on your other pages.) -->
-      </article>
+          <div class="form-actions">
+            <button type="button" id="calculateRefinanceBtn" class="btn btn-primary">
+              Calculate Refinance
+            </button>
+            <button type="reset" class="btn btn-secondary">
+              Reset
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Results Section -->
+      <section id="results-section" class="results-display content-section card" style="display:none;">
+        <h2 class="section-title">Your Refinance Summary</h2>
+        <div class="results-grid">
+          <div class="result-item">
+            <p class="result-label">New Monthly Payment:</p>
+            <p class="result-value" id="newMonthlyPayment">--</p>
+          </div>
+          <div class="result-item">
+            <p class="result-label">Monthly Savings:</p>
+            <p class="result-value" id="monthlySavings">--</p>
+          </div>
+          <div class="result-item">
+            <p class="result-label">Break-Even Point (Months):</p>
+            <p class="result-value" id="breakEvenMonths">--</p>
+          </div>
+          <div class="result-item">
+            <p class="result-label">Total Interest Savings:</p>
+            <p class="result-value" id="totalInterestSavings">--</p>
+          </div>
+        </div>
+        <p class="disclaimer">
+          This calculation is an estimate only. Consult with a mortgage advisor for exact figures.
+        </p>
+      </section>
+
+      <!-- FAQs Section -->
+      <section class="faq-section content-section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <button class="accordion" aria-expanded="false">When is it worth refinancing a mortgage?</button>
+          <div class="panel">
+            <p>Refinancing your mortgage is generally considered worthwhile if you can secure a significantly lower interest rate or reduce your monthly payment.</p>
+          </div>
+        </div>
+        <!-- Add more FAQs here -->
+      </section>
     </div>
   </main>
 
-  <!-- SITE FOOTER -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-columns">
@@ -432,10 +254,9 @@
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
-  <script src="/js/main.js"                         defer></script>
-  <script src="/js/dark-mode.js"                    defer></script>
-  <script src="/js/faq-accordion.js"                defer></script>
-  <script src="/finance/mortgage/refinance-calculator/js/mortgage-refinance-calculator.js" defer></script>
+  <!-- Scripts -->
+  <script src="/js/main.js" defer></script>
+  <script src="/js/dark-mode.js" defer></script>
+  <script src="/finance/mortgage/refinance-calculator/js/refinance-calculator.js" defer></script>
 </body>
 </html>
