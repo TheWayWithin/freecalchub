@@ -1,0 +1,193 @@
+/* Mortgage Payoff Calculator Specific Styles */
+
+#payoffCalculatorForm fieldset {
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+#payoffCalculatorForm legend {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0 10px;
+    color: var(--primary-color, #007bff);
+}
+
+#payoffCalculatorForm .form-group {
+    margin-bottom: 15px;
+}
+
+#payoffCalculatorForm label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color-dark, #333);
+    font-weight: 500;
+}
+
+#payoffCalculatorForm input[type="number"],
+#payoffCalculatorForm input[type="month"],
+#payoffCalculatorForm select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--input-bg-color, #fff);
+    color: var(--input-text-color, #333);
+    font-size: 1em;
+}
+
+#payoffCalculatorForm input[type="number"]:focus,
+#payoffCalculatorForm input[type="month"]:focus,
+#payoffCalculatorForm select:focus {
+    border-color: var(--primary-color, #007bff);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-color-light-transparent, rgba(0,123,255,0.25));
+}
+
+#payoffCalculatorForm .form-group small {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.85em;
+    color: var(--text-color-light, #666);
+}
+
+
+/* Results Section Styling */
+.results-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--card-bg-color, #f9f9f9);
+    border: 1px solid var(--border-color, #eee);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.results-title {
+    color: var(--primary-color, #007bff);
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.result-item {
+    background-color: var(--background-color, #fff);
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color-light, #e0e0e0);
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.result-item h4 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: var(--secondary-color, #6c757d);
+    font-size: 1.1em;
+}
+
+.result-item p {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--text-color-prominent, #333);
+    margin-bottom: 0;
+}
+
+.result-item p.text-success {
+    color: var(--success-color, #28a745);
+}
+
+/* Amortization Table Styling */
+#amortizationTableContainer .table-responsive {
+    max-height: 500px;
+    overflow-y: auto; /* Vertical scroll */
+    overflow-x: auto; /* Horizontal scroll for wider tables */
+    border: 1px solid var(--border-color-light, #e0e0e0);
+    border-radius: 4px;
+}
+
+#amortizationTableContainer table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders are clean */
+    font-size: 0.9em;
+}
+
+#amortizationTableContainer th,
+#amortizationTableContainer td {
+    padding: 8px 10px;
+    text-align: right;
+    border-bottom: 1px solid var(--border-color-light, #e0e0e0);
+    white-space: nowrap; /* Prevent wrapping in cells */
+}
+#amortizationTableContainer th:first-child, /* Payment # */
+#amortizationTableContainer td:first-child,
+#amortizationTableContainer th:nth-child(2), /* Date */
+#amortizationTableContainer td:nth-child(2) {
+    text-align: left;
+}
+
+
+#amortizationTableContainer thead th {
+    background-color: var(--table-header-bg, #f0f0f0);
+    color: var(--table-header-text, #333);
+    font-weight: 600;
+    position: sticky; /* Make header sticky within the scrollable container */
+    top: 0;
+    z-index: 1;
+}
+
+
+/* Chart Placeholders Basic Styling */
+.chart-pair-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+#loanBalanceChartPlaceholder,
+#interestPrincipalChartPlaceholder {
+    flex: 1;
+    min-width: 300px;
+    border: 1px dashed var(--border-color, #ccc);
+    padding: 20px;
+    text-align: center;
+    background-color: var(--background-color, #fff);
+    color: var(--text-color-light, #777);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px; /* Ensure placeholder has some height */
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .results-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    #payoffCalculatorForm fieldset {
+        padding: 15px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%; /* Make buttons full width on small screens */
+    }
+    .chart-pair-container {
+        flex-direction: column;
+    }
+}
