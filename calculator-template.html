@@ -3,39 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{CALCULATOR_TITLE}} | CalcHub</title>
-    <meta name="description" content="{{CALCULATOR_DESCRIPTION}}">
-    
-    <!-- Global styles -->
+    <title>[Calculator Name] | FreecalcHub</title>
+    <meta name="description" content="[Brief description of the calculator and its purpose]">
+
     <link rel="stylesheet" href="/css/styles.css">
-    <!-- Dark mode styles -->
     <link rel="stylesheet" href="/css/dark-mode.css">
-    <!-- Dark mode button styles -->
     <link rel="stylesheet" href="/css/dark-mode-button.css">
-    <!-- General calculator styles -->
-    <link rel="stylesheet" href="/css/calculator.css">
-    <!-- Calculator Template Grid Layout -->
-    <link rel="stylesheet" href="/css/calculator-template-grid.css">
-    <!-- {{OPTIONAL_CATEGORY_CSS}} -->
-    <!-- {{OPTIONAL_CALCULATOR_SPECIFIC_CSS}} -->
+    <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
+    <link rel="stylesheet" href="/css/breadcrumb-styles.css">
+    <link rel="stylesheet" href="/css/navigation-ribbon.css">
     
-    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="/[path-to-your-calculator-folder]/css/[calculator-name].css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <!-- Global script (for dark mode, mobile menu) -->
-    <script src="/js/main.js" defer></script>
-    <!-- {{OPTIONAL_CALCULATOR_SPECIFIC_JS}} -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-R1QHNSSWTC');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "[Calculator Name]",
+          "applicationCategory": "[ApplicationCategory, e.g., FinanceApplication]",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "[Brief description of the calculator and its purpose]",
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "[e.g., 4.5]", "ratingCount": "[e.g., 100]" } // Optional
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question", "name": "[Sample Question 1?]",
+              "acceptedAnswer": { "@type": "Answer", "text": "[Sample Answer 1]" }
+            }
+            // Add more questions as needed
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Use the [Calculator Name]",
+          "description": "Step-by-step guide to using the [Calculator Name].",
+          "step": [
+            { "@type": "HowToStep", "name": "[Step 1 Title]", "text": "[Description of Step 1]" }
+            // Add more steps as needed
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" },
+            { "@type": "ListItem", "position": 2, "name": "[Category Name]", "item": "https://www.freecalchub.com/[category-path]/" }, // Ensure this is an absolute URL
+            { "@type": "ListItem", "position": 3, "name": "[Calculator Name]", "item": "https://www.freecalchub.com/[full-path-to-calculator]/" } // Ensure this is an absolute URL
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "name": "[Calculator Name] | FreecalcHub",
+          "description": "[Brief description of the calculator and its purpose]",
+          "url": "https://www.freecalchub.com/[full-path-to-calculator]/" // Ensure this is an absolute URL
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to content</a>
-    
-    <!-- Header -->
     <header class="site-header">
-        <div class="header-container">
-            <div class="logo-container">
-                <a href="/" class="logo">
-                    <img src="/images/logo.svg" alt="CalcHub Logo">
-                </a>
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="/"><img src="/images/logo.svg" alt="FreecalcHub Logo"></a>
             </div>
             <nav class="main-nav">
                 <ul>
@@ -49,7 +93,7 @@
                     <li><a href="/blog/">Blog</a></li>
                 </ul>
             </nav>
-            <div class="header-controls">
+            <div class="header-controls"> {/* Corrected class name */}
                 <button id="dark-mode-toggle" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
                     <i class="fas fa-sun"></i>
@@ -59,129 +103,139 @@
                 </button>
             </div>
         </div>
+        <div class="mobile-menu" id="mobile-menu-panel">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/finance/">Finance</a></li>
+                <li><a href="/math/">Math</a></li>
+                <li><a href="/health/">Health</a></li>
+                <li><a href="/conversions/">Conversions</a></li>
+                <li><a href="/date-time/">Date & Time</a></li>
+                <li><a href="/business/">Business</a></li>
+                <li><a href="/lifestyle/">Lifestyle</a></li>
+                <li><a href="/blog/">Blog</a></li>
+            </ul>
+        </div>
     </header>
-    
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu">
-        <button class="close-menu" aria-label="Close menu">×</button>
-        <ul>
-            <li><a href="/finance/">Finance</a></li>
-            <li><a href="/math/">Math</a></li>
-            <li><a href="/health/">Health</a></li>
-            <li><a href="/conversions/">Conversions</a></li>
-            <li><a href="/date-time/">Date & Time</a></li>
-            <li><a href="/business/">Business</a></li>
-            <li><a href="/lifestyle/">Lifestyle</a></li>
-            <li><a href="/blog/">Blog</a></li>
-        </ul>
-    </div>
-    
-    <!-- Breadcrumbs -->
-    <div class="breadcrumbs">
-        <div class="breadcrumbs-container">
-            <a href="/">Home</a>
-            <span class="separator">/</span>
-            <a href="{{CATEGORY_URL}}">{{CATEGORY_NAME}}</a>
-            <!-- {{OPTIONAL_SUBCATEGORY_BREADCRUMB}} -->
-            <span class="separator">/</span>
-            <span class="current">{{CALCULATOR_NAME}}</span>
+
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/[category-path]/">[Category Name]</a></li>
+                <li><span aria-current="page">[Calculator Name]</span></li>
+            </ol>
         </div>
-    </div>
-    
-    <!-- Navigation Ribbon -->
-    <div class="navigation-ribbon">
-        <div class="navigation-ribbon-container">
-            <!-- {{CATEGORY_NAVIGATION_LINKS}} -->
-            <!-- Example: <a href="/finance/mortgage/"><i class="fas fa-home"></i>Mortgage</a> -->
-        </div>
-    </div>
-    
-    <!-- Main Content -->
-    <main id="main-content" class="main-content">
-        <div class="content-container">
-            <h1>{{CALCULATOR_NAME}}</h1>
-            
-            <p class="intro-text">
-                {{CALCULATOR_INTRO_TEXT}}
-            </p>
-            
-            <div class="calculator-container">
-                <!-- Calculator Form using CSS Grid -->
-                <form id="{{CALCULATOR_ID}}-form" class="calculator-form calculator-grid-container">
-                    
-                    <!-- Calculator-specific form inputs go here -->
-                    <!-- Example Grid Item: -->
-                    <!-- 
-                    <div class="calculator-grid-item">
-                        <label for="input_id">Input Label</label>
-                        <div class="calculator-input-group">
-                            <span class="input-prefix">$</span> 
-                            <input type="text" id="input_id" name="input_name" class="form-control" value="default">
-                            <span class="input-suffix">%</span> 
+    </nav>
+
+    <main class="container page-container">
+        <article class="calculator-page-content">
+            <h1 class="page-title">[Calculator Name]</h1>
+
+            <section class="calculator-description-section content-section">
+                <p>[Detailed introduction to what the calculator does, who it's for, and the problems it solves.]</p>
+            </section>
+
+            <section id="calculator-section" class="calculator-interface content-section card">
+                <h2 class="section-title">[Calculator Interface Title, e.g., Calculate Your Results]</h2>
+                <form id="calculatorForm" class="input-grid calculator-form">
+                    <fieldset>
+                        <legend>[Input Group 1 Legend]</legend>
+                        <div class="form-group">
+                            <label for="inputField1">[Input Field 1 Label]:</label>
+                            <input type="[text/number/select]" id="inputField1" placeholder="[e.g., Enter value]">
                         </div>
-                    </div>
-                    -->
+                        </fieldset>
                     
-                    <!-- {{CALCULATOR_FORM_INPUTS}} -->
-                    
-                    <!-- Buttons (span full width) -->
-                    <div class="calculator-button-container">
-                        <button type="submit" id="calculate-button" class="btn-primary">Calculate</button>
-                        <button type="reset" class="btn-secondary">Reset</button>
+                    <div class="form-actions">
+                        <button type="button" id="calculateButton" class="btn btn-primary">Calculate</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
                     </div>
                 </form>
-                
-                <!-- Results will be dynamically inserted here -->
-                <div id="results-container" class="calculator-results"></div>
-            </div>
-            
-            <!-- Calculator-specific informational content -->
-            <section class="calculator-info">
-                <!-- {{CALCULATOR_INFO_CONTENT}} -->
+
+                <div id="resultsSection" class="results-section" style="display:none;">
+                    <h3 class="results-title">[Results Summary Title]</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <h4>[Result Metric 1 Label]</h4>
+                            <p id="resultMetric1">[Default Value/Placeholder]</p>
+                        </div>
+                        </div>
+                    </div>
             </section>
-        </div>
+
+            <section class="how-to-use-section content-section">
+                <h2 class="section-title">How to Use This Calculator</h2>
+                <ol>
+                    <li><strong>[Step 1]:</strong> [Description of step 1]</li>
+                    </ol>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">[Educational Topic 1 Title]</h2>
+                <p>[Content for educational topic 1.]</p>
+            </section>
+
+            <section class="faq-section content-section">
+                <h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
+                <div class="faq-item">
+                    <h3>[Question 1?]</h3>
+                    <p>[Answer 1]</p>
+                </div>
+                </section>
+
+        </article>
     </main>
-    
-    <!-- Footer -->
+
     <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>CalcHub</h3>
-                <p>Free online calculators for all your needs.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>FreecalcHub</h4>
+                    <p>Your one-stop destination for a wide variety of free online calculators. Simplifying complex calculations for everyday needs.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/privacy/">Privacy Policy</a></li>
+                        <li><a href="/terms/">Terms of Service</a></li>
+                        <li><a href="/sitemap.xml">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="/finance/">Finance Calculators</a></li>
+                        <li><a href="/math/">Math Calculators</a></li>
+                        <li><a href="/health/">Health Calculators</a></li>
+                        <li><a href="/conversions/">Conversion Tools</a></li>
+                        <li><a href="/date-time/">Date & Time Tools</a></li>
+                        <li><a href="/business/">Business</a></li>
+                        <li><a href="/lifestyle/">Lifestyle</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <ul class="social-links">
+                        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-column">
-                <h3>Categories</h3>
-                <ul>
-                    <li><a href="/finance/">Finance</a></li>
-                    <li><a href="/math/">Math</a></li>
-                    <li><a href="/health/">Health</a></li>
-                    <li><a href="/conversions/">Conversions</a></li>
-                    <li><a href="/date-time/">Date & Time</a></li>
-                    <li><a href="/business/">Business</a></li>
-                    <li><a href="/lifestyle/">Lifestyle</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All Rights Reserved.</p>
             </div>
-            <div class="footer-column">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="/blog/">Blog</a></li>
-                    <li><a href="/about/">About Us</a></li>
-                    <li><a href="/contact/">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Legal</h3>
-                <ul>
-                    <li><a href="/privacy-policy/">Privacy Policy</a></li>
-                    <li><a href="/terms-of-service/">Terms of Service</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 CalcHub. All rights reserved.</p>
         </div>
     </footer>
 
+    <script src="/js/main.js" defer></script>
+    <script src="/js/dark-mode.js" defer></script>
+    
+    <script src="/[path-to-your-calculator-folder]/js/[calculator-name].js" defer></script>
 </body>
 </html>
-
