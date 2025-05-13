@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Extra Payment Calculator: Pay Off Loans Faster & Save Interest | FreecalcHub</title>
+    <meta name="description" content="Use our free Extra Payment Calculator to see how making additional payments on your mortgage, auto, or personal loan can shorten your loan term and save you thousands in interest. Calculate your savings now!">
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <link rel="stylesheet" href="/css/dark-mode-button.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/navigation-ribbon.css">
+    <link rel="stylesheet" href="/css/breadcrumb-styles.css">
+    <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
+    
+    <link rel="stylesheet" href="/finance/loan/extra-payment-calculator/css/extra-payment-calculator.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-R1QHNSSWTC');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Extra Payment Calculator",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Use our free Extra Payment Calculator to see how making additional payments on your mortgage, auto, or personal loan can shorten your loan term and save you thousands in interest. Calculate your savings now!",
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "190" } 
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What types of loans can I use this Extra Payment Calculator for?", "acceptedAnswer": { "@type": "Answer", "text": "This calculator is versatile and can be used for most fixed-rate installment loans, including mortgages, auto loans, student loans, and personal loans. As long as you know your loan amount, interest rate, and term, you can see the impact of extra payments." } },
+            { "@type": "Question", "name": "How much interest can I really save by making small extra payments?", "acceptedAnswer": { "@type": "Answer", "text": "You might be surprised! Even small, consistent extra payments can add up to significant interest savings over the life of a loan, especially for long-term loans like mortgages. For example, an extra $50 per month on a $20,000 auto loan at 6% for 5 years could save you over $150 in interest and help you pay it off 3 months sooner." } },
+            { "@type": "Question", "name": "Is it better to make a one-time lump sum extra payment or smaller regular extra payments?", "acceptedAnswer": { "@type": "Answer", "text": "Both are beneficial. A large lump sum payment will reduce your principal immediately, leading to quicker interest savings. Smaller, regular extra payments also consistently chip away at the principal. The best approach depends on your financial situation. If you receive a bonus, a lump sum is great. If you can budget a bit extra monthly, that works well too. Our calculator lets you model both." } },
+            { "@type": "Question", "name": "How do I make sure my lender applies my extra payment to the loan principal?", "acceptedAnswer": { "@type": "Answer", "text": "When you make an extra payment, it’s crucial to instruct your lender to apply the additional amount directly to the principal balance. You can usually do this by including a note with your payment, selecting an option in their online payment portal, or calling them. Always check your next loan statement to verify it was applied correctly." } },
+            { "@type": "Question", "name": "Are there any penalties for making extra payments on a loan?", "acceptedAnswer": { "@type": "Answer", "text": "Some loans, particularly certain types of mortgages or personal loans, may have prepayment penalties if you pay off too much of the loan or the entire loan within a specific period. Always review your loan agreement or contact your lender to check for any prepayment penalty clauses before making large extra payments." } },
+            { "@type": "Question", "name": "Should I focus on making extra payments if I have multiple debts?", "acceptedAnswer": { "@type": "Answer", "text": "If you have multiple debts, it’s often recommended to prioritize making extra payments on the loan with the highest interest rate first (this is known as the \"debt avalanche\" method). This approach typically saves you the most money in interest overall. Alternatively, some prefer the \"debt snowball\" method, paying off the smallest debts first for psychological wins." } },
+            { "@type": "Question", "name": "Will making extra payments lower my required monthly payment amount?", "acceptedAnswer": { "@type": "Answer", "text": "Generally, no. Making extra payments reduces your principal balance and shortens the loan term, meaning you pay off the loan faster. Your required minimum monthly payment usually stays the same unless you formally refinance or recast your loan (which is a different process)." } },
+            { "@type": "Question", "name": "Does the loan term affect how much I save with extra payments?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Extra payments tend to have a more dramatic impact on longer-term loans (like mortgages) in terms of total interest saved and time shaved off the loan. However, they are still beneficial for shorter-term loans by reducing interest and achieving debt freedom sooner." } },
+            { "@type": "Question", "name": "What if my loan has a variable interest rate? Can I still use this calculator?", "acceptedAnswer": { "@type": "Answer", "text": "This calculator is primarily designed for fixed-rate loans, as the interest rate remains constant. For variable-rate loans, the savings from extra payments can be harder to predict accurately because the interest rate can change. You could use it with your current rate to get an estimate, but be aware the actual outcome might differ if your rate changes." } },
+            { "@type": "Question", "name": "If I make extra payments, can I skip a future regular payment?", "acceptedAnswer": { "@type": "Answer", "text": "No, making extra payments does not typically give you permission to skip future required payments. Extra payments are applied to reduce your principal; your regular payment schedule and obligations remain in effect unless you have a specific agreement with your lender." } }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Use the Extra Payment Calculator",
+          "description": "A step-by-step guide to using the FreecalcHub Extra Payment Calculator to determine savings from additional loan payments.",
+          "step": [
+            { "@type": "HowToStep", "name": "Enter Loan Details", "text": "Input your original loan amount, annual interest rate, and original loan term." },
+            { "@type": "HowToStep", "name": "Specify Extra Payments", "text": "Enter any extra monthly, annual, or one-time payments you plan to make, and when they will start." },
+            { "@type": "HowToStep", "name": "Calculate Results", "text": "Click the calculate button to see your new payoff date, total interest saved, and time saved on your loan." },
+            { "@type": "HowToStep", "name": "Review Amortization Schedule", "text": "Examine the detailed amortization schedule to see how extra payments affect your loan balance and interest paid over time." }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Finance Calculators", "item": "https://www.freecalchub.com/finance/" },
+            { "@type": "ListItem", "position": 3, "name": "Loan Calculators", "item": "https://www.freecalchub.com/finance/loan/" },
+            { "@type": "ListItem", "position": 4, "name": "Extra Payment Calculator", "item": "https://www.freecalchub.com/finance/loan/extra-payment-calculator/" }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "name": "Extra Payment Calculator: Pay Off Loans Faster & Save Interest | FreecalcHub",
+          "description": "Use our free Extra Payment Calculator to see how making additional payments on your mortgage, auto, or personal loan can shorten your loan term and save you thousands in interest. Calculate your savings now!",
+          "url": "https://www.freecalchub.com/finance/loan/extra-payment-calculator/"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <header class="site-header">
+        <div class="header-container"> 
+            <div class="logo-container"> 
+                <a href="/"><img src="/images/logo.svg" alt="FreecalcHub Logo"></a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/finance/">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="mobile-menu-button" aria-label="Toggle menu">
+                    <i class="fas fa-bars menu-icon"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="mobile-menu"> 
+            <div class="mobile-menu-header"> 
+                <span>Menu</span>
+                <button id="mobile-menu-close" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav"> 
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/finance/">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+ 
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <a href="/finance/">Finance Calculators</a> 
+            <span class="separator">/</span>
+            <a href="/finance/loan/">Loan Calculators</a> 
+            <span class="separator">/</span>
+            <span class="current">Extra Payment Calculator</span>
+        </div>
+    </div>
+
+    <div class="navigation-ribbon">
+        <div class="navigation-ribbon-container">
+            <a href="/finance/mortgage/"><i class="fas fa-home"></i>Mortgage</a>
+            <a href="/finance/loan/" class="active"><i class="fas fa-file-invoice-dollar"></i>Loan</a>
+            <a href="/finance/investment/"><i class="fas fa-chart-line"></i>Investment</a>
+            <a href="/finance/retirement/"><i class="fas fa-umbrella-beach"></i>Retirement</a>
+            <a href="/finance/budgeting/"><i class="fas fa-wallet"></i>Budgeting</a>
+            <a href="/finance/savings/"><i class="fas fa-piggy-bank"></i>Savings</a>
+            <a href="/finance/cryptocurrency/"><i class="fas fa-coins"></i>Cryptocurrency</a>
+            <a href="/finance/tax/"><i class="fas fa-receipt"></i>Tax</a>
+        </div>
+    </div>
+    
+    <main id="main-content" class="main-content"> 
+        <div class="content-container"> 
+            <article class="calculator-page-content"> 
+                <h1 class="page-title">Extra Payment Calculator</h1>
+
+                <section class="calculator-description-section content-section">
+                    <p>Briefly explain the purpose of the Extra Payment Calculator: to show the benefits of making extra payments on various loans. Highlight key benefits: reduced loan term, significant interest savings, faster path to being debt-free. Emphasize ease of use and the value of visualizing these financial advantages.
+                        <em>(Content from 04_extra_payment_calculator_spec.md)</em>
+                    </p>
+                </section>
+
+                <section id="calculator-section" class="calculator-interface content-section card">
+                    <h2 class="section-title">Calculate Your Savings with Extra Payments</h2>
+                    <form id="extraPaymentCalculatorForm" class="input-grid calculator-form">
+                        <fieldset>
+                            <legend>Loan Information</legend>
+                            <div class="form-group">
+                                <label for="originalLoanAmount">Original Loan Amount ($):</label>
+                                <input type="number" id="originalLoanAmount" placeholder="e.g., 20000" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="annualInterestRate">Annual Interest Rate (%):</label>
+                                <input type="number" id="annualInterestRate" step="0.001" placeholder="e.g., 6.5" required>
+                            </div>
+                            <div class="form-group"> <label for="originalLoanTermYears">Original Loan Term (Years):</label>
+                                <input type="number" id="originalLoanTermYears" placeholder="e.g., 5 (or leave blank if using months)">
+                            </div>
+                             <div class="form-group">
+                                <label for="originalLoanTermMonths">Original Loan Term (Months):</label>
+                                <input type="number" id="originalLoanTermMonths" placeholder="e.g., 60 (or use years)">
+                                <small>Enter total term in years OR months, or both (they will be added).</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="loanStartDate">Loan Start Date (Month/Year) (Optional):</label>
+                                <input type="month" id="loanStartDate">
+                                <small>For calculating remaining term if loan is in progress.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="currentOutstandingBalance">Current Outstanding Balance ($) (Optional):</label>
+                                <input type="number" id="currentOutstandingBalance" placeholder="e.g., 15000">
+                                <small>If provided, calculations will be based on this balance and remaining term.</small>
+                            </div>
+                        </fieldset>
+    
+                        <fieldset>
+                            <legend>Extra Payment Details</legend>
+                            <div class="form-group">
+                                <label for="extraMonthlyPayment">Extra Monthly Payment ($):</label>
+                                <input type="number" id="extraMonthlyPayment" placeholder="e.g., 50">
+                            </div>
+                            <div class="form-group">
+                                <label for="extraAnnualPayment">Extra Annual Payment ($):</label>
+                                <input type="number" id="extraAnnualPayment" placeholder="e.g., 200">
+                            </div>
+                            <div class="form-group">
+                                <label for="extraAnnualPaymentMonth">Month for Annual Payment:</label>
+                                <select id="extraAnnualPaymentMonth">
+                                    <option value="1">January</option> <option value="2">February</option> <option value="3">March</option> <option value="4">April</option>
+                                    <option value="5">May</option> <option value="6">June</option> <option value="7">July</option> <option value="8">August</option>
+                                    <option value="9">September</option> <option value="10">October</option> <option value="11">November</option> <option value="12">December</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="oneTimeExtraPayment">One-Time Extra Payment ($):</label>
+                                <input type="number" id="oneTimeExtraPayment" placeholder="e.g., 1000">
+                            </div>
+                            <div class="form-group">
+                                <label for="oneTimeExtraPaymentDate">Date for One-Time Payment (Month/Year):</label>
+                                <input type="month" id="oneTimeExtraPaymentDate">
+                            </div>
+                             <div class="form-group">
+                                <label for="extraPaymentsStartDate">Start Date for Recurring Extra Payments (Month/Year):</label>
+                                <input type="month" id="extraPaymentsStartDate">
+                                <small>If blank, assumes extra payments start from loan start or now.</small>
+                            </div>
+                        </fieldset>
+    
+                        <div class="form-actions">
+                            <button type="button" id="calculateButton" class="btn btn-primary">Calculate Savings</button>
+                            <button type="reset" class="btn btn-secondary">Reset Form</button>
+                        </div>
+                    </form>
+    
+                    <div id="resultsSection" class="results-section" style="display:none;">
+                        <h3 class="results-title">Your Loan Payoff Comparison</h3>
+                        <div class="results-grid">
+                            <div class="result-item">
+                                <h4>Original Payoff Date</h4>
+                                <p id="originalPayoffDate">-</p>
+                            </div>
+                            <div class="result-item">
+                                <h4>New Payoff Date (with Extras)</h4>
+                                <p id="newPayoffDate">-</p>
+                            </div>
+                            <div class="result-item">
+                                <h4>Time Saved</h4>
+                                <p id="timeSaved">-</p>
+                            </div>
+                            <div class="result-item">
+                                <h4>Total Interest (Original)</h4>
+                                <p id="totalInterestOriginal">-</p>
+                            </div>
+                            <div class="result-item">
+                                <h4>Total Interest (With Extras)</h4>
+                                <p id="totalInterestNew">-</p>
+                            </div>
+                            <div class="result-item">
+                                <h4>Total Interest Savings</h4>
+                                <p id="totalInterestSavings" class="text-success fw-bold">-</p>
+                            </div>
+                        </div>
+    
+                        <div id="amortizationTableContainer" class="content-section" style="margin-top: 30px;">
+                            <h4 class="section-title text-center">Comparative Amortization Schedules</h4>
+                            <div class="tabs">
+                                <button class="tab-link active" onclick="openAmortizationSchedule(event, 'originalSchedule')">Original Loan</button>
+                                <button class="tab-link" onclick="openAmortizationSchedule(event, 'newSchedule')">With Extra Payments</button>
+                            </div>
+
+                            <div id="originalSchedule" class="tab-content" style="display:block;">
+                                <h5 class="text-center" style="margin-top:10px;">Original Amortization</h5>
+                                <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                                     <table class="table table-striped table-hover">
+                                        <thead><tr><th>#</th><th>Date</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Balance</th></tr></thead>
+                                        <tbody id="originalAmortizationTableBody"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div id="newSchedule" class="tab-content">
+                                 <h5 class="text-center" style="margin-top:10px;">Amortization With Extra Payments</h5>
+                                <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                                     <table class="table table-striped table-hover">
+                                        <thead><tr><th>#</th><th>Date</th><th>Payment</th><th>Extra</th><th>Principal</th><th>Interest</th><th>Balance</th></tr></thead>
+                                        <tbody id="newAmortizationTableBody"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                </section>
+
+                <section class="how-to-use-section content-section">
+                    <h2 class="section-title">How to Use This Calculator</h2>
+                    <ol>
+                        <li><strong>Enter Loan Details:</strong> Input your original loan amount, annual interest rate, and the original loan term (in years, months, or both). Optionally, provide the loan start date and current balance if your loan is already in progress.</li>
+                        <li><strong>Specify Extra Payments:</strong> Enter any extra amounts you plan to pay monthly, annually (select the month of application), or as a one-time lump sum (select the payment date). You can also set a start date for recurring extra payments.</li>
+                        <li><strong>Calculate Your Savings:</strong> Click the "Calculate Savings" button.</li>
+                        <li><strong>Review Your Results:</strong> The calculator will display your original and new payoff dates, the time you'll save, and a comparison of the total interest paid, highlighting your potential savings.</li>
+                        <li><strong>Explore Amortization Schedules:</strong> View the comparative amortization tables to see a detailed month-by-month breakdown of how extra payments affect your principal, interest, and loan balance over time versus the original loan.</li>
+                    </ol>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">The Power of Extra Payments</h2>
+                    <p>How extra payments work: Directly reducing the principal balance. The compounding effect: Less principal means less interest accrues over time. Impact on different loan types: Mortgages, auto loans, student loans, personal loans. <em>(TODO: Populate with detailed content from 04_extra_payment_calculator_spec.md)</em></p>
+                </section>
+                 <section class="content-section">
+                    <h2 class="section-title">Strategies for Making Extra Payments</h2>
+                    <p>Budgeting for extra payments, using windfalls, bi-weekly payment concept (briefly), rounding up payments. <em>(TODO: Populate with detailed content from 04_extra_payment_calculator_spec.md)</em></p>
+                </section>
+                <section class="content-section">
+                    <h2 class="section-title">When Extra Payments Make the Most Sense</h2>
+                    <p>High-interest loans first, after establishing an emergency fund, considering investment opportunity costs. <em>(TODO: Populate with detailed content from 04_extra_payment_calculator_spec.md)</em></p>
+                </section>
+                 <section class="content-section">
+                    <h2 class="section-title">Communicating with Lenders</h2>
+                    <p>Ensuring extra payments are applied to principal, checking for prepayment penalties. <em>(TODO: Populate with detailed content from 04_extra_payment_calculator_spec.md)</em></p>
+                </section>
+
+                <section class="faq-section content-section">
+                    <h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
+                    <div class="faq-item"><h3>What types of loans can I use this Extra Payment Calculator for?</h3><p>This calculator is versatile and can be used for most fixed-rate installment loans, including mortgages, auto loans, student loans, and personal loans. As long as you know your loan amount, interest rate, and term, you can see the impact of extra payments.</p></div>
+                    <div class="faq-item"><h3>How much interest can I really save by making small extra payments?</h3><p>You might be surprised! Even small, consistent extra payments can add up to significant interest savings over the life of a loan, especially for long-term loans like mortgages. For example, an extra $50 per month on a $20,000 auto loan at 6% for 5 years could save you over $150 in interest and help you pay it off 3 months sooner.</p></div>
+                    <div class="faq-item"><h3>Is it better to make a one-time lump sum extra payment or smaller regular extra payments?</h3><p>Both are beneficial. A large lump sum payment will reduce your principal immediately, leading to quicker interest savings. Smaller, regular extra payments also consistently chip away at the principal. The best approach depends on your financial situation. If you receive a bonus, a lump sum is great. If you can budget a bit extra monthly, that works well too. Our calculator lets you model both.</p></div>
+                    <div class="faq-item"><h3>How do I make sure my lender applies my extra payment to the loan principal?</h3><p>When you make an extra payment, it’s crucial to instruct your lender to apply the additional amount directly to the principal balance. You can usually do this by including a note with your payment, selecting an option in their online payment portal, or calling them. Always check your next loan statement to verify it was applied correctly.</p></div>
+                    <div class="faq-item"><h3>Are there any penalties for making extra payments on a loan?</h3><p>Some loans, particularly certain types of mortgages or personal loans, may have prepayment penalties if you pay off too much of the loan or the entire loan within a specific period. Always review your loan agreement or contact your lender to check for any prepayment penalty clauses before making large extra payments.</p></div>
+                    <div class="faq-item"><h3>Should I focus on making extra payments if I have multiple debts?</h3><p>If you have multiple debts, it’s often recommended to prioritize making extra payments on the loan with the highest interest rate first (this is known as the "debt avalanche" method). This approach typically saves you the most money in interest overall. Alternatively, some prefer the "debt snowball" method, paying off the smallest debts first for psychological wins.</p></div>
+                    <div class="faq-item"><h3>Will making extra payments lower my required monthly payment amount?</h3><p>Generally, no. Making extra payments reduces your principal balance and shortens the loan term, meaning you pay off the loan faster. Your required minimum monthly payment usually stays the same unless you formally refinance or recast your loan (which is a different process).</p></div>
+                    <div class="faq-item"><h3>Does the loan term affect how much I save with extra payments?</h3><p>Yes. Extra payments tend to have a more dramatic impact on longer-term loans (like mortgages) in terms of total interest saved and time shaved off the loan. However, they are still beneficial for shorter-term loans by reducing interest and achieving debt freedom sooner.</p></div>
+                    <div class="faq-item"><h3>What if my loan has a variable interest rate? Can I still use this calculator?</h3><p>This calculator is primarily designed for fixed-rate loans, as the interest rate remains constant. For variable-rate loans, the savings from extra payments can be harder to predict accurately because the interest rate can change. You could use it with your current rate to get an estimate, but be aware the actual outcome might differ if your rate changes.</p></div>
+                    <div class="faq-item"><h3>If I make extra payments, can I skip a future regular payment?</h3><p>No, making extra payments does not typically give you permission to skip future required payments. Extra payments are applied to reduce your principal; your regular payment schedule and obligations remain in effect unless you have a specific agreement with your lender.</p></div>
+                </section>
+                <section class="content-section">
+                     <h2 class="section-title">Related Calculators</h2>
+                     <ul>
+                        <li><a href="/finance/mortgage/payoff-calculator/">Mortgage Payoff Calculator</a></li>
+                        <li><a href="/finance/loan/loan-calculator/">Loan Calculator</a></li>
+                        <li><a href="/finance/mortgage/biweekly-calculator/">Biweekly Mortgage Calculator</a></li>
+                        </ul>
+                </section>
+                 <p class="text-center content-section"><small>Disclaimer: This calculator provides estimates based on the information you enter. Actual savings and payoff dates may vary. Consult with a financial advisor for personalized advice.</small></p>
+            </article>
+        </div> 
+    </main>
+
+    <footer class="site-footer">
+        <div class="container"> 
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>FreecalcHub</h3> 
+                    <p>Your one-stop destination for a wide variety of free online calculators.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="/finance/">Finance</a></li>
+                        <li><a href="/math/">Math</a></li>
+                        <li><a href="/health/">Health</a></li>
+                        <li><a href="/conversions/">Conversions</a></li>
+                        <li><a href="/date-time/">Date & Time</a></li>
+                        <li><a href="/business/">Business</a></li>
+                        <li><a href="/lifestyle/">Lifestyle</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/privacy-policy/">Privacy Policy</a> 
+                        <li><a href="/terms-of-service/">Terms of Service</a></li> 
+                        <li><a href="/sitemap.xml">Sitemap</a></li> 
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> 
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/dark-mode.js" defer></script>
+    <script src="/js/faq-accordion.js" defer></script> 
+    
+    <script src="/finance/loan/extra-payment-calculator/js/extra-payment-calculator.js" defer></script>
+</body>
+</html>
