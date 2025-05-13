@@ -3,25 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loan Calculators & Resources | CalcHub</title>
-    <meta name="description" content="Explore various loan options, understand loan terms, and use our calculators to plan your finances. Covers personal, auto, student loans, and more.">
-    <link rel="canonical" href="/finance/loan/">
-    
-    <!-- Global styles -->
-    <link rel="stylesheet" href="/css/styles.css">
+    <title>Loan Calculators & Resources | FreecalcHub</title> <meta name="description" content="Explore various loan options, understand loan terms, and use our calculators to plan your finances. Covers personal, auto, student loans, and more.">
+    <link rel="canonical" href="https://www.freecalchub.com/finance/loan/"> <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/dark-mode.css">
     <link rel="stylesheet" href="/css/dark-mode-button.css">
     <link rel="stylesheet" href="/css/navigation-ribbon.css">
     <link rel="stylesheet" href="/css/breadcrumb-styles.css">
     <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
     
-    <!-- Specific category styles (can reuse or adapt from mortgage category) -->
-    <link rel="stylesheet" href="/finance/mortgage/css/mortgage-category-layout.css"> <!-- Reusing for now, can be specific if needed -->
+    <link rel="stylesheet" href="/finance/mortgage/css/mortgage-category-layout.css"> 
     
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -29,9 +22,6 @@
       gtag("js", new Date());
       gtag("config", "G-R1QHNSSWTC");
     </script>
-    <!-- End Google Analytics -->
-
-    <!-- Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -39,58 +29,65 @@
         {
           "@type": "CollectionPage",
           "name": "Loan Calculators & Resources",
-          "description": "Find tools and information for various types of loans including personal, auto, and student loans. Calculate payments, understand terms, and plan your borrowing.",
-          "url": "/finance/loan/",
-          "breadcrumb": {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Finance",
-                "item": "/finance/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Loan",
-                "item": "/finance/loan/"
-              }
-            ]
-          }
+          "description": "Find tools and information for various types of loans including personal, auto, and student loans. Calculate payments, understand terms, and plan your borrowing with FreecalcHub.",
+          "url": "https://www.freecalchub.com/finance/loan/",
+          "hasPart": [
+            { "@type": "WebPage", "name": "Loan Calculator", "url": "https://www.freecalchub.com/finance/loan/loan-calculator/" },
+            { "@type": "WebPage", "name": "Extra Payment Calculator", "url": "https://www.freecalchub.com/finance/loan/extra-payment-calculator/" }
+          ]
         },
         {
           "@type": "BreadcrumbList",
           "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Finance",
-              "item": "/finance/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "Loan",
-              "item": "/finance/loan/"
-            }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Finance Calculators", "item": "https://www.freecalchub.com/finance/" },
+            { "@type": "ListItem", "position": 3, "name": "Loan Calculators", "item": "https://www.freecalchub.com/finance/loan/" }
           ]
         }
       ]
     }
     </script>
+    <style>
+        /* Basic styles for calculator grid if not globally available or in linked CSS */
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+            margin-bottom: 30px; /* Added margin for spacing */
+        }
+        .calculator-card {
+            border: 1px solid var(--border-color-light, #e0e0e0);
+            border-radius: 8px;
+            padding: 20px;
+            background-color: var(--card-bg-color, #fff);
+            text-decoration: none;
+            color: inherit;
+            transition: box-shadow 0.3s ease;
+            display: flex; /* For icon and text alignment */
+            flex-direction: column; /* Stack icon and text vertically */
+            align-items: center; /* Center items horizontally */
+            text-align: center; /* Center text */
+        }
+        .calculator-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .calculator-icon {
+            font-size: 2.5em; /* Slightly larger icon */
+            margin-bottom: 15px; /* Space between icon and title */
+            color: var(--primary-color, #007bff);
+        }
+        .calculator-card h3 {
+            margin-top: 0;
+            margin-bottom: 10px; /* Space between title and description */
+            font-size: 1.25em; /* Adjust title size */
+            color: var(--primary-color, #007bff);
+        }
+         .calculator-card p {
+            font-size: 0.95em; /* Adjust description size */
+            line-height: 1.5;
+        }
+    </style>
 
 </head>
 <body>
@@ -100,8 +97,7 @@
         <div class="header-container">
             <div class="logo-container">
                 <a href="/" class="logo">
-                    <img src="/images/logo.svg" alt="CalcHub Logo">
-                </a>
+                    <img src="/images/logo.svg" alt="FreecalcHub Logo"> </a>
             </div>
             
             <nav class="main-nav">
@@ -138,6 +134,7 @@
         </div>
         <nav class="mobile-nav">
             <ul>
+                <li><a href="/">Home</a></li>
                 <li><a href="/finance/" class="active">Finance</a></li>
                 <li><a href="/math/">Math</a></li>
                 <li><a href="/health/">Health</a></li>
@@ -154,10 +151,8 @@
         <div class="breadcrumbs-container">
             <a href="/">Home</a>
             <span class="separator">/</span>
-            <a href="../">Finance</a>
-            <span class="separator">/</span>
-            <span class="current">Loan</span>
-        </div>
+            <a href="/finance/">Finance Calculators</a> <span class="separator">/</span>
+            <span class="current">Loan Calculators</span> </div>
     </div>
     
     <div class="navigation-ribbon">
@@ -187,17 +182,13 @@
                 <h3>Loan Calculator</h3>
                 <p>Estimate monthly payments, total interest, and amortization for various loan types.</p>
             </a>
-            <!-- Add other loan-related calculators here as they are developed -->
-            <!-- Example:
-            <a href="/finance/loan/auto-loan-calculator/" class="calculator-card">
+            <a href="/finance/loan/extra-payment-calculator/" class="calculator-card">
                 <div class="calculator-icon">
-                    <i class="fas fa-car"></i>
-                </div>
-                <h3>Auto Loan Calculator</h3>
-                <p>Calculate payments and costs specific to car loans.</p>
+                    <i class="fas fa-hand-holding-usd"></i> </div>
+                <h3>Extra Payment Calculator</h3>
+                <p>See how making additional payments can shorten your loan term and save interest.</p>
             </a>
-            -->
-        </div>
+            </div>
         
         <section class="category-info enhanced-content">
             <h2>Understanding Different Types of Loans</h2>
@@ -243,48 +234,49 @@
     </main>
     
     <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>CalcHub</h3>
-                <p>Your source for free, accurate, and easy-to-use online calculators.</p>
+        <div class="container"> <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>FreecalcHub</h3> <p>Your source for free, accurate, and easy-to-use online calculators.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                     <ul>
+                        <li><a href="/finance/">Finance</a></li>
+                        <li><a href="/math/">Math</a></li>
+                        <li><a href="/health/">Health</a></li>
+                        <li><a href="/conversions/">Conversions</a></li>
+                        <li><a href="/date-time/">Date & Time</a></li>
+                        <li><a href="/business/">Business</a></li>
+                        <li><a href="/lifestyle/">Lifestyle</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/privacy-policy/">Privacy Policy</a></li> <li><a href="/terms-of-service/">Terms of Service</a></li> <li><a href="/sitemap.xml">Sitemap</a></li> 
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <ul class="social-links">
+                        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="/about/">About Us</a></li>
-                    <li><a href="/blog/">Blog</a></li>
-                    <li><a href="/privacy/">Privacy Policy</a></li>
-                    <li><a href="/terms/">Terms of Service</a></li>
-                    <li><a href="/gdpr/">GDPR</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Categories</h3>
-                <ul>
-                    <li><a href="/finance/">Finance</a></li>
-                    <li><a href="/math/">Math</a></li>
-                    <li><a href="/health/">Health</a></li>
-                    <li><a href="/conversions/">Conversions</a></li>
-                    <li><a href="/date-time/">Date & Time</a></li>
-                    <li><a href="/business/">Business</a></li>
-                    <li><a href="/lifestyle/">Lifestyle</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Follow Us</h3>
-                <!-- Add social media links here if desired -->
-                <p>Stay connected for updates and new calculators.</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 CalcHub. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> </div>
         </div>
     </footer>
 
-    <!-- Global script (for dark mode, mobile menu) -->
     <script src="/js/main.js" defer></script>
     <script src="/js/dark-mode.js" defer></script>
-    <!-- No FAQ accordion on this page, so no faq-accordion.js needed -->
+    <script src="/js/faq-accordion.js" defer></script>
+
 
 </body>
 </html>
