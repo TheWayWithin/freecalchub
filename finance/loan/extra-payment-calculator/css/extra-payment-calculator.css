@@ -1,1 +1,129 @@
-x
+/* Extra Payment Calculator Specific Styles */
+
+#extraPaymentCalculatorForm fieldset {
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+#extraPaymentCalculatorForm legend {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0 10px;
+    color: var(--primary-color, #007bff);
+}
+
+#extraPaymentCalculatorForm .form-group {
+    margin-bottom: 15px;
+}
+
+#extraPaymentCalculatorForm label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color-dark, #333);
+    font-weight: 500;
+}
+
+#extraPaymentCalculatorForm input[type="number"],
+#extraPaymentCalculatorForm input[type="month"],
+#extraPaymentCalculatorForm select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--input-bg-color, #fff);
+    color: var(--input-text-color, #333);
+    font-size: 1em;
+}
+
+#extraPaymentCalculatorForm input[type="number"]:focus,
+#extraPaymentCalculatorForm input[type="month"]:focus,
+#extraPaymentCalculatorForm select:focus {
+    border-color: var(--primary-color, #007bff);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-color-light-transparent, rgba(0,123,255,0.25));
+}
+
+#extraPaymentCalculatorForm .form-group small {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.85em;
+    color: var(--text-color-light, #666);
+}
+
+/* Amortization Table Tabs Styling (similar to biweekly) */
+.tabs {
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color-light, #e0e0e0);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.tab-link {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: 0.3s;
+  font-size: 1em;
+  color: var(--text-color-light, #555);
+  border-bottom: 3px solid transparent;
+}
+
+.tab-link:hover {
+  background-color: var(--background-color-hover, #f1f1f1);
+  color: var(--primary-color, #007bff);
+}
+
+.tab-link.active {
+  color: var(--primary-color, #007bff);
+  border-bottom: 3px solid var(--primary-color, #007bff);
+  font-weight: 600;
+}
+
+.tab-content {
+  display: none;
+  padding: 6px 0px;
+  border-top: none;
+}
+
+#amortizationTableContainer .table-responsive {
+    max-height: 400px;
+    overflow-y: auto; 
+    overflow-x: auto; 
+    border: 1px solid var(--border-color-light, #e0e0e0);
+    border-radius: 4px;
+}
+
+#amortizationTableContainer table {
+    width: 100%;
+    border-collapse: collapse; 
+    font-size: 0.9em;
+}
+
+#amortizationTableContainer th,
+#amortizationTableContainer td {
+    padding: 8px 10px;
+    text-align: right;
+    border-bottom: 1px solid var(--border-color-light, #e0e0e0);
+    white-space: nowrap; 
+}
+#amortizationTableContainer th:nth-child(1), /* Payment # */
+#amortizationTableContainer td:nth-child(1),
+#amortizationTableContainer th:nth-child(2), /* Date */
+#amortizationTableContainer td:nth-child(2) {
+    text-align: left;
+}
+
+#amortizationTableContainer thead th {
+    background-color: var(--table-header-bg, #f0f0f0);
+    color: var(--table-header-text, #333);
+    font-weight: 600;
+    position: sticky; 
+    top: 0;
+    z-index: 1;
+}
+
