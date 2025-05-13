@@ -3,47 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mortgage Calculators | CalcHub</title>
-    <meta name="description" content="Plan your home purchase and understand your mortgage options with these essential calculators.">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Mortgage Calculators | FreecalcHub</title> <meta name="description" content="Plan your home purchase and understand your mortgage options with these essential calculators. Free tools for payment, affordability, refinance, payoff, and biweekly payments.">
+    <link rel="canonical" href="https://www.freecalchub.com/finance/mortgage/"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Global styles -->
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/dark-mode.css">
     <link rel="stylesheet" href="/css/dark-mode-button.css">
-
-    <!-- ← these two must come *before* your page-specific CSS -->
     <link rel="stylesheet" href="/css/navigation-ribbon.css">
     <link rel="stylesheet" href="/css/breadcrumb-styles.css">
-
-    <!-- your CalcHub fixes still OK here, if you need them -->
     <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
     
-    <!-- then your page layout CSS last -->
     <link rel="stylesheet" href="/finance/mortgage/css/mortgage-category-layout.css">
-    <link rel="stylesheet" href="/finance/mortgage/css/page-container-fix.css">
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
+    <link rel="stylesheet" href="/finance/mortgage/css/page-container-fix.css"> <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag("js", new Date());
       gtag("config", "G-R1QHNSSWTC");
     </script>
-    <!-- End Google Analytics -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "name": "Mortgage Calculators",
+          "description": "A collection of free online mortgage calculators to help with payments, affordability, refinancing, early payoff, biweekly payments, and more. Make informed decisions about your home financing with FreecalcHub.",
+          "url": "https://www.freecalchub.com/finance/mortgage/",
+          "hasPart": [
+            { "@type": "WebPage", "name": "Mortgage Calculator", "url": "https://www.freecalchub.com/finance/mortgage/mortgage-calculator/" },
+            { "@type": "WebPage", "name": "Mortgage Affordability Calculator", "url": "https://www.freecalchub.com/finance/mortgage/affordability-calculator/" },
+            { "@type": "WebPage", "name": "Mortgage Refinance Calculator", "url": "https://www.freecalchub.com/finance/mortgage/refinance-calculator/" },
+            { "@type": "WebPage", "name": "Mortgage Payoff Calculator", "url": "https://www.freecalchub.com/finance/mortgage/payoff-calculator/" },
+            { "@type": "WebPage", "name": "Biweekly Mortgage Calculator", "url": "https://www.freecalchub.com/finance/mortgage/biweekly-calculator/" },
+            { "@type": "WebPage", "name": "Mortgage Points Calculator", "url": "https://www.freecalchub.com/finance/mortgage/points-calculator/" }, // Assuming this will be added
+            { "@type": "WebPage", "name": "Extra Payment Calculator", "url": "https://www.freecalchub.com/finance/mortgage/extra-payment-calculator/" } // Kept as per original file
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Finance Calculators", "item": "https://www.freecalchub.com/finance/" },
+            { "@type": "ListItem", "position": 3, "name": "Mortgage Calculators", "item": "https://www.freecalchub.com/finance/mortgage/" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        /* Added simple style for calculator grid if not already globally defined or in mortgage-category-layout.css */
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .calculator-card {
+            border: 1px solid var(--border-color-light, #e0e0e0);
+            border-radius: 8px;
+            padding: 20px;
+            background-color: var(--card-bg-color, #fff);
+            text-decoration: none;
+            color: inherit;
+            transition: box-shadow 0.3s ease;
+        }
+        .calculator-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .calculator-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: var(--primary-color, #007bff);
+        }
+        .calculator-card h3 {
+            margin-top: 0;
+            color: var(--primary-color, #007bff);
+        }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
     
-    <header>
-        <div class="header-container">
+    <header class="site-header"> <div class="header-container">
             <div class="logo-container">
                 <a href="/" class="logo">
-                    <img src="/images/logo.svg" alt="CalcHub Logo" height="40">
-                </a>
+                    <img src="/images/logo.svg" alt="FreecalcHub Logo" height="40"> </a>
             </div>
             
             <nav class="main-nav">
@@ -64,9 +109,8 @@
                     <i class="fas fa-moon"></i>
                     <i class="fas fa-sun"></i>
                 </button>
-                <button id="mobile-menu-button" aria-label="Open menu">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <button id="mobile-menu-button" aria-label="Toggle menu">
+                    <i class="fas fa-bars menu-icon"></i> </button>
             </div>
         </div>
     </header>
@@ -80,6 +124,7 @@
         </div>
         <nav class="mobile-nav">
             <ul>
+                <li><a href="/">Home</a></li>
                 <li><a href="/finance/" class="active">Finance</a></li>
                 <li><a href="/math/">Math</a></li>
                 <li><a href="/health/">Health</a></li>
@@ -98,8 +143,7 @@
             <span class="separator">/</span>
             <a href="/finance/">Finance</a>
             <span class="separator">/</span>
-            <span class="current">Mortgage</span>
-        </div>
+            <span class="current">Mortgage Calculators</span> </div>
     </div>
 
     <div class="navigation-ribbon">
@@ -123,42 +167,40 @@
 
         <div class="calculator-grid">
             <a href="/finance/mortgage/mortgage-calculator/" class="calculator-card">
-                <div class="calculator-icon">
-                    <i class="fas fa-home"></i>
-                </div>
+                <div class="calculator-icon"><i class="fas fa-home"></i></div>
                 <h3>Mortgage Calculator</h3>
                 <p>Calculate monthly payments, interest, and amortization schedule for your mortgage.</p>
             </a>
-            
             <a href="/finance/mortgage/affordability-calculator/" class="calculator-card">
-                <div class="calculator-icon">
-                    <i class="fas fa-dollar-sign"></i>
-                </div>
+                <div class="calculator-icon"><i class="fas fa-dollar-sign"></i></div>
                 <h3>Affordability Calculator</h3>
                 <p>Find out how much house you can afford based on your income and expenses.</p>
             </a>
-            
             <a href="/finance/mortgage/refinance-calculator/" class="calculator-card">
-                <div class="calculator-icon">
-                    <i class="fas fa-exchange-alt"></i>
-                </div>
+                <div class="calculator-icon"><i class="fas fa-exchange-alt"></i></div>
                 <h3>Refinance Calculator</h3>
                 <p>See if refinancing your mortgage makes financial sense for your situation.</p>
             </a>
-            
+            <a href="/finance/mortgage/payoff-calculator/" class="calculator-card">
+                <div class="calculator-icon"><i class="fas fa-calendar-check"></i></div>
+                <h3>Mortgage Payoff Calculator</h3>
+                <p>See how extra payments can shorten your loan term and save on interest.</p>
+            </a>
+            <a href="/finance/mortgage/biweekly-calculator/" class="calculator-card">
+                <div class="calculator-icon"><i class="fas fa-calendar-alt"></i></div>
+                <h3>Biweekly Mortgage Calculator</h3>
+                <p>Explore how biweekly payments can accelerate your mortgage payoff.</p>
+            </a>
             <a href="/finance/mortgage/extra-payment-calculator/" class="calculator-card">
-                <div class="calculator-icon">
-                    <i class="fas fa-plus-circle"></i>
-                </div>
+                <div class="calculator-icon"><i class="fas fa-plus-circle"></i></div>
                 <h3>Extra Payment Calculator</h3>
                 <p>Calculate how much you can save by making extra payments on your mortgage.</p>
             </a>
-        </div>
+            </div>
         
         <section class="category-info">
             <h2>Understanding Mortgages</h2>
             <p>A mortgage is a loan used to purchase or maintain a home, land, or other types of real estate. The borrower agrees to pay the lender over time, typically in a series of regular payments that are divided into principal and interest. The property serves as collateral to secure the loan.</p>
-            
             <h3>Types of Mortgages</h3>
             <ul>
                 <li><strong>Fixed-Rate Mortgage:</strong> The interest rate remains the same for the entire term of the loan.</li>
@@ -167,7 +209,6 @@
                 <li><strong>VA Loan:</strong> Guaranteed by the U.S. Department of Veterans Affairs, available to veterans, service members, and eligible surviving spouses.</li>
                 <li><strong>Jumbo Loan:</strong> Exceeds the conforming loan limits set by the Federal Housing Finance Agency.</li>
             </ul>
-            
             <h3>Key Mortgage Terms</h3>
             <ul>
                 <li><strong>Principal:</strong> The original amount of the loan.</li>
@@ -177,7 +218,6 @@
                 <li><strong>Amortization:</strong> The process of paying off a loan with regular payments over time.</li>
                 <li><strong>Escrow:</strong> An account where funds are held for property taxes and insurance premiums.</li>
             </ul>
-            
             <h3>Mortgage Application Process</h3>
             <ol>
                 <li>Check your credit score and financial health</li>
@@ -189,61 +229,55 @@
                 <li>Go through the underwriting process</li>
                 <li>Close on your new home</li>
             </ol>
-            
             <p>Our mortgage calculators can help you understand different aspects of the mortgage process, from determining how much house you can afford to calculating your monthly payments and understanding the impact of refinancing or making extra payments.</p>
         </section>
     </main>
     
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>CalcHub</h3>
-                <p>Free online calculators for all your needs. Simple, accurate, and easy to use.</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Categories</h3>
-                <ul>
-                    <li><a href="/finance/">Finance</a></li>
-                    <li><a href="/math/">Math</a></li>
-                    <li><a href="/health/">Health</a></li>
-                    <li><a href="/conversions/">Conversions</a></li>
-                    <li><a href="/date-time/">Date & Time</a></li>
-                    <li><a href="/business/">Business</a></li>
-                    <li><a href="/lifestyle/">Lifestyle</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="/blog/">Blog</a></li>
-                    <li><a href="/about/">About Us</a></li>
-                    <li><a href="/contact/">Contact</a></li>
-                    <li><a href="/privacy/">Privacy Policy</a></li>
-                    <li><a href="/terms/">Terms of Use</a></li>
-                    <li><a href="/gdpr/">GDPR Compliance</a></li>
-                    <li><a href="/sitemap.xml">Sitemap</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Connect</h3>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+    <footer class="site-footer"> <div class="container"> 
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>FreecalcHub</h3> 
+                    <p>Your one-stop destination for a wide variety of free online calculators.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                     <ul>
+                        <li><a href="/finance/">Finance</a></li>
+                        <li><a href="/math/">Math</a></li>
+                        <li><a href="/health/">Health</a></li>
+                        <li><a href="/conversions/">Conversions</a></li>
+                        <li><a href="/date-time/">Date & Time</a></li>
+                        <li><a href="/business/">Business</a></li>
+                        <li><a href="/lifestyle/">Lifestyle</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/privacy-policy/">Privacy Policy</a></li> 
+                        <li><a href="/terms-of-service/">Terms of Service</a></li> 
+                        <li><a href="/sitemap.xml">Sitemap</a></li> 
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <ul class="social-links">
+                        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 CalcHub. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> 
+            </div>
         </div>
     </footer>
     
-    <script src="/js/main.js"></script>
-    <script src="/js/dark-mode.js"></script>
-</body>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/dark-mode.js" defer></script>
+    </body>
 </html>
