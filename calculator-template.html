@@ -9,11 +9,10 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/dark-mode.css">
     <link rel="stylesheet" href="/css/dark-mode-button.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/css/navigation-ribbon.css">
     <link rel="stylesheet" href="/css/breadcrumb-styles.css">
     <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <link rel="stylesheet" href="/[path-to-your-calculator-folder]/css/[calculator-name].css">
 
@@ -79,8 +78,8 @@
     <a href="#main-content" class="skip-link">Skip to content</a>
 
     <header class="site-header">
-        <div class="header-container"> {/* Matched class */}
-            <div class="logo-container"> {/* Matched class */}
+        <div class="header-container"> 
+            <div class="logo-container"> 
                 <a href="/"><img src="/images/logo.svg" alt="FreecalcHub Logo"></a>
             </div>
             <nav class="main-nav">
@@ -105,14 +104,14 @@
                 </button>
             </div>
         </div>
-        <div id="mobile-menu" class="mobile-menu"> {/* Matched ID and class */}
-            <div class="mobile-menu-header"> {/* Added mobile menu header */}
+        <div id="mobile-menu" class="mobile-menu"> 
+            <div class="mobile-menu-header"> 
                 <span>Menu</span>
                 <button id="mobile-menu-close" aria-label="Close menu">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <nav class="mobile-nav"> {/* Matched class */}
+            <nav class="mobile-nav"> 
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/finance/">Finance</a></li>
@@ -138,9 +137,9 @@
         </div>
     </div>
 
-    <main id="main-content" class="main-content"> {/* Added id="main-content" */}
-        <div class="content-container"> {/* Optional: Affordability calc has this, add if used by your global styles for centering/padding */}
-            <article class="calculator-page-content"> {/* Assuming this class is for specific page content styling */}
+    <main id="main-content" class="main-content"> 
+        <div class="content-container"> 
+            <article class="calculator-page-content"> 
                 <h1 class="page-title">[Calculator Name]</h1>
 
                 <section class="calculator-description-section content-section">
@@ -191,16 +190,17 @@
                         <h3>[Question 1?]</h3>
                         <p>[Answer 1]</p>
                     </div>
-                </section>
+                     </section>
             </article>
-        </div> {/* Optional: Corresponding closing div for content-container */}
+        </div> 
     </main>
 
     <footer class="site-footer">
-         <div class="container"> {/* Affordability uses 'container', template used 'container'. Let's stick to 'container' if it's broadly used. index (14).html has 'container' then 'footer-columns'. */}
+        <div class="container"> 
             <div class="footer-columns">
                 <div class="footer-column">
-                    <h3>FreecalcHub</h3> <p>Your one-stop destination for a wide variety of free online calculators.</p>
+                    <h3>FreecalcHub</h3> 
+                    <p>Your one-stop destination for a wide variety of free online calculators.</p>
                 </div>
                 <div class="footer-column">
                     <h3>Categories</h3>
@@ -224,16 +224,18 @@
                         <li><a href="/privacy/">Privacy Policy</a></li>
                         <li><a href="/terms/">Terms of Service</a></li>
                         <li><a href="/sitemap.xml">Sitemap</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> </div>
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> 
+            </div>
         </div>
     </footer>
 
     <script src="/js/main.js" defer></script>
     <script src="/js/dark-mode.js" defer></script>
-    <script src="/js/faq-accordion.js" defer></script> {/* Added based on Affordability calc */}
+    <script src="/js/faq-accordion.js" defer></script> 
     
     <script src="/[path-to-your-calculator-folder]/js/[calculator-name].js" defer></script>
 </body>
