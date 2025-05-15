@@ -1,0 +1,61 @@
+/* Mortgage Points Calculator Specific Styles */
+
+#pointsCalculatorForm fieldset {
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+#pointsCalculatorForm legend {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0 10px;
+    color: var(--primary-color, #007bff);
+}
+
+#pointsCalculatorForm .form-group {
+    margin-bottom: 15px;
+}
+
+#pointsCalculatorForm label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color-dark, #333);
+    font-weight: 500;
+}
+
+#pointsCalculatorForm input[type="number"],
+#pointsCalculatorForm select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--input-bg-color, #fff);
+    color: var(--input-text-color, #333);
+    font-size: 1em;
+}
+
+#pointsCalculatorForm input[type="number"]:focus,
+#pointsCalculatorForm select:focus {
+    border-color: var(--primary-color, #007bff);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-color-light-transparent, rgba(0,123,255,0.25));
+}
+
+#pointsCalculatorForm .form-group small {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.85em;
+    color: var(--text-color-light, #666);
+}
+
+/* Styling for the recommendation text if needed */
+.result-item-recommendation p {
+    font-style: italic;
+    /* Add more distinct styling if desired */
+}
+
+/* Add styles for chart placeholder if you implement one */
+/* #breakEvenChartContainer { ... } */
