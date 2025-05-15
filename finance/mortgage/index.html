@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mortgage Calculators | FreecalcHub</title> <meta name="description" content="Plan your home purchase and understand your mortgage options with these essential calculators. Free tools for payment, affordability, refinance, payoff, and biweekly payments.">
-    <link rel="canonical" href="https://www.freecalchub.com/finance/mortgage/"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Mortgage Calculators | FreecalcHub</title> 
+    <meta name="description" content="Plan your home purchase and understand your mortgage options with these essential calculators. Free tools for payment, affordability, refinance, payoff, points, and biweekly payments.">
+    <link rel="canonical" href="https://www.freecalchub.com/finance/mortgage/"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/dark-mode.css">
@@ -14,7 +17,9 @@
     <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
     
     <link rel="stylesheet" href="/finance/mortgage/css/mortgage-category-layout.css">
-    <link rel="stylesheet" href="/finance/mortgage/css/page-container-fix.css"> <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
+    <link rel="stylesheet" href="/finance/mortgage/css/page-container-fix.css"> 
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -28,7 +33,7 @@
         {
           "@type": "CollectionPage",
           "name": "Mortgage Calculators",
-          "description": "A collection of free online mortgage calculators to help with payments, affordability, refinancing, early payoff, biweekly payments, and more. Make informed decisions about your home financing with FreecalcHub.",
+          "description": "A collection of free online mortgage calculators to help with payments, affordability, refinancing, early payoff, biweekly payments, mortgage points, and more. Make informed decisions about your home financing with FreecalcHub.",
           "url": "https://www.freecalchub.com/finance/mortgage/",
           "hasPart": [
             { "@type": "WebPage", "name": "Mortgage Calculator", "url": "https://www.freecalchub.com/finance/mortgage/mortgage-calculator/" },
@@ -36,8 +41,8 @@
             { "@type": "WebPage", "name": "Mortgage Refinance Calculator", "url": "https://www.freecalchub.com/finance/mortgage/refinance-calculator/" },
             { "@type": "WebPage", "name": "Mortgage Payoff Calculator", "url": "https://www.freecalchub.com/finance/mortgage/payoff-calculator/" },
             { "@type": "WebPage", "name": "Biweekly Mortgage Calculator", "url": "https://www.freecalchub.com/finance/mortgage/biweekly-calculator/" },
-            { "@type": "WebPage", "name": "Mortgage Points Calculator", "url": "https://www.freecalchub.com/finance/mortgage/points-calculator/" }, // Assuming this will be added
-            { "@type": "WebPage", "name": "Extra Payment Calculator", "url": "https://www.freecalchub.com/finance/mortgage/extra-payment-calculator/" } // Kept as per original file
+            { "@type": "WebPage", "name": "Mortgage Points Calculator", "url": "https://www.freecalchub.com/finance/mortgage/points-calculator/" },
+            { "@type": "WebPage", "name": "Extra Payment Calculator (Mortgage context)", "url": "https://www.freecalchub.com/finance/mortgage/extra-payment-calculator/" } 
           ]
         },
         {
@@ -52,7 +57,7 @@
     }
     </script>
     <style>
-        /* Added simple style for calculator grid if not already globally defined or in mortgage-category-layout.css */
+        /* Styles for calculator grid and cards - ensure these are defined or adjust as needed */
         .calculator-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -67,28 +72,41 @@
             text-decoration: none;
             color: inherit;
             transition: box-shadow 0.3s ease;
+            display: flex; /* Added for better icon/text alignment */
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
         .calculator-card:hover {
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         .calculator-icon {
-            font-size: 2em;
-            margin-bottom: 10px;
+            font-size: 2.5em; /* Adjust icon size */
+            margin-bottom: 15px; /* Space below icon */
             color: var(--primary-color, #007bff);
         }
         .calculator-card h3 {
             margin-top: 0;
+            margin-bottom: 10px; /* Space below title */
+            font-size: 1.25em; /* Adjust title font size */
             color: var(--primary-color, #007bff);
+        }
+         .calculator-card p {
+            font-size: 0.95em; /* Adjust description font size */
+            line-height: 1.5;
+            flex-grow: 1; /* Allows description to take available space */
         }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
     
-    <header class="site-header"> <div class="header-container">
+    <header class="site-header"> 
+        <div class="header-container">
             <div class="logo-container">
                 <a href="/" class="logo">
-                    <img src="/images/logo.svg" alt="FreecalcHub Logo" height="40"> </a>
+                    <img src="/images/logo.svg" alt="FreecalcHub Logo" height="40"> 
+                </a>
             </div>
             
             <nav class="main-nav">
@@ -110,7 +128,8 @@
                     <i class="fas fa-sun"></i>
                 </button>
                 <button id="mobile-menu-button" aria-label="Toggle menu">
-                    <i class="fas fa-bars menu-icon"></i> </button>
+                    <i class="fas fa-bars menu-icon"></i> 
+                </button>
             </div>
         </div>
     </header>
@@ -141,9 +160,9 @@
         <div class="breadcrumbs-container">
             <a href="/">Home</a>
             <span class="separator">/</span>
-            <a href="/finance/">Finance</a>
-            <span class="separator">/</span>
-            <span class="current">Mortgage Calculators</span> </div>
+            <a href="/finance/">Finance Calculators</a> <span class="separator">/</span>
+            <span class="current">Mortgage Calculators</span> 
+        </div>
     </div>
 
     <div class="navigation-ribbon">
@@ -191,12 +210,16 @@
                 <h3>Biweekly Mortgage Calculator</h3>
                 <p>Explore how biweekly payments can accelerate your mortgage payoff.</p>
             </a>
-            <a href="/finance/mortgage/extra-payment-calculator/" class="calculator-card">
-                <div class="calculator-icon"><i class="fas fa-plus-circle"></i></div>
+             <a href="/finance/mortgage/points-calculator/" class="calculator-card">
+                <div class="calculator-icon"><i class="fas fa-percent"></i></div>
+                <h3>Mortgage Points Calculator</h3>
+                <p>Determine if paying points to lower your interest rate is worth the cost.</p>
+            </a>
+            <a href="/finance/mortgage/extra-payment-calculator/" class="calculator-card"> <div class="calculator-icon"><i class="fas fa-plus-circle"></i></div>
                 <h3>Extra Payment Calculator</h3>
                 <p>Calculate how much you can save by making extra payments on your mortgage.</p>
             </a>
-            </div>
+        </div>
         
         <section class="category-info">
             <h2>Understanding Mortgages</h2>
@@ -233,7 +256,8 @@
         </section>
     </main>
     
-    <footer class="site-footer"> <div class="container"> 
+    <footer class="site-footer"> 
+        <div class="container"> 
             <div class="footer-columns">
                 <div class="footer-column">
                     <h3>FreecalcHub</h3> 
