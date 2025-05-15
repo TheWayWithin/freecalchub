@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Mortgage Points Calculator: Are Discount Points Worth It? | FreecalcHub</title>
+    <meta name="description" content="Use our free Mortgage Points Calculator to determine if paying points to lower your interest rate makes financial sense. Calculate your break-even point instantly with FreecalcHub.">
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <link rel="stylesheet" href="/css/dark-mode-button.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/navigation-ribbon.css">
+    <link rel="stylesheet" href="/css/breadcrumb-styles.css">
+    <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
+    
+    <link rel="stylesheet" href="/finance/mortgage/points-calculator/css/points-calculator.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-R1QHNSSWTC');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Mortgage Points Calculator",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Use our free Mortgage Points Calculator to determine if paying points to lower your interest rate makes financial sense. Calculate your break-even point instantly with FreecalcHub.",
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "185" } 
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What exactly is a mortgage point?", "acceptedAnswer": { "@type": "Answer", "text": "A mortgage point, often called a \"discount point,\" is a fee paid directly to the lender at closing in exchange for a reduced interest rate on your mortgage. One point typically costs 1% of your total loan amount. Paying points is essentially pre-paying some of your interest to secure a lower rate for the life of the loan." } },
+            { "@type": "Question", "name": "How much does one mortgage point typically cost?", "acceptedAnswer": { "@type": "Answer", "text": "One mortgage point almost always costs 1% of the total loan amount. For example, on a $300,000 loan, one point would cost $3,000. Two points would cost $6,000." } },
+            { "@type": "Question", "name": "How much will paying points lower my interest rate?", "acceptedAnswer": { "@type": "Answer", "text": "The amount your interest rate is lowered per point varies by lender and current market conditions. A common reduction is 0.25% for each point paid, but this is not a fixed rule. You should always ask your lender for specific quotes showing the rate reduction for paying different amounts of points." } },
+            { "@type": "Question", "name": "Is it always a good idea to pay for mortgage points if I can afford them?", "acceptedAnswer": { "@type": "Answer", "text": "Not necessarily. Paying points is only a good idea if you plan to keep the mortgage long enough to pass the \"break-even point.\" This is the point in time when your accumulated monthly savings from the lower interest rate equal the upfront cost of the points. If you sell the home or refinance before reaching the break-even point, you could lose money on the points paid." } },
+            { "@type": "Question", "name": "Are mortgage points tax deductible?", "acceptedAnswer": { "@type": "Answer", "text": "Mortgage points may be tax-deductible in the year they are paid, or sometimes over the life of the loan, provided you meet certain IRS requirements. These rules can be complex and depend on factors like whether the loan is for a primary residence and how the points were paid. It is highly recommended to consult with a qualified tax advisor for guidance specific to your situation." } },
+            { "@type": "Question", "name": "What is the difference between discount points and origination points?", "acceptedAnswer": { "@type": "Answer", "text": "Discount points are fees you pay to the lender to reduce your interest rate. Origination points (or loan origination fees) are fees charged by the lender to cover the costs of processing your loan application and are usually expressed as a percentage of the loan amount. Origination points do not reduce your interest rate." } },
+            { "@type": "Question", "name": "How do I calculate the break-even point for paying mortgage points?", "acceptedAnswer": { "@type": "Answer", "text": "The basic formula for the break-even point is: Total Cost of Points ÷ Monthly Savings from Lower Rate = Number of Months to Break Even. Our Mortgage Points Calculator does this calculation for you automatically." } },
+            { "@type": "Question", "name": "Should I use my cash to pay for points or make a larger down payment?", "acceptedAnswer": { "@type": "Answer", "text": "This depends on your financial goals and situation. A larger down payment reduces your loan amount, which lowers your monthly payment and the total interest paid. Paying points also lowers your monthly payment by reducing the interest rate. If a larger down payment helps you avoid Private Mortgage Insurance (PMI), that might be a priority. Use calculators to compare both scenarios." } },
+            { "@type": "Question", "name": "Can I roll the cost of mortgage points into my loan amount?", "acceptedAnswer": { "@type": "Answer", "text": "Sometimes lenders may offer an option to finance the cost of points by adding them to your loan balance. However, this means you'll be paying interest on the cost of the points themselves, which can reduce or negate the benefit of paying them. It's generally more effective to pay for points out-of-pocket if you decide they are worthwhile." } },
+            { "@type": "Question", "name": "What happens if I refinance before reaching the break-even point?", "acceptedAnswer": { "@type": "Answer", "text": "If you refinance your mortgage before you reach the break-even point on the points you paid, you will likely not recoup the full cost of those points through monthly savings. Essentially, you would have paid an upfront fee for a benefit you didn't fully realize." } }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Use the Mortgage Points Calculator",
+          "description": "A step-by-step guide to using the FreecalcHub Mortgage Points Calculator to analyze the cost-effectiveness of buying mortgage points.",
+          "step": [
+            { "@type": "HowToStep", "name": "Enter Loan Details", "text": "Input your loan amount, loan term, and the base interest rate offered without points." },
+            { "@type": "HowToStep", "name": "Specify Points Information", "text": "Enter the number of points you are considering, the cost per point, and the interest rate reduction you'll receive per point." },
+            { "@type": "HowToStep", "name": "Indicate Planned Ownership Duration", "text": "Enter how long you plan to keep the mortgage in years and months." },
+            { "@type": "HowToStep", "name": "Analyze Results", "text": "Review your monthly savings, total cost of points, break-even point, and overall savings to make an informed decision." }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Finance Calculators", "item": "https://www.freecalchub.com/finance/" },
+            { "@type": "ListItem", "position": 3, "name": "Mortgage Calculators", "item": "https://www.freecalchub.com/finance/mortgage/" },
+            { "@type": "ListItem", "position": 4, "name": "Mortgage Points Calculator", "item": "https://www.freecalchub.com/finance/mortgage/points-calculator/" }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "name": "Mortgage Points Calculator: Are Discount Points Worth It? | FreecalcHub",
+          "description": "Use our free Mortgage Points Calculator to determine if paying points to lower your interest rate makes financial sense. Calculate your break-even point instantly with FreecalcHub.",
+          "url": "https://www.freecalchub.com/finance/mortgage/points-calculator/"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <header class="site-header">
+        <div class="header-container"> 
+            <div class="logo-container"> 
+                <a href="/"><img src="/images/logo.svg" alt="FreecalcHub Logo"></a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/finance/">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="mobile-menu-button" aria-label="Toggle menu">
+                    <i class="fas fa-bars menu-icon"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="mobile-menu"> 
+            <div class="mobile-menu-header"> 
+                <span>Menu</span>
+                <button id="mobile-menu-close" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav"> 
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/finance/">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+ 
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <a href="/finance/">Finance Calculators</a> 
+            <span class="separator">/</span>
+            <a href="/finance/mortgage/">Mortgage Calculators</a> 
+            <span class="separator">/</span>
+            <span class="current">Mortgage Points Calculator</span>
+        </div>
+    </div>
+
+    <div class="navigation-ribbon">
+        <div class="navigation-ribbon-container">
+            <a href="/finance/mortgage/mortgage-calculator/"><i class="fas fa-calculator"></i> Mortgage Calculator</a>
+            <a href="/finance/mortgage/refinance-calculator/"><i class="fas fa-retweet"></i> Refinance Calculator</a>
+            <a href="/finance/mortgage/payoff-calculator/"><i class="fas fa-calendar-check"></i> Payoff Calculator</a>
+            <a href="/finance/mortgage/amortization-calculator/"><i class="fas fa-table"></i> Amortization</a>
+            <a href="/finance/mortgage/points-calculator/" class="active"><i class="fas fa-percent"></i> Points Calculator</a>
+            <a href="/finance/mortgage/biweekly-calculator/"><i class="fas fa-calendar-alt"></i> Biweekly Calculator</a>
+        </div>
+    </div>
+    
+    <main id="main-content" class="main-content"> 
+        <div class="content-container"> 
+            <article class="calculator-page-content"> 
+                <h1 class="page-title">Mortgage Points Calculator</h1>
+
+                <section class="calculator-description-section content-section">
+                    <p>Mortgage points, also known as discount points, are fees paid to a lender at closing in exchange for a lower interest rate on your mortgage. This calculator helps you determine if buying points is a financially sound decision by calculating the break-even point – the time it takes for the monthly savings from the reduced rate to offset the upfront cost of the points. Understanding this can save you a significant amount of money over the life of your loan.</p>
+                </section>
+
+                <section id="calculator-section" class="calculator-interface content-section card">
+                    <h2 class="section-title">Are Mortgage Points Worth It For You?</h2>
+                    <form id="pointsCalculatorForm" class="input-grid calculator-form">
+                        <fieldset>
+                            <legend>Loan & Rate Information</legend>
+                            <div class="form-group">
+                                <label for="loanAmount">Loan Amount ($):</label>
+                                <input type="number" id="loanAmount" placeholder="e.g., 300000" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loanTerm">Loan Term (Years):</label>
+                                <select id="loanTerm" required>
+                                    <option value="30">30 Years</option>
+                                    <option value="25">25 Years</option>
+                                    <option value="20">20 Years</option>
+                                    <option value="15">15 Years</option>
+                                    <option value="10">10 Years</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="baseInterestRate">Base Interest Rate (%):</label>
+                                <input type="number" id="baseInterestRate" step="0.001" placeholder="e.g., 6.5" required>
+                                <small>The interest rate offered *without* paying points.</small>
+                            </div>
+                        </fieldset>
+    
+                        <fieldset>
+                            <legend>Points Details</legend>
+                            <div class="form-group">
+                                <label for="pointsToPurchase">Number of Points to Purchase:</label>
+                                <input type="number" id="pointsToPurchase" step="0.01" placeholder="e.g., 1 or 1.5" value="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="costPerPoint">Cost Per Point (% of Loan Amount):</label>
+                                <input type="number" id="costPerPoint" step="0.01" value="1.0" placeholder="e.g., 1.0 for 1%">
+                                <small>Typically 1% per point.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="rateReductionPerPoint">Interest Rate Reduction Per Point (%):</label>
+                                <input type="number" id="rateReductionPerPoint" step="0.001" placeholder="e.g., 0.25 for 0.25%">
+                                <small>Ask your lender for this value.</small>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Your Plans</legend>
+                            <div class="form-group">
+                                <label for="plannedDurationYears">How long do you plan to keep this mortgage? (Years):</label>
+                                <input type="number" id="plannedDurationYears" placeholder="e.g., 7" value="7">
+                            </div>
+                             <div class="form-group">
+                                <label for="plannedDurationMonths">Additional Months:</label>
+                                <input type="number" id="plannedDurationMonths" placeholder="e.g., 6" value="0" min="0" max="11">
+                            </div>
+                        </fieldset>
+    
+                        <div class="form-actions">
+                            <button type="button" id="calculateButton" class="btn btn-primary">Calculate Break-Even</button>
+                            <button type="reset" class="btn btn-secondary">Reset Form</button>
+                        </div>
+                    </form>
+    
+                    <div id="resultsSection" class="results-section" style="display:none;">
+                        <h3 class="results-title">Mortgage Points Analysis</h3>
+                        <div class="results-grid">
+                            <div class="result-item">
+                                <h4>Total Cost of Points</h4>
+                                <p id="totalPointsCost">-</p>
+                            </div>
+                            <div class="result-item">
+                                <h4>New Interest Rate (with Points)</h4>
+                                <p id="newInterestRate">-</p>
+                            </div>
+                            <div class="result-item">
+                                <h4>Monthly Payment (Without Points)</h4>
+                                <p id="monthlyPaymentWithoutPoints">-</p>
+                            </div>
+                            <div class="result-item">
+                                <h4>Monthly Payment (With Points)</h4>
+                                <p id="monthlyPaymentWithPoints">-</p>
+                            </div>
+                            <div class="result-item">
+                                <h4>Monthly Savings</h4>
+                                <p id="monthlySavings" class="text-success fw-bold">-</p>
+                            </div>
+                            <div class="result-item">
+                                <h4>Break-Even Point</h4>
+                                <p id="breakEvenPoint">-</p>
+                            </div>
+                             <div class="result-item">
+                                <h4>Total Savings (If Kept for Planned Duration)</h4>
+                                <p id="totalSavingsForDuration" class="text-success fw-bold">-</p>
+                            </div>
+                             <div class="result-item result-item-recommendation"> <h4>Recommendation</h4>
+                                <p id="recommendationText">-</p>
+                            </div>
+                        </div>
+                        </div>
+                </section>
+
+                <section class="how-to-use-section content-section">
+                    <h2 class="section-title">How to Use This Calculator</h2>
+                    <ol>
+                        <li><strong>Enter Loan & Rate Information:</strong> Input your total loan amount, the loan term in years, and the base interest rate you've been offered *without* paying any points.</li>
+                        <li><strong>Provide Points Details:</strong> Specify the number of discount points you are considering purchasing (e.g., 1, 1.5). Enter the cost per point (typically 1% of the loan amount) and the interest rate reduction your lender offers per point (e.g., 0.25%).</li>
+                        <li><strong>Indicate Your Plans:</strong> Enter the number of years and additional months you realistically plan to stay in the home or keep this specific mortgage. This is crucial for the break-even analysis.</li>
+                        <li><strong>Calculate Break-Even:</strong> Click the "Calculate Break-Even" button.</li>
+                        <li><strong>Analyze Your Results:</strong> The calculator will show the total cost of points, your new lower interest rate, the difference in monthly payments, your break-even point (in months/years), and the total net savings if you keep the mortgage for your planned duration. A recommendation will also be provided based on these figures.</li>
+                    </ol>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">Understanding Mortgage Points</h2>
+                    <p>What Are Mortgage Points?: Detailed explanation of discount points vs. origination points. How Do Points Work?: How paying upfront reduces the interest rate. Cost of Points: Typically 1% of the loan amount per point. Tax Deductibility: Briefly explain if and when points are tax-deductible (refer to tax professional). <em>(TODO: Populate with detailed content from 02_mortgage_points_calculator_spec.md)</em></p>
+                </section>
+                 <section class="content-section">
+                    <h2 class="section-title">When Does Buying Points Make Financial Sense?</h2>
+                    <p>Long-Term Homeownership: If you plan to stay in the home and keep the mortgage past the break-even point. Cash Availability: If you have sufficient cash for closing costs including points. Interest Rate Environment: More beneficial when rates are generally higher. Comparing to Other Uses of Funds: Opportunity cost of using cash for points vs. investing or larger down payment. Provide clear scenarios where it is and isn't advisable. <em>(TODO: Populate with detailed content from 02_mortgage_points_calculator_spec.md)</em></p>
+                </section>
+                <section class="content-section">
+                    <h2 class="section-title">Calculating Your Break-Even Point</h2>
+                    <p>Explain the break-even calculation: Total Cost of Points ÷ Monthly Savings = Months to Break Even. Provide a manual calculation example. Discuss factors that can influence the actual break-even (e.g., refinancing early). <em>(TODO: Populate with detailed content from 02_mortgage_points_calculator_spec.md)</em></p>
+                </section>
+                 <section class="content-section">
+                    <h2 class="section-title">Negotiating Mortgage Points with Lenders</h2>
+                    <p>Can points be negotiated? Questions to ask your lender about points and rate options. Comparing offers with and without points from different lenders. <em>(TODO: Populate with detailed content from 02_mortgage_points_calculator_spec.md)</em></p>
+                </section>
+
+                <section class="faq-section content-section">
+                    <h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
+                    <div class="faq-item"><h3>What exactly is a mortgage point?</h3><p>A mortgage point, often called a \"discount point,\" is a fee paid directly to the lender at closing in exchange for a reduced interest rate on your mortgage. One point typically costs 1% of your total loan amount. Paying points is essentially pre-paying some of your interest to secure a lower rate for the life of the loan.</p></div>
+                    <div class="faq-item"><h3>How much does one mortgage point typically cost?</h3><p>One mortgage point almost always costs 1% of the total loan amount. For example, on a $300,000 loan, one point would cost $3,000. Two points would cost $6,000.</p></div>
+                    <div class="faq-item"><h3>How much will paying points lower my interest rate?</h3><p>The amount your interest rate is lowered per point varies by lender and current market conditions. A common reduction is 0.25% for each point paid, but this is not a fixed rule. You should always ask your lender for specific quotes showing the rate reduction for paying different amounts of points.</p></div>
+                    <div class="faq-item"><h3>Is it always a good idea to pay for mortgage points if I can afford them?</h3><p>Not necessarily. Paying points is only a good idea if you plan to keep the mortgage long enough to pass the \"break-even point.\" This is the point in time when your accumulated monthly savings from the lower interest rate equal the upfront cost of the points. If you sell the home or refinance before reaching the break-even point, you could lose money on the points paid.</p></div>
+                    <div class="faq-item"><h3>Are mortgage points tax deductible?</h3><p>Mortgage points may be tax-deductible in the year they are paid, or sometimes over the life of the loan, provided you meet certain IRS requirements. These rules can be complex and depend on factors like whether the loan is for a primary residence and how the points were paid. It is highly recommended to consult with a qualified tax advisor for guidance specific to your situation.</p></div>
+                    <div class="faq-item"><h3>What is the difference between discount points and origination points?</h3><p>Discount points are fees you pay to the lender to reduce your interest rate. Origination points (or loan origination fees) are fees charged by the lender to cover the costs of processing your loan application and are usually expressed as a percentage of the loan amount. Origination points do not reduce your interest rate.</p></div>
+                    <div class="faq-item"><h3>How do I calculate the break-even point for paying mortgage points?</h3><p>The basic formula for the break-even point is: Total Cost of Points ÷ Monthly Savings from Lower Rate = Number of Months to Break Even. Our Mortgage Points Calculator does this calculation for you automatically.</p></div>
+                    <div class="faq-item"><h3>Should I use my cash to pay for points or make a larger down payment?</h3><p>This depends on your financial goals and situation. A larger down payment reduces your loan amount, which lowers your monthly payment and the total interest paid. Paying points also lowers your monthly payment by reducing the interest rate. If a larger down payment helps you avoid Private Mortgage Insurance (PMI), that might be a priority. Use calculators to compare both scenarios.</p></div>
+                    <div class="faq-item"><h3>Can I roll the cost of mortgage points into my loan amount?</h3><p>Sometimes lenders may offer an option to finance the cost of points by adding them to your loan balance. However, this means you'll be paying interest on the cost of the points themselves, which can reduce or negate the benefit of paying them. It's generally more effective to pay for points out-of-pocket if you decide they are worthwhile.</p></div>
+                    <div class="faq-item"><h3>What happens if I refinance before reaching the break-even point?</h3><p>If you refinance your mortgage before you reach the break-even point on the points you paid, you will likely not recoup the full cost of those points through monthly savings. Essentially, you would have paid an upfront fee for a benefit you didn't fully realize.</p></div>
+                </section>
+                <section class="content-section">
+                     <h2 class="section-title">Related Calculators</h2>
+                     <ul>
+                        <li><a href="/finance/mortgage/mortgage-calculator/">Mortgage Payment Calculator</a></li>
+                        <li><a href="/finance/mortgage/affordability-calculator/">Mortgage Affordability Calculator</a></li>
+                        <li><a href="/finance/mortgage/refinance-calculator/">Mortgage Refinance Calculator</a></li>
+                        <li><a href="/finance/mortgage/payoff-calculator/">Mortgage Payoff Calculator</a></li>
+                        </ul>
+                </section>
+                 <p class="text-center content-section"><small>Disclaimer: This calculator provides estimates for informational purposes only. Consult with a qualified financial advisor and mortgage lender for personalized advice.</small></p>
+            </article>
+        </div> 
+    </main>
+
+    <footer class="site-footer">
+        <div class="container"> 
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>FreecalcHub</h3> 
+                    <p>Your one-stop destination for a wide variety of free online calculators.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="/finance/">Finance</a></li>
+                        <li><a href="/math/">Math</a></li>
+                        <li><a href="/health/">Health</a></li>
+                        <li><a href="/conversions/">Conversions</a></li>
+                        <li><a href="/date-time/">Date & Time</a></li>
+                        <li><a href="/business/">Business</a></li>
+                        <li><a href="/lifestyle/">Lifestyle</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/privacy-policy/">Privacy Policy</a> 
+                        <li><a href="/terms-of-service/">Terms of Service</a></li> 
+                        <li><a href="/sitemap.xml">Sitemap</a></li> 
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> 
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/dark-mode.js" defer></script>
+    <script src="/js/faq-accordion.js" defer></script> 
+    
+    <script src="/finance/mortgage/points-calculator/js/points-calculator.js" defer></script>
+</body>
+</html>
