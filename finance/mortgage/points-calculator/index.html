@@ -14,8 +14,9 @@
     <link rel="stylesheet" href="/css/navigation-ribbon.css">
     <link rel="stylesheet" href="/css/breadcrumb-styles.css">
     <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
-    
     <link rel="stylesheet" href="/finance/mortgage/points-calculator/css/points-calculator.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
     <script>
@@ -24,7 +25,6 @@
         gtag('js', new Date());
         gtag('config', 'G-R1QHNSSWTC');
     </script>
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -85,7 +85,6 @@
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
-
     <header class="site-header">
         <div class="header-container"> 
             <div class="logo-container"> 
@@ -135,7 +134,6 @@
             </nav>
         </div>
     </header>
- 
     <div class="breadcrumbs">
         <div class="breadcrumbs-container">
             <a href="/">Home</a>
@@ -147,26 +145,23 @@
             <span class="current">Mortgage Points Calculator</span>
         </div>
     </div>
-
     <div class="navigation-ribbon">
         <div class="navigation-ribbon-container">
             <a href="/finance/mortgage/mortgage-calculator/"><i class="fas fa-calculator"></i> Mortgage Calculator</a>
             <a href="/finance/mortgage/refinance-calculator/"><i class="fas fa-retweet"></i> Refinance Calculator</a>
             <a href="/finance/mortgage/payoff-calculator/"><i class="fas fa-calendar-check"></i> Payoff Calculator</a>
-            <a href="/finance/mortgage/amortization-calculator/"><i class="fas fa-table"></i> Amortization</a> <a href="/finance/mortgage/points-calculator/" class="active"><i class="fas fa-percent"></i> Points Calculator</a>
+            <a href="/finance/mortgage/amortization-calculator/"><i class="fas fa-table"></i> Amortization</a> 
+            <a href="/finance/mortgage/points-calculator/" class="active"><i class="fas fa-percent"></i> Points Calculator</a>
             <a href="/finance/mortgage/biweekly-calculator/"><i class="fas fa-calendar-alt"></i> Biweekly Calculator</a>
         </div>
     </div>
-    
     <main id="main-content" class="main-content"> 
         <div class="content-container"> 
             <article class="calculator-page-content"> 
                 <h1 class="page-title">Mortgage Points Calculator</h1>
-
                 <section class="calculator-description-section content-section">
                     <p>Mortgage points, also known as discount points, are fees paid to a lender at closing in exchange for a lower interest rate on your mortgage. This calculator helps you determine if buying points is a financially sound decision by calculating the break-even point – the time it takes for the monthly savings from the reduced rate to offset the upfront cost of the points. Understanding this can save you a significant amount of money over the life of your loan.</p>
                 </section>
-
                 <section id="calculator-section" class="calculator-interface content-section card">
                     <h2 class="section-title">Are Mortgage Points Worth It For You?</h2>
                     <form id="pointsCalculatorForm" class="input-grid calculator-form">
@@ -192,7 +187,6 @@
                                 <small>The interest rate offered *without* paying points.</small>
                             </div>
                         </fieldset>
-    
                         <fieldset>
                             <legend>Points Details</legend>
                             <div class="form-group">
@@ -210,7 +204,6 @@
                                 <small>Ask your lender for this value (e.g., enter 0.25 for a 0.25% reduction).</small>
                             </div>
                         </fieldset>
-
                         <fieldset>
                             <legend>Your Plans</legend>
                             <div class="form-group">
@@ -222,55 +215,28 @@
                                 <input type="number" id="plannedDurationMonths" placeholder="e.g., 6" value="0" min="0" max="11">
                             </div>
                         </fieldset>
-    
                         <div class="form-actions">
                             <button type="button" id="calculateButton" class="btn btn-primary">Calculate Break-Even</button>
                             <button type="reset" class="btn btn-secondary">Reset Form</button>
                         </div>
                     </form>
-    
                     <div id="resultsSection" class="results-section" style="display:none;">
                         <h3 class="results-title">Mortgage Points Analysis</h3>
                         <div class="results-grid">
-                            <div class="result-item">
-                                <h4>Total Cost of Points</h4>
-                                <p id="totalPointsCost">-</p>
-                            </div>
-                            <div class="result-item">
-                                <h4>New Interest Rate (with Points)</h4>
-                                <p id="newInterestRate">-</p>
-                            </div>
-                            <div class="result-item">
-                                <h4>Monthly Payment (Without Points)</h4>
-                                <p id="monthlyPaymentWithoutPoints">-</p>
-                            </div>
-                            <div class="result-item">
-                                <h4>Monthly Payment (With Points)</h4>
-                                <p id="monthlyPaymentWithPoints">-</p>
-                            </div>
-                            <div class="result-item">
-                                <h4>Monthly Savings</h4>
-                                <p id="monthlySavings" class="text-success fw-bold">-</p>
-                            </div>
-                            <div class="result-item">
-                                <h4>Break-Even Point</h4>
-                                <p id="breakEvenPoint">-</p>
-                            </div>
-                             <div class="result-item">
-                                <h4>Total Savings (If Kept for Planned Duration)</h4>
-                                <p id="totalSavingsForDuration" class="text-success fw-bold">-</p>
-                            </div>
-                             <div class="result-item result-item-recommendation" style="grid-column: 1 / -1;"> 
-                                <h4>Recommendation</h4>
-                                <p id="recommendationText" style="font-weight: normal; font-style: italic;">-</p>
-                            </div>
+                            <div class="result-item"><h4>Total Cost of Points</h4><p id="totalPointsCost">-</p></div>
+                            <div class="result-item"><h4>New Interest Rate (with Points)</h4><p id="newInterestRate">-</p></div>
+                            <div class="result-item"><h4>Monthly Payment (Without Points)</h4><p id="monthlyPaymentWithoutPoints">-</p></div>
+                            <div class="result-item"><h4>Monthly Payment (With Points)</h4><p id="monthlyPaymentWithPoints">-</p></div>
+                            <div class="result-item"><h4>Monthly Savings</h4><p id="monthlySavings" class="text-success fw-bold">-</p></div>
+                            <div class="result-item"><h4>Break-Even Point</h4><p id="breakEvenPoint">-</p></div>
+                            <div class="result-item"><h4>Total Savings (If Kept for Planned Duration)</h4><p id="totalSavingsForDuration" class="text-success fw-bold">-</p></div>
+                            <div class="result-item result-item-recommendation" style="grid-column: 1 / -1;"><h4>Recommendation</h4><p id="recommendationText" style="font-weight: normal; font-style: italic;">-</p></div>
                         </div>
-                        <div id="breakEvenChartContainer" class="chart-placeholder" style="margin-top: 20px; min-height: 300px; border: 1px dashed #ccc; display:flex; align-items:center; justify-content:center; color: #777; border-radius: 6px; background-color: var(--background-color, #fff);">
-                            Chart Placeholder: Cumulative Savings vs. Points Cost
-                            </div>
+                        <div id="breakEvenChartContainer" class="chart-placeholder" style="margin-top: 30px; padding: 10px; border: 1px solid var(--border-color-light, #e0e0e0); border-radius: 6px; background-color: var(--background-color, #fff); position: relative; height:300px; width:100%">  
+                            <canvas id="pointsBreakEvenChart"></canvas>
+                        </div>
                     </div>
                 </section>
-
                 <section class="how-to-use-section content-section">
                     <h2 class="section-title">How to Use This Calculator</h2>
                     <ol>
@@ -281,7 +247,6 @@
                         <li><strong>Analyze Your Results:</strong> The calculator will show the total cost of points, your new lower interest rate, the difference in monthly payments, your break-even point (in months/years), and the total net savings if you keep the mortgage for your planned duration. A recommendation will also be provided based on these figures.</li>
                     </ol>
                 </section>
-
                 <section class="content-section">
                     <h2 class="section-title">Understanding Mortgage Points</h2>
                     <p>Mortgage points, often called "discount points," are fees you pay upfront to your lender at closing in exchange for a lower interest rate on your loan. One point typically costs 1% of the loan amount. For example, one point on a $300,000 mortgage would cost $3,000. By "buying down" your rate, you can reduce your monthly mortgage payments. It's important to distinguish discount points from "origination points," which are fees lenders charge for processing the loan and do not affect your interest rate. The decision to pay discount points depends on how long you plan to keep the mortgage, as you'll need enough time for the monthly savings to outweigh the initial cost of the points. Some mortgage points may be tax-deductible, but it's best to consult a tax professional for advice specific to your situation.</p>
@@ -298,7 +263,6 @@
                     <h2 class="section-title">Negotiating Mortgage Points with Lenders</h2>
                     <p>Yes, mortgage points and the associated rate reductions can sometimes be negotiated with lenders, although the extent of flexibility varies. When discussing loan options, always ask for quotes with different point scenarios (zero points, one point, two points, etc.) to see the corresponding interest rates. Don't hesitate to ask if the cost per point or the rate reduction per point is negotiable. Comparing offers from multiple lenders is key; one lender might offer a better rate for the same number of points, or a lower cost for the points themselves. Be clear about your financial goals and how long you plan to keep the mortgage, as this will help your lender tailor options for you. Understanding these details empowers you to make the best choice for your situation.</p>
                 </section>
-
                 <section class="faq-section content-section">
                     <h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
                     <div class="faq-item"><h3>What exactly is a mortgage point?</h3><p>A mortgage point, often called a "discount point," is a fee paid directly to the lender at closing in exchange for a reduced interest rate on your mortgage. One point typically costs 1% of your total loan amount. Paying points is essentially pre-paying some of your interest to secure a lower rate for the life of the loan.</p></div>
@@ -319,13 +283,12 @@
                         <li><a href="/finance/mortgage/affordability-calculator/">Mortgage Affordability Calculator</a></li>
                         <li><a href="/finance/mortgage/refinance-calculator/">Mortgage Refinance Calculator</a></li>
                         <li><a href="/finance/mortgage/payoff-calculator/">Mortgage Payoff Calculator</a></li>
-                        </ul>
+                     </ul>
                 </section>
                  <p class="text-center content-section"><small>Disclaimer: This calculator provides estimates for informational purposes only. Consult with a qualified financial advisor and mortgage lender for personalized advice.</small></p>
             </article>
         </div> 
     </main>
-
     <footer class="site-footer">
         <div class="container"> 
             <div class="footer-columns">
@@ -362,11 +325,9 @@
             </div>
         </div>
     </footer>
-
     <script src="/js/main.js" defer></script>
     <script src="/js/dark-mode.js" defer></script>
     <script src="/js/faq-accordion.js" defer></script> 
-    
     <script src="/finance/mortgage/points-calculator/js/points-calculator.js" defer></script>
 </body>
 </html>
