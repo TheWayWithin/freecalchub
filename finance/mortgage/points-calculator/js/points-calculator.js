@@ -25,8 +25,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const recommendationTextEl = document.getElementById("recommendationText");
     
     // Chart specific
-    const chartCanvas = document.getElementById('pointsBreakEvenChart');
-    let breakEvenChartInstance = null; // To store the chart instance
+    const chartCanvas = document.getElementById('pointsBreakEvenChart'); // Defined once
+    let breakEvenChartInstance = null; 
+
+    // Initial check for chartCanvas
+    if (!chartCanvas) {
+        console.error("CRITICAL: Chart canvas element with ID 'pointsBreakEvenChart' not found on DOMContentLoaded!");
+    }
 
     // --- Helper Functions ---
     function parseFloatSafe(value, defaultValue = 0) {
@@ -61,29 +66,31 @@ document.addEventListener("DOMContentLoaded", function () {
     // --- Chart Drawing Function ---
     function drawBreakEvenChart(costOfPoints, monthlySaving, breakEvenTimeMonths, plannedTimeMonths) {
         if (breakEvenChartInstance) {
-            breakEvenChartInstance.destroy(); // Destroy previous chart instance
+            breakEvenChartInstance.destroy(); 
         }
-        if (!chartCanvas) return; // Ensure canvas element exists
+        if (!chartCanvas) { // Check the global chartCanvas variable
+            console.error("Cannot draw chart: Canvas element not found.");
+            return; 
+        }
 
         const ctx = chartCanvas.getContext('2d');
         const labels = [];
         const cumulativeSavingsData = [];
         const pointsCostData = [];
 
-        // Determine the maximum number of months to show on the chart
-        // Show a bit beyond the longer of break-even or planned time, up to a reasonable max (e.g., 10 years = 120 months if break-even is far)
-        let maxChartMonths = Math.max(breakEvenTimeMonths, plannedTimeMonths, 12) + 24; // Show 2 years beyond
-        if (breakEvenTimeMonths === Infinity) { // If no break-even due to no savings
-            maxChartMonths = Math.max(plannedTimeMonths, 12) + 24;
-        }
-        maxChartMonths = Math.min(maxChartMonths, loanTermEl.value * 12); // Don't exceed loan term
-        if (maxChartMonths > 360) maxChartMonths = 360; // Cap at 30 years for very long break-evens
+        let maxChartMonths = Math.max(breakEvenTimeMonths === Infinity ? 0 : breakEvenTimeMonths, plannedTimeMonths, 12) + 24; 
+        maxChartMonths = Math.min(maxChartMonths, parseIntSafe(loanTermEl.value, 30) * 12); 
+        if (maxChartMonths > 360 && loanTermEl.value <=30) maxChartMonths = 360; // Cap at 30 years for very long break-evens unless term is longer
+        if (maxChartMonths <=0) maxChartMonths = 60; // Default to 5 years if other values are zero
+
 
         for (let m = 0; m <= maxChartMonths; m++) {
-            labels.push(m); // Months
+            labels.push(m); 
             cumulativeSavingsData.push(monthlySaving > 0 ? monthlySaving * m : 0);
             pointsCostData.push(costOfPoints);
         }
+        
+        chartCanvas.style.display = 'block'; // Ensure canvas is visible before drawing
 
         breakEvenChartInstance = new Chart(ctx, {
             type: 'line',
@@ -102,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     borderColor: 'rgb(255, 99, 132)',
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                     tension: 0.1,
-                    borderDash: [5, 5], // Dashed line for cost
+                    borderDash: [5, 5], 
                 }]
             },
             options: {
@@ -149,12 +156,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     mode: 'index',
                     intersect: false,
                 },
-                // Annotation for break-even point (requires chartjs-plugin-annotation)
-                // For simplicity, we'll rely on the visual intersection and the text output for now.
-                // To add a vertical line at breakEvenTimeMonths:
-                // You would typically use a plugin or draw directly on the canvas.
-                // Chart.js v3 doesn't have built-in annotation as easily as v2.
-                // We can add a point on the datasets for emphasis if needed.
             }
         });
     }
@@ -176,7 +177,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (loanAmount <= 0) { alertMessage += "Loan Amount must be greater than zero.\n"; isValid = false; }
         if (loanTermYears <= 0) { alertMessage += "Loan Term must be greater than zero.\n"; isValid = false; }
-        // baseRate can be 0, but points are then not useful.
         if (pointsPurchased < 0) { alertMessage += "Number of Points to Purchase cannot be negative.\n"; isValid = false; }
         if (pointsPurchased > 0 && costPerPointPercent <= 0) { alertMessage += "Cost Per Point must be greater than zero if purchasing points.\n"; isValid = false; }
         if (pointsPurchased > 0 && rateReductionPerPoint <= 0) { alertMessage += "Interest Rate Reduction Per Point must be greater than zero if purchasing points.\n"; isValid = false; }
@@ -184,11 +184,21 @@ document.addEventListener("DOMContentLoaded", function () {
         
         if (!isValid) {
             alert(alertMessage.trim());
-            if (breakEvenChartInstance) { breakEvenChartInstance.destroy(); } // Clear chart on error
-            document.getElementById('pointsBreakEvenChart').style.display = 'none'; // Hide canvas
+            if (breakEvenChartInstance) { breakEvenChartInstance.destroy(); breakEvenChartInstance = null;} 
+            if (chartCanvas) { // Use the global chartCanvas variable
+                chartCanvas.style.display = 'none'; 
+            } else {
+                console.error("Chart canvas not found when trying to hide on validation error.");
+            }
             return;
         }
-        document.getElementById('pointsBreakEvenChart').style.display = 'block'; // Show canvas
+        // If inputs are valid, ensure canvas is ready to be displayed (Chart.js will handle actual drawing)
+        if (chartCanvas) { 
+            chartCanvas.style.display = 'block'; 
+        } else {
+             console.error("Chart canvas not found when trying to show after validation pass.");
+        }
+
 
         const totalCostOfPoints = loanAmount * (pointsPurchased * (costPerPointPercent / 100));
         const totalRateReduction = pointsPurchased * rateReductionPerPoint;
@@ -197,10 +207,18 @@ document.addEventListener("DOMContentLoaded", function () {
         if (newRate < 0) {
             alert("The calculated new interest rate is negative. The rate reduction from points cannot exceed the base interest rate. Please adjust your inputs.");
             newInterestRateEl.textContent = "Error: Rate < 0%";
-            resultsSection.style.display = "block";
+            resultsSection.style.display = "block"; // Show results section to display error
             totalPointsCostEl.textContent = formatCurrency(totalCostOfPoints); 
-            if (breakEvenChartInstance) { breakEvenChartInstance.destroy(); }
-            document.getElementById('pointsBreakEvenChart').style.display = 'none';
+            if (breakEvenChartInstance) { breakEvenChartInstance.destroy(); breakEvenChartInstance = null; }
+            if (chartCanvas) { chartCanvas.style.display = 'none'; }
+            // Clear other text fields too
+            monthlyPaymentWithoutPointsEl.textContent = "-";
+            monthlyPaymentWithPointsEl.textContent = "-";
+            monthlySavingsEl.textContent = "-";
+            breakEvenPointEl.textContent = "-";
+            totalSavingsForDurationEl.textContent = "-";
+            recommendationTextEl.textContent = "Error: New interest rate is negative.";
+            recommendationTextEl.style.color = "var(--danger-color, red)";
             return;
         }
 
@@ -220,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
             totalSavingsForDurationEl.textContent = formatCurrency(0);
             recommendationTextEl.textContent = "No points are being purchased, so there's no change in payment or break-even to calculate.";
             recommendationTextEl.style.color = "var(--text-color-dark, #333)";
-        } else if (monthlySaving <= 0.001) { // Check for negligible or negative savings
+        } else if (monthlySaving <= 0.001) { 
             monthlySavingsEl.textContent = formatCurrency(monthlySaving);
             breakEvenPointEl.textContent = "N/A (No monthly savings or payment increased)";
             const netLoss = (monthlySaving * ((plannedYears * 12) + plannedMonths)) - totalCostOfPoints;
@@ -253,11 +271,11 @@ document.addEventListener("DOMContentLoaded", function () {
         resultsSection.style.display = "block";
         resultsSection.scrollIntoView({ behavior: "smooth", block: "start" });
         
-        if (monthlySaving > 0 && pointsPurchased > 0) {
+        if (monthlySaving > 0 && pointsPurchased > 0 && chartCanvas) { // Ensure chartCanvas exists
             drawBreakEvenChart(totalCostOfPoints, monthlySaving, breakEvenMonths, (plannedYears * 12) + plannedMonths);
         } else {
-            if (breakEvenChartInstance) { breakEvenChartInstance.destroy(); }
-            document.getElementById('pointsBreakEvenChart').style.display = 'none';
+            if (breakEvenChartInstance) { breakEvenChartInstance.destroy(); breakEvenChartInstance = null; }
+            if (chartCanvas) { chartCanvas.style.display = 'none'; }
         }
     }
 
@@ -281,21 +299,18 @@ document.addEventListener("DOMContentLoaded", function () {
             totalSavingsForDurationEl.textContent = "-";
             recommendationTextEl.textContent = "-";
             recommendationTextEl.style.color = "var(--text-color-dark, #333)";
+            
             if (breakEvenChartInstance) {
                 breakEvenChartInstance.destroy();
                 breakEvenChartInstance = null;
             }
-            document.getElementById('pointsBreakEvenChart').style.display = 'block'; // Keep canvas visible but empty
-            const chartPlaceholder = document.getElementById("breakEvenChartContainer");
-            if(chartPlaceholder) { // Re-add placeholder text if needed, or just ensure canvas is cleared
-                const canvas = document.getElementById('pointsBreakEvenChart');
-                if(canvas) {
-                    const ctx = canvas.getContext('2d');
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                }
-                // Or, if you want the text back:
-                // chartPlaceholder.innerHTML = '<canvas id="pointsBreakEvenChart"></canvas>'; // This recreates canvas, might not be best
-                // Better: just ensure chart is destroyed. User will see empty canvas or placeholder div styling.
+            if (chartCanvas) { // Use the global chartCanvas variable
+                // Clear the canvas content
+                const ctx = chartCanvas.getContext('2d');
+                ctx.clearRect(0, 0, chartCanvas.width, chartCanvas.height);
+                // Optionally hide it or ensure its container shows placeholder text if needed
+                // For now, just clearing. The container div has placeholder text if canvas is empty.
+                 chartCanvas.style.display = 'none'; // Hide it on reset, performCalculation will show it.
             }
         });
     }
