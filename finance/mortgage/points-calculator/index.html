@@ -153,8 +153,7 @@
             <a href="/finance/mortgage/mortgage-calculator/"><i class="fas fa-calculator"></i> Mortgage Calculator</a>
             <a href="/finance/mortgage/refinance-calculator/"><i class="fas fa-retweet"></i> Refinance Calculator</a>
             <a href="/finance/mortgage/payoff-calculator/"><i class="fas fa-calendar-check"></i> Payoff Calculator</a>
-            <a href="/finance/mortgage/amortization-calculator/"><i class="fas fa-table"></i> Amortization</a>
-            <a href="/finance/mortgage/points-calculator/" class="active"><i class="fas fa-percent"></i> Points Calculator</a>
+            <a href="/finance/mortgage/amortization-calculator/"><i class="fas fa-table"></i> Amortization</a> <a href="/finance/mortgage/points-calculator/" class="active"><i class="fas fa-percent"></i> Points Calculator</a>
             <a href="/finance/mortgage/biweekly-calculator/"><i class="fas fa-calendar-alt"></i> Biweekly Calculator</a>
         </div>
     </div>
@@ -208,7 +207,7 @@
                             <div class="form-group">
                                 <label for="rateReductionPerPoint">Interest Rate Reduction Per Point (%):</label>
                                 <input type="number" id="rateReductionPerPoint" step="0.001" placeholder="e.g., 0.25 for 0.25%" required>
-                                <small>Ask your lender for this value.</small>
+                                <small>Ask your lender for this value (e.g., enter 0.25 for a 0.25% reduction).</small>
                             </div>
                         </fieldset>
 
@@ -261,11 +260,14 @@
                                 <h4>Total Savings (If Kept for Planned Duration)</h4>
                                 <p id="totalSavingsForDuration" class="text-success fw-bold">-</p>
                             </div>
-                             <div class="result-item result-item-recommendation" style="grid-column: 1 / -1;"> <h4>Recommendation</h4>
+                             <div class="result-item result-item-recommendation" style="grid-column: 1 / -1;"> 
+                                <h4>Recommendation</h4>
                                 <p id="recommendationText" style="font-weight: normal; font-style: italic;">-</p>
                             </div>
                         </div>
-                        <div id="breakEvenChartContainer" style="margin-top: 20px; min-height: 300px; border: 1px dashed #ccc; display:flex; align-items:center; justify-content:center; color: #777;">Chart Placeholder: Cumulative Savings vs. Points Cost</div>
+                        <div id="breakEvenChartContainer" class="chart-placeholder" style="margin-top: 20px; min-height: 300px; border: 1px dashed #ccc; display:flex; align-items:center; justify-content:center; color: #777; border-radius: 6px; background-color: var(--background-color, #fff);">
+                            Chart Placeholder: Cumulative Savings vs. Points Cost
+                            </div>
                     </div>
                 </section>
 
@@ -273,7 +275,7 @@
                     <h2 class="section-title">How to Use This Calculator</h2>
                     <ol>
                         <li><strong>Enter Loan & Rate Information:</strong> Input your total loan amount, the loan term in years, and the base interest rate you've been offered *without* paying any points.</li>
-                        <li><strong>Provide Points Details:</strong> Specify the number of discount points you are considering purchasing (e.g., 1, 1.5). Enter the cost per point (typically 1% of the loan amount) and the interest rate reduction your lender offers per point (e.g., 0.25%).</li>
+                        <li><strong>Provide Points Details:</strong> Specify the number of discount points you are considering purchasing (e.g., 1, 1.5). Enter the cost per point (typically 1% of the loan amount) and the interest rate reduction your lender offers per point (e.g., 0.25% would be entered as 0.25).</li>
                         <li><strong>Indicate Your Plans:</strong> Enter the number of years and additional months you realistically plan to stay in the home or keep this specific mortgage. This is crucial for the break-even analysis.</li>
                         <li><strong>Calculate Break-Even:</strong> Click the "Calculate Break-Even" button.</li>
                         <li><strong>Analyze Your Results:</strong> The calculator will show the total cost of points, your new lower interest rate, the difference in monthly payments, your break-even point (in months/years), and the total net savings if you keep the mortgage for your planned duration. A recommendation will also be provided based on these figures.</li>
@@ -349,7 +351,7 @@
                     <ul>
                         <li><a href="/about/">About Us</a></li>
                         <li><a href="/contact/">Contact</a></li>
-                        <li><a href="/privacy/">Privacy Policy</a> 
+                        <li><a href="/privacy/">Privacy Policy</a></li> 
                         <li><a href="/terms/">Terms of Service</a></li> 
                         <li><a href="/sitemap.xml">Sitemap</a></li> 
                     </ul>
