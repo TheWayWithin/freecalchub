@@ -51,7 +51,7 @@
     color: var(--text-color-light, #666);
 }
 
-/* Styling for the recommendation text */
+/* Styling for the recommendation text if needed */
 .result-item-recommendation p {
     font-style: italic;
     font-weight: normal; /* Override bold from generic .result-item p if needed */
@@ -68,6 +68,13 @@
     align-items: center;
     justify-content: center;
     color: var(--text-color-light, #777);
-    background-color: var(--background-color, #fff);
-    border-radius: 6px;
+    background-color: var(--background-color, #fff); /* Match card background or be distinct */
+    border-radius: 6px; /* Consistent with other elements */
+}
+
+/* Ensure the recommendation result item can span full width on smaller grid layouts if needed */
+@media (max-width: 768px) { /* Example breakpoint, adjust as per your grid's behavior */
+    .results-grid .result-item-recommendation {
+        grid-column: 1 / -1; /* Makes it span all columns */
+    }
 }
