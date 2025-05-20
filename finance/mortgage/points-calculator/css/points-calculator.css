@@ -51,11 +51,23 @@
     color: var(--text-color-light, #666);
 }
 
-/* Styling for the recommendation text if needed */
+/* Styling for the recommendation text */
 .result-item-recommendation p {
     font-style: italic;
-    /* Add more distinct styling if desired */
+    font-weight: normal; /* Override bold from generic .result-item p if needed */
+    font-size: 1.1em; /* Slightly larger for emphasis */
+    line-height: 1.6;
 }
 
-/* Add styles for chart placeholder if you implement one */
-/* #breakEvenChartContainer { ... } */
+/* Chart Placeholder */
+#breakEvenChartContainer {
+    margin-top: 20px;
+    min-height: 300px; 
+    border: 1px dashed var(--border-color-light, #e0e0e0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color-light, #777);
+    background-color: var(--background-color, #fff);
+    border-radius: 6px;
+}
