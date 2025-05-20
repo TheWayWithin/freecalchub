@@ -1,0 +1,83 @@
+/* Savings Goal Calculator Specific Styles */
+
+#savingsGoalForm fieldset {
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+#savingsGoalForm legend {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0 10px;
+    color: var(--primary-color, #007bff);
+}
+
+#savingsGoalForm .form-group {
+    margin-bottom: 15px;
+}
+
+#savingsGoalForm label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color-dark, #333);
+    font-weight: 500;
+}
+
+#savingsGoalForm input[type="number"],
+#savingsGoalForm select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--input-bg-color, #fff);
+    color: var(--input-text-color, #333);
+    font-size: 1em;
+}
+
+#savingsGoalForm input[type="number"]:focus,
+#savingsGoalForm select:focus {
+    border-color: var(--primary-color, #007bff);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-color-light-transparent, rgba(0,123,255,0.25));
+}
+
+#savingsGoalForm .form-group small {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.85em;
+    color: var(--text-color-light, #666);
+}
+
+/* Results Section */
+#resultsSection .result-item small {
+    display: block;
+    font-size: 0.85em;
+    color: var(--text-color-light);
+    margin-top: 3px;
+}
+
+/* Chart Placeholder Styling */
+#savingsChartContainer {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid var(--border-color-light, #e0e0e0);
+    border-radius: 6px;
+    background-color: var(--background-color, #fff);
+    position: relative; 
+    height:300px; 
+    width:100%;
+}
+#savingsGrowthChart {
+    display: none; /* Initially hidden until calculation */
+}
+
+
+/* Responsive adjustments if needed */
+@media (max-width: 768px) {
+    #savingsChartContainer {
+        height: 250px; 
+    }
+}
