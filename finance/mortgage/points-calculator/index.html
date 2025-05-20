@@ -207,7 +207,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="rateReductionPerPoint">Interest Rate Reduction Per Point (%):</label>
-                                <input type="number" id="rateReductionPerPoint" step="0.001" placeholder="e.g., 0.25 for 0.25%">
+                                <input type="number" id="rateReductionPerPoint" step="0.001" placeholder="e.g., 0.25 for 0.25%" required>
                                 <small>Ask your lender for this value.</small>
                             </div>
                         </fieldset>
@@ -216,7 +216,7 @@
                             <legend>Your Plans</legend>
                             <div class="form-group">
                                 <label for="plannedDurationYears">How long do you plan to keep this mortgage? (Years):</label>
-                                <input type="number" id="plannedDurationYears" placeholder="e.g., 7" value="7">
+                                <input type="number" id="plannedDurationYears" placeholder="e.g., 7" value="7" min="0" required>
                             </div>
                              <div class="form-group">
                                 <label for="plannedDurationMonths">Additional Months:</label>
@@ -261,11 +261,12 @@
                                 <h4>Total Savings (If Kept for Planned Duration)</h4>
                                 <p id="totalSavingsForDuration" class="text-success fw-bold">-</p>
                             </div>
-                             <div class="result-item result-item-recommendation"> <h4>Recommendation</h4>
-                                <p id="recommendationText">-</p>
+                             <div class="result-item result-item-recommendation" style="grid-column: 1 / -1;"> <h4>Recommendation</h4>
+                                <p id="recommendationText" style="font-weight: normal; font-style: italic;">-</p>
                             </div>
                         </div>
-                        </div>
+                        <div id="breakEvenChartContainer" style="margin-top: 20px; min-height: 300px; border: 1px dashed #ccc; display:flex; align-items:center; justify-content:center; color: #777;">Chart Placeholder: Cumulative Savings vs. Points Cost</div>
+                    </div>
                 </section>
 
                 <section class="how-to-use-section content-section">
@@ -281,27 +282,27 @@
 
                 <section class="content-section">
                     <h2 class="section-title">Understanding Mortgage Points</h2>
-                    <p>What Are Mortgage Points?: Detailed explanation of discount points vs. origination points. How Do Points Work?: How paying upfront reduces the interest rate. Cost of Points: Typically 1% of the loan amount per point. Tax Deductibility: Briefly explain if and when points are tax-deductible (refer to tax professional). <em>(TODO: Populate with detailed content from 02_mortgage_points_calculator_spec.md)</em></p>
+                    <p>Mortgage points, often called "discount points," are fees you pay upfront to your lender at closing in exchange for a lower interest rate on your loan. One point typically costs 1% of the loan amount. For example, one point on a $300,000 mortgage would cost $3,000. By "buying down" your rate, you can reduce your monthly mortgage payments. It's important to distinguish discount points from "origination points," which are fees lenders charge for processing the loan and do not affect your interest rate. The decision to pay discount points depends on how long you plan to keep the mortgage, as you'll need enough time for the monthly savings to outweigh the initial cost of the points. Some mortgage points may be tax-deductible, but it's best to consult a tax professional for advice specific to your situation.</p>
                 </section>
                  <section class="content-section">
                     <h2 class="section-title">When Does Buying Points Make Financial Sense?</h2>
-                    <p>Long-Term Homeownership: If you plan to stay in the home and keep the mortgage past the break-even point. Cash Availability: If you have sufficient cash for closing costs including points. Interest Rate Environment: More beneficial when rates are generally higher. Comparing to Other Uses of Funds: Opportunity cost of using cash for points vs. investing or larger down payment. Provide clear scenarios where it is and isn't advisable. <em>(TODO: Populate with detailed content from 02_mortgage_points_calculator_spec.md)</em></p>
+                    <p>Paying for mortgage points can be a smart financial move if you plan to stay in your home and keep your mortgage for a long period—specifically, longer than the break-even point. If you have available cash for closing costs and paying points doesn't strain your finances, it might be beneficial. This strategy can be particularly advantageous when interest rates are generally higher, as the potential for savings becomes more significant. However, always consider the opportunity cost: could that cash be used for a larger down payment (potentially avoiding PMI), invested elsewhere for a higher return, or kept for emergencies? If you anticipate selling your home or refinancing your mortgage relatively soon (before reaching the break-even point), buying points is usually not advisable as you won't recoup their cost.</p>
                 </section>
                 <section class="content-section">
                     <h2 class="section-title">Calculating Your Break-Even Point</h2>
-                    <p>Explain the break-even calculation: Total Cost of Points ÷ Monthly Savings = Months to Break Even. Provide a manual calculation example. Discuss factors that can influence the actual break-even (e.g., refinancing early). <em>(TODO: Populate with detailed content from 02_mortgage_points_calculator_spec.md)</em></p>
+                    <p>The break-even point is the most critical factor in deciding whether to pay for mortgage points. It's the length of time you need to keep your mortgage for the total monthly savings from the lower interest rate to equal the upfront cost of the points. The calculation is straightforward: **Total Cost of Points ÷ Monthly Savings = Months to Break Even**. For example, if points cost $3,000 and your monthly payment is reduced by $50, your break-even point is $3,000 / $50 = 60 months, or 5 years. If you plan to stay in your home and keep the mortgage for more than 5 years, you'll start saving money after that point. If you sell or refinance sooner, you'll likely lose money on the points. Our calculator performs this calculation for you instantly.</p>
                 </section>
                  <section class="content-section">
                     <h2 class="section-title">Negotiating Mortgage Points with Lenders</h2>
-                    <p>Can points be negotiated? Questions to ask your lender about points and rate options. Comparing offers with and without points from different lenders. <em>(TODO: Populate with detailed content from 02_mortgage_points_calculator_spec.md)</em></p>
+                    <p>Yes, mortgage points and the associated rate reductions can sometimes be negotiated with lenders, although the extent of flexibility varies. When discussing loan options, always ask for quotes with different point scenarios (zero points, one point, two points, etc.) to see the corresponding interest rates. Don't hesitate to ask if the cost per point or the rate reduction per point is negotiable. Comparing offers from multiple lenders is key; one lender might offer a better rate for the same number of points, or a lower cost for the points themselves. Be clear about your financial goals and how long you plan to keep the mortgage, as this will help your lender tailor options for you. Understanding these details empowers you to make the best choice for your situation.</p>
                 </section>
 
                 <section class="faq-section content-section">
                     <h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
-                    <div class="faq-item"><h3>What exactly is a mortgage point?</h3><p>A mortgage point, often called a \"discount point,\" is a fee paid directly to the lender at closing in exchange for a reduced interest rate on your mortgage. One point typically costs 1% of your total loan amount. Paying points is essentially pre-paying some of your interest to secure a lower rate for the life of the loan.</p></div>
+                    <div class="faq-item"><h3>What exactly is a mortgage point?</h3><p>A mortgage point, often called a "discount point," is a fee paid directly to the lender at closing in exchange for a reduced interest rate on your mortgage. One point typically costs 1% of your total loan amount. Paying points is essentially pre-paying some of your interest to secure a lower rate for the life of the loan.</p></div>
                     <div class="faq-item"><h3>How much does one mortgage point typically cost?</h3><p>One mortgage point almost always costs 1% of the total loan amount. For example, on a $300,000 loan, one point would cost $3,000. Two points would cost $6,000.</p></div>
                     <div class="faq-item"><h3>How much will paying points lower my interest rate?</h3><p>The amount your interest rate is lowered per point varies by lender and current market conditions. A common reduction is 0.25% for each point paid, but this is not a fixed rule. You should always ask your lender for specific quotes showing the rate reduction for paying different amounts of points.</p></div>
-                    <div class="faq-item"><h3>Is it always a good idea to pay for mortgage points if I can afford them?</h3><p>Not necessarily. Paying points is only a good idea if you plan to keep the mortgage long enough to pass the \"break-even point.\" This is the point in time when your accumulated monthly savings from the lower interest rate equal the upfront cost of the points. If you sell the home or refinance before reaching the break-even point, you could lose money on the points paid.</p></div>
+                    <div class="faq-item"><h3>Is it always a good idea to pay for mortgage points if I can afford them?</h3><p>Not necessarily. Paying points is only a good idea if you plan to keep the mortgage long enough to pass the "break-even point." This is the point in time when your accumulated monthly savings from the lower interest rate equal the upfront cost of the points. If you sell the home or refinance before reaching the break-even point, you could lose money on the points paid.</p></div>
                     <div class="faq-item"><h3>Are mortgage points tax deductible?</h3><p>Mortgage points may be tax-deductible in the year they are paid, or sometimes over the life of the loan, provided you meet certain IRS requirements. These rules can be complex and depend on factors like whether the loan is for a primary residence and how the points were paid. It is highly recommended to consult with a qualified tax advisor for guidance specific to your situation.</p></div>
                     <div class="faq-item"><h3>What is the difference between discount points and origination points?</h3><p>Discount points are fees you pay to the lender to reduce your interest rate. Origination points (or loan origination fees) are fees charged by the lender to cover the costs of processing your loan application and are usually expressed as a percentage of the loan amount. Origination points do not reduce your interest rate.</p></div>
                     <div class="faq-item"><h3>How do I calculate the break-even point for paying mortgage points?</h3><p>The basic formula for the break-even point is: Total Cost of Points ÷ Monthly Savings from Lower Rate = Number of Months to Break Even. Our Mortgage Points Calculator does this calculation for you automatically.</p></div>
@@ -348,8 +349,8 @@
                     <ul>
                         <li><a href="/about/">About Us</a></li>
                         <li><a href="/contact/">Contact</a></li>
-                        <li><a href="/privacy-policy/">Privacy Policy</a> 
-                        <li><a href="/terms-of-service/">Terms of Service</a></li> 
+                        <li><a href="/privacy/">Privacy Policy</a> 
+                        <li><a href="/terms/">Terms of Service</a></li> 
                         <li><a href="/sitemap.xml">Sitemap</a></li> 
                     </ul>
                 </div>
