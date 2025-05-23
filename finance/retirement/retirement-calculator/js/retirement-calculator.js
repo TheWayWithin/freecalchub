@@ -1,4 +1,4 @@
-// finance/retirement-calculator/js/retirement-calculator.js
+// finance/retirement/retirement-calculator/js/retirement-calculator.js
 
 document.addEventListener('DOMContentLoaded', () => {
     // DOM Elements
