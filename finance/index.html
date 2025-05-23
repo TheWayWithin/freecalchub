@@ -36,7 +36,10 @@
             { "@type": "WebPage", "name": "Loan Calculators", "url": "https://www.freecalchub.com/finance/loan/" },
             { "@type": "WebPage", "name": "Investment Calculators", "url": "https://www.freecalchub.com/finance/investment/" },
             { "@type": "WebPage", "name": "Retirement Calculators", "url": "https://www.freecalchub.com/finance/retirement/" },
-            { "@type": "WebPage", "name": "Savings Calculators", "url": "https://www.freecalchub.com/finance/savings/" } // Added Savings Category
+            { "@type": "WebPage", "name": "Savings Calculators", "url": "https://www.freecalchub.com/finance/savings/" },
+            { "@type": "WebPage", "name": "Budgeting Calculators", "url": "https://www.freecalchub.com/finance/budgeting/" },
+            { "@type": "WebPage", "name": "Cryptocurrency Calculators", "url": "https://www.freecalchub.com/finance/cryptocurrency/" },
+            { "@type": "WebPage", "name": "Tax Calculators", "url": "https://www.freecalchub.com/finance/tax/" }
           ]
         },
         {
@@ -53,9 +56,9 @@
             { "@type": "ListItem", "position": 1, "name": "Mortgage Calculator", "url": "https://www.freecalchub.com/finance/mortgage/mortgage-calculator/" },
             { "@type": "ListItem", "position": 2, "name": "Mortgage Affordability Calculator", "url": "https://www.freecalchub.com/finance/mortgage/affordability-calculator/" },
             { "@type": "ListItem", "position": 3, "name": "Loan Calculator", "url": "https://www.freecalchub.com/finance/loan/loan-calculator/" },
-            { "@type": "ListItem", "position": 4, "name": "Savings Goal Calculator", "url": "https://www.freecalchub.com/finance/savings/savings-goal-calculator/" }, // Added Savings Goal
-            { "@type": "ListItem", "position": 5, "name": "Compound Interest Calculator", "url": "https://www.freecalchub.com/finance/investment/compound-interest-calculator/" }
-            // Adjust positions for other featured calculators as needed
+            { "@type": "ListItem", "position": 4, "name": "Savings Goal Calculator", "url": "https://www.freecalchub.com/finance/savings/savings-goal-calculator/" },
+            { "@type": "ListItem", "position": 5, "name": "Compound Interest Calculator", "url": "https://www.freecalchub.com/finance/investment/compound-interest-calculator/" },
+            { "@type": "ListItem", "position": 6, "name": "Retirement Calculator", "url": "https://www.freecalchub.com/finance/retirement-calculator/" }
           ]
         }
       ]
@@ -84,7 +87,7 @@
         .calculator-card:hover {
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        .calculator-icon {
+        .calculator-card .calculator-icon { /* Specific to card icon */
             font-size: 2.5em; 
             margin-bottom: 15px; 
             color: var(--primary-color, #007bff);
@@ -99,6 +102,10 @@
             font-size: 0.95em; 
             line-height: 1.5;
             flex-grow: 1; 
+            margin-bottom: 15px;
+        }
+        .calculator-card .btn { /* Ensure button in card is styled */
+             margin-top: auto; /* Pushes button to bottom if text is short */
         }
         .subcategory-cta { 
             margin-top: 25px; 
@@ -108,7 +115,7 @@
             display: inline-block;
             padding: 10px 20px;
             background-color: var(--primary-color, #007bff);
-            color: white;
+            color: white !important; /* Ensure text is white for buttons */
             border-radius: 5px;
             text-decoration: none;
             transition: background-color 0.3s ease;
@@ -116,6 +123,28 @@
         }
         .btn:hover {
             background-color: var(--primary-color-dark, #0056b3); 
+        }
+        .subcategory-section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color-light);
+        }
+        .subcategory-section:last-of-type {
+            border-bottom: none;
+        }
+        .category-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .category-header h1 {
+             margin-bottom: 10px;
+        }
+        .category-header .lead {
+            font-size: 1.1em;
+            color: var(--text-color-light);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
@@ -190,7 +219,8 @@
             <a href="/finance/investment/"><i class="fas fa-chart-line"></i>Investment</a> 
             <a href="/finance/retirement/"><i class="fas fa-umbrella-beach"></i>Retirement</a>
             <a href="/finance/budgeting/"><i class="fas fa-wallet"></i>Budgeting</a>
-            <a href="/finance/savings/" class="active"><i class="fas fa-piggy-bank"></i>Savings</a> <a href="/finance/cryptocurrency/"><i class="fas fa-coins"></i>Cryptocurrency</a>
+            <a href="/finance/savings/"><i class="fas fa-piggy-bank"></i>Savings</a> 
+            <a href="/finance/cryptocurrency/"><i class="fas fa-coins"></i>Cryptocurrency</a>
             <a href="/finance/tax/"><i class="fas fa-receipt"></i>Tax</a>
         </div>
     </div>
@@ -209,26 +239,19 @@
                 <div class="calculator-icon"><i class="fas fa-home"></i></div>
                 <h3>Mortgage Calculator</h3>
                 <p>Calculate monthly payments, interest, and amortization schedule for your mortgage.</p>
+                <span class="btn">Calculate Mortgage</span>
               </a>
               <a href="/finance/mortgage/affordability-calculator/" class="calculator-card">
                 <div class="calculator-icon"><i class="fas fa-dollar-sign"></i></div>
                 <h3>Mortgage Affordability Calculator</h3>
                 <p>Determine how much house you can afford based on your income, debts, and down payment.</p>
+                 <span class="btn">Check Affordability</span>
               </a>
               <a href="/finance/mortgage/refinance-calculator/" class="calculator-card">
                 <div class="calculator-icon"><i class="fas fa-sync-alt"></i></div>
                 <h3>Mortgage Refinance Calculator</h3>
                 <p>Analyze whether refinancing your current mortgage can save you money or shorten your term.</p>
-              </a>
-              <a href="/finance/mortgage/payoff-calculator/" class="calculator-card">
-                <div class="calculator-icon"><i class="fas fa-calendar-check"></i></div>
-                <h3>Mortgage Payoff Calculator</h3>
-                <p>See how extra payments can shorten your loan term and save on interest.</p>
-              </a>
-              <a href="/finance/mortgage/biweekly-calculator/" class="calculator-card">
-                <div class="calculator-icon"><i class="fas fa-calendar-alt"></i></div>
-                <h3>Biweekly Mortgage Calculator</h3>
-                <p>Explore how biweekly payments can accelerate your mortgage payoff.</p>
+                 <span class="btn">Analyze Refinance</span>
               </a>
             </div>
             <div class="subcategory-cta">
@@ -238,17 +261,19 @@
 
         <section class="subcategory-section">
             <h2>Loan Calculators</h2>
-            <p>Understand your loan options, calculate payments, and make informed borrowing decisions for personal, auto, or student loans.</p>
+            <p>Understand your loan options, calculate payments, and make informed borrowing decisions.</p>
             <div class="calculator-grid"> 
                 <a href="/finance/loan/loan-calculator/" class="calculator-card">
                     <div class="calculator-icon"><i class="fas fa-calculator"></i></div>
                     <h3>Loan Calculator</h3>
                     <p>Estimate monthly payments, total interest, and amortization for various loan types.</p>
+                     <span class="btn">Calculate Loan</span>
                 </a>
                 <a href="/finance/loan/extra-payment-calculator/" class="calculator-card">
                     <div class="calculator-icon"><i class="fas fa-hand-holding-usd"></i></div>
                     <h3>Extra Payment Calculator</h3>
                     <p>See how making additional payments can shorten your loan term and save interest.</p>
+                     <span class="btn">Analyze Payments</span>
                 </a>
             </div> 
             <div class="subcategory-cta">
@@ -261,10 +286,17 @@
             <p>Plan for your financial goals and watch your savings grow with these helpful tools.</p>
             <div class="calculator-grid"> 
                 <a href="/finance/savings/savings-goal-calculator/" class="calculator-card">
-                    <div class="calculator-icon"><i class="fas fa-bullseye"></i></div> <h3>Savings Goal Calculator</h3>
+                    <div class="calculator-icon"><i class="fas fa-bullseye"></i></div> 
+                    <h3>Savings Goal Calculator</h3>
                     <p>Determine how much to save regularly to reach your financial targets.</p>
+                     <span class="btn">Plan Savings Goal</span>
                 </a>
-                </div> 
+                <a href="/finance/investment/compound-interest-calculator/" class="calculator-card"> <div class="calculator-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>Compound Interest Calculator</h3>
+                    <p>See how your investments grow over time with the power of compound interest.</p>
+                     <span class="btn">Calculate Interest</span>
+                </a>
+            </div> 
             <div class="subcategory-cta">
                 <a href="/finance/savings/" class="btn">View All Savings Calculators</a>
             </div>
@@ -274,10 +306,11 @@
             <h2>Investment Calculators</h2>
             <p>Grow your wealth and plan for the future with these investment planning tools.</p>
             <div class="calculator-grid">
-                <a href="/finance/investment/compound-interest-calculator/" class="calculator-card">
-                    <div class="calculator-icon"><i class="fas fa-seedling"></i></div>
-                    <h3>Compound Interest Calculator</h3>
-                    <p>See how your investments grow over time with the power of compound interest.</p>
+                <a href="/finance/investment/investment-calculator/" class="calculator-card">
+                    <div class="calculator-icon"><i class="fas fa-chart-pie"></i></div>
+                    <h3>Investment Calculator</h3>
+                    <p>Project potential returns on your investments based on various factors.</p>
+                     <span class="btn">Project Investments</span>
                 </a>
             </div>
             <div class="subcategory-cta">
@@ -289,10 +322,11 @@
             <h2>Retirement Calculators</h2>
             <p>Plan for a secure retirement with these essential financial tools.</p>
             <div class="calculator-grid">
-                <a href="/finance/retirement/retirement-calculator/" class="calculator-card">
+                <a href="/finance/retirement-calculator/" class="calculator-card">
                     <div class="calculator-icon"><i class="fas fa-umbrella-beach"></i></div>
                     <h3>Retirement Calculator</h3>
-                    <p>Estimate how much you need to save for retirement and if you are on track.</p>
+                    <p>Estimate your retirement savings needs and see if you're on track for a comfortable retirement.</p>
+                    <span class="btn">Plan Retirement</span>
                 </a>
             </div>
             <div class="subcategory-cta">
@@ -361,7 +395,5 @@
 
     <script src="/js/main.js" defer></script>
     <script src="/js/dark-mode.js" defer></script>
-    <script src="/js/faq-accordion.js" defer></script>
-
-</body>
+    </body>
 </html>
