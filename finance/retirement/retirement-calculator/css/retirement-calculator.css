@@ -1,97 +1,150 @@
-/* /finance/retirement/retirement-calculator/css/retirement-calculator.css */
-/* --- Styles specific to the Retirement Calculator --- */
-/* --- Version 4: Simple 2-Column Grid + VERY Obvious Debug Border --- */
+/* finance/retirement/retirement-calculator/css/retirement-calculator.css */
 
-/* --- Main Form Styling --- */
-#calculatorForm.input-grid {
+/* Style for input groups with two elements (value + type selector) */
+.dual-input {
     display: flex;
-    flex-direction: column;
-    gap: 40px;
-    width: 100%;
+    align-items: center;
+    gap: 10px; /* Space between input and select */
 }
 
-/* --- Fieldset Styling: Apply Grid *Here* --- */
-#calculatorForm fieldset {
-    /* --- DEBUGGING BORDER: IF YOU DON'T SEE THIS, THE FILE ISN'T LOADING --- */
-    border: 5px solid green !important;
-
-    padding: 25px 30px;
-    margin: 0;
-    border-radius: 8px;
-    background-color: var(--card-background-light, #fdfdfd);
-    width: 100%;
-    box-sizing: border-box;
-
-    /* --- APPLYING A SIMPLE 2-COLUMN GRID --- */
-    display: grid; /* No !important here, rely on load order */
-    grid-template-columns: 1fr 1fr; /* Forcing 2 columns for test */
-    gap: 25px 30px; /* Space between inputs */
-    min-width: 0;
+.dual-input label {
+    flex-basis: 150px; /* Adjust as needed for label alignment */
+    flex-shrink: 0;
 }
 
-/* --- Legend Styling --- */
-#calculatorForm fieldset legend {
-    font-size: 1.3em;
-    font-weight: bold;
-    color: var(--text-color-dark, #333);
-    margin-bottom: 10px;
-    padding: 0 5px;
-    width: auto;
-    border-bottom: none;
-    /* --- Make Legend Span All Columns --- */
-    grid-column: 1 / -1;
+.dual-input input[type="number"] {
+    flex-grow: 1; /* Input takes available space */
+    width: auto; /* Override default width if necessary */
 }
 
-/* --- Input Group Styling --- */
-#calculatorForm .form-group {
+.dual-input select {
+    flex-shrink: 0; /* Select stays its size */
+    padding: 8px 10px; /* Consistent padding */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    height: 40px; /* Match input height */
+}
+
+/* Ensure consistent form group layout */
+.calculator-form .form-group {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: auto; /* Ensure it doesn't force 100% width */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    align-items: center;
+    margin-bottom: 15px;
 }
 
-/* Style labels */
-#calculatorForm label {
-    font-weight: 600;
-    color: var(--text-color, #555);
+.calculator-form .form-group label {
+    margin-bottom: 5px;
+    width: 100%; /* Labels above inputs on small screens */
 }
 
-/* Style input fields and select boxes */
-#calculatorForm input[type="text"],
-#calculatorForm input[type="number"],
-#calculatorForm select {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid var(--border-color, #ccc);
-    border-radius: 5px;
-    font-size: 1em;
-    box-sizing: border-box;
-    background-color: var(--input-background, #fff);
-    color: var(--input-text-color, #333);
-}
-
-/* Style focus state */
-#calculatorForm input[type="text"]:focus,
-#calculatorForm input[type="number"]:focus,
-#calculatorForm select:focus {
-    outline: none;
-    border-color: var(--primary-color, #007bff);
-    box-shadow: 0 0 0 2px var(--primary-color-light, #cce5ff);
-}
-
-/* --- Form Actions --- */
-#calculatorForm .form-actions {
-    display: flex;
-    justify-content: flex-start;
-    gap: 15px;
-    margin-top: 10px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border-color, #e0e0e0);
-}
-
-/* --- Responsive Adjustments --- */
-@media (max-width: 700px) {
-    #calculatorForm fieldset {
-        grid-template-columns: 1fr; /* Single column on small screens */
+@media (min-width: 600px) {
+    .calculator-form .form-group label {
+        width: 200px; /* Fixed width for labels on larger screens */
+        margin-bottom: 0;
+        margin-right: 10px;
     }
+     .calculator-form .form-group input[type="number"],
+     .calculator-form .form-group select,
+     .dual-input {
+        flex: 1; /* Allow inputs/selects to take up space */
+     }
+}
+
+/* Results Section Styling */
+.results-section .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.results-section .result-item {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid var(--border-color);
+}
+
+.results-section .result-item h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--text-color-light);
+    font-size: 1em;
+}
+
+.results-section .result-item p {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+#shortfallSurplus.shortfall {
+    color: #e74c3c; /* Red for shortfall */
+}
+
+#shortfallSurplus.surplus {
+    color: #2ecc71; /* Green for surplus */
+}
+
+/* Chart Styling */
+.charts-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Stack on small screens */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+    .charts-container {
+       grid-template-columns: 1fr 1fr; /* Side-by-side on larger screens */
+    }
+}
+
+.chart-item {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid var(--border-color);
+}
+
+.chart-item h4 {
+     margin-top: 0;
+     margin-bottom: 15px;
+}
+
+.chart-item canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Error Message Styling */
+.error-messages {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+}
+
+.error-messages ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+/* Add input validation styles */
+input:invalid {
+  border-color: #e74c3c;
+}
+
+input:required:valid {
+    border-color: #2ecc71;
 }
