@@ -1,6 +1,6 @@
 /* /finance/retirement/retirement-calculator/css/retirement-calculator.css */
 /* --- Styles specific to the Retirement Calculator --- */
-/* --- Version 3: Stronger Grid + Debugging Borders --- */
+/* --- Version 4: Simple 2-Column Grid + VERY Obvious Debug Border --- */
 
 /* --- Main Form Styling --- */
 #calculatorForm.input-grid {
@@ -12,18 +12,20 @@
 
 /* --- Fieldset Styling: Apply Grid *Here* --- */
 #calculatorForm fieldset {
-    border: 1px solid var(--border-color, #e0e0e0);
+    /* --- DEBUGGING BORDER: IF YOU DON'T SEE THIS, THE FILE ISN'T LOADING --- */
+    border: 5px solid green !important;
+
     padding: 25px 30px;
     margin: 0;
     border-radius: 8px;
     background-color: var(--card-background-light, #fdfdfd);
-    width: 100%; /* Ensure fieldset takes full width */
-    box-sizing: border-box; /* Include padding in width calculation */
+    width: 100%;
+    box-sizing: border-box;
 
-    /* --- APPLYING GRID --- */
-    display: grid !important; /* <--- ADDED !important for debugging */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px 30px;
+    /* --- APPLYING A SIMPLE 2-COLUMN GRID --- */
+    display: grid; /* No !important here, rely on load order */
+    grid-template-columns: 1fr 1fr; /* Forcing 2 columns for test */
+    gap: 25px 30px; /* Space between inputs */
     min-width: 0;
 }
 
@@ -46,9 +48,6 @@
     flex-direction: column;
     gap: 8px;
     width: auto; /* Ensure it doesn't force 100% width */
-
-    /* --- DEBUGGING BORDER --- */
-    /* border: 1px dashed red; /* <--- UNCOMMENT this line to see the form-group boxes */
 }
 
 /* Style labels */
@@ -88,5 +87,11 @@
     margin-top: 10px;
     padding-top: 20px;
     border-top: 1px solid var(--border-color, #e0e0e0);
-    /* Ensure it's not part of the grid (should be outside fieldsets) */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 700px) {
+    #calculatorForm fieldset {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
 }
