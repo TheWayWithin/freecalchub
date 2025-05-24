@@ -1,0 +1,119 @@
+/* --- FreecalcHub: FAQ Accordion Styles --- */
+/* --- Version: 2.0 --- */
+/* --- For H3/Button Structure --- */
+
+/* Style for each individual FAQ item */
+.faq-item {
+    border-bottom: 1px solid var(--border-color, #e0e0e0); /* Adds a line below each FAQ, with a fallback color */
+    margin-bottom: 10px; /* Space below each FAQ */
+}
+
+/* Remove border and margin from the very last FAQ item */
+.faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* Style for the H3 tag holding the question */
+.faq-question {
+    margin: 0; /* Removes default spacing around the H3 tag */
+    padding: 0;
+}
+
+/* Style for the button inside the H3 tag */
+button.accordion {
+    background-color: transparent; /* Makes the button background invisible */
+    color: var(--text-color, #333); /* Sets text color, uses site variable or fallback */
+    cursor: pointer; /* Changes mouse cursor to a hand when hovering */
+    padding: 15px 5px; /* Spacing inside the button (top/bottom, left/right) */
+    width: 100%; /* Makes the button fill the whole width */
+    border: none; /* Removes the default button border */
+    text-align: left; /* Aligns text to the left */
+    outline: none; /* Removes the outline that appears on click */
+    font-size: 1.1em; /* Makes text slightly larger */
+    font-weight: bold; /* Makes text bold */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    display: flex; /* Uses Flexbox to arrange text and icon */
+    justify-content: space-between; /* Puts text left, icon right */
+    align-items: center; /* Aligns text and icon vertically */
+    line-height: 1.4; /* Helps with text wrapping if needed */
+}
+
+/* Fix for Firefox button padding issues */
+button.accordion::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* Style for when you hover or focus (using keyboard) on the button */
+button.accordion:hover,
+button.accordion:focus {
+    background-color: var(--hover-background-color, #f5f5f5); /* Light background color on hover */
+    outline: 2px solid var(--primary-color, #007bff); /* Adds a visible border when using keyboard navigation */
+    outline-offset: -2px; /* Pulls the outline inside a bit */
+}
+
+/* Style for the icon span (holds the '+' / '-') */
+.accordion-icon {
+    flex-shrink: 0; /* Prevents the icon from getting smaller if text is long */
+    width: 16px; 
+    height: 16px; 
+    transition: transform 0.3s ease-out; /* Smooth rotation transition */
+    position: relative; /* Needed to position the '+' bars */
+    margin-left: 15px; /* Space between text and icon */
+}
+
+/* Style for the bars that make the '+' icon */
+.accordion-icon::before,
+.accordion-icon::after {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Allows precise positioning */
+    background-color: var(--text-color, #333); /* Icon color */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Smooth transition */
+    width: 100%; /* Horizontal bar width */
+    height: 3px; /* Icon thickness */
+    left: 0;
+    top: 50%;
+    margin-top: -1.5px; /* Vertically center the 3px bar */
+}
+
+/* Creates the vertical bar by rotating the 'after' element */
+.accordion-icon::after {
+    transform: rotate(90deg);
+}
+
+/* When the button is active (panel open), change the icon */
+button.accordion.active .accordion-icon::after {
+    transform: rotate(0deg); /* Makes the vertical bar horizontal */
+    opacity: 0; /* Fades out the vertical bar, leaving only the horizontal one ('-') */
+}
+
+/* Optional: Rotate the whole icon when active */
+button.accordion.active .accordion-icon {
+   transform: rotate(180deg); 
+}
+
+/* Style for the answer panel */
+div.panel {
+    padding: 0 18px; /* Horizontal spacing, no vertical yet */
+    background-color: var(--card-background-color, #ffffff); /* Panel background */
+    max-height: 0; /* Starts closed (no height) */
+    overflow: hidden; /* Hides content when closed */
+    transition: max-height 0.35s ease-out, padding 0.35s ease-out; /* Smooth open/close transition */
+}
+
+/* Style for the panel when it is open (has a max-height set by JS) */
+div.panel[style*="max-height"] {
+   padding: 15px 18px; /* Adds vertical spacing when open */
+}
+
+/* Adjust paragraph margins inside the panel for better look */
+div.panel p:first-child {
+    margin-top: 0;
+}
+div.panel p:last-child {
+    margin-bottom: 0;
+}
+div.panel p {
+    line-height: 1.6; /* Sets line spacing for readability */
+}
