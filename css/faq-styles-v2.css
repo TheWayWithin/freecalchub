@@ -1,29 +1,34 @@
 /* /css/faq-styles-v2.css */
 /* --- FreecalcHub: Enhanced FAQ Accordion Styles --- */
-/* --- Version: 2.1 --- */
+/* --- Version: 2.2 --- */
 /* --- For H3 > Button Structure with Index & Scroll Fix --- */
+/* --- Updated to use standard CSS Variables for Theme Compatibility --- */
 
 /* --- FAQ Index Styles --- */
 .faq-index {
-    background-color: var(--card-background-light, #f8f9fa);
+    /* Use standard variable for card/alt background */
+    background-color: var(--background-alt);
     padding: 20px 25px;
     margin-bottom: 35px;
     border-radius: 8px;
-    border: 1px solid var(--border-color, #e0e0e0);
+    /* Use standard variable for border */
+    border: 1px solid var(--border-color);
 }
 
 .faq-index h3 {
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 1.3em;
-    color: var(--text-color-dark, #333);
-    border-bottom: 1px solid var(--border-color-light, #eee);
+    /* Use standard variable for text */
+    color: var(--text-color);
+    /* Use standard variable for border */
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
 }
 
 .faq-index ul {
     list-style: decimal;
-    padding-left: 20px; /* Indent numbers */
+    padding-left: 20px;
     margin-bottom: 0;
     columns: 2;
     -webkit-columns: 2;
@@ -37,20 +42,23 @@
 
 .faq-index a {
     text-decoration: none;
-    color: var(--primary-color, #007bff);
+    /* Use standard variable for primary color (links) */
+    color: var(--primary-color);
     font-weight: 500;
 }
 
 .faq-index a:hover,
 .faq-index a:focus {
     text-decoration: underline;
-    color: var(--primary-hover-color, #0056b3);
+    /* Use standard variable for primary hover */
+    color: var(--primary-dark);
 }
 
 /* --- FAQ Item Styling --- */
 .faq-item {
     scroll-margin-top: 140px; /* Match JS offset & Header Height */
-    border-bottom: 1px solid var(--border-color, #e0e0e0);
+    /* Use standard variable for border */
+    border-bottom: 1px solid var(--border-color);
     margin-bottom: 10px;
 }
 
@@ -59,49 +67,49 @@
     margin-bottom: 0;
 }
 
-/* Style for the H3 tag holding the button */
 .faq-item h3 {
     margin: 0;
     padding: 0;
-    font-size: 1.1em; /* Keep size manageable */
-    font-weight: bold; /* H3 provides semantics, button provides style */
+    font-size: 1.1em;
+    font-weight: bold;
 }
 
-/* Style for the button inside the H3 tag */
 .faq-item h3 button.accordion {
     background-color: transparent;
-    color: var(--text-color, #333);
+    /* Use standard variable for text */
+    color: var(--text-color);
     cursor: pointer;
-    padding: 18px 5px; /* Ample clickable area */
+    padding: 18px 5px;
     width: 100%;
     border: none;
     text-align: left;
     outline: none;
-    font-size: 1em; /* Inherit H3 size */
-    font-weight: bold; /* Keep question text bold */
+    font-size: 1em;
+    font-weight: bold;
     transition: background-color 0.3s ease;
     display: flex;
     justify-content: space-between;
     align-items: center;
     line-height: 1.4;
-    font-family: inherit; /* Ensure it uses site font */
+    font-family: inherit;
 }
 
-/* Fix for Firefox button padding issues */
 .faq-item h3 button.accordion::-moz-focus-inner {
     border: 0;
     padding: 0;
 }
 
-/* Style for hover/focus */
 .faq-item h3 button.accordion:hover,
 .faq-item h3 button.accordion:focus-visible {
-    background-color: var(--hover-background-color, #f5f5f5);
-    outline: 2px solid var(--primary-color, #007bff);
+    /* Use a standard variable for hover, assuming one exists.
+       If not, this might need adding to dark-mode.css,
+       or use a subtle RGBA like rgba(var(--text-color-rgb), 0.07) */
+    background-color: var(--hover-background-color, rgba(0, 0, 0, 0.05)); /* Provide a very light fallback */
+    outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
 
-/* Style for the icon span (holds the '+' / '-') */
+/* --- Icon Styles --- */
 .accordion-icon {
     flex-shrink: 0;
     width: 16px;
@@ -111,73 +119,84 @@
     margin-left: 15px;
 }
 
-/* Style for the bars that make the '+' icon */
 .accordion-icon::before,
 .accordion-icon::after {
     content: '';
     position: absolute;
-    background-color: var(--primary-color, #007bff); /* Use primary color for icon */
+    /* Use standard variable for primary color */
+    background-color: var(--primary-color);
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     width: 100%;
-    height: 3px; /* Icon thickness */
+    height: 3px;
     left: 0;
     top: 50%;
     margin-top: -1.5px;
-    border-radius: 1px; /* Slightly rounded ends */
+    border-radius: 1px;
 }
 
-/* Creates the vertical bar */
 .accordion-icon::after {
     transform: rotate(90deg);
 }
 
-/* When active, hide vertical bar (makes a '-') */
 button.accordion.active .accordion-icon::after {
     transform: rotate(0deg);
     opacity: 0;
 }
 
-/* When active, rotate the whole icon (optional, makes 'x') */
-/* button.accordion.active .accordion-icon {
-    transform: rotate(45deg);
-} */
-
-
-/* Style for the answer panel */
+/* --- Panel Styles --- */
 div.panel {
-    padding: 0 18px; /* Horizontal padding */
-    margin-left: 5px; /* Align slightly with button padding */
-    background-color: var(--card-background-color, #ffffff);
+    padding: 0 18px;
+    margin-left: 5px;
+    /* Use standard variable for card/alt background - MUST match .faq-index */
+    background-color: var(--background-alt);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.35s ease-out;
     box-sizing: border-box;
-    border-left: 3px solid transparent; /* Prepare for active state */
+    border-left: 3px solid transparent;
 }
 
-/* When panel is open (via JS adding 'active' to button), adjust styles */
-button.accordion.active + div.panel { /* Use adjacent sibling selector */
-    max-height: 500px; /* Set a reasonable max-height; JS will refine */
+button.accordion.active + div.panel {
+    max-height: 500px;
     padding-top: 15px;
     padding-bottom: 20px;
-    border-left: 3px solid var(--primary-color-light, #cce5ff);
+    /* Use standard variable for light primary / highlight */
+    border-left: 3px solid var(--primary-light);
 }
 
-/* Style for paragraphs inside the panel */
 div.panel p {
     margin: 0 0 1em 0;
     line-height: 1.6;
+    /* Ensure text color uses standard var */
+    color: var(--text-color);
 }
 
 div.panel p:last-child {
     margin-bottom: 0;
 }
 
-/* --- Responsive adjustments for FAQ Index --- */
+/* --- Responsive adjustments --- */
 @media (max-width: 600px) {
     .faq-index ul {
         columns: 1;
         -webkit-columns: 1;
         -moz-columns: 1;
     }
+}
+
+/* --- Dark Mode Specific Overrides (If absolutely necessary) --- */
+/* Ideally, these shouldn't be needed if vars are set right. */
+/* But if hover/icon needs explicit dark mode tweak: */
+body.dark-mode .faq-item h3 button.accordion:hover,
+body.dark-mode .faq-item h3 button.accordion:focus-visible {
+    background-color: var(--hover-background-color, rgba(255, 255, 255, 0.07));
+}
+
+body.dark-mode .accordion-icon::before,
+body.dark-mode .accordion-icon::after {
+    background-color: var(--primary-light);
+}
+
+body.dark-mode button.accordion.active + div.panel {
+    border-left-color: var(--primary-dark);
 }
