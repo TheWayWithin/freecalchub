@@ -1,6 +1,6 @@
 /**
  * FreecalcHub - FAQ Accordion Script
- * Version: 2.1 (Uses .panel-open class)
+ * Version: 2.2 (Uses .panel-open class & large max-height)
  * * Toggles FAQ panels when their corresponding button is clicked.
  * Handles ARIA attributes for accessibility.
  * Uses max-height for smooth CSS transitions.
@@ -34,23 +34,24 @@ document.addEventListener('DOMContentLoaded', function () {
         const isExpanded = button.getAttribute('aria-expanded') === 'true';
         if (isExpanded) {
             button.classList.add('active');
-            panel.classList.add('panel-open'); // Add class if starts open
-            panel.style.maxHeight = panel.scrollHeight + "px";
+            panel.classList.add('panel-open'); 
+            // If starting open, calculate height once (less likely to race)
+            panel.style.maxHeight = panel.scrollHeight + "px"; 
         } else {
-             panel.style.maxHeight = null; // Ensure it's null if closed
+             panel.style.maxHeight = null; 
         }
 
         // --- Add Click Event Listener ---
         button.addEventListener('click', function() {
             this.classList.toggle('active');
-            panel.classList.add('panel-open'); // <-- TOGGLE THE CLASS HERE
+            panel.classList.toggle('panel-open');
 
             const currentExpanded = this.getAttribute('aria-expanded') === 'true';
             this.setAttribute('aria-expanded', !currentExpanded);
 
-            // Set max-height based on whether the class is now present
             if (panel.classList.contains('panel-open')) {
-                panel.style.maxHeight = panel.scrollHeight + "px";
+                // Set to a large value instead of scrollHeight
+                panel.style.maxHeight = "5000px"; // <-- THE CHANGE IS HERE!
             } else {
                 panel.style.maxHeight = null;
             }
