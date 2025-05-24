@@ -1,43 +1,41 @@
 /* /finance/retirement/retirement-calculator/css/retirement-calculator.css */
 /* --- Styles specific to the Retirement Calculator --- */
-/* --- Version 2: Multi-column layout *within* fieldsets --- */
+/* --- Version 3: Stronger Grid + Debugging Borders --- */
 
 /* --- Main Form Styling --- */
 #calculatorForm.input-grid {
-    display: flex; /* Use Flexbox for the main form */
-    flex-direction: column; /* Stack fieldsets vertically */
-    gap: 40px; /* Space *between* the fieldsets */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
     width: 100%;
 }
 
 /* --- Fieldset Styling: Apply Grid *Here* --- */
 #calculatorForm fieldset {
-    border: 1px solid var(--border-color, #e0e0e0); /* Add a border to visually group boxes */
-    padding: 25px 30px; /* Add internal padding */
+    border: 1px solid var(--border-color, #e0e0e0);
+    padding: 25px 30px;
     margin: 0;
-    border-radius: 8px; /* Rounded corners for the boxes */
-    background-color: var(--card-background-light, #fdfdfd); /* Slight background tint */
+    border-radius: 8px;
+    background-color: var(--card-background-light, #fdfdfd);
+    width: 100%; /* Ensure fieldset takes full width */
+    box-sizing: border-box; /* Include padding in width calculation */
 
-    /* --- THIS IS THE KEY CHANGE --- */
-    display: grid; /* Make each fieldset a grid container */
-    /* Create responsive columns for inputs:
-       - 'auto-fit': As many columns as fit.
-       - 'minmax(280px, 1fr)': Min 280px wide, share extra space. */
+    /* --- APPLYING GRID --- */
+    display: grid !important; /* <--- ADDED !important for debugging */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px 30px; /* Space between inputs: 25px vertical, 30px horizontal */
-    min-width: 0; /* Prevents overflow issues */
+    gap: 25px 30px;
+    min-width: 0;
 }
 
 /* --- Legend Styling --- */
 #calculatorForm fieldset legend {
-    font-size: 1.3em; /* Larger legends */
+    font-size: 1.3em;
     font-weight: bold;
     color: var(--text-color-dark, #333);
-    margin-bottom: 10px; /* Reduced margin, as padding/border provide space */
-    padding: 0 5px; /* Slight horizontal padding if needed */
-    width: auto; /* Allow legend to size naturally */
-    border-bottom: none; /* Remove previous border */
-
+    margin-bottom: 10px;
+    padding: 0 5px;
+    width: auto;
+    border-bottom: none;
     /* --- Make Legend Span All Columns --- */
     grid-column: 1 / -1;
 }
@@ -45,9 +43,12 @@
 /* --- Input Group Styling --- */
 #calculatorForm .form-group {
     display: flex;
-    flex-direction: column; /* Stack label and input */
-    gap: 8px; /* Space between label and input */
-    /* Each .form-group is now a grid item and will flow into columns */
+    flex-direction: column;
+    gap: 8px;
+    width: auto; /* Ensure it doesn't force 100% width */
+
+    /* --- DEBUGGING BORDER --- */
+    /* border: 1px dashed red; /* <--- UNCOMMENT this line to see the form-group boxes */
 }
 
 /* Style labels */
@@ -79,28 +80,13 @@
     box-shadow: 0 0 0 2px var(--primary-color-light, #cce5ff);
 }
 
-/* --- Dropdown Specifics (if any) --- */
-/* Ensure dropdowns inside flex wrappers behave */
-#calculatorForm .input-with-selector {
-    display: flex;
-    gap: 10px;
-}
-#calculatorForm .input-with-selector input {
-    flex-grow: 1;
-}
-#calculatorForm .input-with-selector select {
-    width: auto;
-    flex-shrink: 0;
-}
-
-/* --- Form Actions (Calculate/Reset Buttons) --- */
-/* Ensure this section is outside the fieldsets or handled separately.
-   Assuming it's outside based on template, these styles apply: */
+/* --- Form Actions --- */
 #calculatorForm .form-actions {
     display: flex;
     justify-content: flex-start;
     gap: 15px;
-    margin-top: 10px; /* Reduced margin as fieldsets have space now */
+    margin-top: 10px;
     padding-top: 20px;
     border-top: 1px solid var(--border-color, #e0e0e0);
+    /* Ensure it's not part of the grid (should be outside fieldsets) */
 }
