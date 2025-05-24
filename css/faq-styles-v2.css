@@ -120,3 +120,31 @@ div.panel p {
 div.panel p:last-child {
     margin-bottom: 0;
 }
+/* --- FAQ Index Styles --- */
+.faq-index {
+    list-style: decimal; /* Use numbers for the list */
+    padding: 0 0 20px 25px; /* Add padding: Top, Right, Bottom, Left */
+    margin: 0 0 20px 0; /* Add margin: Top, Right, Bottom, Left */
+    border-bottom: 1px solid var(--border-color, #e0e0e0); /* Line below the index */
+    background-color: var(--background-color, #f9f9f9); /* Slight background tint */
+    border-radius: 4px; /* Slightly rounded corners */
+}
+
+.faq-index li {
+    margin-bottom: 10px; /* Space between index items */
+}
+.faq-index li:last-child {
+    margin-bottom: 0; /* No space after the last item */
+}
+
+.faq-index li a {
+    text-decoration: none;
+    color: var(--primary-color, #007bff); /* Use primary site color for links */
+    font-weight: 500;
+}
+
+.faq-index li a:hover,
+.faq-index li a:focus {
+    text-decoration: underline; /* Underline on hover/focus */
+    color: var(--primary-hover-color, #0056b3); /* Darker color on hover */
+}
