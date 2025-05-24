@@ -22,6 +22,8 @@
 
 /* Style for the button inside the H3 tag */
 button.accordion {
+    scroll-margin-top: 110px; /* <--- ADD THIS LINE (Adjust value if needed) */
+    
     background-color: transparent; /* Makes the button background invisible */
     color: var(--text-color, #333); /* Sets text color, uses site variable or fallback */
     cursor: pointer; /* Changes mouse cursor to a hand when hovering */
@@ -147,8 +149,4 @@ div.panel p:last-child {
 .faq-index li a:focus {
     text-decoration: underline; /* Underline on hover/focus */
     color: var(--primary-hover-color, #0056b3); /* Darker color on hover */
-}
-/* --- FAQ Anchor Scroll Fix --- */
-h3.faq-question {
-    scroll-margin-top: 200px; /* Adjust this value if needed */
 }
