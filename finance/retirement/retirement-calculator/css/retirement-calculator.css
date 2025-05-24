@@ -1,150 +1,111 @@
-/* finance/retirement/retirement-calculator/css/retirement-calculator.css */
+/* /finance/retirement/retirement-calculator/css/retirement-calculator.css */
+/* --- Styles specific to the Retirement Calculator --- */
 
-/* Style for input groups with two elements (value + type selector) */
-.dual-input {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between input and select */
+/* --- Responsive Multi-Column Layout for Input Form --- */
+
+/* Target the main form container */
+#calculatorForm.input-grid {
+    display: grid; /* Enable Grid Layout */
+    /* Create columns:
+       - 'auto-fit': Fit as many columns as possible.
+       - 'minmax(300px, 1fr)': Each column must be at least 300px wide.
+                                If there's extra space, columns share it equally (1fr).
+                                When space is too little, columns wrap to the next row. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px 40px; /* Define spacing: 30px vertical gap, 40px horizontal gap */
+    width: 100%; /* Ensure form takes full width of its container */
+    padding-top: 15px; /* Add some space above the first fieldset */
 }
 
-.dual-input label {
-    flex-basis: 150px; /* Adjust as needed for label alignment */
+/* --- Fieldset Styling --- */
+
+#calculatorForm fieldset {
+    border: none; /* Remove default fieldset borders for a cleaner look */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margins */
+    display: flex; /* Use flexbox *within* each fieldset for content layout */
+    flex-direction: column; /* Stack legend and inputs vertically */
+    gap: 20px; /* Space between inputs within a fieldset */
+    min-width: 0; /* Prevents overflow issues in grid/flex layouts */
+}
+
+#calculatorForm fieldset legend {
+    font-size: 1.2em; /* Make legends prominent */
+    font-weight: bold;
+    color: var(--text-color-dark, #333);
+    margin-bottom: 15px; /* Space below the legend */
+    padding: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color-light, #eee); /* Optional visual separator */
+    padding-bottom: 10px; /* Space for the separator */
+}
+
+/* --- Input Group Styling --- */
+
+/* Ensure form groups take full width within their fieldset */
+#calculatorForm .form-group {
+    display: flex;
+    flex-direction: column; /* Stack label and input */
+    gap: 8px; /* Space between label and input */
+}
+
+/* Style labels for clarity */
+#calculatorForm label {
+    font-weight: 600; /* Semi-bold labels */
+    color: var(--text-color, #555);
+}
+
+/* Style input fields and select boxes */
+#calculatorForm input[type="text"],
+#calculatorForm input[type="number"],
+#calculatorForm select {
+    width: 100%; /* Make inputs fill their container */
+    padding: 10px 12px;
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding/border in width */
+    background-color: var(--input-background, #fff);
+    color: var(--input-text-color, #333);
+}
+
+/* Style focus state for accessibility */
+#calculatorForm input[type="text"]:focus,
+#calculatorForm input[type="number"]:focus,
+#calculatorForm select:focus {
+    outline: none;
+    border-color: var(--primary-color, #007bff);
+    box-shadow: 0 0 0 2px var(--primary-color-light, #cce5ff);
+}
+
+/* --- Dropdown Specifics (if any) --- */
+/* Add specific styles for dropdowns if needed,
+   e.g., handling '% of current' vs '$' selectors */
+#calculatorForm .input-with-selector {
+    display: flex;
+    gap: 10px;
+}
+#calculatorForm .input-with-selector input {
+    flex-grow: 1; /* Input takes most space */
+}
+#calculatorForm .input-with-selector select {
+    width: auto; /* Allow select to size naturally */
     flex-shrink: 0;
 }
 
-.dual-input input[type="number"] {
-    flex-grow: 1; /* Input takes available space */
-    width: auto; /* Override default width if necessary */
+
+/* --- Form Actions (Calculate/Reset Buttons) --- */
+
+#calculatorForm .form-actions {
+    /* Make this section span across all columns of the grid */
+    grid-column: 1 / -1;
+    display: flex; /* Arrange buttons horizontally */
+    justify-content: flex-start; /* Align buttons to the start */
+    gap: 15px; /* Space between buttons */
+    margin-top: 20px; /* Space above the buttons */
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color, #e0e0e0); /* Separator line */
 }
 
-.dual-input select {
-    flex-shrink: 0; /* Select stays its size */
-    padding: 8px 10px; /* Consistent padding */
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    background-color: var(--input-bg);
-    color: var(--text-color);
-    height: 40px; /* Match input height */
-}
-
-/* Ensure consistent form group layout */
-.calculator-form .form-group {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping on small screens */
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.calculator-form .form-group label {
-    margin-bottom: 5px;
-    width: 100%; /* Labels above inputs on small screens */
-}
-
-@media (min-width: 600px) {
-    .calculator-form .form-group label {
-        width: 200px; /* Fixed width for labels on larger screens */
-        margin-bottom: 0;
-        margin-right: 10px;
-    }
-     .calculator-form .form-group input[type="number"],
-     .calculator-form .form-group select,
-     .dual-input {
-        flex: 1; /* Allow inputs/selects to take up space */
-     }
-}
-
-/* Results Section Styling */
-.results-section .results-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.results-section .result-item {
-    background-color: var(--card-bg);
-    padding: 20px;
-    border-radius: var(--border-radius);
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    border: 1px solid var(--border-color);
-}
-
-.results-section .result-item h4 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: var(--text-color-light);
-    font-size: 1em;
-}
-
-.results-section .result-item p {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin: 0;
-    color: var(--primary-color);
-}
-
-#shortfallSurplus.shortfall {
-    color: #e74c3c; /* Red for shortfall */
-}
-
-#shortfallSurplus.surplus {
-    color: #2ecc71; /* Green for surplus */
-}
-
-/* Chart Styling */
-.charts-container {
-    display: grid;
-    grid-template-columns: 1fr; /* Stack on small screens */
-    gap: 30px;
-    margin-top: 30px;
-}
-
-@media (min-width: 768px) {
-    .charts-container {
-       grid-template-columns: 1fr 1fr; /* Side-by-side on larger screens */
-    }
-}
-
-.chart-item {
-    background-color: var(--card-bg);
-    padding: 20px;
-    border-radius: var(--border-radius);
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    border: 1px solid var(--border-color);
-}
-
-.chart-item h4 {
-     margin-top: 0;
-     margin-bottom: 15px;
-}
-
-.chart-item canvas {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Error Message Styling */
-.error-messages {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-    padding: 15px;
-    border-radius: var(--border-radius);
-    margin-bottom: 20px;
-}
-
-.error-messages ul {
-    margin: 0;
-    padding-left: 20px;
-}
-
-/* Add input validation styles */
-input:invalid {
-  border-color: #e74c3c;
-}
-
-input:required:valid {
-    border-color: #2ecc71;
-}
+/* --- Results Section Styling (Optional - Add if needed) --- */
+/* #resultsSection { ... } */
