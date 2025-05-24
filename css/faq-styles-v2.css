@@ -148,3 +148,7 @@ div.panel p:last-child {
     text-decoration: underline; /* Underline on hover/focus */
     color: var(--primary-hover-color, #0056b3); /* Darker color on hover */
 }
+/* --- FAQ Anchor Scroll Fix --- */
+h3.faq-question {
+    scroll-margin-top: 100px; /* Adjust this value if needed */
+}
