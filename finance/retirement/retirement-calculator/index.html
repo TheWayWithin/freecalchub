@@ -19,6 +19,8 @@
     
     <link rel="stylesheet" href="/finance/retirement/retirement-calculator/css/retirement-calculator.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -44,16 +46,16 @@
         {
           "@type": "FAQPage",
           "mainEntity": [
-            {"@type": "Question","name": "How much money do I realistically need to retire?","acceptedAnswer": {"@type": "Answer","text": "This varies greatly depending on your desired lifestyle, where you live, your health, and how long you live in retirement. A common rule of thumb is to aim for 70-85% of your pre-retirement annual income, but our calculator helps you personalize this estimate."}},
-            {"@type": "Question","name": "What is a good rate of return to assume for my investments?","acceptedAnswer": {"@type": "Answer","text": "Historically, diversified stock market investments have returned an average of 7-10% annually over the long term, but past performance doesn't guarantee future results. It's often wise to use a more conservative estimate (e.g., 5-7%) for planning, especially as you get closer to retirement. Your post-retirement return assumption should typically be even more conservative."}},
-            {"@type": "Question","name": "How does inflation affect my retirement savings?","acceptedAnswer": {"@type": "Answer","text": "Inflation erodes the purchasing power of your money over time. This means that $100 today will buy less in 20 or 30 years. Your retirement plan needs to account for inflation to ensure your savings can maintain your desired standard of living throughout your retirement."}},
-            {"@type": "Question","name": "Should I include Social Security in my retirement plan?","acceptedAnswer": {"@type": "Answer","text": "Yes, for most people, Social Security will be a component of their retirement income. You can get an estimate of your benefits from the Social Security Administration website. Our calculator allows you to include this."}},
-            {"@type": "Question","name": "What if the calculator shows I have a retirement shortfall?","acceptedAnswer": {"@type": "Answer","text": "Don't panic! You have several options: increase your current savings contributions, consider working a few more years, adjust your expected retirement lifestyle (and thus income needs), or explore investment strategies that might offer higher potential returns (while understanding the associated risks)."}},
-            {"@type": "Question","name": "At what age should I start saving for retirement?","acceptedAnswer": {"@type": "Answer","text": "The earlier, the better! Starting early allows you to take maximum advantage of compound growth. Even small amounts saved consistently from a young age can grow significantly over decades."}},
-            {"@type": "Question","name": "What are 'catch-up contributions'?","acceptedAnswer": {"@type": "Answer","text": "Catch-up contributions are additional amounts that individuals aged 50 and older can contribute to their retirement accounts (like 401(k)s and IRAs) beyond the standard contribution limits. This helps those who may have started saving later to boost their nest egg."}},
-            {"@type": "Question","name": "How often should I use a retirement calculator?","acceptedAnswer": {"@type": "Answer","text": "It's a good idea to review your retirement plan and use a calculator annually, or whenever you experience a significant life event (e.g., marriage, new job, salary change) or a major change in the market."}},
-            {"@type": "Question","name": "Is it better to save in a 401(k) or an IRA?","acceptedAnswer": {"@type": "Answer","text": "Both are excellent retirement savings vehicles. If your employer offers a 401(k) with a matching contribution, it's generally advisable to contribute at least enough to get the full match. IRAs offer more investment flexibility. Many people use both. The choice also depends on your income and tax situation (Traditional vs. Roth)."}},
-            {"@type": "Question","name": "When should I consult a financial advisor about retirement?","acceptedAnswer": {"@type": "Answer","text": "While calculators are helpful tools, a qualified financial advisor can provide personalized advice tailored to your specific situation, risk tolerance, and goals. Consider consulting one when you're making major financial decisions, approaching retirement, or if your situation is complex."}}
+            {"@type": "Question","name": "What is a retirement calculator?","acceptedAnswer": {"@type": "Answer","text": "A retirement calculator is a tool designed to help you estimate the amount of money you need to save to achieve your retirement goals and to project whether your current savings plan is on track."}},
+            {"@type": "Question","name": "Why is it important to plan for retirement?","acceptedAnswer": {"@type": "Answer","text": "Planning for retirement is crucial to ensure you have sufficient financial resources to maintain your desired lifestyle when you stop working. It helps account for longevity, inflation, healthcare costs, and provides peace of mind."}},
+            {"@type": "Question","name": "How does this calculator work?","acceptedAnswer": {"@type": "Answer","text": "This calculator uses your inputs (current age, retirement age, savings, income, etc.) along with estimated rates of return and inflation to project the future value of your savings and estimate how long they might last in retirement."}},
+            {"@type": "Question","name": "What assumptions does the calculator make?","acceptedAnswer": {"@type": "Answer","text": "It typically assumes steady rates of return, inflation, and contribution increases. Remember that these are estimates; actual market performance and economic conditions will vary."}},
+            {"@type": "Question","name": "How much should I save for retirement?","acceptedAnswer": {"@type": "Answer","text": "While it varies greatly, many financial advisors suggest saving 10-15% of your pre-tax income throughout your career. This calculator can help you personalize that estimate based on your goals."}},
+            {"@type": "Question","name": "What is a 'safe withdrawal rate'?","acceptedAnswer": {"@type": "Answer","text": "It's the percentage of your retirement savings you can withdraw each year with a high probability that your money will last throughout your retirement. A common starting point is 4%, but it should be adjusted based on market conditions, age, and risk tolerance."}},
+            {"@type": "Question","name": "How does inflation affect my retirement savings?","acceptedAnswer": {"@type": "Answer","text": "Inflation erodes the purchasing power of your money over time. What costs $100 today might cost $180 or more in 20 years. Your retirement plan needs to account for this to ensure your savings maintain their value."}},
+            {"@type": "Question","name": "Should I include Social Security benefits?","acceptedAnswer": {"@type": "Answer","text": "Yes, for most people, Social Security is a significant part of retirement income. You should estimate your benefits (you can use the Social Security Administration website) and factor them into your plan."}},
+            {"@type": "Question","name": "What about taxes in retirement?","acceptedAnswer": {"@type": "Answer","text": "Taxes can have a significant impact. Withdrawals from traditional 401(k)s and IRAs are typically taxed as ordinary income. Roth accounts offer tax-free withdrawals. Understanding your tax situation is vital."}},
+            {"@type": "Question","name": "What are catch-up contributions?","acceptedAnswer": {"@type": "Answer","text": "These are additional amounts that individuals aged 50 and over can contribute to their retirement accounts (like 401(k)s and IRAs) above the standard limits, helping them boost their savings as they approach retirement."}}
           ]
         },
         {
@@ -195,7 +197,7 @@
                         <fieldset>
                             <legend>Your Savings & Goals</legend>
                              <div class="form-group dual-input">
-                                <label for="retirementIncome">Desired Annual Retirement Income:</label>
+                                <label for="retirementIncomeValue">Desired Annual Retirement Income:</label>
                                 <input type="number" id="retirementIncomeValue" placeholder="e.g., 60000" required>
                                 <select id="retirementIncomeType">
                                     <option value="amount">$</option>
@@ -207,7 +209,7 @@
                                 <input type="number" id="currentSavings" placeholder="e.g., 50000" required>
                             </div>
                              <div class="form-group dual-input">
-                                <label for="annualContribution">Annual Contribution:</label>
+                                <label for="annualContributionValue">Annual Contribution:</label>
                                 <input type="number" id="annualContributionValue" placeholder="e.g., 7500" required>
                                 <select id="annualContributionType">
                                     <option value="amount">$</option>
@@ -251,7 +253,7 @@
 
                     <div id="resultsSection" class="results-section" style="display:none;">
                         <h3 class="results-title">Your Estimated Retirement Outlook</h3>
-                         <div id="errorMessages" class="error-messages" style="display:none; color: red; margin-bottom: 15px;"></div>
+                         <div id="errorMessages" class="error-messages" style="display:none;"></div>
                         <div class="results-grid">
                             <div class="result-item card">
                                 <h4>Nest Egg Needed</h4>
@@ -270,17 +272,15 @@
                                 <p id="additionalSavings">$0</p>
                             </div>
                         </div>
-                        <div class="charts-container" style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div class="charts-container">
                             <div class="chart-item card">
                                 <h4>Savings Growth Projection</h4>
-                                <canvas id="savingsGrowthChart" width="400" height="300"></canvas>
-                                <p><i>[Chart showing savings growth and depletion - JS will populate this]</i></p>
-                            </div>
+                                <canvas id="savingsGrowthChart"></canvas>
+                                </div>
                              <div class="chart-item card">
-                                <h4>Retirement Income Sources</h4>
-                                 <canvas id="incomeSourcesChart" width="300" height="300"></canvas>
-                                <p><i>[Pie chart showing income sources - JS will populate this]</i></p>
-                            </div>
+                                <h4>Retirement Income Sources (1st Year)</h4>
+                                 <canvas id="incomeSourcesChart"></canvas>
+                                </div>
                         </div>
                     </div>
                 </section>
@@ -310,11 +310,11 @@
                     
                     <p><strong>Strategies to Boost Your Savings:</strong>
                         <ul>
-                            <li>**Start Early:** The power of compounding is immense.
-                            <li>**Contribute Consistently:** Make saving automatic.
-                            <li>**Maximize Employer Match:** If your employer offers a 401(k) match, contribute at least enough to get 100% of it – it's free money!
-                            <li>**Increase Contributions:** Aim to increase your savings percentage with every pay raise.
-                            <li>**Use Catch-Up Contributions:** If you're 50 or older, take advantage of higher contribution limits.
+                            <li>**Start Early:** The power of compounding is immense.</li>
+                            <li>**Contribute Consistently:** Make saving automatic.</li>
+                            <li>**Maximize Employer Match:** If your employer offers a 401(k) match, contribute at least enough to get 100% of it – it's free money!</li>
+                            <li>**Increase Contributions:** Aim to increase your savings percentage with every pay raise.</li>
+                            <li>**Use Catch-Up Contributions:** If you're 50 or older, take advantage of higher contribution limits.</li>
                         </ul>
                     </p>
 
@@ -322,8 +322,8 @@
 
                     <p><strong>Types of Retirement Accounts:</strong>
                         <ul>
-                            <li>**401(k)/403(b):** Employer-sponsored plans, often with matching contributions. Offer tax-deferred growth (Traditional) or tax-free withdrawals (Roth).
-                            <li>**IRA (Individual Retirement Arrangement):** Personal accounts. Traditional IRAs offer tax-deductible contributions (depending on income) and tax-deferred growth. Roth IRAs use after-tax money, but qualified withdrawals are tax-free.
+                            <li>**401(k)/403(b):** Employer-sponsored plans, often with matching contributions. Offer tax-deferred growth (Traditional) or tax-free withdrawals (Roth).</li>
+                            <li>**IRA (Individual Retirement Arrangement):** Personal accounts. Traditional IRAs offer tax-deductible contributions (depending on income) and tax-deferred growth. Roth IRAs use after-tax money, but qualified withdrawals are tax-free.</li>
                         </ul>
                         <em>Disclaimer: This information is for educational purposes only and is not financial advice.</em>
                     </p>
@@ -351,71 +351,121 @@
                     </div>
                 
                     <div class="faq-item" id="faq-item-1">
-                        <button class="accordion" aria-expanded="false">What is a retirement calculator?</button>
-                        <div class="panel">
+                        <h3>
+                            <button class="accordion" aria-expanded="false" aria-controls="faq-panel-1">
+                                What is a retirement calculator?
+                                <span class="accordion-icon"></span>
+                            </button>
+                        </h3>
+                        <div class="panel" id="faq-panel-1" role="region">
                             <p>A retirement calculator is a tool designed to help you estimate the amount of money you need to save to achieve your retirement goals and to project whether your current savings plan is on track.</p>
                         </div>
                     </div>
                 
                     <div class="faq-item" id="faq-item-2">
-                        <button class="accordion" aria-expanded="false">Why is it important to plan for retirement?</button>
-                        <div class="panel">
+                         <h3>
+                            <button class="accordion" aria-expanded="false" aria-controls="faq-panel-2">
+                                Why is it important to plan for retirement?
+                                <span class="accordion-icon"></span>
+                            </button>
+                        </h3>
+                        <div class="panel" id="faq-panel-2" role="region">
                             <p>Planning for retirement is crucial to ensure you have sufficient financial resources to maintain your desired lifestyle when you stop working. It helps account for longevity, inflation, healthcare costs, and provides peace of mind.</p>
                         </div>
                     </div>
                 
                     <div class="faq-item" id="faq-item-3">
-                        <button class="accordion" aria-expanded="false">How does this calculator work?</button>
-                        <div class="panel">
+                        <h3>
+                            <button class="accordion" aria-expanded="false" aria-controls="faq-panel-3">
+                                How does this calculator work?
+                                <span class="accordion-icon"></span>
+                            </button>
+                        </h3>
+                        <div class="panel" id="faq-panel-3" role="region">
                             <p>This calculator uses your inputs (current age, retirement age, savings, income, etc.) along with estimated rates of return and inflation to project the future value of your savings and estimate how long they might last in retirement.</p>
                         </div>
                     </div>
                 
                     <div class="faq-item" id="faq-item-4">
-                        <button class="accordion" aria-expanded="false">What assumptions does the calculator make?</button>
-                        <div class="panel">
+                        <h3>
+                            <button class="accordion" aria-expanded="false" aria-controls="faq-panel-4">
+                                What assumptions does the calculator make?
+                                <span class="accordion-icon"></span>
+                            </button>
+                        </h3>
+                        <div class="panel" id="faq-panel-4" role="region">
                             <p>It typically assumes steady rates of return, inflation, and contribution increases. Remember that these are estimates; actual market performance and economic conditions will vary.</p>
                         </div>
                     </div>
                 
                     <div class="faq-item" id="faq-item-5">
-                        <button class="accordion" aria-expanded="false">How much should I save for retirement?</button>
-                        <div class="panel">
+                        <h3>
+                            <button class="accordion" aria-expanded="false" aria-controls="faq-panel-5">
+                                How much should I save for retirement?
+                                <span class="accordion-icon"></span>
+                            </button>
+                        </h3>
+                        <div class="panel" id="faq-panel-5" role="region">
                             <p>While it varies greatly, many financial advisors suggest saving 10-15% of your pre-tax income throughout your career. This calculator can help you personalize that estimate based on your goals.</p>
                         </div>
                     </div>
                 
-                     <div class="faq-item" id="faq-item-6">
-                        <button class="accordion" aria-expanded="false">What is a 'safe withdrawal rate'?</button>
-                        <div class="panel">
+                    <div class="faq-item" id="faq-item-6">
+                        <h3>
+                            <button class="accordion" aria-expanded="false" aria-controls="faq-panel-6">
+                                What is a 'safe withdrawal rate'?
+                                <span class="accordion-icon"></span>
+                            </button>
+                        </h3>
+                        <div class="panel" id="faq-panel-6" role="region">
                             <p>It's the percentage of your retirement savings you can withdraw each year with a high probability that your money will last throughout your retirement. A common starting point is 4%, but it should be adjusted based on market conditions, age, and risk tolerance.</p>
                         </div>
                     </div>
                 
-                     <div class="faq-item" id="faq-item-7">
-                        <button class="accordion" aria-expanded="false">How does inflation affect my retirement savings?</button>
-                        <div class="panel">
+                    <div class="faq-item" id="faq-item-7">
+                        <h3>
+                            <button class="accordion" aria-expanded="false" aria-controls="faq-panel-7">
+                                How does inflation affect my retirement savings?
+                                <span class="accordion-icon"></span>
+                            </button>
+                        </h3>
+                        <div class="panel" id="faq-panel-7" role="region">
                             <p>Inflation erodes the purchasing power of your money over time. What costs $100 today might cost $180 or more in 20 years. Your retirement plan needs to account for this to ensure your savings maintain their value.</p>
                         </div>
                     </div>
                 
-                     <div class="faq-item" id="faq-item-8">
-                        <button class="accordion" aria-expanded="false">Should I include Social Security benefits?</button>
-                        <div class="panel">
+                    <div class="faq-item" id="faq-item-8">
+                        <h3>
+                            <button class="accordion" aria-expanded="false" aria-controls="faq-panel-8">
+                                Should I include Social Security benefits?
+                                <span class="accordion-icon"></span>
+                            </button>
+                        </h3>
+                        <div class="panel" id="faq-panel-8" role="region">
                             <p>Yes, for most people, Social Security is a significant part of retirement income. You should estimate your benefits (you can use the Social Security Administration website) and factor them into your plan.</p>
                         </div>
                     </div>
                 
-                     <div class="faq-item" id="faq-item-9">
-                        <button class="accordion" aria-expanded="false">What about taxes in retirement?</button>
-                        <div class="panel">
+                    <div class="faq-item" id="faq-item-9">
+                        <h3>
+                            <button class="accordion" aria-expanded="false" aria-controls="faq-panel-9">
+                                What about taxes in retirement?
+                                <span class="accordion-icon"></span>
+                            </button>
+                        </h3>
+                        <div class="panel" id="faq-panel-9" role="region">
                             <p>Taxes can have a significant impact. Withdrawals from traditional 401(k)s and IRAs are typically taxed as ordinary income. Roth accounts offer tax-free withdrawals. Understanding your tax situation is vital.</p>
                         </div>
                     </div>
                 
                     <div class="faq-item" id="faq-item-10">
-                        <button class="accordion" aria-expanded="false">What are catch-up contributions?</button>
-                        <div class="panel">
+                        <h3>
+                            <button class="accordion" aria-expanded="false" aria-controls="faq-panel-10">
+                                What are catch-up contributions?
+                                <span class="accordion-icon"></span>
+                            </button>
+                        </h3>
+                        <div class="panel" id="faq-panel-10" role="region">
                             <p>These are additional amounts that individuals aged 50 and over can contribute to their retirement accounts (like 401(k)s and IRAs) above the standard limits, helping them boost their savings as they approach retirement.</p>
                         </div>
                     </div>
@@ -461,8 +511,6 @@
             </div>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <script src="/js/main.js" defer></script>
     <script src="/js/dark-mode.js" defer></script>
