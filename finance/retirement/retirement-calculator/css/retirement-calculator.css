@@ -1,15 +1,47 @@
 /* finance/retirement/retirement-calculator/css/retirement-calculator.css */
+/* Version 6 - Grid Layout Fix */
+
+/* --- Fieldset Grid Layout (NEW) --- */
+/* Apply grid layout specifically to fieldsets within our form for high specificity */
+form#retirementForm fieldset {
+    display: grid;
+    /* Create responsive columns: As many 280px+ columns as fit, else fewer/one */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px 25px; /* 15px row gap, 25px column gap */
+    border: none; /* Remove browser default fieldset border */
+    padding: 0; /* Remove browser default fieldset padding */
+    margin-bottom: 30px; /* Space between fieldsets */
+    align-items: start; /* Align form groups to the top */
+}
+
+/* --- Legend Styling (NEW) --- */
+/* Ensure the legend spans the entire width of the grid */
+form#retirementForm fieldset legend {
+    grid-column: 1 / -1; /* Span from first to last column line */
+    width: 100%;
+    padding-bottom: 10px;
+    margin-bottom: 10px; /* Space below legend before fields */
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* --- Form Actions & Errors Spanning (NEW) --- */
+/* Ensure these elements span the full width of the grid container */
+form#retirementForm .form-actions,
+form#retirementForm .error-messages {
+    grid-column: 1 / -1;
+}
+
+/* --- EXISTING STYLES (Largely Unchanged) --- */
 
 /* Style for input groups with two elements (value + type selector) */
 .dual-input {
     display: flex;
     align-items: center;
     gap: 10px; /* Space between input and select */
-}
-
-.dual-input label {
-    flex-basis: 150px; /* Adjust as needed for label alignment */
-    flex-shrink: 0;
+    width: 100%; /* Ensure it tries to take full width */
 }
 
 .dual-input input[type="number"] {
@@ -27,33 +59,78 @@
     height: 40px; /* Match input height */
 }
 
-/* Ensure consistent form group layout */
+/* Ensure consistent form group layout (Internal to grid cells) */
 .calculator-form .form-group {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping on small screens */
+    flex-wrap: wrap; /* Allow wrapping on small screens / narrow columns */
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 0; /* Grid 'gap' handles vertical spacing now */
 }
 
 .calculator-form .form-group label {
     margin-bottom: 5px;
-    width: 100%; /* Labels above inputs on small screens */
+    width: 100%; /* Labels above inputs by default / on wrap */
+    font-weight: 600; /* Ensure labels are bold */
 }
 
+.calculator-form .form-group input[type="number"],
+.calculator-form .form-group select {
+     width: 100%; /* Make inputs/selects take full cell width */
+     height: 40px;
+     padding: 8px 10px;
+     border: 1px solid var(--border-color);
+     border-radius: var(--border-radius);
+     background-color: var(--input-bg);
+     color: var(--text-color);
+     font-size: 1rem;
+}
+
+/* On wider screens (>= 600px), attempt side-by-side labels/inputs */
+/* This now acts *within* a grid cell, but might still wrap if the cell is < ~300px wide */
 @media (min-width: 600px) {
     .calculator-form .form-group label {
-        width: 200px; /* Fixed width for labels on larger screens */
+        width: 200px; /* Fixed width for labels */
         margin-bottom: 0;
         margin-right: 10px;
+        flex-shrink: 0; /* Prevent label shrinking */
     }
      .calculator-form .form-group input[type="number"],
      .calculator-form .form-group select,
-     .dual-input {
-        flex: 1; /* Allow inputs/selects to take up space */
+     .calculator-form .form-group .dual-input {
+        flex: 1; /* Allow inputs/selects/dual to take up remaining space */
+        width: auto; /* Allow flex to control width */
      }
 }
 
-/* Results Section Styling */
+/* Social Security Group Specifics */
+#socialSecurityGroup {
+    /* Uses standard .form-group styles */
+}
+
+/* Form Actions Specifics */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+    margin-top: 15px; /* Add some space above buttons */
+}
+
+/* Error Message Styling */
+.error-messages {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px; /* Keep space below errors */
+}
+
+.error-messages ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+/* --- Results Section Styling --- */
 .results-section .results-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -62,18 +139,18 @@
 }
 
 .results-section .result-item {
-    background-color: var(--card-bg);
+    background-color: var(--card-background-light, #f8f9fa); /* Use variables */
     padding: 20px;
     border-radius: var(--border-radius);
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Lighter shadow */
     border: 1px solid var(--border-color);
 }
 
 .results-section .result-item h4 {
     margin-top: 0;
     margin-bottom: 10px;
-    color: var(--text-color-light);
+    color: var(--text-light);
     font-size: 1em;
 }
 
@@ -85,14 +162,14 @@
 }
 
 #shortfallSurplus.shortfall {
-    color: #e74c3c; /* Red for shortfall */
+    color: var(--error-color, #e74c3c); /* Use variable */
 }
 
 #shortfallSurplus.surplus {
-    color: #2ecc71; /* Green for surplus */
+    color: var(--success-color, #2ecc71); /* Use variable */
 }
 
-/* Chart Styling */
+/* --- Chart Styling --- */
 .charts-container {
     display: grid;
     grid-template-columns: 1fr; /* Stack on small screens */
@@ -107,44 +184,33 @@
 }
 
 .chart-item {
-    background-color: var(--card-bg);
+    background-color: var(--card-background-light, #f8f9fa); /* Use variables */
     padding: 20px;
     border-radius: var(--border-radius);
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     border: 1px solid var(--border-color);
+    min-height: 350px; /* Ensure charts have space */
+    display: flex; /* Use flex for internal alignment */
+    flex-direction: column; /* Stack title and chart */
 }
 
 .chart-item h4 {
      margin-top: 0;
      margin-bottom: 15px;
+     flex-shrink: 0; /* Prevent title from shrinking */
 }
 
 .chart-item canvas {
     max-width: 100%;
     height: auto;
+    flex-grow: 1; /* Allow canvas to grow */
+    position: relative; /* Needed for Chart.js responsiveness */
 }
 
-/* Error Message Styling */
-.error-messages {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-    padding: 15px;
-    border-radius: var(--border-radius);
-    margin-bottom: 20px;
-}
-
-.error-messages ul {
-    margin: 0;
-    padding-left: 20px;
-}
-
-/* Add input validation styles */
+/* --- Input Validation --- */
 input:invalid {
   border-color: #e74c3c;
 }
 
-input:required:valid {
-    border-color: #2ecc71;
-}
+/* Use focus-within or specific classes for better validation styling if needed */
