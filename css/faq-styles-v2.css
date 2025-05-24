@@ -93,29 +93,30 @@ button.accordion.active .accordion-icon {
    transform: rotate(180deg); 
 }
 
-/* Style for the answer panel (Closed State) */
+/* Style for the answer panel (Base & Closed State) */
 div.panel {
-    padding: 0 18px; /* NO vertical padding when closed */
+    padding: 0 18px; /* No vertical padding when closed */
+    margin: 0; /* Ensure no margin when closed */
     background-color: var(--card-background-color, #ffffff);
     max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease-out; /* ONLY transition max-height */
+    overflow: hidden; /* This is key to hiding content */
+    transition: max-height 0.35s ease-out, padding-top 0.35s ease-out, padding-bottom 0.35s ease-out; 
     box-sizing: border-box; 
 }
 
-/* Add vertical padding ONLY when the panel is open */
-div.panel[style*="max-height"] { 
+/* Style for the panel ONLY when it has the 'panel-open' class */
+div.panel.panel-open {
    padding-top: 15px; 
    padding-bottom: 15px; 
 }
 
-/* Adjust paragraph margins inside the panel for better look */
-div.panel p:first-child {
-    margin-top: 0;
+/* Style for paragraphs inside the panel */
+div.panel p {
+    margin: 0 0 1em 0; /* Add bottom margin for spacing, but no top/bottom */
+    line-height: 1.6;
 }
+
+/* Remove bottom margin from the last paragraph inside the panel */
 div.panel p:last-child {
     margin-bottom: 0;
-}
-div.panel p {
-    line-height: 1.6; /* Sets line spacing for readability */
 }
