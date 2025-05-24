@@ -93,14 +93,20 @@ button.accordion.active .accordion-icon {
    transform: rotate(180deg); 
 }
 
-/* Style for the answer panel */
+/* Style for the answer panel (Closed State) */
 div.panel {
-    padding: 15px 18px; /* Always have full padding */
+    padding: 0 18px; /* NO vertical padding when closed */
     background-color: var(--card-background-color, #ffffff);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.35s ease-out; /* ONLY transition max-height */
-    box-sizing: border-box; /* Ensures padding is included correctly */
+    box-sizing: border-box; 
+}
+
+/* Add vertical padding ONLY when the panel is open */
+div.panel[style*="max-height"] { 
+   padding-top: 15px; 
+   padding-bottom: 15px; 
 }
 
 /* Adjust paragraph margins inside the panel for better look */
