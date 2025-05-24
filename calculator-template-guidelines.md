@@ -7,6 +7,8 @@ This document provides guidelines for using the FreecalcHub master HTML template
 ## 2. File Structure for a New Calculator
 
 When creating a new calculator, for example, a "Loan Calculator" in the "Finance" category, the typical file structure within your project would be:
+
+```
 / (Site Root)
 ├── css/                         # Global CSS folder
 │   ├── styles.css
@@ -28,6 +30,8 @@ When creating a new calculator, for example, a "Loan Calculator" in the "Finance
 │       └── js/
 │           └── loan-calculator.js   # Specific JavaScript for this calculator
 └── ... (other categories and site files)
+
+```
 **Note:** `faq-styles-v2.css` and `faq-accordion-v2.js` are now considered part of the core global assets and are linked directly from the `calculator_template.html`.
 
 ## 3. Creating a New Calculator Page
