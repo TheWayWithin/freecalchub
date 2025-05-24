@@ -1,6 +1,6 @@
 /**
  * FreecalcHub - FAQ Accordion Script
- * Version: 2.0 (Updated for H3/Button Structure)
+ * Version: 2.1 (Uses .panel-open class)
  * * Toggles FAQ panels when their corresponding button is clicked.
  * Handles ARIA attributes for accessibility.
  * Uses max-height for smooth CSS transitions.
@@ -18,55 +18,41 @@
  * </div>
  */
 
-// Wait until the whole HTML document is loaded and ready
 document.addEventListener('DOMContentLoaded', function () {
-
-    // Find all the buttons that control the accordions
     const accordions = document.querySelectorAll('button.accordion');
 
-    // Go through each button one by one
     accordions.forEach(button => {
-
-        // Get the ID of the panel this button controls (from aria-controls)
         const panelId = button.getAttribute('aria-controls');
-        // Find the actual panel element using its ID
         const panel = document.getElementById(panelId);
 
-        // If a button exists but its panel doesn't, show an error in the console and stop processing this button.
         if (!panel) {
             console.error('FAQ Panel not found for button:', button.id);
             return; 
         }
 
-        // --- Set Initial State When Page Loads ---
-        // Check if the button should start as expanded (open)
+        // --- Set Initial State ---
         const isExpanded = button.getAttribute('aria-expanded') === 'true';
-        // If it should be open, set its height; otherwise, set it to null (closed)
-        panel.style.maxHeight = isExpanded ? panel.scrollHeight + "px" : null;
-        // If it starts open, add the 'active' class (for styling)
         if (isExpanded) {
             button.classList.add('active');
+            panel.classList.add('panel-open'); // Add class if starts open
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        } else {
+             panel.style.maxHeight = null; // Ensure it's null if closed
         }
 
         // --- Add Click Event Listener ---
-        // When a button is clicked, run this function:
         button.addEventListener('click', function() {
-
-            // Add or remove the 'active' class on the button
             this.classList.toggle('active');
+            panel.classList.add('panel-open'); // <-- TOGGLE THE CLASS HERE
 
-            // Check if it's currently expanded
             const currentExpanded = this.getAttribute('aria-expanded') === 'true';
-            // Set aria-expanded to the opposite (true becomes false, false becomes true)
             this.setAttribute('aria-expanded', !currentExpanded);
 
-            // Open or close the panel using max-height
-            if (panel.style.maxHeight) {
-                // If it has max-height (is open), set it to null (closes it)
-                panel.style.maxHeight = null;
-            } else {
-                // If it's closed, set its max-height to its full content height (opens it)
+            // Set max-height based on whether the class is now present
+            if (panel.classList.contains('panel-open')) {
                 panel.style.maxHeight = panel.scrollHeight + "px";
+            } else {
+                panel.style.maxHeight = null;
             }
         });
     });
