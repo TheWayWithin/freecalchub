@@ -4,13 +4,13 @@
 
 /* Style for each individual FAQ item */
 .faq-item {
+    scroll-margin-top: 130px; /* <--- ADD THIS LINE HERE */
     border-bottom: 1px solid var(--border-color, #e0e0e0); /* Adds a line below each FAQ, with a fallback color */
     margin-bottom: 10px; /* Space below each FAQ */
 }
 
 /* Remove border and margin from the very last FAQ item */
 .faq-item:last-child {
-    scroll-margin-top: 110px; 
     border-bottom: none;
     margin-bottom: 0;
 }
