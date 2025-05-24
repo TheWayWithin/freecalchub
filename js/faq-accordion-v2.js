@@ -1,61 +1,43 @@
-/**
- * FreecalcHub - FAQ Accordion Script
- * Version: 2.3 (Uses .panel-open class & large max-height)
- * * Toggles FAQ panels when their corresponding button is clicked.
- * Handles ARIA attributes for accessibility.
- * Uses max-height for smooth CSS transitions.
- * * Assumes HTML structure like:
- * <div class="faq-item">
- * <h3 class="faq-question">
- * <button class="accordion" aria-expanded="false" aria-controls="faq-panel-X" id="faq-button-X">
- * Question Text?
- * <span class="accordion-icon"></span> 
- * </button>
- * </h3>
- * <div class="panel" id="faq-panel-X" role="region" aria-labelledby="faq-button-X"> 
- * <p>Answer Text</p>
- * </div>
- * </div>
- */
-
-
+/* /js/faq-accordion-v2.js */
+/* --- FreecalcHub: Enhanced FAQ Accordion Script --- */
+/* --- Version: 2.1 --- */
+/* --- Handles H3 > Button, Index Links, and Smooth Scroll --- */
 
 document.addEventListener('DOMContentLoaded', () => {
-    const accordions = document.querySelectorAll('.faq-item .accordion');
-    // Select links within an element having class 'faq-index' that link to '#faq-item-'
+    const accordions = document.querySelectorAll('.faq-item h3 button.accordion');
     const faqIndexLinks = document.querySelectorAll('.faq-index a[href^="#faq-item-"]');
-    // Define header height offset - adjust if your fixed header height changes
-    const headerHeight = 140; // The desired space (in pixels) from the top
-    // Define transition time to wait for accordion to open (should match CSS)
-    const transitionTime = 350; // Milliseconds
+    const headerHeight = 140; // Pixels: Match CSS scroll-margin-top & actual header height
+    const transitionTime = 350; // Milliseconds: Match CSS transition duration
 
     // Standard Accordion Functionality
-    accordions.forEach(accordion => {
-        accordion.addEventListener('click', function() {
-            const panel = this.nextElementSibling;
+    accordions.forEach(button => {
+        button.addEventListener('click', function() {
+            // Find the panel: It's the next sibling of the H3 (button's parent)
+            const h3Element = this.parentElement;
+            const panel = h3Element.nextElementSibling;
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
 
-            // --- Enhanced: Close All Others ---
             // Find all accordions *within the same FAQ section*
             const parentSection = this.closest('.faq-section');
-            const allAccordionsInSection = parentSection
-                ? parentSection.querySelectorAll('.faq-item .accordion')
+            const allAccordionButtons = parentSection
+                ? parentSection.querySelectorAll('.faq-item h3 button.accordion')
                 : accordions;
 
-            allAccordionsInSection.forEach(otherAccordion => {
-                if (otherAccordion !== this && otherAccordion.classList.contains('active')) {
-                    otherAccordion.classList.remove('active');
-                    otherAccordion.nextElementSibling.style.maxHeight = null;
-                    otherAccordion.setAttribute('aria-expanded', 'false');
+            // Close all others *before* toggling the current one
+            allAccordionButtons.forEach(otherButton => {
+                if (otherButton !== this && otherButton.classList.contains('active')) {
+                    otherButton.classList.remove('active');
+                    const otherH3 = otherButton.parentElement;
+                    otherH3.nextElementSibling.style.maxHeight = null;
+                    otherButton.setAttribute('aria-expanded', 'false');
                 }
             });
-            // --- End Enhanced ---
 
-            // Toggle the clicked accordion
+            // Toggle the clicked accordion's state
             this.classList.toggle('active');
 
-            if (!isExpanded) {
-                // Open: Set max-height to its scrollHeight
+            if (this.classList.contains('active')) {
+                // Open: Set max-height to its scrollHeight for proper size
                 panel.style.maxHeight = panel.scrollHeight + "px";
                 this.setAttribute('aria-expanded', 'true');
             } else {
@@ -66,46 +48,53 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- NEW: FAQ Index Link Click Handler ---
+    // FAQ Index Link Click Handler
     faqIndexLinks.forEach(link => {
         link.addEventListener('click', function(event) {
-            event.preventDefault(); // Stop the default anchor jump
+            event.preventDefault(); // Stop default jump
 
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
 
             if (targetElement) {
-                const accordionButton = targetElement.querySelector('.accordion');
+                // Find the button within the target H3
+                const accordionButton = targetElement.querySelector('h3 button.accordion');
 
                 // 1. Ensure the target accordion is open (and close others)
                 if (accordionButton && !accordionButton.classList.contains('active')) {
-                    accordionButton.click(); // Trigger the click event to open it
+                    accordionButton.click(); // Trigger click to open & handle others
                 }
 
-                // 2. Wait for the accordion animation to finish
+                // 2. Wait for accordion animation to finish
                 setTimeout(() => {
-                    // 3. Calculate the position *after* layout changes
+                    // 3. Calculate position *after* layout changes
                     const targetOffsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
                     const scrollToPosition = targetOffsetTop - headerHeight;
 
-                    // 4. Scroll smoothly to the calculated position
+                    // 4. Scroll smoothly
                     window.scrollTo({
                         top: scrollToPosition,
                         behavior: 'smooth'
                     });
 
-                    // 5. Optional: Set focus for accessibility (after scroll)
-                    // Use another small delay if needed
+                    // 5. Set focus for accessibility (after scroll)
                     setTimeout(() => {
-                         accordionButton.focus();
-                    }, 500); // Wait for smooth scroll to mostly finish
+                         accordionButton.focus({ preventScroll: true }); // preventScroll avoids potential jump
+                    }, 500); // Wait for smooth scroll
 
-                }, transitionTime); // Wait for the accordion to open
+                }, transitionTime);
             } else {
                 console.warn("FAQ Index Link Target not found:", targetId);
             }
         });
     });
-    // --- End NEW ---
+
+    // Optional: Adjust panel height on window resize (for robustness)
+    window.addEventListener('resize', () => {
+        document.querySelectorAll('.faq-item h3 button.accordion.active').forEach(button => {
+            const panel = button.parentElement.nextElementSibling;
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        });
+    }, 250); // Debounced slightly
 
 });
