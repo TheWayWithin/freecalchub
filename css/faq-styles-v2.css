@@ -95,16 +95,12 @@ button.accordion.active .accordion-icon {
 
 /* Style for the answer panel */
 div.panel {
-    padding: 0 18px; /* Horizontal spacing, no vertical yet */
-    background-color: var(--card-background-color, #ffffff); /* Panel background */
-    max-height: 0; /* Starts closed (no height) */
-    overflow: hidden; /* Hides content when closed */
-    transition: max-height 0.35s ease-out, padding 0.35s ease-out; /* Smooth open/close transition */
-}
-
-/* Style for the panel when it is open (has a max-height set by JS) */
-div.panel[style*="max-height"] {
-   padding: 15px 18px; /* Adds vertical spacing when open */
+    padding: 15px 18px; /* Always have full padding */
+    background-color: var(--card-background-color, #ffffff);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-out; /* ONLY transition max-height */
+    box-sizing: border-box; /* Ensures padding is included correctly */
 }
 
 /* Adjust paragraph margins inside the panel for better look */
