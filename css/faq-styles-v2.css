@@ -1,152 +1,123 @@
-/* --- FreecalcHub: FAQ Accordion Styles --- */
-/* --- Version: 2.0 --- */
-/* --- For H3/Button Structure --- */
+/* /css/faq-styles-v2.css */
 
-/* Style for each individual FAQ item */
-.faq-item {
-    scroll-margin-top: 130px; /* <--- ADD THIS LINE HERE */
-    border-bottom: 1px solid var(--border-color, #e0e0e0); /* Adds a line below each FAQ, with a fallback color */
-    margin-bottom: 10px; /* Space below each FAQ */
-}
-
-/* Remove border and margin from the very last FAQ item */
-.faq-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-}
-
-/* Style for the H3 tag holding the question */
-.faq-question {
-    margin: 0; /* Removes default spacing around the H3 tag */
-    padding: 0;
-}
-
-/* Style for the button inside the H3 tag */
-button.accordion {
-        
-    background-color: transparent; /* Makes the button background invisible */
-    color: var(--text-color, #333); /* Sets text color, uses site variable or fallback */
-    cursor: pointer; /* Changes mouse cursor to a hand when hovering */
-    padding: 15px 5px; /* Spacing inside the button (top/bottom, left/right) */
-    width: 100%; /* Makes the button fill the whole width */
-    border: none; /* Removes the default button border */
-    text-align: left; /* Aligns text to the left */
-    outline: none; /* Removes the outline that appears on click */
-    font-size: 1.1em; /* Makes text slightly larger */
-    font-weight: bold; /* Makes text bold */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-    display: flex; /* Uses Flexbox to arrange text and icon */
-    justify-content: space-between; /* Puts text left, icon right */
-    align-items: center; /* Aligns text and icon vertically */
-    line-height: 1.4; /* Helps with text wrapping if needed */
-}
-
-/* Fix for Firefox button padding issues */
-button.accordion::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-}
-
-/* Style for when you hover or focus (using keyboard) on the button */
-button.accordion:hover,
-button.accordion:focus {
-    background-color: var(--hover-background-color, #f5f5f5); /* Light background color on hover */
-    outline: 2px solid var(--primary-color, #007bff); /* Adds a visible border when using keyboard navigation */
-    outline-offset: -2px; /* Pulls the outline inside a bit */
-}
-
-/* Style for the icon span (holds the '+' / '-') */
-.accordion-icon {
-    flex-shrink: 0; /* Prevents the icon from getting smaller if text is long */
-    width: 16px; 
-    height: 16px; 
-    transition: transform 0.3s ease-out; /* Smooth rotation transition */
-    position: relative; /* Needed to position the '+' bars */
-    margin-left: 15px; /* Space between text and icon */
-}
-
-/* Style for the bars that make the '+' icon */
-.accordion-icon::before,
-.accordion-icon::after {
-    content: ''; /* Required for pseudo-elements */
-    position: absolute; /* Allows precise positioning */
-    background-color: var(--text-color, #333); /* Icon color */
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Smooth transition */
-    width: 100%; /* Horizontal bar width */
-    height: 3px; /* Icon thickness */
-    left: 0;
-    top: 50%;
-    margin-top: -1.5px; /* Vertically center the 3px bar */
-}
-
-/* Creates the vertical bar by rotating the 'after' element */
-.accordion-icon::after {
-    transform: rotate(90deg);
-}
-
-/* When the button is active (panel open), change the icon */
-button.accordion.active .accordion-icon::after {
-    transform: rotate(0deg); /* Makes the vertical bar horizontal */
-    opacity: 0; /* Fades out the vertical bar, leaving only the horizontal one ('-') */
-}
-
-/* Optional: Rotate the whole icon when active */
-button.accordion.active .accordion-icon {
-   transform: rotate(180deg); 
-}
-
-/* Style for the answer panel (Base & Closed State) */
-div.panel {
-    padding: 0 18px; /* No vertical padding when closed */
-    margin: 0; /* Ensure no margin when closed */
-    background-color: var(--card-background-color, #ffffff);
-    max-height: 0;
-    overflow: hidden; /* This is key to hiding content */
-    transition: max-height 0.35s ease-out, padding-top 0.35s ease-out, padding-bottom 0.35s ease-out; 
-    box-sizing: border-box; 
-}
-
-/* Style for the panel ONLY when it has the 'panel-open' class */
-div.panel.panel-open {
-   padding-top: 15px; 
-   padding-bottom: 15px; 
-}
-
-/* Style for paragraphs inside the panel */
-div.panel p {
-    margin: 0 0 1em 0; /* Add bottom margin for spacing, but no top/bottom */
-    line-height: 1.6;
-}
-
-/* Remove bottom margin from the last paragraph inside the panel */
-div.panel p:last-child {
-    margin-bottom: 0;
-}
-/* --- FAQ Index Styles --- */
+/* FAQ Index Styling */
 .faq-index {
-    list-style: decimal; /* Use numbers for the list */
-    padding: 0 0 20px 25px; /* Add padding: Top, Right, Bottom, Left */
-    margin: 0 0 20px 0; /* Add margin: Top, Right, Bottom, Left */
-    border-bottom: 1px solid var(--border-color, #e0e0e0); /* Line below the index */
-    background-color: var(--background-color, #f9f9f9); /* Slight background tint */
-    border-radius: 4px; /* Slightly rounded corners */
+    background-color: #f7f7f7;
+    padding: 15px 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.faq-index h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.faq-index ul {
+    list-style: decimal inside; /* Use numbers for clarity */
+    padding-left: 5px;
+    margin-bottom: 0;
+    columns: 2; /* Display in two columns if space allows */
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    column-gap: 20px;
 }
 
 .faq-index li {
-    margin-bottom: 10px; /* Space between index items */
-}
-.faq-index li:last-child {
-    margin-bottom: 0; /* No space after the last item */
+    margin-bottom: 10px;
 }
 
-.faq-index li a {
+.faq-index a {
     text-decoration: none;
-    color: var(--primary-color, #007bff); /* Use primary site color for links */
-    font-weight: 500;
+    color: var(--primary-color, #007bff); /* Use site variable or default */
 }
 
-.faq-index li a:hover,
-.faq-index li a:focus {
-    text-decoration: underline; /* Underline on hover/focus */
-    color: var(--primary-hover-color, #0056b3); /* Darker color on hover */
+.faq-index a:hover,
+.faq-index a:focus {
+    text-decoration: underline;
+    color: var(--primary-color-dark, #0056b3);
+}
+
+/* FAQ Item Styling */
+.faq-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    /* This ID'd element gets the margin for CSS/Anchor scrolling */
+    scroll-margin-top: 140px; /* Adjust as per actual header height */
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.faq-item .accordion {
+    background-color: transparent; /* Cleaner look */
+    color: #333; /* Darker text */
+    cursor: pointer;
+    padding: 15px 5px; /* Adjust padding */
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1em; /* Match h3 size or similar */
+    transition: background-color 0.4s ease;
+    font-weight: bold;
+    position: relative; /* For the icon */
+    display: flex; /* Use flex for alignment */
+    justify-content: space-between; /* Pushes icon to the right */
+    align-items: center; /* Vertically centers text and icon */
+}
+
+.faq-item .accordion:hover {
+    background-color: #f9f9f9; /* Subtle hover effect */
+}
+
+.faq-item .accordion:focus {
+    outline: 2px solid var(--primary-color, #007bff); /* Accessibility */
+    outline-offset: 2px;
+}
+
+.faq-item .accordion::after {
+    content: '\002B'; /* Plus sign */
+    font-size: 1.5em; /* Make icon a bit larger */
+    font-weight: bold;
+    color: var(--primary-color, #007bff);
+    transition: transform 0.3s ease-out;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    margin-left: 15px; /* Space between text and icon */
+}
+
+.faq-item .accordion.active::after {
+    transform: rotate(45deg); /* Rotate to 'x' or use '\2212' for minus */
+}
+
+.faq-item .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-out; /* Match JS timeout */
+    border-left: 3px solid var(--primary-color-light, #cce5ff); /* Indication */
+    margin-left: 5px; /* Align with button padding */
+}
+
+.faq-item .panel p {
+    padding: 15px 0;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments for columns */
+@media (max-width: 600px) {
+    .faq-index ul {
+        columns: 1;
+        -webkit-columns: 1;
+        -moz-columns: 1;
+    }
 }
