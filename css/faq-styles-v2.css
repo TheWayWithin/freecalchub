@@ -150,5 +150,5 @@ div.panel p:last-child {
 }
 /* --- FAQ Anchor Scroll Fix --- */
 h3.faq-question {
-    scroll-margin-top: 100px; /* Adjust this value if needed */
+    scroll-margin-top: 120px; /* Adjust this value if needed */
 }
