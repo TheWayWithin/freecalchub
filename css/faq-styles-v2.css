@@ -22,7 +22,7 @@
 
 /* Style for the button inside the H3 tag */
 button.accordion {
-    scroll-margin-top: 210px; /* <--- ADD THIS LINE (Adjust value if needed) */
+    scroll-margin-top: 10px; /* <--- ADD THIS LINE (Adjust value if needed) */
     
     background-color: transparent; /* Makes the button background invisible */
     color: var(--text-color, #333); /* Sets text color, uses site variable or fallback */
