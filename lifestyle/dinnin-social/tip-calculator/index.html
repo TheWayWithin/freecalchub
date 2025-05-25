@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/css/navigation-ribbon.css"> 
     <link rel="stylesheet" href="/css/faq-styles-v2.css">
 
-    <link rel="stylesheet" href="/lifestyle/tip-calculator/css/tip-calculator.css">
+    <link rel="stylesheet" href="/lifestyle/dining-social/tip-calculator/css/tip-calculator.css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
     <script>
@@ -33,14 +33,14 @@
         {
           "@type": "SoftwareApplication",
           "name": "Free Tip Calculator",
-          "applicationCategory": "LifestyleApplication",
+          "applicationCategory": "LifestyleApplication", // Remains Lifestyle as it's broad
           "operatingSystem": "Web",
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
           "description": "Use our free Tip Calculator to quickly determine gratuity and the total bill. Easily split costs among multiple people. Fast, simple, and perfect for dining out!",
-          "url": "https://www.freecalchub.com/lifestyle/tip-calculator/"
+          "url": "https://www.freecalchub.com/lifestyle/dining-social/tip-calculator/" // Updated URL
         },
         {
-          "@type": "FAQPage",
+          "@type": "FAQPage", // Content of FAQs remains the same
           "mainEntity": [
             { "@type": "Question", "name": "What is a standard tip percentage for a restaurant?", "acceptedAnswer": { "@type": "Answer", "text": "In the United States, a standard tip for good service at a restaurant is typically between 15% and 20% of the pre-tax bill. Some people choose to tip more for excellent service." } },
             { "@type": "Question", "name": "Should I tip on the pre-tax or post-tax amount of the bill?", "acceptedAnswer": { "@type": "Answer", "text": "It is customary to calculate the tip based on the pre-tax amount of the bill. However, some people prefer to tip on the total amount for simplicity." } },
@@ -55,7 +55,7 @@
           ]
         },
         {
-          "@type": "HowTo",
+          "@type": "HowTo", // Content of HowTo remains the same
           "name": "How to Use the Free Tip Calculator",
           "description": "A step-by-step guide to calculating tips and splitting bills with our tool.",
           "step": [
@@ -66,22 +66,23 @@
           ]
         },
         {
-          "@type": "BreadcrumbList",
+          "@type": "BreadcrumbList", // Updated Breadcrumbs
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" },
             { "@type": "ListItem", "position": 2, "name": "Lifestyle Calculators", "item": "https://www.freecalchub.com/lifestyle/" },
-            { "@type": "ListItem", "position": 3, "name": "Tip Calculator", "item": "https://www.freecalchub.com/lifestyle/tip-calculator/" }
+            { "@type": "ListItem", "position": 3, "name": "Dining & Social Calculators", "item": "https://www.freecalchub.com/lifestyle/dining-social/" },
+            { "@type": "ListItem", "position": 4, "name": "Tip Calculator", "item": "https://www.freecalchub.com/lifestyle/dining-social/tip-calculator/" }
           ]
         },
         {
           "@type": "WebPage",
           "name": "Free Tip Calculator: Calculate Gratuity & Split Bills Easily | FreecalcHub",
           "description": "Use our free Tip Calculator to quickly determine gratuity and the total bill. Easily split costs among multiple people. Fast, simple, and perfect for dining out!",
-          "url": "https://www.freecalchub.com/lifestyle/tip-calculator/",
+          "url": "https://www.freecalchub.com/lifestyle/dining-social/tip-calculator/", // Updated URL
            "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
            "inLanguage": "en-US",
-           "datePublished": "2025-05-25",
-           "dateModified": "2025-05-25"
+           "datePublished": "2025-05-25", // Assuming initial publish date remains
+           "dateModified": "2025-05-25" // Updated modification date
         }
       ]
     }
@@ -142,7 +143,10 @@
             <span class="separator">/</span>
             <a href="/lifestyle/">Lifestyle Calculators</a>
             <span class="separator">/</span>
-            <span class="current">Tip Calculator</span> </div>
+            <a href="/lifestyle/dining-social/">Dining & Social Calculators</a>
+            <span class="separator">/</span>
+            <span class="current">Tip Calculator</span> 
+        </div>
     </div>
 
     <main id="main-content" class="main-content">
@@ -152,10 +156,9 @@
                     <p>Tipping and splitting the bill shouldn't be a headache. Our <strong>Free Tip Calculator</strong> makes it simple. Instantly find the right gratuity, see your final bill, and divide the cost evenly among any number of people. Perfect for restaurants, bars, delivery, and more – get accurate results in seconds.</p>
                 </section>
 
-                <section id="calculator-section" class="calculator-interface content-section card"> <h2 class="section-title">Calculate Your Tip & Bill</h2>
-                    
+                <section id="calculator-section" class="calculator-interface content-section card"> 
+                    <h2 class="section-title">Calculate Your Tip & Bill</h2>                    
                     <div id="errorMessages" class="error-messages" style="display:none;"></div>
-                    
                     <form id="calculatorForm" class="calculator-form">
                         <fieldset>
                             <legend>Bill & Tip Details</legend>
@@ -177,7 +180,6 @@
                                 <button type="button" class="btn btn-outline" data-tip="25">25%</button>
                             </div>
                         </fieldset>
-
                          <fieldset>
                             <legend>Split the Bill</legend>
                             <div class="form-group">
@@ -186,25 +188,17 @@
                                  <small id="numPeopleHelp" class="form-text text-muted">Enter how many people are splitting the total bill (including tip).</small>
                             </div>
                         </fieldset>
-
                         <div class="form-actions">
                             <button type="button" id="calculateButton" class="btn btn-primary">Calculate</button>
                             <button type="reset" id="resetButton" class="btn btn-secondary">Reset</button>
                         </div>
                     </form>
-
                     <div id="resultsSection" class="results-section" style="display:none;">
                         <h3 class="results-title">Your Results</h3>
                         <div class="results-grid">
-                            <div class="result-item card"> <h4>Tip Amount</h4>
-                                <p id="tipAmountResult">--</p>
-                            </div>
-                             <div class="result-item card"> <h4>Total Bill</h4>
-                                <p id="totalBillResult">--</p>
-                            </div>
-                             <div class="result-item card" id="perPersonSection" style="display:none;"> <h4>Amount Per Person</h4>
-                                <p id="perPersonResult">--</p>
-                            </div>
+                            <div class="result-item card"> <h4>Tip Amount</h4> <p id="tipAmountResult">--</p> </div>
+                            <div class="result-item card"> <h4>Total Bill</h4> <p id="totalBillResult">--</p> </div>
+                            <div class="result-item card" id="perPersonSection" style="display:none;"> <h4>Amount Per Person</h4> <p id="perPersonResult">--</p> </div>
                         </div>
                      </div>
                 </section>
@@ -222,43 +216,23 @@
                 <section class="content-section">
                     <h2 class="section-title">Understanding Tipping Etiquette</h2>
                     <p>Tipping is a common practice in many countries, especially the United States, as a way to show appreciation for good service. However, customs and expected amounts can vary significantly based on the service type and location.</p>
-                    
-                    <h2>Why is Tipping Customary?</h2>
-                    <p>In many service industries, particularly in the US, employees' base wages are often set lower with the expectation that tips will supplement their income. Tipping allows customers to directly reward attentive, efficient, and friendly service.</p>
-
-                    <h2>Standard Tipping Rates (USA)</h2>
-                    <p>While amounts can vary, here are some generally accepted guidelines (always based on pre-tax amounts):</p>
-                    <ul>
-                        <li><strong>Restaurants (Sit-down):</strong> 15-20% for good service, 20%+ for excellent service.</li>
-                        <li><strong>Bars:</strong> 15-20% of the bill, or $1-$2 per drink.</li>
-                        <li><strong>Food/Grocery Delivery:</strong> 15-20%.</li>
-                        <li><strong>Hairdressers/Barbers:</strong> 15-20%.</li>
-                        <li><strong>Taxis/Rideshares:</strong> 10-20%.</li>
-                        <li><strong>Takeout:</strong> Optional, but 10-15% is a nice gesture, especially for large orders.</li>
-                    </ul>
-
-                    <h2>Tip Before or After Tax?</h2>
-                    <p>The generally accepted etiquette is to calculate the tip amount based on the **pre-tax** subtotal of your bill. Our calculator uses the amount you enter (assumed to be pre-tax) for the calculation.</p>
-                    
-                    <h2>How Our Calculator Works: The Formula</h2>
-                    <p>Our calculator uses these simple formulas:</p>
-                    <ul>
-                        <li><code>Tip Amount = Bill Amount * (Tip Percentage / 100)</code></li>
-                        <li><code>Total Bill = Bill Amount + Tip Amount</code></li>
-                        <li><code>Amount Per Person = Total Bill / Number of People</code></li>
-                    </ul>
+                    <h2>Why is Tipping Customary?</h2> <p>In many service industries, particularly in the US, employees' base wages are often set lower with the expectation that tips will supplement their income. Tipping allows customers to directly reward attentive, efficient, and friendly service.</p>
+                    <h2>Standard Tipping Rates (USA)</h2> <p>While amounts can vary, here are some generally accepted guidelines (always based on pre-tax amounts):</p>
+                    <ul> <li><strong>Restaurants (Sit-down):</strong> 15-20% for good service, 20%+ for excellent service.</li> <li><strong>Bars:</strong> 15-20% of the bill, or $1-$2 per drink.</li> <li><strong>Food/Grocery Delivery:</strong> 15-20%.</li> <li><strong>Hairdressers/Barbers:</strong> 15-20%.</li> <li><strong>Taxis/Rideshares:</strong> 10-20%.</li> <li><strong>Takeout:</strong> Optional, but 10-15% is a nice gesture, especially for large orders.</li> </ul>
+                    <h2>Tip Before or After Tax?</h2> <p>The generally accepted etiquette is to calculate the tip amount based on the <strong>pre-tax</strong> subtotal of your bill. Our calculator uses the amount you enter (assumed to be pre-tax) for the calculation.</p>
+                    <h2>How Our Calculator Works: The Formula</h2> <p>Our calculator uses these simple formulas:</p>
+                    <ul> <li><code>Tip Amount = Bill Amount * (Tip Percentage / 100)</code></li> <li><code>Total Bill = Bill Amount + Tip Amount</code></li> <li><code>Amount Per Person = Total Bill / Number of People</code></li> </ul>
                 </section>
                 
-                 <section class="content-section">
+                <section class="content-section">
                     <h2 class="section-title">Related Calculators</h2>
                      <ul>
                         <li><a href="/math/percentage-calculator/">Percentage Calculator</a></li>
-                        </ul>
+                    </ul>
                 </section>
 
                 <section class="faq-section content-section">
                     <h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
-
                     <div class="faq-index card">
                         <h3>FAQ Index</h3>
                         <ul>
@@ -274,7 +248,6 @@
                             <li><a href="#faq-item-10">What if the restaurant automatically adds a gratuity or service charge?</a></li>
                         </ul>
                     </div>
-
                     <div class="faq-item" id="faq-item-1"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-1"> What is a standard tip percentage for a restaurant? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-1" role="region"> <p>In the United States, a standard tip for good service at a restaurant is typically between 15% and 20% of the pre-tax bill. Some people choose to tip more for excellent service.</p> </div> </div>
                     <div class="faq-item" id="faq-item-2"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-2"> Should I tip on the pre-tax or post-tax amount of the bill? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-2" role="region"> <p>It is customary to calculate the tip based on the pre-tax amount of the bill. However, some people prefer to tip on the total amount for simplicity.</p> </div> </div>
                     <div class="faq-item" id="faq-item-3"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-3"> How much should I tip for delivery services? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-3" role="region"> <p>For food delivery, a tip of 15-20% is common, similar to restaurant dining. For grocery delivery, 10-15% or a flat amount might be appropriate depending on the size and difficulty of the order.</p> </div> </div>
@@ -285,52 +258,17 @@
                     <div class="faq-item" id="faq-item-8"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-8"> What about tipping in other countries? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-8" role="region"> <p>Tipping customs vary significantly around the world. In some countries, tipping is not customary or is even included in a service charge. It’s always a good idea to research local tipping etiquette when traveling.</p> </div> </div>
                     <div class="faq-item" id="faq-item-9"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-9"> How much should I tip for services like a haircut or taxi? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-9" role="region"> <p>For hairdressers, stylists, and barbers, a 15-20% tip is standard. For taxi or rideshare drivers, 10-20% of the fare is common.</p> </div> </div>
                     <div class="faq-item" id="faq-item-10"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-10"> What if the restaurant automatically adds a gratuity or service charge? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-10" role="region"> <p>Always check your bill for an automatic gratuity, especially for large parties. If a service charge is already included, you generally do not need to add an additional tip unless you feel the service was exceptional and warrants it.</p> </div> </div>
-
                 </section>
-
              </article>
-        </div> </main> <footer class="site-footer">
-        <div class="container">
-            <div class="footer-columns">
-                <div class="footer-column">
-                    <h3>FreecalcHub</h3>
-                    <p>Your one-stop destination for a wide variety of free online calculators.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Categories</h3>
-                    <ul>
-                        <li><a href="/finance/">Finance</a></li>
-                        <li><a href="/math/">Math</a></li>
-                        <li><a href="/health/">Health</a></li>
-                        <li><a href="/conversions/">Conversions</a></li>
-                        <li><a href="/date-time/">Date & Time</a></li>
-                        <li><a href="/business/">Business</a></li>
-                        <li><a href="/lifestyle/">Lifestyle</a></li>
-                        <li><a href="/blog/">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Support</h3>
-                    <ul>
-                        <li><a href="/about/">About Us</a></li>
-                        <li><a href="/contact/">Contact</a></li>
-                        <li><a href="/privacy/">Privacy Policy</a></li>
-                        <li><a href="/terms/">Terms of Service</a></li>
-                        <li><a href="/sitemap/">Sitemap</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+        </div> </main> 
+    
+    <footer class="site-footer"> <div class="container"> <div class="footer-columns"> <div class="footer-column"> <h3>FreecalcHub</h3> <p>Your one-stop destination for a wide variety of free online calculators.</p> </div> <div class="footer-column"> <h3>Categories</h3> <ul> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date & Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </div> <div class="footer-column"> <h3>Support</h3> <ul> <li><a href="/about/">About Us</a></li> <li><a href="/contact/">Contact</a></li> <li><a href="/privacy/">Privacy Policy</a></li> <li><a href="/terms/">Terms of Service</a></li> <li><a href="/sitemap/">Sitemap</a></li> </ul> </div> </div> <div class="footer-bottom"> <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> </div> </div> </footer>
 
     <script src="/js/main.js" defer></script>
     <script src="/js/dark-mode.js" defer></script>
     <script src="/js/faq-accordion-v2.js" defer></script>
 
-    <script src="/lifestyle/tip-calculator/js/tip-calculator.js" defer></script>
+    <script src="/lifestyle/dining-social/tip-calculator/js/tip-calculator.js" defer></script>
 
 </body>
 </html>
