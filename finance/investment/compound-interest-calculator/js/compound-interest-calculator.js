@@ -1,8 +1,8 @@
 /*
  * FreecalcHub.com - Compound Interest Calculator
- * Version: 2.1
+ * Version: 2.2
  * Date Updated: May 25, 2025
- * Description: Fixed chart rendering bug by showing results section before chart creation.
+ * Description: Added setTimeout delay before chart creation & disabled animations to fix potential redraw loop.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -34,15 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const afterTaxFutureValueEl = document.getElementById("after_tax_future_value");
     const yearlyGrowthTableBodyEl = document.querySelector("#yearlyGrowthTable tbody");
 
-    // Chart.js Instances (Global scope for access in reset)
+    // Chart.js Instances
     let investmentGrowthChartInstance = null;
     let principalInterestChartInstance = null;
 
     // --- Event Listeners ---
-
-    /**
-     * Handles the click event for the Calculate button.
-     */
     calculateButton.addEventListener("click", (event) => {
         event.preventDefault();
         hideError();
@@ -51,9 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    /**
-     * Handles the click event for the Reset button.
-     */
     resetButton.addEventListener("click", () => {
         form.reset();
         resultsSection.style.display = "none";
@@ -65,18 +58,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // --- Input Validation ---
-
-    /**
-     * Validates all required input fields.
-     * @returns {boolean} - True if all inputs are valid, false otherwise.
-     */
     function validateInputs() {
         const inputsToValidate = [
             { el: initialInvestmentEl, name: "Initial Investment", required: true, min: 0 },
             { el: annualContributionEl, name: "Annual Contribution", required: false, min: 0 },
-            { el: annualInterestRateEl, name: "Annual Interest Rate", required: true, min: 0, max: 200 }, // Added max
+            { el: annualInterestRateEl, name: "Annual Interest Rate", required: true, min: 0, max: 200 },
             { el: investmentPeriodYearsEl, name: "Investment Time", required: true, min: 1, isInt: true },
-            { el: inflationRateEl, name: "Inflation Rate", required: false, min: 0, max: 100 }, // Added max
+            { el: inflationRateEl, name: "Inflation Rate", required: false, min: 0, max: 100 },
             { el: taxRateEl, name: "Tax Rate", required: false, min: 0, max: 100 }
         ];
 
@@ -114,24 +102,14 @@ document.addEventListener("DOMContentLoaded", () => {
         return true;
     }
 
-    /**
-     * Safely retrieves a numeric value from an input element.
-     * @param {HTMLElement} element - The input element.
-     * @returns {number} - The parsed numeric value.
-     */
     function getNumericValue(element) {
         const value = element.value.trim();
         return value === "" ? 0 : parseFloat(value);
     }
 
     // --- Calculation Logic ---
-
-    /**
-     * Orchestrates the calculation process and calls display functions.
-     */
     function calculateAndDisplay() {
         try {
-            // Get validated values
             const initialInvestment = getNumericValue(initialInvestmentEl);
             const annualContribution = getNumericValue(annualContributionEl);
             const compoundingFrequencyStr = compoundingFrequencyEl.value;
@@ -148,7 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let currentBalance = initialInvestment;
             let totalPrincipal = initialInvestment;
-            let totalInterest = 0;
             const yearlyData = [];
 
             for (let year = 1; year <= investmentPeriodYears; year++) {
@@ -177,15 +154,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     interestEarned: yearInterest,
                     endingBalance: currentBalance
                 });
-
-                totalPrincipal += yearContributions; // Accumulate principal correctly
+                totalPrincipal += yearContributions;
             }
 
             const futureValueNominal = currentBalance;
-            totalInterest = futureValueNominal - totalPrincipal;
+            const totalInterest = futureValueNominal - totalPrincipal;
             const effectiveAnnualRate = (Math.pow(1 + r / n, n) - 1) * 100;
 
-            // Display results
             futureValueNominalEl.textContent = formatCurrency(futureValueNominal);
             totalPrincipalInvestedEl.textContent = formatCurrency(totalPrincipal);
             totalInterestEarnedEl.textContent = formatCurrency(totalInterest);
@@ -209,15 +184,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 afterTaxFutureValueContainerEl.style.display = "none";
             }
 
-            // *** FIX: Show results FIRST, then create charts ***
             resultsSection.style.display = "flex";
-
-            // Update Table & Charts
             populateYearlyTable(yearlyData);
-            createOrUpdateCharts(yearlyData, totalPrincipal, totalInterest, initialInvestment);
 
-            // Scroll into view
-            resultsSection.scrollIntoView({ behavior: "smooth" });
+            // *** FIX: Delay chart creation slightly and disable animations ***
+            setTimeout(() => {
+                createOrUpdateCharts(yearlyData, totalPrincipal, totalInterest, initialInvestment, false); // Pass 'false' for animation
+                resultsSection.scrollIntoView({ behavior: "smooth" });
+            }, 50); // 50ms delay
 
         } catch (error) {
             console.error("Calculation Error:", error);
@@ -227,7 +201,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // --- Display & Formatting ---
-
     function formatCurrency(value) {
         return new Intl.NumberFormat('en-US', {
             style: 'currency',
@@ -249,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    function createOrUpdateCharts(yearlyData, totalPrincipal, totalInterest, initialInvestment) {
+    function createOrUpdateCharts(yearlyData, totalPrincipal, totalInterest, initialInvestment, animate = true) { // Added animate flag
         destroyCharts();
 
         const growthChartCtx = document.getElementById("investmentGrowthChart").getContext("2d");
@@ -269,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const chartOptions = {
              responsive: true,
              maintainAspectRatio: false,
-             animation: { duration: 500 }, // Shorter animation
+             animation: animate ? { duration: 500 } : false, // *** FIX: Control animation ***
              plugins: {
                 legend: { labels: { color: textColor } },
                 tooltip: {
@@ -286,38 +259,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
                 x: {
                     ticks: { color: textColor },
-                    grid: { display: false } // Cleaner look
+                    grid: { display: false }
                 }
              }
         };
 
         investmentGrowthChartInstance = new Chart(growthChartCtx, {
             type: "line",
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: "Investment Value",
-                    data: balanceData,
-                    borderColor: primaryColor,
-                    backgroundColor: primaryTransparent,
-                    fill: true,
-                    tension: 0.1
-                }]
-            },
+            data: { labels: labels, datasets: [{ label: "Investment Value", data: balanceData, borderColor: primaryColor, backgroundColor: primaryTransparent, fill: true, tension: 0.1 }] },
             options: chartOptions
         });
 
         principalInterestChartInstance = new Chart(principalInterestCtx, {
             type: "pie",
-            data: {
-                labels: ["Total Principal", "Total Interest"], // Corrected Label
-                datasets: [{
-                    data: [totalPrincipal, totalInterest],
-                    backgroundColor: [ successColor, warningColor ],
-                    hoverOffset: 4,
-                    borderColor: altBg
-                }]
-            },
+            data: { labels: ["Total Principal", "Total Interest"], datasets: [{ data: [totalPrincipal, totalInterest], backgroundColor: [ successColor, warningColor ], hoverOffset: 4, borderColor: altBg }] },
             options: { ...chartOptions, scales: {} }
         });
     }
@@ -330,7 +285,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // --- Error Handling ---
-
     function showError(message) {
         errorMessagesDiv.textContent = message;
         errorMessagesDiv.style.display = "block";
@@ -342,5 +296,4 @@ document.addEventListener("DOMContentLoaded", () => {
         errorMessagesDiv.style.display = "none";
         errorMessagesDiv.setAttribute("aria-live", "off");
     }
-
 });
