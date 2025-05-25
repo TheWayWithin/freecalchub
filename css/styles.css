@@ -1,1204 +1,4 @@
 /* Main Styles for CalcHub */
-/* Version: 1.1 */
-/* Date: May 24, 2025 */
-/* Changes: Added Standard Calculator Form Grid Layout */
-
-/* Base Styles */
-:root {
-    --primary-color: #4a6fa5;
-    --primary-dark: #345a8a;
-    --primary-light: #6b8cb8;
-    --secondary-color: #f39c12;
-    --secondary-dark: #d68910;
-    --secondary-light: #f5b041;
-    --text-color: #333;
-    --text-light: #666;
-    --background-color: #fff;
-    --background-alt: #f8f9fa;
-    --border-color: #e0e0e0;
-    --success-color: #2ecc71;
-    --error-color: #e74c3c;
-    --warning-color: #f1c40f;
-    --info-color: #3498db;
-    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    --border-radius: 8px;
-    --transition: all 0.3s ease;
-    --container-width: 1200px;
-    --header-height: 70px;
-    --footer-background: #2c3e50;
-    --footer-text: #ecf0f1;
-    /* Added for hover consistency - Ensure this is defined in dark-mode.css too */
-    --hover-background-color: #e9ecef;
-    /* Define input background for easier dark mode override */
-    --input-bg: #fff;
-}
-
-/* Skip Link */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--primary-color);
-  color: white;
-  padding: 8px;
-  z-index: 100;
-  transition: top 0.3s;
-}
-
-.skip-link:focus {
-  top: 0;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-a:hover {
-    color: var(--primary-dark);
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.container {
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: var(--transition);
-    font-weight: 600;
-    text-align: center;
-}
-
-.btn:hover {
-    background-color: var(--primary-dark);
-    color: white;
-}
-
-.btn-secondary {
-    background-color: var(--secondary-color);
-}
-
-.btn-secondary:hover {
-    background-color: var(--secondary-dark);
-}
-
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 1rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-h1 {
-    font-size: 2.5rem;
-}
-
-h2 {
-    font-size: 2rem;
-}
-
-h3 {
-    font-size: 1.5rem;
-}
-
-h4 {
-    font-size: 1.25rem;
-}
-
-p {
-    margin-bottom: 1rem;
-}
-
-/* Header Styles */
-header {
-    background-color: var(--background-color);
-    box-shadow: var(--shadow);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    height: var(--header-height);
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    padding: 0 20px;
-    max-width: var(--container-width);
-    margin: 0 auto;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    min-width: 100px; /* Ensure logo has minimum space */
-    flex-shrink: 0; /* Prevent logo from shrinking */
-    height: 100%; /* Ensure container takes full header height */
-}
-
-.logo-container a {
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-.logo-container img {
-    height: 40px !important; /* Consistent logo height */
-    width: auto;
-    max-height: 100%;
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-.main-nav {
-    flex-grow: 1; /* Allow nav to take available space */
-    display: flex;
-    justify-content: center; /* Center nav items */
-}
-
-header .header-container .main-nav ul {
-    display: flex;
-    flex-wrap: wrap !important; /* Allow nav items to wrap, override consolidated */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.main-nav li {
-    margin-left: 15px !important; /* Adjust spacing, override consolidated */
-}
-
-.main-nav li:first-child {
-    margin-left: 0;
-}
-
-.main-nav a {
-    color: var(--text-color);
-    font-weight: 600;
-    padding: 10px 0;
-    position: relative;
-    white-space: nowrap; /* Prevent link text wrapping */
-}
-
-.main-nav a:hover {
-    color: var(--primary-color);
-}
-
-.main-nav a::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--primary-color);
-    transition: var(--transition);
-}
-
-.main-nav a:hover::after {
-    width: 100%;
-}
-
-.header-controls {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0; /* Prevent controls from shrinking */
-}
-
-.header-controls button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-left: 15px;
-    font-size: 1.2rem;
-    color: var(--text-color);
-    transition: var(--transition);
-}
-
-.header-controls button:hover {
-    color: var(--primary-color);
-}
-
-#mobile-menu-button {
-    display: none;
-    font-size: 1.5rem; /* Ensure button is large enough */
-}
-
-/* Mobile Menu Styles - Integrated from mobile-menu-fix.css */
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    left: -100%; /* Start off-screen */
-    width: 80%;
-    max-width: 300px;
-    height: 100vh;
-    background-color: var(--background-color);
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
-    z-index: 1100; /* Above header */
-    transition: left 0.3s ease;
-    overflow-y: auto; /* Allow scrolling if content overflows */
-    padding-top: 0; /* Header handles space */
-}
-
-/* Increased specificity for the active state */
-body .mobile-menu.active {
-    left: 0 !important; /* Slide in - Added !important as a last resort */
-}
-
-.mobile-menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    border-bottom: 1px solid var(--border-color);
-    background-color: var(--background-alt);
-    height: var(--header-height); /* Match header height */
-    position: sticky; /* Keep header visible when scrolling menu */
-    top: 0;
-    z-index: 1; /* Ensure header is above links */
-}
-
-.mobile-menu-header span { /* Target the 'Menu' text */
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--text-color); /* Ensure visible */
-}
-
-#close-menu-button {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--text-color);
-}
-
-/* Styles for links inside mobile menu */
-.mobile-menu .mobile-nav { /* Target the nav container */
-    padding-top: 10px; /* Add some space below the header */
-}
-
-.mobile-menu .mobile-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.mobile-menu .mobile-nav li {
-    margin: 0;
-}
-
-.mobile-menu .mobile-nav a {
-    display: block; /* Make links take full width */
-    padding: 15px 20px;
-    color: var(--text-color); /* Ensure text color is visible */
-    font-weight: 600;
-    border-bottom: 1px solid var(--border-color);
-    transition: var(--transition);
-    text-decoration: none;
-    position: relative; /* Ensure links are normally positioned */
-    z-index: 0; /* Ensure links are below header */
-}
-
-.mobile-menu .mobile-nav a:hover {
-    background-color: var(--background-alt);
-    color: var(--primary-color);
-}
-
-/* Hero Section */
-.hero-section {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-    color: white;
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
-
-.search-container {
-    display: flex;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.search-container input {
-    flex: 1;
-    padding: 15px;
-    border: none;
-    border-radius: var(--border-radius) 0 0 var(--border-radius);
-    font-size: 1rem;
-}
-
-.search-container button {
-    background-color: var(--secondary-color);
-    color: white;
-    border: none;
-    padding: 0 20px;
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.search-container button:hover {
-    background-color: var(--secondary-dark);
-}
-
-/* Category Section */
-.category-section {
-    padding: 80px 0;
-    background-color: var(--background-alt);
-}
-
-.category-section h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.category-card {
-    background-color: var(--background-color);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    padding: 30px;
-    text-align: center;
-    transition: var(--transition);
-    color: var(--text-color);
-}
-
-.category-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.category-icon {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.category-card h3 {
-    margin-bottom: 10px;
-    color: var(--text-color);
-}
-
-.category-card p {
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-/* Popular Calculators */
-.popular-calculators {
-    padding: 80px 0;
-}
-
-.popular-calculators h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.calculator-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.calculator-card {
-    background-color: var(--background-alt);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    padding: 25px;
-    transition: var(--transition);
-    color: var(--text-color);
-}
-
-.calculator-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.calculator-icon {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.calculator-card h3 {
-    margin-bottom: 10px;
-    color: var(--text-color);
-}
-
-.calculator-card p {
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-/* Features Section */
-.features-section {
-    padding: 80px 0;
-    background-color: var(--background-alt);
-}
-
-.features-section h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.feature-card {
-    background-color: var(--background-color);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    padding: 30px;
-    transition: var(--transition);
-}
-
-.feature-icon {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.feature-card h3 {
-    margin-bottom: 10px;
-}
-
-/* About Section */
-.about-section {
-    padding: 80px 0;
-}
-
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.about-content h2 {
-    margin-bottom: 30px;
-}
-
-.about-content p {
-    margin-bottom: 20px;
-}
-
-.about-content .btn {
-    margin-top: 20px;
-}
-
-/* Blog Preview Section */
-.blog-preview {
-    padding: 80px 0;
-    background-color: var(--background-alt);
-}
-
-.blog-preview h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.blog-card {
-    background-color: var(--background-color);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    transition: var(--transition);
-    color: var(--text-color);
-}
-
-.blog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.blog-image {
-    height: 200px;
-    overflow: hidden;
-}
-
-.blog-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-.blog-card:hover .blog-image img {
-    transform: scale(1.05);
-}
-
-.blog-content {
-    padding: 20px;
-}
-
-.blog-date {
-    color: var(--text-light);
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-}
-
-.blog-cta {
-    text-align: center;
-}
-
-/* Footer */
-footer {
-    background-color: var(--footer-background);
-    color: var(--footer-text);
-    padding: 60px 0 20px;
-}
-
-.footer-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.footer-section h4 {
-    margin-bottom: 20px;
-    color: white;
-    font-size: 1.4rem; /* Increased size */
-    font-weight: 700; /* Ensure bold */
-}
-
-.footer-section ul {
-    list-style: none;
-}
-
-.footer-section li {
-    margin-bottom: 10px;
-}
-
-.footer-section a {
-    color: var(--footer-text);
-    opacity: 0.8;
-    transition: var(--transition);
-}
-
-.footer-section a:hover {
-    opacity: 1;
-    color: white;
-}
-
-.social-links {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px !important; /* Ensure consistent logo height */
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    transition: var(--transition);
-}
-
-.social-links a:hover {
-    background-color: var(--primary-color);
-}
-
-.newsletter {
-    margin-top: 30px;
-}
-
-.newsletter p {
-    margin-bottom: 15px;
-    opacity: 0.8;
-}
-
-.newsletter form {
-    display: flex;
-    flex-direction: column;
-}
-
-.newsletter input {
-    padding: 10px;
-    border: none;
-    border-radius: var(--border-radius);
-    margin-bottom: 10px;
-}
-
-.newsletter .btn {
-    background-color: var(--primary-color);
-}
-
-.footer-bottom {
-    max-width: var(--container-width);
-    margin: 40px auto 0;
-    padding: 20px 20px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.footer-bottom p {
-    margin-bottom: 0;
-    font-size: 0.9rem;
-    opacity: 0.7;
-}
-
-.footer-bottom a {
-    color: var(--footer-text);
-    opacity: 0.7;
-    transition: var(--transition);
-}
-
-.footer-bottom a:hover {
-    opacity: 1;
-}
-
-/* Calculator Tool Styles */
-
-/* ============================================= */
-/* == Standard Calculator Form Grid Layout == */
-/* ============================================= */
-/* Apply grid layout to fieldsets within calculator forms for a responsive, multi-column layout. */
-
-.calculator-form fieldset {
-    display: grid;
-    /* Create responsive columns: As many 280px+ columns as fit, else fewer/one */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 15px 25px; /* 15px row gap, 25px column gap */
-    border: none; /* Remove browser default fieldset border */
-    padding: 0; /* Remove browser default fieldset padding */
-    margin-bottom: 30px; /* Space between fieldsets */
-    align-items: start; /* Align form groups to the top */
-}
-
-/* Ensure the legend spans the entire width of the grid */
-.calculator-form fieldset legend {
-    grid-column: 1 / -1; /* Span from first to last column line */
-    width: 100%;
-    padding-bottom: 10px;
-    margin-bottom: 10px; /* Space below legend before fields */
-    font-size: 1.2em;
-    font-weight: 600;
-    color: var(--text-color);
-    border-bottom: 1px solid var(--border-color);
-}
-
-/* Ensure form actions/errors span full width */
-.calculator-form .form-actions,
-.calculator-form .error-messages {
-    grid-column: 1 / -1;
-}
-
-/* --- Default Form Group Styling (Internal to Grid Cells) --- */
-.calculator-form .form-group {
-    display: flex;
-    flex-direction: column; /* Stack label/input by default */
-    margin-bottom: 0; /* Grid 'gap' handles vertical spacing */
-}
-
-.calculator-form .form-group label {
-    margin-bottom: 8px; /* Space between label and input */
-    font-weight: 600;
-    width: auto;
-}
-
-.calculator-form .form-group input[type="number"],
-.calculator-form .form-group input[type="text"],
-.calculator-form .form-group input[type="email"],
-.calculator-form .form-group select {
-     width: 100%; /* Make inputs/selects take full cell width */
-     height: 40px;
-     padding: 8px 10px;
-     border: 1px solid var(--border-color);
-     border-radius: var(--border-radius);
-     background-color: var(--input-bg);
-     color: var(--text-color);
-     font-size: 1rem;
-}
-/* ============================================= */
-
-
-.calculator-tool {
-    background-color: var(--background-color);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    padding: 30px;
-    margin-bottom: 40px;
-}
-
-.calculator-form {
-    display: grid; /* This might conflict with fieldset grid? Check this. */
-    gap: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    margin-bottom: 5px;
-    font-weight: 600;
-}
-
-.form-group input, .form-group select {
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    font-size: 1rem;
-}
-
-.calculator-results {
-    margin-top: 30px;
-    padding-top: 30px;
-    border-top: 1px solid var(--border-color);
-}
-
-.result-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.result-item:last-child {
-    border-bottom: none;
-}
-
-.result-label {
-    font-weight: 600;
-}
-
-.result-value {
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-/* FAQ Section */
-.faq-section {
-    margin: 40px 0; /* Adjusted margin */
-}
-
-.faq-item {
-    margin-bottom: 15px; /* Adjusted spacing */
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    overflow: hidden; /* Keep this for border-radius and transition */
-}
-
-.faq-question {
-    width: 100%; /* Ensure button takes full width */
-    padding: 15px 20px; /* Adjusted padding */
-    background-color: var(--background-alt);
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: none; /* Remove default button border */
-    text-align: left; /* Align text left */
-    font-size: 1rem; /* Match body font size */
-    color: var(--text-color); /* Ensure text color */
-    transition: background-color 0.2s ease; /* Add transition for hover */
-}
-
-.faq-question:hover {
-    background-color: #e9ecef; /* Slightly darker background on hover */
-}
-
-/* Dark mode hover */
-body.dark-mode .faq-question:hover {
-    background-color: #495057;
-}
-
-.faq-icon {
-    font-style: normal; /* Ensure icon is not italic */
-    font-weight: bold;
-    transition: transform 0.3s ease; /* Animate icon rotation */
-    display: inline-block; /* Needed for transform */
-    margin-left: 10px; /* Space between text and icon */
-    flex-shrink: 0; /* Prevent icon from shrinking */
-}
-
-/* Rotate icon when open */
-.faq-item.active .faq-icon {
-    transform: rotate(45deg); /* Rotate '+' to 'x' - using transform */
-}
-
-.faq-answer {
-    padding: 0 20px; /* Keep horizontal padding, remove vertical */
-    background-color: var(--background-color);
-    overflow: hidden; /* Needed for smooth transition */
-    transition: padding-top 0.3s ease, padding-bottom 0.3s ease, max-height 0.3s ease; /* Transition padding and max-height */
-    max-height: 0; /* Start collapsed */
-    /* Explicitly set vertical padding to 0 */
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-/* Styles when the answer is visible */
-.faq-item.active .faq-answer {
-    padding: 20px; /* Apply full padding when active */
-    max-height: 1000px; /* Set a large max-height to allow expansion */
-}
-
-/* Remove default outline on focus for button, add custom */
-.faq-question:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--primary-light); /* Custom focus ring */
-}
-
-/* Ensure hidden attribute works if needed, though JS manages visibility */
-/* .faq-answer[hidden] {
-    display: none;
-}
-*/
-
-/* Related Calculators */
-.related-calculators {
-    margin: 60px 0;
-}
-
-.related-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-/* Responsive Styles */
-@media (max-width: 1024px) {
-    /* Styles for larger tablets / smaller desktops */
-    .main-nav li {
-        margin-left: 10px; /* Reduce spacing between nav items */
-    }
-    .main-nav a {
-        font-size: 0.9rem; /* Slightly smaller font for nav items */
-    }
-    .header-container {
-        padding: 0 15px; /* Reduce header padding */
-    }
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    .hero-content p {
-        font-size: 1.1rem;
-    }
-    .category-grid, .calculator-grid, .features-grid, .blog-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    }
-}
-
-@media (max-width: 991px) {
-    /* Breakpoint for mobile menu activation */
-    header .header-container .main-nav {
-        display: none !important; /* Hide main navigation */
-    }
-    #mobile-menu-button {
-        display: block; /* Show hamburger button */
-    }
-    .header-container {
-        justify-content: space-between; /* Ensure logo and controls are spaced */
-    }
-    .logo-container {
-        flex-grow: 0; /* Don't let logo grow */
-    }
-    .header-controls {
-        /* Ensure controls are visible */
-    }
-}
-
-@media (max-width: 768px) {
-    /* Styles for tablets */
-    h1 {
-        font-size: 2rem;
-    }
-    h2 {
-        font-size: 1.75rem;
-    }
-    .hero-section {
-        padding: 60px 20px;
-    }
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
-    .hero-content p {
-        font-size: 1rem;
-    }
-    .category-section, .popular-calculators, .features-section, .about-section, .blog-preview {
-        padding: 60px 0;
-    }
-    .category-grid, .calculator-grid, .features-grid, .blog-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 20px;
-    }
-    .footer-container {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 30px;
-    }
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Styles for mobile phones */
-    .container {
-        padding: 0 15px;
-    }
-    .header-container {
-        padding: 0 15px;
-    }
-    .logo-container img {
-        height: 35px !important;
-    }
-    .hero-section {
-        padding: 40px 15px;
-    }
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-    .hero-content p {
-        font-size: 0.9rem;
-    }
-    .search-container {
-        flex-direction: column;
-    }
-    .search-container input, .search-container button {
-        border-radius: var(--border-radius);
-        margin-bottom: 10px;
-    }
-    .search-container button {
-        margin-bottom: 0;
-    }
-    .category-section, .popular-calculators, .features-section, .about-section, .blog-preview {
-        padding: 40px 0;
-    }
-    .category-grid, .calculator-grid, .features-grid, .blog-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        text-align: center;
-    }
-    .social-links {
-        justify-content: center;
-    }
-    .newsletter form {
-        align-items: center;
-    }
-    .newsletter input {
-        max-width: 100%;
-    }
-}
-
-
-
-/* Fix list alignment (ChatGPT Recommendation v3.1 - Universal Target) */
-.container ul,
-.container ol,
-.main-content ul, /* Added back .main-content */
-.main-content ol,
-.content ul, /* Keeping .content just in case */
-.content ol {
-    margin: 0 0 1rem 0; /* Consistent bottom margin, remove default left margin */
-    padding-left: 1.5rem; /* Space for bullet/number to "hang" */
-    list-style-position: outside; /* Places bullet/number in the padding area */
-}
-
-.container li,
-.main-content li,
-.content li {
-    margin-bottom: 0.5rem; /* Consistent spacing between list items */
-}
-
-
-
-/* Formula Box Style */
-.formula-box {
-    background-color: var(--background-alt);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    padding: 1.5rem;
-    margin: 2rem 0;
-    font-family: monospace;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-
-
-
-/* --- New FAQ Accordion Styles (Based on ChatGPT Suggestion) --- */
-
-.faq-accordion .accordion {
-    background-color: var(--background-alt);
-    color: var(--text-color);
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid var(--border-color); /* Separator line */
-    text-align: left;
-    outline: none;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.faq-accordion .accordion:hover {
-    background-color: #e9ecef; /* Slightly darker background on hover */
-}
-
-/* Dark mode hover */
-body.dark-mode .faq-accordion .accordion:hover {
-    background-color: #495057;
-}
-
-.faq-accordion .faq-icon {
-    font-style: normal; /* Ensure icon is not italic */
-    font-weight: bold;
-    transition: transform 0.3s ease; /* Animate icon rotation */
-    display: inline-block; /* Needed for transform */
-    margin-left: 10px; /* Space between text and icon */
-    flex-shrink: 0; /* Prevent icon from shrinking */
-}
-
-/* Rotate icon when active */
-.faq-accordion .accordion.active .faq-icon {
-    transform: rotate(45deg); /* Rotate '+' to 'x' */
-}
-
-/* Style the panel (answer) */
-.faq-accordion .panel {
-    padding: 0 18px; /* Horizontal padding only */
-    background-color: var(--background-color);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Smooth transition */
-}
-
-/* When the button is active, expand the panel */
-.faq-accordion .accordion.active + .panel {
-    max-height: 1000px; /* Adjust if answers are very long */
-    padding: 18px; /* Add vertical padding when open */
-    border-bottom: 1px solid var(--border-color); /* Add border to bottom of open panel */
-}
-
-/* Remove default outline on focus for button, add custom */
-.faq-accordion .accordion:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--primary-light); /* Custom focus ring */
-}
-
-/* --- End New FAQ Accordion Styles --- */
-I have inserted the CSS code block into the styles.css file but there seems to be a conflict. 
-The CSS code block starts with the line:
-.calculator-form fieldset {
-    display: grid;
-and ends with:
-     font-size: 1rem;
-}
-/* ============================================= */
-
-Looking at the file again I see these 2 rules:
-.calculator-form {
-    display: grid; /* This might conflict with fieldset grid? Check this. */
-    gap: 20px;
-}
-and:
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-Can you identify the conflict and fix it in an updated version of the styles.css file? Make sure the new version is complete.You've correctly identified the potential sources of conflict! Having `display: grid` on both the parent `.calculator-form` *and* the child `.calculator-form fieldset` is redundant and can lead to unpredictable layout behaviour. Furthermore, having duplicate or slightly different rules for `.form-group` can cause issues.
-
-The core idea is:
-
-* The `<form>` should just be a container.
-* The `<fieldset>` should be the **grid container** for the form groups.
-* We need **one clear set of rules** for how `.form-group` and its inputs/labels should look by default.
-
-To fix this, we will remove the old, conflicting rules from the `styles.css` file and ensure our new "Standard Calculator Form Grid Layout" section is the single source of truth for this layout.
-
-Here is the complete, updated `styles.css` file with the conflicts removed and comments updated:
-
----
-
-## `styles.css` (Full File - Version 1.2 - Conflict Fixed)
-
-```css
-/* Main Styles for CalcHub */
 /* Version: 1.2 */
 /* Date: May 24, 2025 */
 /* Changes: Added Standard Calculator Form Grid Layout & Removed Conflicting/Old Form Rules */
@@ -1227,9 +27,7 @@ Here is the complete, updated `styles.css` file with the conflicts removed and c
     --header-height: 70px;
     --footer-background: #2c3e50;
     --footer-text: #ecf0f1;
-    /* Added for hover consistency - Ensure this is defined in dark-mode.css too */
     --hover-background-color: #e9ecef;
-    /* Define input background for easier dark mode override */
     --input-bg: #fff;
 }
 
@@ -1359,9 +157,9 @@ header {
 .logo-container {
     display: flex;
     align-items: center;
-    min-width: 100px; /* Ensure logo has minimum space */
-    flex-shrink: 0; /* Prevent logo from shrinking */
-    height: 100%; /* Ensure container takes full header height */
+    min-width: 100px;
+    flex-shrink: 0;
+    height: 100%;
 }
 
 .logo-container a {
@@ -1371,7 +169,7 @@ header {
 }
 
 .logo-container img {
-    height: 40px !important; /* Consistent logo height */
+    height: 40px !important;
     width: auto;
     max-height: 100%;
 }
@@ -1383,21 +181,21 @@ header {
 }
 
 .main-nav {
-    flex-grow: 1; /* Allow nav to take available space */
+    flex-grow: 1;
     display: flex;
-    justify-content: center; /* Center nav items */
+    justify-content: center;
 }
 
 header .header-container .main-nav ul {
     display: flex;
-    flex-wrap: wrap !important; /* Allow nav items to wrap, override consolidated */
+    flex-wrap: wrap !important;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 .main-nav li {
-    margin-left: 15px !important; /* Adjust spacing, override consolidated */
+    margin-left: 15px !important;
 }
 
 .main-nav li:first-child {
@@ -1409,7 +207,7 @@ header .header-container .main-nav ul {
     font-weight: 600;
     padding: 10px 0;
     position: relative;
-    white-space: nowrap; /* Prevent link text wrapping */
+    white-space: nowrap;
 }
 
 .main-nav a:hover {
@@ -1434,7 +232,7 @@ header .header-container .main-nav ul {
 .header-controls {
     display: flex;
     align-items: center;
-    flex-shrink: 0; /* Prevent controls from shrinking */
+    flex-shrink: 0;
 }
 
 .header-controls button {
@@ -1453,28 +251,27 @@ header .header-container .main-nav ul {
 
 #mobile-menu-button {
     display: none;
-    font-size: 1.5rem; /* Ensure button is large enough */
+    font-size: 1.5rem;
 }
 
-/* Mobile Menu Styles - Integrated from mobile-menu-fix.css */
+/* Mobile Menu Styles */
 .mobile-menu {
     position: fixed;
     top: 0;
-    left: -100%; /* Start off-screen */
+    left: -100%;
     width: 80%;
     max-width: 300px;
     height: 100vh;
     background-color: var(--background-color);
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
-    z-index: 1100; /* Above header */
+    z-index: 1100;
     transition: left 0.3s ease;
-    overflow-y: auto; /* Allow scrolling if content overflows */
-    padding-top: 0; /* Header handles space */
+    overflow-y: auto;
+    padding-top: 0;
 }
 
-/* Increased specificity for the active state */
 body .mobile-menu.active {
-    left: 0 !important; /* Slide in - Added !important as a last resort */
+    left: 0 !important;
 }
 
 .mobile-menu-header {
@@ -1484,16 +281,16 @@ body .mobile-menu.active {
     padding: 15px 20px;
     border-bottom: 1px solid var(--border-color);
     background-color: var(--background-alt);
-    height: var(--header-height); /* Match header height */
-    position: sticky; /* Keep header visible when scrolling menu */
+    height: var(--header-height);
+    position: sticky;
     top: 0;
-    z-index: 1; /* Ensure header is above links */
+    z-index: 1;
 }
 
-.mobile-menu-header span { /* Target the 'Menu' text */
+.mobile-menu-header span {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--text-color); /* Ensure visible */
+    color: var(--text-color);
 }
 
 #close-menu-button {
@@ -1504,9 +301,8 @@ body .mobile-menu.active {
     color: var(--text-color);
 }
 
-/* Styles for links inside mobile menu */
-.mobile-menu .mobile-nav { /* Target the nav container */
-    padding-top: 10px; /* Add some space below the header */
+.mobile-menu .mobile-nav {
+    padding-top: 10px;
 }
 
 .mobile-menu .mobile-nav ul {
@@ -1520,15 +316,15 @@ body .mobile-menu.active {
 }
 
 .mobile-menu .mobile-nav a {
-    display: block; /* Make links take full width */
+    display: block;
     padding: 15px 20px;
-    color: var(--text-color); /* Ensure text color is visible */
+    color: var(--text-color);
     font-weight: 600;
     border-bottom: 1px solid var(--border-color);
     transition: var(--transition);
     text-decoration: none;
-    position: relative; /* Ensure links are normally positioned */
-    z-index: 0; /* Ensure links are below header */
+    position: relative;
+    z-index: 0;
 }
 
 .mobile-menu .mobile-nav a:hover {
@@ -1821,8 +617,8 @@ footer {
 .footer-section h4 {
     margin-bottom: 20px;
     color: white;
-    font-size: 1.4rem; /* Increased size */
-    font-weight: 700; /* Ensure bold */
+    font-size: 1.4rem;
+    font-weight: 700;
 }
 
 .footer-section ul {
@@ -1855,7 +651,7 @@ footer {
     align-items: center;
     justify-content: center;
     width: 40px;
-    height: 40px !important; /* Ensure consistent logo height */
+    height: 40px !important;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     transition: var(--transition);
@@ -1927,43 +723,39 @@ footer {
 
 .calculator-form fieldset {
     display: grid;
-    /* Create responsive columns: As many 280px+ columns as fit, else fewer/one */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 15px 25px; /* 15px row gap, 25px column gap */
-    border: none; /* Remove browser default fieldset border */
-    padding: 0; /* Remove browser default fieldset padding */
-    margin-bottom: 30px; /* Space between fieldsets */
-    align-items: start; /* Align form groups to the top */
+    gap: 15px 25px;
+    border: none;
+    padding: 0;
+    margin-bottom: 30px;
+    align-items: start;
 }
 
-/* Ensure the legend spans the entire width of the grid */
 .calculator-form fieldset legend {
-    grid-column: 1 / -1; /* Span from first to last column line */
+    grid-column: 1 / -1;
     width: 100%;
     padding-bottom: 10px;
-    margin-bottom: 10px; /* Space below legend before fields */
+    margin-bottom: 10px;
     font-size: 1.2em;
     font-weight: 600;
     color: var(--text-color);
     border-bottom: 1px solid var(--border-color);
 }
 
-/* Ensure form actions/errors span full width */
 .calculator-form .form-actions,
 .calculator-form .error-messages {
     grid-column: 1 / -1;
 }
 
 /* --- Default Form Group Styling (Internal to Grid Cells) --- */
-/* This is NOW THE STANDARD way form groups should look inside the grid */
 .calculator-form .form-group {
     display: flex;
-    flex-direction: column; /* Stack label/input by default */
-    margin-bottom: 0; /* Grid 'gap' handles vertical spacing */
+    flex-direction: column;
+    margin-bottom: 0;
 }
 
 .calculator-form .form-group label {
-    margin-bottom: 8px; /* Space between label and input */
+    margin-bottom: 8px;
     font-weight: 600;
     width: auto;
 }
@@ -1972,7 +764,7 @@ footer {
 .calculator-form .form-group input[type="text"],
 .calculator-form .form-group input[type="email"],
 .calculator-form .form-group select {
-     width: 100%; /* Make inputs/selects take full cell width */
+     width: 100%;
      height: 40px;
      padding: 8px 10px;
      border: 1px solid var(--border-color);
@@ -1992,11 +784,9 @@ footer {
     margin-bottom: 40px;
 }
 
-/* REMOVED: .calculator-form { display: grid; ... } - Redundant/Conflicting */
-
-/* REMOVED: .form-group { ... } - Now handled by .calculator-form .form-group */
-
-/* REMOVED: .form-group input, .form-group select { ... } - Now handled by .calculator-form .form-group ... */
+/* NOTE: The following rules (.calculator-form, .form-group, .form-group input) */
+/* have been REMOVED as they were redundant or conflicted with the     */
+/* new 'Standard Calculator Form Grid Layout' section above.           */
 
 .calculator-results {
     margin-top: 30px;
@@ -2027,80 +817,77 @@ footer {
 
 /* FAQ Section */
 .faq-section {
-    margin: 40px 0; /* Adjusted margin */
+    margin: 40px 0;
 }
 
 .faq-item {
-    margin-bottom: 15px; /* Adjusted spacing */
+    margin-bottom: 15px;
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
-    overflow: hidden; /* Keep this for border-radius and transition */
+    overflow: hidden;
 }
 
 /* NOTE: .faq-question, .faq-answer, .faq-icon are now considered OLD. */
-/* The V2 structure uses .faq-item h3 button.accordion and div.panel */
-/* These old rules might be needed for older pages but should be phased out. */
-/* For now, we leave them but rely on V2 CSS for new pages. */
+/* These rules are for an OLDER FAQ structure and should NOT be used for new calculators. */
+/* They are kept here temporarily for backward compatibility with any non-updated pages. */
+/* New pages MUST use the V2 structure defined in the guidelines and styled by faq-styles-v2.css. */
 .faq-question {
-    width: 100%; /* Ensure button takes full width */
-    padding: 15px 20px; /* Adjusted padding */
+    width: 100%;
+    padding: 15px 20px;
     background-color: var(--background-alt);
     font-weight: 600;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: none; /* Remove default button border */
-    text-align: left; /* Align text left */
-    font-size: 1rem; /* Match body font size */
-    color: var(--text-color); /* Ensure text color */
-    transition: background-color 0.2s ease; /* Add transition for hover */
+    border: none;
+    text-align: left;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: background-color 0.2s ease;
 }
 
 .faq-question:hover {
-    background-color: #e9ecef; /* Slightly darker background on hover */
+    background-color: #e9ecef;
 }
 
-/* Dark mode hover */
 body.dark-mode .faq-question:hover {
     background-color: #495057;
 }
 
 .faq-icon {
-    font-style: normal; /* Ensure icon is not italic */
+    font-style: normal;
     font-weight: bold;
-    transition: transform 0.3s ease; /* Animate icon rotation */
-    display: inline-block; /* Needed for transform */
-    margin-left: 10px; /* Space between text and icon */
-    flex-shrink: 0; /* Prevent icon from shrinking */
+    transition: transform 0.3s ease;
+    display: inline-block;
+    margin-left: 10px;
+    flex-shrink: 0;
 }
 
-/* Rotate icon when open */
 .faq-item.active .faq-icon {
-    transform: rotate(45deg); /* Rotate '+' to 'x' - using transform */
+    transform: rotate(45deg);
 }
 
 .faq-answer {
-    padding: 0 20px; /* Keep horizontal padding, remove vertical */
+    padding: 0 20px;
     background-color: var(--background-color);
-    overflow: hidden; /* Needed for smooth transition */
-    transition: padding-top 0.3s ease, padding-bottom 0.3s ease, max-height 0.3s ease; /* Transition padding and max-height */
-    max-height: 0; /* Start collapsed */
-    /* Explicitly set vertical padding to 0 */
+    overflow: hidden;
+    transition: padding-top 0.3s ease, padding-bottom 0.3s ease, max-height 0.3s ease;
+    max-height: 0;
     padding-top: 0;
     padding-bottom: 0;
 }
 
-/* Styles when the answer is visible */
 .faq-item.active .faq-answer {
-    padding: 20px; /* Apply full padding when active */
-    max-height: 1000px; /* Set a large max-height to allow expansion */
+    padding: 20px;
+    max-height: 1000px;
 }
 
 .faq-question:focus {
     outline: none;
-    box-shadow: 0 0 0 2px var(--primary-light); /* Custom focus ring */
+    box-shadow: 0 0 0 2px var(--primary-light);
 }
+
 
 /* Related Calculators */
 .related-calculators {
@@ -2115,15 +902,14 @@ body.dark-mode .faq-question:hover {
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
-    /* Styles for larger tablets / smaller desktops */
     .main-nav li {
-        margin-left: 10px; /* Reduce spacing between nav items */
+        margin-left: 10px;
     }
     .main-nav a {
-        font-size: 0.9rem; /* Slightly smaller font for nav items */
+        font-size: 0.9rem;
     }
     .header-container {
-        padding: 0 15px; /* Reduce header padding */
+        padding: 0 15px;
     }
     .hero-content h1 {
         font-size: 2.5rem;
@@ -2137,26 +923,21 @@ body.dark-mode .faq-question:hover {
 }
 
 @media (max-width: 991px) {
-    /* Breakpoint for mobile menu activation */
     header .header-container .main-nav {
-        display: none !important; /* Hide main navigation */
+        display: none !important;
     }
     #mobile-menu-button {
-        display: block; /* Show hamburger button */
+        display: block;
     }
     .header-container {
-        justify-content: space-between; /* Ensure logo and controls are spaced */
+        justify-content: space-between;
     }
     .logo-container {
-        flex-grow: 0; /* Don't let logo grow */
-    }
-    .header-controls {
-        /* Ensure controls are visible */
+        flex-grow: 0;
     }
 }
 
 @media (max-width: 768px) {
-    /* Styles for tablets */
     h1 {
         font-size: 2rem;
     }
@@ -2190,7 +971,6 @@ body.dark-mode .faq-question:hover {
 }
 
 @media (max-width: 480px) {
-    /* Styles for mobile phones */
     .container {
         padding: 0 15px;
     }
@@ -2242,27 +1022,23 @@ body.dark-mode .faq-question:hover {
     }
 }
 
-
-
-/* Fix list alignment (ChatGPT Recommendation v3.1 - Universal Target) */
+/* Fix list alignment */
 .container ul,
 .container ol,
-.main-content ul, /* Added back .main-content */
+.main-content ul,
 .main-content ol,
-.content ul, /* Keeping .content just in case */
+.content ul,
 .content ol {
-    margin: 0 0 1rem 0; /* Consistent bottom margin, remove default left margin */
-    padding-left: 1.5rem; /* Space for bullet/number to "hang" */
-    list-style-position: outside; /* Places bullet/number in the padding area */
+    margin: 0 0 1rem 0;
+    padding-left: 1.5rem;
+    list-style-position: outside;
 }
 
 .container li,
 .main-content li,
 .content li {
-    margin-bottom: 0.5rem; /* Consistent spacing between list items */
+    margin-bottom: 0.5rem;
 }
-
-
 
 /* Formula Box Style */
 .formula-box {
@@ -2276,14 +1052,9 @@ body.dark-mode .faq-question:hover {
     word-wrap: break-word;
 }
 
-
-
-/* --- New FAQ Accordion Styles (Based on ChatGPT Suggestion) --- */
-/* NOTE: These .faq-accordion rules seem intended for a DIFFERENT structure. */
-/* The V2 standard uses .faq-item h3 button.accordion */
-/* We should likely DEPRECATE or REMOVE these .faq-accordion rules eventually. */
-/* For now, we leave them but rely on V2 CSS (faq-styles-v2.css) for new pages. */
-
+/* --- Old FAQ Accordion Styles --- */
+/* NOTE: These .faq-accordion rules are for an OLDER structure */
+/* and should be considered DEPRECATED. New pages use faq-styles-v2.css */
 .faq-accordion .accordion {
     background-color: var(--background-alt);
     color: var(--text-color);
@@ -2291,7 +1062,7 @@ body.dark-mode .faq-question:hover {
     padding: 18px;
     width: 100%;
     border: none;
-    border-bottom: 1px solid var(--border-color); /* Separator line */
+    border-bottom: 1px solid var(--border-color);
     text-align: left;
     outline: none;
     font-size: 1rem;
@@ -2303,48 +1074,43 @@ body.dark-mode .faq-question:hover {
 }
 
 .faq-accordion .accordion:hover {
-    background-color: #e9ecef; /* Slightly darker background on hover */
+    background-color: #e9ecef;
 }
 
-/* Dark mode hover */
 body.dark-mode .faq-accordion .accordion:hover {
     background-color: #495057;
 }
 
 .faq-accordion .faq-icon {
-    font-style: normal; /* Ensure icon is not italic */
+    font-style: normal;
     font-weight: bold;
-    transition: transform 0.3s ease; /* Animate icon rotation */
-    display: inline-block; /* Needed for transform */
-    margin-left: 10px; /* Space between text and icon */
-    flex-shrink: 0; /* Prevent icon from shrinking */
+    transition: transform 0.3s ease;
+    display: inline-block;
+    margin-left: 10px;
+    flex-shrink: 0;
 }
 
-/* Rotate icon when active */
 .faq-accordion .accordion.active .faq-icon {
-    transform: rotate(45deg); /* Rotate '+' to 'x' */
+    transform: rotate(45deg);
 }
 
-/* Style the panel (answer) */
 .faq-accordion .panel {
-    padding: 0 18px; /* Horizontal padding only */
+    padding: 0 18px;
     background-color: var(--background-color);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Smooth transition */
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
 }
 
-/* When the button is active, expand the panel */
 .faq-accordion .accordion.active + .panel {
-    max-height: 1000px; /* Adjust if answers are very long */
-    padding: 18px; /* Add vertical padding when open */
-    border-bottom: 1px solid var(--border-color); /* Add border to bottom of open panel */
+    max-height: 1000px;
+    padding: 18px;
+    border-bottom: 1px solid var(--border-color);
 }
 
-/* Remove default outline on focus for button, add custom */
 .faq-accordion .accordion:focus {
     outline: none;
-    box-shadow: 0 0 0 2px var(--primary-light); /* Custom focus ring */
+    box-shadow: 0 0 0 2px var(--primary-light);
 }
 
-/* --- End New FAQ Accordion Styles --- */
+/* --- End Old FAQ Accordion Styles --- */
