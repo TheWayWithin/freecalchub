@@ -1,18 +1,17 @@
 /*
  * FreecalcHub.com - Compound Interest Calculator
- * Version: 2.0
+ * Version: 2.4
  * Date Updated: May 25, 2025
- * Description: Remediated to align with current site-wide templates, V2 FAQ, and commenting standards.
+ * Description: Added fixed heights to chart containers to fix redraw loop (Fix A).
  */
 
 /*
  * NOTE: Most form layout styles (grid, labels, inputs, buttons) are now
  * handled by the global /css/styles.css when using class="calculator-form".
- * Only add styles here that are *unique* to this calculator or override
- * global styles where absolutely necessary.
+ * Only add styles here that are *unique* to this calculator.
  */
 
-/* Input Group Specifics */
+/* Input Group Specifics (If needed beyond global) */
 .input-group {
     display: flex;
     width: 100%; /* Ensure input group takes full width */
@@ -39,12 +38,7 @@
     border-left: 0;
 }
 
-/* Specific styling for selects if needed, beyond global styles */
-select {
-    /* Most select styling is global, only add specifics if needed */
-}
-
-/* Results Section Enhancements */
+/* Results Section Layout */
 .results-section {
     margin-top: 30px;
     padding: 20px;
@@ -56,17 +50,17 @@ select {
     gap: 25px; /* Add gap between elements */
 }
 
-/* Ensure results grid uses CSS variables */
+/* Results Grid (Summary Cards) */
 .results-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust minmax */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
 }
 
 .result-item {
-    /* Using 'card' class handles most styling */
     padding: 15px;
     text-align: center;
+    /* Uses .card styles globally */
 }
 
 .result-item h4 {
@@ -87,12 +81,16 @@ select {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two columns */
     gap: 20px;
+    margin-top: 25px; /* Add some spacing */
 }
 
+/* Chart Container - Apply position relative, remove min-height */
 .chart-container {
     padding: 15px;
-    min-height: 300px; /* Ensure charts have space */
-    position: relative; /* Needed for Chart.js responsiveness */
+    position: relative; /* CRITICAL: Must be relative for Chart.js */
+    width: 100%;
+    /* min-height: 300px; */ /* REMOVED min-height */
+    /* Uses .card styles globally */
 }
 
 .chart-container h4 {
@@ -101,15 +99,26 @@ select {
     color: var(--text-color-medium);
 }
 
-/* Canvas needs to be responsive */
+/* *** FIX V2.4: Set Fixed Heights for Chart Containers *** */
+#growth-chart-container {
+    height: 400px;
+}
+
+#principal-interest-breakdown-container {
+    height: 300px;
+}
+
+/* Canvas Element - Let Chart.js handle its inline styles */
 .chart-container canvas {
     max-width: 100%;
-    height: auto;
+    /* NO explicit width or height here. Let Chart.js manage it */
+    /* based on its container's size. */
 }
 
 /* Table Area Layout */
 .table-container {
      padding: 15px;
+     /* Uses .card styles globally */
 }
 
 .table-container h4 {
@@ -134,7 +143,7 @@ select {
 .results-table th,
 .results-table td {
     border: 1px solid var(--table-border-color);
-    padding: 10px 12px; /* Increased padding slightly */
+    padding: 10px 12px;
     text-align: right;
     color: var(--text-color);
 }
@@ -143,7 +152,7 @@ select {
     background-color: var(--table-header-bg);
     color: var(--table-header-text);
     font-weight: 600;
-    text-align: center; /* Center headers */
+    text-align: center;
 }
 
 .results-table tbody tr:nth-child(even) {
@@ -151,22 +160,17 @@ select {
 }
 
 .results-table tbody tr:hover {
-    background-color: var(--table-row-hover-bg); /* Add hover effect */
+    background-color: var(--table-row-hover-bg);
 }
 
 /* Responsive adjustments */
 @media (max-width: 900px) {
     .chart-area {
-        grid-template-columns: 1fr; /* Stack charts on smaller screens */
+        grid-template-columns: 1fr; /* Stack charts */
     }
 }
 
 @media (max-width: 768px) {
-    /*
-     * Note: The .calculator-form fieldset grid should handle stacking
-     * automatically thanks to global styles. These rules are for
-     * other elements like charts or results.
-     */
      .results-grid {
         grid-template-columns: 1fr 1fr; /* Two columns on tablets */
      }
