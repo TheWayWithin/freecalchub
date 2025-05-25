@@ -240,7 +240,25 @@
     <changefreq>monthly</changefreq>
   </url>
 
-<!-- Math Subcategories & Calculators -->
+  <!-- Lifestyle Subcategories & Calculators -->
+
+<url>
+  <loc>https://www.freecalchub.com/lifestyle/dinning-social</loc>
+  <lastmod>2025-05-25</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+        
+<url>
+  <loc>https://www.freecalchub.com/lifestyle/dinning-social/tip-calculator/</loc>
+  <lastmod>2025-05-25</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+        
+        
+        
+        <!-- Math Subcategories & Calculators -->
   
   <url>
     <loc>https://freecalchub.com/math/percentages/</loc>
