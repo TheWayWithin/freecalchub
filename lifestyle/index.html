@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lifestyle Calculators - CalcHub</title>
-    <meta name="description" content="Free online lifestyle calculators for home, garden, travel, pets, and more. Get accurate results and educational insights for all your everyday life calculations.">
+    <title>Lifestyle Calculators - Home, Travel, Dining & More | FreecalcHub</title>
+    <meta name="description" content="Free online lifestyle calculators for home, garden, travel, pets, dining, social events, and more. Get accurate results and insights for everyday life on FreecalcHub.">
     <link rel="canonical" href="https://www.freecalchub.com/lifestyle/">
-    <!-- Use absolute paths -->
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/dark-mode.css">
     <link rel="stylesheet" href="/css/dark-mode-button.css">
     <link rel="stylesheet" href="/css/navigation-ribbon.css">
     <link rel="stylesheet" href="/css/breadcrumb-styles.css">
     <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -25,51 +21,74 @@
       gtag("js", new Date());
       gtag("config", "G-R1QHNSSWTC");
     </script>
-    <!-- End Google Analytics -->
 
-    <!-- Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
+      "@graph": [
         {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.freecalchub.com/"
+          "@type": "CollectionPage",
+          "name": "Lifestyle Calculators - Home, Travel, Dining & More | FreecalcHub",
+          "description": "Free online lifestyle calculators for home, garden, travel, pets, dining, social events, and more.",
+          "url": "https://www.freecalchub.com/lifestyle/",
+          "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
+          "inLanguage": "en-US",
+          "datePublished": "2025-05-25", // Assuming a relevant publish/modified date
+          "dateModified": "2025-05-25"
         },
         {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Lifestyle",
-          "item": "https://www.freecalchub.com/lifestyle/"
-        }
-      ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home Renovation Calculator",
-          "url": "https://www.freecalchub.com/lifestyle/home/renovation-calculator/"
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.freecalchub.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Lifestyle",
+              "item": "https://www.freecalchub.com/lifestyle/"
+            }
+          ]
         },
         {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Travel Budget Calculator",
-          "url": "https://www.freecalchub.com/lifestyle/travel/budget-calculator/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Carbon Footprint Calculator",
-          "url": "https://www.freecalchub.com/lifestyle/sustainability/carbon-footprint-calculator/"
+          "@type": "ItemList",
+          "name": "Featured Lifestyle Calculators & Categories",
+          "description": "A selection of popular lifestyle calculators and sub-categories available on FreecalcHub.",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home Renovation Calculator",
+              "url": "https://www.freecalchub.com/lifestyle/home/renovation-calculator/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Travel Budget Calculator",
+              "url": "https://www.freecalchub.com/lifestyle/travel/budget-calculator/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Tip Calculator", // Added new Calculator
+              "url": "https://www.freecalchub.com/lifestyle/dining-social/tip-calculator/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Carbon Footprint Calculator",
+              "url": "https://www.freecalchub.com/lifestyle/sustainability/carbon-footprint-calculator/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Dining & Social Calculators", // Added new Sub-Category
+                "url": "https://www.freecalchub.com/lifestyle/dining-social/"
+            }
+          ]
         }
       ]
     }
@@ -77,17 +96,13 @@
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
-    <header>
+    <header class="site-header">
         <div class="header-container">
             <div class="logo-container">
-                <!-- Use absolute paths -->
-                <a href="/" class="logo">
-                    <img src="/images/logo.svg" alt="CalcHub Logo" height="40">
-                </a>
+                <a href="/"><img src="/images/logo.svg" alt="FreecalcHub Logo"></a>
             </div>
             <nav class="main-nav">
                 <ul>
-                    <!-- Use absolute paths -->
                     <li><a href="/finance/">Finance</a></li>
                     <li><a href="/math/">Math</a></li>
                     <li><a href="/health/">Health</a></li>
@@ -100,41 +115,35 @@
             </nav>
             <div class="header-controls">
                 <button id="dark-mode-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                </button>
-                <button id="mobile-menu-button" aria-label="Open menu">
-                    <i class="fas fa-bars"></i>
-                </button>
+                    <i class="fas fa-moon"></i> <i class="fas fa-sun"></i>  </button>
+                <button id="mobile-menu-button" aria-label="Toggle menu">
+                    <i class="fas fa-bars menu-icon"></i> </button>
             </div>
+        </div>
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-header">
+                <span>Menu</span>
+                <button id="mobile-menu-close" aria-label="Close menu">
+                    <i class="fas fa-times"></i> </button>
+            </div>
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/finance/">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/" class="active">Lifestyle</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <div id="mobile-menu" class="mobile-menu">
-        <div class="mobile-menu-header">
-            <span>Menu</span>
-            <button id="mobile-menu-close" aria-label="Close menu">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <nav class="mobile-nav">
-            <ul>
-                <!-- Use absolute paths -->
-                <li><a href="/finance/">Finance</a></li>
-                <li><a href="/math/">Math</a></li>
-                <li><a href="/health/">Health</a></li>
-                <li><a href="/conversions/">Conversions</a></li>
-                <li><a href="/date-time/">Date & Time</a></li>
-                <li><a href="/business/">Business</a></li>
-                <li><a href="/lifestyle/" class="active">Lifestyle</a></li>
-                <li><a href="/blog/">Blog</a></li>
-            </ul>
-        </nav>
-    </div>
-
     <div class="breadcrumbs">
         <div class="breadcrumbs-container">
-            <!-- Use absolute paths -->
             <a href="/">Home</a>
             <span class="separator">/</span>
             <span class="current">Lifestyle</span>
@@ -143,260 +152,138 @@
 
     <div class="navigation-ribbon">
         <div class="navigation-ribbon-container">
-            <!-- Use absolute paths -->
             <a href="/lifestyle/home/"><i class="fas fa-home"></i>Home</a>
             <a href="/lifestyle/garden/"><i class="fas fa-leaf"></i>Garden</a>
             <a href="/lifestyle/travel/"><i class="fas fa-plane"></i>Travel</a>
             <a href="/lifestyle/pets/"><i class="fas fa-paw"></i>Pets</a>
-            <a href="/lifestyle/sustainability/"><i class="fas fa-recycle"></i>Sustainability</a>
-            <a href="/lifestyle/events/"><i class="fas fa-calendar-day"></i>Events</a>
+            <a href="/lifestyle/dining-social/"><i class="fas fa-utensils"></i>Dining & Social</a> <a href="/lifestyle/events/"><i class="fas fa-calendar-day"></i>Events</a>
             <a href="/lifestyle/shopping/"><i class="fas fa-shopping-cart"></i>Shopping</a>
             <a href="/lifestyle/entertainment/"><i class="fas fa-film"></i>Entertainment</a>
+            <a href="/lifestyle/sustainability/"><i class="fas fa-recycle"></i>Sustainability</a>
         </div>
     </div>
 
-    <main id="main-content" class="container py-5">
-        <section class="category-header">
-            <h1>Lifestyle Calculators</h1>
-            <p class="lead">Make informed decisions for everyday life with our free, easy-to-use calculators. Whether you're planning home renovations, organizing travel, caring for pets, or making sustainable choices, our tools provide accurate calculations and educational insights.</p>
-        </section>
+    <main id="main-content" class="main-content"> <div class="content-container category-page"> <section class="category-header">
+                <h1>Lifestyle Calculators</h1>
+                <p class="lead">Make informed decisions for everyday life with our free, easy-to-use calculators. Whether you're planning home renovations, organizing travel, caring for pets, or making sustainable choices, our tools provide accurate calculations and educational insights.</p>
+            </section>
 
-        <section class="subcategory-section">
-            <h2>Home Calculators</h2>
-            <p>Plan and budget for home improvements and maintenance.</p>
-            <div class="calculator-grid">
-                <!-- Use absolute paths -->
-                <a href="/lifestyle/home/renovation-calculator/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-hammer"></i>
-                    </div>
-                    <h3>Renovation Calculator</h3>
-                    <p>Estimate costs for home renovation projects based on room type and size.</p>
-                </a>
-                <a href="/lifestyle/home/paint-calculator/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-paint-roller"></i>
-                    </div>
-                    <h3>Paint Calculator</h3>
-                    <p>Calculate how much paint you need for your walls, ceiling, and trim.</p>
-                </a>
-                <a href="/lifestyle/home/flooring-calculator/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-ruler-combined"></i>
-                    </div>
-                    <h3>Flooring Calculator</h3>
-                    <p>Determine how much flooring material you need for your project.</p>
-                </a>
-                <a href="/lifestyle/home/furniture-space/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-couch"></i>
-                    </div>
-                    <h3>Furniture Space Calculator</h3>
-                    <p>Plan room layouts and ensure furniture fits in your space.</p>
-                </a>
-            </div>
-            <div class="subcategory-cta">
-                <!-- Use absolute paths -->
-                <a href="/lifestyle/home/" class="btn">View All Home Calculators</a>
-            </div>
-        </section>
+            <section class="subcategory-section">
+                <h2>Home Calculators</h2>
+                <p>Plan and budget for home improvements and maintenance.</p>
+                <div class="calculator-grid">
+                    <a href="/lifestyle/home/renovation-calculator/" class="calculator-card"> <div class="card-icon"><i class="fas fa-hammer"></i></div> <h3>Renovation Calculator</h3> <p>Estimate costs for home renovation projects based on room type and size.</p> </a>
+                    <a href="/lifestyle/home/paint-calculator/" class="calculator-card"> <div class="card-icon"><i class="fas fa-paint-roller"></i></div> <h3>Paint Calculator</h3> <p>Calculate how much paint you need for your walls, ceiling, and trim.</p> </a>
+                    <a href="/lifestyle/home/flooring-calculator/" class="calculator-card"> <div class="card-icon"><i class="fas fa-ruler-combined"></i></div> <h3>Flooring Calculator</h3> <p>Determine how much flooring material you need for your project.</p> </a>
+                    <a href="/lifestyle/home/furniture-space/" class="calculator-card"> <div class="card-icon"><i class="fas fa-couch"></i></div> <h3>Furniture Space Calculator</h3> <p>Plan room layouts and ensure furniture fits in your space.</p> </a>
+                </div>
+                <div class="subcategory-cta"> <a href="/lifestyle/home/" class="btn">View All Home Calculators</a> </div>
+            </section>
 
-        <section class="subcategory-section">
-            <h2>Garden Calculators</h2>
-            <p>Plan and maintain your garden with precision.</p>
-            <div class="calculator-grid">
-                <!-- Use absolute paths -->
-                <a href="/lifestyle/garden/soil-calculator/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <h3>Soil Calculator</h3>
-                    <p>Calculate how much soil you need for your garden beds or containers.</p>
-                </a>
-                <a href="/lifestyle/garden/mulch-calculator/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3>Mulch Calculator</h3>
-                    <p>Determine the amount of mulch needed for your landscaping projects.</p>
-                </a>
-                <a href="/lifestyle/garden/lawn-seed/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-spa"></i>
-                    </div>
-                    <h3>Lawn Seed Calculator</h3>
-                    <p>Calculate how much grass seed you need for a new lawn or overseeding.</p>
-                </a>
-                <a href="/lifestyle/garden/watering-schedule/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-tint"></i>
-                    </div>
-                    <h3>Watering Schedule Calculator</h3>
-                    <p>Create an optimal watering schedule based on plant types and climate.</p>
-                </a>
-            </div>
-            <div class="subcategory-cta">
-                <!-- Use absolute paths -->
-                <a href="/lifestyle/garden/" class="btn">View All Garden Calculators</a>
-            </div>
-        </section>
+            <section class="subcategory-section">
+                <h2>Garden Calculators</h2>
+                <p>Plan and maintain your garden with precision.</p>
+                <div class="calculator-grid">
+                    <a href="/lifestyle/garden/soil-calculator/" class="calculator-card"> <div class="card-icon"><i class="fas fa-seedling"></i></div> <h3>Soil Calculator</h3> <p>Calculate how much soil you need for your garden beds or containers.</p> </a>
+                    <a href="/lifestyle/garden/mulch-calculator/" class="calculator-card"> <div class="card-icon"><i class="fas fa-leaf"></i></div> <h3>Mulch Calculator</h3> <p>Determine the amount of mulch needed for your landscaping projects.</p> </a>
+                    <a href="/lifestyle/garden/lawn-seed/" class="calculator-card"> <div class="card-icon"><i class="fas fa-spa"></i></div> <h3>Lawn Seed Calculator</h3> <p>Calculate how much grass seed you need for a new lawn or overseeding.</p> </a>
+                    <a href="/lifestyle/garden/watering-schedule/" class="calculator-card"> <div class="card-icon"><i class="fas fa-tint"></i></div> <h3>Watering Schedule Calculator</h3> <p>Create an optimal watering schedule based on plant types and climate.</p> </a>
+                </div>
+                <div class="subcategory-cta"> <a href="/lifestyle/garden/" class="btn">View All Garden Calculators</a> </div>
+            </section>
 
-        <section class="subcategory-section">
-            <h2>Travel Calculators</h2>
-            <p>Plan and budget for your trips with confidence.</p>
-            <div class="calculator-grid">
-                <!-- Use absolute paths -->
-                <a href="/lifestyle/travel/budget-calculator/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-plane"></i>
-                    </div>
-                    <h3>Travel Budget Calculator</h3>
-                    <p>Plan your travel budget including transportation, accommodation, food, and activities.</p>
-                </a>
-                <a href="/lifestyle/travel/distance-calculator/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-route"></i>
-                    </div>
-                    <h3>Distance Calculator</h3>
-                    <p>Calculate distances between cities and estimate travel time by different modes.</p>
-                </a>
-                <a href="/lifestyle/travel/currency-converter/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-exchange-alt"></i>
-                    </div>
-                    <h3>Travel Currency Converter</h3>
-                    <p>Convert between currencies for international travel planning.</p>
-                </a>
-                <a href="/lifestyle/travel/packing-list/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-suitcase"></i>
-                    </div>
-                    <h3>Packing List Generator</h3>
-                    <p>Create a customized packing list based on destination, duration, and activities.</p>
-                </a>
-            </div>
-            <div class="subcategory-cta">
-                <!-- Use absolute paths -->
-                <a href="/lifestyle/travel/" class="btn">View All Travel Calculators</a>
-            </div>
-        </section>
+            <section class="subcategory-section">
+                <h2>Travel Calculators</h2>
+                <p>Plan and budget for your trips with confidence.</p>
+                <div class="calculator-grid">
+                    <a href="/lifestyle/travel/budget-calculator/" class="calculator-card"> <div class="card-icon"><i class="fas fa-plane"></i></div> <h3>Travel Budget Calculator</h3> <p>Plan your travel budget including transportation, accommodation, food, and activities.</p> </a>
+                    <a href="/lifestyle/travel/distance-calculator/" class="calculator-card"> <div class="card-icon"><i class="fas fa-route"></i></div> <h3>Distance Calculator</h3> <p>Calculate distances between cities and estimate travel time by different modes.</p> </a>
+                    <a href="/lifestyle/travel/currency-converter/" class="calculator-card"> <div class="card-icon"><i class="fas fa-exchange-alt"></i></div> <h3>Travel Currency Converter</h3> <p>Convert between currencies for international travel planning.</p> </a>
+                    <a href="/lifestyle/travel/packing-list/" class="calculator-card"> <div class="card-icon"><i class="fas fa-suitcase"></i></div> <h3>Packing List Generator</h3> <p>Create a customized packing list based on destination, duration, and activities.</p> </a>
+                </div>
+                <div class="subcategory-cta"> <a href="/lifestyle/travel/" class="btn">View All Travel Calculators</a> </div>
+            </section>
 
-        <section class="subcategory-section">
-            <h2>Sustainability Calculators</h2>
-            <p>Measure and reduce your environmental impact.</p>
-            <div class="calculator-grid">
-                <!-- Use absolute paths -->
-                <a href="/lifestyle/sustainability/carbon-footprint-calculator/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-leaf"></i>
+            <section class="subcategory-section">
+                <h2>Dining & Social Calculators</h2>
+                <p>Tools to help plan and manage costs for dining out, social events, and everyday services.</p>
+                <div class="calculator-grid">
+                    <a href="/lifestyle/dining-social/tip-calculator/" class="calculator-card">
+                        <div class="card-icon">
+                            <i class="fas fa-receipt"></i>
+                        </div>
+                        <h3>Tip Calculator</h3>
+                        <p>Quickly calculate gratuity and split the bill among friends.</p>
+                    </a>
                     </div>
-                    <h3>Carbon Footprint Calculator</h3>
-                    <p>Calculate your personal or household carbon footprint and find ways to reduce it.</p>
-                </a>
-                <a href="/lifestyle/sustainability/energy-usage/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Energy Usage Calculator</h3>
-                    <p>Track and analyze your home energy consumption and identify savings opportunities.</p>
-                </a>
-                <a href="/lifestyle/sustainability/water-usage/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-tint"></i>
-                    </div>
-                    <h3>Water Usage Calculator</h3>
-                    <p>Calculate your household water consumption and find conservation strategies.</p>
-                </a>
-                <a href="/lifestyle/sustainability/waste-reduction/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-recycle"></i>
-                    </div>
-                    <h3>Waste Reduction Calculator</h3>
-                    <p>Measure your waste generation and track progress toward zero waste goals.</p>
-                </a>
-            </div>
-            <div class="subcategory-cta">
-                <!-- Use absolute paths -->
-                <a href="/lifestyle/sustainability/" class="btn">View All Sustainability Calculators</a>
-            </div>
-        </section>
+                <div class="subcategory-cta">
+                    <a href="/lifestyle/dining-social/" class="btn">View All Dining & Social Calculators</a>
+                </div>
+            </section>
 
-        <section class="lifestyle-education">
-            <h2>Making Informed Lifestyle Choices</h2>
-            <div class="education-content">
-                <p>Everyday life involves countless decisions that impact our comfort, finances, and environmental footprint. Whether you're planning home improvements, organizing travel, or making sustainable choices, having accurate information can help you make better decisions and optimize your resources.</p>
+            <section class="subcategory-section">
+                <h2>Sustainability Calculators</h2>
+                <p>Measure and reduce your environmental impact.</p>
+                <div class="calculator-grid">
+                    <a href="/lifestyle/sustainability/carbon-footprint-calculator/" class="calculator-card"> <div class="card-icon"><i class="fas fa-leaf"></i></div> <h3>Carbon Footprint Calculator</h3> <p>Calculate your personal or household carbon footprint and find ways to reduce it.</p> </a>
+                    <a href="/lifestyle/sustainability/energy-usage/" class="calculator-card"> <div class="card-icon"><i class="fas fa-bolt"></i></div> <h3>Energy Usage Calculator</h3> <p>Track and analyze your home energy consumption and identify savings opportunities.</p> </a>
+                    <a href="/lifestyle/sustainability/water-usage/" class="calculator-card"> <div class="card-icon"><i class="fas fa-tint"></i></div> <h3>Water Usage Calculator</h3> <p>Calculate your household water consumption and find conservation strategies.</p> </a>
+                    <a href="/lifestyle/sustainability/waste-reduction/" class="calculator-card"> <div class="card-icon"><i class="fas fa-recycle"></i></div> <h3>Waste Reduction Calculator</h3> <p>Measure your waste generation and track progress toward zero waste goals.</p> </a>
+                </div>
+                <div class="subcategory-cta"> <a href="/lifestyle/sustainability/" class="btn">View All Sustainability Calculators</a> </div>
+            </section>
 
-                <h3>Key Lifestyle Planning Concepts</h3>
-                <ul>
-                    <li><strong>Cost Estimation</strong> - Accurately predicting expenses for projects and activities to avoid budget surprises.</li>
-                    <li><strong>Resource Optimization</strong> - Using materials, time, and energy efficiently to minimize waste.</li>
-                    <li><strong>Environmental Impact</strong> - Understanding how your choices affect the environment and identifying more sustainable alternatives.</li>
-                    <li><strong>Time Management</strong> - Planning activities and projects with realistic timelines to reduce stress and improve outcomes.</li>
-                    <li><strong>Quality of Life</strong> - Making choices that enhance your well-being, comfort, and satisfaction.</li>
-                </ul>
-
-                <h3>Tips for Lifestyle Planning</h3>
-                <ol>
-                    <li>Always include a contingency buffer in your budget and timeline for unexpected issues.</li>
-                    <li>Research thoroughly before making major purchases or starting significant projects.</li>
-                    <li>Consider both immediate costs and long-term implications of your lifestyle choices.</li>
-                    <li>Look for opportunities to reduce waste and environmental impact without sacrificing quality.</li>
-                    <li>Balance efficiency with enjoyment—sometimes the most rewarding choice isn't the most practical one.</li>
-                </ol>
-
-                <p>Our lifestyle calculators provide not just results but also educational insights to help you understand the factors that influence your everyday decisions and their potential impacts.</p>
-            </div>
-        </section>
+            <section class="lifestyle-education content-section"> <h2>Making Informed Lifestyle Choices</h2>
+                <div class="education-content">
+                    <p>Everyday life involves countless decisions that impact our comfort, finances, and environmental footprint. Whether you're planning home improvements, organizing travel, or making sustainable choices, having accurate information can help you make better decisions and optimize your resources.</p>
+                    <h3>Key Lifestyle Planning Concepts</h3>
+                    <ul> <li><strong>Cost Estimation</strong> - Accurately predicting expenses for projects and activities to avoid budget surprises.</li> <li><strong>Resource Optimization</strong> - Using materials, time, and energy efficiently to minimize waste.</li> <li><strong>Environmental Impact</strong> - Understanding how your choices affect the environment and identifying more sustainable alternatives.</li> <li><strong>Time Management</strong> - Planning activities and projects with realistic timelines to reduce stress and improve outcomes.</li> <li><strong>Quality of Life</strong> - Making choices that enhance your well-being, comfort, and satisfaction.</li> </ul>
+                    <h3>Tips for Lifestyle Planning</h3>
+                    <ol> <li>Always include a contingency buffer in your budget and timeline for unexpected issues.</li> <li>Research thoroughly before making major purchases or starting significant projects.</li> <li>Consider both immediate costs and long-term implications of your lifestyle choices.</li> <li>Look for opportunities to reduce waste and environmental impact without sacrificing quality.</li> <li>Balance efficiency with enjoyment—sometimes the most rewarding choice isn't the most practical one.</li> </ol>
+                    <p>Our lifestyle calculators provide not just results but also educational insights to help you understand the factors that influence your everyday decisions and their potential impacts.</p>
+                </div>
+            </section>
+        </div>
     </main>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Calculators</h3>
-                <ul>
-                    <!-- Use absolute paths -->
-                    <li><a href="/finance/">Finance</a></li>
-                    <li><a href="/math/">Math</a></li>
-                    <li><a href="/health/">Health</a></li>
-                    <li><a href="/conversions/">Conversions</a></li>
-                    <li><a href="/date-time/">Date & Time</a></li>
-                    <li><a href="/business/">Business</a></li>
-                    <li><a href="/lifestyle/">Lifestyle</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Company</h3>
-                <ul>
-                    <!-- Use absolute paths -->
-                    <li><a href="/blog/">Blog</a></li>
-                    <li><a href="/about/">About Us</a></li>
-                    <li><a href="/contact/">Contact</a></li>
-                    <li><a href="/privacy/">Privacy Policy</a></li>
-                    <li><a href="/terms/">Terms of Use</a></li>
-                    <li><a href="/gdpr/">GDPR Compliance</a></li>
-                    <li><a href="/sitemap/">Sitemap</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Connect</h3>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>FreecalcHub</h3>
+                    <p>Your one-stop destination for a wide variety of free online calculators.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="/finance/">Finance</a></li>
+                        <li><a href="/math/">Math</a></li>
+                        <li><a href="/health/">Health</a></li>
+                        <li><a href="/conversions/">Conversions</a></li>
+                        <li><a href="/date-time/">Date & Time</a></li>
+                        <li><a href="/business/">Business</a></li>
+                        <li><a href="/lifestyle/">Lifestyle</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/privacy/">Privacy Policy</a></li>
+                        <li><a href="/terms/">Terms of Service</a></li>
+                        <li><a href="/sitemap/">Sitemap</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 CalcHub. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p>
+            </div>
         </div>
     </footer>
     
-    <!-- Added required JS includes with absolute paths -->
-    <script src="/js/main.js"></script>
-    <script src="/js/dark-mode.js"></script>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/dark-mode.js" defer></script>
 </body>
 </html>
