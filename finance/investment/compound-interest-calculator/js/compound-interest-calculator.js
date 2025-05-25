@@ -1,8 +1,8 @@
 /*
  * FreecalcHub.com - Compound Interest Calculator
- * Version: 2.0
+ * Version: 2.3
  * Date Updated: May 25, 2025
- * Description: Remediated to align with current site-wide templates, V2 FAQ, and commenting standards.
+ * Description: Implemented Chart.js update() method instead of destroy/create to fix potential redraw loop.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -34,55 +34,37 @@ document.addEventListener("DOMContentLoaded", () => {
     const afterTaxFutureValueEl = document.getElementById("after_tax_future_value");
     const yearlyGrowthTableBodyEl = document.querySelector("#yearlyGrowthTable tbody");
 
-    // Chart.js Instances (Global scope for access in reset)
+    // Chart.js Instances (Global scope)
     let investmentGrowthChartInstance = null;
     let principalInterestChartInstance = null;
 
     // --- Event Listeners ---
-
-    /**
-     * Handles the click event for the Calculate button.
-     * Prevents default form submission, validates inputs, performs calculations,
-     * and displays results or errors.
-     * @param {Event} event - The click event object.
-     */
     calculateButton.addEventListener("click", (event) => {
-        event.preventDefault(); // Prevent potential form submission
-        hideError(); // Clear previous errors
+        event.preventDefault();
+        hideError();
         if (validateInputs()) {
             calculateAndDisplay();
         }
     });
 
-    /**
-     * Handles the click/reset event for the Reset button.
-     * Clears the form, hides results, clears errors, and destroys charts.
-     */
     resetButton.addEventListener("click", () => {
-        // Using 'click' ensures charts are cleared even if form doesn't 'reset'
-        form.reset(); // Reset form fields
+        form.reset();
         resultsSection.style.display = "none";
         hideError();
         if (yearlyGrowthTableBodyEl) {
              yearlyGrowthTableBodyEl.innerHTML = "";
         }
-        destroyCharts();
+        destroyCharts(); // Destroy charts on explicit reset
     });
 
     // --- Input Validation ---
-
-    /**
-     * Validates all required input fields.
-     * Displays an error message if any validation fails.
-     * @returns {boolean} - True if all inputs are valid, false otherwise.
-     */
     function validateInputs() {
         const inputsToValidate = [
             { el: initialInvestmentEl, name: "Initial Investment", required: true, min: 0 },
             { el: annualContributionEl, name: "Annual Contribution", required: false, min: 0 },
-            { el: annualInterestRateEl, name: "Annual Interest Rate", required: true, min: 0 },
+            { el: annualInterestRateEl, name: "Annual Interest Rate", required: true, min: 0, max: 200 }, // Added max
             { el: investmentPeriodYearsEl, name: "Investment Time", required: true, min: 1, isInt: true },
-            { el: inflationRateEl, name: "Inflation Rate", required: false, min: 0 },
+            { el: inflationRateEl, name: "Inflation Rate", required: false, min: 0, max: 100 },
             { el: taxRateEl, name: "Tax Rate", required: false, min: 0, max: 100 }
         ];
 
@@ -117,103 +99,54 @@ document.addEventListener("DOMContentLoaded", () => {
                  }
             }
         }
-        return true; // All checks passed
+        return true;
     }
 
-    /**
-     * Safely retrieves a numeric value from an input element.
-     * Assumes validation has already passed. Returns 0 if empty.
-     * @param {HTMLElement} element - The input element.
-     * @returns {number} - The parsed numeric value.
-     */
     function getNumericValue(element) {
         const value = element.value.trim();
         return value === "" ? 0 : parseFloat(value);
     }
 
     // --- Calculation Logic ---
-
-    /**
-     * Orchestrates the calculation process and calls display functions.
-     */
     function calculateAndDisplay() {
         try {
-            // Get validated values
+            // ... (Calculation logic remains the same as V2.0 / V2.1) ...
             const initialInvestment = getNumericValue(initialInvestmentEl);
             const annualContribution = getNumericValue(annualContributionEl);
-            const contributionFrequencyStr = contributionFrequencyEl.value;
-            const annualInterestRate = getNumericValue(annualInterestRateEl);
             const compoundingFrequencyStr = compoundingFrequencyEl.value;
+            const annualInterestRate = getNumericValue(annualInterestRateEl);
             const investmentPeriodYears = getNumericValue(investmentPeriodYearsEl);
             const inflationRate = getNumericValue(inflationRateEl);
             const taxRate = getNumericValue(taxRateEl);
-
-            // Mapping for frequencies
-            const contributionFrequencyMap = { monthly: 12, quarterly: 4, annually: 1 };
             const compoundingFrequencyMap = { daily: 365, monthly: 12, quarterly: 4, annually: 1 };
-            const n = compoundingFrequencyMap[compoundingFrequencyStr]; // Compounding periods per year
-            const p = contributionFrequencyMap[contributionFrequencyStr]; // Contribution periods per year
-
-            // Rates per period
-            const r = annualInterestRate / 100; // Annual rate as decimal
-            const i = r / n; // Interest rate per compounding period
-            const monthlyContribution = (p === 12) ? annualContribution / 12 : 0; // Only if monthly
+            const n = compoundingFrequencyMap[compoundingFrequencyStr];
+            const r = annualInterestRate / 100;
+            const i = r / n;
             const annualContrib = annualContribution;
-
-            let balance = initialInvestment;
-            let totalPrincipal = initialInvestment;
-            let totalInterest = 0;
-            const yearlyData = [];
-
-            // More accurate calculation using Future Value formulas
-            // If contributions are made, we calculate year by year for table/chart
-            // Note: This model adds contributions at the END of each contribution period.
-            // And compounds based on 'n'. A more precise approach might need iteration.
-            // Let's use an iterative model for better accuracy & yearly data.
-
             let currentBalance = initialInvestment;
-
+            let totalPrincipal = initialInvestment;
+            const yearlyData = [];
             for (let year = 1; year <= investmentPeriodYears; year++) {
                 let yearStartBalance = currentBalance;
                 let yearInterest = 0;
                 let yearContributions = 0;
                 let balanceAtPeriodStart = currentBalance;
-
                 for (let period = 1; period <= n; period++) {
-                    // Calculate interest for this period
                     let interestForPeriod = balanceAtPeriodStart * i;
                     currentBalance = balanceAtPeriodStart + interestForPeriod;
                     yearInterest += interestForPeriod;
-
-                    // Add contributions - simplified: add annual contribution spread over periods
-                    // This is an approximation. A more accurate model would add at specific intervals.
-                    // For simplicity & clarity, add 1/n of annual contribution each period.
-                    // This roughly simulates continuous contribution.
-                    // If p = 1 (annual), add at year-end. If p = 12 (monthly), add 1/12th each month (if n=12).
-                    // This approach adds annual/n each compounding period.
                     if (annualContrib > 0) {
                         const contributionThisPeriod = annualContrib / n;
                         currentBalance += contributionThisPeriod;
                         yearContributions += contributionThisPeriod;
                     }
-
-                    balanceAtPeriodStart = currentBalance; // Update for next period
+                    balanceAtPeriodStart = currentBalance;
                 }
-
+                yearlyData.push({ year: year, startingBalance: yearStartBalance, contributions: yearContributions, interestEarned: yearInterest, endingBalance: currentBalance });
                 totalPrincipal += yearContributions;
-                totalInterest += yearInterest;
-
-                yearlyData.push({
-                    year: year,
-                    startingBalance: yearStartBalance,
-                    contributions: yearContributions,
-                    interestEarned: yearInterest,
-                    endingBalance: currentBalance
-                });
             }
-
             const futureValueNominal = currentBalance;
-            totalInterest = futureValueNominal - totalPrincipal; // Recalculate based on final values
+            const totalInterest = futureValueNominal - totalPrincipal;
             const effectiveAnnualRate = (Math.pow(1 + r / n, n) - 1) * 100;
 
             // Display results
@@ -221,33 +154,17 @@ document.addEventListener("DOMContentLoaded", () => {
             totalPrincipalInvestedEl.textContent = formatCurrency(totalPrincipal);
             totalInterestEarnedEl.textContent = formatCurrency(totalInterest);
             effectiveAnnualRateEl.textContent = effectiveAnnualRate.toFixed(2) + "%";
+            if (inflationRate > 0) { /* ... */ futureValueInflationAdjustedContainerEl.style.display = "block"; futureValueInflationAdjustedEl.textContent = formatCurrency(futureValueNominal / Math.pow(1 + inflationRate / 100, investmentPeriodYears)); } else { futureValueInflationAdjustedContainerEl.style.display = "none"; }
+            if (taxRate > 0) { /* ... */ afterTaxFutureValueContainerEl.style.display = "block"; afterTaxFutureValueEl.textContent = formatCurrency(futureValueNominal - (totalInterest * (taxRate / 100))); } else { afterTaxFutureValueContainerEl.style.display = "none"; }
 
-            // Inflation adjustment
-            if (inflationRate > 0) {
-                const futureValueInflationAdjusted = futureValueNominal / Math.pow(1 + inflationRate / 100, investmentPeriodYears);
-                futureValueInflationAdjustedEl.textContent = formatCurrency(futureValueInflationAdjusted);
-                futureValueInflationAdjustedContainerEl.style.display = "block";
-            } else {
-                futureValueInflationAdjustedContainerEl.style.display = "none";
-            }
-
-            // Tax adjustment (simplified - taxes only total interest gain)
-            if (taxRate > 0) {
-                const taxableGain = totalInterest;
-                const taxAmount = taxableGain * (taxRate / 100);
-                const afterTaxFutureValue = futureValueNominal - taxAmount;
-                afterTaxFutureValueEl.textContent = formatCurrency(afterTaxFutureValue);
-                afterTaxFutureValueContainerEl.style.display = "block";
-            } else {
-                afterTaxFutureValueContainerEl.style.display = "none";
-            }
-
-            // Update Table & Charts
+            // Show results section *before* chart manipulation
+            resultsSection.style.display = "flex";
             populateYearlyTable(yearlyData);
-            createOrUpdateCharts(yearlyData, totalPrincipal, totalInterest, initialInvestment);
 
-            // Show results and scroll
-            resultsSection.style.display = "flex"; // Changed to flex
+            // Update or Create Charts
+            updateOrCreateCharts(yearlyData, totalPrincipal, totalInterest, initialInvestment);
+
+            // Scroll into view
             resultsSection.scrollIntoView({ behavior: "smooth" });
 
         } catch (error) {
@@ -258,116 +175,72 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // --- Display & Formatting ---
+    function formatCurrency(value) { /* ... */ return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value); }
+    function populateYearlyTable(data) { /* ... */ yearlyGrowthTableBodyEl.innerHTML = ""; data.forEach(item => { const row = yearlyGrowthTableBodyEl.insertRow(); row.insertCell().textContent = item.year; row.insertCell().textContent = formatCurrency(item.startingBalance); row.insertCell().textContent = formatCurrency(item.contributions); row.insertCell().textContent = formatCurrency(item.interestEarned); row.insertCell().textContent = formatCurrency(item.endingBalance); }); }
 
     /**
-     * Formats a number as USD currency.
-     * @param {number} value - The number to format.
-     * @returns {string} - The formatted currency string.
-     */
-    function formatCurrency(value) {
-        return new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: 'USD',
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        }).format(value);
-    }
-
-    /**
-     * Populates the yearly growth table with calculated data.
-     * @param {Array<Object>} data - An array of yearly data objects.
-     */
-    function populateYearlyTable(data) {
-        yearlyGrowthTableBodyEl.innerHTML = ""; // Clear previous data
-        data.forEach(item => {
-            const row = yearlyGrowthTableBodyEl.insertRow();
-            row.insertCell().textContent = item.year;
-            row.insertCell().textContent = formatCurrency(item.startingBalance);
-            row.insertCell().textContent = formatCurrency(item.contributions);
-            row.insertCell().textContent = formatCurrency(item.interestEarned);
-            row.insertCell().textContent = formatCurrency(item.endingBalance);
-        });
-    }
-
-    /**
-     * Creates or updates the Chart.js charts.
+     * *** NEW ***
+     * Updates existing Chart.js instances or creates new ones.
      * @param {Array<Object>} yearlyData - Data for the line chart.
      * @param {number} totalPrincipal - Principal for the pie chart.
      * @param {number} totalInterest - Interest for the pie chart.
      * @param {number} initialInvestment - Starting point for the line chart.
      */
-    function createOrUpdateCharts(yearlyData, totalPrincipal, totalInterest, initialInvestment) {
-        destroyCharts(); // Ensure old charts are removed
-
+    function updateOrCreateCharts(yearlyData, totalPrincipal, totalInterest, initialInvestment) {
         const growthChartCtx = document.getElementById("investmentGrowthChart").getContext("2d");
         const principalInterestCtx = document.getElementById("principalInterestChart").getContext("2d");
 
         const labels = ["Start", ...yearlyData.map(d => `Year ${d.year}`)];
         const balanceData = [initialInvestment, ...yearlyData.map(d => d.endingBalance)];
 
-        const chartOptions = {
+        // Get colors & define base options
+        const textColor = getComputedStyle(document.body).getPropertyValue('--text-color') || '#000';
+        const borderColor = getComputedStyle(document.body).getPropertyValue('--border-color') || '#ccc';
+        const primaryColor = getComputedStyle(document.body).getPropertyValue('--primary-color') || '#007bff';
+        const primaryTransparent = getComputedStyle(document.body).getPropertyValue('--primary-color-transparent') || 'rgba(0, 123, 255, 0.1)';
+        const successColor = getComputedStyle(document.body).getPropertyValue('--success-color') || '#28a745';
+        const warningColor = getComputedStyle(document.body).getPropertyValue('--warning-color') || '#ffc107';
+        const altBg = getComputedStyle(document.body).getPropertyValue('--background-alt') || '#f8f9fa';
+
+        const baseOptions = {
              responsive: true,
-             maintainAspectRatio: false, // Allows chart to fit container height
+             maintainAspectRatio: false,
+             animation: { duration: 500 }, // Keep a short animation for updates
              plugins: {
-                legend: { labels: { color: getComputedStyle(document.body).getPropertyValue('--text-color') } },
-                tooltip: {
-                    callbacks: {
-                        label: context => `${context.label}: ${formatCurrency(context.parsed.y || context.parsed)}`
-                    }
-                }
-             },
-             scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: {
-                        callback: value => formatCurrency(value),
-                        color: getComputedStyle(document.body).getPropertyValue('--text-color')
-                    },
-                    grid: { color: getComputedStyle(document.body).getPropertyValue('--border-color') }
-                },
-                x: {
-                    ticks: { color: getComputedStyle(document.body).getPropertyValue('--text-color') },
-                    grid: { color: getComputedStyle(document.body).getPropertyValue('--border-color') }
-                }
+                legend: { labels: { color: textColor } },
+                tooltip: { callbacks: { label: context => `${context.label}: ${formatCurrency(context.parsed.y || context.parsed)}` } }
              }
         };
 
-        investmentGrowthChartInstance = new Chart(growthChartCtx, {
-            type: "line",
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: "Investment Value",
-                    data: balanceData,
-                    borderColor: getComputedStyle(document.body).getPropertyValue('--primary-color'),
-                    backgroundColor: getComputedStyle(document.body).getPropertyValue('--primary-color-transparent'),
-                    fill: true,
-                    tension: 0.1
-                }]
-            },
-            options: chartOptions
-        });
+        // --- Growth Chart ---
+        if (investmentGrowthChartInstance) {
+            investmentGrowthChartInstance.data.labels = labels;
+            investmentGrowthChartInstance.data.datasets[0].data = balanceData;
+            investmentGrowthChartInstance.update(); // *** Use update() ***
+        } else {
+            investmentGrowthChartInstance = new Chart(growthChartCtx, {
+                type: "line",
+                data: { labels: labels, datasets: [{ label: "Investment Value", data: balanceData, borderColor: primaryColor, backgroundColor: primaryTransparent, fill: true, tension: 0.1 }] },
+                options: { ...baseOptions, scales: { y: { beginAtZero: true, ticks: { callback: value => formatCurrency(value), color: textColor }, grid: { color: borderColor } }, x: { ticks: { color: textColor }, grid: { display: false } } } }
+            });
+        }
 
-        principalInterestChartInstance = new Chart(principalInterestCtx, {
-            type: "pie",
-            data: {
-                labels: ["Total Principal Invested", "Total Interest Earned"],
-                datasets: [{
-                    data: [totalPrincipal, totalInterest],
-                    backgroundColor: [
-                        getComputedStyle(document.body).getPropertyValue('--success-color'),
-                        getComputedStyle(document.body).getPropertyValue('--warning-color')
-                    ],
-                    hoverOffset: 4,
-                    borderColor: getComputedStyle(document.body).getPropertyValue('--background-alt') // Border for segments
-                }]
-            },
-            options: { ...chartOptions, scales: {} } // Remove scales for pie chart
-        });
+        // --- Pie Chart ---
+        if (principalInterestChartInstance) {
+            principalInterestChartInstance.data.datasets[0].data = [totalPrincipal, totalInterest];
+            principalInterestChartInstance.update(); // *** Use update() ***
+        } else {
+            principalInterestChartInstance = new Chart(principalInterestCtx, {
+                type: "pie",
+                data: { labels: ["Total Principal", "Total Interest"], datasets: [{ data: [totalPrincipal, totalInterest], backgroundColor: [ successColor, warningColor ], hoverOffset: 4, borderColor: altBg }] },
+                options: { ...baseOptions, scales: {} }
+            });
+        }
     }
 
     /**
      * Destroys existing chart instances if they exist.
+     * Called only on Reset now.
      */
     function destroyCharts() {
         if (investmentGrowthChartInstance) investmentGrowthChartInstance.destroy();
@@ -376,26 +249,8 @@ document.addEventListener("DOMContentLoaded", () => {
         principalInterestChartInstance = null;
     }
 
-
     // --- Error Handling ---
+    function showError(message) { /* ... */ errorMessagesDiv.textContent = message; errorMessagesDiv.style.display = "block"; errorMessagesDiv.setAttribute("aria-live", "assertive"); }
+    function hideError() { /* ... */ errorMessagesDiv.textContent = ""; errorMessagesDiv.style.display = "none"; errorMessagesDiv.setAttribute("aria-live", "off"); }
 
-    /**
-     * Displays an error message in the designated error div.
-     * @param {string} message - The error message to display.
-     */
-    function showError(message) {
-        errorMessagesDiv.textContent = message;
-        errorMessagesDiv.style.display = "block";
-        errorMessagesDiv.setAttribute("aria-live", "assertive");
-    }
-
-    /**
-     * Hides the error message div.
-     */
-    function hideError() {
-        errorMessagesDiv.textContent = "";
-        errorMessagesDiv.style.display = "none";
-        errorMessagesDiv.setAttribute("aria-live", "off");
-    }
-
-}); // End DOMContentLoaded
+});
