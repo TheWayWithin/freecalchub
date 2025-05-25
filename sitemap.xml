@@ -1,168 +1,258 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+              http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<!-- Main Home Pages --> 
+
   <url>
-    <loc>https://www.freecalchub.com/</loc>
+    <loc>https://freecalchub.com/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
 
-  <!-- Main Category Pages -->
+<!-- Main Category Pages --> 
+  
   <url>
-    <loc>https://www.freecalchub.com/finance/</loc>
+    <loc>https://freecalchub.com/finance/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/math/</loc>
+    <loc>https://freecalchub.com/math/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/health/</loc>
+    <loc>https://freecalchub.com/health/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/conversions/</loc>
+    <loc>https://freecalchub.com/conversions/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/date-time/</loc>
+    <loc>https://freecalchub.com/date-time/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/business/</loc>
+    <loc>https://freecalchub.com/business/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/lifestyle/</loc>
+    <loc>https://freecalchub.com/lifestyle/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://freecalchub.com/blog/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <priority>0.9</priority> <changefreq>weekly</changefreq>
   </url>
 
-  <!-- Legal & Static Pages -->
+<!-- Legal & Static Pages -->
+  
   <url>
-    <loc>https://www.freecalchub.com/about/</loc>
+    <loc>https://freecalchub.com/about/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/privacy/</loc>
+    <loc>https://freecalchub.com/privacy/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/terms/</loc>
+    <loc>https://freecalchub.com/terms/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/gdpr/</loc>
+    <loc>https://freecalchub.com/gdpr/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
 
-  <!-- Finance Subcategories & Calculators -->
+<!-- Finance Subcategories & Calculators -->
+  
   <url>
-    <loc>https://www.freecalchub.com/finance/investment/</loc>
+    <loc>https://freecalchub.com/finance/investment/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/finance/investment/compound-interest-calculator/</loc>
+    <loc>https://freecalchub.com/finance/investment/compound-interest-calculator/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/finance/loan/</loc>
+    <loc>https://freecalchub.com/finance/loan/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/finance/loan/loan-calculator/</loc>
+    <loc>https://freecalchub.com/finance/loan/loan-calculator/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/finance/mortgage/</loc>
+    <loc>https://freecalchub.com/finance/loan/extra-payment-calculator/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/finance/mortgage/affordability-calculator/</loc>
+    <loc>https://freecalchub.com/finance/mortgage/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/finance/mortgage/mortgage-calculator/</loc>
+    <loc>https://freecalchub.com/finance/mortgage/affordability-calculator/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/finance/mortgage/refinance-calculator/</loc>
+    <loc>https://freecalchub.com/finance/mortgage/mortgage-calculator/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/finance/retirement/</loc>
+    <loc>https://freecalchub.com/finance/mortgage/refinance-calculator/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://freecalchub.com/finance/mortgage/payoff-calculator/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://freecalchub.com/finance/mortgage/biweekly-calculator/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://freecalchub.com/finance/mortgage/points-calculator/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://freecalchub.com/finance/retirement/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://freecalchub.com/finance/retirement/retirement-calculator/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://freecalchub.com/finance/savings/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://freecalchub.com/finance/savings/savings-goal-calculator/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
-  <!-- Health Subcategories & Calculators -->
+<!-- Health Subcategories & Calculators -->
+  
   <url>
-    <loc>https://www.freecalchub.com/health/bmi/</loc>
+    <loc>https://freecalchub.com/health/bmi/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/health/bmi/bmi-calculator/</loc>
+    <loc>https://freecalchub.com/health/bmi/bmi-calculator/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/health/fitness/</loc>
+    <loc>https://freecalchub.com/health/fitness/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/health/medical/</loc>
+    <loc>https://freecalchub.com/health/medical/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/health/mental-health/</loc>
+    <loc>https://freecalchub.com/health/mental-health/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/health/nutrition/</loc>
+    <loc>https://freecalchub.com/health/nutrition/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/health/pregnancy/</loc>
+    <loc>https://freecalchub.com/health/pregnancy/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/health/weight/</loc>
+    <loc>https://freecalchub.com/health/weight/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
-  <!-- Math Subcategories & Calculators -->
+<!-- Math Subcategories & Calculators -->
+  
   <url>
-    <loc>https://www.freecalchub.com/math/percentages/</loc>
+    <loc>https://freecalchub.com/math/percentages/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.freecalchub.com/math/percentages/percentage-calculator/</loc>
+    <loc>https://freecalchub.com/math/percentages/percentage-calculator/</loc>
+    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
-</urlset>
+
+  </urlset>
