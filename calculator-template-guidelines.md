@@ -13,24 +13,24 @@ When creating a new calculator, for example, a "Loan Calculator" in the "Finance
 ```
 / (Site Root)
 ├── css/                         # Global CSS folder
-│   ├── styles.css
-│   ├── dark-mode.css
-│   ├── faq-styles-v2.css      # <-- Standard Global FAQ Styles (Theme-Aware)
-│   ├── dark-mode-button.css
-│   ├── breadcrumb-styles.css
-│   ├── calchub-consolidated-fixes.css
-│   ├── navigation-ribbon.css
+│   ├── styles.css             # Main site styles, NOW INCLUDES standard calculator form grid layout
+│   ├── dark-mode.css          # Dark mode base styles
+│   ├── dark-mode-button.css   # Styles for the dark mode toggle button
+│   ├── breadcrumb-styles.css  # Styles for breadcrumbs
+│   ├── calchub-consolidated-fixes.css # General site-wide fixes
+│   ├── navigation-ribbon.css  # Styles for optional navigation ribbons
+│   ├── faq-styles-v2.css      # Standard Global FAQ Styles (Theme-Aware)
 │   └── ... (other global .css files)
 ├── js/                          # Global JS folder
-│   ├── main.js
-│   ├── dark-mode.js
-│   ├── faq-accordion-v2.js    # <-- Standard Global FAQ Script
+│   ├── main.js                # Main site JavaScript (mobile menu, etc.)
+│   ├── dark-mode.js           # Dark mode toggle logic
+│   ├── faq-accordion-v2.js    # Standard Global FAQ Script
 │   └── ... (other global .js files)
 ├── images/                      # Global images folder
 │   └── logo.svg
 ├── finance/                     # Example category folder
 │   └── loan-calculator/         # Folder for the new calculator (use lowercase, hyphens)
-│       ├── index.html           # The main HTML file for this calculator
+│       ├── index.html           # The main HTML file for this calculator (copied from calculator_template.html)
 │       ├── css/
 │       │   └── loan-calculator.css  # Specific CSS for this calculator
 │       └── js/
