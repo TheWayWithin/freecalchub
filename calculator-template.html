@@ -32,17 +32,18 @@
       "@graph": [
         {
           "@type": "SoftwareApplication",
-          "name": "[Calculator Name]",
-          "applicationCategory": "[ApplicationCategory, e.g., FinanceApplication]",
-          "operatingSystem": "Web",
-          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-          "description": "[Repeat the meta description or a slightly longer version]",
-          "url": "https://www.freecalchub.com/[full-path-to-calculator]/"
-          // "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "100" } // Optional
+          "name": "[Calculator Name]", // TODO: Exact calculator name
+          "applicationCategory": "[ApplicationCategory, e.g., FinanceApplication]", // TODO: Relevant category
+          "operatingSystem": "Web", // Indicates it's a web application
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }, // Indicates it's free
+          "description": "[Repeat the meta description or a slightly longer version]", // TODO: Match description
+          "url": "https://www.freecalchub.com/[full-path-to-calculator]/" // TODO: Full canonical URL
+          // "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "100" } // Optional: Uncomment if you have ratings
         },
         {
           "@type": "FAQPage",
           "mainEntity": [
+            // TODO: Add ALL FAQ Question/Answer pairs here. They MUST exactly match the visible content on the page.
             {
               "@type": "Question", "name": "[Question 1?]",
               "acceptedAnswer": { "@type": "Answer", "text": "[Answer 1]" }
@@ -51,14 +52,14 @@
               "@type": "Question", "name": "[Question 2?]",
               "acceptedAnswer": { "@type": "Answer", "text": "[Answer 2]" }
             }
-            // Add ALL FAQ Question/Answer pairs here, matching the page content EXACTLY
           ]
         },
         {
           "@type": "HowTo",
-          "name": "How to Use the [Calculator Name]",
-          "description": "Step-by-step guide to using the [Calculator Name].",
+          "name": "How to Use the [Calculator Name]", // TODO: Update calculator name
+          "description": "Step-by-step guide to using the [Calculator Name].", // TODO: Update calculator name
           "step": [
+            // TODO: Define the steps for using this calculator.
             { "@type": "HowToStep", "name": "[Step 1 Title]", "text": "[Description of Step 1]" },
             { "@type": "HowToStep", "name": "[Step 2 Title]", "text": "[Description of Step 2]" }
             // Add more HowToStep items as needed
@@ -67,21 +68,22 @@
         {
           "@type": "BreadcrumbList",
           "itemListElement": [
+            // TODO: Update breadcrumb items to reflect the page's hierarchy. URLs must be absolute.
             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" },
             { "@type": "ListItem", "position": 2, "name": "[Category Name]", "item": "https://www.freecalchub.com/[category-path]/" },
-            // { "@type": "ListItem", "position": 3, "name": "[Sub-Category Name]", "item": "https://www.freecalchub.com/[category-path]/[sub-category-path]/" }, // Optional: Uncomment & update if needed
+            // { "@type": "ListItem", "position": 3, "name": "[Sub-Category Name]", "item": "https://www.freecalchub.com/[category-path]/[sub-category-path]/" }, // Optional: Uncomment & update if sub-category exists
             { "@type": "ListItem", "position": 3, "name": "[Calculator Name]", "item": "https://www.freecalchub.com/[full-path-to-calculator]/" } // Adjust position to 4 if sub-category exists
           ]
         },
         {
           "@type": "WebPage",
-          "name": "[Calculator Name] | FreecalcHub",
-          "description": "[Repeat the meta description]",
-          "url": "https://www.freecalchub.com/[full-path-to-calculator]/",
+          "name": "[Calculator Name] | FreecalcHub", // TODO: Match page title
+          "description": "[Repeat the meta description]", // TODO: Match meta description
+          "url": "https://www.freecalchub.com/[full-path-to-calculator]/", // TODO: Full canonical URL
            "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
-           "inLanguage": "en-US",
+           "inLanguage": "en-US", // Define the language of the page
            "datePublished": "[YYYY-MM-DD]", // TODO: Set initial publish date
-           "dateModified": "[YYYY-MM-DD]" // TODO: Set modification date
+           "dateModified": "[YYYY-MM-DD]" // TODO: Set modification date (same as publish if new)
         }
       ]
     }
@@ -109,20 +111,16 @@
             </nav>
             <div class="header-controls">
                 <button id="dark-mode-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                </button>
+                    <i class="fas fa-moon"></i> <i class="fas fa-sun"></i>  </button>
                 <button id="mobile-menu-button" aria-label="Toggle menu">
-                    <i class="fas fa-bars menu-icon"></i>
-                </button>
+                    <i class="fas fa-bars menu-icon"></i> </button>
             </div>
         </div>
         <div id="mobile-menu" class="mobile-menu">
             <div class="mobile-menu-header">
                 <span>Menu</span>
                 <button id="mobile-menu-close" aria-label="Close menu">
-                    <i class="fas fa-times"></i>
-                </button>
+                    <i class="fas fa-times"></i> </button>
             </div>
             <nav class="mobile-nav">
                 <ul>
@@ -146,23 +144,20 @@
             <span class="separator">/</span>
             <a href="/[category-path]/">[Category Name]</a>
             <span class="separator">/</span>
-            <span class="current">[Calculator Name]</span>
-        </div>
+            <span class="current">[Calculator Name]</span> </div>
     </div>
 
     <main id="main-content" class="main-content">
-        <div class="content-container">
-            <article class="calculator-page-content">
-
-                <h1 class="page-title">[Calculator Name]</h1>
+        <div class="content-container"> <article class="calculator-page-content"> <h1 class="page-title">[Calculator Name]</h1>
 
                 <section class="calculator-description-section content-section">
-                    <p>[Detailed introduction text here. Explain what the calculator does, who it's for, and why it's useful.]</p>
+                    <p>[Detailed introduction text here. Explain what the calculator does, who it's for, and why it's useful. Be engaging and informative.]</p>
                 </section>
 
-                <section id="calculator-section" class="calculator-interface content-section card">
-                    <h2 class="section-title">[Calculator Interface Title, e.g., Calculate Your Results]</h2>
+                <section id="calculator-section" class="calculator-interface content-section card"> <h2 class="section-title">[Calculator Interface Title, e.g., Calculate Your Results]</h2>
+                    
                     <div id="errorMessages" class="error-messages" style="display:none;"></div>
+                    
                     <form id="calculatorForm" class="calculator-form">
                         <fieldset>
                             <legend>[Input Group 1 Legend, e.g., Loan Details]</legend>
@@ -185,13 +180,8 @@
                     <div id="resultsSection" class="results-section" style="display:none;">
                         <h3 class="results-title">[Results Summary Title, e.g., Your Estimated Results]</h3>
                         <div class="results-grid">
-                            <div class="result-item card">
-                                <h4>[Result Metric 1 Label]</h4>
+                            <div class="result-item card"> <h4>[Result Metric 1 Label, e.g., Monthly Payment]</h4>
                                 <p id="resultMetric1">--</p>
-                            </div>
-                             <div class="result-item card">
-                                <h4>[Result Metric 2 Label]</h4>
-                                <p id="resultMetric2">--</p>
                             </div>
                             </div>
                          </div>
@@ -209,7 +199,7 @@
 
                 <section class="content-section">
                     <h2 class="section-title">[Educational Topic 1 Title]</h2>
-                    <p>[Content for educational topic 1. Explain concepts, formulas, or context related to the calculator.]</p>
+                    <p>[Content for educational topic 1. Explain concepts, formulas, or context that helps the user understand the calculator's domain and results.]</p>
                     </section>
 
                 <section class="faq-section content-section">
@@ -223,28 +213,27 @@
                             </ul>
                     </div>
 
-                    <div class="faq-item" id="faq-item-1"> <h3>
-                            <button class="accordion" aria-expanded="false" aria-controls="faq-panel-1"> [Question 1?]
-                                <span class="accordion-icon"></span> </button>
+                    <div class="faq-item" id="faq-item-1"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-1"> [Question 1?] <span class="accordion-icon"></span> </button>
                         </h3>
                         <div class="panel" id="faq-panel-1" role="region"> <p>[Answer 1]</p>
-                        </div>
+                            </div>
                     </div>
 
-                    <div class="faq-item" id="faq-item-2"> <h3>
-                            <button class="accordion" aria-expanded="false" aria-controls="faq-panel-2"> [Question 2?]
-                                <span class="accordion-icon"></span> </button>
+                    <div class="faq-item" id="faq-item-2">
+                        <h3>
+                            <button class="accordion" aria-expanded="false" aria-controls="faq-panel-2">
+                                [Question 2?]
+                                <span class="accordion-icon"></span>
+                            </button>
                         </h3>
-                        <div class="panel" id="faq-panel-2" role="region"> <p>[Answer 2]</p>
+                        <div class="panel" id="faq-panel-2" role="region">
+                            <p>[Answer 2]</p>
                         </div>
                     </div>
                     </section>
 
                  </article>
-        </div>
-    </main>
-
-    <footer class="site-footer">
+        </div> </main> <footer class="site-footer">
         <div class="container">
             <div class="footer-columns">
                 <div class="footer-column">
