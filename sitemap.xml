@@ -4,18 +4,14 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
               http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-<!-- Main Home Pages --> 
-
-  <url>
+<url>
     <loc>https://freecalchub.com/</loc>
     <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
 
-<!-- Main Category Pages --> 
-  
-  <url>
+<url>
     <loc>https://freecalchub.com/finance/</loc>
     <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.9</priority>
@@ -35,8 +31,7 @@
   </url>
   <url>
     <loc>https://freecalchub.com/conversions/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
-    <priority>0.9</priority>
+    <lastmod>2025-05-26T15:07:59+00:00</lastmod> <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -53,8 +48,7 @@
   </url>
   <url>
     <loc>https://freecalchub.com/lifestyle/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
-    <priority>0.9</priority>
+    <lastmod>2025-05-26T15:07:59+00:00</lastmod> <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -63,9 +57,7 @@
     <priority>0.9</priority> <changefreq>weekly</changefreq>
   </url>
 
-<!-- Legal & Static Pages -->
-  
-  <url>
+<url>
     <loc>https://freecalchub.com/about/</loc>
     <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.7</priority>
@@ -90,9 +82,7 @@
     <changefreq>monthly</changefreq>
   </url>
 
-<!-- Finance Subcategories & Calculators -->
-  
-  <url>
+<url>
     <loc>https://freecalchub.com/finance/investment/</loc>
     <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
@@ -189,9 +179,7 @@
     <changefreq>monthly</changefreq>
   </url>
 
-<!-- Health Subcategories & Calculators -->
-  
-  <url>
+<url>
     <loc>https://freecalchub.com/health/bmi/</loc>
     <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
@@ -240,45 +228,46 @@
     <changefreq>monthly</changefreq>
   </url>
 
-  <!-- Lifestyle Subcategories & Calculators -->
-
 <url>
-  <loc>https://www.freecalchub.com/lifestyle/dinning-social</loc>
-  <lastmod>2025-05-25</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://www.freecalchub.com/lifestyle/dining-social/</loc> <lastmod>2025-05-26T15:07:59+00:00</lastmod> <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
         
-<url>
-  <loc>https://www.freecalchub.com/lifestyle/dinning-social/tip-calculator/</loc>
-  <lastmod>2025-05-25</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://www.freecalchub.com/lifestyle/education/</loc>
-  <lastmod>2025-05-26</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://www.freecalchub.com/lifestyle/education/grading-performance/</loc>
-  <lastmod>2025-05-26</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority> </url>
-<url>
-  <loc>https://www.freecalchub.com/lifestyle/education/grading-performance/gpa-calculator/</loc>
-  <lastmod>2025-05-26</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-        
-        
-        
-        <!-- Math Subcategories & Calculators -->
-  
   <url>
+    <loc>https://www.freecalchub.com/lifestyle/dining-social/tip-calculator/</loc> <lastmod>2025-05-26T15:07:59+00:00</lastmod> <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.freecalchub.com/lifestyle/education/</loc>
+    <lastmod>2025-05-26T15:07:59+00:00</lastmod> <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/lifestyle/education/grading-performance/</loc>
+    <lastmod>2025-05-26T15:07:59+00:00</lastmod> <changefreq>monthly</changefreq>
+    <priority>0.6</priority> 
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/lifestyle/education/grading-performance/gpa-calculator/</loc>
+    <lastmod>2025-05-26T15:07:59+00:00</lastmod> <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+        
+<url>
+    <loc>https://www.freecalchub.com/conversions/length-converter/</loc>
+    <lastmod>2025-05-26T15:07:59+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/conversions/length-converter/length-unit-calculator/</loc>
+    <lastmod>2025-05-26T15:07:59+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+        
+<url>
     <loc>https://freecalchub.com/math/percentages/</loc>
     <lastmod>2025-05-25T11:28:21+00:00</lastmod>
     <priority>0.8</priority>
@@ -291,4 +280,4 @@
     <changefreq>monthly</changefreq>
   </url>
 
-  </urlset>
+</urlset>
