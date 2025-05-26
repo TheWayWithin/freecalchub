@@ -1,0 +1,76 @@
+/*
+ * FreecalcHub.com - GPA Calculator
+ * Version: 1.0
+ * Date Created: May 26, 2025
+ * Description: Specific styles for the GPA Calculator, focusing on dynamic rows.
+ */
+
+.course-row {
+    display: flex;
+    align-items: flex-end; /* Align items to the bottom for better alignment with remove button */
+    gap: 15px; /* Spacing between elements */
+    margin-bottom: 20px; /* Spacing between rows */
+    border-bottom: 1px solid var(--border-color); /* Separator line */
+    padding-bottom: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.course-row .form-group {
+    margin-bottom: 0; /* Remove default margin as we use gap and row margin */
+}
+
+.course-row .course-name {
+    flex: 3; /* Give more space to course name */
+    min-width: 150px;
+}
+
+.course-row .course-grade {
+    flex: 1;
+    min-width: 100px;
+}
+
+.course-row .course-credits {
+    flex: 1;
+    min-width: 80px;
+}
+
+.course-row .btn-remove-course {
+    flex-shrink: 0; /* Prevent button from shrinking */
+    background-color: var(--error-background);
+    color: var(--error-text);
+    border: 1px solid var(--error-border);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    line-height: 28px; /* Adjust for vertical centering */
+    text-align: center;
+    padding: 0;
+    margin-left: 10px; /* Space it from the last input */
+    margin-bottom: 5px; /* Align with input bottom padding */
+    transition: opacity 0.2s ease;
+}
+
+.course-row .btn-remove-course:hover {
+    opacity: 0.8;
+}
+
+/* Hide remove button on the very first row if desired via JS */
+.course-row:first-child .btn-remove-course.hide-first {
+    display: none;
+}
+
+#addCourseButton {
+    margin-top: 10px;
+    display: inline-block; /* Ensure it doesn't take full width */
+}
+
+/* Ensure results grid looks good */
+.results-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Allow for more items */
+}
+
+.results-grid .result-item p {
+    font-size: 1.6em; /* Slightly smaller for GPA values */
+}
