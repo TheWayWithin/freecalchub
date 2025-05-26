@@ -30,9 +30,9 @@
       "@graph": [ { "@type": "CollectionPage", "name": "Dining & Social Calculators | FreecalcHub", "description": "Tools to help plan and manage costs for dining out, social events, and everyday services.", "url": "https://www.freecalchub.com/lifestyle/dining-social/", "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" }, "inLanguage": "en-US", "datePublished": "2025-05-25", "dateModified": "2025-05-26", "hasPart": [ { "@type": "SoftwareApplication", "name": "Free Tip Calculator", "url": "https://www.freecalchub.com/lifestyle/dining-social/tip-calculator/", "applicationCategory": "LifestyleApplication", "description": "Use our free Tip Calculator to quickly determine gratuity and the total bill." } ] }, { "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" }, { "@type": "ListItem", "position": 2, "name": "Lifestyle Calculators", "item": "https://www.freecalchub.com/lifestyle/" }, { "@type": "ListItem", "position": 3, "name": "Dining & Social Calculators", "item": "https://www.freecalchub.com/lifestyle/dining-social/" } ] } ]
     }
     </script>
-    
     <style>
-        .calculator-grid {
+        /* Keep only the essential grid styles, ensuring consistency */
+         .calculator-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
@@ -54,30 +54,22 @@
         }
         .calculator-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
         .calculator-card .card-icon { font-size: 2.5em; margin-bottom: 15px; color: var(--primary-color); }
-        .calculator-card h3 { margin-top: 0; margin-bottom: 10px; font-size: 1.25em; color: var(--primary-color); }
+        .calculator-card h3 { margin-top: 0; margin-bottom: 10px; font-size: 1.25em; }
+        .calculator-card h3 a { text-decoration: none; color: var(--primary-color); } /* Ensure link color */
         .calculator-card p { font-size: 0.95em; line-height: 1.5; color: var(--text-color); }
 
-        /* --- NEW RULES TO FIX HEADER LAYOUT --- */
-        .category-header {
-            position: static; /* Ensure it's not fixed/sticky */
-            display: block; /* Force block layout, override flex/grid */
-            margin-bottom: 40px; /* Increase space below header */
-            text-align: left; /* Ensure alignment isn't centered by default */
+        /* Ensure .category-header is block, margin added */
+        .category-header { 
+            display: block; 
+            margin-bottom: 30px; 
         }
-        .category-header h1.page-title {
-            display: block; /* Ensure H1 is block */
-            font-size: 2.5em; /* Optional: Slightly reduce H1 if needed */
-            margin-bottom: 10px; /* Space between H1 and P */
-        }
-        .category-header p.category-description {
-            display: block; /* Ensure P is block */
+         /* Ensure p.lead has sufficient margin */
+        .category-header p.lead {
+            margin-top: 15px;
             font-size: 1.1em;
             line-height: 1.6;
-            max-width: 900px; /* Limit width */
-            margin-left: 0; /* Ensure no odd margins */
-            margin-right: 0;
+            max-width: 900px;
         }
-        /* --- END NEW RULES --- */
     </style>
 </head>
 <body>
@@ -89,12 +81,12 @@
 
     <div class="navigation-ribbon"> <div class="navigation-ribbon-container"> <a href="/lifestyle/home/"><i class="fas fa-home"></i>Home</a> <a href="/lifestyle/garden/"><i class="fas fa-leaf"></i>Garden</a> <a href="/lifestyle/travel/"><i class="fas fa-plane"></i>Travel</a> <a href="/lifestyle/pets/"><i class="fas fa-paw"></i>Pets</a> <a href="/lifestyle/dining-social/" class="active"><i class="fas fa-utensils"></i>Dining & Social</a> <a href="/lifestyle/events/"><i class="fas fa-calendar-day"></i>Events</a> <a href="/lifestyle/shopping/"><i class="fas fa-shopping-cart"></i>Shopping</a> <a href="/lifestyle/entertainment/"><i class="fas fa-film"></i>Entertainment</a> <a href="/lifestyle/sustainability/"><i class="fas fa-recycle"></i>Sustainability</a> </div> </div>
 
-    <main id="main-content" class="main-content container py-5"> 
+    <main id="main-content" class="main-content container py-5">
 
-        <header class="category-header">
-            <h1 class="page-title">Dining & Social Calculators</h1>
-            <p class="category-description lead">Tools to help plan and manage costs for dining out, social events, and everyday services.</p>
-        </header>
+        <section class="category-header">
+            <h1>Dining & Social Calculators</h1> 
+            <p class="lead">Tools to help plan and manage costs for dining out, social events, and everyday services.</p>
+        </section>
 
         <div class="calculator-grid">
             <div class="calculator-card">
