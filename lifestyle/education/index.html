@@ -16,15 +16,23 @@
     <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        .calculator-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; margin-bottom: 30px; }
+        /* Styles from category_template.html for grid consistency */
+        .calculator-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; margin-bottom: 20px; } /* Reduced bottom margin for subcategory-section */
         .calculator-card, .category-card { border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 20px; background-color: var(--background-alt); text-decoration: none; color: var(--text-color); transition: box-shadow 0.3s ease; display: flex; flex-direction: column; align-items: center; text-align: center; }
         .calculator-card:hover, .category-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
         .card-icon { font-size: 2.5em; margin-bottom: 15px; color: var(--primary-color); }
         .calculator-card h3, .category-card h3 { margin-top: 0; margin-bottom: 10px; font-size: 1.25em; }
         .calculator-card h3 a, .category-card h3 a { text-decoration: none; color: var(--primary-color); }
         .calculator-card p, .category-card p { font-size: 0.95em; line-height: 1.5; color: var(--text-color); }
+        
         .category-header { display: block; margin-bottom: 30px; }
         .category-header p.lead { margin-top: 15px; font-size: 1.1em; line-height: 1.6; max-width: 900px; }
+
+        .subcategory-section { margin-bottom: 40px; }
+        .subcategory-section h2 { font-size: 1.8em; margin-bottom: 10px; border-bottom: 1px solid var(--border-color-light); padding-bottom: 10px; }
+        .subcategory-section > p { margin-bottom: 20px; font-size: 1em; line-height: 1.6; }
+        .subcategory-cta { margin-top: 10px; text-align: right; }
+
     </style>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
@@ -40,8 +48,12 @@
           "description": "Navigate your academic journey with our free online education calculators. Find tools for GPA, grade calculation, study planning, and more.",
           "url": "https://www.freecalchub.com/lifestyle/education/",
           "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
+          "inLanguage": "en-US",
+          "datePublished": "2025-05-26", 
+          "dateModified": "2025-05-26", 
           "hasPart": [
-            { "@type": "CollectionPage", "name": "Grading & Performance Calculators", "url": "https://www.freecalchub.com/lifestyle/education/grading-performance/" }
+            { "@type": "CollectionPage", "name": "Grading & Performance Calculators", "url": "https://www.freecalchub.com/lifestyle/education/grading-performance/", "description": "Track your academic success. Use these free calculators to determine your GPA, understand test scores, and calculate final grades." }
+            // Add other main sections/sub-sub-categories of education here if they have distinct pages
           ]
         },
         {
@@ -73,7 +85,8 @@
             <a href="/lifestyle/travel/"><i class="fas fa-plane"></i>Travel</a>
             <a href="/lifestyle/pets/"><i class="fas fa-paw"></i>Pets</a>
             <a href="/lifestyle/dining-social/"><i class="fas fa-utensils"></i>Dining & Social</a>
-            <a href="/lifestyle/education/" class="active"><i class="fas fa-user-graduate"></i>Education</a> <a href="/lifestyle/events/"><i class="fas fa-calendar-day"></i>Events</a>
+            <a href="/lifestyle/education/" class="active"><i class="fas fa-user-graduate"></i>Education</a>
+            <a href="/lifestyle/events/"><i class="fas fa-calendar-day"></i>Events</a>
             <a href="/lifestyle/shopping/"><i class="fas fa-shopping-cart"></i>Shopping</a>
             <a href="/lifestyle/entertainment/"><i class="fas fa-film"></i>Entertainment</a>
             <a href="/lifestyle/sustainability/"><i class="fas fa-recycle"></i>Sustainability</a>
@@ -86,18 +99,56 @@
             <p class="lead">Navigate your academic journey with our free online education calculators. Find tools for GPA, grade calculation, study planning, and more.</p>
         </section>
 
-        <div class="calculator-grid">
-            <div class="category-card"> <div class="card-icon">
-                    <i class="fas fa-chart-line"></i>
+        <section class="subcategory-section">
+            <h2>Grading & Performance Calculators</h2>
+            <p>Track your academic success. Use these free calculators to determine your GPA, understand test scores, and calculate final grades.</p>
+            <div class="calculator-grid">
+                <div class="calculator-card">
+                    <div class="card-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3><a href="/lifestyle/education/grading-performance/gpa-calculator/">GPA Calculator</a></h3>
+                    <p>Calculate semester & cumulative GPA.</p>
                 </div>
-                <h3><a href="/lifestyle/education/grading-performance/">Grading & Performance</a></h3>
-                <p>Calculate GPA & track academic results.</p>
+                </div>
+            <div class="subcategory-cta">
+                <a href="/lifestyle/education/grading-performance/" class="btn">View All Grading & Performance Tools</a>
             </div>
+        </section>
+
+        <section class="subcategory-section">
+            <h2>Study Aids & Planning Calculators</h2>
+            <p>Organize your study schedule, manage your time effectively, and prepare for exams with these helpful tools.</p>
+            <div class="calculator-grid">
+                <div class="calculator-card placeholder-card">
+                    <div class="card-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <h3>Study Schedule Planner (Future)</h3>
+                    <p>Create a balanced study plan for your courses.</p>
+                </div>
+                <div class="calculator-card placeholder-card">
+                    <div class="card-icon"><i class="fas fa-book-reader"></i></div>
+                    <h3>Reading Speed Calculator (Future)</h3>
+                    <p>Assess your reading speed and comprehension.</p>
+                </div>
             </div>
+            </section>
+        
+        <section class="subcategory-section">
+            <h2>Test Preparation Calculators</h2>
+            <p>Tools to help you prepare for standardized tests and understand scoring.</p>
+            <div class="calculator-grid">
+                <div class="calculator-card placeholder-card">
+                    <div class="card-icon"><i class="fas fa-tasks"></i></div>
+                    <h3>Test Score Converter (Future)</h3>
+                    <p>Convert scores between different testing scales.</p>
+                </div>
+            </div>
+            </section>
 
         <section class="category-content-section content-section">
-             <h2 class="section-title">Tools for Academic Success</h2>
-             <p>Whether you're in high school, college, or pursuing further studies, staying organized and informed is key. Our education calculators are designed to help you manage your grades, understand your performance, and plan effectively for your academic goals.</p>
+             <h2 class="section-title">Empowering Your Academic Journey</h2>
+             <p>Success in education often comes down to understanding your progress and planning effectively. The calculators and tools in this section are designed to provide clarity on various academic metrics. From tracking your GPA to planning your study time, our goal is to provide resources that help you achieve your educational aspirations.</p>
+             <p>As we continue to expand, we'll be adding more specialized tools for students at all levels. If you have a suggestion for a new education-related calculator, feel free to let us know!</p>
         </section>
     </main>
 
