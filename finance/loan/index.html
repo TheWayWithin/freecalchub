@@ -28,9 +28,12 @@
       "@graph": [
         {
           "@type": "CollectionPage",
-          "name": "Loan Calculators & Resources | FreecalcHub", "description": "Find tools and information for various types of loans including personal, auto, and student loans. Calculate payments, understand terms, and plan your borrowing with FreecalcHub.",
+          "name": "Loan Calculators & Resources | FreecalcHub", 
+          "description": "Find tools and information for various types of loans including personal, auto, and student loans. Calculate payments, understand terms, and plan your borrowing with FreecalcHub.",
           "url": "https://www.freecalchub.com/finance/loan/",
-          "datePublished": "2025-05-25", "dateModified": "2025-05-26", "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
+          "datePublished": "2025-05-25", 
+          "dateModified": "2025-05-26", 
+          "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
           "hasPart": [
             { "@type": "SoftwareApplication", "name": "Loan Calculator", "url": "https://www.freecalchub.com/finance/loan/loan-calculator/", "description": "Estimate monthly payments, total interest, and amortization for various loan types." },
             { "@type": "SoftwareApplication", "name": "Extra Payment Calculator", "url": "https://www.freecalchub.com/finance/loan/extra-payment-calculator/", "description": "See how making additional payments can shorten your loan term and save interest." },
@@ -38,6 +41,11 @@
               "name": "Auto Loan Calculator", 
               "url": "https://www.freecalchub.com/finance/loan/auto-loan-calculator/",
               "description": "Estimate monthly payments & total auto loan costs."
+            },
+            { "@type": "SoftwareApplication", 
+              "name": "Student Loan Payoff Calculator", 
+              "url": "https://www.freecalchub.com/finance/loan/student-loan-payoff-calculator/",
+              "description": "See how extra payments can save you interest."
             }
           ]
         },
@@ -94,6 +102,11 @@
         .calculator-card p {
             font-size: 0.95em; 
             line-height: 1.5;
+             flex-grow: 1; /* Allows button to align to bottom if card heights vary */
+            margin-bottom: 15px;
+        }
+        .calculator-card .btn {
+            margin-top: auto; /* Pushes button to bottom */
         }
     </style>
 
@@ -187,18 +200,26 @@
                 </div>
                 <h3><a href="/finance/loan/loan-calculator/">Loan Calculator</a></h3>
                 <p>Estimate monthly payments, total interest, and amortization for various loan types.</p>
-            </div>
+                <span class="btn">Calculate Generic Loan</span> </div>
             <div class="calculator-card">
                 <div class="card-icon"> <i class="fas fa-hand-holding-usd"></i> </div>
                 <h3><a href="/finance/loan/extra-payment-calculator/">Extra Payment Calculator</a></h3>
                 <p>See how making additional payments can shorten your loan term and save interest.</p>
-            </div>
+                <span class="btn">Analyze Extra Payments</span> </div>
             <div class="calculator-card">
                 <div class="card-icon">
                     <i class="fas fa-car"></i>
                 </div>
                 <h3><a href="/finance/loan/auto-loan-calculator/">Auto Loan Calculator</a></h3>
                 <p>Estimate monthly payments & total auto loan costs.</p>
+                <span class="btn">Estimate Auto Loan</span> </div>
+            <div class="calculator-card">
+                <div class="card-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3><a href="/finance/loan/student-loan-payoff-calculator/">Student Loan Payoff Calculator</a></h3>
+                <p>See how extra payments can save you interest.</p>
+                <span class="btn">Plan Payoff</span>
             </div>
         </div>
         
