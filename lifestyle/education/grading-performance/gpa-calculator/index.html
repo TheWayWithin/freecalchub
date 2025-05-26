@@ -42,16 +42,16 @@
         {
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "[FAQ Question 1?]", "acceptedAnswer": { "@type": "Answer", "text": "[FAQ Answer 1 - TODO: Populate from detailed_faqs_1-5.md]" } },
-            { "@type": "Question", "name": "[FAQ Question 2?]", "acceptedAnswer": { "@type": "Answer", "text": "[FAQ Answer 2 - TODO: Populate]" } },
-            { "@type": "Question", "name": "[FAQ Question 3?]", "acceptedAnswer": { "@type": "Answer", "text": "[FAQ Answer 3 - TODO: Populate]" } },
-            { "@type": "Question", "name": "[FAQ Question 4?]", "acceptedAnswer": { "@type": "Answer", "text": "[FAQ Answer 4 - TODO: Populate]" } },
-            { "@type": "Question", "name": "[FAQ Question 5?]", "acceptedAnswer": { "@type": "Answer", "text": "[FAQ Answer 5 - TODO: Populate]" } },
-            { "@type": "Question", "name": "[FAQ Question 6?]", "acceptedAnswer": { "@type": "Answer", "text": "[FAQ Answer 6 - TODO: Populate]" } },
-            { "@type": "Question", "name": "[FAQ Question 7?]", "acceptedAnswer": { "@type": "Answer", "text": "[FAQ Answer 7 - TODO: Populate]" } },
-            { "@type": "Question", "name": "[FAQ Question 8?]", "acceptedAnswer": { "@type": "Answer", "text": "[FAQ Answer 8 - TODO: Populate]" } },
-            { "@type": "Question", "name": "[FAQ Question 9?]", "acceptedAnswer": { "@type": "Answer", "text": "[FAQ Answer 9 - TODO: Populate]" } },
-            { "@type": "Question", "name": "[FAQ Question 10?]", "acceptedAnswer": { "@type": "Answer", "text": "[FAQ Answer 10 - TODO: Populate]" } }
+            { "@type": "Question", "name": "How is GPA calculated?", "acceptedAnswer": { "@type": "Answer", "text": "GPA is typically calculated by dividing the total number of quality points earned by the total number of credit hours attempted. Quality points for a course are found by multiplying the grade value (e.g., A=4.0, B=3.0) by the course's credit hours." } },
+            { "@type": "Question", "name": "What is the difference between semester GPA and cumulative GPA?", "acceptedAnswer": { "@type": "Answer", "text": "Semester GPA is your grade point average for a single semester's courses. Cumulative GPA is your overall grade point average for all courses taken across all semesters up to a certain point." } },
+            { "@type": "Question", "name": "Does this calculator work for high school and college GPA?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, this calculator can be used for both high school and college GPA, as long as your school uses a standard grading scale (like the 4.0 scale) and assigns credit hours to courses." } },
+            { "@type": "Question", "name": "What if my school uses a different grading scale (e.g., 5.0 scale or percentages)?", "acceptedAnswer": { "@type": "Answer", "text": "This calculator is primarily designed for a standard 4.0 letter grade scale. You would need to convert your grades to this scale first or use a calculator specifically designed for your school's system. We may add options for other scales in the future." } },
+            { "@type": "Question", "name": "How do Pass/Fail courses affect my GPA?", "acceptedAnswer": { "@type": "Answer", "text": "Typically, Pass/Fail courses do not affect your GPA. A \"Pass\" grade usually earns credit hours but does not have associated quality points. A \"Fail\" grade might earn 0 quality points and could negatively impact GPA if it's factored in as an 'F'. Check your school's policy." } },
+            { "@type": "Question", "name": "What is a \"good\" GPA?", "acceptedAnswer": { "@type": "Answer", "text": "What constitutes a \"good\" GPA can vary depending on the school, program, and your personal goals. Generally, a GPA of 3.0 or higher is considered good, while 3.5 or higher is often excellent. Specific programs or scholarships may have minimum GPA requirements." } },
+            { "@type": "Question", "name": "How can I calculate my weighted GPA?", "acceptedAnswer": { "@type": "Answer", "text": "This calculator primarily calculates unweighted GPA. Weighted GPA gives extra quality points for honors, AP, or IB courses. To calculate weighted GPA, you'd need to know your school's specific weighting system (e.g., adding an extra 0.5 or 1.0 point for advanced courses)." } },
+            { "@type": "Question", "name": "What if I retake a course? How does that affect my GPA?", "acceptedAnswer": { "@type": "Answer", "text": "School policies on retaking courses vary. Some schools replace the old grade with the new grade in GPA calculation, while others average the two grades, or only count the credits once. Check your institution's academic policy." } },
+            { "@type": "Question", "name": "Can I add more than a few courses to the calculator?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, our calculator allows you to dynamically add more rows so you can input all the courses for your semester." } },
+            { "@type": "Question", "name": "Where can I find my official GPA?", "acceptedAnswer": { "@type": "Answer", "text": "Your official GPA can usually be found on your academic transcript, which is provided by your school's registrar or student records office. This calculator provides an estimate based on the information you enter." } }
           ]
         },
         {
@@ -83,7 +83,7 @@
            "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
            "inLanguage": "en-US",
            "datePublished": "2025-05-26",
-           "dateModified": "2025-05-26"
+           "dateModified": "2025-05-26" 
         }
       ]
     }
@@ -175,22 +175,12 @@
                     <h2>Standard 4.0 Grading Scale Explained</h2>
                     <p>Most schools in the U.S. use a 4.0 scale. Our calculator uses the following standard values:</p>
                     <table class="data-table">
-                        <thead>
-                            <tr><th>Grade</th><th>Point Value</th></tr>
-                        </thead>
+                        <thead> <tr><th>Grade</th><th>Point Value</th></tr> </thead>
                         <tbody>
-                            <tr><td>A+</td><td>4.0</td></tr>
-                            <tr><td>A</td><td>4.0</td></tr>
-                            <tr><td>A-</td><td>3.7</td></tr>
-                            <tr><td>B+</td><td>3.3</td></tr>
-                            <tr><td>B</td><td>3.0</td></tr>
-                            <tr><td>B-</td><td>2.7</td></tr>
-                            <tr><td>C+</td><td>2.3</td></tr>
-                            <tr><td>C</td><td>2.0</td></tr>
-                            <tr><td>C-</td><td>1.7</td></tr>
-                            <tr><td>D+</td><td>1.3</td></tr>
-                            <tr><td>D</td><td>1.0</td></tr>
-                            <tr><td>D-</td><td>0.7</td></tr>
+                            <tr><td>A+</td><td>4.0</td></tr> <tr><td>A</td><td>4.0</td></tr> <tr><td>A-</td><td>3.7</td></tr>
+                            <tr><td>B+</td><td>3.3</td></tr> <tr><td>B</td><td>3.0</td></tr> <tr><td>B-</td><td>2.7</td></tr>
+                            <tr><td>C+</td><td>2.3</td></tr> <tr><td>C</td><td>2.0</td></tr> <tr><td>C-</td><td>1.7</td></tr>
+                            <tr><td>D+</td><td>1.3</td></tr> <tr><td>D</td><td>1.0</td></tr> <tr><td>D-</td><td>0.7</td></tr>
                             <tr><td>F</td><td>0.0</td></tr>
                         </tbody>
                     </table>
@@ -199,7 +189,7 @@
                     <p>Quality Points for a single course are calculated by multiplying the grade's point value by the number of credit hours for that course. For example, getting a 'B' (3.0 points) in a 3-credit course gives you <code>3.0 * 3 = 9.0 Quality Points</code>.</p>
 
                     <h2>Weighted vs. Unweighted GPA</h2>
-                    <p>Some schools use a 'weighted' GPA, giving extra points for advanced courses (like AP or Honors). This calculator focuses on the standard **Unweighted GPA**. If your school uses weighted GPA, you'll need to consult their specific guidelines for accurate calculations.</p>
+                    <p>Some schools use a 'weighted' GPA, giving extra points for advanced courses (like AP or Honors). This calculator focuses on the standard <strong>Unweighted GPA</strong>. If your school uses weighted GPA, you'll need to consult their specific guidelines for accurate calculations.</p>
 
                     <h2>Why Your GPA Matters</h2>
                     <p>Your GPA is often a key factor for: College admissions, scholarship applications, eligibility for academic programs and honors, athletic eligibility, and sometimes even job applications.</p>
@@ -218,7 +208,7 @@
                     <h2 class="section-title">Related Calculators</h2>
                      <ul>
                         <li><a href="/math/percentage-calculator/">Percentage Calculator</a></li>
-                        </ul>
+                    </ul>
                 </section>
 
                 <section class="faq-section content-section">
@@ -226,21 +216,30 @@
                     <div class="faq-index card">
                         <h3>FAQ Index</h3>
                         <ul>
-                            <li><a href="#faq-item-1">[FAQ Question 1?]</a></li>
-                            <li><a href="#faq-item-2">[FAQ Question 2?]</a></li>
-                            <li><a href="#faq-item-3">[FAQ Question 3?]</a></li>
-                            <li><a href="#faq-item-4">[FAQ Question 4?]</a></li>
-                            <li><a href="#faq-item-5">[FAQ Question 5?]</a></li>
-                            <li><a href="#faq-item-6">[FAQ Question 6?]</a></li>
-                            <li><a href="#faq-item-7">[FAQ Question 7?]</a></li>
-                            <li><a href="#faq-item-8">[FAQ Question 8?]</a></li>
-                            <li><a href="#faq-item-9">[FAQ Question 9?]</a></li>
-                            <li><a href="#faq-item-10">[FAQ Question 10?]</a></li>
+                            <li><a href="#faq-item-1">How is GPA calculated?</a></li>
+                            <li><a href="#faq-item-2">What is the difference between semester GPA and cumulative GPA?</a></li>
+                            <li><a href="#faq-item-3">Does this calculator work for high school and college GPA?</a></li>
+                            <li><a href="#faq-item-4">What if my school uses a different grading scale (e.g., 5.0 scale or percentages)?</a></li>
+                            <li><a href="#faq-item-5">How do Pass/Fail courses affect my GPA?</a></li>
+                            <li><a href="#faq-item-6">What is a "good" GPA?</a></li>
+                            <li><a href="#faq-item-7">How can I calculate my weighted GPA?</a></li>
+                            <li><a href="#faq-item-8">What if I retake a course? How does that affect my GPA?</a></li>
+                            <li><a href="#faq-item-9">Can I add more than a few courses to the calculator?</a></li>
+                            <li><a href="#faq-item-10">Where can I find my official GPA?</a></li>
                         </ul>
                     </div>
-                    <div class="faq-item" id="faq-item-1"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-1"> [FAQ Question 1?] <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-1" role="region"> <p>[FAQ Answer 1 - TODO: Populate]</p> </div> </div>
-                    <div class="faq-item" id="faq-item-2"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-2"> [FAQ Question 2?] <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-2" role="region"> <p>[FAQ Answer 2 - TODO: Populate]</p> </div> </div>
-                    </section>
+
+                    <div class="faq-item" id="faq-item-1"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-1"> How is GPA calculated? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-1" role="region"> <p>GPA is typically calculated by dividing the total number of quality points earned by the total number of credit hours attempted. Quality points for a course are found by multiplying the grade value (e.g., A=4.0, B=3.0) by the course's credit hours.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-2"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-2"> What is the difference between semester GPA and cumulative GPA? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-2" role="region"> <p>Semester GPA is your grade point average for a single semester's courses. Cumulative GPA is your overall grade point average for all courses taken across all semesters up to a certain point.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-3"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-3"> Does this calculator work for high school and college GPA? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-3" role="region"> <p>Yes, this calculator can be used for both high school and college GPA, as long as your school uses a standard grading scale (like the 4.0 scale) and assigns credit hours to courses.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-4"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-4"> What if my school uses a different grading scale (e.g., 5.0 scale or percentages)? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-4" role="region"> <p>This calculator is primarily designed for a standard 4.0 letter grade scale. You would need to convert your grades to this scale first or use a calculator specifically designed for your school's system. We may add options for other scales in the future.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-5"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-5"> How do Pass/Fail courses affect my GPA? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-5" role="region"> <p>Typically, Pass/Fail courses do not affect your GPA. A "Pass" grade usually earns credit hours but does not have associated quality points. A "Fail" grade might earn 0 quality points and could negatively impact GPA if it's factored in as an 'F'. Check your school's policy.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-6"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-6"> What is a "good" GPA? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-6" role="region"> <p>What constitutes a "good" GPA can vary depending on the school, program, and your personal goals. Generally, a GPA of 3.0 or higher is considered good, while 3.5 or higher is often excellent. Specific programs or scholarships may have minimum GPA requirements.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-7"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-7"> How can I calculate my weighted GPA? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-7" role="region"> <p>This calculator primarily calculates unweighted GPA. Weighted GPA gives extra quality points for honors, AP, or IB courses. To calculate weighted GPA, you'd need to know your school's specific weighting system (e.g., adding an extra 0.5 or 1.0 point for advanced courses).</p> </div> </div>
+                    <div class="faq-item" id="faq-item-8"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-8"> What if I retake a course? How does that affect my GPA? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-8" role="region"> <p>School policies on retaking courses vary. Some schools replace the old grade with the new grade in GPA calculation, while others average the two grades, or only count the credits once. Check your institution's academic policy.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-9"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-9"> Can I add more than a few courses to the calculator? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-9" role="region"> <p>Yes, our calculator allows you to dynamically add more rows so you can input all the courses for your semester.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-10"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-10"> Where can I find my official GPA? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-10" role="region"> <p>Your official GPA can usually be found on your academic transcript, which is provided by your school's registrar or student records office. This calculator provides an estimate based on the information you enter.</p> </div> </div>
+                </section>
 
              </article>
         </div> </main> 
