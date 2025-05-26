@@ -32,8 +32,7 @@
           "description": "A comprehensive collection of free online finance calculators for mortgage, loan, investment, retirement, savings, budgeting, and more. Make informed financial decisions with FreecalcHub.",
           "url": "https://www.freecalchub.com/finance/",
           "datePublished": "2025-05-25", 
-          "dateModified": "2025-05-26", 
-          "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
+          "dateModified": "2025-05-26T22:22:25+00:00", "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
           "hasPart": [
             { "@type": "WebPage", "name": "Mortgage Calculators", "url": "https://www.freecalchub.com/finance/mortgage/" },
             { "@type": "WebPage", "name": "Loan Calculators", "url": "https://www.freecalchub.com/finance/loan/" },
@@ -60,9 +59,9 @@
             { "@type": "ListItem", "position": 2, "name": "Mortgage Affordability Calculator", "url": "https://www.freecalchub.com/finance/mortgage/affordability-calculator/" },
             { "@type": "ListItem", "position": 3, "name": "Loan Calculator", "url": "https://www.freecalchub.com/finance/loan/loan-calculator/" },
             { "@type": "ListItem", "position": 4, "name": "Auto Loan Calculator", "url": "https://www.freecalchub.com/finance/loan/auto-loan-calculator/" }, 
-            { "@type": "ListItem", "position": 5, "name": "Savings Goal Calculator", "url": "https://www.freecalchub.com/finance/savings/savings-goal-calculator/" },
-            { "@type": "ListItem", "position": 6, "name": "Compound Interest Calculator", "url": "https://www.freecalchub.com/finance/investment/compound-interest-calculator/" },
-            { "@type": "ListItem", "position": 7, "name": "Retirement Calculator", "url": "https://www.freecalchub.com/finance/retirement/retirement-calculator/" }
+            { "@type": "ListItem", "position": 5, "name": "Student Loan Payoff Calculator", "url": "https://www.freecalchub.com/finance/loan/student-loan-payoff-calculator/" }, { "@type": "ListItem", "position": 6, "name": "Savings Goal Calculator", "url": "https://www.freecalchub.com/finance/savings/savings-goal-calculator/" },
+            { "@type": "ListItem", "position": 7, "name": "Compound Interest Calculator", "url": "https://www.freecalchub.com/finance/investment/compound-interest-calculator/" },
+            { "@type": "ListItem", "position": 8, "name": "Retirement Calculator", "url": "https://www.freecalchub.com/finance/retirement/retirement-calculator/" }
           ]
         }
       ]
@@ -76,12 +75,12 @@
             margin-top: 20px;
         }
         .calculator-card {
-            border: 1px solid var(--border-color); /* Use global var */
-            border-radius: var(--border-radius); /* Use global var */
+            border: 1px solid var(--border-color); 
+            border-radius: var(--border-radius); 
             padding: 20px;
-            background-color: var(--background-alt); /* Use global var */
+            background-color: var(--background-alt); 
             text-decoration: none;
-            color: var(--text-color); /* Use global var */
+            color: var(--text-color); 
             transition: box-shadow 0.3s ease;
             display: flex; 
             flex-direction: column;
@@ -91,7 +90,7 @@
         .calculator-card:hover {
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        .calculator-card .card-icon { /* Updated selector */
+        .calculator-card .card-icon { 
             font-size: 2.5em; 
             margin-bottom: 15px; 
             color: var(--primary-color);
@@ -101,7 +100,7 @@
             margin-bottom: 10px; 
             font-size: 1.25em; 
         }
-        .calculator-card h3 a { /* Styling for link within h3 */
+        .calculator-card h3 a { 
             text-decoration: none;
             color: var(--primary-color);
         }
@@ -125,7 +124,7 @@
             display: inline-block;
             padding: 10px 20px;
             background-color: var(--primary-color);
-            color: var(--button-text-color) !important; /* Ensure text is button text color */
+            color: var(--button-text-color) !important; 
             border-radius: var(--border-radius);
             text-decoration: none;
             transition: background-color 0.3s ease;
@@ -151,7 +150,7 @@
         }
         .category-header .lead {
             font-size: 1.1em;
-            color: var(--text-muted); /* Using muted for lead */
+            color: var(--text-muted); 
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
@@ -225,7 +224,8 @@
     <div class="navigation-ribbon">
         <div class="navigation-ribbon-container">
             <a href="/finance/mortgage/"><i class="fas fa-home"></i>Mortgage</a>
-            <a href="/finance/loan/" class="active"><i class="fas fa-file-invoice-dollar"></i>Loan</a> <a href="/finance/investment/"><i class="fas fa-chart-line"></i>Investment</a> 
+            <a href="/finance/loan/" class="active"><i class="fas fa-file-invoice-dollar"></i>Loan</a>
+            <a href="/finance/investment/"><i class="fas fa-chart-line"></i>Investment</a> 
             <a href="/finance/retirement/"><i class="fas fa-umbrella-beach"></i>Retirement</a>
             <a href="/finance/budgeting/"><i class="fas fa-wallet"></i>Budgeting</a>
             <a href="/finance/savings/"><i class="fas fa-piggy-bank"></i>Savings</a> 
@@ -234,7 +234,8 @@
         </div>
     </div>
 
-    <main id="main-content" class="main-content container py-5"> <section class="category-header">
+    <main id="main-content" class="main-content container py-5"> 
+        <section class="category-header">
             <h1>Finance Calculators</h1>
             <p class="lead">Make informed financial decisions with our free, easy-to-use calculators. Whether you are planning to buy a home, invest for the future, manage loans, or prepare for retirement, our tools provide accurate calculations and educational insights to empower your financial journey.</p>
         </section>
@@ -244,17 +245,20 @@
             <p>Plan your home purchase and understand your mortgage options with these essential calculators.</p>
             <div class="calculator-grid">
               <a href="/finance/mortgage/mortgage-calculator/" class="calculator-card">
-                <div class="card-icon"><i class="fas fa-home"></i></div> <h3>Mortgage Calculator</h3>
+                <div class="card-icon"><i class="fas fa-home"></i></div>
+                <h3>Mortgage Calculator</h3>
                 <p>Calculate monthly payments, interest, and amortization schedule for your mortgage.</p>
                 <span class="btn">Calculate Mortgage</span>
               </a>
               <a href="/finance/mortgage/affordability-calculator/" class="calculator-card">
-                <div class="card-icon"><i class="fas fa-dollar-sign"></i></div> <h3>Mortgage Affordability Calculator</h3>
+                <div class="card-icon"><i class="fas fa-dollar-sign"></i></div>
+                <h3>Mortgage Affordability Calculator</h3>
                 <p>Determine how much house you can afford based on your income, debts, and down payment.</p>
                  <span class="btn">Check Affordability</span>
               </a>
               <a href="/finance/mortgage/refinance-calculator/" class="calculator-card">
-                <div class="card-icon"><i class="fas fa-sync-alt"></i></div> <h3>Mortgage Refinance Calculator</h3>
+                <div class="card-icon"><i class="fas fa-sync-alt"></i></div>
+                <h3>Mortgage Refinance Calculator</h3>
                 <p>Analyze whether refinancing your current mortgage can save you money or shorten your term.</p>
                  <span class="btn">Analyze Refinance</span>
               </a>
@@ -269,12 +273,14 @@
             <p>Understand your loan options, calculate payments, and make informed borrowing decisions.</p>
             <div class="calculator-grid"> 
                 <a href="/finance/loan/loan-calculator/" class="calculator-card">
-                    <div class="card-icon"><i class="fas fa-calculator"></i></div> <h3>Loan Calculator</h3>
+                    <div class="card-icon"><i class="fas fa-calculator"></i></div>
+                    <h3>Loan Calculator</h3>
                     <p>Estimate monthly payments, total interest, and amortization for various loan types.</p>
                      <span class="btn">Calculate Loan</span>
                 </a>
                 <a href="/finance/loan/extra-payment-calculator/" class="calculator-card">
-                    <div class="card-icon"><i class="fas fa-hand-holding-usd"></i></div> <h3>Extra Payment Calculator</h3>
+                    <div class="card-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>Extra Payment Calculator</h3>
                     <p>See how making additional payments can shorten your loan term and save interest.</p>
                      <span class="btn">Analyze Payments</span>
                 </a>
@@ -283,6 +289,12 @@
                     <h3>Auto Loan Calculator</h3>
                     <p>Estimate monthly payments & total auto loan costs.</p>
                     <span class="btn">Estimate Auto Loan</span>
+                </a>
+                <a href="/finance/loan/student-loan-payoff-calculator/" class="calculator-card">
+                    <div class="card-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Student Loan Payoff Calculator</h3>
+                    <p>See how extra payments can save you interest.</p>
+                    <span class="btn">Plan Payoff</span>
                 </a>
             </div> 
             <div class="subcategory-cta">
@@ -295,11 +307,13 @@
             <p>Plan for your financial goals and watch your savings grow with these helpful tools.</p>
             <div class="calculator-grid"> 
                 <a href="/finance/savings/savings-goal-calculator/" class="calculator-card">
-                    <div class="card-icon"><i class="fas fa-bullseye"></i></div> <h3>Savings Goal Calculator</h3>
+                    <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Savings Goal Calculator</h3>
                     <p>Determine how much to save regularly to reach your financial targets.</p>
                      <span class="btn">Plan Savings Goal</span>
                 </a>
-                <a href="/finance/investment/compound-interest-calculator/" class="calculator-card"> <div class="card-icon"><i class="fas fa-seedling"></i></div> <h3>Compound Interest Calculator</h3>
+                <a href="/finance/investment/compound-interest-calculator/" class="calculator-card"> <div class="card-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>Compound Interest Calculator</h3>
                     <p>See how your investments grow over time with the power of compound interest.</p>
                      <span class="btn">Calculate Interest</span>
                 </a>
@@ -313,11 +327,13 @@
             <h2>Investment Calculators</h2>
             <p>Grow your wealth and plan for the future with these investment planning tools.</p>
             <div class="calculator-grid">
-                <a href="/finance/investment/investment-calculator/" class="calculator-card"> <div class="card-icon"><i class="fas fa-chart-pie"></i></div> <h3>Investment Calculator</h3>
+                <a href="/finance/investment/investment-calculator/" class="calculator-card"> 
+                    <div class="card-icon"><i class="fas fa-chart-pie"></i></div>
+                    <h3>Investment Calculator</h3>
                     <p>Project potential returns on your investments based on various factors.</p>
                      <span class="btn">Project Investments</span>
                 </a>
-                 </div>
+            </div>
             <div class="subcategory-cta">
                 <a href="/finance/investment/" class="btn">View All Investment Calculators</a>
             </div>
@@ -328,7 +344,8 @@
             <p>Plan for a secure retirement with these essential financial tools.</p>
             <div class="calculator-grid">
                 <a href="/finance/retirement/retirement-calculator/" class="calculator-card">
-                    <div class="card-icon"><i class="fas fa-umbrella-beach"></i></div> <h3>Retirement Calculator</h3>
+                    <div class="card-icon"><i class="fas fa-umbrella-beach"></i></div>
+                    <h3>Retirement Calculator</h3>
                     <p>Estimate your retirement savings needs and see if you're on track for a comfortable retirement.</p>
                     <span class="btn">Plan Retirement</span>
                 </a>
@@ -338,7 +355,8 @@
             </div>
         </section>
 
-        <section class="finance-education enhanced-content content-section"> <h2>Understanding Personal Finance</h2>
+        <section class="finance-education enhanced-content content-section"> 
+            <h2>Understanding Personal Finance</h2>
             <p>Personal finance is the strategic management of your monetary resources through budgeting, saving, investing, and spending. Effective personal finance management helps you achieve your short-term and long-term financial goals, whether it is buying a home, saving for retirement, paying off debt, or building an emergency fund. Understanding key financial concepts is the first step towards financial literacy and empowerment.</p>
             <h3>Key Financial Concepts</h3>
             <ul>
