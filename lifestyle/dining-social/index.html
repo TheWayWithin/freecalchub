@@ -27,29 +27,10 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "CollectionPage",
-          "name": "Dining & Social Calculators | FreecalcHub",
-          "description": "Tools to help plan and manage costs for dining out, social events, and everyday services.",
-          "url": "https://www.freecalchub.com/lifestyle/dining-social/",
-          "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
-          "inLanguage": "en-US",
-          "datePublished": "2025-05-25",
-          "dateModified": "2025-05-25",
-          "hasPart": [ { "@type": "SoftwareApplication", "name": "Free Tip Calculator", "url": "https://www.freecalchub.com/lifestyle/dining-social/tip-calculator/", "applicationCategory": "LifestyleApplication", "description": "Use our free Tip Calculator to quickly determine gratuity and the total bill." } ]
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Lifestyle Calculators", "item": "https://www.freecalchub.com/lifestyle/" },
-            { "@type": "ListItem", "position": 3, "name": "Dining & Social Calculators", "item": "https://www.freecalchub.com/lifestyle/dining-social/" }
-          ]
-        }
-      ]
+      "@graph": [ { "@type": "CollectionPage", "name": "Dining & Social Calculators | FreecalcHub", "description": "Tools to help plan and manage costs for dining out, social events, and everyday services.", "url": "https://www.freecalchub.com/lifestyle/dining-social/", "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" }, "inLanguage": "en-US", "datePublished": "2025-05-25", "dateModified": "2025-05-26", "hasPart": [ { "@type": "SoftwareApplication", "name": "Free Tip Calculator", "url": "https://www.freecalchub.com/lifestyle/dining-social/tip-calculator/", "applicationCategory": "LifestyleApplication", "description": "Use our free Tip Calculator to quickly determine gratuity and the total bill." } ] }, { "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" }, { "@type": "ListItem", "position": 2, "name": "Lifestyle Calculators", "item": "https://www.freecalchub.com/lifestyle/" }, { "@type": "ListItem", "position": 3, "name": "Dining & Social Calculators", "item": "https://www.freecalchub.com/lifestyle/dining-social/" } ] } ]
     }
     </script>
+    
     <style>
         .calculator-grid {
             display: grid;
@@ -59,96 +40,82 @@
             margin-bottom: 30px;
         }
         .calculator-card {
-            border: 1px solid var(--border-color); /* Use global var */
-            border-radius: var(--border-radius); /* Use global var */
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
             padding: 20px;
-            background-color: var(--background-alt); /* Use global var */
+            background-color: var(--background-alt);
             text-decoration: none;
-            color: var(--text-color); /* Use global var */
+            color: var(--text-color);
             transition: box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
         }
-        .calculator-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .calculator-card .card-icon { /* Updated selector */
-            font-size: 2.5em;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-        .calculator-card h3 {
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 1.25em;
-            color: var(--primary-color);
-        }
-         .calculator-card p {
-            font-size: 0.95em;
-            line-height: 1.5;
-            color: var(--text-color); /* Use global var */
-        }
-        /* Ensure category header flows normally */
+        .calculator-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .calculator-card .card-icon { font-size: 2.5em; margin-bottom: 15px; color: var(--primary-color); }
+        .calculator-card h3 { margin-top: 0; margin-bottom: 10px; font-size: 1.25em; color: var(--primary-color); }
+        .calculator-card p { font-size: 0.95em; line-height: 1.5; color: var(--text-color); }
+
+        /* --- NEW RULES TO FIX HEADER LAYOUT --- */
         .category-header {
-            position: static; /* Explicitly set to static */
-            margin-bottom: 30px; /* Add some space below header */
+            position: static; /* Ensure it's not fixed/sticky */
+            display: block; /* Force block layout, override flex/grid */
+            margin-bottom: 40px; /* Increase space below header */
+            text-align: left; /* Ensure alignment isn't centered by default */
         }
-         .category-header .page-title, /* Use .page-title */
-         .category-header h1 {
-            margin-bottom: 15px; /* Space between H1 and description */
-         }
+        .category-header h1.page-title {
+            display: block; /* Ensure H1 is block */
+            font-size: 2.5em; /* Optional: Slightly reduce H1 if needed */
+            margin-bottom: 10px; /* Space between H1 and P */
+        }
+        .category-header p.category-description {
+            display: block; /* Ensure P is block */
+            font-size: 1.1em;
+            line-height: 1.6;
+            max-width: 900px; /* Limit width */
+            margin-left: 0; /* Ensure no odd margins */
+            margin-right: 0;
+        }
+        /* --- END NEW RULES --- */
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
 
-    <header class="site-header">
-        <div class="header-container">
-            <div class="logo-container"> <a href="/"><img src="/images/logo.svg" alt="FreecalcHub Logo"></a> </div>
-            <nav class="main-nav"> <ul> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date & Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/" class="active">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </nav>
-            <div class="header-controls"> <button id="dark-mode-toggle" aria-label="Toggle dark mode"> <i class="fas fa-moon"></i> <i class="fas fa-sun"></i> </button> <button id="mobile-menu-button" aria-label="Toggle menu"> <i class="fas fa-bars menu-icon"></i> </button> </div>
-        </div>
-        <div id="mobile-menu" class="mobile-menu"> <div class="mobile-menu-header"> <span>Menu</span> <button id="mobile-menu-close" aria-label="Close menu"> <i class="fas fa-times"></i> </button> </div> <nav class="mobile-nav"> <ul> <li><a href="/">Home</a></li> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date & Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/" class="active">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </nav> </div>
-    </header>
+    <header class="site-header"> <div class="header-container"> <div class="logo-container"> <a href="/"><img src="/images/logo.svg" alt="FreecalcHub Logo"></a> </div> <nav class="main-nav"> <ul> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date & Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/" class="active">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </nav> <div class="header-controls"> <button id="dark-mode-toggle" aria-label="Toggle dark mode"> <i class="fas fa-moon"></i> <i class="fas fa-sun"></i> </button> <button id="mobile-menu-button" aria-label="Toggle menu"> <i class="fas fa-bars menu-icon"></i> </button> </div> </div> <div id="mobile-menu" class="mobile-menu"> <div class="mobile-menu-header"> <span>Menu</span> <button id="mobile-menu-close" aria-label="Close menu"> <i class="fas fa-times"></i> </button> </div> <nav class="mobile-nav"> <ul> <li><a href="/">Home</a></li> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date & Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/" class="active">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </nav> </div> </header>
 
-    <div class="breadcrumbs">
-        <div class="breadcrumbs-container"> <a href="/">Home</a> <span class="separator">/</span> <a href="/lifestyle/">Lifestyle Calculators</a> <span class="separator">/</span> <span class="current">Dining & Social Calculators</span> </div>
-    </div>
+    <div class="breadcrumbs"> <div class="breadcrumbs-container"> <a href="/">Home</a> <span class="separator">/</span> <a href="/lifestyle/">Lifestyle Calculators</a> <span class="separator">/</span> <span class="current">Dining & Social Calculators</span> </div> </div>
 
-    <div class="navigation-ribbon">
-        <div class="navigation-ribbon-container"> <a href="/lifestyle/home/"><i class="fas fa-home"></i>Home</a> <a href="/lifestyle/garden/"><i class="fas fa-leaf"></i>Garden</a> <a href="/lifestyle/travel/"><i class="fas fa-plane"></i>Travel</a> <a href="/lifestyle/pets/"><i class="fas fa-paw"></i>Pets</a> <a href="/lifestyle/dining-social/" class="active"><i class="fas fa-utensils"></i>Dining & Social</a> <a href="/lifestyle/events/"><i class="fas fa-calendar-day"></i>Events</a> <a href="/lifestyle/shopping/"><i class="fas fa-shopping-cart"></i>Shopping</a> <a href="/lifestyle/entertainment/"><i class="fas fa-film"></i>Entertainment</a> <a href="/lifestyle/sustainability/"><i class="fas fa-recycle"></i>Sustainability</a> </div>
-    </div>
+    <div class="navigation-ribbon"> <div class="navigation-ribbon-container"> <a href="/lifestyle/home/"><i class="fas fa-home"></i>Home</a> <a href="/lifestyle/garden/"><i class="fas fa-leaf"></i>Garden</a> <a href="/lifestyle/travel/"><i class="fas fa-plane"></i>Travel</a> <a href="/lifestyle/pets/"><i class="fas fa-paw"></i>Pets</a> <a href="/lifestyle/dining-social/" class="active"><i class="fas fa-utensils"></i>Dining & Social</a> <a href="/lifestyle/events/"><i class="fas fa-calendar-day"></i>Events</a> <a href="/lifestyle/shopping/"><i class="fas fa-shopping-cart"></i>Shopping</a> <a href="/lifestyle/entertainment/"><i class="fas fa-film"></i>Entertainment</a> <a href="/lifestyle/sustainability/"><i class="fas fa-recycle"></i>Sustainability</a> </div> </div>
 
-    <main id="main-content" class="main-content container py-5"> <header class="category-header"> <h1 class="page-title">Dining & Social Calculators</h1>
-            <p class="category-description lead">Tools to help plan and manage costs for dining out, social events, and everyday services.</p> </header>
+    <main id="main-content" class="main-content container py-5"> 
+
+        <header class="category-header">
+            <h1 class="page-title">Dining & Social Calculators</h1>
+            <p class="category-description lead">Tools to help plan and manage costs for dining out, social events, and everyday services.</p>
+        </header>
 
         <div class="calculator-grid">
             <div class="calculator-card">
-                <div class="card-icon"> <i class="fas fa-receipt"></i>
+                <div class="card-icon">
+                    <i class="fas fa-receipt"></i>
                 </div>
                 <h3><a href="/lifestyle/dining-social/tip-calculator/">Tip Calculator</a></h3>
                 <p>Quickly calculate tips & split bills.</p>
             </div>
-            </div>
+        </div>
 
         <section class="category-content-section content-section">
              <h2 class="section-title">About Dining & Social Calculators</h2>
              <p>Navigating the financial side of social outings, dining experiences, and various services doesn't have to be complicated. Our Dining & Social calculators are designed to provide quick answers and clarity. Whether you're figuring out a fair tip, splitting a dinner bill among friends, or planning for group event expenses, these tools aim to simplify the math so you can focus on the experience.</p>
              <p>Explore calculators that help with:</p>
-             <ul>
-                <li>Calculating appropriate tips for various services.</li>
-                <li>Dividing expenses fairly in group settings.</li>
-                <li>Understanding costs associated with social activities.</li>
-             </ul>
+             <ul> <li>Calculating appropriate tips for various services.</li> <li>Dividing expenses fairly in group settings.</li> <li>Understanding costs associated with social activities.</li> </ul>
         </section>
 
     </main>
 
-    <footer class="site-footer">
-        <div class="container"> <div class="footer-columns"> <div class="footer-column"> <h3>FreecalcHub</h3> <p>Your one-stop destination for a wide variety of free online calculators.</p> </div> <div class="footer-column"> <h3>Categories</h3> <ul> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date & Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </div> <div class="footer-column"> <h3>Support</h3> <ul> <li><a href="/about/">About Us</a></li> <li><a href="/contact/">Contact</a></li> <li><a href="/privacy/">Privacy Policy</a></li> <li><a href="/terms/">Terms of Service</a></li> <li><a href="/sitemap/">Sitemap</a></li> </ul> </div> </div> <div class="footer-bottom"> <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> </div> </div>
-    </footer>
+    <footer class="site-footer"> <div class="container"> <div class="footer-columns"> <div class="footer-column"> <h3>FreecalcHub</h3> <p>Your one-stop destination for a wide variety of free online calculators.</p> </div> <div class="footer-column"> <h3>Categories</h3> <ul> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date & Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </div> <div class="footer-column"> <h3>Support</h3> <ul> <li><a href="/about/">About Us</a></li> <li><a href="/contact/">Contact</a></li> <li><a href="/privacy/">Privacy Policy</a></li> <li><a href="/terms/">Terms of Service</a></li> <li><a href="/sitemap/">Sitemap</a></li> </ul> </div> </div> <div class="footer-bottom"> <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> </div> </div> </footer>
 
     <script src="/js/main.js" defer></script>
     <script src="/js/dark-mode.js" defer></script>
