@@ -1,0 +1,88 @@
+/*
+ * FreecalcHub.com - Auto Loan Calculator
+ * Version: 1.0
+ * Date Created: May 26, 2025
+ * Description: Specific styles for the Auto Loan Calculator.
+ */
+
+/* Amortization Table Styling */
+#amortizationTableContainer {
+    margin-top: 30px;
+    max-height: 500px; /* Limit height and make it scrollable */
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+.amortization-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+.amortization-table th,
+.amortization-table td {
+    border: 1px solid var(--border-color-light);
+    padding: 8px 10px;
+    text-align: right;
+}
+
+.amortization-table th {
+    background-color: var(--table-header-bg);
+    color: var(--table-header-text);
+    position: sticky; /* Make header sticky within the scrollable container */
+    top: 0;
+    z-index: 1;
+}
+
+.amortization-table tbody tr:nth-child(even) {
+    background-color: var(--background-alt);
+}
+
+.amortization-table tbody tr:hover {
+    background-color: var(--table-row-hover-bg);
+}
+
+.amortization-table td:first-child, /* Month column */
+.amortization-table th:first-child {
+    text-align: center;
+}
+
+/* Payment Chart Container */
+#paymentChartContainer {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--background-alt);
+    min-height: 300px; /* Ensure some space for the chart */
+}
+
+/* Styling for read-only loan amount field */
+#loanAmount[readonly] {
+    background-color: var(--input-disabled-bg);
+    color: var(--text-muted);
+    cursor: not-allowed;
+    border-color: var(--border-color-light);
+}
+
+/* Additional spacing for fieldsets if needed */
+.calculator-form fieldset {
+    margin-bottom: 25px;
+}
+
+/* Result items styling */
+.results-grid .result-item p {
+    font-size: 1.5em; /* Slightly adjusted for financial figures */
+}
+
+/* Download/Sort buttons for Amortization (Placeholder styling) */
+.amortization-actions {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.amortization-actions .btn {
+    margin-left: 10px;
+}
