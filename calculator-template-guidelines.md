@@ -1,6 +1,6 @@
 # FreecalcHub Calculator Page - Template Usage Guidelines
 
-**Version: 2.2 (Updated: May 25, 2025)**
+**Version: 3.1 (Updated: May 27, 2025)**
 
 ## 1. Overview
 
@@ -114,95 +114,145 @@ Modify the visible breadcrumbs (Section 8 of the template) to reflect the calcul
     </div>
     ```
 
+**Key Global Assets Notes:**
+* `styles.css`: Now contains the **standard responsive grid layout** for fieldsets within calculator forms (targeting `.calculator-form fieldset`).
+* `faq-styles-v2.css`: Provides theme-aware (Light/Dark Mode) styling for the V2 FAQ structure.
+* `faq-accordion-v2.js`: Provides the functionality for the V2 FAQ accordion.
+* All global CSS and JS files listed (and present in `calculator_template.html`) are linked directly from the template. You do not need to link them again.
+
+## 3. Creating a New Calculator Page
+
+Follow these steps meticulously:
+
+### Step 1: Copy the Master Template
+
+1.  Take a copy of the latest `calculator_template.html` (ensure it's v3.1 or later to include the Related Calculators section).
+2.  Place it in the appropriate new directory for your calculator (e.g., `finance/loan-calculator/index.html`).
+
+### Step 2: Update Page Metadata (in `<head>`)
+
+* **`<title>`**: Change `[Calculator Name] | FreecalcHub` to the specific title (e.g., `Loan Calculator | FreecalcHub`). This is crucial for SEO and browser tabs.
+* **`<meta name="description">`**: Write a unique, concise description (150-160 characters) for the calculator. This is used by search engines.
+
+### Step 3: Link Calculator-Specific CSS
+
+* Modify the placeholder link in `calculator_template.html`:
+    ```html
+    <link rel="stylesheet" href="/[path-to-your-calculator-folder]/css/[calculator-name].css">
+    ```
+    to the correct **full root-relative path**.
+    * Example: For a Loan Calculator at `finance/loan-calculator/`, this becomes:
+        ```html
+        <link rel="stylesheet" href="/finance/loan-calculator/css/loan-calculator.css">
+        ```
+* Create the corresponding CSS file (e.g., `finance/loan-calculator/css/loan-calculator.css`). Add calculator-specific styles here. Only add styles for elements unique to this calculator or for minor adjustments not covered by global styles.
+
+### Step 4: Update Schema Markup (in `<head>`)
+
+This is **critical** for SEO and rich search results. Carefully update all `[Placeholder Text]` items within the `<script type="application/ld+json"> ... </script>` block.
+
+* **`SoftwareApplication`**:
+    * `name`: `[Calculator Name]` (e.g., "Loan Calculator")
+    * `applicationCategory`: Choose a relevant category (e.g., "FinanceApplication") or use descriptive text.
+    * `description`: Repeat meta description or provide a slightly more detailed one.
+    * `url`: The full canonical URL of the calculator page.
+    * **`relatedLink` (NEW):** Populate this array with 3-5 relevant related calculators, matching the visible "Related Calculators" section. Each entry needs `@type` (usually `SoftwareApplication`), `name`, and `url` (absolute).
+    * `aggregateRating`: Optional. Remove if no rating system is in place.
+* **`FAQPage`**: **IMPORTANT**
+    * Add *every* question and answer pair from your FAQ section.
+    * The `name` (question) and `text` (answer) in the schema **must exactly match** the visible content on the page.
+* **`HowTo`**:
+    * `name`: `How to Use the [Calculator Name]`
+    * Update `description` and all `step` elements to accurately reflect how to use *this specific calculator*.
+* **`BreadcrumbList`**:
+    * Update `itemListElement` entries. URLs **must be absolute** (e.g., `https://www.freecalchub.com/...`).
+        * Position 2: `[Category Name]` and its absolute URL.
+        * Position 3 (or 4 if a sub-category exists): `[Calculator Name]` and its absolute URL. Adjust position numbers accordingly.
+* **`WebPage`**:
+    * `name`: Match the `<title>`.
+    * `description`: Match the `<meta name="description">`.
+    * `url`: The absolute canonical URL of *this specific calculator page*.
+    * `datePublished`: Set the initial publication date (YYYY-MM-DD).
+    * `dateModified`: Set the date of the last modification using the full ISO 8601 format including timezone (e.g., `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS+00:00`). Can be the same as `datePublished` for new pages.
+
+### Step 5: Update Breadcrumb Navigation (Visible on Page)
+
+Modify the visible breadcrumbs to reflect the calculator's position in the site structure. Use full root-relative paths for links.
+
+* Example for `finance/loan-calculator/`:
+    ```html
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <a href="/finance/">Finance Calculators</a> <span class="separator">/</span>
+            <span class="current">Loan Calculator</span> 
+        </div>
+    </div>
+    ```
+
 ### Step 6: Navigation Ribbon (Optional)
 
-* If your calculator's category uses a sub-navigation ribbon, uncomment the relevant HTML section in the template and populate the links with correct root-relative paths and names. Mark the current calculator's link as `class="active"`.
+* If your calculator's category uses a sub-navigation ribbon, uncomment the relevant HTML section in the template and populate the links with correct root-relative paths and names. Mark the current calculator's link (or its sub-category link if more appropriate) as `class="active"`.
 
-### Step 7: Populate Main Content (Sections 9.1 - 9.7)
+### Step 7: Populate Main Content
 
 This is where you add all the unique content for your calculator.
 
-* **Page Title (`<h1>`)** (Section 9.1): Set to `[Calculator Name]`.
-* **Calculator Introduction** (Section 9.2): Write the introductory text explaining the calculator.
-* **Calculator Interface** (Section 9.3):
-    * The main `<form>` **must** have `id="calculatorForm"` (for JS) and `class="calculator-form"` (to enable the standard global fieldset grid layout).
-    * Fieldsets (`<fieldset>`) within this form will automatically have a responsive multi-column grid layout provided by `styles.css`.
-    * Use `<legend>` for fieldset titles.
-    * Structure inputs within `<div class="form-group">`. Each `.form-group` will be a grid item within the fieldset.
-    * Use `<label for="uniqueId">` for all inputs, and ensure the `id` attribute on the input matches.
-    * Define the structure for the results display within `<div id="resultsSection">` (initially `style="display:none;"`).
-    * Include `<div id="errorMessages" class="error-messages" style="display:none;"></div>` for displaying validation errors.
-* **"How to Use" Section** (Section 9.4): Provide clear, step-by-step instructions.
-* **Educational Content Section** (Section 9.5): Add relevant articles, explanations of formulas, definitions, etc.
-* **FAQ Section** (Section 9.6): **MANDATORY V2 STRUCTURE** - Add all FAQs using the new, required structure.
-
-    * **FAQ Index**:
-        * Implement the `<div class="faq-index card">` section *before* the individual FAQs.
-        * Add an `<li><a href="#faq-item-X">Question Text?</a></li>` for *every* FAQ item.
-        * Ensure the `href` (e.g., `#faq-item-1`) **exactly matches** the `id` of the corresponding `div.faq-item` (e.g., `id="faq-item-1"`).
-
-    * **FAQ Items**:
-        * Use the following structure for *each* FAQ. This structure is **required** for correct functionality, accessibility, theming (Light/Dark Mode), and SEO.
-        * Ensure each `div.faq-item` has a **unique `id`** (e.g., `id="faq-item-1"`).
-        * The `button` must have `aria-expanded="false"` initially and `aria-controls` pointing to the panel's `id`.
-        * The panel `div` must have a unique `id` (e.g., `id="faq-panel-1"`) and `role="region"`.
-        * The `<span class="accordion-icon"></span>` is essential for the +/- visual cue and **must not be removed**.
-
-        ```html
-        <div class="faq-item" id="faq-item-1">
-            <h3>
-                <button class="accordion" aria-expanded="false" aria-controls="faq-panel-1">
-                    [Question 1?]
-                    <span class="accordion-icon"></span>
-                </button>
-            </h3>
-            <div class="panel" id="faq-panel-1" role="region">
-                <p>[Answer 1]</p>
-            </div>
-        </div>
-        ```
-    * This structure uses `/css/faq-styles-v2.css` and `/js/faq-accordion-v2.js`, which are linked globally in the template.
-* **Related Calculators (Optional)** (Section 9.7): If relevant, add links to other calculators.
+* **Page Title (`<h1>`)**: Set to `[Calculator Name]`.
+* **Calculator Introduction (`<section class="calculator-description-section">`)**: Write the introductory text.
+* **Calculator Interface (`<section id="calculator-section" class="calculator-interface">`)**:
+    * The main `<form>` **must** have `id="calculatorForm"` and `class="calculator-form"`.
+    * Structure inputs within `<fieldset>` and `<div class="form-group">`.
+    * Define the results display within `<div id="resultsSection">`.
+    * Include `<div id="errorMessages">`.
+* **Related Calculators Section (`<section class="related-calculators">`) (NEW)**:
+    * This section is placed **after** the `resultsSection` and **before** the `how-to-use-section`.
+    * Populate the `<ul>` with 3-5 links to relevant calculators. Each `<li>` should contain an `<a>` tag with:
+        * `<span class="calculator-name">[Related Calculator Name]</span>`
+        * `<span class="calculator-description">[Brief description of related calculator]</span>`
+    * Ensure the `href` paths are correct and root-relative.
+    * These links should correspond to the `relatedLink` entries in your `SoftwareApplication` schema.
+* **"How to Use" Section (`<section class="how-to-use-section">`)**: Provide clear, step-by-step instructions.
+* **Educational Content Section (`<section class="content-section">`)**: Add relevant articles, explanations, etc. Add multiple such sections if needed.
+* **FAQ Section (`<section class="faq-section">`)**: **MANDATORY V2 STRUCTURE** - Add all FAQs using the required structure (FAQ Index + FAQ Items). Refer to the `calculator_template.html` for the precise HTML structure for each item (`div.faq-item`, `button.accordion`, `div.panel`).
 
 ### Step 8: Link Calculator-Specific JavaScript
 
-* Modify the placeholder script tag in `calculator_template.html` (Section 13):
+* Modify the placeholder script tag in `calculator_template.html`:
     ```html
     <script src="/[path-to-your-calculator-folder]/js/[calculator-name].js" defer></script>
     ```
     to the correct **full root-relative path**.
-* Create the corresponding JavaScript file (e.g., `finance/loan-calculator/js/loan-calculator.js`). This file contains calculator-specific logic (input handling, calculations, DOM manipulation for results and errors).
-* **Note:** You *do not* need to link `faq-accordion-v2.js` or other global JS files like `main.js` or `dark-mode.js`; they are already linked in the template.
+* Create the corresponding JavaScript file.
 
 ## 4. Best Practices
 
-* **Root-Relative Paths**: **Always** use full root-relative paths (starting with `/`) for linking CSS, JS, images, and internal pages (e.g., `<a href="/finance/another-calculator/">`).
-* **IDs and Classes**: Use unique and descriptive `id`s for JavaScript interaction and meaningful classes for styling. Follow existing BEM-like conventions if observed.
-* **CSS Variables**: For calculator-specific CSS, use standard site CSS variables (e.g., `var(--primary-color)`, `var(--text-color)`) wherever possible to ensure consistency and proper theme support (Light/Dark Mode).
-* **Global Styles**: Leverage standard classes like `calculator-form` to automatically apply site-wide layouts (like the fieldset grid). Only add calculator-specific CSS for elements unique to the current calculator or for minor styling adjustments not covered by global rules.
-* **Accessibility (WCAG)**:
-    * Ensure all form inputs have associated `<label for="...">` tags that correctly point to the input's `id`.
-    * Use appropriate ARIA attributes where necessary (the V2 FAQ structure includes these).
-    * Ensure keyboard navigability for all interactive elements.
-    * The "skip-link" is already in the template.
-* **Validation**: Implement client-side input validation (e.g., using HTML5 `required`, `type="number"`, `min`, `max` attributes).
-* **Error Handling**: Provide clear, user-friendly feedback for invalid inputs or calculation errors. Display these messages in the `<div id="errorMessages">` element, not using `alert()`.
-* **Comments**: Add comments to your HTML (explaining sections, TODOs), CSS (explaining complex rules or sections), and JS (explaining functions and complex logic). The template contains many TODO comments to guide you.
-* **Testing**:
-    * Thoroughly test calculation logic with valid, invalid, and edge-case inputs.
-    * Test responsiveness across different screen sizes (desktop, tablet, mobile).
-    * Test in latest versions of major browsers (Chrome, Firefox, Safari, Edge).
-    * Validate HTML (e.g., W3C Nu Html Checker) and Schema Markup (e.g., Google Rich Results Test).
-    * **Crucially**: Test with a local web server or a staging environment (like Netlify) because `file:///` **will not work** with root-relative paths.
-    * Verify Light and **Dark Mode** display for all elements.
+* **Root-Relative Paths**: **Always** use full root-relative paths (starting with `/`).
+* **IDs and Classes**: Use unique and descriptive `id`s and meaningful classes.
+* **CSS Variables**: Use standard site CSS variables for calculator-specific CSS.
+* **Global Styles**: Leverage global classes like `calculator-form`, `content-section`, `card`.
+* **Accessibility (WCAG)**: Ensure labels, ARIA attributes, and keyboard navigability.
+* **Validation & Error Handling**: Implement client-side validation and display errors in `<div id="errorMessages">`.
+* **Comments**: Add comments to HTML, CSS, and JS.
+* **Testing**: Thoroughly test logic, responsiveness, browsers, HTML/Schema validation, and **Dark Mode**. Test on a server environment.
 
-## 5. Final Check
+## 5. Charting & Canvas Elements (e.g., Chart.js)
+
+*(This section remains the same as in v3.0)*
+Many calculators benefit from visual charts. Be aware of:
+* **`ResizeObserver` Loop Risk:** Can occur with `responsive: true`.
+* **FIX: Set Fixed Container Heights:** On the chart's parent container (e.g., `<div id="chart-container" style="position: relative; height: 400px;"></div>`). Container needs `position: relative;`. Avoid `auto` height. Set `responsive: true` and `maintainAspectRatio: false` in Chart.js options.
+* **Use `update()` Method:** Prefer `chartInstance.update()` over destroying and recreating.
+* **Visibility:** Ensure chart container is visible before initializing/updating.
+* **Testing:** Explicitly test chart stability and responsiveness.
+
+## 6. Final Check
 
 Before considering the calculator page complete:
 * Are all `[Placeholder Text]` and `TODO:` comments in the HTML template addressed?
-* Are all paths (CSS, JS, images, internal links) correct and fully root-relative?
+* Are all paths correct and root-relative?
 * Are all URLs in Schema.org markup and visible breadcrumbs absolute and correct?
-* Does the `<form>` element have `class="calculator-form"` to enable the standard fieldset grid layout?
-* Does the `FAQPage` schema markup exactly match the questions and answers visible in the V2 FAQ section?
-* Does the FAQ Index link correctly to all FAQ items, and does each FAQ item use the **MANDATORY V2 HTML structure**?
-* Has the page been tested on a server environment, including calculations, responsiveness, and Dark Mode?
+* Is the "Related Calculators" section populated correctly in both the HTML and the `relatedLink` schema?
+* Does the `FAQPage` schema exactly match the visible V2 FAQ content?
+* Has the page been tested on a server environment?
