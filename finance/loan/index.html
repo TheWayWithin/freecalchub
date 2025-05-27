@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loan Calculators & Resources | FreecalcHub</title> 
-    <meta name="description" content="Explore various loan options, understand loan terms, and use our calculators to plan your finances. Covers personal, auto, student loans, and more.">
-    <link rel="canonical" href="https://www.freecalchub.com/finance/loan/"> 
+    <meta name="description" content="Explore various loan options, understand loan terms, and use our calculators to plan your finances. Covers personal, auto, student loans, and debt payoff strategies."> <link rel="canonical" href="https://www.freecalchub.com/finance/loan/"> 
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/dark-mode.css">
     <link rel="stylesheet" href="/css/dark-mode-button.css">
@@ -29,23 +28,28 @@
         {
           "@type": "CollectionPage",
           "name": "Loan Calculators & Resources | FreecalcHub", 
-          "description": "Find tools and information for various types of loans including personal, auto, and student loans. Calculate payments, understand terms, and plan your borrowing with FreecalcHub.",
-          "url": "https://www.freecalchub.com/finance/loan/",
+          "description": "Find tools and information for various types of loans including personal, auto, student loans, and debt payoff strategies. Calculate payments, understand terms, and plan your borrowing with FreecalcHub.", "url": "https://www.freecalchub.com/finance/loan/",
           "datePublished": "2025-05-25", 
-          "dateModified": "2025-05-26", 
-          "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
+          "dateModified": "2025-05-27T00:16:41+00:00", "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
           "hasPart": [
             { "@type": "SoftwareApplication", "name": "Loan Calculator", "url": "https://www.freecalchub.com/finance/loan/loan-calculator/", "description": "Estimate monthly payments, total interest, and amortization for various loan types." },
             { "@type": "SoftwareApplication", "name": "Extra Payment Calculator", "url": "https://www.freecalchub.com/finance/loan/extra-payment-calculator/", "description": "See how making additional payments can shorten your loan term and save interest." },
-            { "@type": "SoftwareApplication", 
+            { 
+              "@type": "SoftwareApplication", 
               "name": "Auto Loan Calculator", 
               "url": "https://www.freecalchub.com/finance/loan/auto-loan-calculator/",
               "description": "Estimate monthly payments & total auto loan costs."
             },
-            { "@type": "SoftwareApplication", 
+            { 
+              "@type": "SoftwareApplication", 
               "name": "Student Loan Payoff Calculator", 
               "url": "https://www.freecalchub.com/finance/loan/student-loan-payoff-calculator/",
               "description": "See how extra payments can save you interest."
+            },
+            { "@type": "SoftwareApplication", 
+              "name": "Debt Payoff Calculator", 
+              "url": "https://www.freecalchub.com/finance/loan/debt-payoff-calculator/",
+              "description": "Plan debt payoff: Snowball vs. Avalanche."
             }
           ]
         },
@@ -61,7 +65,6 @@
     }
     </script>
     <style>
-        /* Styles for calculator grid (can be moved to global if consistent across all category pages) */
         .calculator-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -70,12 +73,12 @@
             margin-bottom: 30px;
         }
         .calculator-card {
-            border: 1px solid var(--border-color); /* Using global var */
-            border-radius: var(--border-radius); /* Using global var */
+            border: 1px solid var(--border-color); 
+            border-radius: var(--border-radius); 
             padding: 20px;
-            background-color: var(--background-alt); /* Using global var */
+            background-color: var(--background-alt); 
             text-decoration: none;
-            color: var(--text-color); /* Using global var */
+            color: var(--text-color); 
             transition: box-shadow 0.3s ease;
             display: flex; 
             flex-direction: column; 
@@ -85,7 +88,7 @@
         .calculator-card:hover {
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        .calculator-card .card-icon { /* Standardized selector */
+        .calculator-card .card-icon { 
             font-size: 2.5em; 
             margin-bottom: 15px; 
             color: var(--primary-color);
@@ -95,18 +98,18 @@
             margin-bottom: 10px; 
             font-size: 1.25em; 
         }
-        .calculator-card h3 a { /* Ensure link styling within h3 */
+        .calculator-card h3 a { 
             text-decoration: none;
             color: var(--primary-color);
         }
         .calculator-card p {
             font-size: 0.95em; 
             line-height: 1.5;
-             flex-grow: 1; /* Allows button to align to bottom if card heights vary */
+            flex-grow: 1; 
             margin-bottom: 15px;
         }
-        .calculator-card .btn {
-            margin-top: auto; /* Pushes button to bottom */
+         .calculator-card .btn {
+            margin-top: auto; 
         }
     </style>
 
@@ -191,8 +194,7 @@
     
     <main id="main-content" class="main-content container py-5"> <section class="category-header">
             <h1>Loan Calculators & Resources</h1>
-            <p class="lead">Navigate the world of loans with our comprehensive calculators and guides. Whether you are considering a personal loan, auto financing, or student aid, our tools can help you understand your options, estimate payments, and plan your borrowing strategy effectively.</p>
-        </section>
+            <p class="lead">Navigate the world of loans with our comprehensive calculators and guides. Whether you are considering a personal loan, auto financing, student aid, or debt payoff strategies, our tools can help you understand your options, estimate payments, and plan your borrowing strategy effectively.</p> </section>
 
         <div class="calculator-grid">
             <div class="calculator-card">
@@ -200,26 +202,36 @@
                 </div>
                 <h3><a href="/finance/loan/loan-calculator/">Loan Calculator</a></h3>
                 <p>Estimate monthly payments, total interest, and amortization for various loan types.</p>
-                <span class="btn">Calculate Generic Loan</span> </div>
+                <span class="btn">Calculate Generic Loan</span>
+            </div>
             <div class="calculator-card">
                 <div class="card-icon"> <i class="fas fa-hand-holding-usd"></i> </div>
                 <h3><a href="/finance/loan/extra-payment-calculator/">Extra Payment Calculator</a></h3>
                 <p>See how making additional payments can shorten your loan term and save interest.</p>
-                <span class="btn">Analyze Extra Payments</span> </div>
+                <span class="btn">Analyze Extra Payments</span>
+            </div>
             <div class="calculator-card">
                 <div class="card-icon">
                     <i class="fas fa-car"></i>
                 </div>
                 <h3><a href="/finance/loan/auto-loan-calculator/">Auto Loan Calculator</a></h3>
                 <p>Estimate monthly payments & total auto loan costs.</p>
-                <span class="btn">Estimate Auto Loan</span> </div>
+                 <span class="btn">Estimate Auto Loan</span>
+            </div>
             <div class="calculator-card">
                 <div class="card-icon">
                     <i class="fas fa-user-graduate"></i>
                 </div>
                 <h3><a href="/finance/loan/student-loan-payoff-calculator/">Student Loan Payoff Calculator</a></h3>
                 <p>See how extra payments can save you interest.</p>
-                <span class="btn">Plan Payoff</span>
+                <span class="btn">Plan Student Loan Payoff</span> </div>
+            <div class="calculator-card">
+                <div class="card-icon">
+                    <i class="fas fa-bomb"></i>
+                </div>
+                <h3><a href="/finance/loan/debt-payoff-calculator/">Debt Payoff Calculator</a></h3>
+                <p>Plan debt payoff: Snowball vs. Avalanche.</p>
+                <span class="btn">Create Debt Plan</span>
             </div>
         </div>
         
@@ -228,21 +240,15 @@
             
             <h4>Common Loan Categories</h4>
             <ul>
-                <li><strong>Personal Loans:</strong> These are versatile loans that can be used for a wide range of expenses, such as consolidating debt, financing a large purchase, covering emergency costs, or funding home improvements. Personal loans can be secured (backed by collateral like a car or savings account) or unsecured (no collateral required, typically resulting in higher interest rates).</li>
-                <li><strong>Auto Loans:</strong> Specifically designed for purchasing a new or used vehicle. The vehicle itself usually serves as collateral for the loan. Auto loan terms and interest rates can vary based on the vehicle's age, price, and the borrower's creditworthiness.</li>
-                <li><strong>Student Loans:</strong> These loans help students and their families cover the costs of higher education, including tuition, fees, books, and living expenses. Student loans can be federal (offered by the government with specific benefits like income-driven repayment plans) or private (offered by banks and other financial institutions).</li>
-                <li><strong>Mortgage Loans:</strong> Used to finance the purchase of real estate, such as a house or condominium. Mortgages are typically long-term loans secured by the property itself. For detailed mortgage calculations and information, please visit our dedicated <a href="/finance/mortgage/">Mortgage section</a>.</li>
+                <li><strong>Personal Loans:</strong> These are versatile loans that can be used for a wide range of expenses, such as consolidating debt, financing a large purchase, covering emergency costs, or funding home improvements.</li>
+                <li><strong>Auto Loans:</strong> Specifically designed for purchasing a new or used vehicle. The vehicle itself usually serves as collateral for the loan.</li>
+                <li><strong>Student Loans:</strong> These loans help students and their families cover the costs of higher education, including tuition, fees, books, and living expenses.</li>
+                <li><strong>Mortgage Loans:</strong> Used to finance the purchase of real estate. For detailed mortgage calculations, please visit our dedicated <a href="/finance/mortgage/">Mortgage section</a>.</li>
+                <li><strong>Debt Payoff Strategies:</strong> Tools that help you plan how to eliminate existing debts, often by comparing methods like the debt snowball or debt avalanche.</li>
             </ul>
             
             <h3>Key Loan Terminology Explained</h3>
-            <p>Familiarizing yourself with common loan terms will help you better understand loan agreements and compare offers:</p>
-            <ul>
-                <li><strong>Principal:</strong> The original amount of money borrowed from the lender.</li>
-                <li><strong>Interest Rate:</strong> The percentage of the principal charged by the lender for the use of their money. This is usually expressed as an annual rate.</li>
-                <li><strong>APR (Annual Percentage Rate):</strong> A broader measure of the cost of borrowing, as it includes the interest rate plus any additional fees or costs associated with the loan.</li>
-                <li><strong>Loan Term:</strong> The duration over which the loan is scheduled to be repaid.</li>
-                <li><strong>Amortization:</strong> The process of paying off a debt over time through regular, equal payments.</li>
-            </ul>
+            <p>Familiarizing yourself with common loan terms will help you better understand loan agreements and compare offers: Principal, Interest Rate, APR, Loan Term, Amortization.</p>
             
             <h3>The Loan Application and Approval Process</h3>
             <p>Securing a loan typically involves several steps including assessing your finances, researching options, applying, underwriting, and closing. Our calculators can help you at various stages.</p>
