@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
     <link rel="stylesheet" href="/css/navigation-ribbon.css"> 
     <link rel="stylesheet" href="/css/faq-styles-v2.css">
-
     <link rel="stylesheet" href="/[path-to-your-calculator-folder]/css/[calculator-name].css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
@@ -37,7 +36,22 @@
           "operatingSystem": "Web", // Indicates it's a web application
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }, // Indicates it's free
           "description": "[Repeat the meta description or a slightly longer version]", // TODO: Match description
-          "url": "https://www.freecalchub.com/[full-path-to-calculator]/" // TODO: Full canonical URL
+          "url": "https://www.freecalchub.com/[full-path-to-calculator]/", // TODO: Full canonical URL
+          // START NEW relatedLink property - TODO: Populate with 3-5 relevant calculators
+          "relatedLink": [
+            {
+              "@type": "SoftwareApplication", // Or WebPage if linking to a non-calculator tool
+              "name": "[Related Calculator 1 Name]",
+              "url": "https://www.freecalchub.com/[path-to-related-calculator-1]/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "[Related Calculator 2 Name]",
+              "url": "https://www.freecalchub.com/[path-to-related-calculator-2]/"
+            }
+            // Add more related links as specified in the calculator's spec document
+          ]
+          // END NEW relatedLink property
           // "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "100" } // Optional: Uncomment if you have ratings
         },
         {
@@ -52,6 +66,7 @@
               "@type": "Question", "name": "[Question 2?]",
               "acceptedAnswer": { "@type": "Answer", "text": "[Answer 2]" }
             }
+            // TODO: Add more FAQ items as needed
           ]
         },
         {
@@ -81,9 +96,9 @@
           "description": "[Repeat the meta description]", // TODO: Match meta description
           "url": "https://www.freecalchub.com/[full-path-to-calculator]/", // TODO: Full canonical URL
            "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
-           "inLanguage": "en-US", // Define the language of the page
+           "inLanguage": "en-US", 
            "datePublished": "[YYYY-MM-DD]", // TODO: Set initial publish date
-           "dateModified": "[YYYY-MM-DD]" // TODO: Set modification date (same as publish if new)
+           "dateModified": "[YYYY-MM-DDTHH:MM:SSZ]" // TODO: Set modification date (e.g., 2025-05-27T22:47:34Z)
         }
       ]
     }
@@ -144,7 +159,8 @@
             <span class="separator">/</span>
             <a href="/[category-path]/">[Category Name]</a>
             <span class="separator">/</span>
-            <span class="current">[Calculator Name]</span> </div>
+            <span class="current">[Calculator Name]</span> 
+        </div>
     </div>
 
     <main id="main-content" class="main-content">
@@ -154,23 +170,21 @@
                     <p>[Detailed introduction text here. Explain what the calculator does, who it's for, and why it's useful. Be engaging and informative.]</p>
                 </section>
 
-                <section id="calculator-section" class="calculator-interface content-section card"> <h2 class="section-title">[Calculator Interface Title, e.g., Calculate Your Results]</h2>
-                    
+                <section id="calculator-section" class="calculator-interface content-section card"> 
+                    <h2 class="section-title">[Calculator Interface Title, e.g., Calculate Your Results]</h2>
                     <div id="errorMessages" class="error-messages" style="display:none;"></div>
-                    
                     <form id="calculatorForm" class="calculator-form">
                         <fieldset>
                             <legend>[Input Group 1 Legend, e.g., Loan Details]</legend>
                             <div class="form-group">
                                 <label for="inputField1">[Input Field 1 Label]:</label>
                                 <input type="number" id="inputField1" placeholder="[e.g., 10000]" required>
-                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="inputField2">[Input Field 2 Label]:</label>
                                 <input type="text" id="inputField2" placeholder="[e.g., Enter value]">
                             </div>
                         </fieldset>
-
                         <div class="form-actions">
                             <button type="button" id="calculateButton" class="btn btn-primary">Calculate</button>
                             <button type="reset" id="resetButton" class="btn btn-secondary">Reset</button>
@@ -184,9 +198,25 @@
                                 <p id="resultMetric1">--</p>
                             </div>
                             </div>
-                         </div>
+                    </div>
                 </section>
 
+                <section class="related-calculators content-section card">
+                    <h2 class="section-title">Related Calculators</h2> <ul>
+                        <li>
+                            <a href="/[category]/[related-calculator-1]/">
+                                <span class="calculator-name">[Related Calculator 1 Name]</span>
+                                <span class="calculator-description">[Brief description of what related calculator 1 does and why it's relevant.]</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/[category]/[related-calculator-2]/">
+                                <span class="calculator-name">[Related Calculator 2 Name]</span>
+                                <span class="calculator-description">[Brief description of related calculator 2.]</span>
+                            </a>
+                        </li>
+                        </ul>
+                </section>
                 <section class="how-to-use-section content-section">
                     <h2 class="section-title">How to Use This Calculator</h2>
                     <ol>
@@ -197,85 +227,48 @@
                         </ol>
                 </section>
 
-                <section class="content-section">
-                    <h2 class="section-title">[Educational Topic 1 Title]</h2>
+                <section class="content-section"> <h2 class="section-title">[Educational Topic 1 Title]</h2>
                     <p>[Content for educational topic 1. Explain concepts, formulas, or context that helps the user understand the calculator's domain and results.]</p>
                     </section>
 
                 <section class="faq-section content-section">
                     <h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
-
                     <div class="faq-index card">
                         <h3>FAQ Index</h3>
                         <ul>
                             <li><a href="#faq-item-1">[Question 1?]</a></li>
                             <li><a href="#faq-item-2">[Question 2?]</a></li>
-                            </ul>
+                        </ul>
                     </div>
 
-                    <div class="faq-item" id="faq-item-1"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-1"> [Question 1?] <span class="accordion-icon"></span> </button>
-                        </h3>
-                        <div class="panel" id="faq-panel-1" role="region"> <p>[Answer 1]</p>
-                            </div>
+                    <div class="faq-item" id="faq-item-1"> 
+                        <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-1"> [Question 1?] <span class="accordion-icon"></span> </button> </h3>
+                        <div class="panel" id="faq-panel-1" role="region"> <p>[Answer 1]</p> </div>
                     </div>
-
                     <div class="faq-item" id="faq-item-2">
-                        <h3>
-                            <button class="accordion" aria-expanded="false" aria-controls="faq-panel-2">
-                                [Question 2?]
-                                <span class="accordion-icon"></span>
-                            </button>
-                        </h3>
-                        <div class="panel" id="faq-panel-2" role="region">
-                            <p>[Answer 2]</p>
-                        </div>
+                        <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-2"> [Question 2?] <span class="accordion-icon"></span> </button> </h3>
+                        <div class="panel" id="faq-panel-2" role="region"> <p>[Answer 2]</p> </div>
                     </div>
                     </section>
 
-                 </article>
-        </div> </main> <footer class="site-footer">
+            </article>
+        </div> 
+    </main> 
+    <footer class="site-footer">
         <div class="container">
             <div class="footer-columns">
-                <div class="footer-column">
-                    <h3>FreecalcHub</h3>
-                    <p>Your one-stop destination for a wide variety of free online calculators.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Categories</h3>
-                    <ul>
-                        <li><a href="/finance/">Finance</a></li>
-                        <li><a href="/math/">Math</a></li>
-                        <li><a href="/health/">Health</a></li>
-                        <li><a href="/conversions/">Conversions</a></li>
-                        <li><a href="/date-time/">Date & Time</a></li>
-                        <li><a href="/business/">Business</a></li>
-                        <li><a href="/lifestyle/">Lifestyle</a></li>
-                        <li><a href="/blog/">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Support</h3>
-                    <ul>
-                        <li><a href="/about/">About Us</a></li>
-                        <li><a href="/contact/">Contact</a></li>
-                        <li><a href="/privacy/">Privacy Policy</a></li>
-                        <li><a href="/terms/">Terms of Service</a></li>
-                        <li><a href="/sitemap/">Sitemap</a></li>
-                    </ul>
-                </div>
+                <div class="footer-column"> <h3>FreecalcHub</h3> <p>Your one-stop destination for a wide variety of free online calculators.</p> </div>
+                <div class="footer-column"> <h3>Categories</h3> <ul> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date & Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </div>
+                <div class="footer-column"> <h3>Support</h3> <ul> <li><a href="/about/">About Us</a></li> <li><a href="/contact/">Contact</a></li> <li><a href="/privacy/">Privacy Policy</a></li> <li><a href="/terms/">Terms of Service</a></li> <li><a href="/sitemap/">Sitemap</a></li> </ul> </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p>
-            </div>
+            <div class="footer-bottom"> <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> </div>
         </div>
     </footer>
 
     <script src="/js/main.js" defer></script>
     <script src="/js/dark-mode.js" defer></script>
-
     <script src="/js/faq-accordion-v2.js" defer></script>
-
     <script src="/[path-to-your-calculator-folder]/js/[calculator-name].js" defer></script>
 
-    </body>
+</body>
 </html>
