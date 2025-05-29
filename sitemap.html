@@ -6,7 +6,7 @@
 
     <title>Site Map | FreecalcHub</title>
     <meta name="description" content="Navigate FreecalcHub.com easily with our full site map. Find all our free online calculators and informational pages.">
-    <meta name="robots" content="index, follow"> 
+    <meta name="robots" content="index, follow">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/dark-mode.css">
     <link rel="stylesheet" href="/css/dark-mode-button.css">
@@ -16,51 +16,18 @@
     <link rel="stylesheet" href="/css/navigation-ribbon.css">
 
     <style>
-        /* Basic styles for the HTML sitemap page */
-        .sitemap-section {
-            margin-bottom: 30px;
-        }
-        .sitemap-section h2 {
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-            font-size: 1.8em;
-        }
-        .sitemap-section h3 {
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.4em;
-            color: var(--text-color);
-        }
-        .sitemap-section ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        .sitemap-section ul ul {
-            padding-left: 25px; /* Indent sub-lists */
-            margin-top: 5px;
-        }
-         .sitemap-section ul ul ul { /* Third level indentation */
-            padding-left: 25px; 
-        }
-        .sitemap-section li {
-            margin-bottom: 8px;
-        }
-        .sitemap-section a {
-            text-decoration: none;
-            color: var(--primary-color);
-        }
-        .sitemap-section a:hover {
-            text-decoration: underline;
-            color: var(--primary-dark);
-        }
-        .main-categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+        .sitemap-section { margin-bottom: 30px; }
+        .sitemap-section h2 { border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; margin-bottom: 15px; font-size: 1.8em; }
+        .sitemap-section h3 { margin-top: 20px; margin-bottom: 10px; font-size: 1.4em; color: var(--text-color); }
+        .sitemap-section ul { list-style: none; padding-left: 0; }
+        .sitemap-section ul ul { padding-left: 25px; margin-top: 5px; }
+        .sitemap-section ul ul ul { padding-left: 25px; }
+        .sitemap-section li { margin-bottom: 8px; }
+        .sitemap-section a { text-decoration: none; color: var(--primary-color); }
+        .sitemap-section a:hover { text-decoration: underline; color: var(--primary-dark); }
+        .main-categories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .sitemap-section .coming-soon { color: var(--text-muted); font-style: italic; }
     </style>
-
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
     <script>
@@ -76,11 +43,12 @@
       "@type": "WebPage",
       "name": "Site Map | FreecalcHub",
       "description": "Navigate FreecalcHub.com easily with our full site map. Find all our free online calculators and informational pages.",
-      "url": "https://www.freecalchub.com/sitemap.html",
+      "url": "https://www.freecalchub.com/sitemap/",
        "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
        "inLanguage": "en-US",
        "datePublished": "2025-05-25",
-       "dateModified": "2025-05-28T02:22:22+00:00" }
+       "dateModified": "2025-05-29T10:35:00Z"
+    }
     </script>
 </head>
 <body>
@@ -88,9 +56,7 @@
 
     <header class="site-header">
         <div class="header-container">
-            <div class="logo-container">
-                <a href="/"><img src="/images/logo.svg" alt="FreecalcHub Logo"></a>
-            </div>
+            <div class="logo-container"> <a href="/"><img src="/images/logo.svg" alt="FreecalcHub Logo"></a> </div>
             <nav class="main-nav">
                 <ul>
                     <li><a href="/finance/">Finance</a></li>
@@ -103,23 +69,10 @@
                     <li><a href="/blog/">Blog</a></li>
                 </ul>
             </nav>
-            <div class="header-controls">
-                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                </button>
-                <button id="mobile-menu-button" aria-label="Toggle menu">
-                    <i class="fas fa-bars menu-icon"></i>
-                </button>
-            </div>
+            <div class="header-controls"> <button id="dark-mode-toggle" aria-label="Toggle dark mode"> <i class="fas fa-moon"></i> <i class="fas fa-sun"></i> </button> <button id="mobile-menu-button" aria-label="Toggle menu"> <i class="fas fa-bars menu-icon"></i> </button> </div>
         </div>
         <div id="mobile-menu" class="mobile-menu">
-            <div class="mobile-menu-header">
-                <span>Menu</span>
-                <button id="mobile-menu-close" aria-label="Close menu">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
+            <div class="mobile-menu-header"> <span>Menu</span> <button id="mobile-menu-close" aria-label="Close menu"> <i class="fas fa-times"></i> </button> </div>
             <nav class="mobile-nav">
                 <ul>
                     <li><a href="/">Home</a></li>
@@ -173,10 +126,11 @@
                                     <ul>
                                         <li><a href="/finance/loan/loan-calculator/">Loan Calculator</a></li>
                                         <li><a href="/finance/loan/extra-payment-calculator/">Extra Payment Calculator</a></li>
-                                        <li><a href="/finance/loan/auto-loan-calculator/">Auto Loan Calculator</a></li> 
+                                        <li><a href="/finance/loan/auto-loan-calculator/">Auto Loan Calculator</a></li>
                                         <li><a href="/finance/loan/student-loan-payoff-calculator/">Student Loan Payoff Calculator</a></li>
                                         <li><a href="/finance/loan/debt-payoff-calculator/">Debt Payoff Calculator</a></li>
-                                        <li><a href="/finance/loan/loan-comparison-calculator/">Loan Comparison Calculator</a></li> </ul>
+                                        <li><a href="/finance/loan/loan-comparison-calculator/">Loan Comparison Calculator</a></li>
+                                    </ul>
                                 </li>
                                 <li><a href="/finance/mortgage/">Mortgage Calculators</a>
                                     <ul>
@@ -198,7 +152,21 @@
                                         <li><a href="/finance/savings/savings-goal-calculator/">Savings Goal Calculator</a></li>
                                     </ul>
                                 </li>
-                            </ul>
+                                <li><a href="/finance/budgeting/">Budgeting Calculators</a>
+                                    <ul>
+                                        <li><a href="/finance/budgeting/monthly-budget-calculator/">Monthly Budget Calculator <span class="coming-soon">(Coming Soon)</span></a></li>
+                                        <li><a href="/finance/budgeting/expense-tracker-calculator/">Expense Tracker Calculator <span class="coming-soon">(Coming Soon)</span></a></li>
+                                        <li><a href="/finance/budgeting/debt-to-income-ratio-calculator/">Debt-to-Income Ratio Calculator <span class="coming-soon">(Coming Soon)</span></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/finance/taxes/">Tax Calculators</a>
+                                    <ul>
+                                        <li><a href="/finance/taxes/income-tax-calculator/">Income Tax Calculator <span class="coming-soon">(Coming Soon)</span></a></li>
+                                        <li><a href="/finance/taxes/sales-tax-calculator/">Sales Tax Calculator <span class="coming-soon">(Coming Soon)</span></a></li>
+                                        <li><a href="/finance/taxes/tax-bracket-calculator/">Tax Bracket Calculator <span class="coming-soon">(Coming Soon)</span></a></li>
+                                    </ul>
+                                </li>
+                                </ul>
                         </div>
 
                         <div>
@@ -226,19 +194,18 @@
                                         <li><a href="/math/percentages/percentage-calculator/">Percentage Calculator</a></li>
                                     </ul>
                                 </li>
-                                </ul>
+                            </ul>
                         </div>
 
                         <div>
                             <h3><a href="/conversions/">Conversion Calculators</a></h3>
                             <ul>
-                                <li>
-                                    <a href="/conversions/length-converter/">Length Converters</a>
+                                <li><a href="/conversions/length-converter/">Length Converters</a>
                                     <ul>
                                         <li><a href="/conversions/length-converter/length-unit-calculator/">Length Unit Converter</a></li>
-                                        <li>Metric to Imperial Converter (Future)</li>
-                                        <li>Nautical Miles Converter (Future)</li>
-                                        <li>Astronomical Units Converter (Future)</li>
+                                        <li>Metric to Imperial Converter <span class="coming-soon">(Coming Soon)</span></li>
+                                        <li>Nautical Miles Converter <span class="coming-soon">(Coming Soon)</span></li>
+                                        <li>Astronomical Units Converter <span class="coming-soon">(Coming Soon)</span></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -247,14 +214,14 @@
                         <div>
                             <h3><a href="/date-time/">Date & Time Calculators</a></h3>
                              <ul>
-                                <li>Date Duration Calculator (Example)</li>
+                                <li>Date Duration Calculator <span class="coming-soon">(Coming Soon)</span></li>
                             </ul>
                         </div>
-                        
+
                         <div>
                             <h3><a href="/business/">Business Calculators</a></h3>
                              <ul>
-                                <li>Margin Calculator (Example)</li>
+                                <li>Margin Calculator <span class="coming-soon">(Coming Soon)</span></li>
                             </ul>
                         </div>
 
@@ -265,17 +232,14 @@
                                 <li><a href="/lifestyle/garden/">Garden Calculators</a></li>
                                 <li><a href="/lifestyle/travel/">Travel Calculators</a></li>
                                 <li><a href="/lifestyle/pets/">Pets Calculators</a></li>
-                                <li>
-                                    <a href="/lifestyle/dining-social/">Dining & Social Calculators</a>
+                                <li><a href="/lifestyle/dining-social/">Dining & Social Calculators</a>
                                     <ul>
                                         <li><a href="/lifestyle/dining-social/tip-calculator/">Tip Calculator</a></li>
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="/lifestyle/education/">Education Calculators</a>
+                                <li><a href="/lifestyle/education/">Education Calculators</a>
                                     <ul>
-                                        <li>
-                                            <a href="/lifestyle/education/grading-performance/">Grading & Performance Calculators</a>
+                                        <li><a href="/lifestyle/education/grading-performance/">Grading & Performance Calculators</a>
                                             <ul>
                                                 <li><a href="/lifestyle/education/grading-performance/gpa-calculator/">GPA Calculator</a></li>
                                             </ul>
@@ -295,6 +259,7 @@
                     <h2>Other Pages</h2>
                     <ul>
                         <li><a href="/about/">About Us</a></li>
+                        <li><a href="/contact/">Contact Us</a></li>
                         <li><a href="/privacy/">Privacy Policy</a></li>
                         <li><a href="/terms/">Terms of Service</a></li>
                         <li><a href="/gdpr/">GDPR Information</a></li>
@@ -333,7 +298,7 @@
                         <li><a href="/contact/">Contact</a></li>
                         <li><a href="/privacy/">Privacy Policy</a></li>
                         <li><a href="/terms/">Terms of Service</a></li>
-                        <li><a href="/sitemap.xml">XML Sitemap</a></li>
+                        <li><a href="/sitemap/">Sitemap</a></li>
                     </ul>
                 </div>
             </div>
