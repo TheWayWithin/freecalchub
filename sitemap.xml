@@ -239,6 +239,7 @@
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
+        
   <url>
     <loc>https://freecalchub.com/health/bmi/</loc>
     <lastmod>2025-05-25T11:28:21+00:00</lastmod>
@@ -331,7 +332,25 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
+        
+  <url>
+    <loc>https://www.freecalchub.com/math/geometry/</loc>
+    <lastmod>2025-05-30T00:26:00Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/math/algebra/</loc>
+    <lastmod>2025-05-30T00:26:00Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/math/statistics/</loc>
+    <lastmod>2025-05-30T00:26:00Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
   <url>
     <loc>https://freecalchub.com/math/percentages/</loc>
     <lastmod>2025-05-25T11:28:21+00:00</lastmod>
