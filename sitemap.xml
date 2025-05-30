@@ -363,5 +363,29 @@
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://www.freecalchub.com/math/basic/</loc>
+    <lastmod>2025-05-30T01:48:00Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/math/fractions/</loc>
+    <lastmod>2025-05-30T01:48:00Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/math/calculus/</loc>
+    <lastmod>2025-05-30T01:48:00Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/math/scientific/</loc>
+    <lastmod>2025-05-30T01:48:00Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
 </urlset>
