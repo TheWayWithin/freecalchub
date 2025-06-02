@@ -1,0 +1,109 @@
+/*
+ * FreecalcHub.com - Live Currency Converter
+ * Version: 1.0
+ * Date Created: June 1, 2025
+ * Description: Specific styles for the Live Currency Converter.
+ */
+
+.currency-form-layout {
+    display: flex;
+    align-items: flex-end; /* Align items to the bottom for consistent baseline */
+    gap: 15px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin-bottom: 20px; /* Space below the input group */
+}
+
+.currency-form-layout .form-group {
+    margin-bottom: 0; /* Remove default margin if any, rely on gap */
+    flex-grow: 1;
+}
+
+.currency-form-layout .form-group.amount-input {
+    flex-basis: 150px; /* Base width for amount input */
+    min-width: 120px;
+}
+
+.currency-form-layout .form-group.currency-select {
+    flex-basis: 200px; /* Base width for currency dropdowns */
+    min-width: 180px;
+}
+
+.currency-form-layout #swapButton {
+    padding: 10px 15px; /* Standard button padding */
+    height: auto;      /* Match input field height */
+    line-height: normal;
+    flex-shrink: 0;    /* Prevent button from shrinking */
+    margin-left: 5px;  /* Small space from left element */
+    margin-right: 5px; /* Small space before right element */
+    /* align-self: flex-end; Ensure button aligns with input fields bottom edge */
+}
+
+.currency-form-layout .form-group select,
+.currency-form-layout .form-group input[type="number"] {
+    width: 100%; /* Make inputs and selects fill their flex item container */
+}
+
+/* Results Display Styling */
+.main-result {
+    font-size: 1.8em; /* Make the main result prominent */
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px; /* Space above */
+    margin-bottom: 15px; /* Space below */
+    background-color: var(--background-alt);
+    border-radius: var(--border-radius);
+}
+
+.main-result strong {
+    color: var(--accent-color); /* Highlight the converted amount */
+}
+
+.rate-info {
+    font-size: 0.95em;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 15px;
+    background-color: var(--background-alt-transparent); /* Slightly different background */
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+}
+
+.rate-info p {
+    margin: 5px 0;
+}
+
+#rateTimestamp {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+#rateSourceInfo {
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+
+/* Ensure results section title is styled */
+#resultsSection .results-title {
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustments for form layout */
+@media (max-width: 768px) {
+    .currency-form-layout {
+        flex-direction: column;
+        align-items: stretch; /* Make items take full width when stacked */
+    }
+    .currency-form-layout .form-group,
+    .currency-form-layout #swapButton {
+        flex-basis: auto; /* Reset basis */
+        width: 100%;     /* Full width for stacked items */
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .currency-form-layout #swapButton {
+        margin-top: 10px; /* Add space above swap button when stacked */
+        margin-bottom: 10px;
+    }
+}
