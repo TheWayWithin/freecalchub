@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const toCurrencySelect = document.getElementById('toCurrency');
     const swapButton = document.getElementById('swapButton');
     const resetButton = document.getElementById('resetButton');
+    const calculatorForm = document.getElementById('calculatorForm'); // FCH DEBUG: Added for reset function
 
     const resultsSection = document.getElementById('resultsSection');
     const fromAmountDisplay = document.getElementById('fromAmountDisplay');
@@ -22,23 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const rateTimestamp = document.getElementById('rateTimestamp');
     const errorMessagesDiv = document.getElementById('errorMessages');
 
-    // --- Configuration for API ---
-    // IMPORTANT: Replace 'YOUR_API_KEY' with an actual API key if required by the provider.
-    // For ExchangeRate-API.com (example, v6 has 'latest' endpoint without specific base)
-    // For V1, we might fetch rates against a base like USD and then calculate cross rates if needed.
-    // Or, if the API supports pair conversion directly, that's simpler.
-    // Let's assume an API structure like: https://api.exchangerate-api.com/v4/latest/USD
-    // For this example, I'll use a free tier of ExchangeRate-API.
-    // Real API key management should be handled securely, not hardcoded in client-side JS for production.
-    // For this example, we'll simulate fetching for a few currencies based on USD.
-    
-    const API_BASE_URL = 'https://open.er-api.com/v6/latest/'; // Example free API
+    const API_BASE_URL = 'https://open.er-api.com/v6/latest/';
     let exchangeRates = null;
     let ratesLastUpdateTimestamp = null;
-    let baseCurrencyForRates = 'USD'; // The currency our fetched rates are relative to
+    let baseCurrencyForRates = 'USD';
 
-    // List of currencies for V1 (should match HTML select options)
-    const currencies = [
+    const currencies = [ // FCH DEBUG: This list is fine, but populateDropdowns might be redundant if HTML is hardcoded
         { code: "USD", name: "US Dollar" }, { code: "EUR", name: "Euro" }, { code: "JPY", name: "Japanese Yen" },
         { code: "GBP", name: "British Pound" }, { code: "AUD", name: "Australian Dollar" }, { code: "CAD", name: "Canadian Dollar" },
         { code: "CHF", name: "Swiss Franc" }, { code: "CNY", name: "Chinese Yuan Renminbi" }, { code: "INR", name: "Indian Rupee" },
@@ -48,88 +38,118 @@ document.addEventListener('DOMContentLoaded', () => {
         { code: "KRW", name: "South Korean Won" }, { code: "TRY", name: "Turkish Lira" }
     ];
 
-    // Populate dropdowns (can also be hardcoded in HTML for V1)
     function populateDropdowns() {
+        // FCH DEBUG: As HTML is pre-populated, this function creates duplicates.
+        // We will address this as a separate bug fix. For now, leaving it to observe.
+        // A proper fix would be to remove this function call if HTML is the source of truth for options.
         currencies.forEach(currency => {
             const optionFrom = new Option(`${currency.code} - ${currency.name}`, currency.code);
             const optionTo = new Option(`${currency.code} - ${currency.name}`, currency.code);
-            fromCurrencySelect.add(optionFrom);
-            toCurrencySelect.add(optionTo);
+            // Ensure not to add if already exists from HTML - this is a quick check, better to not call if HTML is static
+            if (!fromCurrencySelect.querySelector(`option[value="${currency.code}"]`)) {
+                 fromCurrencySelect.add(optionFrom);
+            }
+            if (!toCurrencySelect.querySelector(`option[value="${currency.code}"]`)) {
+                toCurrencySelect.add(optionTo);
+            }
         });
-        // Set default selections if needed (already done in HTML)
         fromCurrencySelect.value = "USD";
         toCurrencySelect.value = "EUR";
     }
-
 
     async function fetchExchangeRates(base = 'USD') {
         baseCurrencyForRates = base.toUpperCase();
         try {
             const response = await fetch(`${API_BASE_URL}${baseCurrencyForRates}`);
             if (!response.ok) {
-                throw new Error(`API Error: ${response.status} ${response.statusText}`);
+                throw new Error(`API Error: ${response.status} ${response.statusText}. Could not fetch rates.`);
             }
             const data = await response.json();
             if (data.result === 'error' || !data.rates) {
-                throw new Error(`API Error: ${data['error-type'] || 'Invalid data format'}`);
+                throw new Error(`API Error: ${data['error-type'] || 'Invalid data format from API.'}`);
             }
             exchangeRates = data.rates;
-            ratesLastUpdateTimestamp = data.time_last_update_unix ? new Date(data.time_last_update_unix * 1000) : new Date(); // Use current time if API doesn't provide
+            ratesLastUpdateTimestamp = data.time_last_update_unix ? new Date(data.time_last_update_unix * 1000) : new Date();
             
-            // Store rates in localStorage with a timestamp to avoid excessive API calls
             localStorage.setItem('exchangeRatesData', JSON.stringify({
                 rates: exchangeRates,
                 lastUpdate: ratesLastUpdateTimestamp.toISOString(),
                 base: baseCurrencyForRates
             }));
-
-            convertAndDisplay(); // Perform initial conversion after fetching rates
+            
+            // FCH DEBUG: Ensure error is cleared if fetch is successful before calling convertAndDisplay
+            clearErrors(); 
+            convertAndDisplay(); 
             updateRateTimestamp();
 
         } catch (error) {
-            console.error("Failed to fetch exchange rates:", error);
-            displayError(`Error fetching rates: ${error.message}. Please try again later.`);
-            // Attempt to load from localStorage if API fails
-            loadRatesFromCache();
+            console.error("Failed to fetch exchange rates:", error); // FCH DEBUG: Keep this console error.
+            displayError(`Error fetching rates: ${error.message}. Please check your internet connection or try again later.`);
+            loadRatesFromCache(); // Attempt to use cache if API fails
         }
     }
 
     function loadRatesFromCache() {
         const cachedData = localStorage.getItem('exchangeRatesData');
         if (cachedData) {
-            const data = JSON.parse(cachedData);
-            const cacheTimestamp = new Date(data.lastUpdate);
-            // Cache for 1 hour example
-            if ((new Date() - cacheTimestamp) < 3600000) { 
-                exchangeRates = data.rates;
-                ratesLastUpdateTimestamp = cacheTimestamp;
-                baseCurrencyForRates = data.base;
-                console.log("Loaded rates from cache.");
-                convertAndDisplay();
-                updateRateTimestamp();
-                return true;
+            try {
+                const data = JSON.parse(cachedData);
+                const cacheTimestamp = new Date(data.lastUpdate);
+                // Cache for 1 hour example
+                if ((new Date() - cacheTimestamp) < 3600000 && data.rates && Object.keys(data.rates).length > 0) { 
+                    exchangeRates = data.rates;
+                    ratesLastUpdateTimestamp = cacheTimestamp;
+                    baseCurrencyForRates = data.base;
+                    console.log("Loaded rates from cache."); // FCH DEBUG: This is helpful.
+                    // FCH DEBUG: Ensure error is cleared if cache load is successful before calling convertAndDisplay
+                    clearErrors();
+                    convertAndDisplay();
+                    updateRateTimestamp();
+                    return true;
+                } else {
+                    console.log("Cache expired or invalid.");
+                    localStorage.removeItem('exchangeRatesData'); // Remove expired/invalid cache
+                }
+            } catch (e) {
+                console.error("Error parsing cached rates:", e);
+                localStorage.removeItem('exchangeRatesData'); // Remove corrupted cache
             }
         }
-        console.log("Cache expired or not available.");
+        console.log("Cache not available or expired.");
         return false;
     }
 
-
     function clearErrors() {
-        errorMessagesDiv.textContent = '';
-        errorMessagesDiv.style.display = 'none';
-        amountInput.classList.remove('input-error');
+        if (errorMessagesDiv) { // FCH DEBUG: Defensive check
+            errorMessagesDiv.textContent = '';
+            errorMessagesDiv.style.display = 'none';
+            // FCH DEBUG: Explicitly set some styles to ensure visibility if it was hidden weirdly
+            errorMessagesDiv.style.color = ''; // Reset to default stylesheet color (usually black or red via CSS)
+            errorMessagesDiv.style.padding = ''; // Reset
+            errorMessagesDiv.style.height = ''; // Reset
+            errorMessagesDiv.style.opacity = ''; // Reset
+        }
+        if (amountInput) amountInput.classList.remove('input-error');
     }
 
-    function displayError(message) {
-        errorMessagesDiv.textContent = message;
-        errorMessagesDiv.style.display = 'block';
-        resultsSection.style.display = 'none';
+    function displayError(message, isHardError = true) { // FCH DEBUG: isHardError flag (unused for now, but for future styling)
+        console.log("FCH DEBUG: displayError called with message:", message); // FCH DEBUG: Log when this is called.
+        if (errorMessagesDiv) { // FCH DEBUG: Defensive check
+            errorMessagesDiv.textContent = message;
+            errorMessagesDiv.style.display = 'block';
+            // FCH DEBUG: Force some styles to make it more likely to be visible
+            errorMessagesDiv.style.color = 'red'; // Example: Force red color
+            errorMessagesDiv.style.padding = '10px';
+            errorMessagesDiv.style.border = '1px solid red'; // Make it very obvious
+            errorMessagesDiv.style.height = 'auto';
+            errorMessagesDiv.style.opacity = '1';
+        }
+        if (resultsSection) resultsSection.style.display = 'none';
     }
     
     function formatValue(value, decimals = 4) {
-        if (isNaN(value) || value === null) return '--';
-        let formatted = parseFloat(value.toFixed(8)); // Intermediate high precision
+        if (isNaN(value) || value === null || value === undefined) return '--'; // FCH DEBUG: added undefined check
+        let formatted = parseFloat(value.toFixed(8)); 
         if (Math.abs(formatted) < 0.000001 && formatted !== 0) {
              return formatted.toExponential(4);
         }
@@ -137,15 +157,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function convertAndDisplay() {
-        clearErrors();
-        if (!exchangeRates) {
-            // displayError("Exchange rates not available. Please try again shortly.");
-            // Attempt to fetch if not available (e.g., on first load or if cache failed)
-            if (!loadRatesFromCache()) {
-                fetchExchangeRates(fromCurrencySelect.value || 'USD'); // Fetch based on current "from" or USD
+        // FCH DEBUG: Do not call clearErrors() immediately here, let previous error persist if rates not ready.
+        // clearErrors(); // FCH DEBUG: Moved this call to later.
+
+        if (!exchangeRates || Object.keys(exchangeRates).length === 0) { // FCH DEBUG: Check if exchangeRates is empty object
+            // FCH DEBUG: Rates are not available. Inform user and attempt to fetch.
+            // The original commented-out displayError was here.
+            // Let's provide feedback.
+            displayError("Exchange rates are currently unavailable or loading. Please wait or try again shortly.", false);
+            console.log("FCH DEBUG: exchangeRates not available in convertAndDisplay. Attempting fetch/cache.");
+            if (!loadRatesFromCache()) { 
+                fetchExchangeRates(fromCurrencySelect.value || 'USD');
             }
             return; 
         }
+        
+        // FCH DEBUG: Now that we know rates *should* be available (or we returned), clear previous non-critical errors.
+        clearErrors(); 
 
         const amount = parseFloat(amountInput.value);
         const fromCurrency = fromCurrencySelect.value;
@@ -155,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (amountInput.value.trim() !== "") {
                 displayError("Please enter a valid amount.");
             } else {
-                hideResults();
+                hideResults(); // FCH DEBUG: This is for when amount is empty
             }
             return;
         }
@@ -164,75 +192,65 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Conversion Logic:
-        // All rates in 'exchangeRates' are relative to 'baseCurrencyForRates'.
-        // So, AmountInBase = AmountInFromCurrency / RateOfFromCurrency (relative to base)
-        // Result = AmountInBase * RateOfToCurrency (relative to base)
-        // Simplified: Result = (AmountInFromCurrency / RateFrom) * RateTo
-        // OR: AmountInFromCurrency * (RateTo / RateFrom)
+        const rateFrom = exchangeRates[fromCurrency];
+        const rateTo = exchangeRates[toCurrency];
 
-        const rateFrom = exchangeRates[fromCurrency]; // Rate of FromCurrency relative to baseCurrencyForRates
-        const rateTo = exchangeRates[toCurrency];     // Rate of ToCurrency relative to baseCurrencyForRates
-
-        if (!rateFrom || !rateTo) {
-            displayError("Selected currency rate not available. Rates might be updating. Try base USD or EUR.");
-            // Attempt to refetch with USD as base if a currency is missing, could indicate stale base
-            if (baseCurrencyForRates !== 'USD') {
+        if (rateFrom === undefined || rateTo === undefined) { // FCH DEBUG: Stricter check for undefined
+            displayError(`Rate for ${fromCurrency} or ${toCurrency} not available. Base: ${baseCurrencyForRates}. Rates might be updating.`);
+            // FCH DEBUG: Avoid refetching loop if base is already what we tried.
+            if (baseCurrencyForRates !== 'USD' && fromCurrencySelect.value !== baseCurrencyForRates) { // Example condition
                 console.warn(`Rate for ${fromCurrency} or ${toCurrency} not found with base ${baseCurrencyForRates}. Refetching with USD.`);
                 fetchExchangeRates('USD');
+            } else if (baseCurrencyForRates === 'USD' && (fromCurrency === 'USD' || toCurrency === 'USD')) {
+                 // If base is USD and one of the selected is USD, but rate is missing, the API data is problematic for that currency
+                 console.warn(`Rate for ${fromCurrency} or ${toCurrency} is missing even with USD base. Data issue?`);
             }
             return;
         }
         
         let convertedAmount;
-        // If the base currency of our stored rates is the 'fromCurrency', calculation is direct
         if (baseCurrencyForRates === fromCurrency) {
             convertedAmount = amount * rateTo;
-        } 
-        // If the base currency is the 'toCurrency', calculation is inverse
-        else if (baseCurrencyForRates === toCurrency) {
+        } else if (baseCurrencyForRates === toCurrency) {
             convertedAmount = amount / rateFrom;
-        }
-        // Else, convert 'from' to base, then base to 'to'
-        else {
+        } else {
             const amountInBase = amount / rateFrom; 
             convertedAmount = amountInBase * rateTo;
         }
 
-
         fromAmountDisplay.textContent = formatValue(amount, 2);
         fromCurrencyDisplay.textContent = fromCurrency;
-        toAmountDisplay.textContent = formatValue(convertedAmount, 2); // Typically display currency with 2 decimals
+        toAmountDisplay.textContent = formatValue(convertedAmount, 2);
         toCurrencyDisplay.textContent = toCurrency;
 
-        // Calculate and display direct and inverse rates
-        const directRate = rateTo / rateFrom; // 1 unit of FromCurrency = X units of ToCurrency
-        const inverseRate = rateFrom / rateTo; // 1 unit of ToCurrency = Y units of FromCurrency
+        const directRate = rateTo / rateFrom;
+        const inverseRate = rateFrom / rateTo;
 
         rateDisplay.textContent = `1 ${fromCurrency} = ${formatValue(directRate, 6)} ${toCurrency}`;
         inverseRateDisplay.textContent = `1 ${toCurrency} = ${formatValue(inverseRate, 6)} ${fromCurrency}`;
         
-        resultsSection.style.display = 'block';
+        if (resultsSection) resultsSection.style.display = 'block'; // FCH DEBUG: Defensive check
         updateRateTimestamp();
     }
     
     function updateRateTimestamp() {
-        if (ratesLastUpdateTimestamp) {
-            rateTimestamp.textContent = `Rates last updated: ${ratesLastUpdateTimestamp.toLocaleString()}`;
-        } else {
-            rateTimestamp.textContent = "Rates last updated: Fetching...";
+        if (rateTimestamp) { // FCH DEBUG: Defensive check
+            if (ratesLastUpdateTimestamp) {
+                rateTimestamp.textContent = `Rates last updated: ${ratesLastUpdateTimestamp.toLocaleString()}`;
+            } else {
+                rateTimestamp.textContent = "Rates last updated: Fetching...";
+            }
         }
     }
 
     function hideResults() {
-        resultsSection.style.display = 'none';
-        // Clear result fields
-        fromAmountDisplay.textContent = '--';
-        fromCurrencyDisplay.textContent = '---';
-        toAmountDisplay.textContent = '--';
-        toCurrencyDisplay.textContent = '---';
-        rateDisplay.textContent = '1 --- = -- ---';
-        inverseRateDisplay.textContent = '1 --- = -- ---';
+        if (resultsSection) resultsSection.style.display = 'none'; // FCH DEBUG: Defensive check
+        if (fromAmountDisplay) fromAmountDisplay.textContent = '--';
+        if (fromCurrencyDisplay) fromCurrencyDisplay.textContent = '---';
+        if (toAmountDisplay) toAmountDisplay.textContent = '--';
+        if (toCurrencyDisplay) toCurrencyDisplay.textContent = '---';
+        if (rateDisplay) rateDisplay.textContent = '1 --- = -- ---';
+        if (inverseRateDisplay) inverseRateDisplay.textContent = '1 --- = -- ---';
     }
 
     function swapCurrencies() {
@@ -243,41 +261,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleReset() {
-        calculatorForm.reset(); // Resets form elements to their initial HTML state
-        fromCurrencySelect.value = "USD"; // Re-assert defaults if needed
-        toCurrencySelect.value = "EUR";
+        if (calculatorForm) calculatorForm.reset(); 
+        if (fromCurrencySelect) fromCurrencySelect.value = "USD"; 
+        if (toCurrencySelect) toCurrencySelect.value = "EUR";
         clearErrors();
         hideResults();
-        updateRateTimestamp(); // Reflects that we might need to fetch again or show placeholder
+        updateRateTimestamp(); 
     }
 
     // --- Event Listeners ---
-    amountInput.addEventListener('input', convertAndDisplay);
-    fromCurrencySelect.addEventListener('change', () => {
-        // Option: Fetch new rates if base currency changes, or always convert through USD/EUR
-        // For simplicity, if fromCurrency is a major one, we could refetch with it as base.
-        // For now, we assume the initial fetch (e.g. USD based) is sufficient for cross-conversion.
-        // If base currency changes: fetchExchangeRates(fromCurrencySelect.value);
-        convertAndDisplay();
-    });
-    toCurrencySelect.addEventListener('change', convertAndDisplay);
-    swapButton.addEventListener('click', swapCurrencies);
-    resetButton.addEventListener('click', handleReset);
+    if (amountInput) amountInput.addEventListener('input', convertAndDisplay);
+    if (fromCurrencySelect) fromCurrencySelect.addEventListener('change', convertAndDisplay); // FCH DEBUG: Simpler call
+    if (toCurrencySelect) toCurrencySelect.addEventListener('change', convertAndDisplay);
+    if (swapButton) swapButton.addEventListener('click', swapCurrencies);
+    if (resetButton) resetButton.addEventListener('click', handleReset);
 
     // --- Initial Setup ---
-    populateDropdowns(); // Populate if not hardcoded
+    // populateDropdowns(); // FCH DEBUG: Deferring fix for duplicate dropdowns to Part 2. For now, let it run.
+    
+    // FCH DEBUG: Initialize with hidden results until amount is entered or rates confirmed.
+    hideResults(); 
+
     if (!loadRatesFromCache()) {
-        // If cache is not loaded or expired, fetch new rates.
-        // Fetch rates based on default "From" currency or a standard base like USD.
         fetchExchangeRates(fromCurrencySelect.value || 'USD');
     } else {
-        // If loaded from cache, ensure timestamp is updated
-        updateRateTimestamp();
-    }
-    // If amount is pre-filled, convert
-    if(amountInput.value && exchangeRates){
-        convertAndDisplay();
-    } else {
-        hideResults();
+        // If loaded from cache, check if amount is pre-filled (e.g. by browser)
+        if(amountInput && amountInput.value && exchangeRates && Object.keys(exchangeRates).length > 0) {
+            convertAndDisplay();
+        } else {
+            updateRateTimestamp(); // Show cached timestamp even if no initial conversion
+        }
     }
 });
