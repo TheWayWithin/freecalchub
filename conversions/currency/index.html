@@ -15,6 +15,20 @@
     <link rel="stylesheet" href="/css/breadcrumb-styles.css">
     <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Styles from category_template.html for grid consistency */
+        .calculator-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; margin-bottom: 30px; }
+        .calculator-card, .category-card { border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 20px; background-color: var(--background-alt); text-decoration: none; color: var(--text-color); transition: box-shadow 0.3s ease; display: flex; flex-direction: column; align-items: center; text-align: center; min-height: 220px; /* Ensure cards have some min height */ }
+        .calculator-card:hover, .category-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .card-icon { font-size: 2.5em; margin-bottom: 15px; color: var(--primary-color); }
+        .calculator-card h3, .category-card h3 { margin-top: 0; margin-bottom: 10px; font-size: 1.25em; }
+        .calculator-card h3 a, .category-card h3 a { text-decoration: none; color: var(--primary-color); }
+        .calculator-card p, .category-card p { font-size: 0.95em; line-height: 1.5; color: var(--text-color); flex-grow: 1; margin-bottom:10px;}
+        .category-header { display: block; margin-bottom: 30px; }
+        .category-header p.lead { margin-top: 15px; font-size: 1.1em; line-height: 1.6; max-width: 900px; }
+        .coming-soon-tag { font-size: 0.8em; font-weight: bold; color: var(--secondary-color); display: block; margin-top: 5px; }
+        .calculator-card .btn { margin-top: auto; }
+    </style>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
     <script>
@@ -35,27 +49,28 @@
           "url": "https://www.freecalchub.com/conversions/currency/",
           "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
           "inLanguage": "en-US",
-          "datePublished": "2025-05-30T02:13:00Z",
-          "dateModified": "2025-05-30T02:13:00Z",
+          "datePublished": "2025-06-01",
+          "dateModified": "2025-06-01T19:08:29-04:00", 
           "hasPart": [
             {
               "@type": "SoftwareApplication",
-              "name": "Live Currency Converter (Coming Soon)",
-              "url": "https://www.freecalchub.com/conversions/currency/live-currency-converter/"
+              "name": "Live Currency Converter",
+              "url": "https://www.freecalchub.com/conversions/currency/live-currency-converter/",
+              "description": "Convert major world currencies with up-to-date exchange rates."
             },
             {
               "@type": "SoftwareApplication",
-              "name": "Historical Exchange Rates Converter (Coming Soon)",
+              "name": "Historical Exchange Rates Converter",
               "url": "https://www.freecalchub.com/conversions/currency/historical-exchange-rates-converter/"
             },
             {
               "@type": "SoftwareApplication",
-              "name": "Cryptocurrency Converter (Coming Soon)",
+              "name": "Cryptocurrency Converter",
               "url": "https://www.freecalchub.com/conversions/currency/cryptocurrency-converter/"
             },
             {
               "@type": "SoftwareApplication",
-              "name": "Inflation Calculator (Coming Soon)",
+              "name": "Inflation Calculator",
               "url": "https://www.freecalchub.com/conversions/currency/inflation-calculator/"
             }
           ]
@@ -64,25 +79,13 @@
           "@type": "BreadcrumbList",
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Conversions", "item": "https://www.freecalchub.com/conversions/" },
-            { "@type": "ListItem", "position": 3, "name": "Currency", "item": "https://www.freecalchub.com/conversions/currency/" }
+            { "@type": "ListItem", "position": 2, "name": "Conversion Calculators", "item": "https://www.freecalchub.com/conversions/" },
+            { "@type": "ListItem", "position": 3, "name": "Currency Conversion Calculators", "item": "https://www.freecalchub.com/conversions/currency/" }
           ]
         }
       ]
     }
     </script>
-    <style>
-        .calculator-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; margin-bottom: 30px; }
-        .calculator-card, .category-card { border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 20px; background-color: var(--background-alt); text-decoration: none; color: var(--text-color); transition: box-shadow 0.3s ease; display: flex; flex-direction: column; align-items: center; text-align: center; }
-        .calculator-card:hover, .category-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .card-icon { font-size: 2.5em; margin-bottom: 15px; color: var(--primary-color); }
-        .calculator-card h3, .category-card h3 { margin-top: 0; margin-bottom: 10px; font-size: 1.25em; }
-        .calculator-card h3 a, .category-card h3 a { text-decoration: none; color: var(--primary-color); }
-        .calculator-card p, .category-card p { font-size: 0.95em; line-height: 1.5; color: var(--text-color); }
-        .category-header { display: block; margin-bottom: 30px; }
-        .category-header p.lead { margin-top: 15px; font-size: 1.1em; line-height: 1.6; max-width: 900px; }
-        .coming-soon-tag { font-size: 0.8em; font-weight: bold; color: var(--secondary-color); display: block; margin-top: 5px; }
-    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
@@ -111,16 +114,16 @@
         <div class="breadcrumbs-container">
             <a href="/">Home</a>
             <span class="separator">/</span>
-            <a href="/conversions/">Conversions</a>
+            <a href="/conversions/">Conversion Calculators</a>
             <span class="separator">/</span>
-            <span class="current">Currency</span>
+            <span class="current">Currency Conversion Calculators</span>
         </div>
     </div>
 
     <div class="navigation-ribbon">
         <div class="navigation-ribbon-container">
-            <a href="/conversions/length/"><i class="fas fa-ruler"></i>Length</a>
-            <a href="/conversions/weight/"><i class="fas fa-weight"></i>Weight</a>
+            <a href="/conversions/length-converter/"><i class="fas fa-ruler-horizontal"></i>Length</a>
+            <a href="/conversions/weight/"><i class="fas fa-weight-hanging"></i>Weight</a>
             <a href="/conversions/volume/"><i class="fas fa-flask"></i>Volume</a>
             <a href="/conversions/temperature/"><i class="fas fa-thermometer-half"></i>Temperature</a>
             <a href="/conversions/area/"><i class="fas fa-vector-square"></i>Area</a>
@@ -140,7 +143,8 @@
             <div class="calculator-card">
                 <div class="card-icon"><i class="fas fa-exchange-alt"></i></div>
                 <h3><a href="/conversions/currency/live-currency-converter/">Live Currency Converter</a></h3>
-                <p>Convert major world currencies with real-time exchange rates.<span class="coming-soon-tag">(Coming Soon)</span></p>
+                <p>Convert major world currencies with up-to-date exchange rates.</p>
+                <a href="/conversions/currency/live-currency-converter/" class="btn" style="margin-top:auto;">Convert Now</a>
             </div>
             <div class="calculator-card">
                 <div class="card-icon"><i class="fas fa-history"></i></div>
@@ -160,8 +164,8 @@
         </div>
 
         <section class="category-content-section content-section">
-             <h2 class="section-title">Understanding Currency Conversions</h2>
-             <p>Currency conversion is essential for international travel, global business, and understanding economic trends. Our calculators aim to provide tools for converting between different world currencies using current and historical data, as well as tools for understanding the value of money through inflation and digital currencies.</p>
+             <h2 class="section-title">Understanding Currency Value & Exchange</h2>
+             <p>Currency values are dynamic and play a crucial role in global economics, travel, and international trade. This section provides tools to help you navigate currency conversions, understand historical trends, explore the world of cryptocurrencies, and see the impact of inflation on purchasing power. Our goal is to offer straightforward calculators to demystify these financial concepts.</p>
         </section>
     </main>
 
