@@ -1,0 +1,96 @@
+/*
+ * FreecalcHub.com - Historical Exchange Rates Converter
+ * Version: 1.0
+ * Date Created: June 4, 2025
+ * Description: Specific styles for the Historical Exchange Rates Converter.
+ */
+
+.historical-currency-form-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 20px;
+    align-items: flex-end; /* Align form groups to their bottom edge */
+    margin-bottom: 20px;
+}
+
+.historical-currency-form-layout .form-group {
+    margin-bottom: 0; /* Rely on gap for spacing */
+}
+
+.historical-currency-form-layout .form-group input[type="number"],
+.historical-currency-form-layout .form-group select,
+.historical-currency-form-layout .form-group input[type="date"] {
+    width: 100%; /* Make inputs and selects fill their container */
+}
+
+/* Specific styling for the date input if needed */
+.historical-currency-form-layout .form-group input[type="date"] {
+    padding: 8px 10px; /* Match other input padding if default is different */
+}
+
+/* Results Display Styling */
+.main-result {
+    font-size: 1.6em; /* Prominent result */
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px; 
+    margin-bottom: 15px; 
+    background-color: var(--background-alt);
+    border-radius: var(--border-radius);
+}
+
+.main-result strong {
+    color: var(--accent-color); 
+}
+
+.main-result #rateDateDisplay {
+    font-size: 0.8em;
+    font-weight: normal;
+    color: var(--text-muted);
+    display: block; /* Put date on new line */
+    margin-top: 5px;
+}
+
+.rate-info {
+    font-size: 0.95em;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 15px;
+    background-color: var(--background-alt-transparent); 
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+}
+
+.rate-info p {
+    margin: 5px 0;
+}
+
+#historicalRateDisplay {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+#dataSourceInfo {
+    font-size: 0.85em;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Ensure results section title is styled */
+#resultsSection .results-title {
+    margin-bottom: 10px;
+}
+
+/* Adjust form actions if needed for this layout */
+.historical-currency-form-layout + .form-actions {
+    margin-top: 10px; /* Ensure spacing after the grid */
+}
+
+/* Responsive adjustments if grid becomes too cramped */
+@media (max-width: 560px) { /* Adjust breakpoint as needed */
+    .historical-currency-form-layout {
+        grid-template-columns: 1fr; /* Stack all to 1 column */
+    }
+}
