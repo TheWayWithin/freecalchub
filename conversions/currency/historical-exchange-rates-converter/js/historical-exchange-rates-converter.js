@@ -1,6 +1,6 @@
 /*
  * FreecalcHub.com - Historical Exchange Rates Converter
- * Version: 1.0
+ * Version: 1.1 Fix fix for that "Cannot read properties of undefined (reading 'EUR')" error.
  * Date Created: June 4, 2025
  * Description: Fetches historical exchange rates for a specific date and converts currencies.
  */
