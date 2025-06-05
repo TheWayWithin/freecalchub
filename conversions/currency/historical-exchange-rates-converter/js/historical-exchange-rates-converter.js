@@ -1,6 +1,6 @@
 /*
  * FreecalcHub.com - Historical Exchange Rates Converter
- * Version: 1.0 
+ * Version: 1.0 // Let me know if you have an updated version number for this!
  * Date Created: June 4, 2025
  * Description: Fetches historical exchange rates for a specific date and converts currencies.
  */
@@ -20,13 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const fromCurrencyDisplay = document.getElementById('fromCurrencyDisplay');
     const toAmountDisplay = document.getElementById('toAmountDisplay');
     const toCurrencyDisplay = document.getElementById('toCurrencyDisplay');
-    const rateDateDisplay = document.getElementById('rateDateDisplay'); // For "as of [date]"
+    const rateDateDisplay = document.getElementById('rateDateDisplay');
     const historicalRateDisplay = document.getElementById('historicalRateDisplay');
-    const dataSourceInfo = document.getElementById('dataSourceInfo'); // To display API source
+    const dataSourceInfo = document.getElementById('dataSourceInfo');
     const errorMessagesDiv = document.getElementById('errorMessages');
 
     // --- Configuration ---
     const API_BASE_URL = 'https://api.exchangerate.host/';
+    const API_KEY = '4fb36e198869acdef04e81ffd0445433'; // <<< YOUR API KEY IS HERE
     const API_SOURCE_NAME = "exchangerate.host (Frankfurter)";
 
     const currencies = [
@@ -56,9 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function setDateInputMax() {
         if (!historicalDateInput) return;
-        const today = new Date(); // Current date based on user's system
-        // To ensure we always get a date that is "yesterday" or earlier,
-        // regardless of timezones, it's safest to subtract a day.
+        const today = new Date(); 
         const yesterday = new Date(today);
         yesterday.setDate(today.getDate() - 1);
         historicalDateInput.max = yesterday.toISOString().split('T')[0];
@@ -66,7 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchHistoricalRate(date, baseCurrency, fromCurrencyArgument, toCurrency) {
         const formattedDate = new Date(date).toISOString().split('T')[0];
-        const url = `${API_BASE_URL}${formattedDate}?base=${baseCurrency}&symbols=${toCurrency}`;
+        // Construct the URL with the API key
+        const url = `${API_BASE_URL}${formattedDate}?access_key=${API_KEY}&base=${baseCurrency}&symbols=${toCurrency}`;
 
         try {
             const response = await fetch(url);
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let errorResponseMessage = `Failed to fetch from API (HTTP ${response.status})`;
                 try {
                     const errorData = await response.json();
-                    let apiErrorDetails = `service status ${response.status}`; // Default if no specific message
+                    let apiErrorDetails = `service status ${response.status}`; 
                     if (errorData && errorData.error) {
                         if (typeof errorData.error === 'object' && errorData.error.info) {
                             apiErrorDetails = errorData.error.info;
@@ -86,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     errorResponseMessage = `API Error (${response.status}): ${apiErrorDetails}`;
                 } catch (e) {
-                    // Failed to parse JSON error response, use original status text if available
                     if(response.statusText) {
                          errorResponseMessage = `API Error (${response.status}): ${response.statusText || 'Could not retrieve error details from API.'}`;
                     } else {
@@ -128,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!errorMessagesDiv) return;
         errorMessagesDiv.innerHTML = ''; 
         errorMessagesDiv.style.display = 'none';
-        // Reset custom error styling
         errorMessagesDiv.style.color = ''; 
         errorMessagesDiv.style.padding = '';
         errorMessagesDiv.style.border = '';
@@ -176,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!toCurrency) { errors.push("Please select a 'To' currency."); if (toCurrencySelect) toCurrencySelect.classList.add('input-error'); }
         if (!dateValue) { errors.push("Please select a valid date."); if (historicalDateInput) historicalDateInput.classList.add('input-error'); }
         else {
-            const selectedDate = new Date(dateValue + "T00:00:00Z"); // Parse date as UTC to compare with today UTC
+            const selectedDate = new Date(dateValue + "T00:00:00Z"); 
             const today = new Date();
             const todayUTC = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
 
@@ -196,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await fetchHistoricalRate(dateValue, fromCurrency, fromCurrency, toCurrency);
             
             const convertedAmount = amount * data.rate;
-            const displayDateObj = new Date(data.date + "T00:00:00Z"); // Treat API date as UTC
+            const displayDateObj = new Date(data.date + "T00:00:00Z"); 
             const displayDateFormatted = displayDateObj.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
 
             if(fromAmountDisplay) fromAmountDisplay.textContent = formatDisplayValue(amount);
@@ -235,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if(toCurrencySelect) toCurrencySelect.value = "EUR";
         if(historicalDateInput) {
             historicalDateInput.value = ""; 
-            setDateInputMax(); // Re-apply max date in case it was cleared or needs resetting
+            setDateInputMax(); 
         }
         clearErrors();
         hideResults();
