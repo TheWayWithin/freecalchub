@@ -97,9 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const data = await response.json();
 
+            // ... inside fetchHistoricalRate function ...
             if (data.success === false) {
                 let apiErrorDetails = 'Unknown API issue reported by provider.';
                 if (data.error) {
+                    console.log("FCH DEBUG: Raw API data.error object:", JSON.stringify(data.error)); // <<< ADD THIS NEW LINE
                     if (typeof data.error === 'object' && data.error.info) {
                         apiErrorDetails = data.error.info;
                     } else if (typeof data.error === 'string') {
@@ -108,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 throw new Error(`API request not successful for ${formattedDate}. Message: ${apiErrorDetails}`);
             }
+            // ...
             if (!data.rates) {
                 throw new Error(`'rates' object not found in API response for ${formattedDate} with base ${baseCurrency}.`);
             }
