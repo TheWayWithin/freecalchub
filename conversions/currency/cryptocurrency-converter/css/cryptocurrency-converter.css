@@ -1,0 +1,22 @@
+/*
+    File: /conversions/currency/cryptocurrency-converter/css/cryptocurrency-converter.css
+    Version: 1.0
+    Author: Jamie Watters
+    Date: 2025-06-06
+*/
+
+/* The global .calculator-form grid places each .form-group into a grid cell.
+   This style ensures the swap button, which doesn't have a label, aligns
+   vertically with the other input fields that do have labels.
+*/
+.form-group.swap-button-container {
+    display: flex;
+    align-items: flex-end; /* Aligns the button to the bottom of the flex container */
+    justify-content: center; /* Centers the button horizontally in its grid cell */
+    padding-bottom: 10px; /* Approximate padding to match alignment with adjacent fields */
+}
+
+#swapButton {
+    min-width: 44px; /* Ensures a good clickable area */
+    padding: 10px;
+}
