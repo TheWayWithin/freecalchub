@@ -1,6 +1,6 @@
 # FreecalcHub Calculator Page - Template Usage Guidelines
 
-**Version: 3.1 (Updated: May 27, 2025)**
+**Version: 3.2 (Updated: June 06, 2025)**
 
 ## 1. Overview
 
@@ -234,6 +234,7 @@ This is where you add all the unique content for your calculator.
 * **Global Styles**: Leverage global classes like `calculator-form`, `content-section`, `card`.
 * **Accessibility (WCAG)**: Ensure labels, ARIA attributes, and keyboard navigability.
 * **Validation & Error Handling**: Implement client-side validation and display errors in `<div id="errorMessages">`.
+* **API & External Dependencies**: For any calculator relying on an external data API (e.g., for currency rates, inflation data, historical data), ensure the specification document clearly defines the API endpoint, authentication method (e.g., 'Requires API Key'), and the location/name of the required access key if applicable. This is a critical technical requirement for the developer.
 * **Comments**: Add comments to HTML, CSS, and JS.
 * **Testing**: Thoroughly test logic, responsiveness, browsers, HTML/Schema validation, and **Dark Mode**. Test on a server environment.
 
