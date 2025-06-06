@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inflation Calculator: Calculate Purchasing Power Over Time | FreecalcHub</title>
+    <meta name="description" content="Use our free Inflation Calculator to see how the value of money has changed over time. Determine historical purchasing power based on official inflation data.">
+
+    <link rel="stylesheet" href="/css/styles.css"> 
+    <link rel="stylesheet" href="/css/dark-mode.css"> 
+    <link rel="stylesheet" href="/css/dark-mode-button.css"> 
+    <link rel="stylesheet" href="/css/breadcrumb-styles.css"> 
+    <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <link rel="stylesheet" href="/css/navigation-ribbon.css"> 
+    <link rel="stylesheet" href="/css/faq-styles-v2.css">
+    <link rel="stylesheet" href="/conversions/currency/inflation-calculator/css/inflation-calculator.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-R1QHNSSWTC');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Inflation Calculator",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Calculate the purchasing power of money over different periods based on historical inflation data.",
+          "url": "https://www.freecalchub.com/conversions/currency/inflation-calculator/",
+          "relatedLink": [
+            {
+              "@type": "SoftwareApplication",
+              "name": "Live Currency Converter",
+              "url": "https://www.freecalchub.com/conversions/currency/live-currency-converter/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Historical Exchange Rates Converter",
+              "url": "https://www.freecalchub.com/conversions/currency/historical-exchange-rates-converter/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Cryptocurrency Converter",
+              "url": "https://www.freecalchub.com/conversions/currency/cryptocurrency-converter/"
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Savings Goal Calculator",
+                "url": "https://www.freecalchub.com/finance/savings/savings-goal-calculator/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What data is this inflation calculator based on?", "acceptedAnswer": { "@type": "Answer", "text": "This calculator uses the official Consumer Price Index (CPI-U) data for the United States, as published by the U.S. Bureau of Labor Statistics (BLS)." } },
+            { "@type": "Question", "name": "How far back do the inflation records go for this calculator?", "acceptedAnswer": { "@type": "Answer", "text": "The U.S. CPI data used generally goes back to 1913. The year selections in the calculator reflect the available data range." } },
+            { "@type": "Question", "name": "Can I calculate inflation for countries other than the USA?", "acceptedAnswer": { "@type": "Answer", "text": "This current version of the calculator is specifically designed for United States inflation data. Support for other countries may be considered in future updates." } },
+            { "@type": "Question", "name": "What is \"purchasing power\"?", "acceptedAnswer": { "@type": "Answer", "text": "Purchasing power is the value of a currency expressed in terms of the amount of goods or services that one unit of money can buy. Inflation erodes purchasing power over time." } },
+            { "@type": "Question", "name": "How is the total inflation rate calculated between two years?", "acceptedAnswer": { "@type": "Answer", "text": "The total inflation rate is calculated based on the change in the Consumer Price Index (CPI) between the start year and the end year. It's `((CPI_EndYear / CPI_StartYear) - 1) * 100%`." } },
+            { "@type": "Question", "name": "How is the average annual inflation rate calculated?", "acceptedAnswer": { "@type": "Answer", "text": "The average annual inflation rate is the geometric average rate that, if compounded annually over the period, would result in the observed total inflation. It provides a smoothed annualized figure." } },
+            { "@type": "Question", "name": "Does this calculator account for deflation?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. If the Consumer Price Index was lower in the end year than in the start year (which is rare but possible for short periods), the calculator would show a negative inflation rate, indicating deflation and an increase in purchasing power." } },
+            { "@type": "Question", "name": "Why might my personal inflation experience differ from the CPI rate?", "acceptedAnswer": { "@type": "Answer", "text": "The CPI measures the average change in prices for a broad basket of goods and services representative of urban consumers. Your personal spending habits might differ significantly from this average, so your individual inflation rate could be higher or lower." } },
+            { "@type": "Question", "name": "Can I use this calculator to predict future inflation?", "acceptedAnswer": { "@type": "Answer", "text": "No, this calculator uses historical CPI data to show past inflation. Predicting future inflation is complex and involves many economic forecasts and variables not covered by this tool." } },
+            { "@type": "Question", "name": "How does inflation impact my savings?", "acceptedAnswer": { "@type": "Answer", "text": "If the interest rate earned on your savings is lower than the inflation rate, your savings will lose purchasing power over time, meaning you can buy less with that money in the future." } }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Use the Inflation Calculator",
+          "description": "A step-by-step guide to calculating the impact of inflation on purchasing power.",
+          "step": [
+            { "@type": "HowToStep", "name": "Enter Initial Amount", "text": "Input the amount of money you want to evaluate." },
+            { "@type": "HowToStep", "name": "Select Start Year", "text": "Choose the year this amount is from." },
+            { "@type": "HowToStep", "name": "Select End Year", "text": "Choose the year you want to compare its value to." },
+            { "@type": "HowToStep", "name": "(Country Note)", "text": "This calculator currently uses historical inflation data for the United States." },
+            { "@type": "HowToStep", "name": "Calculate", "text": "Click \"Calculate\" to see the adjusted value and the total inflation rate." }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Conversion Calculators", "item": "https://www.freecalchub.com/conversions/" },
+            { "@type": "ListItem", "position": 3, "name": "Currency Conversion Calculators", "item": "https://www.freecalchub.com/conversions/currency/" },
+            { "@type": "ListItem", "position": 4, "name": "Inflation Calculator", "item": "https://www.freecalchub.com/conversions/currency/inflation-calculator/" }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "name": "Inflation Calculator: Calculate Purchasing Power Over Time | FreecalcHub",
+          "description": "Use our free Inflation Calculator to see how the value of money has changed over time. Determine historical purchasing power based on official inflation data.",
+          "url": "https://www.freecalchub.com/conversions/currency/inflation-calculator/",
+           "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
+           "inLanguage": "en-US", 
+           "datePublished": "2025-06-02",
+           "dateModified": "2025-06-06T19:12:28Z"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="/"><img src="/images/logo.svg" alt="FreecalcHub Logo"></a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/finance/">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/" class="active">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i> <i class="fas fa-sun"></i></button>
+                <button id="mobile-menu-button" aria-label="Toggle menu">
+                    <i class="fas fa-bars menu-icon"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-header">
+                <span>Menu</span>
+                <button id="mobile-menu-close" aria-label="Close menu">
+                    <i class="fas fa-times"></i></button>
+            </div>
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/finance/">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/" class="active">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <a href="/conversions/">Conversion Calculators</a>
+            <span class="separator">/</span>
+            <a href="/conversions/currency/">Currency Conversion Calculators</a>
+            <span class="separator">/</span>
+            <span class="current">Inflation Calculator</span> 
+        </div>
+    </div>
+
+    <main id="main-content" class="main-content">
+        <div class="content-container">
+            <article class="calculator-page-content">
+                <h1 class="page-title">Inflation Calculator</h1>
+
+                <section class="calculator-description-section content-section">
+                    <p>Ever wonder what $100 from 1980 would be worth today? Or how much purchasing power your current savings might have had in the past? Our <strong>Free Inflation Calculator</strong> uses historical data to show you how the value of money changes over time due to inflation. Understand the real impact of inflation on prices and purchasing power.</p>
+                </section>
+
+                <section id="calculator-section" class="calculator-interface content-section card"> 
+                    <h2 class="section-title">Calculate Inflation's Impact</h2>
+                    <div id="errorMessages" class="error-messages" style="display:none;"></div>
+                    <form id="calculatorForm" class="calculator-form">
+                        <fieldset>
+                            <legend>Enter Details</legend>
+                            <div class="form-group">
+                                <label for="initialAmount">Initial Amount ($):</label>
+                                <input type="number" id="initialAmount" step="0.01" min="0" placeholder="100.00" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="startYear">Start Year:</label>
+                                <select id="startYear" required></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="endYear">End Year:</label>
+                                <select id="endYear" required></select>
+                            </div>
+                        </fieldset>
+                        <div class="form-actions">
+                            <button type="button" id="calculateButton" class="btn btn-primary">Calculate Inflation</button>
+                            <button type="reset" id="resetButton" class="btn btn-secondary">Clear</button>
+                        </div>
+                    </form>
+
+                    <div id="resultsSection" class="results-section" style="display:none;">
+                        <h3 class="results-title">Inflation Adjusted Value</h3>
+                        <div class="main-result card">
+                            <p>$<span id="initialAmountDisplay">--</span> in <span id="startYearDisplay">----</span> has the same buying power as <strong id="adjustedAmountDisplay">$--.--</strong> in <span id="endYearDisplay">----</span>.</p>
+                        </div>
+                        <div class="rate-info card">
+                            <p>Total Inflation Rate: <strong id="totalInflationRate">--%</strong></p>
+                            <p>Average Annual Inflation Rate: <strong id="avgAnnualInflationRate">--%</strong></p>
+                            <p>Data based on U.S. CPI (Source: BLS)</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="related-calculators content-section card">
+                    <h2 class="section-title">Related Calculators</h2>
+                    <ul>
+                        <li>
+                            <a href="/conversions/currency/live-currency-converter/">
+                                <span class="calculator-name">Live Currency Converter</span>
+                                <span class="calculator-description">Convert major world currencies with up-to-date exchange rates.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/conversions/currency/historical-exchange-rates-converter/">
+                                <span class="calculator-name">Historical Exchange Rates Converter</span>
+                                <span class="calculator-description">Check currency values based on past exchange rates.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/conversions/currency/cryptocurrency-converter/">
+                                <span class="calculator-name">Cryptocurrency Converter</span>
+                                <span class="calculator-description">Convert between popular cryptocurrencies and fiat currencies.</span>
+                            </a>
+                        </li>
+                        <li>
+                           <a href="/finance/savings/savings-goal-calculator/">
+                                <span class="calculator-name">Savings Goal Calculator</span>
+                                <span class="calculator-description">Plan how to reach your savings targets over time.</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="how-to-use-section content-section">
+                    <h2 class="section-title">How to Use the Inflation Calculator</h2>
+                    <ol>
+                        <li><strong>Enter Initial Amount:</strong> Input the amount of money you want to evaluate.</li>
+                        <li><strong>Select Start Year:</strong> Choose the year this amount is from.</li>
+                        <li><strong>Select End Year:</strong> Choose the year you want to compare its value to.</li>
+                        <li><strong>(Country Note):</strong> This calculator currently uses historical inflation data for the United States.</li>
+                        <li><strong>Calculate:</strong> Click "Calculate" to see the adjusted value and the total inflation rate.</li>
+                    </ol>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">What is Inflation?</h2>
+                    <p>Inflation is the rate at which the general level of prices for goods and services is rising, and consequently, the purchasing power of currency is falling. It is typically caused by factors such as increased demand (demand-pull) or rising production costs (cost-push).</p>
+                    
+                    <h2 class="section-title">What is the Consumer Price Index (CPI)?</h2>
+                    <p>The Consumer Price Index (CPI) measures the average change over time in the prices paid by urban consumers for a market basket of consumer goods and services. It is the most widely used measure of inflation. This calculator uses CPI data provided by the U.S. Bureau of Labor Statistics (BLS) for calculations related to the United States.</p>
+
+                    <h2 class="section-title">Understanding Purchasing Power</h2>
+                    <p>Purchasing power is the value of a currency expressed in terms of the amount of goods or services one unit of money can buy. As inflation rises, the purchasing power of money erodes, meaning that the same amount of money buys fewer goods and services than it did in the past.</p>
+
+                    <h2 class="section-title">How Inflation Affects Savings & Investments</h2>
+                    <p>Inflation has a direct impact on savings and investments. For your wealth to grow in real terms, the return on your investments must be higher than the rate of inflation. If your savings earn an interest rate that is lower than the inflation rate, you are effectively losing purchasing power over time.</p>
+                </section>
+
+                <section class="faq-section content-section">
+                    <h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
+                    <div class="faq-index card">
+                        <h3>FAQ Index</h3>
+                        <ul>
+                            <li><a href="#faq-item-1">What data is this inflation calculator based on?</a></li>
+                            <li><a href="#faq-item-2">How far back do the inflation records go for this calculator?</a></li>
+                            <li><a href="#faq-item-3">Can I calculate inflation for countries other than the USA?</a></li>
+                            <li><a href="#faq-item-4">What is "purchasing power"?</a></li>
+                            <li><a href="#faq-item-5">How is the total inflation rate calculated between two years?</a></li>
+                            <li><a href="#faq-item-6">How is the average annual inflation rate calculated?</a></li>
+                            <li><a href="#faq-item-7">Does this calculator account for deflation?</a></li>
+                            <li><a href="#faq-item-8">Why might my personal inflation experience differ from the CPI rate?</a></li>
+                            <li><a href="#faq-item-9">Can I use this calculator to predict future inflation?</a></li>
+                            <li><a href="#faq-item-10">How does inflation impact my savings?</a></li>
+                        </ul>
+                    </div>
+                    <div class="faq-item" id="faq-item-1"><h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-1">What data is this inflation calculator based on?<span class="accordion-icon"></span></button></h3><div class="panel" id="faq-panel-1" role="region"><p>This calculator uses the official Consumer Price Index (CPI-U) data for the United States, as published by the U.S. Bureau of Labor Statistics (BLS).</p></div></div>
+                    <div class="faq-item" id="faq-item-2"><h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-2">How far back do the inflation records go for this calculator?<span class="accordion-icon"></span></button></h3><div class="panel" id="faq-panel-2" role="region"><p>The U.S. CPI data used generally goes back to 1913. The year selections in the calculator reflect the available data range.</p></div></div>
+                    <div class="faq-item" id="faq-item-3"><h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-3">Can I calculate inflation for countries other than the USA?<span class="accordion-icon"></span></button></h3><div class="panel" id="faq-panel-3" role="region"><p>This current version of the calculator is specifically designed for United States inflation data. Support for other countries may be considered in future updates.</p></div></div>
+                    <div class="faq-item" id="faq-item-4"><h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-4">What is "purchasing power"?<span class="accordion-icon"></span></button></h3><div class="panel" id="faq-panel-4" role="region"><p>Purchasing power is the value of a currency expressed in terms of the amount of goods or services that one unit of money can buy. Inflation erodes purchasing power over time.</p></div></div>
+                    <div class="faq-item" id="faq-item-5"><h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-5">How is the total inflation rate calculated between two years?<span class="accordion-icon"></span></button></h3><div class="panel" id="faq-panel-5" role="region"><p>The total inflation rate is calculated based on the change in the Consumer Price Index (CPI) between the start year and the end year. It's `((CPI_EndYear / CPI_StartYear) - 1) * 100%`.</p></div></div>
+                    <div class="faq-item" id="faq-item-6"><h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-6">How is the average annual inflation rate calculated?<span class="accordion-icon"></span></button></h3><div class="panel" id="faq-panel-6" role="region"><p>The average annual inflation rate is the geometric average rate that, if compounded annually over the period, would result in the observed total inflation. It provides a smoothed annualized figure.</p></div></div>
+                    <div class="faq-item" id="faq-item-7"><h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-7">Does this calculator account for deflation?<span class="accordion-icon"></span></button></h3><div class="panel" id="faq-panel-7" role="region"><p>Yes. If the Consumer Price Index was lower in the end year than in the start year (which is rare but possible for short periods), the calculator would show a negative inflation rate, indicating deflation and an increase in purchasing power.</p></div></div>
+                    <div class="faq-item" id="faq-item-8"><h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-8">Why might my personal inflation experience differ from the CPI rate?<span class="accordion-icon"></span></button></h3><div class="panel" id="faq-panel-8" role="region"><p>The CPI measures the average change in prices for a broad basket of goods and services representative of urban consumers. Your personal spending habits might differ significantly from this average, so your individual inflation rate could be higher or lower.</p></div></div>
+                    <div class="faq-item" id="faq-item-9"><h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-9">Can I use this calculator to predict future inflation?<span class="accordion-icon"></span></button></h3><div class="panel" id="faq-panel-9" role="region"><p>No, this calculator uses historical CPI data to show past inflation. Predicting future inflation is complex and involves many economic forecasts and variables not covered by this tool.</p></div></div>
+                    <div class="faq-item" id="faq-item-10"><h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-10">How does inflation impact my savings?<span class="accordion-icon"></span></button></h3><div class="panel" id="faq-panel-10" role="region"><p>If the interest rate earned on your savings is lower than the inflation rate, your savings will lose purchasing power over time, meaning you can buy less with that money in the future.</p></div></div>
+                </section>
+            </article>
+        </div> 
+    </main> 
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column"> <h3>FreecalcHub</h3> <p>Your one-stop destination for a wide variety of free online calculators.</p> </div>
+                <div class="footer-column"> <h3>Categories</h3> <ul> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date & Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </div>
+                <div class="footer-column"> <h3>Support</h3> <ul> <li><a href="/about/">About Us</a></li> <li><a href="/contact/">Contact</a></li> <li><a href="/privacy/">Privacy Policy</a></li> <li><a href="/terms/">Terms of Service</a></li> <li><a href="/sitemap/">Sitemap</a></li> </ul> </div>
+            </div>
+            <div class="footer-bottom"> <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/dark-mode.js" defer></script>
+    <script src="/js/faq-accordion-v2.js" defer></script>
+    <script src="/conversions/currency/inflation-calculator/js/inflation-calculator.js" defer></script>
+
+</body>
+</html>
