@@ -1,6 +1,6 @@
 /*
  * FreecalcHub.com - Historical Exchange Rates Converter
- * Version: 1.0 // Let me know if you have an updated version number for this!
+ * Version: 1.0
  * Date Created: June 4, 2025
  * Description: Fetches historical exchange rates for a specific date and converts currencies.
  */
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Configuration ---
     const API_BASE_URL = 'https://api.exchangerate.host/';
-    const API_KEY = '4fb36e198869acdef04e81ffd0445433'; // <<< YOUR API KEY IS HERE
+    const API_KEY = '4fb36e198869acdef04e81ffd0445433';
     const API_SOURCE_NAME = "exchangerate.host (Frankfurter)";
 
     const currencies = [
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function setDateInputMax() {
         if (!historicalDateInput) return;
-        const today = new Date(); 
+        const today = new Date();
         const yesterday = new Date(today);
         yesterday.setDate(today.getDate() - 1);
         historicalDateInput.max = yesterday.toISOString().split('T')[0];
@@ -65,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchHistoricalRate(date, baseCurrency, fromCurrencyArgument, toCurrency) {
         const formattedDate = new Date(date).toISOString().split('T')[0];
-        // Construct the URL with the API key
         const url = `${API_BASE_URL}${formattedDate}?access_key=${API_KEY}&base=${baseCurrency}&symbols=${toCurrency}`;
 
         try {
@@ -74,10 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 let errorResponseMessage = `Failed to fetch from API (HTTP ${response.status})`;
                 try {
                     const errorData = await response.json();
-                    let apiErrorDetails = `service status ${response.status}`; 
+                    let apiErrorDetails = `service status ${response.status}`;
                     if (errorData && errorData.error) {
-                        if (typeof errorData.error === 'object' && errorData.error.info) {
-                            apiErrorDetails = errorData.error.info;
+                        if (typeof errorData.error === 'object') {
+                            if (errorData.error.info) {
+                                apiErrorDetails = errorData.error.info;
+                            } else if (errorData.error.type) {
+                                apiErrorDetails = errorData.error.type.replace(/_/g, ' ');
+                            }
                         } else if (typeof errorData.error === 'string') {
                             apiErrorDetails = errorData.error;
                         }
@@ -86,10 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     errorResponseMessage = `API Error (${response.status}): ${apiErrorDetails}`;
                 } catch (e) {
-                    if(response.statusText) {
-                         errorResponseMessage = `API Error (${response.status}): ${response.statusText || 'Could not retrieve error details from API.'}`;
-                    } else {
-                         errorResponseMessage = `API Error (${response.status}): An unknown error occurred retrieving details from the API.`;
+                    if (response.statusText) {
+                        errorResponseMessage = `API Error (${response.status}): ${response.statusText}`;
                     }
                 }
                 throw new Error(errorResponseMessage);
@@ -97,25 +98,27 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const data = await response.json();
 
-            // ... inside fetchHistoricalRate function ...
             if (data.success === false) {
                 let apiErrorDetails = 'Unknown API issue reported by provider.';
                 if (data.error) {
-                    console.log("FCH DEBUG: Raw API data.error object:", JSON.stringify(data.error)); // <<< ADD THIS NEW LINE
-                    if (typeof data.error === 'object' && data.error.info) {
-                        apiErrorDetails = data.error.info;
+                    console.log("FCH DEBUG: Raw API data.error object:", JSON.stringify(data.error));
+                    if (typeof data.error === 'object') {
+                        if (data.error.info) {
+                            apiErrorDetails = data.error.info;
+                        } else if (data.error.type) {
+                            apiErrorDetails = data.error.type.replace(/_/g, ' ');
+                        }
                     } else if (typeof data.error === 'string') {
                         apiErrorDetails = data.error;
                     }
                 }
                 throw new Error(`API request not successful for ${formattedDate}. Message: ${apiErrorDetails}`);
             }
-            // ...
             if (!data.rates) {
                 throw new Error(`'rates' object not found in API response for ${formattedDate} with base ${baseCurrency}.`);
             }
             if (data.rates[toCurrency] === undefined) {
-                 throw new Error(`Rate not found for ${toCurrency} in API response for ${formattedDate} with base ${baseCurrency}. (Available currencies in 'rates': ${Object.keys(data.rates).join(', ') || 'none'})`);
+                 throw new Error(`Rate not found for ${toCurrency} in API response for ${formattedDate} with base ${baseCurrency}.`);
             }
             
             return { rate: data.rates[toCurrency], date: data.date, source: API_SOURCE_NAME };
@@ -135,7 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
         errorMessagesDiv.style.border = '';
         errorMessagesDiv.style.height = '';
         errorMessagesDiv.style.opacity = '';
-
         [amountInput, fromCurrencySelect, toCurrencySelect, historicalDateInput].forEach(el => {
             if (el) el.classList.remove('input-error');
         });
@@ -180,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedDate = new Date(dateValue + "T00:00:00Z"); 
             const today = new Date();
             const todayUTC = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
-
             if (selectedDate >= todayUTC) {
                 errors.push("Please select a date in the past (yesterday or earlier).");
                 if (historicalDateInput) historicalDateInput.classList.add('input-error');
