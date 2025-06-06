@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cryptocurrency Converter: BTC, ETH, & Fiat Rates | FreecalcHub</title>
+    <meta name="description" content="Free cryptocurrency converter for Bitcoin (BTC), Ethereum (ETH), and other popular cryptos to USD, EUR, and more fiat currencies. Get recent exchange rates from CoinGecko.">
+
+    <link rel="stylesheet" href="/css/styles.css"> 
+    <link rel="stylesheet" href="/css/dark-mode.css"> 
+    <link rel="stylesheet" href="/css/dark-mode-button.css"> 
+    <link rel="stylesheet" href="/css/breadcrumb-styles.css"> 
+    <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <link rel="stylesheet" href="/css/navigation-ribbon.css"> 
+    <link rel="stylesheet" href="/css/faq-styles-v2.css">
+    <link rel="stylesheet" href="/conversions/currency/cryptocurrency-converter/css/cryptocurrency-converter.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-R1QHNSSWTC');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Cryptocurrency Converter",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Convert between popular cryptocurrencies (like BTC, ETH) and fiat currencies (like USD, EUR). Get recent exchange rates.",
+          "url": "https://www.freecalchub.com/conversions/currency/cryptocurrency-converter/",
+          "relatedLink": [
+            {
+              "@type": "SoftwareApplication",
+              "name": "Live Currency Converter",
+              "url": "https://www.freecalchub.com/conversions/currency/live-currency-converter/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Historical Exchange Rates Converter",
+              "url": "https://www.freecalchub.com/conversions/currency/historical-exchange-rates-converter/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Inflation Calculator",
+              "url": "https://www.freecalchub.com/conversions/currency/inflation-calculator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Investment Return Calculator",
+              "url": "https://www.freecalchub.com/finance/investment/investment-return-calculator/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question", "name": "What is cryptocurrency?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Cryptocurrency is a digital or virtual form of currency that uses cryptography for security. Most are decentralized, meaning they are not controlled by a single entity like a central bank, and operate on a technology called blockchain." }
+            },
+            {
+              "@type": "Question", "name": "How are cryptocurrency prices determined?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Cryptocurrency prices are primarily determined by supply and demand on various cryptocurrency exchanges. Factors like market sentiment, adoption rates, news events, regulatory changes, and broader economic trends can significantly influence their value." }
+            },
+            {
+              "@type": "Question", "name": "Are the rates on this calculator the exact market rates?",
+              "acceptedAnswer": { "@type": "Answer", "text": "This calculator uses recent rates from reputable data providers. However, the cryptocurrency market is highly volatile and rates can change rapidly. The rate you see here is indicative and may differ slightly from live trading rates on a specific exchange at the exact moment of a transaction." }
+            },
+            {
+              "@type": "Question", "name": "Which cryptocurrencies does this tool support?",
+              "acceptedAnswer": { "@type": "Answer", "text": "This tool supports conversion for several popular cryptocurrencies such as Bitcoin (BTC), Ethereum (ETH), and others, as well as major fiat currencies. Please see the dropdown menus for the current list." }
+            },
+            {
+              "@type": "Question", "name": "Can I convert from cryptocurrency to fiat currency and vice-versa?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes, this calculator allows you to convert from supported cryptocurrencies to fiat currencies (like USD, EUR) and from fiat currencies to cryptocurrencies." }
+            },
+            {
+              "@type": "Question", "name": "How often are the crypto exchange rates updated on this calculator?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Cryptocurrency rates are updated frequently from our data provider to reflect recent market activity. Please check the \"Rates last updated\" timestamp for the most current information." }
+            },
+            {
+              "@type": "Question", "name": "Do I need a cryptocurrency wallet to use this calculator?",
+              "acceptedAnswer": { "@type": "Answer", "text": "No, this calculator is purely an informational tool for converting values. You do not need a cryptocurrency wallet to use it. A wallet is only needed if you intend to actually buy, sell, or hold cryptocurrencies." }
+            },
+            {
+              "@type": "Question", "name": "Are cryptocurrency transactions reversible?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Generally, no. Most cryptocurrency transactions recorded on a blockchain are designed to be irreversible. This is a key feature of many cryptocurrencies, so it's crucial to be certain before sending any crypto." }
+            },
+            {
+              "@type": "Question", "name": "What are \"gas fees\" in cryptocurrency?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Gas fees are transaction fees paid to network validators or miners to process and confirm transactions on a blockchain, particularly for networks like Ethereum. These fees can vary based on network congestion. This converter does not include gas fees." }
+            },
+            {
+              "@type": "Question", "name": "Where can I buy or sell cryptocurrencies?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Cryptocurrencies can typically be bought and sold on various cryptocurrency exchanges. It's important to choose reputable exchanges, understand their fees, and be aware of the risks involved. Always do your own research (DYOR)." }
+            }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Use the Cryptocurrency Converter",
+          "description": "A step-by-step guide to converting cryptocurrencies and fiat currencies.",
+          "step": [
+            { "@type": "HowToStep", "name": "Enter Amount", "text": "Input the quantity of the currency/cryptocurrency you wish to convert." },
+            { "@type": "HowToStep", "name": "Select 'From' Currency", "text": "Choose the original currency/cryptocurrency (e.g., BTC, USD)." },
+            { "@type": "HowToStep", "name": "Select 'To' Currency", "text": "Choose the target currency/cryptocurrency." },
+            { "@type": "HowToStep", "name": "View Result", "text": "The converted amount will display instantly, based on recent market rates." },
+            { "@type": "HowToStep", "name": "Note Rate Source", "text": "Pay attention to the rate source and last updated time, as crypto markets are highly volatile." }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Conversion Calculators", "item": "https://www.freecalchub.com/conversions/" },
+            { "@type": "ListItem", "position": 3, "name": "Currency Conversion Calculators", "item": "https://www.freecalchub.com/conversions/currency/" },
+            { "@type": "ListItem", "position": 4, "name": "Cryptocurrency Converter", "item": "https://www.freecalchub.com/conversions/currency/cryptocurrency-converter/" }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "name": "Cryptocurrency Converter: BTC, ETH, & Fiat Rates | FreecalcHub",
+          "description": "Free cryptocurrency converter for Bitcoin (BTC), Ethereum (ETH), and other popular cryptos to USD, EUR, and more fiat currencies. Get recent exchange rates from CoinGecko.",
+          "url": "https://www.freecalchub.com/conversions/currency/cryptocurrency-converter/",
+           "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
+           "inLanguage": "en-US", 
+           "datePublished": "2025-06-02",
+           "dateModified": "2025-06-06T18:09:53Z"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="/"><img src="/images/logo.svg" alt="FreecalcHub Logo"></a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/finance/">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/" class="active">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i> <i class="fas fa-sun"></i></button>
+                <button id="mobile-menu-button" aria-label="Toggle menu">
+                    <i class="fas fa-bars menu-icon"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-header">
+                <span>Menu</span>
+                <button id="mobile-menu-close" aria-label="Close menu">
+                    <i class="fas fa-times"></i></button>
+            </div>
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/finance/">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/" class="active">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <a href="/conversions/">Conversion Calculators</a>
+            <span class="separator">/</span>
+            <a href="/conversions/currency/">Currency Conversion Calculators</a>
+            <span class="separator">/</span>
+            <span class="current">Cryptocurrency Converter</span> 
+        </div>
+    </div>
+
+    <main id="main-content" class="main-content">
+        <div class="content-container">
+            <article class="calculator-page-content">
+                <h1 class="page-title">Cryptocurrency Converter</h1>
+
+                <section class="calculator-description-section content-section">
+                    <p>Navigate the world of digital assets with our <strong>Free Cryptocurrency Converter</strong>. Easily convert amounts between popular cryptocurrencies like Bitcoin (BTC) and Ethereum (ETH), or convert them to and from major fiat currencies such as USD, EUR, and GBP. Our tool uses recent market rates to give you a quick valuation.</p>
+                </section>
+
+                <section id="calculator-section" class="calculator-interface content-section card"> 
+                    <h2 class="section-title">Convert Cryptocurrency & Fiat</h2>
+                    <div id="errorMessages" class="error-messages" style="display:none;"></div>
+                    <form id="calculatorForm" class="calculator-form">
+                        <fieldset>
+                            <legend>Enter Conversion Details</legend>
+                            <div class="form-group">
+                                <label for="amountInput">Amount:</label>
+                                <input type="number" id="amountInput" step="any" min="0" placeholder="1.5" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fromCurrency">From:</label>
+                                <select id="fromCurrency" required></select>
+                            </div>
+                            <div class="form-group swap-button-container">
+                                <button type="button" id="swapButton" class="btn btn-secondary" aria-label="Swap Currencies"><i class="fas fa-exchange-alt"></i></button>
+                            </div>
+                            <div class="form-group">
+                                <label for="toCurrency">To:</label>
+                                <select id="toCurrency" required></select>
+                            </div>
+                        </fieldset>
+                        <div class="form-actions">
+                            <button type="reset" id="resetButton" class="btn btn-secondary">Clear</button>
+                        </div>
+                    </form>
+
+                    <div id="resultsSection" class="results-section" style="display:none;">
+                        <h3 class="results-title">Converted Value</h3>
+                        <div class="main-result card">
+                            <p><span id="fromAmountDisplay">--</span> <span id="fromCurrencyDisplay">---</span> = <strong id="toAmountDisplay">--</strong> <strong id="toCurrencyDisplay">---</strong></p>
+                        </div>
+                        <div class="rate-info card">
+                            <p id="rateDisplay">1 --- = -- ---</p>
+                            <p id="rateTimestamp">Rates last updated: --</p>
+                            <div class="api-attribution" style="margin-top: 15px;">
+                                <a href="https://www.coingecko.com/en/api" target="_blank" rel="noopener noreferrer">
+                                  <img src="/images/coingecko-logo.png" alt="Data powered by CoinGecko" style="height: 30px;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="related-calculators content-section card">
+                    <h2 class="section-title">Related Calculators</h2>
+                    <ul>
+                        <li>
+                            <a href="/conversions/currency/live-currency-converter/">
+                                <span class="calculator-name">Live Currency Converter</span>
+                                <span class="calculator-description">Convert major world currencies with up-to-date exchange rates.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/conversions/currency/historical-exchange-rates-converter/">
+                                <span class="calculator-name">Historical Exchange Rates Converter</span>
+                                <span class="calculator-description">Check currency values based on past exchange rates.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/conversions/currency/inflation-calculator/">
+                                <span class="calculator-name">Inflation Calculator</span>
+                                <span class="calculator-description">Calculate the purchasing power of money over different periods.</span>
+                            </a>
+                        </li>
+                        <li>
+                           <a href="/finance/investment/investment-return-calculator/">
+                                <span class="calculator-name">Investment Return Calculator</span>
+                                <span class="calculator-description">Determine the return on your investments over time.</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="how-to-use-section content-section">
+                    <h2 class="section-title">How to Use the Cryptocurrency Converter</h2>
+                    <ol>
+                        <li><strong>Enter Amount:</strong> Input the quantity of the currency/cryptocurrency you wish to convert.</li>
+                        <li><strong>Select 'From' Currency:</strong> Choose the original currency/cryptocurrency (e.g., BTC, USD).</li>
+                        <li><strong>Select 'To' Currency:</strong> Choose the target currency/cryptocurrency.</li>
+                        <li><strong>View Result:</strong> The converted amount will display instantly, based on recent market rates.</li>
+                        <li><strong>Note Rate Source:</strong> Pay attention to the rate source and last updated time, as crypto markets are highly volatile.</li>
+                    </ol>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">What is Cryptocurrency?</h2>
+                    <p>Cryptocurrency is a digital or virtual form of currency that uses cryptography for security. Most are decentralized, meaning they are not controlled by a single entity like a central bank, and operate on a technology called blockchain.</p>
+                    
+                    <h2 class="section-title">Understanding Cryptocurrency Prices</h2>
+                    <p>How prices are determined (supply/demand on exchanges). <strong>Important Disclaimer:</strong> Cryptocurrency markets are highly volatile. Rates shown are indicative and sourced from CoinGecko. Actual transaction rates on exchanges will vary.</p>
+                    
+                    <h2 class="section-title">Rate Information</h2>
+                    <p><strong>Source of Rates:</strong> Cryptocurrency rates are sourced from CoinGecko. Fiat currency rates for comparison are also derived from this data.</p>
+                    <p><strong>Last Updated:</strong> Rate freshness is critical. Our tool indicates when the data was last fetched to ensure you have timely information.</p>
+                    
+                    <h2 class="section-title">Basic Crypto Security Tips</h2>
+                    <p>When dealing with cryptocurrencies, always use reputable exchanges and secure your assets in a trusted wallet. This tool is for informational purposes only and does not recommend any specific service.</p>
+                </section>
+
+                <section class="faq-section content-section">
+                    <h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
+                    <div class="faq-index card">
+                        <h3>FAQ Index</h3>
+                        <ul>
+                            <li><a href="#faq-item-1">What is cryptocurrency?</a></li>
+                            <li><a href="#faq-item-2">How are cryptocurrency prices determined?</a></li>
+                            <li><a href="#faq-item-3">Are the rates on this calculator the exact market rates?</a></li>
+                            <li><a href="#faq-item-4">Which cryptocurrencies does this tool support?</a></li>
+                            <li><a href="#faq-item-5">Can I convert from cryptocurrency to fiat currency and vice-versa?</a></li>
+                            <li><a href="#faq-item-6">How often are the crypto exchange rates updated on this calculator?</a></li>
+                            <li><a href="#faq-item-7">Do I need a cryptocurrency wallet to use this calculator?</a></li>
+                            <li><a href="#faq-item-8">Are cryptocurrency transactions reversible?</a></li>
+                            <li><a href="#faq-item-9">What are "gas fees" in cryptocurrency?</a></li>
+                            <li><a href="#faq-item-10">Where can I buy or sell cryptocurrencies?</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="faq-item" id="faq-item-1">
+                        <h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-1">What is cryptocurrency?<span class="accordion-icon"></span></button></h3>
+                        <div class="panel" id="faq-panel-1" role="region"><p>Cryptocurrency is a digital or virtual form of currency that uses cryptography for security. Most are decentralized, meaning they are not controlled by a single entity like a central bank, and operate on a technology called blockchain.</p></div>
+                    </div>
+                    <div class="faq-item" id="faq-item-2">
+                        <h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-2">How are cryptocurrency prices determined?<span class="accordion-icon"></span></button></h3>
+                        <div class="panel" id="faq-panel-2" role="region"><p>Cryptocurrency prices are primarily determined by supply and demand on various cryptocurrency exchanges. Factors like market sentiment, adoption rates, news events, regulatory changes, and broader economic trends can significantly influence their value.</p></div>
+                    </div>
+                    <div class="faq-item" id="faq-item-3">
+                        <h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-3">Are the rates on this calculator the exact market rates?<span class="accordion-icon"></span></button></h3>
+                        <div class="panel" id="faq-panel-3" role="region"><p>This calculator uses recent rates from reputable data providers. However, the cryptocurrency market is highly volatile and rates can change rapidly. The rate you see here is indicative and may differ slightly from live trading rates on a specific exchange at the exact moment of a transaction.</p></div>
+                    </div>
+                    <div class="faq-item" id="faq-item-4">
+                        <h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-4">Which cryptocurrencies does this tool support?<span class="accordion-icon"></span></button></h3>
+                        <div class="panel" id="faq-panel-4" role="region"><p>This tool supports conversion for several popular cryptocurrencies such as Bitcoin (BTC), Ethereum (ETH), and others, as well as major fiat currencies. Please see the dropdown menus for the current list.</p></div>
+                    </div>
+                    <div class="faq-item" id="faq-item-5">
+                        <h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-5">Can I convert from cryptocurrency to fiat currency and vice-versa?<span class="accordion-icon"></span></button></h3>
+                        <div class="panel" id="faq-panel-5" role="region"><p>Yes, this calculator allows you to convert from supported cryptocurrencies to fiat currencies (like USD, EUR) and from fiat currencies to cryptocurrencies.</p></div>
+                    </div>
+                    <div class="faq-item" id="faq-item-6">
+                        <h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-6">How often are the crypto exchange rates updated on this calculator?<span class="accordion-icon"></span></button></h3>
+                        <div class="panel" id="faq-panel-6" role="region"><p>Cryptocurrency rates are updated frequently from our data provider to reflect recent market activity. Please check the "Rates last updated" timestamp for the most current information.</p></div>
+                    </div>
+                    <div class="faq-item" id="faq-item-7">
+                        <h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-7">Do I need a cryptocurrency wallet to use this calculator?<span class="accordion-icon"></span></button></h3>
+                        <div class="panel" id="faq-panel-7" role="region"><p>No, this calculator is purely an informational tool for converting values. You do not need a cryptocurrency wallet to use it. A wallet is only needed if you intend to actually buy, sell, or hold cryptocurrencies.</p></div>
+                    </div>
+                    <div class="faq-item" id="faq-item-8">
+                        <h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-8">Are cryptocurrency transactions reversible?<span class="accordion-icon"></span></button></h3>
+                        <div class="panel" id="faq-panel-8" role="region"><p>Generally, no. Most cryptocurrency transactions recorded on a blockchain are designed to be irreversible. This is a key feature of many cryptocurrencies, so it's crucial to be certain before sending any crypto.</p></div>
+                    </div>
+                    <div class="faq-item" id="faq-item-9">
+                        <h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-9">What are "gas fees" in cryptocurrency?<span class="accordion-icon"></span></button></h3>
+                        <div class="panel" id="faq-panel-9" role="region"><p>Gas fees are transaction fees paid to network validators or miners to process and confirm transactions on a blockchain, particularly for networks like Ethereum. These fees can vary based on network congestion. This converter does not include gas fees.</p></div>
+                    </div>
+                    <div class="faq-item" id="faq-item-10">
+                        <h3><button class="accordion" aria-expanded="false" aria-controls="faq-panel-10">Where can I buy or sell cryptocurrencies?<span class="accordion-icon"></span></button></h3>
+                        <div class="panel" id="faq-panel-10" role="region"><p>Cryptocurrencies can typically be bought and sold on various cryptocurrency exchanges. It's important to choose reputable exchanges, understand their fees, and be aware of the risks involved. Always do your own research (DYOR).</p></div>
+                    </div>
+                </section>
+            </article>
+        </div> 
+    </main> 
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column"> <h3>FreecalcHub</h3> <p>Your one-stop destination for a wide variety of free online calculators.</p> </div>
+                <div class="footer-column"> <h3>Categories</h3> <ul> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date & Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </div>
+                <div class="footer-column"> <h3>Support</h3> <ul> <li><a href="/about/">About Us</a></li> <li><a href="/contact/">Contact</a></li> <li><a href="/privacy/">Privacy Policy</a></li> <li><a href="/terms/">Terms of Service</a></li> <li><a href="/sitemap/">Sitemap</a></li> </ul> </div>
+            </div>
+            <div class="footer-bottom"> <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/dark-mode.js" defer></script>
+    <script src="/js/faq-accordion-v2.js" defer></script>
+    <script src="/conversions/currency/cryptocurrency-converter/js/cryptocurrency-converter.js" defer></script>
+
+</body>
+</html>
