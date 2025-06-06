@@ -1,6 +1,6 @@
 /*
  * FreecalcHub.com - Historical Exchange Rates Converter
- * Version: 1.0
+ * Version: 1.1
  * Date Created: June 4, 2025
  * Description: Fetches historical exchange rates for a specific date and converts currencies.
  */
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error(`'rates' object not found in API response for ${formattedDate} with base ${baseCurrency}.`);
             }
             if (data.rates[toCurrency] === undefined) {
-                 throw new Error(`Rate not found for ${toCurrency} in API response for ${formattedDate} with base ${baseCurrency}.`);
+                 throw new Error(`Rate not found for ${toCurrency} in API response for ${formattedDate} with base ${baseCurrency}. (Available currencies in 'rates': ${Object.keys(data.rates).join(', ') || 'none'})`);
             }
             
             return { rate: data.rates[toCurrency], date: data.date, source: API_SOURCE_NAME };
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(resetButton) resetButton.addEventListener('click', handleReset);
 
     // --- Initial Setup ---
-    populateDropdowns(); 
+    // populateDropdowns(); // <<< THIS LINE IS NOW COMMENTED OUT TO PREVENT DUPLICATE ENTRIES
     setDateInputMax(); 
     hideResults(); 
 });
