@@ -1,0 +1,146 @@
+/*
+ * Calorie & Macro Calculator Specific Styles
+ * Path: /health/nutrition/calorie-macro-calculator/css/calorie-macro-calculator.css
+ */
+
+/* Adjustments for the unit preference radio group to align better */
+.form-group .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between radio options */
+    margin-top: 5px;
+}
+
+.form-group .radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Style for input groups with units (e.g., height, weight) */
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between input and unit */
+}
+
+.input-group input[type="number"] {
+    flex-grow: 1; /* Allow input to take available space */
+    width: auto; /* Override default width if needed */
+}
+
+.input-group .unit {
+    font-size: 0.9em;
+    color: var(--text-color-light);
+    white-space: nowrap; /* Prevent unit from wrapping */
+}
+
+/* Specific styling for the results section grid */
+.results-section .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.results-section .results-title {
+    color: var(--primary-color);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.4em;
+}
+
+.results-section .result-item {
+    background-color: var(--background-highlight); /* Slightly different background for result cards */
+    padding: 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--card-shadow);
+}
+
+.results-section .result-item h4 {
+    margin-top: 0;
+    color: var(--secondary-color);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.results-section .result-item p {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* Styling for the comparison table within content sections */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: var(--background-alt);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Ensures rounded corners apply to content */
+}
+
+.data-table th, .data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.data-table th {
+    background-color: var(--header-background);
+    color: var(--header-text-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: var(--table-row-alt-background);
+}
+
+.data-table tbody tr:hover {
+    background-color: var(--table-row-hover-background);
+}
+
+/* Responsive adjustments for tables */
+@media (max-width: 768px) {
+    .data-table, .data-table thead, .data-table tbody, .data-table th, .data-table td, .data-table tr {
+        display: block;
+    }
+
+    .data-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .data-table tr {
+        margin-bottom: 15px;
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+    }
+
+    .data-table td {
+        border: none;
+        border-bottom: 1px solid var(--border-color);
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+
+    .data-table td:before {
+        position: absolute;
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        content: attr(data-label); /* Use data-label for mobile headers */
+        color: var(--secondary-color);
+    }
+}
