@@ -75,13 +75,14 @@ Follow these steps meticulously:
 
 This is **critical** for SEO and rich search results. Carefully update all `[Placeholder Text]` items within the `<script type="application/ld+json"> ... </script>` block (Section 6 of the template).
 
-* **`SoftwareApplication`**:
+** **`SoftwareApplication`**:
     * `name`: `[Calculator Name]` (e.g., "Loan Calculator")
     * `applicationCategory`: Choose a relevant category (e.g., "FinanceApplication") or use descriptive text.
     * `description`: Repeat meta description or provide a slightly more detailed one.
     * `url`: The full canonical URL of the calculator page.
+    * **`relatedLink` (NEW):** Populate this array with 3-5 relevant related calculators, matching the visible "Related Calculators" section. Each entry needs `@type` (usually `SoftwareApplication`), `name`, and `url` (absolute). **IMPORTANT:** If more specialized calculators are planned (e.g., a simple 'Calorie Calculator' or 'Macro Calculator' that this comprehensive tool might later link to or supersede in some contexts), include them here with their intended future URLs, marking them as `(Future Link)` in the visible `name` property if they are not yet live pages.
     * `aggregateRating`: Optional. Remove if no rating system is in place.
-* **`FAQPage`**: **IMPORTANT**
+ * **`FAQPage`**: **IMPORTANT**
     * Add *every* question and answer pair from your FAQ section.
     * The `name` (question) and `text` (answer) in the schema **must exactly match** the visible content on the page.
 * **`HowTo`**:
@@ -91,12 +92,12 @@ This is **critical** for SEO and rich search results. Carefully update all `[Pla
     * Update `itemListElement` entries. URLs **must be absolute** (e.g., `https://www.freecalchub.com/...`).
         * Position 2: `[Category Name]` and its absolute URL.
         * Position 3 (or 4 if a sub-category exists): `[Calculator Name]` and its absolute URL. Adjust position numbers accordingly.
-* **`WebPage`**:
+* * **`WebPage`**:
     * `name`: Match the `<title>`.
     * `description`: Match the `<meta name="description">`.
     * `url`: The absolute canonical URL of *this specific calculator page*.
-    * `datePublished`: Set the initial publication date (YYYY-MM-DD).
-    * `dateModified`: Set the date of the last modification (can be the same as `datePublished` for new pages).
+    * `datePublished`: Set the initial publication date using **ISO 8601 format (YYYY-MM-DDTHH:MM:SSZ)**. Example: `2025-06-07T14:40:04Z`.
+    * `dateModified`: Set the date of the last modification using **ISO 8601 format (YYYY-MM-DDTHH:MM:SSZ)**. Example: `2025-06-07T14:40:04Z`. (Can be the same as `datePublished` for new pages).
 
 ### Step 5: Update Breadcrumb Navigation (Visible on Page)
 
@@ -237,6 +238,7 @@ This is where you add all the unique content for your calculator.
 * **API & External Dependencies**: For any calculator relying on an external data API (e.g., for currency rates, inflation data, historical data), ensure the specification document clearly defines the API endpoint, authentication method (e.g., 'Requires API Key'), and the location/name of the required access key if applicable. This is a critical technical requirement for the developer.
 * **Comments**: Add comments to HTML, CSS, and JS.
 * **Testing**: Thoroughly test logic, responsiveness, browsers, HTML/Schema validation, and **Dark Mode**. Test on a server environment.
+* **Date/Time Formatting**: For all date and time-related properties in Schema.org (`datePublished`, `dateModified`, etc.) and sitemap entries (`lastmod`), **always use the full ISO 8601 format including timezone (e.g., `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS+00:00`)**.
 
 ## 5. Charting & Canvas Elements (e.g., Chart.js)
 
@@ -257,3 +259,4 @@ Before considering the calculator page complete:
 * Is the "Related Calculators" section populated correctly in both the HTML and the `relatedLink` schema?
 * Does the `FAQPage` schema exactly match the visible V2 FAQ content?
 * Has the page been tested on a server environment?
+* Are all `datePublished`, `dateModified`, and `lastmod` (for sitemap) fields formatted using the **ISO 8601 standard (YYYY-MM-DDTHH:MM:SSZ)**?
