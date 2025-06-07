@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nutrition Calculators - Calories, Macros & More | CalcHub</title>
+    <title>Nutrition Calculators - Calories, Macros & More | FreecalcHub</title>
     <meta name="description" content="Free online nutrition calculators for tracking calories, macronutrients (protein, carbs, fat), BMR, TDEE, and other dietary needs.">
-    <!-- Global styles -->
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/dark-mode.css">
     <link rel="stylesheet" href="/css/dark-mode-button.css">
@@ -13,10 +12,8 @@
     <link rel="stylesheet" href="/css/breadcrumb-styles.css">
     <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
 
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -24,9 +21,6 @@
       gtag("js", new Date());
       gtag("config", "G-R1QHNSSWTC");
     </script>
-    <!-- End Google Analytics -->
-
-    <!-- Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -36,19 +30,19 @@
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "/" 
+          "item": "https://www.freecalchub.com/" 
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Health",
-          "item": "/health/"
+          "item": "https://www.freecalchub.com/health/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Nutrition",
-          "item": "/health/nutrition/"
+          "item": "https://www.freecalchub.com/health/nutrition/"
         }
       ]
     }
@@ -60,15 +54,24 @@
       "name": "Nutrition Calculators",
       "description": "A collection of calculators related to nutrition, calories, macronutrients, and dietary planning.",
       "itemListElement": [
-        /* Add nutrition calculators here as they are created */
-        /* Example:
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Calorie Calculator",
-          "url": "/health/nutrition/calorie-calculator/"
+          "name": "Comprehensive Calorie & Macro Calculator",
+          "url": "https://www.freecalchub.com/health/nutrition/calorie-macro-calculator/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Calorie Calculator (Coming Soon)",
+          "url": "https://www.freecalchub.com/health/nutrition/calorie-calculator/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Macro Calculator (Coming Soon)",
+          "url": "https://www.freecalchub.com/health/nutrition/macro-calculator/"
         }
-        */
       ]
     }
     </script>
@@ -79,7 +82,7 @@
         <div class="header-container">
             <div class="logo-container">
                 <a href="/" class="logo">
-                    <img src="/images/logo.svg" alt="CalcHub Logo" height="40">
+                    <img src="/images/logo.svg" alt="FreecalcHub Logo" height="40">
                 </a>
             </div>
             <nav class="main-nav">
@@ -139,7 +142,6 @@
 
     <div class="navigation-ribbon">
         <div class="navigation-ribbon-container">
-            <!-- Health Subcategories -->
             <a href="../bmi/"><i class="fas fa-weight-scale"></i>BMI</a>
             <a href="./" class="active"><i class="fas fa-apple-alt"></i>Nutrition</a>
             <a href="../weight/"><i class="fas fa-weight-hanging"></i>Weight</a>
@@ -159,7 +161,13 @@
             <h2>Available Nutrition Calculators</h2>
             <p>Estimate your energy needs and plan your diet effectively.</p>
             <div class="calculator-grid">
-                <!-- Add nutrition calculators here as cards -->
+                <a href="/health/nutrition/calorie-macro-calculator/" class="calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Comprehensive Calorie & Macro Calculator</h3>
+                    <p>Calculate your daily calorie and macronutrient needs for weight loss, gain, or maintenance. Understand BMR & TDEE with Mifflin-St Jeor or Harris-Benedict formulas.</p>
+                </a>
                 <div class="calculator-card placeholder">
                     <div class="calculator-icon">
                         <i class="fas fa-fire"></i>
@@ -169,8 +177,7 @@
                 </div>
                  <div class="calculator-card placeholder">
                     <div class="calculator-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
+                        <i class="fas fa-pizza-slice"></i> </div>
                     <h3>Macro Calculator (Coming Soon)</h3>
                     <p>Determine your optimal macronutrient split (protein, carbs, fat).</p>
                 </div>
@@ -182,8 +189,7 @@
             <div class="education-content">
                 <p>Nutrition plays a vital role in overall health, energy levels, and disease prevention. Understanding key nutritional concepts like calories, macronutrients, and micronutrients allows you to make choices that support your well-being.</p>
                 <p>This section offers calculators and information related to dietary needs, energy balance, and nutrient tracking, helping you build a healthier eating pattern.</p>
-                <!-- Add more educational content specific to Nutrition -->
-            </div>
+                </div>
         </section>
 
     </main>
@@ -191,7 +197,7 @@
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-column">
-                <h3>CalcHub</h3>
+                <h3>FreecalcHub</h3>
                 <p>Your source for free, accurate, and easy-to-use online calculators.</p>
             </div>
             <div class="footer-column">
@@ -219,12 +225,11 @@
             </div>
             <div class="footer-column">
                 <h3>Follow Us</h3>
-                <!-- Add social media links here if desired -->
                 <p>Stay connected for updates and new calculators.</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 CalcHub. All rights reserved.</p>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p>
         </div>
     </footer>
 
