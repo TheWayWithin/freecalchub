@@ -3,21 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Calculators - BMI, Nutrition, Fitness & More | CalcHub</title> <!-- Updated Title -->
-    <meta name="description" content="Free online health calculators for BMI, calories, nutrition, fitness, weight management, pregnancy, medical metrics, and mental well-being. Accurate tools and insights."> <!-- Updated Description -->
-    <link rel="canonical" href="/health/"> <!-- Assuming production URL -->
-    <!-- Global styles -->
-    <link rel="stylesheet" href="/css/styles.css">
+    <title>Health Calculators - BMI, Nutrition, Fitness & More | FreecalcHub</title> <meta name="description" content="Free online health calculators for BMI, calories, nutrition, fitness, weight management, pregnancy, medical metrics, and mental well-being. Accurate tools and insights."> <link rel="canonical" href="https://www.freecalchub.com/health/"> <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/dark-mode.css">
     <link rel="stylesheet" href="/css/dark-mode-button.css">
     <link rel="stylesheet" href="/css/navigation-ribbon.css">
     <link rel="stylesheet" href="/css/breadcrumb-styles.css">
     <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
 
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -25,9 +19,6 @@
       gtag("js", new Date());
       gtag("config", "G-R1QHNSSWTC");
     </script>
-    <!-- End Google Analytics -->
-
-    <!-- Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -37,13 +28,13 @@
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "/" 
+          "item": "https://www.freecalchub.com/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Health",
-          "item": "/health/"
+          "item": "https://www.freecalchub.com/health/"
         }
       ]
     }
@@ -59,43 +50,43 @@
           "@type": "ListItem",
           "position": 1,
           "name": "BMI Calculators",
-          "url": "/health/bmi/"
+          "url": "https://www.freecalchub.com/health/bmi/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Nutrition Calculators",
-          "url": "/health/nutrition/"
+          "url": "https://www.freecalchub.com/health/nutrition/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Weight Management Calculators",
-          "url": "/health/weight/"
+          "url": "https://www.freecalchub.com/health/weight/"
         },
         {
           "@type": "ListItem",
           "position": 4,
           "name": "Fitness Calculators", /* Added Fitness */
-          "url": "/health/fitness/"
+          "url": "https://www.freecalchub.com/health/fitness/"
         },
         {
           "@type": "ListItem",
           "position": 5,
           "name": "Pregnancy Calculators",
-          "url": "/health/pregnancy/"
+          "url": "https://www.freecalchub.com/health/pregnancy/"
         },
         {
           "@type": "ListItem",
           "position": 6,
           "name": "Medical Calculators",
-          "url": "/health/medical/"
+          "url": "https://www.freecalchub.com/health/medical/"
         },
         {
           "@type": "ListItem",
           "position": 7,
           "name": "Mental Health Calculators",
-          "url": "/health/mental-health/"
+          "url": "https://www.freecalchub.com/health/mental-health/"
         }
       ]
     }
@@ -107,7 +98,7 @@
         <div class="header-container">
             <div class="logo-container">
                 <a href="/" class="logo">
-                    <img src="/images/logo.svg" alt="CalcHub Logo" height="40">
+                    <img src="/images/logo.svg" alt="FreecalcHub Logo" height="40">
                 </a>
             </div>
             <nav class="main-nav">
@@ -165,12 +156,10 @@
 
     <div class="navigation-ribbon">
         <div class="navigation-ribbon-container">
-            <!-- Updated Health Subcategories with Fitness -->
             <a href="/health/bmi/"><i class="fas fa-weight-scale"></i>BMI</a>
-            <a href="/health/nutrition/"><i class="fas fa-apple-alt"></i>Nutrition</a>
+            <a href="/health/nutrition/" class="active"><i class="fas fa-apple-alt"></i>Nutrition</a>
             <a href="/health/weight/"><i class="fas fa-weight-hanging"></i>Weight</a>
-            <a href="/health/fitness/"><i class="fas fa-dumbbell"></i>Fitness</a> <!-- Added Fitness -->
-            <a href="/health/pregnancy/"><i class="fas fa-baby"></i>Pregnancy</a>
+            <a href="/health/fitness/"><i class="fas fa-dumbbell"></i>Fitness</a> <a href="/health/pregnancy/"><i class="fas fa-baby"></i>Pregnancy</a>
             <a href="/health/medical/"><i class="fas fa-notes-medical"></i>Medical</a>
             <a href="/health/mental-health/"><i class="fas fa-brain"></i>Mental Health</a>
         </div>
@@ -182,7 +171,6 @@
             <p class="lead">Make informed health decisions with our free, easy-to-use calculators. Whether you're tracking fitness goals, planning nutrition, managing weight, or monitoring health metrics, our tools provide accurate calculations and educational insights.</p>
         </section>
 
-        <!-- Subcategory Sections -->
         <section class="subcategory-section">
             <h2><a href="/health/bmi/">BMI Calculators</a></h2>
             <p>Calculate and understand your body mass index and related health metrics.</p>
@@ -192,8 +180,7 @@
                     <h3>BMI Calculator</h3>
                     <p>Calculate your Body Mass Index (BMI).</p>
                 </a>
-                <!-- Add more BMI calculator cards here -->
-            </div>
+                </div>
             <div class="subcategory-cta">
                 <a href="/health/bmi/" class="btn">View All BMI Calculators</a>
             </div>
@@ -203,13 +190,24 @@
             <h2><a href="/health/nutrition/">Nutrition Calculators</a></h2>
             <p>Tools to help you understand and manage your dietary intake, including calories and macronutrients.</p>
             <div class="calculator-grid">
+                <a href="/health/nutrition/calorie-macro-calculator/" class="calculator-card">
+                    <div class="calculator-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Comprehensive Calorie & Macro Calculator</h3>
+                    <p>Calculate your daily calorie and macronutrient needs for weight loss, gain, or maintenance. Understand BMR & TDEE with Mifflin-St Jeor or Harris-Benedict formulas.</p>
+                </a>
                 <div class="calculator-card placeholder">
                     <div class="calculator-icon"><i class="fas fa-fire"></i></div>
                     <h3>Calorie Calculator (Coming Soon)</h3>
-                    <p>Estimate your daily calorie needs.</p>
+                    <p>Estimate your daily calorie needs based on activity level and goals.</p>
                 </div>
-                <!-- Add more Nutrition calculator cards here -->
-            </div>
+                 <div class="calculator-card placeholder">
+                    <div class="calculator-icon">
+                        <i class="fas fa-pizza-slice"></i>
+                    </div>
+                    <h3>Macro Calculator (Coming Soon)</h3>
+                    <p>Determine your optimal macronutrient split (protein, carbs, fat).</p>
+                </div>
+                </div>
             <div class="subcategory-cta">
                 <a href="/health/nutrition/" class="btn">View All Nutrition Calculators</a>
             </div>
@@ -224,15 +222,13 @@
                     <h3>Ideal Weight Calculator (Coming Soon)</h3>
                     <p>Estimate your ideal body weight range.</p>
                 </div>
-                <!-- Add more Weight calculator cards here -->
-            </div>
+                </div>
             <div class="subcategory-cta">
                 <a href="/health/weight/" class="btn">View All Weight Calculators</a>
             </div>
         </section>
 
-        <section class="subcategory-section"> <!-- Added Fitness Section -->
-            <h2><a href="/health/fitness/">Fitness Calculators</a></h2>
+        <section class="subcategory-section"> <h2><a href="/health/fitness/">Fitness Calculators</a></h2>
             <p>Tools to help you plan, track, and optimize your physical fitness journey.</p>
             <div class="calculator-grid">
                 <div class="calculator-card placeholder">
@@ -240,8 +236,7 @@
                     <h3>Pace Calculator (Coming Soon)</h3>
                     <p>Calculate running pace, time, and distance.</p>
                 </div>
-                <!-- Add more Fitness calculator cards here -->
-            </div>
+                </div>
             <div class="subcategory-cta">
                 <a href="/health/fitness/" class="btn">View All Fitness Calculators</a>
             </div>
@@ -256,8 +251,7 @@
                     <h3>Due Date Calculator (Coming Soon)</h3>
                     <p>Estimate your baby's due date.</p>
                 </div>
-                <!-- Add more Pregnancy calculator cards here -->
-            </div>
+                </div>
             <div class="subcategory-cta">
                 <a href="/health/pregnancy/" class="btn">View All Pregnancy Calculators</a>
             </div>
@@ -272,8 +266,7 @@
                     <h3>Heart Risk Calculator (Coming Soon)</h3>
                     <p>Estimate cardiovascular disease risk.</p>
                 </div>
-                <!-- Add more Medical calculator cards here -->
-            </div>
+                </div>
             <div class="subcategory-cta">
                 <a href="/health/medical/" class="btn">View All Medical Calculators</a>
             </div>
@@ -288,8 +281,7 @@
                     <h3>Stress Level Assessment (Coming Soon)</h3>
                     <p>Gauge your current stress levels.</p>
                 </div>
-                <!-- Add more Mental Health calculator cards here -->
-            </div>
+                </div>
             <div class="subcategory-cta">
                 <a href="/health/mental-health/" class="btn">View All Mental Health Tools</a>
             </div>
@@ -300,8 +292,7 @@
             <div class="education-content">
                 <p>Health metrics provide valuable insights into your overall wellbeing and can help you make informed decisions about your lifestyle and healthcare. Understanding these metrics is the first step toward improving your health.</p>
                 <p>Our calculators cover a wide range of health topics, from physical fitness and nutrition to specific medical conditions and mental well-being. Use these tools to gain knowledge, track progress, and support conversations with healthcare professionals.</p>
-                <!-- Keep or expand general health education content -->
-            </div>
+                </div>
         </section>
 
     </main>
@@ -309,7 +300,7 @@
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-column">
-                <h3>CalcHub</h3>
+                <h3>FreecalcHub</h3>
                 <p>Your source for free, accurate, and easy-to-use online calculators.</p>
             </div>
             <div class="footer-column">
@@ -337,12 +328,11 @@
             </div>
             <div class="footer-column">
                 <h3>Follow Us</h3>
-                <!-- Add social media links here if desired -->
                 <p>Stay connected for updates and new calculators.</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 CalcHub. All rights reserved.</p>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p>
         </div>
     </footer>
 
