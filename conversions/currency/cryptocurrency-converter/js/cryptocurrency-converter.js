@@ -1,6 +1,6 @@
 /*
     File: /conversions/currency/cryptocurrency-converter/js/cryptocurrency-converter.js
-    Version: 1.0
+    Version: 1.1
     Author: Jamie Watters
     Date: 2025-06-06
 */
@@ -162,9 +162,16 @@ document.addEventListener('DOMContentLoaded', () => {
             cryptoIds.add('bitcoin');
         }
 
-        const url = `${API_ENDPOINT}?ids=${[...cryptoIds].join(',')}&vs_currencies=${[...fiatIds].join(',')}&x_cg_demo_api_key=${API_KEY}`;
+       // ...
+        const url = `${API_ENDPOINT}?ids=${[...cryptoIds].join(',')}&vs_currencies=${[...fiatIds].join(',')}`;
         
-        const response = await fetch(url);
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'x-cg-demo-api-key': API_KEY
+            }
+        });
+        // ...
         if (!response.ok) {
             throw new Error(`API request failed with status ${response.status}`);
         }
