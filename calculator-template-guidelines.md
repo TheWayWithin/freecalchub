@@ -1,6 +1,6 @@
 # FreecalcHub Calculator Page - Template Usage Guidelines
 
-**Version: 3.2 (Updated: June 06, 2025)**
+**Version: 3.3 (Updated: June 07, 2025)**
 
 ## 1. Overview
 
