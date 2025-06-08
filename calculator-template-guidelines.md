@@ -1,6 +1,6 @@
 # FreecalcHub Calculator Page - Template Usage Guidelines
 
-**Version: 3.3 (Updated: June 07, 2025)**
+**Version: 3.4 (Updated: June 08, 2025)**
 
 ## 1. Overview
 
@@ -9,6 +9,7 @@ This document provides guidelines for using the FreecalcHub master HTML template
 ## 2. File Structure for a New Calculator
 
 When creating a new calculator, for example, a "Loan Calculator" in the "Finance" category, the typical file structure within your project would be:
+
 
 ```
 / (Site Root)
@@ -127,7 +128,7 @@ Follow these steps meticulously:
 
 ### Step 1: Copy the Master Template
 
-1.  Take a copy of the latest `calculator_template.html` (ensure it's v3.1 or later to include the Related Calculators section).
+1.  Take a copy of the latest `calculator_template.html`.
 2.  Place it in the appropriate new directory for your calculator (e.g., `finance/loan-calculator/index.html`).
 
 ### Step 2: Update Page Metadata (in `<head>`)
@@ -137,7 +138,7 @@ Follow these steps meticulously:
 
 ### Step 3: Link Calculator-Specific CSS
 
-* Modify the placeholder link in `calculator_template.html`:
+* Modify the placeholder link in `calculator_template.html` (Section 4):
     ```html
     <link rel="stylesheet" href="/[path-to-your-calculator-folder]/css/[calculator-name].css">
     ```
@@ -150,16 +151,16 @@ Follow these steps meticulously:
 
 ### Step 4: Update Schema Markup (in `<head>`)
 
-This is **critical** for SEO and rich search results. Carefully update all `[Placeholder Text]` items within the `<script type="application/ld+json"> ... </script>` block.
+This is **critical** for SEO and rich search results. Carefully update all `[Placeholder Text]` items within the `<script type="application/ld+json"> ... </script>` block (Section 6 of the template).
 
-* **`SoftwareApplication`**:
+** `SoftwareApplication`**:
     * `name`: `[Calculator Name]` (e.g., "Loan Calculator")
     * `applicationCategory`: Choose a relevant category (e.g., "FinanceApplication") or use descriptive text.
     * `description`: Repeat meta description or provide a slightly more detailed one.
     * `url`: The full canonical URL of the calculator page.
-    * **`relatedLink` (NEW):** Populate this array with 3-5 relevant related calculators, matching the visible "Related Calculators" section. Each entry needs `@type` (usually `SoftwareApplication`), `name`, and `url` (absolute).
+    * **`relatedLink` (NEW):** Populate this array with 3-5 relevant related calculators, matching the visible "Related Calculators" section. Each entry needs `@type` (usually `SoftwareApplication`), `name`, and `url` (absolute). **IMPORTANT:** If more specialized calculators are planned (e.g., a simple 'Calorie Calculator' or 'Macro Calculator' that this comprehensive tool might later link to or supersede in some contexts), include them here with their intended future URLs, marking them as `(Future Link)` in the visible `name` property if they are not yet live pages.
     * `aggregateRating`: Optional. Remove if no rating system is in place.
-* **`FAQPage`**: **IMPORTANT**
+ * **`FAQPage`**: **IMPORTANT**
     * Add *every* question and answer pair from your FAQ section.
     * The `name` (question) and `text` (answer) in the schema **must exactly match** the visible content on the page.
 * **`HowTo`**:
@@ -169,16 +170,16 @@ This is **critical** for SEO and rich search results. Carefully update all `[Pla
     * Update `itemListElement` entries. URLs **must be absolute** (e.g., `https://www.freecalchub.com/...`).
         * Position 2: `[Category Name]` and its absolute URL.
         * Position 3 (or 4 if a sub-category exists): `[Calculator Name]` and its absolute URL. Adjust position numbers accordingly.
-* **`WebPage`**:
+* * **`WebPage`**:
     * `name`: Match the `<title>`.
     * `description`: Match the `<meta name="description">`.
     * `url`: The absolute canonical URL of *this specific calculator page*.
-    * `datePublished`: Set the initial publication date (YYYY-MM-DD).
-    * `dateModified`: Set the date of the last modification using the full ISO 8601 format including timezone (e.g., `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS+00:00`). Can be the same as `datePublished` for new pages.
+    * `datePublished`: Set the initial publication date using **ISO 8601 format (YYYY-MM-DDTHH:MM:SSZ)**. Example: `2025-06-07T14:40:04Z`.
+    * `dateModified`: Set the date of the last modification using **ISO 8601 format (YYYY-MM-DDTHH:MM:SSZ)**. Example: `2025-06-07T14:40:04Z`. (Can be the same as `datePublished` for new pages).
 
 ### Step 5: Update Breadcrumb Navigation (Visible on Page)
 
-Modify the visible breadcrumbs to reflect the calculator's position in the site structure. Use full root-relative paths for links.
+Modify the visible breadcrumbs (Section 8 of the template) to reflect the calculator's position in the site structure. Use full root-relative paths for links.
 
 * Example for `finance/loan-calculator/`:
     ```html
@@ -229,6 +230,10 @@ This is where you add all the unique content for your calculator.
 
 ## 4. Best Practices
 
+* **Google Tag Manager (GTM) Implementation:**
+    * The GTM `script` tag must be placed as high as possible in the `<head>` of the document.
+    * The GTM `noscript` iframe must be placed immediately after the opening `<body>` tag.
+    * The GTM container ID is `GTM-KNHC9TZ5`.
 * **Root-Relative Paths**: **Always** use full root-relative paths (starting with `/`).
 * **IDs and Classes**: Use unique and descriptive `id`s and meaningful classes.
 * **CSS Variables**: Use standard site CSS variables for calculator-specific CSS.
