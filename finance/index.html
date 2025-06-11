@@ -79,15 +79,16 @@
     </script>
     <style>
         /*
-         * Version: 1.1
+         * Version: 1.2
          * Last Updated: 2025-06-11
          * Changelog:
-         * - Updated Finance Category Page to match latest category-template (v1.3)
-         * - Adjusted .category-header styling for lead paragraph alignment to left.
-         * - Removed .btn class from individual calculator cards.
+         * - Recreated Finance Category Page using category-template v1.4.
+         * - Applied corrected styling for category header text alignment.
+         * - Ensured individual calculator cards are clickable links without buttons.
+         * - Applied corrected styling for 'View All' subcategory buttons (left-aligned, bold text).
          */
-        .calculator-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; margin-bottom: 30px; } /* Added margin-bottom */
-        .calculator-card, .category-card { /* Style both calculator and sub-category cards */
+        .calculator-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; margin-bottom: 30px; }
+        .calculator-card, .category-card {
             border: 1px solid var(--border-color);
             border-radius: var(--border-radius);
             padding: 20px;
@@ -104,33 +105,41 @@
         .card-icon { font-size: 2.5em; margin-bottom: 15px; color: var(--primary-color); }
         .calculator-card h3, .category-card h3 { margin-top: 0; margin-bottom: 10px; font-size: 1.25em; }
         .calculator-card h3 a, .category-card h3 a { text-decoration: none; color: var(--primary-color); }
-        /* .calculator-card h3 a:hover { text-decoration: underline; } - Removed as entire card is clickable now */
-        .calculator-card p, .category-card p { font-size: 0.95em; line-height: 1.5; flex-grow: 1; margin-bottom: 15px; } /* Added flex-grow and margin-bottom for consistency */
-        /* .calculator-card .btn { margin-top: auto; } - Removed as buttons are removed from cards */
-        .subcategory-cta { margin-top: 25px; text-align: center; }
-        .btn { display: inline-block; padding: 10px 20px; background-color: var(--primary-color); color: var(--button-text-color) !important; border-radius: var(--border-radius); text-decoration: none; transition: background-color 0.3s ease; font-weight: 500; }
+        .calculator-card p, .category-card p { font-size: 0.95em; line-height: 1.5; flex-grow: 1; margin-bottom: 15px; }
+        .subcategory-cta { margin-top: 25px; /* text-align: left handled by template's removal of center alignment */ }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: var(--button-text-color) !important;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            font-weight: bold; /* Ensures button text is bold */
+        }
         .btn:hover { background-color: var(--primary-dark); }
         .subcategory-section { margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color-light); }
         .subcategory-section:last-of-type { border-bottom: none; }
 
-        /* Styles from updated category-template (2).html */
+        /* Styles for category-header derived from template v1.4, adjusted for finance page specifics */
         .category-header {
             display: block;
             margin-bottom: 30px;
+            /* Removed text-align: center; in template, so content here should align left unless specified */
         }
         .category-header h1 {
-            text-align: center; /* Center the H1 as per common design */
-            margin-bottom: 10px; /* Kept from original index (6).html */
+            text-align: center; /* Centered as per template */
+            margin-bottom: 10px;
         }
-        .category-header .lead { /* Changed from p.lead to .lead for consistency */
+        .category-header .lead {
             margin-top: 15px;
             font-size: 1.1em;
             line-height: 1.6;
-            max-width: 800px; /* Kept from original index (6).html */
-            margin-left: auto;   /* Center the block of text */
-            margin-right: auto;  /* Center the block of text */
-            text-align: left;    /* Ensure text within the lead paragraph is left-aligned */
-            color: var(--text-muted); /* Kept from original index (6).html */
+            max-width: 800px; /* Kept 800px from original finance page */
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left; /* Explicitly left-aligned */
+            color: var(--text-muted);
         }
     </style>
 </head>
