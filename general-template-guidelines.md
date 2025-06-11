@@ -1,6 +1,6 @@
 # FreecalcHub General Page - Template Usage Guidelines
 
-**Version: 1.0 (Created: 2025-06-08)**
+**Version: 1.1 (Last Updated: 2025-06-11)**
 
 ## 1. Overview
 
@@ -9,7 +9,6 @@ This document provides comprehensive guidelines for using the FreecalcHub master
 ## 2. File Structure for New Pages
 
 When creating a new page, the typical file structure within your project would be:
-
 
 ```
 / (Site Root)
@@ -245,6 +244,7 @@ Modify the visible breadcrumbs to reflect the category's position in the site st
 * **Comments**: Add comments to HTML, CSS, and JS to explain complex sections or key decisions.
 * **Testing**: Thoroughly test logic, responsiveness, cross-browser compatibility, HTML/Schema validation, and Dark Mode. Test on a server environment.
 * **Date/Time Formatting**: For all date and time-related properties in Schema.org (`datePublished`, `dateModified`, etc.) and sitemap entries (`lastmod`), **always use the full ISO 8601 format including timezone (e.g., `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS+00:00`)**.
+* **Avoid Inline `<style>` Blocks for General Layout and Component Styling:** Do not add `<style>` blocks directly within individual page HTML files (`index.html`) for styling elements like `category-header`, `subcategory-cta`, or component styles. All page-specific CSS should reside in dedicated `.css` files linked in the `<head>`, and global styles should be managed in `styles.css`. If an element's styling (e.g., alignment) differs from expectations, first inspect global CSS (`styles.css`, etc.) and the relevant template, rather than adding inline overrides.
 
 ## 6. Charting & Canvas Elements (e.g., Chart.js)
 
