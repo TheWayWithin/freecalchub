@@ -19,8 +19,7 @@
     <link rel="stylesheet" href="/css/breadcrumb-styles.css">
     <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
+    <link rel="stylesheet" href="/css/faq-styles-v2.css"> <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -60,17 +59,35 @@
             // TODO: Adjust positions and number of items based on hierarchy.
           ]
         }
+        // START NEW: FAQPage Schema for Category Page - TODO: Add if category FAQs are present
+        ,
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question", "name": "[Category Question 1?]",
+              "acceptedAnswer": { "@type": "Answer", "text": "[Category Answer 1. Include internal links to relevant calculators, e.g., <a href='/finance/loan/loan-calculator/'>Loan Calculator</a>]" }
+            },
+            {
+              "@type": "Question", "name": "[Category Question 2?]",
+              "acceptedAnswer": { "@type": "Answer", "text": "[Category Answer 2]" }
+            }
+            // TODO: Add more category-specific FAQ items as needed
+          ]
+        }
+        // END NEW: FAQPage Schema
       ]
     }
     </script>
     <style>
         /*
-         * Version: 1.4
+         * Version: 1.5
          * Last Updated: 2025-06-11
          * Changelog:
          * - Version 1.2: Added GTM script.
          * - Version 1.3: Adjusted .category-header to ensure lead paragraph is left-aligned, and removed button from example calculator cards.
          * - Version 1.4: Removed text-align: center from .category-header and .subcategory-cta to ensure left alignment. Set .btn font-weight to bold.
+         * - Version 1.5: Added CSS for V2 FAQ structure and updated associated comments.
          */
         /* Example: Ensure grid consistency if not fully global */
         .calculator-grid {
@@ -200,11 +217,45 @@
 
         <section class="category-content-section content-section">
              <h2 class="section-title">About [Category Name] Calculators</h2> <p>[Add relevant introductory or educational content about this category.]</p> </section>
-    </main>
+
+        <section class="faq-section content-section">
+            <h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
+            <div class="faq-index card">
+                <h3>FAQ Index</h3>
+                <ul>
+                    <li><a href="#faq-cat-item-1">[Category Question 1?]</a></li>
+                    <li><a href="#faq-cat-item-2">[Category Question 2?]</a></li>
+                    </ul>
+            </div>
+
+            <div class="faq-item" id="faq-cat-item-1">
+                <h3>
+                    <button class="accordion" aria-expanded="false" aria-controls="faq-cat-panel-1">
+                        [Category Question 1?]
+                        <span class="accordion-icon"></span>
+                    </button>
+                </h3>
+                <div class="panel" id="faq-cat-panel-1" role="region">
+                    <p>[Category Answer 1. Include internal links to relevant calculators, e.g., <a href='/finance/loan/loan-calculator/'>Loan Calculator</a>]</p>
+                </div>
+            </div>
+            <div class="faq-item" id="faq-cat-item-2">
+                <h3>
+                    <button class="accordion" aria-expanded="false" aria-controls="faq-cat-panel-2">
+                        [Category Question 2?]
+                        <span class="accordion-icon"></span>
+                    </button>
+                </h3>
+                <div class="panel" id="faq-cat-panel-2" role="region">
+                    <p>[Category Answer 2]</p>
+                </div>
+            </div>
+            </section>
+        </main>
 
     <footer class="site-footer"> <div class="container"> <div class="footer-columns"> <div class="footer-column"> <h3>FreecalcHub</h3> <p>Your one-stop destination for a wide variety of free online calculators.</p> </div> <div class="footer-column"> <h3>Categories</h3> <ul> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date & Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </div> <div class="footer-column"> <h3>Support</h3> <ul> <li><a href="/about/">About Us</a></li> <li><a href="/contact/">Contact</a></li> <li><a href="/privacy/">Privacy Policy</a></li> <li><a href="/terms/">Terms of Service</a></li> <li><a href="/sitemap/">Sitemap</a></li> </ul> </div> </div> <div class="footer-bottom"> <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> </div> </div> </footer>
 
     <script src="/js/main.js" defer></script>
     <script src="/js/dark-mode.js" defer></script>
-</body>
+    <script src="/js/faq-accordion-v2.js" defer></script> </body>
 </html>
