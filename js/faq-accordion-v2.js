@@ -1,11 +1,19 @@
 /* /js/faq-accordion-v2.js */
 /* --- FreecalcHub: Enhanced FAQ Accordion Script --- */
-/* --- Version: 2.1 --- */
+/* --- Version: 2.2 --- */
+/* --- Last Updated: 2025-06-11 --- */
+/* --- Changelog:
+     - Version 2.2: Updated faqIndexLinks selector to include '#faq-cat-item-' for category page FAQ compatibility.
+                    This ensures FAQ index links on category pages correctly trigger accordion functionality.
+--- */
 /* --- Handles H3 > Button, Index Links, and Smooth Scroll --- */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Selects accordion buttons within faq-item elements
     const accordions = document.querySelectorAll('.faq-item h3 button.accordion');
-    const faqIndexLinks = document.querySelectorAll('.faq-index a[href^="#faq-item-"]');
+    // Selects FAQ index links that point to either standard or category-specific FAQ items
+    const faqIndexLinks = document.querySelectorAll('.faq-index a[href^="#faq-item-"], .faq-index a[href^="#faq-cat-item-"]'); 
+    
     const headerHeight = 140; // Pixels: Match CSS scroll-margin-top & actual header height
     const transitionTime = 350; // Milliseconds: Match CSS transition duration
 
@@ -21,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const parentSection = this.closest('.faq-section');
             const allAccordionButtons = parentSection
                 ? parentSection.querySelectorAll('.faq-item h3 button.accordion')
-                : accordions;
+                : accordions; // Fallback if no parentSection found (unlikely but safe)
 
             // Close all others *before* toggling the current one
             allAccordionButtons.forEach(otherButton => {
@@ -42,8 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.setAttribute('aria-expanded', 'true');
             } else {
                 // Close: Set max-height back to null
-                panel.style.maxHeight = null;
                 this.setAttribute('aria-expanded', 'false');
+                // Ensure panel doesn't jump if content is large
+                panel.style.maxHeight = null; 
             }
         });
     });
@@ -96,5 +105,4 @@ document.addEventListener('DOMContentLoaded', () => {
             panel.style.maxHeight = panel.scrollHeight + "px";
         });
     }, 250); // Debounced slightly
-
 });
