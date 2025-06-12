@@ -1,6 +1,6 @@
 # FreecalcHub General Page - Template Usage Guidelines
 
-**Version: 1.1 (Last Updated: 2025-06-11)**
+**Version: 1.2 (Last Updated: 2025-06-11)**
 
 ## 1. Overview
 
@@ -181,6 +181,10 @@ This is **critical** for SEO and rich search results. Carefully update all `[Pla
         * Position 1: "Home".
         * Position 2 (if a sub-category): `[Parent Category Name]` and its absolute URL.
         * Last Position: `[Current Category Name]` and its absolute URL. Adjust positions based on hierarchy.
+* **`FAQPage` (For Category Pages)**: **IMPORTANT**
+    * Add *every* category-level question and answer pair here.
+    * The `name` (question) and `text` (answer) in the schema **must exactly match** the visible content on the page.
+    * **Crucially, include internal links** within the `text` property (answer) to relevant calculator pages on your site. Example: `[Category Answer 1. Include internal links to relevant calculators, e.g., <a href='/finance/loan/loan-calculator/'>Loan Calculator</a>]`
 
 ### Step 4: Update Breadcrumb Navigation (Visible on Page)
 
@@ -228,6 +232,7 @@ Modify the visible breadcrumbs to reflect the category's position in the site st
         </div>
         ```
 * **About Category Section (`<section class="category-content-section">`)**: Add relevant introductory or educational content about the category.
+* **FAQ Section (`<section class="faq-section content-section">`)**: **MANDATORY V2 STRUCTURE** - Add all category-specific FAQs using the required structure (FAQ Index + FAQ Items). Refer to `category_template.html` for the precise HTML structure for each item (`div.faq-item`, `button.accordion`, `div.panel`). Ensure unique IDs for each FAQ item (`id="faq-cat-item-X"`) and panel (`id="faq-cat-panel-X"`), and **include internal links within the answer text to relevant calculator pages.**
 
 ## 5. Best Practices for All Pages
 
@@ -265,5 +270,6 @@ Before considering any page complete:
 * For calculator pages: Is the "Related Calculators" section populated correctly in both the HTML and the `relatedLink` schema?
 * For calculator pages: Does the `FAQPage` schema exactly match the visible V2 FAQ content?
 * For category pages: Are all `hasPart` entries in the `CollectionPage` schema accurate and complete, reflecting all listed calculators/sub-categories?
+* **For category pages: Is the `FAQPage` schema correctly implemented and does it exactly match the visible FAQ content? Are internal links included in FAQ answers?**
 * Has the page been tested on a server environment?
 * Are all `datePublished`, `dateModified`, and `lastmod` (for sitemap) fields formatted using the **ISO 8601 standard (YYYY-MM-DDTHH:MM:SSZ)**?
