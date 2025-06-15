@@ -1,7 +1,10 @@
 /* Main Styles for CalcHub */
-/* Version: 1.2 */
-/* Date: May 24, 2025 */
-/* Changes: Added Standard Calculator Form Grid Layout & Removed Conflicting/Old Form Rules */
+/* Version: 1.3 */
+/* Date: 2025-06-15 */
+/* Changes:
+ * - Version 1.2: Added Standard Calculator Form Grid Layout & Removed Conflicting/Old Form Rules.
+ * - Version 1.3: Adjusted .calculator-card, .calculator-icon for consistent centering of icons and text on category pages, and added .coming-soon-tag styling.
+ */
 
 /* Base Styles */
 :root {
@@ -18,7 +21,7 @@
     --border-color: #e0e0e0;
     --success-color: #2ecc71;
     --error-color: #e74c3c;
-    --warning-color: #f1c40f;
+    --warning-color: #f1c40f; /* Original */
     --info-color: #3498db;
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     --border-radius: 8px;
@@ -29,6 +32,7 @@
     --footer-text: #ecf0f1;
     --hover-background-color: #e9ecef;
     --input-bg: #fff;
+    --coming-soon-color: #FF8C00; /* New variable for coming soon orange */
 }
 
 /* Skip Link */
@@ -384,7 +388,7 @@ body .mobile-menu.active {
     background-color: var(--secondary-dark);
 }
 
-/* Category Section */
+/* Category Section (used for homepage categories) */
 .category-section {
     padding: 80px 0;
     background-color: var(--background-alt);
@@ -432,7 +436,7 @@ body .mobile-menu.active {
     font-size: 0.9rem;
 }
 
-/* Popular Calculators */
+/* Popular Calculators (also used for calculator listings on category pages) */
 .popular-calculators {
     padding: 80px 0;
 }
@@ -442,12 +446,14 @@ body .mobile-menu.active {
     margin-bottom: 40px;
 }
 
+/* This .calculator-grid is used for displaying calculator cards on category pages */
 .calculator-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
 }
 
+/* Styles for individual calculator cards */
 .calculator-card {
     background-color: var(--background-alt);
     border-radius: var(--border-radius);
@@ -455,6 +461,10 @@ body .mobile-menu.active {
     padding: 25px;
     transition: var(--transition);
     color: var(--text-color);
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    text-align: center; /* Center text within the card */
 }
 
 .calculator-card:hover {
@@ -462,21 +472,39 @@ body .mobile-menu.active {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Styles for the icon wrapper within calculator cards */
 .calculator-icon {
-    font-size: 2rem;
+    font-size: 2.5em; /* Increased from 2rem to match desired screenshot size */
     color: var(--primary-color);
     margin-bottom: 15px;
+    display: block; /* Ensure it takes full width for text-align to work */
+    text-align: center; /* Center the <i> element inside it */
+    width: 100%; /* Ensure it spans the full width of its parent to center content within */
 }
 
 .calculator-card h3 {
     margin-bottom: 10px;
     color: var(--text-color);
+    text-align: center; /* Explicitly center the heading */
 }
 
 .calculator-card p {
     color: var(--text-light);
-    font-size: 0.9rem;
+    font-size: 0.95rem; /* Slightly adjusted for better readability if needed */
+    text-align: center; /* Explicitly center the paragraph */
+    line-height: 1.5;
+    /* removed flex-grow and margin-bottom as they can interfere with coming-soon-tag positioning */
 }
+
+/* Styles for the "Coming Soon" tag */
+.coming-soon-tag {
+    font-size: 0.85em; /* Smaller font size */
+    font-weight: bold; /* Make it bold */
+    color: var(--secondary-color); /* Using secondary-color for orange, as defined in :root */
+    display: block; /* Ensure it takes its own line */
+    margin-top: 5px; /* Small space above it */
+}
+
 
 /* Features Section */
 .features-section {
@@ -614,77 +642,33 @@ footer {
     padding: 0 20px;
 }
 
-.footer-section h4 {
+.footer-column h3 { /* Changed from .footer-section h4 */
     margin-bottom: 20px;
     color: white;
     font-size: 1.4rem;
     font-weight: 700;
 }
 
-.footer-section ul {
+.footer-column ul { /* Changed from .footer-section ul */
     list-style: none;
 }
 
-.footer-section li {
+.footer-column li { /* Changed from .footer-section li */
     margin-bottom: 10px;
 }
 
-.footer-section a {
+.footer-column a { /* Changed from .footer-section a */
     color: var(--footer-text);
     opacity: 0.8;
     transition: var(--transition);
 }
 
-.footer-section a:hover {
+.footer-column a:hover { /* Changed from .footer-section a:hover */
     opacity: 1;
     color: white;
 }
 
-.social-links {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px !important;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    transition: var(--transition);
-}
-
-.social-links a:hover {
-    background-color: var(--primary-color);
-}
-
-.newsletter {
-    margin-top: 30px;
-}
-
-.newsletter p {
-    margin-bottom: 15px;
-    opacity: 0.8;
-}
-
-.newsletter form {
-    display: flex;
-    flex-direction: column;
-}
-
-.newsletter input {
-    padding: 10px;
-    border: none;
-    border-radius: var(--border-radius);
-    margin-bottom: 10px;
-}
-
-.newsletter .btn {
-    background-color: var(--primary-color);
-}
+/* Removed specific social-links and newsletter sections as per standard template */
 
 .footer-bottom {
     max-width: var(--container-width);
@@ -1114,3 +1098,7 @@ body.dark-mode .faq-accordion .accordion:hover {
 }
 
 /* --- End Old FAQ Accordion Styles --- */
+}
+Perfect! The new styles.css looks good.
+
+Now, let's update the sitemap.xml to include the latest date for the **Business > Inventory** page.
