@@ -1,6 +1,6 @@
 # FreecalcHub General Page - Template Usage Guidelines
 
-**Version: 1.2 (Last Updated: 2025-06-11)**
+**Version: 1.3 (Last Updated: 2025-06-15)**
 
 ## 1. Overview
 
@@ -110,7 +110,7 @@ Modify the visible breadcrumbs to reflect the calculator's position in the site 
             <a href="/">Home</a>
             <span class="separator">/</span>
             <a href="/finance/">Finance Calculators</a> <span class="separator">/</span>
-            <span class="current">Loan Calculator</span> 
+            <span class="current">Loan Calculator</span>
         </div>
     </div>
     ```
@@ -213,12 +213,12 @@ Modify the visible breadcrumbs to reflect the category's position in the site st
 * **Category Description (`<p class="lead">`)**: Provide a clear, concise description of the category.
 * **Calculator Grid (`<div class="calculator-grid">`)**:
     * For each calculator or sub-category, add a `div` with `class="calculator-card"` or `class="category-card"`.
-    * Include an icon (`<div class="card-icon"> <i class="fas fa-icon"></i> </div>`), an `<h3>` with a link to the page, and a brief `<p>` description.
+    * Include an icon (`<div class="calculator-icon"> <i class="fas fa-icon"></i> </div>`), an `<h3>` with a link to the page, and a brief `<p>` description.
     * Ensure all `href` paths are correct and root-relative.
     * Example for a calculator:
         ```html
         <div class="calculator-card">
-            <div class="card-icon"><i class="fas fa-home"></i></div>
+            <div class="calculator-icon"><i class="fas fa-home"></i></div>
             <h3><a href="/finance/mortgage/mortgage-calculator/">Mortgage Calculator</a></h3>
             <p>Calculate monthly payments, interest, and amortization</p>
         </div>
@@ -226,7 +226,7 @@ Modify the visible breadcrumbs to reflect the category's position in the site st
     * Example for a sub-category:
         ```html
         <div class="category-card">
-            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="calculator-icon"><i class="fas fa-chart-line"></i></div>
             <h3><a href="/finance/investments/">Investment Calculators</a></h3>
             <p>Tools for understanding stocks, bonds, and portfolio growth.</p>
         </div>
@@ -273,3 +273,4 @@ Before considering any page complete:
 * **For category pages: Is the `FAQPage` schema correctly implemented and does it exactly match the visible FAQ content? Are internal links included in FAQ answers?**
 * Has the page been tested on a server environment?
 * Are all `datePublished`, `dateModified`, and `lastmod` (for sitemap) fields formatted using the **ISO 8601 standard (YYYY-MM-DDTHH:MM:SSZ)**?
+
