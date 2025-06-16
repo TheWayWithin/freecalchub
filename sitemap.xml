@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        xsi:schemaLocation="http://www.sitemaps.org/2001/XMLSchema-instance
               http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
   <url>
@@ -547,7 +547,31 @@
   </url>
   <url>
     <loc>https://www.freecalchub.com/business/marketing/</loc>
-    <lastmod>2025-05-30T10:06:00Z</lastmod>
+    <lastmod>2025-06-16T13:37:45Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/business/marketing/roas-calculator/</loc>
+    <lastmod>2025-06-16T13:37:45Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/business/marketing/churn-rate-calculator/</loc>
+    <lastmod>2025-06-16T13:37:45Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/business/marketing/email-marketing-roi-calculator/</loc>
+    <lastmod>2025-06-16T13:37:45Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/business/marketing/traffic-to-lead-calculator/</loc>
+    <lastmod>2025-06-16T13:37:45Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
