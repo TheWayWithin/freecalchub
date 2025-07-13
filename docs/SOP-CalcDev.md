@@ -43,11 +43,12 @@ This SOP applies to all activities undertaken by the Calculator Developer relate
     * **Implement Category Page FAQs:** Integrate relevant FAQ content and schema markup (FAQPage) on category pages as per `general-template-guidelines.md`, ensuring internal linking within answers to relevant calculator pages.
 * **Template Compliance (MANDATORY):**
     * **ALWAYS start with the latest `calculator_template.html`** - never copy from existing calculator pages
-    * **NEVER modify CSP headers** without first updating `calculator_template.html` - CSP must be consistent site-wide
+    * **ALWAYS start with the latest `category_template.html`** - never copy from existing category pages
+    * **NEVER modify CSP headers** without first updating both master templates - CSP must be consistent site-wide
     * **Verify template version compatibility** - check `general-template-guidelines.md` for latest requirements
-    * **Follow exact GTM implementation** from template including both head script and body noscript iframe
-    * **When debugging issues, compare with template first** before making modifications
-    * **Template updates take precedence** - if template changes, existing calculators should be updated to match
+    * **Follow exact GTM implementation** from templates including both head script and body noscript iframe
+    * **When debugging issues, compare with templates first** before making modifications
+    * **Template updates take precedence** - if templates change, existing pages should be updated to match
 * **Adherence to Standards:**
     * Strictly follow the `general-template-guidelines.md` and the master `calculator_template.html` for all new calculator pages.
     * Ensure all code (HTML, CSS, JS) is well-commented, clean, and maintainable.

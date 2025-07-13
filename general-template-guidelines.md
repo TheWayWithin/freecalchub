@@ -241,11 +241,11 @@ Modify the visible breadcrumbs to reflect the category's position in the site st
     * The GTM `noscript` iframe must be placed immediately after the opening `<body>` tag.
     * The GTM container ID is `GTM-KNHC9TZ5`.
 * **Content Security Policy (CSP) Requirements:**
-    * **CRITICAL**: All pages must use the standard CSP from `calculator_template.html` which supports current GTM + CookieYes setup
+    * **CRITICAL**: All pages must use the standard CSP from both `calculator_template.html` and `category_template.html` which support current GTM + CookieYes setup
     * Required CSP domains for script-src: `https://www.googletagmanager.com https://www.google-analytics.com https://cdn-cookieyes.com`
     * Required CSP domains for connect-src: `https://open.er-api.com https://www.google-analytics.com https://log.cookieyes.com https://cdn-cookieyes.com`
     * Calculator-specific additions (like Chart.js CDN) should be added to the template CSP, not custom per-page CSP
-    * **Never modify CSP without updating the master template first** to maintain site-wide consistency
+    * **Never modify CSP without updating both master templates first** to maintain site-wide consistency
 * **Root-Relative Paths**: **Always** use full root-relative paths (starting with `/`) for all internal links and asset references.
 * **IDs and Classes**: Use unique and descriptive `id`s and meaningful classes.
 * **CSS Variables**: Use standard site CSS variables for specific styles, leveraging global styles (`calculator-form`, `content-section`, `card`) where possible.
