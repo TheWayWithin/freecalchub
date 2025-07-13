@@ -1,32 +1,29 @@
  <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Percentage Calculators - CalcHub</title>
-    <meta name="description" content="Free online percentage calculators for various needs, including percentage of a number, percentage change, markup, discount, and more. Easy to use with clear explanations.">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/dark-mode.css">
-    <link rel="stylesheet" href="/css/dark-mode-button.css">
-    <link rel="stylesheet" href="/css/navigation-ribbon.css">
-    <link rel="stylesheet" href="/css/breadcrumb-styles.css">
-    <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
-    <script>
+<meta charset="utf-8"/><meta content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https://www.googletagmanager.com; connect-src 'self' https://open.er-api.com" http-equiv="Content-Security-Policy"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Percentage Calculators - CalcHub</title>
+<meta content="Free online percentage calculators for various needs, including percentage of a number, percentage change, markup, discount, and more. Easy to use with clear explanations." name="description"/>
+<link href="/css/styles.css" rel="stylesheet"/>
+<link href="/css/dark-mode.css" rel="stylesheet"/>
+<link href="/css/dark-mode-button.css" rel="stylesheet"/>
+<link href="/css/navigation-ribbon.css" rel="stylesheet"/>
+<link href="/css/breadcrumb-styles.css" rel="stylesheet"/>
+<link href="/css/calchub-consolidated-fixes.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
+<script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag("js", new Date());
       gtag("config", "G-R1QHNSSWTC");
     </script>
-    <!-- End Google Analytics -->
-
-    <!-- Schema Markup -->
-    <script type="application/ld+json">
+<!-- End Google Analytics -->
+<!-- Schema Markup -->
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -52,7 +49,7 @@
       ]
     }
     </script>
-    <script type="application/ld+json">
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
@@ -69,101 +66,96 @@
     </script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to content</a>
-    <header>
-        <div class="header-container">
-            <div class="logo-container">
-                <a href="../../" class="logo">
-                    <img src="/images/logo.svg" alt="CalcHub Logo" height="40">
-                </a>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../../finance/">Finance</a></li>
-                    <li><a href="../../math/" class="active">Math</a></li>
-                    <li><a href="../../health/">Health</a></li>
-                    <li><a href="../../conversions/">Conversions</a></li>
-                    <li><a href="../../date-time/">Date & Time</a></li>
-                    <li><a href="../../business/">Business</a></li>
-                    <li><a href="../../lifestyle/">Lifestyle</a></li>
-                    <li><a href="../../blog/">Blog</a></li>
-                </ul>
-            </nav>
-            <div class="header-controls">
-                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                </button>
-                <button id="mobile-menu-button" aria-label="Open menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <div id="mobile-menu" class="mobile-menu">
-        <div class="mobile-menu-header">
-            <span>Menu</span>
-            <button id="mobile-menu-close" aria-label="Close menu">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <nav class="mobile-nav">
-            <ul>
-                <li><a href="../../finance/">Finance</a></li>
-                <li><a href="../../math/" class="active">Math</a></li>
-                <li><a href="../../health/">Health</a></li>
-                <li><a href="../../conversions/">Conversions</a></li>
-                <li><a href="../../date-time/">Date & Time</a></li>
-                <li><a href="../../business/">Business</a></li>
-                <li><a href="../../lifestyle/">Lifestyle</a></li>
-                <li><a href="../../blog/">Blog</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <div class="breadcrumbs">
-        <div class="breadcrumbs-container">
-            <a href="../../">Home</a>
-            <span class="separator">/</span>
-            <a href="../">Math</a>
-            <span class="separator">/</span>
-            <span class="current">Percentages</span>
-        </div>
-    </div>
-
-    <div class="navigation-ribbon">
-        <div class="navigation-ribbon-container">
-            <a href="../basic/"><i class="fas fa-plus-minus"></i>Basic Math</a>
-            <a href="./" class="active"><i class="fas fa-percent"></i>Percentages</a>
-            <a href="../fractions/"><i class="fas fa-divide"></i>Fractions</a>
-            <a href="../algebra/"><i class="fas fa-superscript"></i>Algebra</a>
-            <a href="../geometry/"><i class="fas fa-shapes"></i>Geometry</a>
-            <a href="../statistics/"><i class="fas fa-chart-bar"></i>Statistics</a>
-            <a href="../calculus/"><i class="fas fa-integral"></i>Calculus</a>
-            <a href="../scientific/"><i class="fas fa-calculator"></i>Scientific</a>
-        </div>
-    </div>
-
-    <main id="main-content" class="container py-5">
-        <section class="category-header">
-            <h1>Percentage Calculators</h1>
-            <p class="lead">Easily calculate percentages, percentage changes, markups, discounts, and more with our collection of free online percentage calculators. Understand the concepts behind the calculations with clear explanations.</p>
-        </section>
-
-        <section class="subcategory-section">
-            <h2>Available Percentage Calculators</h2>
-            <p>Tools to help you solve various percentage-related problems quickly and accurately.</p>
-            <div class="calculator-grid">
-                <a href="./percentage-calculator/" class="calculator-card">
-                    <div class="calculator-icon">
-                        <i class="fas fa-percent"></i>
-                    </div>
-                    <h3>Percentage Calculator</h3>
-                    <p>Calculate percentages of numbers, find what percentage one number is of another, and more.</p>
-                </a>
-                <!-- Add other percentage calculators here as cards -->
-                <!-- Example:
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header>
+<div class="header-container">
+<div class="logo-container">
+<a class="logo" href="../../">
+<img alt="CalcHub Logo" height="40" src="/images/logo.svg"/>
+</a>
+</div>
+<nav class="main-nav">
+<ul>
+<li><a href="../../finance/">Finance</a></li>
+<li><a class="active" href="../../math/">Math</a></li>
+<li><a href="../../health/">Health</a></li>
+<li><a href="../../conversions/">Conversions</a></li>
+<li><a href="../../date-time/">Date &amp; Time</a></li>
+<li><a href="../../business/">Business</a></li>
+<li><a href="../../lifestyle/">Lifestyle</a></li>
+<li><a href="../../blog/">Blog</a></li>
+</ul>
+</nav>
+<div class="header-controls">
+<button aria-label="Toggle dark mode" id="dark-mode-toggle">
+<i class="fas fa-moon"></i>
+<i class="fas fa-sun"></i>
+</button>
+<button aria-label="Open menu" id="mobile-menu-button">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</div>
+</header>
+<div class="mobile-menu" id="mobile-menu">
+<div class="mobile-menu-header">
+<span>Menu</span>
+<button aria-label="Close menu" id="mobile-menu-close">
+<i class="fas fa-times"></i>
+</button>
+</div>
+<nav class="mobile-nav">
+<ul>
+<li><a href="../../finance/">Finance</a></li>
+<li><a class="active" href="../../math/">Math</a></li>
+<li><a href="../../health/">Health</a></li>
+<li><a href="../../conversions/">Conversions</a></li>
+<li><a href="../../date-time/">Date &amp; Time</a></li>
+<li><a href="../../business/">Business</a></li>
+<li><a href="../../lifestyle/">Lifestyle</a></li>
+<li><a href="../../blog/">Blog</a></li>
+</ul>
+</nav>
+</div>
+<div class="breadcrumbs">
+<div class="breadcrumbs-container">
+<a href="../../">Home</a>
+<span class="separator">/</span>
+<a href="../">Math</a>
+<span class="separator">/</span>
+<span class="current">Percentages</span>
+</div>
+</div>
+<div class="navigation-ribbon">
+<div class="navigation-ribbon-container">
+<a href="../basic/"><i class="fas fa-plus-minus"></i>Basic Math</a>
+<a class="active" href="./"><i class="fas fa-percent"></i>Percentages</a>
+<a href="../fractions/"><i class="fas fa-divide"></i>Fractions</a>
+<a href="../algebra/"><i class="fas fa-superscript"></i>Algebra</a>
+<a href="../geometry/"><i class="fas fa-shapes"></i>Geometry</a>
+<a href="../statistics/"><i class="fas fa-chart-bar"></i>Statistics</a>
+<a href="../calculus/"><i class="fas fa-integral"></i>Calculus</a>
+<a href="../scientific/"><i class="fas fa-calculator"></i>Scientific</a>
+</div>
+</div>
+<main class="container py-5" id="main-content">
+<section class="category-header">
+<h1>Percentage Calculators</h1>
+<p class="lead">Easily calculate percentages, percentage changes, markups, discounts, and more with our collection of free online percentage calculators. Understand the concepts behind the calculations with clear explanations.</p>
+</section>
+<section class="subcategory-section">
+<h2>Available Percentage Calculators</h2>
+<p>Tools to help you solve various percentage-related problems quickly and accurately.</p>
+<div class="calculator-grid">
+<a class="calculator-card" href="./percentage-calculator/">
+<div class="calculator-icon">
+<i class="fas fa-percent"></i>
+</div>
+<h3>Percentage Calculator</h3>
+<p>Calculate percentages of numbers, find what percentage one number is of another, and more.</p>
+</a>
+<!-- Add other percentage calculators here as cards -->
+<!-- Example:
                 <a href="./percentage-change/" class="calculator-card">
                     <div class="calculator-icon">
                         <i class="fas fa-exchange-alt"></i>
@@ -172,80 +164,72 @@
                     <p>Calculate the percentage increase or decrease between two values.</p>
                 </a>
                 -->
-            </div>
-        </section>
-
-        <section class="math-education">
-            <h2>Understanding Percentages</h2>
-            <div class="education-content">
-                <p>Percentages are a fundamental concept in mathematics used to express a number as a fraction of 100. They are widely used in everyday life, from calculating discounts and tips to understanding statistics and financial reports. The word "percent" comes from the Latin "per centum," meaning "by the hundred."</p>
-
-                <h3>Key Percentage Concepts</h3>
-                <ul>
-                    <li><strong>Calculating a Percentage:</strong> To find what percentage one number (part) is of another number (whole), use the formula: (Part / Whole) * 100 = Percentage.</li>
-                    <li><strong>Finding a Percentage of a Number:</strong> To find a specific percentage of a number, convert the percentage to a decimal (divide by 100) and multiply by the number: (Percentage / 100) * Number = Result.</li>
-                    <li><strong>Percentage Change:</strong> To calculate the percentage increase or decrease between two values (old and new), use the formula: ((New Value - Old Value) / Old Value) * 100 = Percentage Change.</li>
-                    <li><strong>Discounts and Markups:</strong> Percentages are commonly used to calculate price adjustments. A discount reduces the price, while a markup increases it.</li>
-                </ul>
-
-                <h3>Tips for Working with Percentages</h3>
-                <ol>
-                    <li>Always identify the "whole" or the base amount when calculating percentages.</li>
-                    <li>Convert percentages to decimals or fractions before performing calculations.</li>
-                    <li>Double-check whether you are calculating a percentage of a number, the percentage itself, or the base number.</li>
-                    <li>Understand the context – a 10% increase followed by a 10% decrease does not return to the original value.</li>
-                </ol>
-
-                <p>Our percentage calculators simplify these calculations and provide clear results for various scenarios, helping you apply percentage concepts accurately.</p>
-            </div>
-        </section>
-
-        <!-- Removed FAQ section specific to the category page -->
-
-    </main>
-
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>CalcHub</h3>
-                <p>Your source for free, accurate, and easy-to-use online calculators.</p>
-            </div>
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="../../about/">About Us</a></li>
-                    <li><a href="../../blog/">Blog</a></li>
-                    <li><a href="../../privacy/">Privacy Policy</a></li>
-                    <li><a href="../../terms/">Terms of Service</a></li>
-                    <li><a href="../../gdpr/">GDPR</a></li>
-                    <li><a href="/sitemap/">Sitemap</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Categories</h3>
-                <ul>
-                    <li><a href="../../finance/">Finance</a></li>
-                    <li><a href="../../math/">Math</a></li>
-                    <li><a href="../../health/">Health</a></li>
-                    <li><a href="../../conversions/">Conversions</a></li>
-                    <li><a href="../../date-time/">Date & Time</a></li>
-                    <li><a href="../../business/">Business</a></li>
-                    <li><a href="../../lifestyle/">Lifestyle</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Follow Us</h3>
-                <!-- Add social media links here if desired -->
-                <p>Stay connected for updates and new calculators.</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 CalcHub. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="/js/main.js"></script>
-    <script src="/js/dark-mode.js"></script>
-    <!-- No faq-accordion needed on category page -->
+</div>
+</section>
+<section class="math-education">
+<h2>Understanding Percentages</h2>
+<div class="education-content">
+<p>Percentages are a fundamental concept in mathematics used to express a number as a fraction of 100. They are widely used in everyday life, from calculating discounts and tips to understanding statistics and financial reports. The word "percent" comes from the Latin "per centum," meaning "by the hundred."</p>
+<h3>Key Percentage Concepts</h3>
+<ul>
+<li><strong>Calculating a Percentage:</strong> To find what percentage one number (part) is of another number (whole), use the formula: (Part / Whole) * 100 = Percentage.</li>
+<li><strong>Finding a Percentage of a Number:</strong> To find a specific percentage of a number, convert the percentage to a decimal (divide by 100) and multiply by the number: (Percentage / 100) * Number = Result.</li>
+<li><strong>Percentage Change:</strong> To calculate the percentage increase or decrease between two values (old and new), use the formula: ((New Value - Old Value) / Old Value) * 100 = Percentage Change.</li>
+<li><strong>Discounts and Markups:</strong> Percentages are commonly used to calculate price adjustments. A discount reduces the price, while a markup increases it.</li>
+</ul>
+<h3>Tips for Working with Percentages</h3>
+<ol>
+<li>Always identify the "whole" or the base amount when calculating percentages.</li>
+<li>Convert percentages to decimals or fractions before performing calculations.</li>
+<li>Double-check whether you are calculating a percentage of a number, the percentage itself, or the base number.</li>
+<li>Understand the context – a 10% increase followed by a 10% decrease does not return to the original value.</li>
+</ol>
+<p>Our percentage calculators simplify these calculations and provide clear results for various scenarios, helping you apply percentage concepts accurately.</p>
+</div>
+</section>
+<!-- Removed FAQ section specific to the category page -->
+</main>
+<footer class="site-footer">
+<div class="footer-container">
+<div class="footer-column">
+<h3>CalcHub</h3>
+<p>Your source for free, accurate, and easy-to-use online calculators.</p>
+</div>
+<div class="footer-column">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="../../about/">About Us</a></li>
+<li><a href="../../blog/">Blog</a></li>
+<li><a href="../../privacy/">Privacy Policy</a></li>
+<li><a href="../../terms/">Terms of Service</a></li>
+<li><a href="../../gdpr/">GDPR</a></li>
+<li><a href="/sitemap/">Sitemap</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Categories</h3>
+<ul>
+<li><a href="../../finance/">Finance</a></li>
+<li><a href="../../math/">Math</a></li>
+<li><a href="../../health/">Health</a></li>
+<li><a href="../../conversions/">Conversions</a></li>
+<li><a href="../../date-time/">Date &amp; Time</a></li>
+<li><a href="../../business/">Business</a></li>
+<li><a href="../../lifestyle/">Lifestyle</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Follow Us</h3>
+<!-- Add social media links here if desired -->
+<p>Stay connected for updates and new calculators.</p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2025 CalcHub. All rights reserved.</p>
+</div>
+</footer>
+<script src="/js/main.js"></script>
+<script src="/js/dark-mode.js"></script>
+<!-- No faq-accordion needed on category page -->
 </body>
 </html>

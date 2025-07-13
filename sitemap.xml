@@ -6,597 +6,597 @@
 
   <url>
     <loc>https://freecalchub.com/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
 
   <url>
     <loc>https://freecalchub.com/finance/</loc>
-    <lastmod>2025-07-12T12:00:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/math/</loc>
-    <lastmod>2025-06-13T18:06:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/health/</loc>
-    <lastmod>2025-07-12T12:00:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/conversions/</loc>
-    <lastmod>2025-06-13T18:06:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/date-time/</loc>
-    <lastmod>2025-06-13T18:06:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/business/</loc>
-    <lastmod>2025-06-13T18:06:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/lifestyle/</loc>
-    <lastmod>2025-06-13T18:06:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/blog/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
 
   <url>
     <loc>https://freecalchub.com/about/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
     <url>
     <loc>https://freecalchub.com/contact/</loc>
-    <lastmod>2025-05-29T10:35:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/privacy/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/terms/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/gdpr/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/sitemap/</loc>
-    <lastmod>2025-06-06T20:27:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://freecalchub.com/finance/investment/</loc>
-    <lastmod>2025-06-15T17:59:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/finance/investment/compound-interest-calculator/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/finance/loan/</loc>
-    <lastmod>2025-06-13T18:06:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/finance/loan/loan-calculator/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/finance/loan/extra-payment-calculator/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/finance/loan/auto-loan-calculator/</loc>
-    <lastmod>2025-05-26T16:18:04+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.freecalchub.com/finance/loan/student-loan-payoff-calculator/</loc>
-    <lastmod>2025-05-27T00:25:51+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.freecalchub.com/finance/loan/debt-payoff-calculator/</loc>
-    <lastmod>2025-05-27T00:25:51+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url> <loc>https://www.freecalchub.com/finance/loan/loan-comparison-calculator/</loc>
-    <lastmod>2025-05-28T02:22:22+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freecalchub.com/finance/mortgage/</loc>
-    <lastmod>2025-06-15T17:05:38Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/finance/mortgage/affordability-calculator/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/finance/mortgage/mortgage-calculator/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/finance/mortgage/refinance-calculator/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/finance/mortgage/payoff-calculator/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/finance/mortgage/biweekly-calculator/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/finance/mortgage/points-calculator/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/finance/retirement/</loc>
-    <lastmod>2025-06-15T17:21:09Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/finance/retirement/retirement-calculator/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/finance/savings/</loc>
-    <lastmod>2025-06-15T17:28:13Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/finance/savings/savings-goal-calculator/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/finance/budgeting/</loc>
-    <lastmod>2025-06-13T18:06:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/finance/tax/</loc>
-    <lastmod>2025-06-15T17:48:47Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/finance/tax/income-tax-calculator/</loc>
-    <lastmod>2025-05-30T00:05:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/finance/tax/sales-tax-calculator/</loc>
-    <lastmod>2025-05-30T00:05:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/finance/tax/tax-bracket-calculator/</loc>
-    <lastmod>2025-05-30T00:05:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://freecalchub.com/health/bmi/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/health/bmi/bmi-calculator/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/health/fitness/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/health/medical/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/health/mental-health/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/health/nutrition/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/health/pregnancy/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/health/weight/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://www.freecalchub.com/lifestyle/dining-social/</loc>
-    <lastmod>2025-05-26T15:07:59+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.freecalchub.com/lifestyle/dining-social/tip-calculator/</loc>
-    <lastmod>2025-05-26T15:07:59+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.freecalchub.com/lifestyle/education/</loc>
-    <lastmod>2025-05-26T15:07:59+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.freecalchub.com/lifestyle/education/grading-performance/</loc>
-    <lastmod>2025-05-26T15:07:59+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.freecalchub.com/lifestyle/education/grading-performance/gpa-calculator/</loc>
-    <lastmod>2025-05-26T15:07:59+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/lifestyle/home/</loc>
-    <lastmod>2025-05-30T10:48:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/lifestyle/garden/</loc>
-    <lastmod>2025-05-30T10:48:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/lifestyle/travel/</loc>
-    <lastmod>2025-05-30T10:48:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/lifestyle/pets/</loc>
-    <lastmod>2025-05-30T10:48:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/lifestyle/events/</loc>
-    <lastmod>2025-05-30T10:48:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/lifestyle/shopping/</loc>
-    <lastmod>2025-05-30T10:48:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/lifestyle/entertainment/</loc>
-    <lastmod>2025-05-30T10:48:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/lifestyle/sustainability/</loc>
-    <lastmod>2025-05-30T10:48:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
  <url>
     <loc>https://www.freecalchub.com/conversions/length-converter/</loc>
-    <lastmod>2025-05-26T15:07:59+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/conversions/length-converter/length-unit-calculator/</loc>
-    <lastmod>2025-05-26T15:07:59+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/conversions/currency/</loc>
-    <lastmod>2025-06-06T20:21:14Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/conversions/currency/live-currency-converter/</loc>
-    <lastmod>2025-06-02T04:36:23Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/conversions/currency/historical-exchange-rates-converter/</loc>
-    <lastmod>2025-06-06T20:27:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/conversions/currency/inflation-calculator/</loc>
-    <lastmod>2025-06-06T20:27:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/conversions/weight/</loc>
-    <lastmod>2025-05-30T02:13:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/conversions/volume/</loc>
-    <lastmod>2025-05-30T02:13:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/conversions/temperature/</loc>
-    <lastmod>2025-05-30T02:13:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/conversions/area/</loc>
-    <lastmod>2025-06-20T20:52:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/conversions/speed/</loc>
-    <lastmod>2025-05-30T02:13:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/conversions/time/</loc>
-    <lastmod>2025-05-30T02:13:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://www.freecalchub.com/date-time/age/</loc>
-    <lastmod>2025-05-30T02:47:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/date-time/date-difference/</loc>
-    <lastmod>2025-05-30T02:47:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/date-time/time-zone/</loc>
-    <lastmod>2025-05-30T02:47:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/date-time/countdown/</loc>
-    <lastmod>2025-05-30T02:47:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/date-time/business-days/</loc>
-    <lastmod>2025-05-30T02:47:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/date-time/time-calculator/</loc>
-    <lastmod>2025-05-30T02:47:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/date-time/date-format/</loc>
-    <lastmod>2025-05-30T02:47:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/date-time/holiday/</loc>
-    <lastmod>2025-05-30T02:47:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://www.freecalchub.com/business/profit/</loc>
-    <lastmod>2025-06-19T20:32:02Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/business/roi/</loc>
-    <lastmod>2025-06-16T21:49:34Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/business/break-even/</loc>
-    <lastmod>2025-06-15T16:48:09Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/business/payroll/</loc>
-    <lastmod>2025-06-16T21:49:34Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/business/inventory/</loc>
-    <lastmod>2025-06-15T16:38:09Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/business/tax/</loc>
-    <lastmod>2025-05-30T10:06:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/business/startup/</loc>
-    <lastmod>2025-06-19T21:02:33Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/business/marketing/</loc>
-    <lastmod>2025-06-16T13:37:45Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
     <loc>https://www.freecalchub.com/math/geometry/</loc>
-    <lastmod>2025-05-30T00:26:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/math/algebra/</loc>
-    <lastmod>2025-05-30T00:26:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/math/statistics/</loc>
-    <lastmod>2025-05-30T00:26:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/math/percentages/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://freecalchub.com/math/percentages/percentage-calculator/</loc>
-    <lastmod>2025-05-25T11:28:21+00:00</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/math/basic/</loc>
-    <lastmod>2025-05-30T01:48:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/math/fractions/</loc>
-    <lastmod>2025-05-30T01:48:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/math/calculus/</loc>
-    <lastmod>2025-05-30T01:48:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.freecalchub.com/math/scientific/</loc>
-    <lastmod>2025-05-30T01:48:00Z</lastmod>
+    <lastmod>2025-07-12T14:59:37Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
