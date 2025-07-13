@@ -102,6 +102,7 @@ This is a static site with no build process. Key operations:
 - **Font Awesome**: Uses CDN version 6.0.0-beta3
 - **API Usage**: Some calculators may require external APIs - check individual calculator specs
 - **Git Workflow**: Direct commits to main trigger production deployment
+- **Deployment Pipeline**: Local commits must be pushed to GitHub to trigger Netlify deployment - changes only take effect after successful deployment
 
 ## Quality Standards
 
