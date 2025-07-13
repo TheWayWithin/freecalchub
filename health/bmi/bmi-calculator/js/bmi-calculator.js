@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("bmi-calculator-form");
+    
+    // Debug: Check if form element exists
+    if (!form) {
+        console.error("BMI Calculator: Form element not found!");
+        return;
+    }
     const unitToggles = document.querySelectorAll(".unit-toggle");
     const metricInputs = document.querySelectorAll(".metric-input");
     const imperialInputs = document.querySelectorAll(".imperial-input");
@@ -79,6 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Form Submission Logic ---
     form.addEventListener("submit", (e) => {
         e.preventDefault();
+        console.log("BMI Calculator: Form submitted!");
         
         let height, weight, heightMeters;
         const age = parseInt(ageInput.value);
