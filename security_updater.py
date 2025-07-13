@@ -24,14 +24,14 @@ class SecurityUpdater:
         self.changes_made = []
         self.errors = []
         
-        # Security configurations
+        # Security configurations - Updated based on template standards
         self.csp_policy = (
             "default-src 'self'; "
             "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; "
-            "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; "
+            "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn-cookieyes.com; "
             "font-src 'self' https://cdnjs.cloudflare.com; "
-            "img-src 'self' data: https://www.googletagmanager.com; "
-            "connect-src 'self' https://open.er-api.com"
+            "img-src 'self' data: https://www.googletagmanager.com https://cdn-cookieyes.com; "
+            "connect-src 'self' https://open.er-api.com https://www.google-analytics.com https://log.cookieyes.com https://cdn-cookieyes.com"
         )
         
         # Font Awesome upgrade details
@@ -196,7 +196,13 @@ class SecurityUpdater:
             return False, f"Validation error: {e}"
     
     def process_templates(self):
-        """Process master template files"""
+        """
+        Process master template files first to ensure consistency across site.
+        
+        This follows the template-first approach where master templates are updated
+        before individual pages to maintain site-wide CSP and infrastructure consistency.
+        Based on lessons learned from CookieYes CSP integration testing.
+        """
         template_files = [
             'calculator-template.html',
             'category-template.html',
@@ -251,11 +257,15 @@ class SecurityUpdater:
         for i, file_path in enumerate(all_files, 1):
             print(f"  {i:3d}. {file_path}")
         
-        if not self.dry_run:
+        if not self.dry_run and not getattr(self, 'force', False):
             # Confirm before processing
-            response = input(f"\nProceed with updating {len(all_files)} files? (y/N): ")
-            if response.lower() != 'y':
-                print("Operation cancelled.")
+            try:
+                response = input(f"\nProceed with updating {len(all_files)} files? (y/N): ")
+                if response.lower() != 'y':
+                    print("Operation cancelled.")
+                    return []
+            except EOFError:
+                print("\nNo input available, use --force flag for automated processing")
                 return []
         
         results = []
@@ -314,6 +324,8 @@ def main():
                        help='Process specific file(s)')
     parser.add_argument('--validate', action='store_true',
                        help='Validate security implementations')
+    parser.add_argument('--force', action='store_true',
+                       help='Skip confirmation prompts for bulk operations')
     
     args = parser.parse_args()
     
@@ -322,6 +334,7 @@ def main():
         dry_run=args.dry_run,
         backup=not args.no_backup
     )
+    updater.force = args.force
     
     if args.validate:
         # Validation mode
