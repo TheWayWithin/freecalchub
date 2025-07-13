@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-<meta charset="utf-8"/><meta content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https://www.googletagmanager.com; connect-src 'self' https://open.er-api.com" http-equiv="Content-Security-Policy"/>
+<meta charset="utf-8"/><meta content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn-cookieyes.com https://cdn.jsdelivr.net https://polyfill.io; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https://www.googletagmanager.com https://cdn-cookieyes.com; connect-src 'self' https://open.er-api.com https://www.google-analytics.com https://log.cookieyes.com https://cdn-cookieyes.com" http-equiv="Content-Security-Policy"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Compound Interest Calculator | FreecalcHub</title>
 <meta content="Free compound interest calculator to estimate investment growth over time with principal, contributions, rate, and time. See how your savings can grow with compounding." name="description"/>
@@ -88,6 +88,16 @@
       ]
     }
     </script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+  };
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -213,13 +223,15 @@
 <h4>What is Compound Interest?</h4>
 <p>Compound interest is the interest earned on an initial principal amount plus the accumulated interest from previous periods. Essentially, it means earning "interest on your interest." This contrasts with simple interest, where interest is calculated only on the original principal. The power of compounding allows investments to grow at an accelerating rate over time, making it a cornerstone of long-term wealth building. It is often referred to as the "eighth wonder of the world" for its remarkable ability to multiply money.</p>
 <h4>The Compound Interest Formula</h4>
-<p>The basic formula for compound interest is: <code>A = P(1 + r/n)^(nt)</code></p>
+<div style="text-align: center; margin: 20px 0; padding: 15px; background-color: #f8f9fa; border-radius: 8px; border-left: 4px solid #007bff;">
+<p style="font-size: 1.2em; margin: 0;">$$A = P\left(1 + \frac{r}{n}\right)^{nt}$$</p>
+</div>
 <ul>
-<li><strong>A</strong> = the future value of the investment/loan, including interest</li>
-<li><strong>P</strong> = the principal investment amount (the initial deposit or loan amount)</li>
-<li><strong>r</strong> = the annual interest rate (decimal)</li>
-<li><strong>n</strong> = the number of times that interest is compounded per year</li>
-<li><strong>t</strong> = the number of years the money is invested or borrowed for</li>
+<li><strong>$A$</strong> = the future value of the investment/loan, including interest</li>
+<li><strong>$P$</strong> = the principal investment amount (the initial deposit or loan amount)</li>
+<li><strong>$r$</strong> = the annual interest rate (decimal)</li>
+<li><strong>$n$</strong> = the number of times that interest is compounded per year</li>
+<li><strong>$t$</strong> = the number of years the money is invested or borrowed for</li>
 </ul>
 <p>When regular contributions are made, the formula becomes more complex, which is where our calculator simplifies the process. More frequent compounding (e.g., daily vs. annually) results in slightly higher earnings due to interest being calculated on a growing balance more often. Continuous compounding represents the theoretical limit of compounding frequency.</p>
 </section>
