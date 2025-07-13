@@ -98,22 +98,29 @@ document.addEventListener('DOMContentLoaded', () => {
             const apr = parseFloat(aprInput.value);
             const minPayment = parseFloat(minPaymentInput.value);
 
+            let rowValid = true;
             if (isNaN(balance) || balance <= 0) {
-                balanceInput.classList.add('input-error'); isValid = false;
+                balanceInput.classList.add('input-error'); 
+                rowValid = false;
+                isValid = false;
             }
             if (isNaN(apr) || apr < 0) {
-                aprInput.classList.add('input-error'); isValid = false;
+                aprInput.classList.add('input-error'); 
+                rowValid = false;
+                isValid = false;
             }
             if (isNaN(minPayment) || minPayment <= 0) {
-                minPaymentInput.classList.add('input-error'); isValid = false;
+                minPaymentInput.classList.add('input-error'); 
+                rowValid = false;
+                isValid = false;
             }
-            if (isValid && apr > 0 && (balance * (apr / 100 / 12)) > minPayment) {
-                 minPaymentInput.classList.add('input-error'); // Highlight if min payment doesn't cover interest
-                 // This could be a soft warning or a hard error depending on requirements
+            if (rowValid && apr > 0 && (balance * (apr / 100 / 12)) > minPayment) {
+                 minPaymentInput.classList.add('input-error'); 
+                 rowValid = false;
+                 isValid = false;
             }
 
-
-            if (isValid) {
+            if (rowValid) {
                 debts.push({ id: index, name, balance, apr, minPayment, originalMinPayment: minPayment });
                 totalMinimumPayments += minPayment;
             }
