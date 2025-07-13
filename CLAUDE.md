@@ -31,6 +31,20 @@ FreecalcHub is a free online calculator website (www.freecalchub.com) with calcu
           └── js/calculator-name.js
 ```
 
+## CRITICAL: Always Consult Documentation First
+
+**BEFORE making any changes to calculators or templates:**
+
+1. **Read `docs/SOP-CalcDev.md`** - Standard operating procedure for all development work
+2. **Review `general-template-guidelines.md`** - Complete guidelines for template usage and best practices  
+3. **Use `calculator-template.html`** - Master template for all new calculators
+4. **Compare with templates when debugging** - Don't modify individual files without checking template standards first
+
+**NEVER:**
+- Copy from existing calculator pages (they may be outdated)
+- Modify CSP headers without updating templates first
+- Make infrastructure changes without updating documentation
+
 ## Development Guidelines
 
 ### Creating New Calculators
