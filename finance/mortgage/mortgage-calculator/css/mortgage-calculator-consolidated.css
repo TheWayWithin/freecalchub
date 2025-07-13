@@ -1,0 +1,240 @@
+/* Consolidated Mortgage Calculator Styles */
+/* Combines: mortgage-calculator.css, page-alignment-fix.css, final-three-column-form.css, 
+   enhanced-three-column-form-fix.css, breadcrumb-alignment-fix.css */
+
+/* =========================
+   MAIN CONTAINER STYLES
+   ========================= */
+
+/* Center the main content container */
+main#main-content.main-content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+}
+
+main#main-content.main-content .content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.calculator-container {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* =========================
+   FORM LAYOUT STYLES
+   ========================= */
+
+/* Responsive grid container for the inputs */
+.input-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    align-items: start;
+    width: 100%;
+}
+
+/* Form container styling */
+#mortgage-calculator-form {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Form group styling */
+.input-grid .form-group {
+    width: auto;
+    box-sizing: border-box;
+    margin-bottom: 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* =========================
+   INPUT STYLES
+   ========================= */
+
+.form-control {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-group-text {
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    background-color: #f5f5f5;
+    border: 1px solid var(--border-color);
+    border-radius: 4px 0 0 4px;
+    color: var(--text-color);
+}
+
+.input-group .input-group-text + input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* =========================
+   BUTTON STYLES
+   ========================= */
+
+.form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 1rem;
+    width: auto;
+}
+
+.form-actions button {
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* =========================
+   BREADCRUMB STYLES
+   ========================= */
+
+.breadcrumbs {
+    background-color: var(--background-alt);
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.breadcrumbs-container {
+    max-width: var(--container-width, 1200px);
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumbs a, 
+.breadcrumbs span {
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.breadcrumbs .separator {
+    margin: 0 8px;
+    color: var(--text-light);
+}
+
+.breadcrumbs .current {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* =========================
+   DARK MODE SUPPORT
+   ========================= */
+
+body.dark-mode .input-group-text {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-dark);
+}
+
+body.dark-mode .form-control {
+    background-color: #34495e;
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+/* =========================
+   RESPONSIVE ADJUSTMENTS
+   ========================= */
+
+/* Mobile optimizations */
+@media (max-width: 767px) {
+    .input-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    main#main-content.main-content .content-container {
+        padding: 1rem 0.5rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .form-actions button {
+        width: 100%;
+    }
+}
+
+/* Tablet optimizations */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .input-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop optimizations */
+@media (min-width: 1024px) {
+    .input-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

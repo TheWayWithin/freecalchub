@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const downPaymentPercent = parseFloat(this.value) || 0;
         const downPaymentAmount = (homePrice * downPaymentPercent / 100).toFixed(0);
         downPaymentAmountInput.value = downPaymentAmount;
-        console.log('Updated down payment amount:', downPaymentAmount);
     });
     
     // Update down payment percentage when amount changes
@@ -27,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (homePrice > 0) {
             const downPaymentPercent = (downPaymentAmount / homePrice * 100).toFixed(1);
             downPaymentPercentInput.value = downPaymentPercent;
-            console.log('Updated down payment percent:', downPaymentPercent);
         }
     });
     
@@ -37,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const downPaymentPercent = parseFloat(downPaymentPercentInput.value) || 0;
         const downPaymentAmount = (homePrice * downPaymentPercent / 100).toFixed(0);
         downPaymentAmountInput.value = downPaymentAmount;
-        console.log('Updated down payment amount after home price change:', downPaymentAmount);
     });
     
     // Initialize FAQ accordion
@@ -66,22 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const extraPayment = parseFloat(document.getElementById('extra-payment').value) || 0;
         const loanStartDate = document.getElementById('loan-start-date').value;
         
-        // Log input values for debugging
-        console.log('Calculation inputs:', {
-            homePrice,
-            downPaymentAmount,
-            loanTerm,
-            interestRate,
-            propertyTax,
-            homeInsurance,
-            hoaFees,
-            extraPayment,
-            loanStartDate
-        });
         
         // Calculate loan amount
         const loanAmount = homePrice - downPaymentAmount;
-        console.log('Calculated loan amount:', loanAmount);
         
         // Calculate monthly interest rate
         const monthlyInterestRate = interestRate / 100 / 12;
@@ -103,14 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Calculate total interest paid
         const totalInterest = (monthlyPayment * numberOfPayments) - loanAmount;
         
-        // Log calculation results for debugging
-        console.log('Calculation results:', {
-            monthlyPayment,
-            monthlyPropertyTax,
-            monthlyInsurance,
-            totalMonthlyPayment,
-            totalInterest
-        });
         
         // Update results in the UI
         document.getElementById('principal-interest').textContent = '$' + monthlyPayment.toFixed(2);
@@ -298,7 +274,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateCharts(monthlyPayment, monthlyPropertyTax, monthlyInsurance, hoaFees, loanAmount, interestRate, loanTerm, extraPayment) {
         // Implementation would go here
         // For now, we'll just add a placeholder
-        console.log('Charts would be updated here');
+        // Chart integration can be added here in the future
     }
     
     // Trigger calculation on page load to initialize with default values

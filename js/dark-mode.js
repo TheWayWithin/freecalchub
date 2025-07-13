@@ -10,7 +10,6 @@ function applyInitialDarkMode() {
             document.documentElement.classList.remove("dark-mode");
         }
     } catch (e) {
-        console.error("Could not access localStorage for dark mode:", e);
     }
 }
 
@@ -30,10 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
         try {
             localStorage.setItem("darkMode", "enabled");
         } catch (e) {
-            console.error("Could not save dark mode preference:", e);
         }
-        // Log for debugging
-        console.log("Dark mode enabled");
     }
 
     // Function to disable dark mode
@@ -44,10 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
         try {
             localStorage.setItem("darkMode", "disabled");
         } catch (e) {
-            console.error("Could not save dark mode preference:", e);
         }
-        // Log for debugging
-        console.log("Dark mode disabled");
     }
 
     // Re-apply based on localStorage after DOM is ready (redundant but safe)
@@ -64,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     } catch (e) {
-        console.error("Could not access localStorage for dark mode check:", e);
     }
 
 
@@ -79,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     } else {
-        console.error("Dark mode toggle button not found");
     }
 
     // Add a class to indicate JS has loaded (helps with CSS transitions)

@@ -15,10 +15,8 @@
 <link href="/css/navigation-ribbon.css" rel="stylesheet"/>
 <link href="/css/breadcrumb-styles.css" rel="stylesheet"/>
 <link href="/css/calchub-consolidated-fixes.css" rel="stylesheet"/>
-<!-- Specific mortgage calculator styles -->
-<link href="/finance/mortgage/mortgage-calculator/css/mortgage-calculator.css" rel="stylesheet"/>
-<!-- Page alignment and form layout fixes -->
-<link href="/finance/mortgage/mortgage-calculator/css/page-alignment-fix.css" rel="stylesheet"/>
+<!-- Consolidated mortgage calculator styles -->
+<link href="/finance/mortgage/mortgage-calculator/css/mortgage-calculator-consolidated.css" rel="stylesheet"/>
 <!-- Font Awesome for icons -->
 <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
 <!-- Specific mortgage calculator script -->
@@ -28,12 +26,7 @@
 <!-- Global script (for dark mode, mobile menu) -->
 <script defer="" src="/js/main.js"></script>
 <script defer="" src="/js/dark-mode.js"></script>
-<!-- Breadcrumb alignment fix -->
-<link href="/finance/mortgage/mortgage-calculator/css/breadcrumb-alignment-fix.css" rel="stylesheet"/>
-<!-- Three-column form layout fix -->
-<link href="/finance/mortgage/mortgage-calculator/css/final-three-column-form.css" rel="stylesheet"/>
-<!-- Enhanced three-column form layout fix -->
-<link href="/finance/mortgage/mortgage-calculator/css/enhanced-three-column-form-fix.css" rel="stylesheet"/>
+<!-- All layout fixes now consolidated above -->
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -129,33 +122,33 @@
 </select>
 </div>
 <div class="form-group"> <!-- Removed half-width -->
-<label for="home_price">Home Price</label>
+<label for="home-price">Home Price</label>
 <div class="input-group">
 <span class="input-group-text">$</span>
-<input class="form-control" id="home_price" name="home_price" type="text" value="300000"/>
+<input class="form-control" id="home-price" name="home-price" type="text" value="300000"/>
 </div>
 </div>
 <div class="form-group"> <!-- Removed half-width -->
-<label for="loan_start_date">Loan Start Date</label>
-<input class="form-control" id="loan_start_date" name="loan_start_date" type="date"/>
+<label for="loan-start-date">Loan Start Date</label>
+<input class="form-control" id="loan-start-date" name="loan-start-date" type="date"/>
 </div>
 <div class="form-group"> <!-- Removed half-width -->
-<label for="down_payment">Down Payment</label>
+<label for="down-payment-amount">Down Payment</label>
 <div class="input-group">
 <span class="input-group-text">$</span>
-<input class="form-control" id="down_payment" name="down_payment" type="text" value="60000"/>
+<input class="form-control" id="down-payment-amount" name="down-payment-amount" type="text" value="60000"/>
 </div>
 </div>
 <div class="form-group"> <!-- Removed half-width -->
-<label for="down_payment_percent">Down Payment %</label>
+<label for="down-payment-percent">Down Payment %</label>
 <div class="input-group">
-<input class="form-control" id="down_payment_percent" name="down_payment_percent" type="text" value="20"/>
+<input class="form-control" id="down-payment-percent" name="down-payment-percent" type="text" value="20"/>
 <span class="input-group-text">%</span>
 </div>
 </div>
 <div class="form-group"> <!-- Removed half-width -->
-<label for="loan_term">Loan Term</label>
-<select class="form-control" id="loan_term" name="loan_term">
+<label for="loan-term">Loan Term</label>
+<select class="form-control" id="loan-term" name="loan-term">
 <option value="30">30 years</option>
 <option value="20">20 years</option>
 <option value="15">15 years</option>
@@ -163,38 +156,38 @@
 </select>
 </div>
 <div class="form-group"> <!-- Removed half-width -->
-<label for="interest_rate">Interest Rate</label>
+<label for="interest-rate">Interest Rate</label>
 <div class="input-group">
-<input class="form-control" id="interest_rate" name="interest_rate" type="text" value="4.5"/>
+<input class="form-control" id="interest-rate" name="interest-rate" type="text" value="4.5"/>
 <span class="input-group-text">%</span>
 </div>
 </div>
 <div class="form-group"> <!-- Removed half-width -->
-<label for="property_tax">Annual Property Tax</label>
+<label for="property-tax">Annual Property Tax</label>
 <div class="input-group">
 <span class="input-group-text">$</span>
-<input class="form-control" id="property_tax" name="property_tax" type="text" value="3600"/>
+<input class="form-control" id="property-tax" name="property-tax" type="text" value="3600"/>
 </div>
 </div>
 <div class="form-group"> <!-- Removed half-width -->
-<label for="home_insurance">Annual Home Insurance</label>
+<label for="home-insurance">Annual Home Insurance</label>
 <div class="input-group">
 <span class="input-group-text">$</span>
-<input class="form-control" id="home_insurance" name="home_insurance" type="text" value="1200"/>
+<input class="form-control" id="home-insurance" name="home-insurance" type="text" value="1200"/>
 </div>
 </div>
 <div class="form-group"> <!-- Removed half-width -->
-<label for="hoa_fees">Monthly HOA Fees</label>
+<label for="hoa-fees">Monthly HOA Fees</label>
 <div class="input-group">
 <span class="input-group-text">$</span>
-<input class="form-control" id="hoa_fees" name="hoa_fees" type="text" value="0"/>
+<input class="form-control" id="hoa-fees" name="hoa-fees" type="text" value="0"/>
 </div>
 </div>
 <div class="form-group"> <!-- Removed half-width -->
-<label for="extra_payment">Extra Monthly Payment</label>
+<label for="extra-payment">Extra Monthly Payment</label>
 <div class="input-group">
 <span class="input-group-text">$</span>
-<input class="form-control" id="extra_payment" name="extra_payment" type="text" value="0"/>
+<input class="form-control" id="extra-payment" name="extra-payment" type="text" value="0"/>
 </div>
 </div>
 </div> <!-- Closed input-grid wrapper -->

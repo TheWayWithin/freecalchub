@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const toCurrencySelect = document.getElementById('toCurrency');
     const swapButton = document.getElementById('swapButton');
     const resetButton = document.getElementById('resetButton');
-    const calculatorForm = document.getElementById('calculatorForm'); // FCH DEBUG: Added for reset function
+    const calculatorForm = document.getElementById('calculatorForm');
 
     const resultsSection = document.getElementById('resultsSection');
     const fromAmountDisplay = document.getElementById('fromAmountDisplay');
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let ratesLastUpdateTimestamp = null;
     let baseCurrencyForRates = 'USD';
 
-    const currencies = [ // FCH DEBUG: This list is fine, but populateDropdowns might be redundant if HTML is hardcoded
+    const currencies = [
         { code: "USD", name: "US Dollar" }, { code: "EUR", name: "Euro" }, { code: "JPY", name: "Japanese Yen" },
         { code: "GBP", name: "British Pound" }, { code: "AUD", name: "Australian Dollar" }, { code: "CAD", name: "Canadian Dollar" },
         { code: "CHF", name: "Swiss Franc" }, { code: "CNY", name: "Chinese Yuan Renminbi" }, { code: "INR", name: "Indian Rupee" },
@@ -39,13 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     function populateDropdowns() {
-        // FCH DEBUG: As HTML is pre-populated, this function creates duplicates.
-        // We will address this as a separate bug fix. For now, leaving it to observe.
-        // A proper fix would be to remove this function call if HTML is the source of truth for options.
         currencies.forEach(currency => {
             const optionFrom = new Option(`${currency.code} - ${currency.name}`, currency.code);
             const optionTo = new Option(`${currency.code} - ${currency.name}`, currency.code);
-            // Ensure not to add if already exists from HTML - this is a quick check, better to not call if HTML is static
             if (!fromCurrencySelect.querySelector(`option[value="${currency.code}"]`)) {
                  fromCurrencySelect.add(optionFrom);
             }
@@ -53,22 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 toCurrencySelect.add(optionTo);
             }
         });
-        fromCurrencySelect.value = "USD";
-        toCurrencySelect.value = "EUR";
     }
 
-    async function fetchExchangeRates(base = 'USD') {
-        baseCurrencyForRates = base.toUpperCase();
+    async function fetchExchangeRates(baseCurrency = 'USD') {
         try {
-            const response = await fetch(`${API_BASE_URL}${baseCurrencyForRates}`);
-            if (!response.ok) {
-                throw new Error(`API Error: ${response.status} ${response.statusText}. Could not fetch rates.`);
-            }
+            const response = await fetch(`${API_BASE_URL}${baseCurrency}`);
+            if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            
             const data = await response.json();
-            if (data.result === 'error' || !data.rates) {
-                throw new Error(`API Error: ${data['error-type'] || 'Invalid data format from API.'}`);
-            }
+            if (!data.rates) throw new Error('Invalid API response structure');
+            
             exchangeRates = data.rates;
+            baseCurrencyForRates = baseCurrency;
             ratesLastUpdateTimestamp = data.time_last_update_unix ? new Date(data.time_last_update_unix * 1000) : new Date();
             
             localStorage.setItem('exchangeRatesData', JSON.stringify({
@@ -77,15 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 base: baseCurrencyForRates
             }));
             
-            // FCH DEBUG: Ensure error is cleared if fetch is successful before calling convertAndDisplay
             clearErrors(); 
             convertAndDisplay(); 
             updateRateTimestamp();
 
         } catch (error) {
-            console.error("Failed to fetch exchange rates:", error); // FCH DEBUG: Keep this console error.
             displayError(`Error fetching rates: ${error.message}. Please check your internet connection or try again later.`);
-            loadRatesFromCache(); // Attempt to use cache if API fails
+            loadRatesFromCache();
         }
     }
 
@@ -95,52 +85,43 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const data = JSON.parse(cachedData);
                 const cacheTimestamp = new Date(data.lastUpdate);
-                // Cache for 1 hour example
                 if ((new Date() - cacheTimestamp) < 3600000 && data.rates && Object.keys(data.rates).length > 0) { 
                     exchangeRates = data.rates;
                     ratesLastUpdateTimestamp = cacheTimestamp;
                     baseCurrencyForRates = data.base;
-                    console.log("Loaded rates from cache."); // FCH DEBUG: This is helpful.
-                    // FCH DEBUG: Ensure error is cleared if cache load is successful before calling convertAndDisplay
                     clearErrors();
                     convertAndDisplay();
                     updateRateTimestamp();
                     return true;
                 } else {
-                    console.log("Cache expired or invalid.");
-                    localStorage.removeItem('exchangeRatesData'); // Remove expired/invalid cache
+                    localStorage.removeItem('exchangeRatesData');
                 }
             } catch (e) {
-                console.error("Error parsing cached rates:", e);
-                localStorage.removeItem('exchangeRatesData'); // Remove corrupted cache
+                localStorage.removeItem('exchangeRatesData');
             }
         }
-        console.log("Cache not available or expired.");
         return false;
     }
 
     function clearErrors() {
-        if (errorMessagesDiv) { // FCH DEBUG: Defensive check
+        if (errorMessagesDiv) {
             errorMessagesDiv.textContent = '';
             errorMessagesDiv.style.display = 'none';
-            // FCH DEBUG: Explicitly set some styles to ensure visibility if it was hidden weirdly
-            errorMessagesDiv.style.color = ''; // Reset to default stylesheet color (usually black or red via CSS)
-            errorMessagesDiv.style.padding = ''; // Reset
-            errorMessagesDiv.style.height = ''; // Reset
-            errorMessagesDiv.style.opacity = ''; // Reset
+            errorMessagesDiv.style.color = '';
+            errorMessagesDiv.style.padding = '';
+            errorMessagesDiv.style.height = '';
+            errorMessagesDiv.style.opacity = '';
         }
         if (amountInput) amountInput.classList.remove('input-error');
     }
 
-    function displayError(message, isHardError = true) { // FCH DEBUG: isHardError flag (unused for now, but for future styling)
-        console.log("FCH DEBUG: displayError called with message:", message); // FCH DEBUG: Log when this is called.
-        if (errorMessagesDiv) { // FCH DEBUG: Defensive check
+    function displayError(message, isHardError = true) {
+        if (errorMessagesDiv) {
             errorMessagesDiv.textContent = message;
             errorMessagesDiv.style.display = 'block';
-            // FCH DEBUG: Force some styles to make it more likely to be visible
-            errorMessagesDiv.style.color = 'red'; // Example: Force red color
+            errorMessagesDiv.style.color = 'red';
             errorMessagesDiv.style.padding = '10px';
-            errorMessagesDiv.style.border = '1px solid red'; // Make it very obvious
+            errorMessagesDiv.style.border = '1px solid red';
             errorMessagesDiv.style.height = 'auto';
             errorMessagesDiv.style.opacity = '1';
         }
@@ -148,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function formatValue(value, decimals = 4) {
-        if (isNaN(value) || value === null || value === undefined) return '--'; // FCH DEBUG: added undefined check
+        if (isNaN(value) || value === null || value === undefined) return '--';
         let formatted = parseFloat(value.toFixed(8)); 
         if (Math.abs(formatted) < 0.000001 && formatted !== 0) {
              return formatted.toExponential(4);
@@ -157,22 +138,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function convertAndDisplay() {
-        // FCH DEBUG: Do not call clearErrors() immediately here, let previous error persist if rates not ready.
-        // clearErrors(); // FCH DEBUG: Moved this call to later.
-
-        if (!exchangeRates || Object.keys(exchangeRates).length === 0) { // FCH DEBUG: Check if exchangeRates is empty object
-            // FCH DEBUG: Rates are not available. Inform user and attempt to fetch.
-            // The original commented-out displayError was here.
-            // Let's provide feedback.
+        if (!exchangeRates || Object.keys(exchangeRates).length === 0) {
             displayError("Exchange rates are currently unavailable or loading. Please wait or try again shortly.", false);
-            console.log("FCH DEBUG: exchangeRates not available in convertAndDisplay. Attempting fetch/cache.");
             if (!loadRatesFromCache()) { 
                 fetchExchangeRates(fromCurrencySelect.value || 'USD');
             }
             return; 
         }
         
-        // FCH DEBUG: Now that we know rates *should* be available (or we returned), clear previous non-critical errors.
         clearErrors(); 
 
         const amount = parseFloat(amountInput.value);
@@ -183,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (amountInput.value.trim() !== "") {
                 displayError("Please enter a valid amount.");
             } else {
-                hideResults(); // FCH DEBUG: This is for when amount is empty
+                hideResults();
             }
             return;
         }
@@ -195,15 +168,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const rateFrom = exchangeRates[fromCurrency];
         const rateTo = exchangeRates[toCurrency];
 
-        if (rateFrom === undefined || rateTo === undefined) { // FCH DEBUG: Stricter check for undefined
+        if (rateFrom === undefined || rateTo === undefined) {
             displayError(`Rate for ${fromCurrency} or ${toCurrency} not available. Base: ${baseCurrencyForRates}. Rates might be updating.`);
-            // FCH DEBUG: Avoid refetching loop if base is already what we tried.
-            if (baseCurrencyForRates !== 'USD' && fromCurrencySelect.value !== baseCurrencyForRates) { // Example condition
-                console.warn(`Rate for ${fromCurrency} or ${toCurrency} not found with base ${baseCurrencyForRates}. Refetching with USD.`);
+            if (baseCurrencyForRates !== 'USD' && fromCurrencySelect.value !== baseCurrencyForRates) {
                 fetchExchangeRates('USD');
-            } else if (baseCurrencyForRates === 'USD' && (fromCurrency === 'USD' || toCurrency === 'USD')) {
-                 // If base is USD and one of the selected is USD, but rate is missing, the API data is problematic for that currency
-                 console.warn(`Rate for ${fromCurrency} or ${toCurrency} is missing even with USD base. Data issue?`);
             }
             return;
         }
@@ -214,8 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (baseCurrencyForRates === toCurrency) {
             convertedAmount = amount / rateFrom;
         } else {
-            const amountInBase = amount / rateFrom; 
-            convertedAmount = amountInBase * rateTo;
+            convertedAmount = (amount / rateFrom) * rateTo;
         }
 
         fromAmountDisplay.textContent = formatValue(amount, 2);
@@ -229,12 +196,12 @@ document.addEventListener('DOMContentLoaded', () => {
         rateDisplay.textContent = `1 ${fromCurrency} = ${formatValue(directRate, 6)} ${toCurrency}`;
         inverseRateDisplay.textContent = `1 ${toCurrency} = ${formatValue(inverseRate, 6)} ${fromCurrency}`;
         
-        if (resultsSection) resultsSection.style.display = 'block'; // FCH DEBUG: Defensive check
+        if (resultsSection) resultsSection.style.display = 'block';
         updateRateTimestamp();
     }
     
     function updateRateTimestamp() {
-        if (rateTimestamp) { // FCH DEBUG: Defensive check
+        if (rateTimestamp) {
             if (ratesLastUpdateTimestamp) {
                 rateTimestamp.textContent = `Rates last updated: ${ratesLastUpdateTimestamp.toLocaleString()}`;
             } else {
@@ -244,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function hideResults() {
-        if (resultsSection) resultsSection.style.display = 'none'; // FCH DEBUG: Defensive check
+        if (resultsSection) resultsSection.style.display = 'none';
         if (fromAmountDisplay) fromAmountDisplay.textContent = '--';
         if (fromCurrencyDisplay) fromCurrencyDisplay.textContent = '---';
         if (toAmountDisplay) toAmountDisplay.textContent = '--';
@@ -254,42 +221,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function swapCurrencies() {
-        const tempCurrency = fromCurrencySelect.value;
+        const tempValue = fromCurrencySelect.value;
         fromCurrencySelect.value = toCurrencySelect.value;
-        toCurrencySelect.value = tempCurrency;
+        toCurrencySelect.value = tempValue;
         convertAndDisplay();
     }
 
     function handleReset() {
-        if (calculatorForm) calculatorForm.reset(); 
-        if (fromCurrencySelect) fromCurrencySelect.value = "USD"; 
+        if (calculatorForm) calculatorForm.reset();
+        if (amountInput) amountInput.value = "";
+        if (fromCurrencySelect) fromCurrencySelect.value = "USD";
         if (toCurrencySelect) toCurrencySelect.value = "EUR";
         clearErrors();
         hideResults();
         updateRateTimestamp(); 
     }
 
-    // --- Event Listeners ---
+    // Event Listeners
     if (amountInput) amountInput.addEventListener('input', convertAndDisplay);
-    if (fromCurrencySelect) fromCurrencySelect.addEventListener('change', convertAndDisplay); // FCH DEBUG: Simpler call
+    if (fromCurrencySelect) fromCurrencySelect.addEventListener('change', convertAndDisplay);
     if (toCurrencySelect) toCurrencySelect.addEventListener('change', convertAndDisplay);
     if (swapButton) swapButton.addEventListener('click', swapCurrencies);
     if (resetButton) resetButton.addEventListener('click', handleReset);
 
-    // --- Initial Setup ---
-    // populateDropdowns(); // FCH DEBUG: Deferring fix for duplicate dropdowns to Part 2. For now, let it run.
-    
-    // FCH DEBUG: Initialize with hidden results until amount is entered or rates confirmed.
+    // Initial Setup
     hideResults(); 
 
     if (!loadRatesFromCache()) {
         fetchExchangeRates(fromCurrencySelect.value || 'USD');
     } else {
-        // If loaded from cache, check if amount is pre-filled (e.g. by browser)
         if(amountInput && amountInput.value && exchangeRates && Object.keys(exchangeRates).length > 0) {
             convertAndDisplay();
-        } else {
-            updateRateTimestamp(); // Show cached timestamp even if no initial conversion
         }
     }
 });
