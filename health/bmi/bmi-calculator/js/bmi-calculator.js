@@ -1,11 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("bmi-calculator-form");
     
-    // Debug: Check if form element exists
-    if (!form) {
-        console.error("BMI Calculator: Form element not found!");
-        return;
-    }
     const unitToggles = document.querySelectorAll(".unit-toggle");
     const metricInputs = document.querySelectorAll(".metric-input");
     const imperialInputs = document.querySelectorAll(".imperial-input");
@@ -85,21 +80,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Form Submission Logic ---
     form.addEventListener("submit", (e) => {
         e.preventDefault();
-        console.log("BMI Calculator: Form submitted!");
-        
         let height, weight, heightMeters;
         const age = parseInt(ageInput.value);
         let isChildOrTeen = age >= 2 && age <= 19;
-        
-        console.log("Current unit:", currentUnit);
-        console.log("Age input value:", ageInput.value);
 
         // --- Input Gathering & Validation ---
         try {
             if (currentUnit === "metric") {
                 height = parseFloat(heightCmInput.value);
                 weight = parseFloat(weightKgInput.value);
-                console.log("Metric inputs - height:", height, "weight:", weight);
                 if (isNaN(height) || height <= 0 || isNaN(weight) || weight <= 0) {
                     throw new Error("Please enter valid positive numbers for height and weight.");
                 }
@@ -125,7 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
         } catch (error) {
-            console.error("BMI Calculator error:", error.message);
             displayError(error.message);
             resultsArea.style.display = "block";
             return;
@@ -164,10 +152,8 @@ document.addEventListener("DOMContentLoaded", () => {
             resultHTML += `<p><small>Note: BMI is a screening tool. Consult a healthcare professional for personalized health advice.</small></p>`;
         }
 
-        console.log("Setting results HTML:", resultHTML);
         resultsArea.innerHTML = resultHTML;
         resultsArea.style.display = "block";
-        console.log("Results area display set to block");
     });
 
     // --- Reset Logic ---

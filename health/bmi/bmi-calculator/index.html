@@ -220,7 +220,7 @@
 <!-- Global script (for dark mode, mobile menu, FAQ accordion) -->
 <script defer="" src="/js/main.js"></script>
 <script defer="" src="/js/dark-mode.js"></script>
-<script defer="" src="/js/faq-accordion.js"></script>
+<script defer="" src="/js/faq-accordion-v2.js"></script>
 <!-- Specific calculator script -->
 <script defer="" src="./js/bmi-calculator.js"></script> <!-- Updated JS Path -->
 </head>
@@ -388,100 +388,33 @@
 </ul>
 <p><strong>Important Note:</strong> BMI is a screening tool, not a diagnostic one. It doesn't directly measure body fat and can be misleading for certain groups, such as athletes with high muscle mass or older adults with muscle loss. Always consult a healthcare professional for a comprehensive health assessment.</p>
 </section>
-<section class="faq-section">
-<h2>Frequently Asked Questions (FAQ)</h2>
-<div class="faq-accordion">
-<div class="faq-item">
-<button aria-expanded="false" class="faq-question">
-<span>What is BMI and how is it calculated?</span>
-<i class="fas fa-chevron-down"></i>
-</button>
-<div class="faq-answer" hidden="">
-<p>BMI (Body Mass Index) is a numerical value calculated from your weight and height that is used to categorize individuals as underweight, normal weight, overweight, or obese. The formula is BMI = weight(kg) / height(m)². For imperial measurements, the formula is BMI = 703 × weight(lb) / height(in)². BMI is a screening tool that provides a general indication of whether a person's weight might be putting them at risk for health problems.</p>
+<section class="faq-section content-section">
+<h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
+<div class="faq-index card">
+<h3>FAQ Index</h3>
+<ul>
+<li><a href="#faq-item-1">What is BMI and how is it calculated?</a></li>
+<li><a href="#faq-item-2">What are the BMI categories and what do they mean?</a></li>
+<li><a href="#faq-item-3">Is BMI accurate for everyone?</a></li>
+<li><a href="#faq-item-4">How often should I check my BMI?</a></li>
+<li><a href="#faq-item-5">What is a healthy BMI range?</a></li>
+<li><a href="#faq-item-6">How can I achieve a healthier BMI?</a></li>
+<li><a href="#faq-item-7">Does BMI measure body fat?</a></li>
+<li><a href="#faq-item-8">How does BMI differ for men and women?</a></li>
+<li><a href="#faq-item-9">Is BMI different for children and teenagers?</a></li>
+<li><a href="#faq-item-10">What other measurements should I consider alongside BMI?</a></li>
+</ul>
 </div>
-</div>
-<div class="faq-item">
-<button aria-expanded="false" class="faq-question">
-<span>What are the BMI categories and what do they mean?</span>
-<i class="fas fa-chevron-down"></i>
-</button>
-<div class="faq-answer" hidden="">
-<p>The standard BMI categories for adults are: Underweight (BMI less than 18.5), Normal weight (BMI 18.5 to 24.9), Overweight (BMI 25 to 29.9), Obesity Class I (BMI 30 to 34.9), Obesity Class II (BMI 35 to 39.9), and Obesity Class III (BMI 40 or higher). These categories are associated with different health risks, with both underweight and obesity categories generally associated with higher health risks compared to the normal weight category.</p>
-</div>
-</div>
-<div class="faq-item">
-<button aria-expanded="false" class="faq-question">
-<span>Is BMI accurate for everyone?</span>
-<i class="fas fa-chevron-down"></i>
-</button>
-<div class="faq-answer" hidden="">
-<p>BMI has several limitations. It may overestimate body fat in athletes and muscular individuals, and underestimate it in older persons or those with muscle loss. It doesn't account for body composition differences across ethnicities or measure fat distribution. It's best used as one screening tool alongside other health metrics.</p>
-</div>
-</div>
-<div class="faq-item">
-<button aria-expanded="false" class="faq-question">
-<span>How often should I check my BMI?</span>
-<i class="fas fa-chevron-down"></i>
-</button>
-<div class="faq-answer" hidden="">
-<p>For most adults, checking BMI once or twice a year during regular health check-ups is sufficient. More frequent monitoring might be needed if actively managing weight or under medical supervision. Focus on long-term trends rather than short-term fluctuations.</p>
-</div>
-</div>
-<div class="faq-item">
-<button aria-expanded="false" class="faq-question">
-<span>What is a healthy BMI range?</span>
-<i class="fas fa-chevron-down"></i>
-</button>
-<div class="faq-answer" hidden="">
-<p>A BMI between 18.5 and 24.9 is generally considered the healthy range for adults. However, this can vary based on age, ethnicity, and body composition. Consult a healthcare provider for personalized advice.</p>
-</div>
-</div>
-<div class="faq-item">
-<button aria-expanded="false" class="faq-question">
-<span>How can I achieve a healthier BMI?</span>
-<i class="fas fa-chevron-down"></i>
-</button>
-<div class="faq-answer" hidden="">
-<p>Achieving a healthier BMI typically involves a combination of balanced nutrition, regular physical activity, and sustainable lifestyle changes. Focus on gradual improvements and consult healthcare professionals for personalized guidance, especially if you have underlying health conditions.</p>
-</div>
-</div>
-<div class="faq-item">
-<button aria-expanded="false" class="faq-question">
-<span>Does BMI measure body fat?</span>
-<i class="fas fa-chevron-down"></i>
-</button>
-<div class="faq-answer" hidden="">
-<p>No, BMI does not directly measure body fat. It is a proxy measure based on height and weight. Other methods like waist circumference, skinfold measurements, bioelectrical impedance, or DEXA scans provide more direct assessments of body fat.</p>
-</div>
-</div>
-<div class="faq-item">
-<button aria-expanded="false" class="faq-question">
-<span>How does BMI differ for men and women?</span>
-<i class="fas fa-chevron-down"></i>
-</button>
-<div class="faq-answer" hidden="">
-<p>While the BMI calculation is the same, interpretation can differ slightly as women generally have a higher percentage of body fat than men at the same BMI. However, the standard BMI categories are typically used for both adult men and women.</p>
-</div>
-</div>
-<div class="faq-item">
-<button aria-expanded="false" class="faq-question">
-<span>Is BMI different for children and teenagers?</span>
-<i class="fas fa-chevron-down"></i>
-</button>
-<div class="faq-answer" hidden="">
-<p>Yes, BMI interpretation is different for children and teenagers (ages 2-19). Instead of fixed categories, BMI-for-age percentiles are used, comparing their BMI to others of the same age and sex. These percentiles account for growth and development patterns.</p>
-</div>
-</div>
-<div class="faq-item">
-<button aria-expanded="false" class="faq-question">
-<span>What other measurements should I consider alongside BMI?</span>
-<i class="fas fa-chevron-down"></i>
-</button>
-<div class="faq-answer" hidden="">
-<p>Considering other measurements provides a more complete health picture. Useful metrics include waist circumference (assesses abdominal fat), waist-to-hip ratio, body fat percentage, blood pressure, cholesterol levels, and blood sugar levels. Consulting a healthcare provider is recommended for a comprehensive assessment.</p>
-</div>
-</div>
-</div>
+<div class="faq-item" id="faq-item-1"> <h3> <button aria-controls="faq-panel-1" aria-expanded="false" class="accordion"> What is BMI and how is it calculated? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-1" role="region"> <p>BMI (Body Mass Index) is a numerical value calculated from your weight and height that is used to categorize individuals as underweight, normal weight, overweight, or obese. The formula is BMI = weight(kg) / height(m)². For imperial measurements, the formula is BMI = 703 × weight(lb) / height(in)². BMI is a screening tool that provides a general indication of whether a person's weight might be putting them at risk for health problems.</p> </div> </div>
+<div class="faq-item" id="faq-item-2"> <h3> <button aria-controls="faq-panel-2" aria-expanded="false" class="accordion"> What are the BMI categories and what do they mean? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-2" role="region"> <p>The standard BMI categories for adults are: Underweight (BMI less than 18.5), Normal weight (BMI 18.5 to 24.9), Overweight (BMI 25 to 29.9), Obesity Class I (BMI 30 to 34.9), Obesity Class II (BMI 35 to 39.9), and Obesity Class III (BMI 40 or higher). These categories are associated with different health risks, with both underweight and obesity categories generally associated with higher health risks compared to the normal weight category.</p> </div> </div>
+<div class="faq-item" id="faq-item-3"> <h3> <button aria-controls="faq-panel-3" aria-expanded="false" class="accordion"> Is BMI accurate for everyone? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-3" role="region"> <p>BMI has several limitations. It may overestimate body fat in athletes and muscular individuals, and underestimate it in older persons or those with muscle loss. It doesn't account for body composition differences across ethnicities or measure fat distribution. It's best used as one screening tool alongside other health metrics.</p> </div> </div>
+<div class="faq-item" id="faq-item-4"> <h3> <button aria-controls="faq-panel-4" aria-expanded="false" class="accordion"> How often should I check my BMI? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-4" role="region"> <p>For most adults, checking BMI once or twice a year during regular health check-ups is sufficient. More frequent monitoring might be needed if actively managing weight or under medical supervision. Focus on long-term trends rather than short-term fluctuations.</p> </div> </div>
+<div class="faq-item" id="faq-item-5"> <h3> <button aria-controls="faq-panel-5" aria-expanded="false" class="accordion"> What is a healthy BMI range? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-5" role="region"> <p>A BMI between 18.5 and 24.9 is generally considered the healthy range for adults. However, this can vary based on age, ethnicity, and body composition. Consult a healthcare provider for personalized advice.</p> </div> </div>
+<div class="faq-item" id="faq-item-6"> <h3> <button aria-controls="faq-panel-6" aria-expanded="false" class="accordion"> How can I achieve a healthier BMI? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-6" role="region"> <p>Achieving a healthier BMI typically involves a combination of balanced nutrition, regular physical activity, and sustainable lifestyle changes. Focus on gradual improvements and consult healthcare professionals for personalized guidance, especially if you have underlying health conditions.</p> </div> </div>
+<div class="faq-item" id="faq-item-7"> <h3> <button aria-controls="faq-panel-7" aria-expanded="false" class="accordion"> Does BMI measure body fat? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-7" role="region"> <p>No, BMI does not directly measure body fat. It is a proxy measure based on height and weight. Other methods like waist circumference, skinfold measurements, bioelectrical impedance, or DEXA scans provide more direct assessments of body fat.</p> </div> </div>
+<div class="faq-item" id="faq-item-8"> <h3> <button aria-controls="faq-panel-8" aria-expanded="false" class="accordion"> How does BMI differ for men and women? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-8" role="region"> <p>While the BMI calculation is the same, interpretation can differ slightly as women generally have a higher percentage of body fat than men at the same BMI. However, the standard BMI categories are typically used for both adult men and women.</p> </div> </div>
+<div class="faq-item" id="faq-item-9"> <h3> <button aria-controls="faq-panel-9" aria-expanded="false" class="accordion"> Is BMI different for children and teenagers? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-9" role="region"> <p>Yes, BMI interpretation is different for children and teenagers (ages 2-19). Instead of fixed categories, BMI-for-age percentiles are used, comparing their BMI to others of the same age and sex. These percentiles account for growth and development patterns.</p> </div> </div>
+<div class="faq-item" id="faq-item-10"> <h3> <button aria-controls="faq-panel-10" aria-expanded="false" class="accordion"> What other measurements should I consider alongside BMI? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-10" role="region"> <p>Considering other measurements provides a more complete health picture. Useful metrics include waist circumference (assesses abdominal fat), waist-to-hip ratio, body fat percentage, blood pressure, cholesterol levels, and blood sugar levels. Consulting a healthcare provider is recommended for a comprehensive assessment.</p> </div> </div>
 </section>
 </div>
 </main>
