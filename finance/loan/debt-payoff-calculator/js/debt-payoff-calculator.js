@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (strategy === 'snowball') {
                 workingDebts.sort((a, b) => a.balance === 0 ? 1 : b.balance === 0 ? -1 : a.balance - b.balance);
             } else { // avalanche
-                workingDebts.sort((a, b) => a.balance === 0 ? 1 : b.balance === 0 ? -1 : b.apr - a.apr).reverse();
+                workingDebts.sort((a, b) => a.balance === 0 ? 1 : b.balance === 0 ? -1 : b.apr - a.apr);
             }
             
             let remainingMonthlyPayment = totalMonthlyPayment;
@@ -286,32 +286,24 @@ document.addEventListener('DOMContentLoaded', () => {
         strategyNameDisplay.textContent = strategy.charAt(0).toUpperCase() + strategy.slice(1); // Capitalize
 
         resultsSection.style.display = 'block';
-        generatePaymentScheduleTable(paymentSchedule);
+        generatePaymentScheduleTable(paymentSchedule, debts, initialBalancesForChart);
         generateDebtChart(chartDataPoints, debts.map(d => d.name));
     }
 
 
-    function generatePaymentScheduleTable(schedule) {
+    function generatePaymentScheduleTable(schedule, debts, initialBalancesForChart) {
         let tableHtml = `<table class="payment-schedule-table">
                             <thead><tr><th>Month</th><th>Debt Name</th><th>Payment Made</th><th>Interest Paid</th><th>Principal Paid</th><th>Remaining Balance</th></tr></thead>
                             <tbody>`;
         schedule.forEach(monthData => {
             monthData.payments.forEach(debtPayment => {
-                const debtDetails = debts.find(d => d.name === debtPayment.name); // To get current balance after this payment for this debt
-                const currentBalanceOfThisDebt = schedule
-                    .slice(0, monthData.month)
-                    .flatMap(m => m.payments)
-                    .filter(p => p.name === debtPayment.name)
-                    .reduce((bal, p) => bal - p.principal, (debts.find(d=>d.name === debtPayment.name)?.balance || 0) + (debts.find(d=>d.name === debtPayment.name)?.minPayment || 0) ); // complex to get current balance this way
-
                 // Simplified: get balance from the *end* of this month for this debt
                 let endOfMonthBalance = initialBalancesForChart[debtPayment.name];
                 for(let m=1; m <= monthData.month; m++){
                     const monthSch = schedule.find(s => s.month === m);
-                    const paymentForDebtInMonth = monthSch.payments.find(p => p.name === debtPayment.name);
+                    const paymentForDebtInMonth = monthSch?.payments.find(p => p.name === debtPayment.name);
                     if(paymentForDebtInMonth) endOfMonthBalance -= paymentForDebtInMonth.principal;
                 }
-
 
                 tableHtml += `<tr>
                                 <td>${monthData.month}</td>
