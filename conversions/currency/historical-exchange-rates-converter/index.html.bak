@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Historical Exchange Rates Converter | Past Currency Values - FreecalcHub</title>
+    <meta name="description" content="Find historical exchange rates for major currencies on any given past date. Convert amounts using official past currency values with our free converter.">
+    <link rel="canonical" href="https://www.freecalchub.com/conversions/currency/historical-exchange-rates-converter/">
+
+    <link rel="stylesheet" href="/css/styles.css"> 
+    <link rel="stylesheet" href="/css/dark-mode.css"> 
+    <link rel="stylesheet" href="/css/dark-mode-button.css"> 
+    <link rel="stylesheet" href="/css/breadcrumb-styles.css"> 
+    <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <link rel="stylesheet" href="/css/navigation-ribbon.css"> 
+    <link rel="stylesheet" href="/css/faq-styles-v2.css">
+
+    <link rel="stylesheet" href="/conversions/currency/historical-exchange-rates-converter/css/historical-exchange-rates-converter.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-R1QHNSSWTC');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Historical Exchange Rates Converter",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Check currency values based on past exchange rates.",
+          "url": "https://www.freecalchub.com/conversions/currency/historical-exchange-rates-converter/",
+          "relatedLink": [
+            { "@type": "SoftwareApplication", "name": "Live Currency Converter", "url": "https://www.freecalchub.com/conversions/currency/live-currency-converter/" },
+            { "@type": "SoftwareApplication", "name": "Cryptocurrency Converter", "url": "https://www.freecalchub.com/conversions/currency/cryptocurrency-converter/" },
+            { "@type": "SoftwareApplication", "name": "Inflation Calculator", "url": "https://www.freecalchub.com/conversions/currency/inflation-calculator/" },
+            { "@type": "SoftwareApplication", "name": "Sales Tax Calculator", "url": "https://www.freecalchub.com/finance/tax/sales-tax-calculator/" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "How does a historical exchange rate converter work?", "acceptedAnswer": { "@type": "Answer", "text": "It retrieves official exchange rates published for a specific past date from a historical data source and uses that rate to convert the amount you enter between your selected currencies." } },
+            { "@type": "Question", "name": "What date range is available for historical rates?", "acceptedAnswer": { "@type": "Answer", "text": "Availability depends on the data source. Most major currencies have data going back many years, but very old rates or rates for less common currencies might be limited." } },
+            { "@type": "Question", "name": "Where does the historical exchange rate data come from?", "acceptedAnswer": { "@type": "Answer", "text": "We source our historical data from [Developer to specify the reputable financial data provider API being used]." } },
+            { "@type": "Question", "name": "Are these the exact rates I would have gotten on that day?", "acceptedAnswer": { "@type": "Answer", "text": "The rates shown are typically official end-of-day rates or averages for the day. Actual transaction rates from banks or exchange services on that day would have included a spread or commission." } },
+            { "@type": "Question", "name": "Why would I need to use historical exchange rates?", "acceptedAnswer": { "@type": "Answer", "text": "Historical rates are useful for financial reporting (e.g., accounting for past international transactions), analyzing market trends, legal or contractual purposes, or verifying past expenses." } },
+            { "@type": "Question", "name": "Can I convert any currency pair historically?", "acceptedAnswer": { "@type": "Answer", "text": "We support most major world currency pairs. However, data for some exotic currencies or currencies that no longer exist may not be available for all historical dates." } },
+            { "@type": "Question", "name": "How accurate are historical exchange rates?", "acceptedAnswer": { "@type": "Answer", "text": "The rates are based on official data sources for the specified dates and are generally accurate reflections of the market at that time." } },
+            { "@type": "Question", "name": "Does this tool show buy or sell rates?", "acceptedAnswer": { "@type": "Answer", "text": "This tool typically shows mid-market historical rates, which are the midpoint between buying and selling rates on global currency markets, not specific consumer buy/sell rates." } },
+            { "@type": "Question", "name": "What if no rate is found for my selected date?", "acceptedAnswer": { "@type": "Answer", "text": "If a rate isn't available (e.g., due to a bank holiday, non-trading day, or data limitation), the calculator will indicate that. You might try an adjacent business day." } },
+            { "@type": "Question", "name": "Can I see a chart of historical exchange rates?", "acceptedAnswer": { "@type": "Answer", "text": "This version of the calculator provides the conversion for a specific date. Charting historical trends may be a feature in future updates or in our Live Currency Converter." } }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Use the Historical Exchange Rates Converter",
+          "description": "A step-by-step guide to finding past currency conversion values.",
+          "step": [
+            { "@type": "HowToStep", "name": "Enter Amount", "text": "Input the amount of money you wish to convert." },
+            { "@type": "HowToStep", "name": "Select 'From' Currency", "text": "Choose the original currency." },
+            { "@type": "HowToStep", "name": "Select 'To' Currency", "text": "Choose the target currency." },
+            { "@type": "HowToStep", "name": "Select Date", "text": "Pick the specific past date for which you want the exchange rate." },
+            { "@type": "HowToStep", "name": "View Result", "text": "The converted amount, based on the historical rate for that day, will be displayed." }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Conversion Calculators", "item": "https://www.freecalchub.com/conversions/" },
+            { "@type": "ListItem", "position": 3, "name": "Currency Conversion Calculators", "item": "https://www.freecalchub.com/conversions/currency/" },
+            { "@type": "ListItem", "position": 4, "name": "Historical Exchange Rates Converter", "item": "https://www.freecalchub.com/conversions/currency/historical-exchange-rates-converter/" }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "name": "Historical Exchange Rates Converter | Past Currency Values - FreecalcHub",
+          "description": "Find historical exchange rates for major currencies on any given past date. Convert amounts using official past currency values with our free converter.",
+          "url": "https://www.freecalchub.com/conversions/currency/historical-exchange-rates-converter/",
+           "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
+           "inLanguage": "en-US",
+           "datePublished": "2025-06-02",
+           "dateModified": "2025-06-04T02:50:37Z" 
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <header class="site-header"> <div class="header-container"> <div class="logo-container"> <a href="/"><img src="/images/logo.svg" alt="FreecalcHub Logo"></a> </div> <nav class="main-nav"> <ul> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/" class="active">Conversions</a></li> <li><a href="/date-time/">Date & Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </nav> <div class="header-controls"> <button id="dark-mode-toggle" aria-label="Toggle dark mode"> <i class="fas fa-moon"></i> <i class="fas fa-sun"></i> </button> <button id="mobile-menu-button" aria-label="Toggle menu"> <i class="fas fa-bars menu-icon"></i> </button> </div> </div> <div id="mobile-menu" class="mobile-menu"> <div class="mobile-menu-header"> <span>Menu</span> <button id="mobile-menu-close" aria-label="Close menu"> <i class="fas fa-times"></i> </button> </div> <nav class="mobile-nav"> <ul> <li><a href="/">Home</a></li> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/" class="active">Conversions</a></li> <li><a href="/date-time/">Date & Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </nav> </div> </header>
+
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <a href="/conversions/">Conversion Calculators</a>
+            <span class="separator">/</span>
+            <a href="/conversions/currency/">Currency Conversion Calculators</a>
+            <span class="separator">/</span>
+            <span class="current">Historical Exchange Rates Converter</span> 
+        </div>
+    </div>
+
+    <main id="main-content" class="main-content">
+        <div class="content-container"> <article class="calculator-page-content"> 
+                <h1 class="page-title">Historical Exchange Rates Converter</h1>
+
+                <section class="calculator-description-section content-section">
+                    <p>Need to know the exchange rate on a specific day in the past? Our <strong>Historical Exchange Rates Converter</strong> lets you look up and convert currency values using official end-of-day rates from previous dates. Ideal for record-keeping, financial analysis, or satisfying your curiosity about past currency movements.</p>
+                </section>
+
+                <section id="calculator-section" class="calculator-interface content-section card"> 
+                    <h2 class="section-title">Convert Using Historical Rate</h2>
+                    <div id="errorMessages" class="error-messages" style="display:none;"></div>
+                    
+                    <form id="calculatorForm" class="calculator-form">
+                        <fieldset>
+                            <legend>Enter Conversion Details</legend>
+                            <div class="form-group">
+                                <label for="amountInput">Amount:</label>
+                                <input type="number" id="amountInput" placeholder="100.00" required step="0.01" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="fromCurrency">From Currency:</label>
+                                <select id="fromCurrency" required>
+                                    <option value="USD" selected>USD - US Dollar</option>
+                                    <option value="EUR">EUR - Euro</option>
+                                    <option value="GBP">GBP - British Pound</option>
+                                    <option value="AUD">AUD - Australian Dollar</option>
+                                    <option value="BRL">BRL - Brazilian Real</option>
+                                    <option value="CAD">CAD - Canadian Dollar</option>
+                                    <option value="CHF">CHF - Swiss Franc</option>
+                                    <option value="CNY">CNY - Chinese Yuan Renminbi</option>
+                                    <option value="HKD">HKD - Hong Kong Dollar</option>
+                                    <option value="INR">INR - Indian Rupee</option>
+                                    <option value="JPY">JPY - Japanese Yen</option>
+                                    <option value="MXN">MXN - Mexican Peso</option>
+                                    <option value="NZD">NZD - New Zealand Dollar</option>
+                                    <option value="NOK">NOK - Norwegian Krone</option>
+                                    <option value="RUB">RUB - Russian Ruble</option>
+                                    <option value="SGD">SGD - Singapore Dollar</option>
+                                    <option value="ZAR">ZAR - South African Rand</option>
+                                    <option value="KRW">KRW - South Korean Won</option>
+                                    <option value="SEK">SEK - Swedish Krona</option>                                    
+                                    <option value="THB">THB - Thai Baht</option>
+                                    <option value="TRY">TRY - Turkish Lira</option>
+                                    <option value="AED">AED - United Arab Emirates Dirham</option>
+                                    <option value="VND">VND - Vietnamese Dong</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="toCurrency">To Currency:</label>
+                                <select id="toCurrency" required>
+                                    <option value="EUR" selected>EUR - Euro</option>
+                                    <option value="USD">USD - US Dollar</option>
+                                    <option value="GBP">GBP - British Pound</option>
+                                    <option value="AUD">AUD - Australian Dollar</option>
+                                    <option value="BRL">BRL - Brazilian Real</option>
+                                    <option value="CAD">CAD - Canadian Dollar</option>
+                                    <option value="CHF">CHF - Swiss Franc</option>
+                                    <option value="CNY">CNY - Chinese Yuan Renminbi</option>
+                                    <option value="HKD">HKD - Hong Kong Dollar</option>
+                                    <option value="INR">INR - Indian Rupee</option>
+                                    <option value="JPY">JPY - Japanese Yen</option>
+                                    <option value="MXN">MXN - Mexican Peso</option>
+                                    <option value="NZD">NZD - New Zealand Dollar</option>
+                                    <option value="NOK">NOK - Norwegian Krone</option>
+                                    <option value="RUB">RUB - Russian Ruble</option>
+                                    <option value="SGD">SGD - Singapore Dollar</option>
+                                    <option value="ZAR">ZAR - South African Rand</option>
+                                    <option value="KRW">KRW - South Korean Won</option>
+                                    <option value="SEK">SEK - Swedish Krona</option>                                    
+                                    <option value="THB">THB - Thai Baht</option>
+                                    <option value="TRY">TRY - Turkish Lira</option>
+                                    <option value="AED">AED - United Arab Emirates Dirham</option>
+                                    <option value="VND">VND - Vietnamese Dong</option>
+                                 </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="historicalDate">Date:</label>
+                                <input type="date" id="historicalDate" required>
+                                <small class="form-text text-muted">Select a past date for the exchange rate.</small>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-actions">
+                            <button type="button" id="calculateButton" class="btn btn-primary">Get Historical Conversion</button>
+                            <button type="reset" id="resetButton" class="btn btn-secondary">Clear</button>
+                        </div>
+                    </form>
+
+                    <div id="resultsSection" class="results-section" style="display:none;">
+                        <h3 class="results-title">Historical Conversion Result</h3>
+                        <div class="main-result card">
+                            <p>
+                                <span id="fromAmountDisplay">--</span> <span id="fromCurrencyDisplay">---</span> = <strong id="toAmountDisplay">--</strong> <strong id="toCurrencyDisplay">---</strong>
+                                <small class="text-muted" style="display: block; margin-top: 0.25em; white-space: nowrap;">
+                                    (as of <span id="rateDateDisplay">--/--/----</span>)
+                                </small>
+                            </p>
+                        </div>
+                        <div class="rate-info card">
+                            <p id="historicalRateDisplay">1 --- = -- --- on selected date</p>
+                            <p id="dataSourceInfo" class="text-muted" style="font-size:0.8em;">Rate sourced from: [Source Name]</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="related-calculators content-section card">
+                    <h2 class="section-title">Related Calculators</h2>
+                    <ul>
+                        <li> <a href="/conversions/currency/live-currency-converter/"> <span class="calculator-name">Live Currency Converter</span> <span class="calculator-description">Convert currencies with up-to-date exchange rates.</span> </a> </li>
+                        <li> <a href="/conversions/currency/cryptocurrency-converter/"> <span class="calculator-name">Cryptocurrency Converter</span> <span class="calculator-description">Convert between cryptocurrencies and fiat. (Coming Soon)</span> </a> </li>
+                        <li> <a href="/conversions/currency/inflation-calculator/"> <span class="calculator-name">Inflation Calculator</span> <span class="calculator-description">See how inflation affects purchasing power. (Coming Soon)</span> </a> </li>
+                        <li> <a href="/finance/tax/sales-tax-calculator/"> <span class="calculator-name">Sales Tax Calculator</span> <span class="calculator-description">Calculate sales tax on purchases.</span> </a> </li>
+                    </ul>
+                </section>
+
+                <section class="how-to-use-section content-section">
+                    <h2 class="section-title">How to Use This Converter</h2>
+                    <ol>
+                        <li><strong>Enter Amount:</strong> Input the amount of money you wish to convert.</li>
+                        <li><strong>Select 'From' Currency:</strong> Choose the original currency.</li>
+                        <li><strong>Select 'To' Currency:</strong> Choose the target currency.</li>
+                        <li><strong>Select Date:</strong> Pick the specific past date for which you want the exchange rate.</li>
+                        <li><strong>View Result:</strong> The converted amount, based on the historical rate for that day, will be displayed.</li>
+                    </ol>
+                </section>
+
+                <section class="content-section">
+                    <h2>Why Use Historical Exchange Rates?</h2>
+                    <p>Historical exchange rates are valuable for several purposes. Businesses use them for financial reporting of past international transactions and for analyzing market trends. Individuals might need them for accurately claiming past travel expenses, for legal or contractual obligations that reference a specific past rate, or simply out of historical interest to see how currency values have changed over time.</p>
+                    
+                    <h2>Data Source & Accuracy</h2>
+                    <p><strong>Source of Rates:</strong> Historical exchange rates for this calculator are typically sourced from reputable financial data providers that compile official central bank data (e.g., The European Central Bank via services like exchangerate.host or similar APIs). The specific source will be indicated with the results.</p>
+                    <p><strong>Type of Rate:</strong> Rates shown are generally official end-of-day exchange rates for the selected date. These are mid-market rates, meaning they reflect the midpoint between buying and selling prices on global currency markets and do not include spreads or commissions charged by retail currency exchange services.</p>
+                    <p>While we strive for accuracy, data for very old dates or less common (exotic) currencies may sometimes be limited or unavailable. Always verify critical conversions with official sources if required for legal or precise financial accounting.</p>
+                    
+                    <h2>Understanding Currency Fluctuations Over Time</h2>
+                    <p>Currency values are not static; they fluctuate constantly due to a wide array of economic and geopolitical factors. These include changes in interest rates, inflation, trade balances, government debt, political stability, and overall market sentiment. Analyzing historical exchange rates can provide insights into these economic forces and their impact on currency values over specific periods.</p>
+                </section>
+                                
+                <section class="faq-section content-section">
+                    <h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
+                    <div class="faq-index card">
+                        <h3>FAQ Index</h3>
+                        <ul>
+                            <li><a href="#faq-item-1">How does a historical exchange rate converter work?</a></li>
+                            <li><a href="#faq-item-2">What date range is available for historical rates?</a></li>
+                            <li><a href="#faq-item-3">Where does the historical exchange rate data come from?</a></li>
+                            <li><a href="#faq-item-4">Are these the exact rates I would have gotten on that day?</a></li>
+                            <li><a href="#faq-item-5">Why would I need to use historical exchange rates?</a></li>
+                            <li><a href="#faq-item-6">Can I convert any currency pair historically?</a></li>
+                            <li><a href="#faq-item-7">How accurate are historical exchange rates?</a></li>
+                            <li><a href="#faq-item-8">Does this tool show buy or sell rates?</a></li>
+                            <li><a href="#faq-item-9">What if no rate is found for my selected date?</a></li>
+                            <li><a href="#faq-item-10">Can I see a chart of historical exchange rates?</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="faq-item" id="faq-item-1"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-1"> How does a historical exchange rate converter work? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-1" role="region"> <p>It retrieves official exchange rates published for a specific past date from a historical data source and uses that rate to convert the amount you enter between your selected currencies.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-2"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-2"> What date range is available for historical rates? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-2" role="region"> <p>Availability depends on the data source. Most major currencies have data going back many years, but very old rates or rates for less common currencies might be limited.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-3"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-3"> Where does the historical exchange rate data come from? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-3" role="region"> <p>We source our historical data from [Developer to specify the reputable financial data provider API being used].</p> </div> </div>
+                    <div class="faq-item" id="faq-item-4"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-4"> Are these the exact rates I would have gotten on that day? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-4" role="region"> <p>The rates shown are typically official end-of-day rates or averages for the day. Actual transaction rates from banks or exchange services on that day would have included a spread or commission.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-5"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-5"> Why would I need to use historical exchange rates? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-5" role="region"> <p>Historical rates are useful for financial reporting (e.g., accounting for past international transactions), analyzing market trends, legal or contractual purposes, or verifying past expenses.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-6"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-6"> Can I convert any currency pair historically? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-6" role="region"> <p>We support most major world currency pairs. However, data for some exotic currencies or currencies that no longer exist may not be available for all historical dates.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-7"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-7"> How accurate are historical exchange rates? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-7" role="region"> <p>The rates are based on official data sources for the specified dates and are generally accurate reflections of the market at that time.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-8"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-8"> Does this tool show buy or sell rates? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-8" role="region"> <p>This tool typically shows mid-market historical rates, which are the midpoint between buying and selling rates on global currency markets, not specific consumer buy/sell rates.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-9"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-9"> What if no rate is found for my selected date? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-9" role="region"> <p>If a rate isn't available (e.g., due to a bank holiday, non-trading day, or data limitation), the calculator will indicate that. You might try an adjacent business day.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-10"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-10"> Can I see a chart of historical exchange rates? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-10" role="region"> <p>This version of the calculator provides the conversion for a specific date. Charting historical trends may be a feature in future updates or in our Live Currency Converter.</p> </div> </div>
+                </section>
+
+             </article>
+        </div> </main> 
+    
+    <footer class="site-footer"> <div class="container"> <div class="footer-columns"> <div class="footer-column"> <h3>FreecalcHub</h3> <p>Your one-stop destination for a wide variety of free online calculators.</p> </div> <div class="footer-column"> <h3>Categories</h3> <ul> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date & Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </div> <div class="footer-column"> <h3>Support</h3> <ul> <li><a href="/about/">About Us</a></li> <li><a href="/contact/">Contact</a></li> <li><a href="/privacy/">Privacy Policy</a></li> <li><a href="/terms/">Terms of Service</a></li> <li><a href="/sitemap/">Sitemap</a></li> </ul> </div> </div> <div class="footer-bottom"> <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> </div> </div> </footer>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/dark-mode.js" defer></script>
+    <script src="/js/faq-accordion-v2.js" defer></script>
+
+    <script src="/conversions/currency/historical-exchange-rates-converter/js/historical-exchange-rates-converter.js" defer></script>
+
+</body>
+</html>

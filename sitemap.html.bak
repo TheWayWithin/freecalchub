@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Site Map | FreecalcHub</title>
+    <meta name="description" content="Navigate FreecalcHub.com easily with our full site map. Find all our free online calculators and informational pages.">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <link rel="stylesheet" href="/css/dark-mode-button.css">
+    <link rel="stylesheet" href="/css/breadcrumb-styles.css">
+    <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/navigation-ribbon.css">
+
+    <style>
+        .sitemap-section { margin-bottom: 30px; }
+        .sitemap-section h2 { border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; margin-bottom: 15px; font-size: 1.8em; }
+        .sitemap-section h3 { margin-top: 20px; margin-bottom: 10px; font-size: 1.4em; color: var(--text-color); }
+        .sitemap-section ul { list-style: none; padding-left: 0; }
+        .sitemap-section ul ul { padding-left: 25px; margin-top: 5px; }
+        .sitemap-section ul ul ul { padding-left: 25px; }
+        .sitemap-section li { margin-bottom: 8px; }
+        .sitemap-section a { text-decoration: none; color: var(--primary-color); }
+        .sitemap-section a:hover { text-decoration: underline; color: var(--primary-dark); }
+        .main-categories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .sitemap-section .coming-soon { color: var(--text-muted); font-style: italic; }
+    </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-R1QHNSSWTC');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Site Map | FreecalcHub",
+      "description": "Navigate FreecalcHub.com easily with our full site map. Find all our free online calculators and informational pages.",
+      "url": "https://www.freecalchub.com/sitemap/", 
+      "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
+      "inLanguage": "en-US",
+      "datePublished": "2025-05-25",
+      "dateModified": "2025-06-07T15:08:36Z" 
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-container"> <a href="/"><img src="/images/logo.svg" alt="FreecalcHub Logo"></a> </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/finance/">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls"> <button id="dark-mode-toggle" aria-label="Toggle dark mode"> <i class="fas fa-moon"></i> <i class="fas fa-sun"></i> </button> <button id="mobile-menu-button" aria-label="Toggle menu"> <i class="fas fa-bars menu-icon"></i> </button> </div>
+        </div>
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-header"> <span>Menu</span> <button id="mobile-menu-close" aria-label="Close menu"> <i class="fas fa-times"></i> </button> </div>
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/finance/">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <span class="current">Site Map</span>
+        </div>
+    </div>
+
+    <main id="main-content" class="main-content">
+        <div class="content-container">
+            <article class="calculator-page-content">
+                <h1 class="page-title">Site Map</h1>
+                <p>Welcome to the FreecalcHub site map. Use this page to easily navigate to any section or calculator on our website.</p>
+
+                <section class="sitemap-section">
+                    <h2>Main Pages</h2>
+                    <ul>
+                        <li><a href="/">Homepage</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                    </ul>
+                </section>
+
+                <section class="sitemap-section">
+                    <h2>Calculator Categories</h2>
+                    <div class="main-categories-grid">
+                        <div>
+                            <h3><a href="/finance/">Finance Calculators</a></h3>
+                            <ul>
+                                <li><a href="/finance/budgeting/">Budgeting Calculators</a>
+                                    <ul>
+                                        <li><a href="/finance/budgeting/monthly-budget-calculator/">Monthly Budget Calculator <span class="coming-soon">(Coming Soon)</span></a></li>
+                                        <li><a href="/finance/budgeting/expense-tracker-calculator/">Expense Tracker Calculator <span class="coming-soon">(Coming Soon)</span></a></li>
+                                        <li><a href="/finance/budgeting/debt-to-income-ratio-calculator/">Debt-to-Income Ratio Calculator <span class="coming-soon">(Coming Soon)</span></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/finance/investment/">Investment Calculators</a>
+                                    <ul>
+                                        <li><a href="/finance/investment/compound-interest-calculator/">Compound Interest Calculator</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/finance/loan/">Loan Calculators</a>
+                                    <ul>
+                                        <li><a href="/finance/loan/loan-calculator/">Loan Calculator</a></li>
+                                        <li><a href="/finance/loan/extra-payment-calculator/">Extra Payment Calculator</a></li>
+                                        <li><a href="/finance/loan/auto-loan-calculator/">Auto Loan Calculator</a></li>
+                                        <li><a href="/finance/loan/student-loan-payoff-calculator/">Student Loan Payoff Calculator</a></li>
+                                        <li><a href="/finance/loan/debt-payoff-calculator/">Debt Payoff Calculator</a></li>
+                                        <li><a href="/finance/loan/loan-comparison-calculator/">Loan Comparison Calculator</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/finance/mortgage/">Mortgage Calculators</a>
+                                    <ul>
+                                        <li><a href="/finance/mortgage/affordability-calculator/">Affordability Calculator</a></li>
+                                        <li><a href="/finance/mortgage/mortgage-calculator/">Mortgage Calculator</a></li>
+                                        <li><a href="/finance/mortgage/refinance-calculator/">Refinance Calculator</a></li>
+                                        <li><a href="/finance/mortgage/payoff-calculator/">Payoff Calculator</a></li>
+                                        <li><a href="/finance/mortgage/biweekly-calculator/">Bi-weekly Payment Calculator</a></li>
+                                        <li><a href="/finance/mortgage/points-calculator/">Mortgage Points Calculator</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/finance/retirement/">Retirement Calculators</a>
+                                    <ul>
+                                        <li><a href="/finance/retirement/retirement-calculator/">Retirement Calculator</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/finance/savings/">Savings Calculators</a>
+                                    <ul>
+                                        <li><a href="/finance/savings/savings-goal-calculator/">Savings Goal Calculator</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/finance/tax/">Tax Calculators</a>
+                                    <ul>
+                                        <li><a href="/finance/tax/income-tax-calculator/">Income Tax Calculator <span class="coming-soon">(Coming Soon)</span></a></li>
+                                        <li><a href="/finance/tax/sales-tax-calculator/">Sales Tax Calculator <span class="coming-soon">(Coming Soon)</span></a></li>
+                                        <li><a href="/finance/tax/tax-bracket-calculator/">Tax Bracket Calculator <span class="coming-soon">(Coming Soon)</span></a></li>
+                                    </ul>
+                                </li>
+                                </ul>
+                        </div>
+
+                        <div>
+                            <h3><a href="/health/">Health Calculators</a></h3>
+                            <ul>
+                                <li><a href="/health/bmi/">BMI Calculators</a>
+                                    <ul>
+                                        <li><a href="/health/bmi/bmi-calculator/">BMI Calculator</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/health/fitness/">Fitness Calculators</a></li>
+                                <li><a href="/health/medical/">Medical Calculators</a></li>
+                                <li><a href="/health/mental-health/">Mental Health Calculators</a></li>
+                                <li><a href="/health/nutrition/">Nutrition Calculators</a>
+                                    <ul>
+                                        <li><a href="/health/nutrition/calorie-macro-calculator/">Comprehensive Calorie & Macro Calculator</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/health/pregnancy/">Pregnancy Calculators</a></li>
+                                <li><a href="/health/weight/">Weight Calculators</a></li>
+                            </ul>
+                        </div>
+
+                        <div> <h3><a href="/math/">Math Calculators</a></h3>
+                            <ul>
+                                <li><a href="/math/basic/">Basic Math Calculators</a>
+                                    <ul>
+                                        <li><a href="/math/basic/standard-calculator/">Standard Calculator <span class="coming-soon">(Coming Soon)</span></a></li>
+                                        </ul>
+                                </li>
+                                <li><a href="/math/percentages/">Percentage Calculators</a>
+                                    <ul>
+                                        <li><a href="/math/percentages/percentage-calculator/">Percentage Calculator</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/math/fractions/">Fraction Calculators</a>
+                                    <ul>
+                                        <li><a href="/math/fractions/fraction-calculator/">Fraction Calculator <span class="coming-soon">(Coming Soon)</span></a></li>
+                                        </ul>
+                                </li>
+                                <li><a href="/math/algebra/">Algebra Calculators</a>
+                                    <ul>
+                                        <li><a href="/math/algebra/linear-equation-solver/">Linear Equation Solver <span class="coming-soon">(Coming Soon)</span></a></li>
+                                        </ul>
+                                </li>
+                                <li><a href="/math/geometry/">Geometry Calculators</a></li>
+                                <li><a href="/math/statistics/">Statistics Calculators</a></li>
+                                <li><a href="/math/calculus/">Calculus Calculators</a></li>
+                                <li><a href="/math/scientific/">Scientific Calculators</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3><a href="/conversions/">Conversion Calculators</a></h3>
+                            <ul>
+                                <li><a href="/conversions/length-converter/">Length Converter</a>
+                                    <ul>
+                                        <li><a href="/conversions/length-converter/length-unit-calculator/">Length Unit Calculator</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/conversions/currency/">Currency Converters</a>
+                                    <ul>
+                                        <li><a href="/conversions/currency/live-currency-converter/">Live Currency Converter</a></li>
+                                        <li><a href="/conversions/currency/historical-exchange-rates-converter/">Historical Exchange Rates Converter</a></li>
+                                        <li><a href="/conversions/currency/cryptocurrency-converter/">Cryptocurrency Converter</a></li>
+                                        <li><a href="/conversions/currency/inflation-calculator/">Inflation Calculator</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/conversions/weight/">Weight Converter</a></li>
+                                <li><a href="/conversions/volume/">Volume Converter</a></li>
+                                <li><a href="/conversions/temperature/">Temperature Converter</a></li>
+                                <li><a href="/conversions/area/">Area Converter</a></li>
+                                <li><a href="/conversions/speed/">Speed Converter</a></li>
+                                <li><a href="/conversions/time/">Time Converter</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3><a href="/date-time/">Date & Time Calculators</a></h3>
+                            <ul>
+                                <li><a href="/date-time/age/">Age Calculator</a></li>
+                                <li><a href="/date-time/date-difference/">Date Difference Calculator</a></li>
+                                <li><a href="/date-time/time-zone/">Time Zone Converter</a></li>
+                                <li><a href="/date-time/countdown/">Countdown Timer</a></li>
+                                <li><a href="/date-time/business-days/">Business Days Calculator</a></li>
+                                <li><a href="/date-time/time-calculator/">Time Calculator</a></li>
+                                <li><a href="/date-time/date-format/">Date Format Converter</a></li>
+                                <li><a href="/date-time/holiday/">Holiday Calculator</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3><a href="/business/">Business Calculators</a></h3>
+                            <ul>
+                                <li><a href="/business/profit/">Profit Calculator</a></li>
+                                <li><a href="/business/roi/">ROI Calculator</a></li>
+                                <li><a href="/business/break-even/">Break-Even Calculator</a></li>
+                                <li><a href="/business/payroll/">Payroll Calculator</a></li>
+                                <li><a href="/business/inventory/">Inventory Management Calculator</a></li>
+                                <li><a href="/business/tax/">Business Tax Calculator</a></li>
+                                <li><a href="/business/startup/">Startup Cost Calculator</a></li>
+                                <li><a href="/business/marketing/">Marketing ROI Calculator</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3><a href="/lifestyle/">Lifestyle Calculators</a></h3>
+                            <ul>
+                                <li><a href="/lifestyle/dining-social/">Dining & Social</a>
+                                    <ul>
+                                        <li><a href="/lifestyle/dining-social/tip-calculator/">Tip Calculator</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/lifestyle/education/">Education</a>
+                                    <ul>
+                                        <li><a href="/lifestyle/education/grading-performance/">Grading & Performance</a>
+                                            <ul>
+                                                <li><a href="/lifestyle/education/grading-performance/gpa-calculator/">GPA Calculator</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="/lifestyle/home/">Home & Garden</a></li>
+                                <li><a href="/lifestyle/garden/">Garden Calculators</a></li>
+                                <li><a href="/lifestyle/travel/">Travel Calculators</a></li>
+                                <li><a href="/lifestyle/pets/">Pet Calculators</a></li>
+                                <li><a href="/lifestyle/events/">Events & Planning</a></li>
+                                <li><a href="/lifestyle/shopping/">Shopping Calculators</a></li>
+                                <li><a href="/lifestyle/entertainment/">Entertainment Calculators</a></li>
+                                <li><a href="/lifestyle/sustainability/">Sustainability Calculators</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="sitemap-section">
+                    <h2>Support & Legal</h2>
+                    <ul>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/privacy/">Privacy Policy</a></li>
+                        <li><a href="/terms/">Terms of Service</a></li>
+                        <li><a href="/gdpr/">GDPR</a></li>
+                        <li><a href="/sitemap/">Sitemap (You are here!)</a></li>
+                    </ul>
+                </section>
+
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column"> <h3>FreecalcHub</h3> <p>Your one-stop destination for a wide variety of free online calculators.</p> </div>
+                <div class="footer-column"> <h3>Categories</h3> <ul> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date & Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </div>
+                <div class="footer-column"> <h3>Support</h3> <ul> <li><a href="/about/">About Us</a></li> <li><a href="/contact/">Contact</a></li> <li><a href="/privacy/">Privacy Policy</a></li> <li><a href="/terms/">Terms of Service</a></li> <li><a href="/sitemap/">Sitemap</a></li> </ul> </div>
+            </div>
+            <div class="footer-bottom"> <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/dark-mode.js" defer></script>
+</body>
+</html>

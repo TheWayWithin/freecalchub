@@ -45,6 +45,8 @@ This SOP applies to all activities undertaken by the Calculator Developer relate
     * **ALWAYS start with the latest `calculator_template.html`** - never copy from existing calculator pages
     * **ALWAYS start with the latest `category_template.html`** - never copy from existing category pages
     * **NEVER modify CSP headers** without first updating both master templates - CSP must be consistent site-wide
+    * **Enhanced CSP Security**: Templates include CookieYes compliance domains (`https://cdn-cookieyes.com`, `https://log.cookieyes.com`) for GDPR/CCPA compliance
+    * **Analytics Compliance**: Use GTM-only implementation - **remove any legacy gtag.js code** from existing pages
     * **Verify template version compatibility** - check `general-template-guidelines.md` for latest requirements
     * **Follow exact GTM implementation** from templates including both head script and body noscript iframe
     * **When debugging issues, compare with templates first** before making modifications

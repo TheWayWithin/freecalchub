@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Loan Payoff Calculator: Pay Off Loans Faster & Save | FreecalcHub</title>
+    <meta name="description" content="Use our free Student Loan Payoff Calculator to see how extra payments can shorten your loan term and save thousands in interest. Create a personalized repayment plan instantly.">
+    <link rel="canonical" href="https://www.freecalchub.com/finance/loan/student-loan-payoff-calculator/">
+
+    <link rel="stylesheet" href="/css/styles.css"> 
+    <link rel="stylesheet" href="/css/dark-mode.css"> 
+    <link rel="stylesheet" href="/css/dark-mode-button.css"> 
+    <link rel="stylesheet" href="/css/breadcrumb-styles.css"> 
+    <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <link rel="stylesheet" href="/css/navigation-ribbon.css"> 
+    <link rel="stylesheet" href="/css/faq-styles-v2.css">
+
+    <link rel="stylesheet" href="/finance/loan/student-loan-payoff-calculator/css/student-loan-payoff-calculator.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-R1QHNSSWTC');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Student Loan Payoff Calculator",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "See how extra payments can shorten your student loan term and save thousands in interest. Plan your payoff strategy.",
+          "url": "https://www.freecalchub.com/finance/loan/student-loan-payoff-calculator/"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "How can I pay off my student loans faster?", "acceptedAnswer": { "@type": "Answer", "text": "The most direct ways are to make extra payments towards the principal, either monthly or as lump sums, or to refinance to a lower interest rate (if appropriate). Our calculator shows the impact of extra payments." } },
+            { "@type": "Question", "name": "Should I pay extra on my student loans or invest the money?", "acceptedAnswer": { "@type": "Answer", "text": "This depends on your loan's interest rate vs. your expected investment return (after tax) and your risk tolerance. Paying off high-interest debt offers a guaranteed \"return\" equal to the interest rate, while investing has potential for higher returns but also carries risk." } },
+            { "@type": "Question", "name": "How much can I save by paying extra on my student loans?", "acceptedAnswer": { "@type": "Answer", "text": "Even small extra payments can save you hundreds or thousands in interest and shorten your loan term significantly. Use our calculator with your specific numbers to see your potential savings." } },
+            { "@type": "Question", "name": "Should I refinance my student loans?", "acceptedAnswer": { "@type": "Answer", "text": "Refinancing can save money if you qualify for a lower interest rate. However, refinancing federal loans into private loans means losing access to federal protections and programs like income-driven repayment and forgiveness. Weigh the pros and cons carefully." } },
+            { "@type": "Question", "name": "How do income-driven repayment plans affect loan payoff?", "acceptedAnswer": { "@type": "Answer", "text": "Income-Driven Repayment (IDR) plans base your monthly payment on your income, which can lower payments but often extends the loan term, potentially increasing total interest paid unless you qualify for loan forgiveness after 20-25 years." } },
+            { "@type": "Question", "name": "Can I deduct student loan interest on my taxes?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, you may be able to deduct up to $2,500 of student loan interest paid per year, subject to income limitations. Consult the IRS guidelines or a tax professional for details." } },
+            { "@type": "Question", "name": "What happens if I can't make my student loan payments?", "acceptedAnswer": { "@type": "Answer", "text": "If you have federal loans, contact your servicer immediately to explore options like deferment, forbearance, or switching to an IDR plan. For private loans, contact your lender; options are usually more limited but still worth exploring. Ignoring the problem can lead to default and severe consequences." } },
+            { "@type": "Question", "name": "Should I consolidate my student loans?", "acceptedAnswer": { "@type": "Answer", "text": "Consolidation combines multiple federal loans into one, simplifying payments. It doesn't lower your interest rate (it's a weighted average) but can give access to different repayment plans. Refinancing (usually private) aims to lower the rate but can change loan terms." } },
+            { "@type": "Question", "name": "How does student loan forgiveness work?", "acceptedAnswer": { "@type": "Answer", "text": "Programs like Public Service Loan Forgiveness (PSLF) or IDR forgiveness cancel remaining debt after a certain number of qualifying payments or years. They have strict eligibility rules. Visit StudentAid.gov for official details." } },
+            { "@type": "Question", "name": "Can I pay off my student loans with a credit card or personal loan?", "acceptedAnswer": { "@type": "Answer", "text": "While possible, it's often a bad idea. Credit card and personal loan interest rates are typically much higher than student loan rates, and you'd lose any federal loan protections." } }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Use the Student Loan Payoff Calculator",
+          "description": "A step-by-step guide to calculating your student loan payoff.",
+          "step": [
+            { "@type": "HowToStep", "name": "Enter Loan Details", "text": "Input your current Loan Balance, Interest Rate, and Minimum Monthly Payment." },
+            { "@type": "HowToStep", "name": "Add Extra Payments", "text": "Enter any Extra Monthly Payment you can afford and/or a One-Time Extra Payment you plan to make." },
+            { "@type": "HowToStep", "name": "Calculate Savings", "text": "Click \"Calculate\" to see your original vs. new payoff dates and your total interest savings." },
+            { "@type": "HowToStep", "name": "Explore Schedule", "text": "Review the amortization table to see how extra payments chip away at your principal faster." }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Finance Calculators", "item": "https://www.freecalchub.com/finance/" },
+            { "@type": "ListItem", "position": 3, "name": "Loan Calculators", "item": "https://www.freecalchub.com/finance/loan/" },
+            { "@type": "ListItem", "position": 4, "name": "Student Loan Payoff Calculator", "item": "https://www.freecalchub.com/finance/loan/student-loan-payoff-calculator/" }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "name": "Student Loan Payoff Calculator: Pay Off Loans Faster & Save | FreecalcHub",
+          "description": "Use our free Student Loan Payoff Calculator to see how extra payments can shorten your loan term and save thousands in interest. Create a personalized repayment plan instantly.",
+          "url": "https://www.freecalchub.com/finance/loan/student-loan-payoff-calculator/",
+           "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
+           "inLanguage": "en-US",
+           "datePublished": "2025-05-26",
+           "dateModified": "2025-05-26" 
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <header class="site-header"> <div class="header-container"> <div class="logo-container"> <a href="/"><img src="/images/logo.svg" alt="FreecalcHub Logo"></a> </div> <nav class="main-nav"> <ul> <li><a href="/finance/" class="active">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date & Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </nav> <div class="header-controls"> <button id="dark-mode-toggle" aria-label="Toggle dark mode"> <i class="fas fa-moon"></i> <i class="fas fa-sun"></i> </button> <button id="mobile-menu-button" aria-label="Toggle menu"> <i class="fas fa-bars menu-icon"></i> </button> </div> </div> <div id="mobile-menu" class="mobile-menu"> <div class="mobile-menu-header"> <span>Menu</span> <button id="mobile-menu-close" aria-label="Close menu"> <i class="fas fa-times"></i> </button> </div> <nav class="mobile-nav"> <ul> <li><a href="/">Home</a></li> <li><a href="/finance/" class="active">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date & Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </nav> </div> </header>
+
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <a href="/finance/">Finance Calculators</a>
+            <span class="separator">/</span>
+            <a href="/finance/loan/">Loan Calculators</a>
+            <span class="separator">/</span>
+            <span class="current">Student Loan Payoff Calculator</span> 
+        </div>
+    </div>
+
+    <main id="main-content" class="main-content">
+        <div class="content-container"> <article class="calculator-page-content"> 
+                <h1 class="page-title">Student Loan Payoff Calculator</h1>
+
+                <section class="calculator-description-section content-section">
+                    <p>Ready to tackle your student loans? Our <strong>Student Loan Payoff Calculator</strong> shows you the powerful impact of paying a little extra. See exactly how much sooner you can be debt-free and how much interest you can save by adding to your monthly payments or making lump-sum contributions. Take control of your student debt today.</p>
+                </section>
+
+                <section id="calculator-section" class="calculator-interface content-section card"> 
+                    <h2 class="section-title">Calculate Your Student Loan Payoff</h2>
+                    <div id="errorMessages" class="error-messages" style="display:none;"></div>
+                    <form id="calculatorForm" class="calculator-form">
+                        <fieldset>
+                            <legend>Your Current Student Loan</legend>
+                            <div class="form-group">
+                                <label for="loanBalance">Current Loan Balance ($):</label>
+                                <input type="number" id="loanBalance" placeholder="30000" required step="0.01" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="interestRate">Interest Rate (%):</label>
+                                <input type="number" id="interestRate" placeholder="6.5" required step="0.001" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="minMonthlyPayment">Minimum Monthly Payment ($):</label>
+                                <input type="number" id="minMonthlyPayment" placeholder="350" required step="0.01" min="0">
+                            </div>
+                        </fieldset>
+
+                         <fieldset>
+                            <legend>Accelerate Your Payoff (Optional)</legend>
+                            <div class="form-group">
+                                <label for="extraMonthlyPayment">Extra Monthly Payment ($):</label>
+                                <input type="number" id="extraMonthlyPayment" placeholder="100" step="0.01" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="oneTimePayment">One-Time Extra Payment ($):</label>
+                                <input type="number" id="oneTimePayment" placeholder="1000" step="0.01" min="0">
+                            </div>
+                        </fieldset>
+
+                        <div class="form-actions">
+                            <button type="button" id="calculateButton" class="btn btn-primary">Calculate Payoff</button>
+                            <button type="reset" id="resetButton" class="btn btn-secondary">Reset</button>
+                        </div>
+                    </form>
+
+                    <div id="resultsSection" class="results-section" style="display:none;">
+                        <h3 class="results-title">Your Payoff Comparison</h3>
+                        <div class="results-grid comparison-grid"> <div class="result-group card">
+                                <h4>Original Plan</h4>
+                                <div class="result-item"><strong>Payoff Date:</strong> <span id="originalPayoffDate">--</span></div>
+                                <div class="result-item"><strong>Total Interest:</strong> <span id="originalInterest">--</span></div>
+                            </div>
+                            <div class="result-group card">
+                                <h4>New Plan (with Extras)</h4>
+                                <div class="result-item"><strong>Payoff Date:</strong> <span id="newPayoffDate">--</span></div>
+                                <div class="result-item"><strong>Total Interest:</strong> <span id="newInterest">--</span></div>
+                            </div>
+                             <div class="result-group card savings-highlight"> <h4>Your Savings!</h4>
+                                <div class="result-item"><strong>Time Saved:</strong> <span id="timeSaved">--</span></div>
+                                <div class="result-item"><strong>Interest Saved:</strong> <span id="interestSaved">--</span></div>
+                            </div>
+                        </div>
+                        
+                        <div id="payoffChartContainer" style="position: relative; height:400px; width:100%; margin-top: 30px;">
+                             </div>
+
+                        <h3 class="results-title" style="margin-top:30px;">Amortization Schedule (New Plan)</h3>
+                        <div id="amortizationTableContainer">
+                            </div>
+                     </div>
+                </section>
+
+                <section class="how-to-use-section content-section">
+                    <h2 class="section-title">How to Use This Calculator</h2>
+                    <ol>
+                        <li><strong>Enter Loan Details:</strong> Input your current <code>Loan Balance</code>, <code>Interest Rate</code>, and <code>Minimum Monthly Payment</code>.</li>
+                        <li><strong>Add Extra Payments:</strong> Enter any <code>Extra Monthly Payment</code> you can afford and/or a <code>One-Time Extra Payment</code> you plan to make.</li>
+                        <li><strong>Calculate Savings:</strong> Click "Calculate" to see your original vs. new payoff dates and your total interest savings.</li>
+                        <li><strong>Explore Schedule:</strong> Review the amortization table to see how extra payments chip away at your principal faster.</li>
+                    </ol>
+                </section>
+
+                <section class="content-section">
+                    <h2>Student Loan Repayment Strategies Explained</h2>
+                    <p>Managing student loan debt effectively involves understanding various repayment strategies. Beyond standard payments, options like making extra payments, refinancing, enrolling in Income-Driven Repayment (IDR) plans, or pursuing loan forgiveness programs can significantly impact your financial future. This calculator focuses on the power of extra payments.</p>
+                    
+                    <h2>Why Pay Off Student Loans Early?</h2>
+                    <ul>
+                        <li><strong>Save Money on Interest:</strong> The longer your loan term, the more interest you accrue. Paying it off early reduces the total interest paid.</li>
+                        <li><strong>Improve Debt-to-Income Ratio (DTI):</strong> Eliminating student loan payments can improve your DTI, making it easier to qualify for other loans like mortgages.</li>
+                        <li><strong>Reduce Financial Stress:</strong> Becoming debt-free can significantly reduce financial anxiety and free up mental energy.</li>
+                        <li><strong>Free Up Future Income:</strong> Once loans are paid off, that money can be redirected towards other goals like saving, investing, or major purchases.</li>
+                    </ul>
+
+                    <h2>How Student Loan Interest Really Works</h2>
+                    <p>Student loan interest typically accrues daily based on your outstanding principal balance. When you make a payment, it's usually applied first to any accrued interest and fees, then to the principal. Capitalization can occur when unpaid accrued interest is added to your principal balance (e.g., after a deferment or forbearance period), causing you to pay interest on interest. Understanding this can motivate strategies to pay down principal faster.</p>
+                    
+                    <h2>Should You Refinance Your Student Loans?</h2>
+                    <p>Refinancing means taking out a new private loan to pay off your existing student loans, ideally at a lower interest rate.
+                    <strong>Pros:</strong> Potential for a lower interest rate, lower monthly payment, or a single payment for multiple loans.
+                    <strong>Cons:</strong> If you refinance federal loans into a private loan, you lose access to federal benefits like IDR plans, forgiveness programs (PSLF), and flexible deferment/forbearance options. Carefully weigh these trade-offs.
+                    </p>
+
+                    <h2>Handling Multiple Student Loans</h2>
+                    <p>If you have multiple student loans, common payoff strategies include:</p>
+                    <ul>
+                        <li><strong>Avalanche Method:</strong> Pay minimums on all loans, but put extra money towards the loan with the highest interest rate first. This saves the most interest over time.</li>
+                        <li><strong>Snowball Method:</strong> Pay minimums on all, but put extra money towards the loan with the smallest balance first. This provides psychological wins and builds momentum.</li>
+                    </ul>
+                    <p>This version of the calculator is designed for a single loan or an aggregated total. For complex scenarios involving specific federal IDR or PSLF strategies, consult official resources like StudentAid.gov.</p>
+                </section>
+                
+                 <section class="content-section">
+                    <h2 class="section-title">Related Calculators</h2>
+                     <ul>
+                        <li><a href="/finance/loan/auto-loan-calculator/">Auto Loan Calculator</a></li>
+                        <li><a href="/finance/debt/debt-to-income-ratio-calculator/">Debt-to-Income Ratio Calculator</a></li>
+                        </ul>
+                </section>
+
+                <section class="faq-section content-section">
+                    <h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
+                    <div class="faq-index card">
+                        <h3>FAQ Index</h3>
+                        <ul>
+                            <li><a href="#faq-item-1">How can I pay off my student loans faster?</a></li>
+                            <li><a href="#faq-item-2">Should I pay extra on my student loans or invest the money?</a></li>
+                            <li><a href="#faq-item-3">How much can I save by paying extra on my student loans?</a></li>
+                            <li><a href="#faq-item-4">Should I refinance my student loans?</a></li>
+                            <li><a href="#faq-item-5">How do income-driven repayment plans affect loan payoff?</a></li>
+                            <li><a href="#faq-item-6">Can I deduct student loan interest on my taxes?</a></li>
+                            <li><a href="#faq-item-7">What happens if I can't make my student loan payments?</a></li>
+                            <li><a href="#faq-item-8">Should I consolidate my student loans?</a></li>
+                            <li><a href="#faq-item-9">How does student loan forgiveness work?</a></li>
+                            <li><a href="#faq-item-10">Can I pay off my student loans with a credit card or personal loan?</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="faq-item" id="faq-item-1"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-1"> How can I pay off my student loans faster? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-1" role="region"> <p>The most direct ways are to make extra payments towards the principal, either monthly or as lump sums, or to refinance to a lower interest rate (if appropriate). Our calculator shows the impact of extra payments.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-2"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-2"> Should I pay extra on my student loans or invest the money? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-2" role="region"> <p>This depends on your loan's interest rate vs. your expected investment return (after tax) and your risk tolerance. Paying off high-interest debt offers a guaranteed "return" equal to the interest rate, while investing has potential for higher returns but also carries risk.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-3"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-3"> How much can I save by paying extra on my student loans? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-3" role="region"> <p>Even small extra payments can save you hundreds or thousands in interest and shorten your loan term significantly. Use our calculator with your specific numbers to see your potential savings.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-4"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-4"> Should I refinance my student loans? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-4" role="region"> <p>Refinancing can save money if you qualify for a lower interest rate. However, refinancing federal loans into private loans means losing access to federal protections and programs like income-driven repayment and forgiveness. Weigh the pros and cons carefully.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-5"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-5"> How do income-driven repayment plans affect loan payoff? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-5" role="region"> <p>Income-Driven Repayment (IDR) plans base your monthly payment on your income, which can lower payments but often extends the loan term, potentially increasing total interest paid unless you qualify for loan forgiveness after 20-25 years.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-6"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-6"> Can I deduct student loan interest on my taxes? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-6" role="region"> <p>Yes, you may be able to deduct up to $2,500 of student loan interest paid per year, subject to income limitations. Consult the IRS guidelines or a tax professional for details.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-7"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-7"> What happens if I can't make my student loan payments? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-7" role="region"> <p>If you have federal loans, contact your servicer immediately to explore options like deferment, forbearance, or switching to an IDR plan. For private loans, contact your lender; options are usually more limited but still worth exploring. Ignoring the problem can lead to default and severe consequences.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-8"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-8"> Should I consolidate my student loans? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-8" role="region"> <p>Consolidation combines multiple federal loans into one, simplifying payments. It doesn't lower your interest rate (it's a weighted average) but can give access to different repayment plans. Refinancing (usually private) aims to lower the rate but can change loan terms.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-9"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-9"> How does student loan forgiveness work? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-9" role="region"> <p>Programs like Public Service Loan Forgiveness (PSLF) or IDR forgiveness cancel remaining debt after a certain number of qualifying payments or years. They have strict eligibility rules. Visit StudentAid.gov for official details.</p> </div> </div>
+                    <div class="faq-item" id="faq-item-10"> <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-10"> Can I pay off my student loans with a credit card or personal loan? <span class="accordion-icon"></span> </button> </h3> <div class="panel" id="faq-panel-10" role="region"> <p>While possible, it's often a bad idea. Credit card and personal loan interest rates are typically much higher than student loan rates, and you'd lose any federal loan protections.</p> </div> </div>
+                </section>
+
+             </article>
+        </div> </main> 
+    
+    <footer class="site-footer"> <div class="container"> <div class="footer-columns"> <div class="footer-column"> <h3>FreecalcHub</h3> <p>Your one-stop destination for a wide variety of free online calculators.</p> </div> <div class="footer-column"> <h3>Categories</h3> <ul> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date & Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </div> <div class="footer-column"> <h3>Support</h3> <ul> <li><a href="/about/">About Us</a></li> <li><a href="/contact/">Contact</a></li> <li><a href="/privacy/">Privacy Policy</a></li> <li><a href="/terms/">Terms of Service</a></li> <li><a href="/sitemap/">Sitemap</a></li> </ul> </div> </div> <div class="footer-bottom"> <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> </div> </div> </footer>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/dark-mode.js" defer></script>
+    <script src="/js/faq-accordion-v2.js" defer></script>
+
+    <script src="/finance/loan/student-loan-payoff-calculator/js/student-loan-payoff-calculator.js" defer></script>
+
+</body>
+</html>

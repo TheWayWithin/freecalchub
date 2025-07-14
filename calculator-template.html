@@ -20,13 +20,6 @@
 <link href="/css/navigation-ribbon.css" rel="stylesheet"/>
 <link href="/css/faq-styles-v2.css" rel="stylesheet"/>
 <link href="/[path-to-your-calculator-folder]/css/[calculator-name].css" rel="stylesheet"/>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
-<script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-R1QHNSSWTC');
-    </script>
 <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -50,8 +43,13 @@
               "@type": "SoftwareApplication",
               "name": "[Related Calculator 2 Name]",
               "url": "https://www.freecalchub.com/[path-to-related-calculator-2]/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "[Related Calculator 3 Name]",
+              "url": "https://www.freecalchub.com/[path-to-related-calculator-3]/"
             }
-            // Add more related links as specified in the calculator's spec document
+            // Add more related links as specified in the calculator's spec document (up to 5 total)
           ]
           // END NEW relatedLink property
           // "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "100" } // Optional: Uncomment if you have ratings
@@ -209,6 +207,12 @@
 <a href="/[category]/[related-calculator-2]/">
 <span class="calculator-name">[Related Calculator 2 Name]</span>
 <span class="calculator-description">[Brief description of related calculator 2.]</span>
+</a>
+</li>
+<li>
+<a href="/[category]/[related-calculator-3]/">
+<span class="calculator-name">[Related Calculator 3 Name]</span>
+<span class="calculator-description">[Brief description of related calculator 3.]</span>
 </a>
 </li>
 </ul>

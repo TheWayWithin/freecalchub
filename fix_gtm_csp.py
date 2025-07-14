@@ -18,6 +18,7 @@ import os
 import re
 import sys
 from pathlib import Path
+from datetime import datetime
 
 # Template-compliant patterns from calculator-template.html and category-template.html
 CORRECT_GTM_HEAD = '''<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -37,6 +38,7 @@ class GTMCSPFixer:
     def __init__(self, dry_run=True):
         self.dry_run = dry_run
         self.fixes_applied = []
+        self.sitemap_path = None
         
     def analyze_file(self, file_path):
         """Analyze a single HTML file for GTM/CSP issues"""
@@ -164,7 +166,43 @@ class GTMCSPFixer:
         print(f"Files fixed: {files_fixed}")
         print(f"{'='*60}")
         
+        # Update sitemap for all fixed files
+        if not self.dry_run and self.fixes_applied:
+            self.update_sitemap()
+            
         return self.fixes_applied
+        
+    def update_sitemap(self):
+        """Update sitemap.xml with current timestamp for all fixed files"""
+        if not self.sitemap_path:
+            return
+            
+        try:
+            current_time = datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')
+            
+            with open(self.sitemap_path, 'r', encoding='utf-8') as f:
+                sitemap_content = f.read()
+                
+            # Update lastmod for each fixed file
+            for fix_info in self.fixes_applied:
+                file_path = fix_info['file']
+                # Convert file path to URL path
+                url_path = file_path.replace('/Users/jamiewatters/DevProjects/freecalchub', '')
+                if url_path.endswith('/index.html'):
+                    url_path = url_path.replace('/index.html', '/')
+                
+                # Update sitemap entry
+                pattern = f'(<loc>https://[^>]*{re.escape(url_path)}</loc>\\s*<lastmod>)[^<]*(</lastmod>)'
+                replacement = f'\\g<1>{current_time}\\g<2>'
+                sitemap_content = re.sub(pattern, replacement, sitemap_content)
+                
+            with open(self.sitemap_path, 'w', encoding='utf-8') as f:
+                f.write(sitemap_content)
+                
+            print(f"\\n📝 Updated sitemap.xml timestamps for {len(self.fixes_applied)} pages")
+            
+        except Exception as e:
+            print(f"\\n⚠️  Warning: Could not update sitemap.xml: {e}")
 
 def find_html_files(root_dir, include_patterns=None, exclude_patterns=None):
     """Find HTML files matching criteria"""
@@ -220,6 +258,7 @@ def main():
         
     # Create fixer and process files
     fixer = GTMCSPFixer(dry_run=dry_run)
+    fixer.sitemap_path = f"{root_dir}/sitemap.xml"
     fixes = fixer.process_files(files_to_process)
     
     if not dry_run and fixes:

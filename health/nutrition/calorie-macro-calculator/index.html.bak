@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Comprehensive Calorie & Macro Calculator - Mifflin-St Jeor & Harris-Benedict | FreecalcHub</title>
+    <meta name="description" content="Calculate your daily calorie and macronutrient needs for weight loss, gain, or maintenance. Understand BMR & TDEE with Mifflin-St Jeor or Harris-Benedict formulas.">
+
+    <link rel="stylesheet" href="/css/styles.css"> 
+    <link rel="stylesheet" href="/css/dark-mode.css"> 
+    <link rel="stylesheet" href="/css/dark-mode-button.css"> 
+    <link rel="stylesheet" href="/css/breadcrumb-styles.css"> 
+    <link rel="stylesheet" href="/css/calchub-consolidated-fixes.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <link rel="stylesheet" href="/css/navigation-ribbon.css"> 
+    <link rel="stylesheet" href="/css/faq-styles-v2.css">
+    <link rel="stylesheet" href="/health/nutrition/calorie-macro-calculator/css/calorie-macro-calculator.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-R1QHNSSWTC');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Comprehensive Calorie & Macro Calculator",
+          "applicationCategory": "HealthAndFitnessApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Calculate your daily calorie and macronutrient needs for weight loss, gain, or maintenance. Understand BMR & TDEE with Mifflin-St Jeor or Harris-Benedict formulas.",
+          "url": "https://www.freecalchub.com/health/nutrition/calorie-macro-calculator/",
+          "relatedLink": [
+            {
+              "@type": "SoftwareApplication",
+              "name": "BMI Calculator",
+              "url": "https://www.freecalchub.com/health/bmi-calculator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Body Fat Percentage Calculator",
+              "url": "https://www.freecalchub.com/health/body-fat-percentage-calculator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Water Intake Calculator",
+              "url": "https://www.freecalchub.com/health/water-intake-calculator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Target Heart Rate Calculator",
+              "url": "https://www.freecalchub.com/health/target-heart-rate-calculator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "One-Rep Max Calculator",
+              "url": "https://www.freecalchub.com/health/one-rep-max-calculator/"
+            }
+          ],
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "999" }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question", "name": "What is Basal Metabolic Rate (BMR)?",
+              "acceptedAnswer": { "@type": "Answer", "text": "BMR is the minimum number of calories your body needs to perform basic, life-sustaining functions at rest, such as breathing, circulation, and cell production. It represents the energy expended while in a state of complete rest." }
+            },
+            {
+              "@type": "Question", "name": "What is Total Daily Energy Expenditure (TDEE)?",
+              "acceptedAnswer": { "@type": "Answer", "text": "TDEE is the total number of calories your body burns in a 24-hour period, including your BMR and the energy expended through physical activity, digestion, and other daily movements. It's the most accurate representation of your daily calorie needs." }
+            },
+            {
+              "@type": "Question", "name": "What is the difference between Mifflin-St Jeor and Harris-Benedict formulas?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Both are equations used to estimate BMR. The Harris-Benedict equation (revised 1984) was developed earlier and tends to overestimate BMR in some modern populations. The Mifflin-St Jeor equation (1990) is generally considered more accurate for today's average adult, as it was derived from a larger, more diverse dataset. Our calculator allows you to choose either." }
+            },
+            {
+              "@type": "Question", "name": "How many calories do I need to lose weight?",
+              "acceptedAnswer": { "@type": "Answer", "text": "To lose weight, you generally need to consume fewer calories than your TDEE, creating a calorie deficit. A common guideline is to aim for a 500-750 calorie deficit per day, which typically leads to a weight loss of 1-1.5 pounds per week. Our calculator will provide a target range based on your TDEE and chosen goal." }
+            },
+            {
+              "@type": "Question", "name": "What are the best macro ratios for building muscle?",
+              "acceptedAnswer": { "@type": "Answer", "text": "For muscle gain, a common strategy involves consuming a calorie surplus (more than your TDEE) combined with a higher protein intake. Typical macro ranges might be 25-35% protein, 40-55% carbohydrates, and 20-30% fat. The exact ratios can vary based on individual response and training intensity." }
+            },
+            {
+              "@type": "Question", "name": "How do I track my macros effectively?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Effective macro tracking involves accurately logging your food intake using a food diary or a dedicated nutrition tracking app. Paying attention to serving sizes, using a food scale, and consistently logging meals are key for precision. Focus on whole, unprocessed foods for better nutrient density." }
+            },
+            {
+              "@type": "Question", "name": "Can this calculator help me maintain my weight?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes, by selecting the 'Weight Maintenance' goal, the calculator will provide your estimated TDEE. Consuming calories roughly equal to your TDEE is the basis for maintaining your current weight, assuming consistent activity levels." }
+            },
+            {
+              "@type": "Question", "name": "Are these calculations 100% accurate?",
+              "acceptedAnswer": { "@type": "Answer", "text": "While based on scientifically validated formulas, all BMR and TDEE calculators provide *estimates*. Individual metabolic rates can vary due to genetics, hormonal factors, and body composition (muscle vs. fat). Use the results as a strong starting point and adjust based on your body's response and progress towards your goals." }
+            }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Use the Comprehensive Calorie & Macro Calculator",
+          "description": "Follow these steps to accurately calculate your daily calorie and macronutrient needs.",
+          "step": [
+            { "@type": "HowToStep", "name": "Enter Personal Details", "text": "Provide your gender, age, height, and weight. Select your preferred unit system (Imperial or Metric)." },
+            { "@type": "HowToStep", "name": "Select Activity Level", "text": "Choose the activity level that best describes your daily physical routine from the dropdown menu." },
+            { "@type": "HowToStep", "name": "Choose BMR Formula", "text": "Select either the Mifflin-St Jeor or Harris-Benedict formula for Basal Metabolic Rate calculation. Mifflin-St Jeor is generally recommended." },
+            { "@type": "HowToStep", "name": "Define Your Goal", "text": "Specify your primary objective: weight loss, weight maintenance, or muscle gain." },
+            { "@type": "HowToStep", "name": "View Results", "text": "The calculator will instantly display your estimated BMR, TDEE, target daily calories, and a detailed breakdown of your recommended protein, carbohydrates, and fats in both grams and calories." }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Health Calculators", "item": "https://www.freecalchub.com/health/" },
+            { "@type": "ListItem", "position": 3, "name": "Nutrition Calculators", "item": "https://www.freecalchub.com/health/nutrition/" },
+            { "@type": "ListItem", "position": 4, "name": "Comprehensive Calorie & Macro Calculator", "item": "https://www.freecalchub.com/health/nutrition/calorie-macro-calculator/" }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "name": "Comprehensive Calorie & Macro Calculator - Mifflin-St Jeor & Harris-Benedict | FreecalcHub",
+          "description": "Calculate your daily calorie and macronutrient needs for weight loss, gain, or maintenance. Understand BMR & TDEE with Mifflin-St Jeor or Harris-Benedict formulas.",
+          "url": "https://www.freecalchub.com/health/nutrition/calorie-macro-calculator/",
+           "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
+           "inLanguage": "en-US", 
+           "datePublished": "2025-06-06",
+           "dateModified": "2025-06-07T13:05:26Z"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="/"><img src="/images/logo.svg" alt="FreecalcHub Logo"></a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/finance/">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i> <i class="fas fa-sun"></i>  </button>
+                <button id="mobile-menu-button" aria-label="Toggle menu">
+                    <i class="fas fa-bars menu-icon"></i> </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-header">
+                <span>Menu</span>
+                <button id="mobile-menu-close" aria-label="Close menu">
+                    <i class="fas fa-times"></i> </button>
+            </div>
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/finance/">Finance</a></li>
+                    <li><a href="/math/">Math</a></li>
+                    <li><a href="/health/">Health</a></li>
+                    <li><a href="/conversions/">Conversions</a></li>
+                    <li><a href="/date-time/">Date & Time</a></li>
+                    <li><a href="/business/">Business</a></li>
+                    <li><a href="/lifestyle/">Lifestyle</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <a href="/health/">Health Calculators</a>
+            <span class="separator">/</span>
+            <a href="/health/nutrition/">Nutrition Calculators</a>
+            <span class="separator">/</span>
+            <span class="current">Comprehensive Calorie & Macro Calculator</span> 
+        </div>
+    </div>
+
+    <div class="navigation-ribbon">
+        <div class="navigation-ribbon-container">
+            <a href="/health/bmi/"><i class="fas fa-weight-scale"></i>BMI</a>
+            <a href="/health/nutrition/" class="active"><i class="fas fa-apple-alt"></i>Nutrition</a>
+            <a href="/health/weight/"><i class="fas fa-weight-hanging"></i>Weight</a>
+            <a href="/health/fitness/"><i class="fas fa-dumbbell"></i>Fitness</a>
+            <a href="/health/pregnancy/"><i class="fas fa-baby"></i>Pregnancy</a>
+            <a href="/health/medical/"><i class="fas fa-notes-medical"></i>Medical</a>
+            <a href="/health/mental-health/"><i class="fas fa-brain"></i>Mental Health</a>
+        </div>
+    </div>
+
+    <main id="main-content" class="main-content">
+        <div class="content-container"> 
+            <article class="calculator-page-content"> 
+                <h1 class="page-title">Comprehensive Calorie & Macro Calculator</h1>
+
+                <section class="calculator-description-section content-section">
+                    <p>Briefly introduce the common struggle of calculating caloric and macro needs. Emphasize the calculator's unique transparent approach, allowing users to choose BMR formulas (Mifflin-St Jeor, Harris-Benedict) and understand the science behind their personalized results for weight loss, gain, or maintenance. Position it as more than just a calculator, but an educational tool.</p>
+                </section>
+
+                <section id="calculator-section" class="calculator-interface content-section card"> 
+                    <h2 class="section-title">Calculate Your Daily Needs</h2>
+                    <div id="errorMessages" class="error-messages" style="display:none;"></div>
+                    <form id="calculatorForm" class="calculator-form">
+                        <fieldset>
+                            <legend>Personal Details</legend>
+                            <div class="form-group">
+                                <label for="unit_preference">Unit Preference:</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="imperial_units" name="unit_preference" value="imperial" checked>
+                                    <label for="imperial_units">Imperial (ft/in, lbs)</label>
+                                    <input type="radio" id="metric_units" name="unit_preference" value="metric">
+                                    <label for="metric_units">Metric (cm, kg)</label>
+                                </div>
+                                <p class="help-text">Select your preferred unit system for height and weight.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Gender:</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="gender_male" name="gender" value="male" required>
+                                    <label for="gender_male">Male</label>
+                                    <input type="radio" id="gender_female" name="gender" value="female">
+                                    <label for="gender_female">Female</label>
+                                </div>
+                                <p class="help-text">Select your biological sex.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="age">Age (years):</label>
+                                <input type="number" id="age" placeholder="e.g., 30" required min="1" max="120">
+                                <p class="help-text">Enter your age in years.</p>
+                            </div>
+
+                            <div class="form-group" id="height_imperial_group">
+                                <label for="height_ft">Height (Imperial):</label>
+                                <div class="input-group">
+                                    <input type="number" id="height_ft" placeholder="e.g., 5" min="3" max="7">
+                                    <span class="unit">ft</span>
+                                    <input type="number" id="height_in" placeholder="e.g., 10" min="0" max="11">
+                                    <span class="unit">in</span>
+                                </div>
+                                <p class="help-text">Your height in feet and inches.</p>
+                            </div>
+                            <div class="form-group" id="height_metric_group" style="display:none;">
+                                <label for="height_cm">Height (Metric):</label>
+                                <div class="input-group">
+                                    <input type="number" id="height_cm" placeholder="e.g., 178" min="90" max="250">
+                                    <span class="unit">cm</span>
+                                </div>
+                                <p class="help-text">Your height in centimeters.</p>
+                            </div>
+
+                            <div class="form-group" id="weight_imperial_group">
+                                <label for="weight_lbs">Weight (Imperial):</label>
+                                <div class="input-group">
+                                    <input type="number" id="weight_lbs" placeholder="e.g., 150" min="50" max="700">
+                                    <span class="unit">lbs</span>
+                                </div>
+                                <p class="help-text">Your weight in pounds.</p>
+                            </div>
+                            <div class="form-group" id="weight_metric_group" style="display:none;">
+                                <label for="weight_kg">Weight (Metric):</label>
+                                <div class="input-group">
+                                    <input type="number" id="weight_kg" placeholder="e.g., 68" min="20" max="350">
+                                    <span class="unit">kg</span>
+                                </div>
+                                <p class="help-text">Your weight in kilograms.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="activity_level">Activity Level:</label>
+                                <select id="activity_level" required>
+                                    <option value="">Select Activity Level</option>
+                                    <option value="sedentary">Sedentary (little or no exercise)</option>
+                                    <option value="lightly_active">Lightly Active (light exercise/sports 1-3 days/week)</option>
+                                    <option value="moderately_active">Moderately Active (moderate exercise/sports 3-5 days/week)</option>
+                                    <option value="very_active">Very Active (hard exercise/sports 6-7 days/week)</option>
+                                    <option value="extremely_active">Extremely Active (very hard exercise/physical job)</option>
+                                </select>
+                                <p class="help-text">Defines your daily physical activity.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>BMR Formula:</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="mifflin_st_jeor" name="bmr_formula" value="mifflin_st_jeor" checked>
+                                    <label for="mifflin_st_jeor">Mifflin-St Jeor (Generally More Accurate)</label>
+                                    <input type="radio" id="harris_benedict" name="bmr_formula" value="harris_benedict">
+                                    <label for="harris_benedict">Revised Harris-Benedict</label>
+                                </div>
+                                <p class="help-text">Choose the formula for your Basal Metabolic Rate calculation. Mifflin-St Jeor is generally more accurate.</p>
+                            </div>
+
+                             <div class="form-group">
+                                <label>Goal:</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="goal_maintenance" name="goal" value="maintenance" checked>
+                                    <label for="goal_maintenance">Weight Maintenance</label>
+                                    <input type="radio" id="goal_weight_loss" name="goal" value="weight_loss">
+                                    <label for="goal_weight_loss">Weight Loss</label>
+                                    <input type="radio" id="goal_muscle_gain" name="goal" value="muscle_gain">
+                                    <label for="goal_muscle_gain">Muscle Gain</label>
+                                </div>
+                                <p class="help-text">Your primary objective (weight loss, maintenance, or muscle gain).</p>
+                            </div>
+                        </fieldset>
+                        <div class="form-actions">
+                            <button type="button" id="calculateButton" class="btn btn-primary">Calculate</button>
+                            <button type="reset" id="resetButton" class="btn btn-secondary">Reset</button>
+                        </div>
+                    </form>
+
+                    <div id="resultsSection" class="results-section" style="display:none;">
+                        <h3 class="results-title">Your Estimated Daily Needs</h3>
+                        <div class="results-grid">
+                            <div class="result-item card"> 
+                                <h4>Basal Metabolic Rate (BMR)</h4>
+                                <p id="result_bmr">--</p>
+                            </div>
+                            <div class="result-item card"> 
+                                <h4>Total Daily Energy Expenditure (TDEE)</h4>
+                                <p id="result_tdee">--</p>
+                            </div>
+                            <div class="result-item card"> 
+                                <h4>Target Daily Calories</h4>
+                                <p id="result_target_calories">--</p>
+                            </div>
+                        </div>
+
+                        <h3 class="results-title mt-4">Macronutrient Breakdown</h3>
+                        <div class="results-grid">
+                            <div class="result-item card"> 
+                                <h4>Protein (grams)</h4>
+                                <p id="result_protein_g">--</p>
+                            </div>
+                            <div class="result-item card"> 
+                                <h4>Protein (calories)</h4>
+                                <p id="result_protein_cal">--</p>
+                            </div>
+                            <div class="result-item card"> 
+                                <h4>Carbohydrates (grams)</h4>
+                                <p id="result_carbs_g">--</p>
+                            </div>
+                             <div class="result-item card"> 
+                                <h4>Carbohydrates (calories)</h4>
+                                <p id="result_carbs_cal">--</p>
+                            </div>
+                            <div class="result-item card"> 
+                                <h4>Fats (grams)</h4>
+                                <p id="result_fats_g">--</p>
+                            </div>
+                            <div class="result-item card"> 
+                                <h4>Fats (calories)</h4>
+                                <p id="result_fats_cal">--</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="related-calculators content-section card">
+                    <h2 class="section-title">Related Calculators</h2> 
+                    <ul>
+                        <li>
+                            <a href="/health/bmi-calculator/">
+                                <span class="calculator-name">BMI Calculator</span>
+                                <span class="calculator-description">Quickly determine your Body Mass Index to assess if your weight is healthy relative to your height.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/health/body-fat-percentage-calculator/">
+                                <span class="calculator-name">Body Fat Percentage Calculator</span>
+                                <span class="calculator-description">Estimate your body fat percentage using various methods for a more comprehensive body composition analysis.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/health/water-intake-calculator/">
+                                <span class="calculator-name">Water Intake Calculator</span>
+                                <span class="calculator-description">Calculate your daily recommended water intake to ensure optimal hydration for health and performance.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/health/target-heart-rate-calculator/">
+                                <span class="calculator-name">Target Heart Rate Calculator</span>
+                                <span class="calculator-description">Determine your ideal heart rate zones for effective cardio workouts based on your age and fitness goals.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/health/one-rep-max-calculator/">
+                                <span class="calculator-name">One-Rep Max Calculator</span>
+                                <span class="calculator-description">Estimate your maximum strength for weightlifting exercises to guide your training and progression.</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="how-to-use-section content-section">
+                    <h2 class="section-title">How to Use Our Calorie & Macro Calculator</h2>
+                    <ol>
+                        <li><strong>Enter your personal details:</strong> Provide your gender, age, height, and weight. Select your preferred unit system (Imperial or Metric).</li>
+                        <li><strong>Select your activity level:</strong> Choose the activity level that best describes your daily physical routine from the dropdown menu.</li>
+                        <li><strong>Choose your preferred BMR formula:</strong> Select either the Mifflin-St Jeor or Harris-Benedict formula for Basal Metabolic Rate calculation. Mifflin-St Jeor is generally recommended.</li>
+                        <li><strong>Specify your primary goal:</strong> Indicate your primary objective: weight loss, weight maintenance, or muscle gain.</li>
+                        <li><strong>Click "Calculate"</strong> to reveal your personalized daily calorie and macronutrient recommendations.</li>
+                    </ol>
+                </section>
+
+                <section class="content-section"> 
+                    <h2 class="section-title">Understanding Your Results: BMR, TDEE, and Macronutrients Explained</h2>
+                    <h3>What is Basal Metabolic Rate (BMR)?</h3>
+                    <p>BMR is the minimum number of calories your body needs to perform basic, life-sustaining functions at rest, such as breathing, circulation, and cell production. It represents the energy expended while in a state of complete rest.</p>
+                    <h3>What is Total Daily Energy Expenditure (TDEE)?</h3>
+                    <p>TDEE is the total number of calories your body burns in a 24-hour period, including your BMR and the energy expended through physical activity, digestion, and other daily movements. It's the most accurate representation of your daily calorie needs.</p>
+                    <h3>The Role of Macronutrients (Macros)</h3>
+                    <p>Macronutrients are the nutrients your body needs in large quantities to provide energy and support various bodily functions. They include Protein (4 cal/g), Carbohydrates (4 cal/g), and Fat (9 cal/g).</p>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">Choosing Your Formula: Mifflin-St Jeor vs. Harris-Benedict</h2>
+                    <h3>Mifflin-St Jeor Equation:</h3>
+                    <p>The Mifflin-St Jeor equation is generally considered more accurate for today's average adult, as it was derived from a larger, more diverse dataset. It is commonly preferred due to its contemporary research basis.</p>
+                    <p><strong>Men:</strong> $$(10 \times \text{weight\_kg}) + (6.25 \times \text{height\_cm}) - (5 \times \text{age}) + 5$$</p>
+                    <p><strong>Women:</strong> $$(10 \times \text{weight\_kg}) + (6.25 \times \text{height\_cm}) - (5 \times \text{age}) - 161$$</p>
+                    <h3>Revised Harris-Benedict Equation:</h3>
+                    <p>The Harris-Benedict equation (revised in 1984) was developed earlier and tends to overestimate BMR in some modern populations. It provides a historical context for BMR calculation methods.</p>
+                    <p><strong>Men:</strong> $$88.362 + (13.397 \times \text{weight\_kg}) + (4.799 \times \text{height\_cm}) - (5.677 \times \text{age})$$</p>
+                    <p><strong>Women:</strong> $$447.593 + (9.247 \times \text{weight\_kg}) + (3.098 \times \text{height\_cm}) - (4.330 \times \text{age})$$</p>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Formula</th>
+                                <th>Strengths</th>
+                                <th>Weaknesses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mifflin-St Jeor</td>
+                                <td>More modern, generally more accurate for average adults.</td>
+                                <td>May still have minor inaccuracies for extreme body compositions.</td>
+                            </tr>
+                            <tr>
+                                <td>Revised Harris-Benedict</td>
+                                <td>Historically significant, widely recognized.</td>
+                                <td>Tends to overestimate BMR in some modern populations.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">Customizing Macros for Your Goals</h2>
+                    <h3>Macros for Weight Loss:</h3>
+                    <p>To lose weight, you generally need to consume fewer calories than your TDEE, creating a calorie deficit. High protein intake is crucial for muscle retention during weight loss. Suggested macro percentages: 35% Protein, 40% Carbohydrates, 25% Fat.</p>
+                    <h3>Macros for Weight Maintenance:</h3>
+                    <p>For weight maintenance, you should aim to consume calories roughly equal to your TDEE. A balanced macronutrient intake supports overall health and energy levels. Suggested macro percentages: 25% Protein, 50% Carbohydrates, 25% Fat.</p>
+                    <h3>Macros for Muscle Gain (Bulking):</h3>
+                    <p>Muscle gain typically requires a calorie surplus (more than your TDEE). Adequate protein and carbohydrates are essential for muscle protein synthesis and recovery. Suggested macro percentages: 30% Protein, 45% Carbohydrates, 25% Fat.</p>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Goal</th>
+                                <th>Protein (%)</th>
+                                <th>Carbohydrates (%)</th>
+                                <th>Fat (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Weight Loss</td>
+                                <td>35%</td>
+                                <td>40%</td>
+                                <td>25%</td>
+                            </tr>
+                            <tr>
+                                <td>Maintenance</td>
+                                <td>25%</td>
+                                <td>50%</td>
+                                <td>25%</td>
+                            </tr>
+                            <tr>
+                                <td>Muscle Gain</td>
+                                <td>30%</td>
+                                <td>45%</td>
+                                <td>25%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">Beyond the Numbers: Practical Tips for Tracking Macros</h2>
+                    <p>Effective macro tracking involves accurately logging your food intake using a food diary or a dedicated nutrition tracking app. Paying attention to serving sizes, using a food scale, and consistently logging meals are key for precision. Focus on whole, unprocessed foods for better nutrient density.</p>
+                </section>
+
+
+                <section class="faq-section content-section">
+                    <h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
+                    <div class="faq-index card">
+                        <h3>FAQ Index</h3>
+                        <ul>
+                            <li><a href="#faq-item-1">What is Basal Metabolic Rate (BMR)?</a></li>
+                            <li><a href="#faq-item-2">What is Total Daily Energy Expenditure (TDEE)?</a></li>
+                            <li><a href="#faq-item-3">What is the difference between Mifflin-St Jeor and Harris-Benedict formulas?</a></li>
+                            <li><a href="#faq-item-4">How many calories do I need to lose weight?</a></li>
+                            <li><a href="#faq-item-5">What are the best macro ratios for building muscle?</a></li>
+                            <li><a href="#faq-item-6">How do I track my macros effectively?</a></li>
+                            <li><a href="#faq-item-7">Can this calculator help me maintain my weight?</a></li>
+                            <li><a href="#faq-item-8">Are these calculations 100% accurate?</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="faq-item" id="faq-item-1"> 
+                        <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-1"> What is Basal Metabolic Rate (BMR)? <span class="accordion-icon"></span> </button> </h3>
+                        <div class="panel" id="faq-panel-1" role="region"> <p>BMR is the minimum number of calories your body needs to perform basic, life-sustaining functions at rest, such as breathing, circulation, and cell production. It represents the energy expended while in a state of complete rest.</p> </div>
+                    </div>
+                    <div class="faq-item" id="faq-item-2">
+                        <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-2"> What is Total Daily Energy Expenditure (TDEE)? <span class="accordion-icon"></span> </button> </h3>
+                        <div class="panel" id="faq-panel-2" role="region"> <p>TDEE is the total number of calories your body burns in a 24-hour period, including your BMR and the energy expended through physical activity, digestion, and other daily movements. It's the most accurate representation of your daily calorie needs.</p> </div>
+                    </div>
+                    <div class="faq-item" id="faq-item-3">
+                        <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-3"> What is the difference between Mifflin-St Jeor and Harris-Benedict formulas? <span class="accordion-icon"></span> </button> </h3>
+                        <div class="panel" id="faq-panel-3" role="region"> <p>Both are equations used to estimate BMR. The Harris-Benedict equation (revised 1984) was developed earlier and tends to overestimate BMR in some modern populations. The Mifflin-St Jeor equation (1990) is generally considered more accurate for today's average adult, as it was derived from a larger, more diverse dataset. Our calculator allows you to choose either.</p> </div>
+                    </div>
+                    <div class="faq-item" id="faq-item-4">
+                        <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-4"> How many calories do I need to lose weight? <span class="accordion-icon"></span> </button> </h3>
+                        <div class="panel" id="faq-panel-4" role="region"> <p>To lose weight, you generally need to consume fewer calories than your TDEE, creating a calorie deficit. A common guideline is to aim for a 500-750 calorie deficit per day, which typically leads to a weight loss of 1-1.5 pounds per week. Our calculator will provide a target range based on your TDEE and chosen goal.</p> </div>
+                    </div>
+                    <div class="faq-item" id="faq-item-5">
+                        <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-5"> What are the best macro ratios for building muscle? <span class="accordion-icon"></span> </button> </h3>
+                        <div class="panel" id="faq-panel-5" role="region"> <p>For muscle gain, a common strategy involves consuming a calorie surplus (more than your TDEE) combined with a higher protein intake. Typical macro ranges might be 25-35% protein, 40-55% carbohydrates, and 20-30% fat. The exact ratios can vary based on individual response and training intensity.</p> </div>
+                    </div>
+                    <div class="faq-item" id="faq-item-6">
+                        <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-6"> How do I track my macros effectively? <span class="accordion-icon"></span> </button> </h3>
+                        <div class="panel" id="faq-panel-6" role="region"> <p>Effective macro tracking involves accurately logging your food intake using a food diary or a dedicated nutrition tracking app. Paying attention to serving sizes, using a food scale, and consistently logging meals are key for precision. Focus on whole, unprocessed foods for better nutrient density.</p> </div>
+                    </div>
+                    <div class="faq-item" id="faq-item-7">
+                        <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-7"> Can this calculator help me maintain my weight? <span class="accordion-icon"></span> </button> </h3>
+                        <div class="panel" id="faq-panel-7" role="region"> <p>Yes, by selecting the 'Weight Maintenance' goal, the calculator will provide your estimated TDEE. Consuming calories roughly equal to your TDEE is the basis for maintaining your current weight, assuming consistent activity levels.</p> </div>
+                    </div>
+                    <div class="faq-item" id="faq-item-8">
+                        <h3> <button class="accordion" aria-expanded="false" aria-controls="faq-panel-8"> Are these calculations 100% accurate? <span class="accordion-icon"></span> </button> </h3>
+                        <div class="panel" id="faq-panel-8" role="region"> <p>While based on scientifically validated formulas, all BMR and TDEE calculators provide *estimates*. Individual metabolic rates can vary due to genetics, hormonal factors, and body composition (muscle vs. fat). Use the results as a strong starting point and adjust based on your body's response and progress towards your goals.</p> </div>
+                    </div>
+                </section>
+
+            </article>
+        </div> 
+    </main> 
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column"> <h3>FreecalcHub</h3> <p>Your one-stop destination for a wide variety of free online calculators.</p> </div>
+                <div class="footer-column"> <h3>Categories</h3> <ul> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date & Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </div>
+                <div class="footer-column"> <h3>Support</h3> <ul> <li><a href="/about/">About Us</a></li> <li><a href="/contact/">Contact</a></li> <li><a href="/privacy/">Privacy Policy</a></li> <li><a href="/terms/">Terms of Service</a></li> <li><a href="/sitemap/">Sitemap</a></li> </ul> </div>
+            </div>
+            <div class="footer-bottom"> <p>&copy; <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/dark-mode.js" defer></script>
+    <script src="/js/faq-accordion-v2.js" defer></script>
+    <script src="/health/nutrition/calorie-macro-calculator/js/calorie-macro-calculator.js" defer></script>
+
+</body>
+</html>
