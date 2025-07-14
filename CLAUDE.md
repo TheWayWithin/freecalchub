@@ -33,19 +33,32 @@ FreecalcHub is a free online calculator website (www.freecalchub.com) with calcu
 
 ## CRITICAL: Always Consult Documentation First
 
-**BEFORE making any changes to calculators or templates:**
+**MANDATORY WORKFLOW - NO EXCEPTIONS:**
 
-1. **Read `docs/SOP-CalcDev.md`** - Standard operating procedure for all development work
-2. **Review `general-template-guidelines.md`** - Complete guidelines for template usage and best practices  
-3. **Use `calculator-template.html`** - Master template for all new calculators
-4. **Use `category-template.html`** - Master template for all category/subcategory pages
-5. **Compare with templates when debugging** - Don't modify individual files without checking template standards first
+**For ANY calculator or category page work:**
+
+1. **ALWAYS start by reading the current page to understand what needs updating**
+2. **ALWAYS read `docs/SOP-CalcDev.md` section relevant to the task** 
+3. **ALWAYS review `general-template-guidelines.md` for implementation specifics**
+4. **ALWAYS use the master templates as the source of truth:**
+   - `calculator-template.html` for calculator pages
+   - `category-template.html` for category/subcategory pages
+5. **ALWAYS compare the current page against the template to identify discrepancies**
+6. **ALWAYS follow the template patterns exactly** (CSP headers, structure, classes, etc.)
+
+**REMEDIATION WORKFLOW:**
+1. Read existing page to understand current state
+2. Read template to understand correct implementation  
+3. Compare and identify what needs to be changed
+4. Apply changes using template patterns
+5. Test and validate before committing
 
 **NEVER:**
 - Copy from existing calculator pages (they may be outdated)
-- Copy from existing category pages (they may be outdated)
-- Modify CSP headers without updating templates first
-- Make infrastructure changes without updating documentation
+- Copy from existing category pages (they may be outdated) 
+- Modify CSP headers without checking template first
+- Make ad-hoc changes without consulting documentation
+- Assume existing pages are compliant - always verify against templates
 
 ## Development Guidelines
 
@@ -113,12 +126,57 @@ This is a static site with no build process. Key operations:
 - Ensure all user inputs are properly validated
 - Include comprehensive FAQ sections for user guidance
 
-## Legacy Category Page Remediation
+## Template Updates (July 2025)
 
-### Current Status (July 2025)
-**Ongoing project to update legacy category pages to latest template standards.**
+### Master Template Compliance (COMPLETED)
+**Both master templates updated to current standards:**
 
-**Pages requiring FAQ v2 implementation:**
+✅ **calculator-template.html**:
+- Removed legacy gtag.js analytics code
+- Expanded related calculators to 3 (minimum required)
+- GTM-only implementation with CookieYes compatibility
+
+✅ **category-template.html**:
+- Removed legacy gtag.js analytics code  
+- GTM-only implementation with CookieYes compatibility
+- FAQ v2 structure already compliant
+
+## Systematic Page Audit Approach
+
+### Comprehensive Compliance Checklist
+**Every page must be audited against ALL standards:**
+
+1. **Analytics & Tracking**:
+   - ✅ GTM implementation (`GTM-KNHC9TZ5`)
+   - ❌ Remove legacy gtag.js code  
+   - ✅ CookieYes CSP domains
+   - ✅ GTM noscript tag in body
+
+2. **Date Format Compliance**:
+   - ✅ ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`
+
+3. **FAQ v2 Implementation**:
+   - ✅ CSS: `/css/faq-styles-v2.css`
+   - ✅ JavaScript: `/js/faq-accordion-v2.js`
+   - ✅ Schema: FAQPage JSON-LD with internal links
+   - ✅ HTML: V2 structure with FAQ index + accordion
+
+4. **Required Assets**:
+   - ✅ All global CSS files properly linked
+   - ✅ Font Awesome 6.5.1 with integrity hash
+   - ✅ Proper CSP headers
+
+5. **Schema Compliance**:
+   - ✅ All required schemas present
+   - ✅ Absolute URLs throughout
+   - ✅ Content matches visible page exactly
+
+6. **Calculator-Specific**:
+   - ✅ Minimum 3 related calculators
+   - ✅ Schema relatedLink matches visible section
+
+### Legacy Category Page Status
+**Pages requiring systematic audit:**
 - Main categories: `/finance/`, `/health/`, `/conversions/` (3 pages)
 - Health subcategories: All 7 subcategory pages  
 - Date-Time subcategories: All 8 subcategory pages
@@ -132,14 +190,6 @@ This is a static site with no build process. Key operations:
 - Math: Main page ✅
 - Date-Time: Main page ✅
 - Lifestyle: Main page ✅
-
-### FAQ Implementation Requirements
-Each page needs:
-1. **CSS Link**: `<link rel="stylesheet" href="/css/faq-styles-v2.css">`
-2. **Schema Markup**: FAQPage JSON-LD with internal links
-3. **HTML Structure**: V2 FAQ section with accordion interface
-4. **JavaScript**: `<script src="/js/faq-accordion-v2.js" defer></script>`
-5. **Content**: Custom FAQ content with strategic internal linking
 
 ### Workflow
 1. User provides FAQ content for specific category
