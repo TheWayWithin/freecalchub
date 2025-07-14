@@ -93,8 +93,10 @@ class GTMCSPFixer:
         
         # Fix 1: Remove legacy gtag.js
         if "HAS_LEGACY_GTAG" in issues:
-            # Remove gtag script tag (handles both async and async="")
-            content = re.sub(r'<script[^>]*gtag\.js[^>]*></script>\s*', '', content)
+            # Remove gtag script tag (handles async, async="", and other variations)
+            content = re.sub(r'<script[^>]*src="[^"]*gtag\.js[^"]*"[^>]*></script>\s*', '', content)
+            # Also handle without quotes around attributes
+            content = re.sub(r'<script[^>]*src=[\'"][^\'\"]*gtag\.js[^\'\"]*[\'"][^>]*></script>\s*', '', content)
             # Remove gtag script block
             content = re.sub(r'<script>\s*window\.dataLayer[^<]*</script>\s*', '', content, flags=re.DOTALL)
             fixes.append("Removed legacy gtag.js")
