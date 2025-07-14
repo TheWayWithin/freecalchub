@@ -200,8 +200,8 @@ def main():
     if test_mode:
         # Test mode: process specific test files
         test_files = [
-            f"{root_dir}/health/fitness/index.html",  # Category page with issues
-            f"{root_dir}/business/index.html"  # Category page with issues
+            f"{root_dir}/health/bmi/bmi-calculator/index.html",  # Calculator page (should be compliant)
+            f"{root_dir}/business/break-even/index.html",  # Category page (has issues)
         ]
         files_to_process = [f for f in test_files if os.path.exists(f)]
         print(f"TEST MODE: Processing {len(files_to_process)} test files")
