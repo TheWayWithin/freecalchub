@@ -18,65 +18,187 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="/css/navigation-ribbon.css" rel="stylesheet"/>
 <link href="/css/breadcrumb-styles.css" rel="stylesheet"/>
 <link href="/css/calchub-consolidated-fixes.css" rel="stylesheet"/>
+<link href="/css/faq-styles-v2.css" rel="stylesheet"/>
 <!-- Font Awesome for icons -->
 <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
-<!-- End Google Analytics -->
 <!-- Schema Markup -->
 <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "/" 
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Health",
-          "item": "/health/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Pregnancy",
-          "item": "/health/pregnancy/"
-        }
-      ]
-    }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Pregnancy Calculators",
+  "description": "Free online pregnancy calculators for due dates, ovulation tracking, and pregnancy milestone planning with comprehensive tools for expectant mothers.",
+  "url": "https://www.freecalchub.com/health/pregnancy/",
+  "dateCreated": "2024-01-15T10:00:00Z",
+  "dateModified": "2025-01-14T15:55:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "FreecalcHub",
+    "url": "https://www.freecalchub.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "FreecalcHub",
+    "url": "https://www.freecalchub.com"
+  },
+  "inLanguage": "en-US",
+  "isAccessibleForFree": true,
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.freecalchub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Health",
+        "item": "https://www.freecalchub.com/health/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Pregnancy",
+        "item": "https://www.freecalchub.com/health/pregnancy/"
+      }
+    ]
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Pregnancy Calculators",
+    "description": "Calculators and tools for pregnancy planning, due date estimation, and milestone tracking"
+  }
+}
+</script>
 <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
     {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Pregnancy Calculators",
-      "description": "A collection of calculators related to pregnancy, conception, due dates, and fetal development.",
-      "itemListElement": [
-        /* Add pregnancy calculators here as they are created */
-        /* Example:
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Due Date Calculator",
-          "url": "/health/pregnancy/due-date-calculator/"
-        }
-        */
-      ]
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.freecalchub.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Health",
+      "item": "https://www.freecalchub.com/health/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Pregnancy",
+      "item": "https://www.freecalchub.com/health/pregnancy/"
     }
-    </script>
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What pregnancy calculators are available on FreecalcHub?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We're developing comprehensive pregnancy calculators including a Due Date Calculator for estimating delivery dates, ovulation tracking tools, and pregnancy milestone calculators. These tools help expectant mothers plan and track their pregnancy journey with helpful <a href='/date-time/'>date calculations</a> and <a href='/health/'>health tools</a>."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate my baby's due date accurately?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Due dates are typically calculated from your last menstrual period (LMP) or conception date, adding 280 days (40 weeks) from LMP. Our upcoming Due Date Calculator will provide accurate estimates, though only about 5% of babies are born exactly on their due date. Use our <a href='/date-time/date-difference/'>date difference calculators</a> for precise timeline planning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are online pregnancy calculators accurate and reliable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Online pregnancy calculators provide helpful estimates based on standard medical calculations, but they should complement, not replace, medical care. Always confirm important dates and milestones with your healthcare provider. Our calculators follow established medical guidelines for accuracy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What other pregnancy-related calculations might I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Beyond due dates, you may need nutritional calculations for proper pregnancy nutrition using <a href='/health/nutrition/'>nutrition calculators</a>, weight gain tracking, appointment scheduling with <a href='/date-time/'>date tools</a>, and age-related pregnancy planning tools."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate pregnancy weeks and trimesters accurately?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pregnancy weeks are counted from the first day of your last menstrual period. The first trimester is weeks 1-12, second trimester is weeks 13-26, and third trimester is weeks 27-40. Our <a href='/date-time/date-difference/'>date difference calculators</a> help track these important milestones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I calculate nutritional needs during pregnancy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, pregnancy requires increased calories, protein, vitamins, and minerals. Our <a href='/health/nutrition/'>nutrition calculators</a> can help estimate daily caloric needs and macro requirements, though always consult your healthcare provider for personalized nutritional guidance during pregnancy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I track important pregnancy appointment dates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use our <a href='/date-time/'>date and time calculators</a> to schedule regular prenatal visits, track ultrasound appointments, and plan for important milestones. <a href='/date-time/countdown/'>Countdown calculators</a> help you anticipate upcoming appointments and your due date."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are pregnancy calculator results private and secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all our pregnancy calculators perform calculations locally in your browser without storing or transmitting your personal health information. Your pregnancy data remains completely private. Review our <a href='/privacy/'>privacy policy</a> for complete details."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What age-related pregnancy calculations are available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Maternal age affects pregnancy planning and risk assessment. Use our <a href='/date-time/age/'>age calculators</a> to determine exact age at conception or delivery, which helps healthcare providers assess pregnancy-related factors and plan appropriate care."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate healthy weight gain during pregnancy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Healthy weight gain depends on your pre-pregnancy BMI. Generally, normal weight women should gain 25-35 pounds, underweight women 28-40 pounds, and overweight women 15-25 pounds. Use our <a href='/health/weight/'>weight management tools</a> and <a href='/health/nutrition/'>nutrition calculators</a> for guidance."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNHC9TZ5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
 <div class="header-container">
 <div class="logo-container">
 <a class="logo" href="/">
-<img alt="CalcHub Logo" height="40" src="/images/logo.svg"/>
+<img alt="FreecalcHub Logo" height="40" src="/images/logo.svg"/>
 </a>
 </div>
 <nav class="main-nav">
@@ -175,14 +297,123 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="education-content">
 <p>Pregnancy is a time of significant change and development. Calculators can help estimate key dates like the due date and fertile window, providing valuable information for planning and monitoring.</p>
 <p>This section offers tools and resources related to conception, pregnancy timelines, fetal development, and healthy practices during pregnancy.</p>
-<!-- Add more educational content specific to Pregnancy -->
+</div>
+</section>
+<section class="faq-section">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-index">
+<p><strong>Quick answers to common questions about pregnancy calculators:</strong></p>
+<ul>
+<li><a href="#faq-1">What pregnancy calculators are available?</a></li>
+<li><a href="#faq-2">How do I calculate my baby's due date?</a></li>
+<li><a href="#faq-3">Are online pregnancy calculators accurate?</a></li>
+<li><a href="#faq-4">What other pregnancy calculations might I need?</a></li>
+<li><a href="#faq-5">How do I calculate pregnancy weeks and trimesters?</a></li>
+<li><a href="#faq-6">Can I calculate nutritional needs during pregnancy?</a></li>
+<li><a href="#faq-7">How do I track important pregnancy dates?</a></li>
+<li><a href="#faq-8">Are pregnancy calculator results private?</a></li>
+<li><a href="#faq-9">What age-related pregnancy calculations are available?</a></li>
+<li><a href="#faq-10">How do I calculate weight gain during pregnancy?</a></li>
+</ul>
+</div>
+<div class="faq-grid">
+<div class="faq-item" id="faq-1">
+<button class="faq-question" aria-expanded="false">
+<span>What pregnancy calculators are available on FreecalcHub?</span>
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>We're developing comprehensive pregnancy calculators including a Due Date Calculator for estimating delivery dates, ovulation tracking tools, and pregnancy milestone calculators. These tools help expectant mothers plan and track their pregnancy journey with helpful <a href="/date-time/">date calculations</a> and <a href="/health/">health tools</a>.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-2">
+<button class="faq-question" aria-expanded="false">
+<span>How do I calculate my baby's due date accurately?</span>
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>Due dates are typically calculated from your last menstrual period (LMP) or conception date, adding 280 days (40 weeks) from LMP. Our upcoming Due Date Calculator will provide accurate estimates, though only about 5% of babies are born exactly on their due date. Use our <a href="/date-time/date-difference/">date difference calculators</a> for precise timeline planning.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-3">
+<button class="faq-question" aria-expanded="false">
+<span>Are online pregnancy calculators accurate and reliable?</span>
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>Online pregnancy calculators provide helpful estimates based on standard medical calculations, but they should complement, not replace, medical care. Always confirm important dates and milestones with your healthcare provider. Our calculators follow established medical guidelines for accuracy.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-4">
+<button class="faq-question" aria-expanded="false">
+<span>What other pregnancy-related calculations might I need?</span>
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>Beyond due dates, you may need nutritional calculations for proper pregnancy nutrition using <a href="/health/nutrition/">nutrition calculators</a>, weight gain tracking, appointment scheduling with <a href="/date-time/">date tools</a>, and age-related pregnancy planning tools.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-5">
+<button class="faq-question" aria-expanded="false">
+<span>How do I calculate pregnancy weeks and trimesters accurately?</span>
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>Pregnancy weeks are counted from the first day of your last menstrual period. The first trimester is weeks 1-12, second trimester is weeks 13-26, and third trimester is weeks 27-40. Our <a href="/date-time/date-difference/">date difference calculators</a> help track these important milestones.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-6">
+<button class="faq-question" aria-expanded="false">
+<span>Can I calculate nutritional needs during pregnancy?</span>
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>Yes, pregnancy requires increased calories, protein, vitamins, and minerals. Our <a href="/health/nutrition/">nutrition calculators</a> can help estimate daily caloric needs and macro requirements, though always consult your healthcare provider for personalized nutritional guidance during pregnancy.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-7">
+<button class="faq-question" aria-expanded="false">
+<span>How do I track important pregnancy appointment dates?</span>
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>Use our <a href="/date-time/">date and time calculators</a> to schedule regular prenatal visits, track ultrasound appointments, and plan for important milestones. <a href="/date-time/countdown/">Countdown calculators</a> help you anticipate upcoming appointments and your due date.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-8">
+<button class="faq-question" aria-expanded="false">
+<span>Are pregnancy calculator results private and secure?</span>
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>Yes, all our pregnancy calculators perform calculations locally in your browser without storing or transmitting your personal health information. Your pregnancy data remains completely private. Review our <a href="/privacy/">privacy policy</a> for complete details.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-9">
+<button class="faq-question" aria-expanded="false">
+<span>What age-related pregnancy calculations are available?</span>
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>Maternal age affects pregnancy planning and risk assessment. Use our <a href="/date-time/age/">age calculators</a> to determine exact age at conception or delivery, which helps healthcare providers assess pregnancy-related factors and plan appropriate care.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-10">
+<button class="faq-question" aria-expanded="false">
+<span>How do I calculate healthy weight gain during pregnancy?</span>
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>Healthy weight gain depends on your pre-pregnancy BMI. Generally, normal weight women should gain 25-35 pounds, underweight women 28-40 pounds, and overweight women 15-25 pounds. Use our <a href="/health/weight/">weight management tools</a> and <a href="/health/nutrition/">nutrition calculators</a> for guidance.</p>
+</div>
+</div>
 </div>
 </section>
 </main>
 <footer class="site-footer">
 <div class="footer-container">
 <div class="footer-column">
-<h3>CalcHub</h3>
+<h3>FreecalcHub</h3>
 <p>Your source for free, accurate, and easy-to-use online calculators.</p>
 </div>
 <div class="footer-column">
@@ -215,10 +446,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </div>
 <div class="footer-bottom">
-<p>© 2025 CalcHub. All rights reserved.</p>
+<p>© 2025 FreecalcHub. All rights reserved.</p>
 </div>
 </footer>
 <script defer="" src="/js/main.js"></script>
 <script defer="" src="/js/dark-mode.js"></script>
+<script defer="" src="/js/faq-accordion-v2.js"></script>
 </body>
 </html>
