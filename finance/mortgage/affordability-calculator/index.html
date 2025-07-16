@@ -24,8 +24,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="/css/calchub-consolidated-fixes.css" rel="stylesheet"/>
 <!-- 5) Page-specific CSS -->
 <link href="/finance/mortgage/affordability-calculator/css/mortgage-affordability-calculator.css" rel="stylesheet"/>
-<!-- 6) Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
+<!-- 6) FAQ v2 CSS -->
+<link href="/css/faq-styles-v2.css" rel="stylesheet"/>
 <!-- 7) Your JSON-LD: copy *this entire block* verbatim from your old page -->
 <script type="application/ld+json">
   {
@@ -46,7 +46,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             "@type": "AggregateRating",
             "ratingValue": "4.9",
             "ratingCount": "215"
-          }
+          },
+          "url": "https://www.freecalchub.com/finance/mortgage/affordability-calculator/",
+          "dateModified": "2025-07-16T21:00:00Z",
+          "relatedLink": [
+            { "@type": "SoftwareApplication", "name": "Mortgage Calculator", "url": "https://www.freecalchub.com/finance/mortgage/mortgage-calculator/" },
+            { "@type": "SoftwareApplication", "name": "Loan Calculator", "url": "https://www.freecalchub.com/finance/loan/loan-calculator/" },
+            { "@type": "SoftwareApplication", "name": "Savings Goal Calculator", "url": "https://www.freecalchub.com/finance/savings/savings-goal-calculator/" }
+          ]
         },
         {
           "@type": "FAQPage",
@@ -218,6 +225,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- end JSON-LD -->
 </head>
 <body>
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-KNHC9TZ5" style="display:none;visibility:hidden" width="0"></iframe></noscript>
 <!-- skip-link -->
 <a class="skip-link" href="#main-content">Skip to content</a>
 <!-- ==== SITE HEADER ==== -->
@@ -504,65 +512,130 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="/finance/taxes/property-tax-calculator/">Property Tax Calculator</a> (To be created)</li>
 </ul>
 </section>
-<section class="faq-accordion-section content-section">
+<section class="faq-section content-section">
 <h2 class="section-title">Frequently Asked Questions</h2>
-<div class="faq-item">
-<button aria-expanded="false" class="accordion">How much house can I afford with a specific income (e.g., $70,000 income)?</button>
-<div class="panel">
+<div class="faq-index card">
+<h3>FAQ Index</h3>
+<ul>
+<li><a href="#faq-item-1">How much house can I afford with a specific income (e.g., $70,000 income)?</a></li>
+<li><a href="#faq-item-2">What is the 28/36 rule for mortgage affordability?</a></li>
+<li><a href="#faq-item-3">How does my credit score affect how much house I can afford?</a></li>
+<li><a href="#faq-item-4">How much down payment do I need to afford a $400,000 house?</a></li>
+<li><a href="#faq-item-5">What debt-to-income ratio (DTI) do I need to qualify for a mortgage?</a></li>
+<li><a href="#faq-item-6">How do property taxes and insurance affect my home affordability?</a></li>
+<li><a href="#faq-item-7">Should I include HOA fees in my mortgage affordability calculation?</a></li>
+<li><a href="#faq-item-8">How much should I spend on a house based on my salary?</a></li>
+<li><a href="#faq-item-9">What's the difference between pre-qualification and pre-approval?</a></li>
+<li><a href="#faq-item-10">How can I afford more house than what the calculator shows?</a></li>
+</ul>
+</div>
+<div class="faq-item" id="faq-item-1">
+<h3>
+<button aria-controls="faq-panel-1" aria-expanded="false" class="accordion">
+How much house can I afford with a specific income (e.g., $70,000 income)?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-1" role="region">
 <p>Determining affordability on a $70,000 income involves looking at your gross monthly income (approx. $5,833), the 28/36 rule (housing costs &lt;28% GMI, total debt &lt;36% GMI), your down payment, existing debts, credit score, current interest rates, loan term, property taxes, and insurance. Our calculator provides a personalized estimate based on these factors.</p>
 </div>
 </div>
-<div class="faq-item">
-<button aria-expanded="false" class="accordion">What is the 28/36 rule for mortgage affordability?</button>
-<div class="panel">
+<div class="faq-item" id="faq-item-2">
+<h3>
+<button aria-controls="faq-panel-2" aria-expanded="false" class="accordion">
+What is the 28/36 rule for mortgage affordability?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-2" role="region">
 <p>The 28/36 rule suggests your total housing expenses (PITI + HOA) shouldn't exceed 28% of your gross monthly income (front-end ratio), and your total monthly debt obligations (including housing) shouldn't exceed 36% of your gross monthly income (back-end ratio). Lenders use this to assess your ability to manage payments.</p>
 </div>
 </div>
-<div class="faq-item">
-<button aria-expanded="false" class="accordion">How does my credit score affect how much house I can afford?</button>
-<div class="panel">
+<div class="faq-item" id="faq-item-3">
+<h3>
+<button aria-controls="faq-panel-3" aria-expanded="false" class="accordion">
+How does my credit score affect how much house I can afford?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-3" role="region">
 <p>A higher credit score generally qualifies you for lower interest rates, reducing your monthly mortgage payment and increasing the home price you can afford. It can also provide access to better loan terms and lower PMI costs.</p>
 </div>
 </div>
-<div class="faq-item">
-<button aria-expanded="false" class="accordion">How much down payment do I need to afford a $400,000 house?</button>
-<div class="panel">
+<div class="faq-item" id="faq-item-4">
+<h3>
+<button aria-controls="faq-panel-4" aria-expanded="false" class="accordion">
+How much down payment do I need to afford a $400,000 house?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-4" role="region">
 <p>For a $400,000 house, a 20% down payment ($80,000) avoids PMI on conventional loans. However, FHA loans might require as little as 3.5% ($14,000), and VA/USDA loans may require 0%. The down payment affects your loan amount and monthly payments.</p>
 </div>
 </div>
-<div class="faq-item">
-<button aria-expanded="false" class="accordion">What debt-to-income ratio (DTI) do I need to qualify for a mortgage?</button>
-<div class="panel">
+<div class="faq-item" id="faq-item-5">
+<h3>
+<button aria-controls="faq-panel-5" aria-expanded="false" class="accordion">
+What debt-to-income ratio (DTI) do I need to qualify for a mortgage?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-5" role="region">
 <p>Most lenders prefer a DTI of 43% or less. Conventional loans often cap around 43-50% with compensating factors. FHA loans may go up to 43-50%+. VA loans are more flexible but often prefer &lt;41% and consider residual income. USDA loans typically require &lt;41%.</p>
 </div>
 </div>
-<div class="faq-item">
-<button aria-expanded="false" class="accordion">How do property taxes and insurance affect my home affordability?</button>
-<div class="panel">
+<div class="faq-item" id="faq-item-6">
+<h3>
+<button aria-controls="faq-panel-6" aria-expanded="false" class="accordion">
+How do property taxes and insurance affect my home affordability?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-6" role="region">
 <p>Property taxes and homeowners insurance (T&amp;I) are part of your monthly PITI payment. Higher T&amp;I costs increase your PITI, reducing the principal and interest portion you can afford, thus lowering the overall home price you can manage for a given total payment.</p>
 </div>
 </div>
-<div class="faq-item">
-<button aria-expanded="false" class="accordion">Should I include HOA fees in my mortgage affordability calculation?</button>
-<div class="panel">
+<div class="faq-item" id="faq-item-7">
+<h3>
+<button aria-controls="faq-panel-7" aria-expanded="false" class="accordion">
+Should I include HOA fees in my mortgage affordability calculation?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-7" role="region">
 <p>Yes, HOA fees are a recurring monthly expense and must be included. Lenders add HOA fees to your PITI when calculating your debt-to-income ratios, which directly impacts your affordability.</p>
 </div>
 </div>
-<div class="faq-item">
-<button aria-expanded="false" class="accordion">How much should I spend on a house based on my salary?</button>
-<div class="panel">
+<div class="faq-item" id="faq-item-8">
+<h3>
+<button aria-controls="faq-panel-8" aria-expanded="false" class="accordion">
+How much should I spend on a house based on my salary?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-8" role="region">
 <p>A general guideline is 2.5 to 4 times your gross annual income. However, this varies greatly based on your down payment, debts, interest rates, credit score, and local property taxes/insurance. Use an affordability calculator for a personalized estimate.</p>
 </div>
 </div>
-<div class="faq-item">
-<button aria-expanded="false" class="accordion">What's the difference between pre-qualification and pre-approval?</button>
-<div class="panel">
+<div class="faq-item" id="faq-item-9">
+<h3>
+<button aria-controls="faq-panel-9" aria-expanded="false" class="accordion">
+What's the difference between pre-qualification and pre-approval?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-9" role="region">
 <p>Pre-qualification is an informal estimate based on self-reported data, without a hard credit check. Pre-approval is a more formal, conditional commitment from a lender after verifying your income, assets, debts, and performing a hard credit check. Pre-approval is stronger when making an offer on a home.</p>
 </div>
 </div>
-<div class="faq-item">
-<button aria-expanded="false" class="accordion">How can I afford more house than what the calculator shows?</button>
-<div class="panel">
+<div class="faq-item" id="faq-item-10">
+<h3>
+<button aria-controls="faq-panel-10" aria-expanded="false" class="accordion">
+How can I afford more house than what the calculator shows?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-10" role="region">
 <p>To afford more, you can: increase your down payment, improve your credit score (for better rates), reduce existing debts (lower DTI), increase your income, shop for lower interest rates, consider a longer loan term, or look for homes with lower property taxes/HOA fees.</p>
 </div>
 </div>
@@ -603,7 +676,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- ==================== SCRIPTS ==================== -->
 <script defer="" src="/js/main.js"></script>
 <script defer="" src="/js/dark-mode.js"></script>
-<script defer="" src="/js/faq-accordion.js"></script>
+<script defer="" src="/js/faq-accordion-v2.js"></script>
 <script defer="" src="/finance/mortgage/affordability-calculator/js/mortgage-affordability-calculator.js"></script>
 </body>
 </html>
