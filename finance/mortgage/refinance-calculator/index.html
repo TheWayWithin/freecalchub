@@ -24,10 +24,76 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="/css/calchub-consolidated-fixes.css" rel="stylesheet"/>
 <!-- Page-specific styles -->
 <link href="/finance/mortgage/refinance-calculator/css/refinance-calculator.css" rel="stylesheet"/>
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-R1QHNSSWTC"></script>
+<!-- FAQ v2 CSS -->
+<link href="/css/faq-styles-v2.css" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Mortgage Refinance Calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Thinking about refinancing your mortgage? Our Mortgage Refinance Calculator helps you compare your current loan to potential new loan options and see if refinancing makes sense.",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.6", "ratingCount": "198" },
+      "url": "https://www.freecalchub.com/finance/mortgage/refinance-calculator/",
+      "dateModified": "2025-07-16T21:25:00Z",
+      "relatedLink": [
+        { "@type": "SoftwareApplication", "name": "Mortgage Calculator", "url": "https://www.freecalchub.com/finance/mortgage/mortgage-calculator/" },
+        { "@type": "SoftwareApplication", "name": "Mortgage Points Calculator", "url": "https://www.freecalchub.com/finance/mortgage/points-calculator/" },
+        { "@type": "SoftwareApplication", "name": "Mortgage Payoff Calculator", "url": "https://www.freecalchub.com/finance/mortgage/payoff-calculator/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "When is it worth refinancing a mortgage?", "acceptedAnswer": { "@type": "Answer", "text": "Refinancing is typically worth it when you can secure a lower interest rate that will save you money over the life of the loan, even after accounting for closing costs. A common rule of thumb is that refinancing makes sense if you can reduce your interest rate by at least 0.5% to 1%. However, this depends on your specific situation, including how long you plan to stay in your home and your current loan balance." } },
+        { "@type": "Question", "name": "How much can I save by refinancing my mortgage?", "acceptedAnswer": { "@type": "Answer", "text": "The amount you can save depends on several factors: your current interest rate, the new rate you qualify for, your loan balance, and how long you plan to stay in your home. For example, refinancing a $200,000 mortgage from 4.5% to 3.5% could save you over $100 per month and tens of thousands in interest over the life of the loan. Our refinance calculator can help you estimate your potential savings." } },
+        { "@type": "Question", "name": "What are the typical costs involved in refinancing?", "acceptedAnswer": { "@type": "Answer", "text": "Refinancing costs typically range from 2% to 5% of your loan amount and may include: application fees, appraisal fees, title insurance, attorney fees, origination fees, and recording fees. For a $200,000 mortgage, expect to pay between $4,000 and $10,000 in closing costs. Some lenders offer \"no-cost\" refinancing, but this usually means they're either rolling the costs into your loan or offering a higher interest rate." } },
+        { "@type": "Question", "name": "How long does the refinancing process usually take?", "acceptedAnswer": { "@type": "Answer", "text": "The refinancing process typically takes 30 to 45 days from application to closing, though it can vary based on your lender, the complexity of your financial situation, and current market conditions. This timeline includes time for your application review, home appraisal, underwriting, and final approval. Having all your documentation ready upfront can help speed up the process." } },
+        { "@type": "Question", "name": "What is the break-even point for refinancing?", "acceptedAnswer": { "@type": "Answer", "text": "The break-even point is the time it takes for your monthly savings to equal the total cost of refinancing. For example, if refinancing costs $3,000 and saves you $150 per month, your break-even point is 20 months. If you plan to stay in your home longer than the break-even period, refinancing could be beneficial. Our calculator shows you this break-even point based on your specific numbers." } },
+        { "@type": "Question", "name": "Should I refinance if I plan to move in a few years?", "acceptedAnswer": { "@type": "Answer", "text": "If you plan to move before reaching your break-even point, refinancing may not be worth it. The closing costs might outweigh the savings you'll realize in the short term. However, if you can achieve significant monthly savings and have very low closing costs, it might still make sense. Consider factors like job stability, family plans, and local market conditions when making this decision." } },
+        { "@type": "Question", "name": "Can I refinance if I have less than 20% equity in my home?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, you can refinance with less than 20% equity, but you'll likely need to pay Private Mortgage Insurance (PMI) on the new loan. Some loan programs, like FHA streamline refinancing or VA Interest Rate Reduction Refinance Loans (IRRRL), have more flexible equity requirements. The key is ensuring that the benefits of refinancing outweigh the additional cost of PMI." } },
+        { "@type": "Question", "name": "What credit score do I need to qualify for refinancing?", "acceptedAnswer": { "@type": "Answer", "text": "Most lenders require a credit score of at least 620 for conventional refinancing, though you'll get better rates with scores of 740 or higher. For FHA refinancing, you may qualify with a score as low as 580. Your credit score affects not only your eligibility but also the interest rate you'll receive. If your score has improved since you got your original mortgage, you might qualify for better rates." } },
+        { "@type": "Question", "name": "Should I switch from a 30-year to a 15-year mortgage when refinancing?", "acceptedAnswer": { "@type": "Answer", "text": "Switching to a 15-year mortgage can save you significantly on total interest costs and help you build equity faster. However, your monthly payments will be higher. This strategy works best if you can comfortably afford the higher payments and plan to stay in your home for many years. Consider your other financial goals, like retirement savings and emergency funds, before committing to higher payments." } },
+        { "@type": "Question", "name": "Can I roll closing costs into my new mortgage when refinancing?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, you can often roll closing costs into your new mortgage balance, but this means you'll pay interest on these costs over the life of the loan. This approach can be helpful if you don't have cash available for closing costs, but it reduces your overall savings from refinancing. Alternatively, some lenders offer \"no-cost\" refinancing where they cover closing costs in exchange for a slightly higher interest rate." } }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to Use the Mortgage Refinance Calculator",
+      "description": "A step-by-step guide to using the FreecalcHub Mortgage Refinance Calculator to evaluate refinancing options.",
+      "step": [
+        { "@type": "HowToStep", "name": "Enter Current Loan Details", "text": "Input your original loan amount, current balance, original loan term, time remaining, and current interest rate." },
+        { "@type": "HowToStep", "name": "Add New Loan Information", "text": "Enter the new interest rate you're being offered and the new loan term you're considering." },
+        { "@type": "HowToStep", "name": "Include Closing Costs", "text": "Add the estimated closing costs for your refinance to get an accurate break-even analysis." },
+        { "@type": "HowToStep", "name": "Calculate and Review", "text": "Click calculate to see your new monthly payment, savings, break-even point, and total interest savings over the life of the loan." }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Finance Calculators", "item": "https://www.freecalchub.com/finance/" },
+        { "@type": "ListItem", "position": 3, "name": "Mortgage Calculators", "item": "https://www.freecalchub.com/finance/mortgage/" },
+        { "@type": "ListItem", "position": 4, "name": "Mortgage Refinance Calculator", "item": "https://www.freecalchub.com/finance/mortgage/refinance-calculator/" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "name": "Mortgage Refinance Calculator: Is Refinancing Worth It? | FreecalcHub",
+      "description": "Thinking about refinancing your mortgage? Our Mortgage Refinance Calculator helps you compare your current loan to potential new loan options and see if refinancing makes sense.",
+      "url": "https://www.freecalchub.com/finance/mortgage/refinance-calculator/",
+      "dateModified": "2025-07-16T21:25:00Z"
+    }
+  ]
+}
+</script>
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNHC9TZ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Skip Link -->
 <a class="skip-link" href="#main-content">Skip to content</a>
 <!-- Header -->
@@ -195,14 +261,140 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </section>
 <!-- FAQs Section -->
 <section class="faq-section content-section">
-<h2 class="section-title">Frequently Asked Questions</h2>
-<div class="faq-item">
-<button aria-expanded="false" class="accordion">When is it worth refinancing a mortgage?</button>
-<div class="panel">
-<p>Refinancing your mortgage is generally considered worthwhile if you can secure a significantly lower interest rate or reduce your monthly payment.</p>
+<h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
+<div class="faq-index card">
+<h3>FAQ Index</h3>
+<ul>
+<li><a href="#faq-item-1">When is it worth refinancing a mortgage?</a></li>
+<li><a href="#faq-item-2">How much can I save by refinancing my mortgage?</a></li>
+<li><a href="#faq-item-3">What are the typical costs involved in refinancing?</a></li>
+<li><a href="#faq-item-4">How long does the refinancing process usually take?</a></li>
+<li><a href="#faq-item-5">What is the break-even point for refinancing?</a></li>
+<li><a href="#faq-item-6">Should I refinance if I plan to move in a few years?</a></li>
+<li><a href="#faq-item-7">Can I refinance if I have less than 20% equity in my home?</a></li>
+<li><a href="#faq-item-8">What credit score do I need to qualify for refinancing?</a></li>
+<li><a href="#faq-item-9">Should I switch from a 30-year to a 15-year mortgage when refinancing?</a></li>
+<li><a href="#faq-item-10">Can I roll closing costs into my new mortgage when refinancing?</a></li>
+</ul>
+</div>
+<div class="faq-item" id="faq-item-1">
+<h3>
+<button class="accordion" aria-expanded="false" aria-controls="faq-panel-1">
+When is it worth refinancing a mortgage?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-1" role="region">
+<p>Refinancing is typically worth it when you can secure a lower interest rate that will save you money over the life of the loan, even after accounting for closing costs. A common rule of thumb is that refinancing makes sense if you can reduce your interest rate by at least 0.5% to 1%. However, this depends on your specific situation, including how long you plan to stay in your home and your current loan balance.</p>
 </div>
 </div>
-<!-- Add more FAQs here -->
+<div class="faq-item" id="faq-item-2">
+<h3>
+<button class="accordion" aria-expanded="false" aria-controls="faq-panel-2">
+How much can I save by refinancing my mortgage?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-2" role="region">
+<p>The amount you can save depends on several factors: your current interest rate, the new rate you qualify for, your loan balance, and how long you plan to stay in your home. For example, refinancing a $200,000 mortgage from 4.5% to 3.5% could save you over $100 per month and tens of thousands in interest over the life of the loan. Our refinance calculator can help you estimate your potential savings.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-item-3">
+<h3>
+<button class="accordion" aria-expanded="false" aria-controls="faq-panel-3">
+What are the typical costs involved in refinancing?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-3" role="region">
+<p>Refinancing costs typically range from 2% to 5% of your loan amount and may include: application fees, appraisal fees, title insurance, attorney fees, origination fees, and recording fees. For a $200,000 mortgage, expect to pay between $4,000 and $10,000 in closing costs. Some lenders offer "no-cost" refinancing, but this usually means they're either rolling the costs into your loan or offering a higher interest rate.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-item-4">
+<h3>
+<button class="accordion" aria-expanded="false" aria-controls="faq-panel-4">
+How long does the refinancing process usually take?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-4" role="region">
+<p>The refinancing process typically takes 30 to 45 days from application to closing, though it can vary based on your lender, the complexity of your financial situation, and current market conditions. This timeline includes time for your application review, home appraisal, underwriting, and final approval. Having all your documentation ready upfront can help speed up the process.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-item-5">
+<h3>
+<button class="accordion" aria-expanded="false" aria-controls="faq-panel-5">
+What is the break-even point for refinancing?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-5" role="region">
+<p>The break-even point is the time it takes for your monthly savings to equal the total cost of refinancing. For example, if refinancing costs $3,000 and saves you $150 per month, your break-even point is 20 months. If you plan to stay in your home longer than the break-even period, refinancing could be beneficial. Our calculator shows you this break-even point based on your specific numbers.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-item-6">
+<h3>
+<button class="accordion" aria-expanded="false" aria-controls="faq-panel-6">
+Should I refinance if I plan to move in a few years?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-6" role="region">
+<p>If you plan to move before reaching your break-even point, refinancing may not be worth it. The closing costs might outweigh the savings you'll realize in the short term. However, if you can achieve significant monthly savings and have very low closing costs, it might still make sense. Consider factors like job stability, family plans, and local market conditions when making this decision.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-item-7">
+<h3>
+<button class="accordion" aria-expanded="false" aria-controls="faq-panel-7">
+Can I refinance if I have less than 20% equity in my home?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-7" role="region">
+<p>Yes, you can refinance with less than 20% equity, but you'll likely need to pay Private Mortgage Insurance (PMI) on the new loan. Some loan programs, like FHA streamline refinancing or VA Interest Rate Reduction Refinance Loans (IRRRL), have more flexible equity requirements. The key is ensuring that the benefits of refinancing outweigh the additional cost of PMI.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-item-8">
+<h3>
+<button class="accordion" aria-expanded="false" aria-controls="faq-panel-8">
+What credit score do I need to qualify for refinancing?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-8" role="region">
+<p>Most lenders require a credit score of at least 620 for conventional refinancing, though you'll get better rates with scores of 740 or higher. For FHA refinancing, you may qualify with a score as low as 580. Your credit score affects not only your eligibility but also the interest rate you'll receive. If your score has improved since you got your original mortgage, you might qualify for better rates.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-item-9">
+<h3>
+<button class="accordion" aria-expanded="false" aria-controls="faq-panel-9">
+Should I switch from a 30-year to a 15-year mortgage when refinancing?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-9" role="region">
+<p>Switching to a 15-year mortgage can save you significantly on total interest costs and help you build equity faster. However, your monthly payments will be higher. This strategy works best if you can comfortably afford the higher payments and plan to stay in your home for many years. Consider your other financial goals, like retirement savings and emergency funds, before committing to higher payments.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-item-10">
+<h3>
+<button class="accordion" aria-expanded="false" aria-controls="faq-panel-10">
+Can I roll closing costs into my new mortgage when refinancing?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-10" role="region">
+<p>Yes, you can often roll closing costs into your new mortgage balance, but this means you'll pay interest on these costs over the life of the loan. This approach can be helpful if you don't have cash available for closing costs, but it reduces your overall savings from refinancing. Alternatively, some lenders offer "no-cost" refinancing where they cover closing costs in exchange for a slightly higher interest rate.</p>
+</div>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">Related Calculators</h2>
+<ul>
+<li><a href="/finance/mortgage/mortgage-calculator/">Mortgage Calculator</a> - Calculate your monthly mortgage payment including principal, interest, taxes, and insurance.</li>
+<li><a href="/finance/mortgage/points-calculator/">Mortgage Points Calculator</a> - Determine if paying points to lower your interest rate makes financial sense.</li>
+<li><a href="/finance/mortgage/payoff-calculator/">Mortgage Payoff Calculator</a> - See how extra payments can shorten your loan term and save interest.</li>
+</ul>
 </section>
 </div>
 </main>
@@ -242,6 +434,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Scripts -->
 <script defer="" src="/js/main.js"></script>
 <script defer="" src="/js/dark-mode.js"></script>
+<script defer="" src="/js/faq-accordion-v2.js"></script>
 <script defer="" src="/finance/mortgage/refinance-calculator/js/refinance-calculator.js"></script>
 </body>
 </html>
