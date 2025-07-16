@@ -103,27 +103,6 @@
          * - Version 1.6: Removed inline <style> block as per general-template-guidelines.md, and standardized icon wrapper class to .calculator-icon in examples.
          */
         
-        /* Coming Soon Calculator Card Styles */
-        .calculator-card.coming-soon {
-            position: relative;
-            opacity: 0.8;
-            cursor: default;
-            pointer-events: none;
-        }
-        
-        .coming-soon-badge {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            background: #ff6b35;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.7em;
-            font-weight: bold;
-            z-index: 1;
-            text-transform: uppercase;
-        }
     </style>
 </head>
 <body>
@@ -173,9 +152,12 @@
 <section class="category-header">
 <h1>Cryptocurrency Calculators</h1> <p class="lead">Free cryptocurrency calculators for trading, investing, and earning. Calculate crypto profits, DCA strategies, staking rewards, and more digital asset tools.</p> </section>
 <div class="calculator-grid">
-<div class="calculator-card coming-soon"> <div class="calculator-icon"><i class="fas fa-chart-line"></i></div> <h3>Cryptocurrency Profit/Loss Calculator</h3> <p>Calculate your profit or loss from crypto trades, including trading fees for accurate net results.</p> <div class="coming-soon-badge">Coming Soon</div> </div>
-<div class="calculator-card coming-soon"> <div class="calculator-icon"><i class="fas fa-calendar-alt"></i></div> <h3>Dollar-Cost Averaging (DCA) Calculator</h3> <p>Simulate DCA investment strategies and compare outcomes with lump-sum investing over time.</p> <div class="coming-soon-badge">Coming Soon</div> </div>
-<div class="calculator-card coming-soon"> <div class="calculator-icon"><i class="fas fa-coins"></i></div> <h3>Crypto Staking Rewards Calculator</h3> <p>Estimate potential earnings from staking cryptocurrencies with compound interest calculations.</p> <div class="coming-soon-badge">Coming Soon</div> </div>
+<div class="calculator-card">
+<div class="calculator-icon"><i class="fas fa-chart-line"></i></div> <h3>Cryptocurrency Profit/Loss Calculator</h3> <p>Calculate your profit or loss from crypto trades, including trading fees for accurate net results.<span class="coming-soon-tag">Coming Soon</span></p> </div>
+<div class="calculator-card">
+<div class="calculator-icon"><i class="fas fa-calendar-alt"></i></div> <h3>Dollar-Cost Averaging (DCA) Calculator</h3> <p>Simulate DCA investment strategies and compare outcomes with lump-sum investing over time.<span class="coming-soon-tag">Coming Soon</span></p> </div>
+<div class="calculator-card">
+<div class="calculator-icon"><i class="fas fa-coins"></i></div> <h3>Crypto Staking Rewards Calculator</h3> <p>Estimate potential earnings from staking cryptocurrencies with compound interest calculations.<span class="coming-soon-tag">Coming Soon</span></p> </div>
 </div>
 <section class="category-content-section content-section">
 <h2 class="section-title">About Cryptocurrency Calculators</h2> <p>Cryptocurrency calculators are essential tools for anyone involved in digital asset trading, investing, or earning. These specialized financial tools help you make informed decisions by providing accurate calculations for various crypto-related scenarios. Whether you're a day trader looking to calculate quick profits, a long-term investor planning a dollar-cost averaging strategy, or someone interested in passive income through staking, our cryptocurrency calculators provide the precision and insights you need.</p> 
