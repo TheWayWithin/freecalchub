@@ -1,0 +1,25 @@
+# Netlify Redirects and Error Handling for FreecalcHub
+
+# Custom Error Pages
+/* /404.html 404
+/* /403.html 403
+/* /500.html 500
+
+# Redirect common typos and variations
+/finance/crypto/* /finance/cryptocurrency/:splat 301
+/finance/mortgages/* /finance/mortgage/:splat 301
+/finance/loans/* /finance/loan/:splat 301
+/health/bmi-calc/* /health/bmi/bmi-calculator/:splat 301
+/math/percent/* /math/percentages/:splat 301
+
+# Redirect trailing slashes to clean URLs (optional)
+/finance/cryptocurrency/profit-loss-calculator /finance/cryptocurrency/ 302
+/finance/cryptocurrency/dca-calculator /finance/cryptocurrency/ 302
+/finance/cryptocurrency/staking-rewards-calculator /finance/cryptocurrency/ 302
+
+# Force HTTPS (optional but recommended)
+http://freecalchub.com/* https://freecalchub.com/:splat 301
+http://www.freecalchub.com/* https://www.freecalchub.com/:splat 301
+
+# Handle www to non-www redirects (optional)
+https://freecalchub.com/* https://www.freecalchub.com/:splat 301
