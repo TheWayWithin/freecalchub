@@ -33,23 +33,7 @@
           "inLanguage": "en-US",
           "datePublished": "2025-01-16T10:00:00Z",
           "dateModified": "2025-01-16T10:00:00Z",
-          "hasPart": [
-            {
-              "@type": "SoftwareApplication",
-              "name": "Cryptocurrency Profit/Loss Calculator",
-              "url": "https://www.freecalchub.com/finance/cryptocurrency/profit-loss-calculator/"
-            },
-            {
-              "@type": "SoftwareApplication",
-              "name": "Dollar-Cost Averaging (DCA) Calculator",
-              "url": "https://www.freecalchub.com/finance/cryptocurrency/dca-calculator/"
-            },
-            {
-              "@type": "SoftwareApplication",
-              "name": "Crypto Staking Rewards Calculator",
-              "url": "https://www.freecalchub.com/finance/cryptocurrency/staking-rewards-calculator/"
-            }
-          ]
+          "hasPart": []
         },
         {
           "@type": "BreadcrumbList",
@@ -118,6 +102,32 @@
          * - Version 1.5: Added CSS for V2 FAQ structure and updated associated comments.
          * - Version 1.6: Removed inline <style> block as per general-template-guidelines.md, and standardized icon wrapper class to .calculator-icon in examples.
          */
+        
+        /* Coming Soon Calculator Card Styles */
+        .calculator-card.coming-soon {
+            position: relative;
+            opacity: 0.7;
+            cursor: default;
+            pointer-events: none;
+        }
+        
+        .calculator-card.coming-soon:hover {
+            transform: none;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .coming-soon-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
@@ -167,27 +177,30 @@
 <section class="category-header">
 <h1>Cryptocurrency Calculators</h1> <p class="lead">Free cryptocurrency calculators for trading, investing, and earning. Calculate crypto profits, DCA strategies, staking rewards, and more digital asset tools.</p> </section>
 <div class="calculator-grid">
-<a class="calculator-card" href="/finance/cryptocurrency/profit-loss-calculator/">
+<div class="calculator-card coming-soon">
 <div class="calculator-icon">
 <i class="fas fa-chart-line"></i>
 </div>
 <h3>Cryptocurrency Profit/Loss Calculator</h3>
 <p>Calculate your profit or loss from crypto trades, including trading fees for accurate net results.</p>
-</a>
-<a class="calculator-card" href="/finance/cryptocurrency/dca-calculator/">
+<div class="coming-soon-badge">Coming Soon</div>
+</div>
+<div class="calculator-card coming-soon">
 <div class="calculator-icon">
 <i class="fas fa-calendar-alt"></i>
 </div>
 <h3>Dollar-Cost Averaging (DCA) Calculator</h3>
 <p>Simulate DCA investment strategies and compare outcomes with lump-sum investing over time.</p>
-</a>
-<a class="calculator-card" href="/finance/cryptocurrency/staking-rewards-calculator/">
+<div class="coming-soon-badge">Coming Soon</div>
+</div>
+<div class="calculator-card coming-soon">
 <div class="calculator-icon">
 <i class="fas fa-coins"></i>
 </div>
 <h3>Crypto Staking Rewards Calculator</h3>
 <p>Estimate potential earnings from staking cryptocurrencies with compound interest calculations.</p>
-</a>
+<div class="coming-soon-badge">Coming Soon</div>
+</div>
 </div>
 <section class="category-content-section content-section">
 <h2 class="section-title">About Cryptocurrency Calculators</h2> <p>Cryptocurrency calculators are essential tools for anyone involved in digital asset trading, investing, or earning. These specialized financial tools help you make informed decisions by providing accurate calculations for various crypto-related scenarios. Whether you're a day trader looking to calculate quick profits, a long-term investor planning a dollar-cost averaging strategy, or someone interested in passive income through staking, our cryptocurrency calculators provide the precision and insights you need.</p> 
