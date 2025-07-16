@@ -170,7 +170,7 @@
   </url>
   <url>
     <loc>https://freecalchub.com/finance/mortgage/refinance-calculator/</loc>
-    <lastmod>2025-07-14T14:41:39Z</lastmod>
+    <lastmod>2025-07-16T21:25:00Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -188,7 +188,7 @@
   </url>
   <url>
     <loc>https://freecalchub.com/finance/mortgage/points-calculator/</loc>
-    <lastmod>2025-07-14T14:41:39Z</lastmod>
+    <lastmod>2025-07-16T21:20:00Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -219,6 +219,12 @@
   <url>
     <loc>https://www.freecalchub.com/finance/budgeting/</loc>
     <lastmod>2025-07-14T14:59:09Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/finance/cryptocurrency/</loc>
+    <lastmod>2025-01-16T10:00:00Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
