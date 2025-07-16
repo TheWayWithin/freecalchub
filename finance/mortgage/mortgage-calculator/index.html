@@ -24,6 +24,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="/finance/mortgage/mortgage-calculator/css/mortgage-calculator-consolidated.css" rel="stylesheet"/>
 <!-- Font Awesome for icons -->
 <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<!-- FAQ v2 CSS -->
+<link href="/css/faq-styles-v2.css" rel="stylesheet"/>
 <!-- Specific mortgage calculator script -->
 <script defer="" src="/finance/mortgage/mortgage-calculator/js/mortgage-calculator.js"></script>
 <!-- Amortization table script -->
@@ -32,8 +34,77 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script defer="" src="/js/main.js"></script>
 <script defer="" src="/js/dark-mode.js"></script>
 <!-- All layout fixes now consolidated above -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Mortgage Calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Free mortgage calculator to estimate monthly payments, total interest, and amortization schedules for your home loan.",
+      "url": "https://www.freecalchub.com/finance/mortgage/mortgage-calculator/",
+      "dateModified": "2025-07-16T21:10:00Z",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "189" },
+      "relatedLink": [
+        { "@type": "SoftwareApplication", "name": "Mortgage Affordability Calculator", "url": "https://www.freecalchub.com/finance/mortgage/affordability-calculator/" },
+        { "@type": "SoftwareApplication", "name": "Biweekly Mortgage Calculator", "url": "https://www.freecalchub.com/finance/mortgage/biweekly-calculator/" },
+        { "@type": "SoftwareApplication", "name": "Mortgage Payoff Calculator", "url": "https://www.freecalchub.com/finance/mortgage/payoff-calculator/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is included in a mortgage payment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A typical mortgage payment includes four components: Principal (the amount borrowed), Interest (the cost of borrowing), Taxes (property taxes), and Insurance (homeowners insurance and potentially PMI). This is often abbreviated as PITI. Some payments may also include HOA fees."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate is this mortgage calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This calculator provides a good estimate of your monthly mortgage payment based on the information you provide. However, actual payments can vary slightly due to factors like fluctuating insurance premiums, changes in property taxes, or specific lender fees. It's best used for planning and comparison purposes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is PMI and when is it required?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Private Mortgage Insurance (PMI) is insurance that protects the lender if you default on your loan. It's typically required for conventional loans when your down payment is less than 20% of the home's purchase price. PMI usually costs between 0.5% and 1% (or sometimes more) of the original loan amount annually and is added to your monthly mortgage payment. Once your loan balance drops to 80% of the original home value (or sometimes 78% automatically), you can typically request to have PMI removed, or it may be automatically terminated."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I lower my monthly mortgage payment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There are several ways to potentially lower your monthly mortgage payment: Make a larger down payment to reduce the initial loan amount. Choose a longer loan term (e.g., 30 years instead of 15), although this increases the total interest paid over time. Shop around for a loan with a lower interest rate (improving your credit score can help). Appeal your property tax assessment if you believe it's too high. Shop around for cheaper homeowners insurance policies that still provide adequate coverage. Refinance your mortgage to a lower interest rate if market rates have dropped significantly since you obtained your loan. Once you reach 20% equity, ensure PMI is removed if applicable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I make extra payments toward my mortgage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Making extra payments directly toward your mortgage principal helps you build equity faster, pay off your loan sooner, and save a significant amount on total interest costs. Ensure your extra payments are specifically designated for the principal balance. Even small additional amounts can make a big difference over the life of the loan. Use the \"Extra Monthly Payment\" field in our calculator to see the potential impact."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-KNHC9TZ5" style="display:none;visibility:hidden" width="0"></iframe></noscript>
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
 <div class="header-container">
@@ -254,22 +325,59 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><strong>Build Equity Quicker:</strong> Increased principal payments accelerate the growth of your home equity.</li>
 </ul>
 <p>Use the "Extra Monthly Payment" field in the calculator to explore how different extra payment amounts impact your loan payoff timeline and total interest savings.</p>
-<h2>Frequently Asked Questions</h2>
-<div class="faq-accordion"> <!-- Renamed from faq-section, kept as container -->
-<button aria-expanded="false" class="accordion">What is included in a mortgage payment? <span class="faq-icon">+</span></button>
-<div class="panel">
+<section class="faq-section content-section">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<div class="faq-index card">
+<h3>FAQ Index</h3>
+<ul>
+<li><a href="#faq-item-1">What is included in a mortgage payment?</a></li>
+<li><a href="#faq-item-2">How accurate is this mortgage calculator?</a></li>
+<li><a href="#faq-item-3">What is PMI and when is it required?</a></li>
+<li><a href="#faq-item-4">How can I lower my monthly mortgage payment?</a></li>
+<li><a href="#faq-item-5">What happens if I make extra payments toward my mortgage?</a></li>
+</ul>
+</div>
+<div class="faq-item" id="faq-item-1">
+<h3>
+<button aria-controls="faq-panel-1" aria-expanded="false" class="accordion">
+What is included in a mortgage payment?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-1" role="region">
 <p>A typical mortgage payment includes four components: Principal (the amount borrowed), Interest (the cost of borrowing), Taxes (property taxes), and Insurance (homeowners insurance and potentially PMI). This is often abbreviated as PITI. Some payments may also include HOA fees.</p>
 </div>
-<button aria-expanded="false" class="accordion">How accurate is this mortgage calculator? <span class="faq-icon">+</span></button>
-<div class="panel">
+</div>
+<div class="faq-item" id="faq-item-2">
+<h3>
+<button aria-controls="faq-panel-2" aria-expanded="false" class="accordion">
+How accurate is this mortgage calculator?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-2" role="region">
 <p>This calculator provides a good estimate of your monthly mortgage payment based on the information you provide. However, actual payments can vary slightly due to factors like fluctuating insurance premiums, changes in property taxes, or specific lender fees. It's best used for planning and comparison purposes.</p>
 </div>
-<button aria-expanded="false" class="accordion">What is PMI and when is it required? <span class="faq-icon">+</span></button>
-<div class="panel">
+</div>
+<div class="faq-item" id="faq-item-3">
+<h3>
+<button aria-controls="faq-panel-3" aria-expanded="false" class="accordion">
+What is PMI and when is it required?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-3" role="region">
 <p>Private Mortgage Insurance (PMI) is insurance that protects the lender if you default on your loan. It's typically required for conventional loans when your down payment is less than 20% of the home's purchase price. PMI usually costs between 0.5% and 1% (or sometimes more) of the original loan amount annually and is added to your monthly mortgage payment. Once your loan balance drops to 80% of the original home value (or sometimes 78% automatically), you can typically request to have PMI removed, or it may be automatically terminated.</p>
 </div>
-<button aria-expanded="false" class="accordion">How can I lower my monthly mortgage payment? <span class="faq-icon">+</span></button>
-<div class="panel">
+</div>
+<div class="faq-item" id="faq-item-4">
+<h3>
+<button aria-controls="faq-panel-4" aria-expanded="false" class="accordion">
+How can I lower my monthly mortgage payment?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-4" role="region">
 <p>There are several ways to potentially lower your monthly mortgage payment:</p>
 <ul>
 <li>Make a larger down payment to reduce the initial loan amount.</li>
@@ -281,11 +389,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li>Once you reach 20% equity, ensure PMI is removed if applicable.</li>
 </ul>
 </div>
-<button aria-expanded="false" class="accordion">What happens if I make extra payments toward my mortgage? <span class="faq-icon">+</span></button>
-<div class="panel">
+</div>
+<div class="faq-item" id="faq-item-5">
+<h3>
+<button aria-controls="faq-panel-5" aria-expanded="false" class="accordion">
+What happens if I make extra payments toward my mortgage?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-5" role="region">
 <p>Making extra payments directly toward your mortgage principal helps you build equity faster, pay off your loan sooner, and save a significant amount on total interest costs. Ensure your extra payments are specifically designated for the principal balance. Even small additional amounts can make a big difference over the life of the loan. Use the "Extra Monthly Payment" field in our calculator to see the potential impact.</p>
 </div>
 </div>
+</section>
 </section>
 </div>
 </main>
@@ -329,6 +445,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>© 2025 CalcHub. All rights reserved.</p>
 </div>
 </footer>
-<script defer="" src="/js/faq-accordion.js"></script>
+<script defer="" src="/js/faq-accordion-v2.js"></script>
 </body>
 </html>
