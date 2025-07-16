@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 FreecalcHub is a free online calculator website (www.freecalchub.com) with calculators organized into categories: Finance, Math, Health, Conversions, Date & Time, Business, and Lifestyle. This is a static website deployed via Netlify with no build process - all files are served directly.
 
+**Recent additions include the Finance > Cryptocurrency subcategory with "Coming Soon" calculators for crypto-related financial tools.**
+
 ## Architecture
 
 ### Site Structure
@@ -49,9 +51,10 @@ FreecalcHub is a free online calculator website (www.freecalchub.com) with calcu
 **REMEDIATION WORKFLOW:**
 1. Read existing page to understand current state
 2. Read template to understand correct implementation  
-3. Compare and identify what needs to be changed
-4. Apply changes using template patterns
-5. Test and validate before committing
+3. **Research existing patterns** - check similar pages for consistent styling (especially for "Coming Soon" items)
+4. Compare and identify what needs to be changed
+5. Apply changes using template patterns
+6. Test and validate before committing
 
 **NEVER:**
 - Copy from existing calculator pages (they may be outdated)
@@ -79,6 +82,13 @@ FreecalcHub is a free online calculator website (www.freecalchub.com) with calcu
 - **Dark mode** support via `/css/dark-mode.css` and `/js/dark-mode.js`
 - **FAQ system** uses V2 structure with `/css/faq-styles-v2.css` and `/js/faq-accordion-v2.js`
 - **Calculator-specific styles** only for unique elements not covered by global styles
+
+### "Coming Soon" Calculator Card Standards
+- **Use standard format**: `<span class="coming-soon-tag">Coming Soon</span>`
+- **Position**: Inline within the description paragraph after the main text
+- **Styling**: Leverages existing `.coming-soon-tag` CSS (orange color, bold, smaller font, new line)
+- **Structure**: Regular `<div class="calculator-card">` (not clickable links)
+- **Consistency**: Used across all FreecalcHub category pages for unreleased calculators
 
 ### Schema Requirements
 - All calculators need `SoftwareApplication`, `FAQPage`, `HowTo`, `BreadcrumbList`, and `WebPage` schemas
