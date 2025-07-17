@@ -270,8 +270,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </div> <!-- Closed input-grid wrapper -->
 <div class="form-actions">
-<button class="btn btn-secondary" id="calculateButton" type="button">Calculate</button>
-<button class="btn btn-primary" id="resetButton" type="reset">Reset</button>
+<button class="btn btn-primary" id="calculateButton" type="button">Calculate</button>
+<button class="btn btn-secondary" id="resetButton" type="reset">Reset</button>
 </div>
 </form>
 <div id="results-container"></div>
@@ -289,18 +289,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ol>
 <h3>The Mortgage Payment Formula</h3>
 <p>The core calculation for the principal and interest portion of your payment uses the following standard formula:</p>
-<div class="formula-box">
-                    <div class="formula-main">
-                        <span class="formula-math">M = P [ r(1+r)<sup>n</sup> / ((1+r)<sup>n</sup> - 1) ]</span>
-                    </div>
-                    <div class="formula-legend">
-                        <strong>Where:</strong>
-                        <span class="formula-math">M</span> = Monthly payment, 
-                        <span class="formula-math">P</span> = Principal loan amount, 
-                        <span class="formula-math">r</span> = Monthly interest rate, 
-                        <span class="formula-math">n</span> = Total number of payments
-                    </div>
-                </div>
+<p class="formula-display">
+<strong>Formula:</strong> <span class="formula-math">M = P [ r(1+r)<sup>n</sup> / ((1+r)<sup>n</sup> - 1) ]</span>
+</p>
+<p class="formula-explanation">
+<strong>Where:</strong> M = Monthly payment, P = Principal loan amount, r = Monthly interest rate, n = Total number of payments
+</p>
 <p>To get the total estimated monthly payment (PITI + HOA), we add the monthly property tax (annual tax / 12), monthly homeowners insurance (annual insurance / 12), monthly PMI (if applicable), and monthly HOA fees to the calculated principal and interest payment (M).</p>
 <h2>Understanding Your Mortgage Payment (PITI)</h2>
 <p>Your monthly mortgage payment typically consists of four main components, often referred to as PITI:</p>

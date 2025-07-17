@@ -240,6 +240,30 @@ body.dark-mode .form-control {
 }
 
 /* =========================
+   BUTTON OVERRIDES
+   ========================= */
+
+/* Override primary button to use orange for Calculate buttons */
+.btn-primary {
+    background-color: var(--secondary-color, #f39c12);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-dark, #d68910);
+}
+
+/* Ensure secondary buttons remain grey */
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* =========================
    CHART STYLES
    ========================= */
 
@@ -281,38 +305,24 @@ body.dark-mode .form-control {
 }
 
 /* Mathematical formula styling */
-.formula-box {
-    background: var(--input-background, #f8f9fa);
-    border: 1px solid var(--border-color, #e0e0e0);
-    border-radius: 6px;
-    padding: 1rem;
-    margin: 1rem 0;
-    max-width: 100%;
-}
-
-.formula-main {
-    text-align: center;
-    margin-bottom: 0.75rem;
+.formula-display {
+    margin: 1rem 0 0.5rem 0;
+    font-size: 1.1em;
 }
 
 .formula-math {
     font-family: 'Times New Roman', serif;
     font-style: italic;
     font-weight: 500;
-    color: var(--primary-color, #4a6fa5);
+    color: var(--secondary-color, #f39c12);
     font-size: 1.1em;
 }
 
-.formula-legend {
-    font-size: 0.9em;
-    line-height: 1.4;
+.formula-explanation {
+    margin: 0.5rem 0 1rem 0;
+    font-size: 0.95em;
     color: var(--text-light, #666);
-    text-align: center;
-}
-
-.formula-legend strong {
-    color: var(--text-color, #333);
-    margin-right: 0.5rem;
+    line-height: 1.5;
 }
 
 /* Responsive chart adjustments */
