@@ -444,8 +444,8 @@ function displayResults(principalAndInterest, propertyTax, homeInsurance, pmi, h
     `;
     resultsContainer.appendChild(chartsSection);
     
-    // Trigger chart creation if the chart functions are available
-    if (typeof window.createPaymentBreakdownChart === 'function' && typeof window.createPaybackVisualizationChart === 'function') {
+    // Trigger chart creation if Chart.js is available
+    if (typeof Chart !== 'undefined' && typeof window.createPaymentBreakdownChart === 'function' && typeof window.createPaybackVisualizationChart === 'function') {
         // Get current form values for charts
         const interestRate = parseFloat(document.getElementById('interest-rate').value) || 4.5;
         const loanTerm = parseInt(document.getElementById('loan-term').value) || 30;
@@ -454,7 +454,19 @@ function displayResults(principalAndInterest, propertyTax, homeInsurance, pmi, h
         setTimeout(() => {
             window.createPaymentBreakdownChart(principalAndInterest, propertyTax, homeInsurance, hoaFees);
             window.createPaybackVisualizationChart(loanAmount, interestRate / 100, loanTerm, extraPayment);
-        }, 100);
+        }, 200);
+    } else {
+        // If Chart.js is not available, try again after a short delay
+        setTimeout(() => {
+            if (typeof Chart !== 'undefined' && typeof window.createPaymentBreakdownChart === 'function' && typeof window.createPaybackVisualizationChart === 'function') {
+                const interestRate = parseFloat(document.getElementById('interest-rate').value) || 4.5;
+                const loanTerm = parseInt(document.getElementById('loan-term').value) || 30;
+                const extraPayment = parseFloat(document.getElementById('extra-payment').value) || 0;
+                
+                window.createPaymentBreakdownChart(principalAndInterest, propertyTax, homeInsurance, hoaFees);
+                window.createPaybackVisualizationChart(loanAmount, interestRate / 100, loanTerm, extraPayment);
+            }
+        }, 1000);
     }
 }
 

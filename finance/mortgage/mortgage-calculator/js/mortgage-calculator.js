@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const today = new Date();
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, '0');
-    document.getElementById('loan-start-date').value = `${year}-${month}`;
+    const day = String(today.getDate()).padStart(2, '0');
+    document.getElementById('loan-start-date').value = `${year}-${month}-${day}`;
     
     // Connect down payment amount and percentage fields
     const homePriceInput = document.getElementById('home-price');
@@ -434,6 +435,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Trigger calculation on page load to initialize with default values
-    const calculateButton = document.querySelector('#mortgage-calculator-form button[type="submit"]');
-    calculateButton.click();
+    const calculateButton = document.querySelector('#calculateButton');
+    if (calculateButton) {
+        calculateButton.click();
+    }
 });
