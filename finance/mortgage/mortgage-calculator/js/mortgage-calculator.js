@@ -272,9 +272,165 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to update charts
     function updateCharts(monthlyPayment, monthlyPropertyTax, monthlyInsurance, hoaFees, loanAmount, interestRate, loanTerm, extraPayment) {
-        // Implementation would go here
-        // For now, we'll just add a placeholder
-        // Chart integration can be added here in the future
+        // Create payment breakdown chart
+        createPaymentBreakdownChart(monthlyPayment, monthlyPropertyTax, monthlyInsurance, hoaFees);
+        
+        // Create payback visualization chart
+        createPaybackVisualizationChart(loanAmount, interestRate / 100, loanTerm, extraPayment);
+    }
+    
+    // Function to create payment breakdown chart
+    window.createPaymentBreakdownChart = function(monthlyPayment, monthlyPropertyTax, monthlyInsurance, hoaFees) {
+        const ctx = document.getElementById('payment-breakdown-chart');
+        if (!ctx) return;
+        
+        // Destroy existing chart if it exists
+        if (window.paymentBreakdownChart) {
+            window.paymentBreakdownChart.destroy();
+        }
+        
+        const data = {
+            labels: ['Principal & Interest', 'Property Tax', 'Insurance', 'HOA Fees'].filter((label, index) => {
+                const values = [monthlyPayment, monthlyPropertyTax, monthlyInsurance, hoaFees];
+                return values[index] > 0;
+            }),
+            datasets: [{
+                data: [monthlyPayment, monthlyPropertyTax, monthlyInsurance, hoaFees].filter(value => value > 0),
+                backgroundColor: [
+                    '#4CAF50',
+                    '#2196F3',
+                    '#FF9800',
+                    '#9C27B0'
+                ]
+            }]
+        };
+        
+        window.paymentBreakdownChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Monthly Payment Breakdown'
+                    }
+                }
+            }
+        });
+    }
+    
+    // Function to create payback visualization chart
+    window.createPaybackVisualizationChart = function(loanAmount, interestRate, loanTerm, extraPayment) {
+        const ctx = document.getElementById('payback-visualization-chart');
+        if (!ctx) return;
+        
+        // Destroy existing chart if it exists
+        if (window.paybackVisualizationChart) {
+            window.paybackVisualizationChart.destroy();
+        }
+        
+        const monthlyRate = interestRate / 12;
+        const numberOfPayments = loanTerm * 12;
+        const monthlyPayment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) / 
+                              (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
+        
+        // Calculate balance over time
+        const labels = [];
+        const balanceData = [];
+        const principalData = [];
+        const interestData = [];
+        
+        let balance = loanAmount;
+        let totalPrincipal = 0;
+        let totalInterest = 0;
+        
+        for (let year = 0; year <= loanTerm; year++) {
+            labels.push(year);
+            balanceData.push(balance);
+            principalData.push(totalPrincipal);
+            interestData.push(totalInterest);
+            
+            // Calculate payments for this year
+            for (let month = 1; month <= 12 && balance > 0; month++) {
+                const interestPayment = balance * monthlyRate;
+                const principalPayment = Math.min(monthlyPayment - interestPayment + extraPayment, balance);
+                
+                balance -= principalPayment;
+                totalPrincipal += principalPayment;
+                totalInterest += interestPayment;
+                
+                if (balance <= 0) break;
+            }
+        }
+        
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Remaining Balance',
+                data: balanceData,
+                borderColor: '#f44336',
+                backgroundColor: 'rgba(244, 67, 54, 0.1)',
+                fill: true,
+                tension: 0.1
+            }, {
+                label: 'Principal Paid',
+                data: principalData,
+                borderColor: '#4CAF50',
+                backgroundColor: 'rgba(76, 175, 80, 0.1)',
+                fill: true,
+                tension: 0.1
+            }, {
+                label: 'Interest Paid',
+                data: interestData,
+                borderColor: '#2196F3',
+                backgroundColor: 'rgba(33, 150, 243, 0.1)',
+                fill: true,
+                tension: 0.1
+            }]
+        };
+        
+        window.paybackVisualizationChart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: {
+                responsive: true,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Mortgage Payback Over Time'
+                    }
+                },
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Year'
+                        }
+                    },
+                    y: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Amount ($)'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value.toLocaleString();
+                            }
+                        }
+                    }
+                }
+            }
+        });
     }
     
     // Trigger calculation on page load to initialize with default values

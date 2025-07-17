@@ -427,5 +427,34 @@ function displayResults(principalAndInterest, propertyTax, homeInsurance, pmi, h
         </div>
     `;
     resultsContainer.appendChild(amortizationSection);
+    
+    // Create charts section
+    const chartsSection = document.createElement("div");
+    chartsSection.className = "charts-section results-section";
+    chartsSection.innerHTML = `
+        <h2>Payment Visualization</h2>
+        <div class="charts-container">
+            <div class="chart-wrapper">
+                <canvas id="payment-breakdown-chart"></canvas>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="payback-visualization-chart"></canvas>
+            </div>
+        </div>
+    `;
+    resultsContainer.appendChild(chartsSection);
+    
+    // Trigger chart creation if the chart functions are available
+    if (typeof window.createPaymentBreakdownChart === 'function' && typeof window.createPaybackVisualizationChart === 'function') {
+        // Get current form values for charts
+        const interestRate = parseFloat(document.getElementById('interest-rate').value) || 4.5;
+        const loanTerm = parseInt(document.getElementById('loan-term').value) || 30;
+        const extraPayment = parseFloat(document.getElementById('extra-payment').value) || 0;
+        
+        setTimeout(() => {
+            window.createPaymentBreakdownChart(principalAndInterest, propertyTax, homeInsurance, hoaFees);
+            window.createPaybackVisualizationChart(loanAmount, interestRate / 100, loanTerm, extraPayment);
+        }, 100);
+    }
 }
 
