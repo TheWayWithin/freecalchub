@@ -209,6 +209,372 @@ body.dark-mode .newsletter-form input {
     color: var(--dark-text);
 }
 
+/* Article page styles */
+.article-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.blog-article {
+    margin-bottom: 3rem;
+}
+
+.article-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.category-badge {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.publish-date, .read-time {
+    color: var(--text-light);
+}
+
+.article-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.article-excerpt {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.article-image {
+    margin: 2rem 0;
+}
+
+.article-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.article-content {
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.article-content h2 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.article-content h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+}
+
+.article-content ul, .article-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.article-content li {
+    margin-bottom: 0.5rem;
+}
+
+.table-of-contents {
+    background-color: var(--background-alt);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 3rem;
+}
+
+.table-of-contents h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.table-of-contents ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.table-of-contents li {
+    margin-bottom: 0.5rem;
+}
+
+.table-of-contents a {
+    color: var(--primary-color);
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 0;
+    transition: var(--transition);
+}
+
+.table-of-contents a:hover {
+    color: var(--primary-dark);
+    padding-left: 1rem;
+}
+
+.formula-box, .comparison-box, .scenario-box {
+    background-color: var(--background-alt);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin: 2rem 0;
+    border-left: 4px solid var(--primary-color);
+}
+
+.formula-box strong {
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 1rem;
+    font-family: 'Courier New', monospace;
+}
+
+.key-takeaways {
+    background-color: var(--primary-light);
+    color: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin: 3rem 0;
+}
+
+.key-takeaways h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.key-takeaways ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.key-takeaways li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.key-takeaways li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.related-calculators {
+    margin: 4rem 0;
+    padding: 2rem;
+    background-color: var(--background-alt);
+    border-radius: var(--border-radius);
+}
+
+.related-calculators h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.calculator-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.calculator-card {
+    background-color: var(--background-color);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.calculator-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.calculator-card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.calculator-card a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.calculator-card a:hover {
+    color: var(--primary-dark);
+}
+
+.author-bio {
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: var(--background-alt);
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.author-bio h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.related-articles {
+    margin: 4rem 0;
+}
+
+.related-articles h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.article-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.article-card {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.article-card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.card-content a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.card-content a:hover {
+    color: var(--primary-color);
+}
+
+.card-excerpt {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.newsletter-signup {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.newsletter-signup h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.newsletter-signup p {
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Dark mode styles for articles */
+body.dark-mode .table-of-contents {
+    background-color: var(--dark-background-alt);
+}
+
+body.dark-mode .formula-box, 
+body.dark-mode .comparison-box, 
+body.dark-mode .scenario-box {
+    background-color: var(--dark-background-alt);
+}
+
+body.dark-mode .related-calculators {
+    background-color: var(--dark-background-alt);
+}
+
+body.dark-mode .calculator-card {
+    background-color: var(--dark-background);
+}
+
+body.dark-mode .author-bio {
+    background-color: var(--dark-background-alt);
+}
+
+body.dark-mode .article-card {
+    background-color: var(--dark-background);
+}
+
+body.dark-mode .card-content a {
+    color: var(--dark-text);
+}
+
+body.dark-mode .card-content a:hover {
+    color: var(--dark-primary);
+}
+
+body.dark-mode .card-excerpt {
+    color: var(--dark-text-light);
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
     .blog-list-item {
@@ -235,4 +601,80 @@ body.dark-mode .newsletter-form input {
     .newsletter-form button {
         border-radius: var(--border-radius);
     }
+    
+    .article-container {
+        padding: 1rem 0.5rem;
+    }
+    
+    .article-title {
+        font-size: 2rem;
+    }
+    
+    .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .calculator-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .article-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .newsletter-signup {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Coming soon message styles */
+.coming-soon-message {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--background-alt);
+    border-radius: var(--border-radius);
+    margin: 2rem 0;
+}
+
+.coming-soon-message h2 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.coming-soon-message p {
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+.coming-soon-message .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.coming-soon-message .btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Category articles section */
+.category-articles {
+    margin-bottom: 4rem;
+}
+
+/* Dark mode styles for coming soon */
+body.dark-mode .coming-soon-message {
+    background-color: var(--dark-background-alt);
+}
+
+body.dark-mode .coming-soon-message h2 {
+    color: var(--dark-text);
+}
+
+body.dark-mode .coming-soon-message p {
+    color: var(--dark-text-light);
 }
