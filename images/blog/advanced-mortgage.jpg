@@ -1,0 +1,5 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#fff2e6" stroke="#cc6600" stroke-width="2"/>
+  <text x="200" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#cc6600">Advanced Mortgage</text>
+  <text x="200" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#cc6600">Blog Image Placeholder</text>
+</svg>
