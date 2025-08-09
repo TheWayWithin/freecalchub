@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KNHC9TZ5');</script>
+<meta charset="utf-8"/><meta content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn-cookieyes.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https://www.googletagmanager.com https://cdn-cookieyes.com; connect-src 'self' https://open.er-api.com https://www.google-analytics.com https://log.cookieyes.com https://cdn-cookieyes.com" http-equiv="Content-Security-Policy"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Crypto Profit/Loss Calculator | FreecalcHub</title>
+<meta content="Calculate cryptocurrency trading profit, loss, and ROI with fees. Track multiple trades, analyze performance, and make informed trading decisions with our free crypto calculator." name="description"/>
+<link href="/css/styles.css" rel="stylesheet"/>
+<link href="/css/dark-mode.css" rel="stylesheet"/>
+<link href="/css/dark-mode-button.css" rel="stylesheet"/>
+<link href="/css/breadcrumb-styles.css" rel="stylesheet"/>
+<link href="/css/calchub-consolidated-fixes.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<link href="/css/navigation-ribbon.css" rel="stylesheet"/>
+<link href="/css/faq-styles-v2.css" rel="stylesheet"/>
+<link href="/finance/cryptocurrency/crypto-profit-calculator/css/crypto-profit-calculator.css" rel="stylesheet"/>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Crypto Profit/Loss Calculator",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Calculate cryptocurrency trading profit, loss, and ROI with fees. Track multiple trades, analyze performance, and make informed trading decisions with our free crypto calculator.",
+          "url": "https://www.freecalchub.com/finance/cryptocurrency/crypto-profit-calculator/",
+          "relatedLink": [
+            {
+              "@type": "SoftwareApplication",
+              "name": "Compound Interest Calculator",
+              "url": "https://www.freecalchub.com/finance/investment/compound-interest-calculator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Tax Bracket Calculator",
+              "url": "https://www.freecalchub.com/finance/tax/tax-bracket-calculator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Retirement Calculator",
+              "url": "https://www.freecalchub.com/finance/retirement/retirement-calculator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Loan Calculator",
+              "url": "https://www.freecalchub.com/finance/loan/loan-calculator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Cryptocurrency Converter",
+              "url": "https://www.freecalchub.com/conversions/currency/cryptocurrency-converter/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question", "name": "How do I calculate cryptocurrency profit and loss?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Crypto profit/loss is calculated by subtracting your purchase price from your sale price and multiplying by the quantity traded. Include trading fees for accurate net profit: Net Profit = (Sale Price - Purchase Price) × Quantity - Buy Fees - Sell Fees. Our calculator handles both percentage and flat fee structures automatically." }
+            },
+            {
+              "@type": "Question", "name": "What types of trading fees should I include?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Include all trading fees: exchange fees (typically 0.1-1%), maker/taker fees, withdrawal fees, and any other transaction costs. Our calculator supports both percentage-based fees (like 0.25%) and flat dollar amounts. Including accurate fees is crucial for true profit/loss calculation." }
+            },
+            {
+              "@type": "Question", "name": "Can I track multiple cryptocurrency trades at once?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes, our calculator supports multiple trades with running totals. Add up to 10 trades per session to analyze your overall portfolio performance, average buy price, total investment, and cumulative profit/loss across all positions." }
+            },
+            {
+              "@type": "Question", "name": "How accurate are the ROI calculations?",
+              "acceptedAnswer": { "@type": "Answer", "text": "ROI calculations are precise based on your input data. We calculate both gross ROI (before fees) and net ROI (after all fees). The formula is: ROI = (Net Profit ÷ Total Investment) × 100. Results update in real-time as you modify inputs." }
+            },
+            {
+              "@type": "Question", "name": "What is the difference between gross and net profit?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Gross profit is your raw trading gain: (Sale Price - Purchase Price) × Quantity. Net profit subtracts all trading fees from gross profit. Net profit gives you the actual money gained or lost after all costs, which is essential for tax reporting and true performance analysis." }
+            },
+            {
+              "@type": "Question", "name": "How do I use this for tax reporting?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Use the net profit/loss figures for tax reporting. The calculator shows your exact gains/losses per trade and total portfolio performance. Keep records of all trades with dates for proper short-term vs long-term capital gains classification. Consider consulting a tax professional for cryptocurrency tax obligations." }
+            }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Use the Crypto Profit/Loss Calculator",
+          "description": "Step-by-step guide to calculating cryptocurrency trading profit and loss with fees.",
+          "step": [
+            { "@type": "HowToStep", "name": "Enter Trade Details", "text": "Input your cryptocurrency purchase price, quantity bought, and sale price. Optionally include the crypto symbol for reference." },
+            { "@type": "HowToStep", "name": "Add Trading Fees", "text": "Include buy and sell fees as either percentages (e.g., 0.25%) or flat dollar amounts. This ensures accurate net profit calculation." },
+            { "@type": "HowToStep", "name": "Calculate Results", "text": "Click 'Calculate' to see your gross profit, total fees paid, net profit/loss, ROI percentage, and break-even price analysis." },
+            { "@type": "HowToStep", "name": "Add Multiple Trades", "text": "Use 'Add Another Trade' to track multiple positions and see your overall portfolio performance with running totals and average prices." }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Finance", "item": "https://www.freecalchub.com/finance/" },
+            { "@type": "ListItem", "position": 3, "name": "Cryptocurrency", "item": "https://www.freecalchub.com/finance/cryptocurrency/" },
+            { "@type": "ListItem", "position": 4, "name": "Crypto Profit/Loss Calculator", "item": "https://www.freecalchub.com/finance/cryptocurrency/crypto-profit-calculator/" }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "name": "Crypto Profit/Loss Calculator | FreecalcHub",
+          "description": "Calculate cryptocurrency trading profit, loss, and ROI with fees. Track multiple trades, analyze performance, and make informed trading decisions with our free crypto calculator.",
+          "url": "https://www.freecalchub.com/finance/cryptocurrency/crypto-profit-calculator/",
+           "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
+           "inLanguage": "en-US", 
+           "datePublished": "2025-01-09T12:00:00Z",
+           "dateModified": "2025-01-09T12:00:00Z"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-KNHC9TZ5" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+<div class="header-container">
+<div class="logo-container">
+<a href="/"><img alt="FreecalcHub Logo" src="/images/logo.svg"/></a>
+</div>
+<nav class="main-nav">
+<ul>
+<li><a href="/finance/">Finance</a></li>
+<li><a href="/math/">Math</a></li>
+<li><a href="/health/">Health</a></li>
+<li><a href="/conversions/">Conversions</a></li>
+<li><a href="/date-time/">Date &amp; Time</a></li>
+<li><a href="/business/">Business</a></li>
+<li><a href="/lifestyle/">Lifestyle</a></li>
+<li><a href="/blog/">Blog</a></li>
+</ul>
+</nav>
+<div class="header-controls">
+<button aria-label="Toggle dark mode" id="dark-mode-toggle">
+<i class="fas fa-moon"></i> <i class="fas fa-sun"></i> </button>
+<button aria-label="Toggle menu" id="mobile-menu-button">
+<i class="fas fa-bars menu-icon"></i> </button>
+</div>
+</div>
+<div class="mobile-menu" id="mobile-menu">
+<div class="mobile-menu-header">
+<span>Menu</span>
+<button aria-label="Close menu" id="mobile-menu-close">
+<i class="fas fa-times"></i> </button>
+</div>
+<nav class="mobile-nav">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/finance/">Finance</a></li>
+<li><a href="/math/">Math</a></li>
+<li><a href="/health/">Health</a></li>
+<li><a href="/conversions/">Conversions</a></li>
+<li><a href="/date-time/">Date &amp; Time</a></li>
+<li><a href="/business/">Business</a></li>
+<li><a href="/lifestyle/">Lifestyle</a></li>
+<li><a href="/blog/">Blog</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="breadcrumbs">
+<div class="breadcrumbs-container">
+<a href="/">Home</a>
+<span class="separator">/</span>
+<a href="/finance/">Finance</a>
+<span class="separator">/</span>
+<a href="/finance/cryptocurrency/">Cryptocurrency</a>
+<span class="separator">/</span>
+<span class="current">Crypto Profit/Loss Calculator</span>
+</div>
+</div>
+<main class="main-content" id="main-content">
+<div class="content-container"> 
+<article class="calculator-page-content"> 
+<h1 class="page-title">Crypto Profit/Loss Calculator</h1>
+<section class="calculator-description-section content-section">
+<p>Calculate your cryptocurrency trading profit, loss, and return on investment (ROI) with precision. This comprehensive calculator helps traders analyze their performance by including trading fees, supporting multiple trades, and providing detailed breakdowns of gross vs. net profits. Whether you're a beginner tracking your first Bitcoin trade or an experienced trader managing a diverse crypto portfolio, our calculator provides the insights you need to make informed trading decisions and optimize your investment strategy.</p>
+</section>
+
+<section class="calculator-interface content-section card" id="calculator-section">
+<h2 class="section-title">Calculate Your Crypto Profit/Loss</h2>
+<div class="error-messages" id="errorMessages" style="display:none;"></div>
+
+<form class="calculator-form" id="calculatorForm">
+<div id="tradesContainer">
+<div class="trade-section" data-trade-index="0">
+<h3>Trade #<span class="trade-number">1</span></h3>
+<fieldset>
+<legend>Trade Details</legend>
+<div class="form-group">
+<label for="crypto_symbol_0">Cryptocurrency Symbol (Optional):</label>
+<input id="crypto_symbol_0" type="text" placeholder="BTC, ETH, ADA, etc." maxlength="10"/>
+</div>
+<div class="form-group">
+<label for="purchase_price_0">Purchase Price ($):</label>
+<input id="purchase_price_0" type="number" step="0.00001" min="0" max="1000000" required placeholder="Enter purchase price"/>
+</div>
+<div class="form-group">
+<label for="quantity_0">Quantity:</label>
+<input id="quantity_0" type="number" step="0.00001" min="0.00001" max="1000000" required placeholder="Enter quantity"/>
+</div>
+<div class="form-group">
+<label for="sale_price_0">Sale Price ($):</label>
+<input id="sale_price_0" type="number" step="0.00001" min="0" max="1000000" required placeholder="Enter sale price"/>
+</div>
+</fieldset>
+
+<fieldset>
+<legend>Buy Fees</legend>
+<div class="form-group fee-type-group">
+<label>Buy Fee Type:</label>
+<div class="radio-group">
+<label><input type="radio" name="buy_fee_type_0" value="percentage" checked> Percentage (%)</label>
+<label><input type="radio" name="buy_fee_type_0" value="flat"> Flat Amount ($)</label>
+</div>
+</div>
+<div class="form-group">
+<label for="buy_fee_amount_0">Buy Fee Amount:</label>
+<input id="buy_fee_amount_0" type="number" step="0.001" min="0" placeholder="0.25 for 0.25% or 5.00 for $5"/>
+</div>
+</fieldset>
+
+<fieldset>
+<legend>Sell Fees</legend>
+<div class="form-group fee-type-group">
+<label>Sell Fee Type:</label>
+<div class="radio-group">
+<label><input type="radio" name="sell_fee_type_0" value="percentage" checked> Percentage (%)</label>
+<label><input type="radio" name="sell_fee_type_0" value="flat"> Flat Amount ($)</label>
+</div>
+</div>
+<div class="form-group">
+<label for="sell_fee_amount_0">Sell Fee Amount:</label>
+<input id="sell_fee_amount_0" type="number" step="0.001" min="0" placeholder="0.25 for 0.25% or 5.00 for $5"/>
+</div>
+</fieldset>
+
+<div class="trade-actions">
+<button type="button" class="btn btn-danger remove-trade" data-trade-index="0" style="display:none;">Remove Trade</button>
+</div>
+</div>
+</div>
+
+<div class="form-actions">
+<button class="btn btn-primary" id="calculateButton" type="button">Calculate</button>
+<button class="btn btn-secondary" id="addTradeButton" type="button">Add Another Trade</button>
+<button class="btn btn-secondary" id="resetButton" type="reset">Reset All</button>
+</div>
+</form>
+
+<div class="results-section" id="resultsSection" style="display:none;">
+<h3 class="results-title">Your Trading Results</h3>
+<div id="singleTradeResults" class="results-grid" style="display:none;">
+<div class="result-item card profit-indicator"> 
+<h4>Gross Profit/Loss</h4>
+<p id="grossProfit">--</p>
+<small id="grossProfitPercent">--</small>
+</div>
+<div class="result-item card"> 
+<h4>Total Fees Paid</h4>
+<p id="totalFees">--</p>
+</div>
+<div class="result-item card profit-indicator"> 
+<h4>Net Profit/Loss</h4>
+<p id="netProfit">--</p>
+<small id="netProfitPercent">--</small>
+</div>
+<div class="result-item card"> 
+<h4>ROI (Return on Investment)</h4>
+<p id="roi">--</p>
+</div>
+<div class="result-item card"> 
+<h4>Break-Even Price</h4>
+<p id="breakEvenPrice">--</p>
+</div>
+<div class="result-item card"> 
+<h4>Total Investment</h4>
+<p id="totalInvestment">--</p>
+</div>
+</div>
+
+<div id="multipleTradeResults" class="results-grid" style="display:none;">
+<div class="result-item card"> 
+<h4>Total Trades</h4>
+<p id="totalTrades">--</p>
+</div>
+<div class="result-item card"> 
+<h4>Total Investment</h4>
+<p id="totalInvestmentMulti">--</p>
+</div>
+<div class="result-item card"> 
+<h4>Total Return</h4>
+<p id="totalReturn">--</p>
+</div>
+<div class="result-item card profit-indicator"> 
+<h4>Overall Profit/Loss</h4>
+<p id="overallProfitLoss">--</p>
+<small id="overallProfitPercent">--</small>
+</div>
+<div class="result-item card"> 
+<h4>Average Buy Price</h4>
+<p id="averageBuyPrice">--</p>
+</div>
+<div class="result-item card"> 
+<h4>Total Fees Paid</h4>
+<p id="totalFeesMulti">--</p>
+</div>
+</div>
+
+<div id="tradeBreakdown" style="display:none;">
+<h4>Individual Trade Breakdown</h4>
+<div class="trade-breakdown-container">
+<!-- Individual trade results will be populated here -->
+</div>
+</div>
+</div>
+</section>
+
+<section class="related-calculators content-section card">
+<h2 class="section-title">Related Calculators</h2> 
+<ul>
+<li>
+<a href="/finance/investment/compound-interest-calculator/">
+<span class="calculator-name">Compound Interest Calculator</span>
+<span class="calculator-description">Calculate how your investments grow with compound interest over time, perfect for long-term crypto holdings.</span>
+</a>
+</li>
+<li>
+<a href="/finance/tax/tax-bracket-calculator/">
+<span class="calculator-name">Tax Bracket Calculator</span>
+<span class="calculator-description">Understand your tax obligations on cryptocurrency gains and losses for proper financial planning.</span>
+</a>
+</li>
+<li>
+<a href="/finance/retirement/retirement-calculator/">
+<span class="calculator-name">Retirement Calculator</span>
+<span class="calculator-description">Plan your retirement savings incorporating cryptocurrency investments as part of your portfolio.</span>
+</a>
+</li>
+<li>
+<a href="/finance/loan/loan-calculator/">
+<span class="calculator-name">Loan Calculator</span>
+<span class="calculator-description">Calculate loan payments if you're considering borrowing against crypto assets or for trading capital.</span>
+</a>
+</li>
+<li>
+<a href="/conversions/currency/cryptocurrency-converter/">
+<span class="calculator-name">Cryptocurrency Converter</span>
+<span class="calculator-description">Convert between different cryptocurrencies and fiat currencies with real-time exchange rates.</span>
+</a>
+</li>
+</ul>
+</section>
+
+<section class="how-to-use-section content-section">
+<h2 class="section-title">How to Use This Calculator</h2>
+<ol>
+<li><strong>Enter Trade Details:</strong> Input your purchase price, quantity, and sale price for your cryptocurrency trade. The crypto symbol field is optional but helpful for record-keeping.</li>
+<li><strong>Include Trading Fees:</strong> Select whether your fees are percentage-based (like 0.25%) or flat amounts (like $5.00). Include both buy and sell fees for accurate calculations.</li>
+<li><strong>Calculate Results:</strong> Click "Calculate" to see your gross profit, net profit after fees, ROI percentage, and break-even analysis.</li>
+<li><strong>Add Multiple Trades:</strong> Use "Add Another Trade" to track multiple positions and see your overall portfolio performance with running totals.</li>
+<li><strong>Analyze Performance:</strong> Review both individual trade results and aggregate performance to make informed future trading decisions.</li>
+</ol>
+</section>
+
+<section class="content-section"> 
+<h2 class="section-title">Understanding Crypto Trading Profit and Loss</h2>
+<p>Cryptocurrency trading profit and loss calculation involves more than simple price differences. Successful traders must account for all costs including exchange fees, maker/taker fees, withdrawal fees, and potentially network transaction fees. The difference between gross profit (before fees) and net profit (after all costs) can significantly impact your actual returns, especially for frequent traders or those using high-fee exchanges.</p>
+
+<p>Return on Investment (ROI) is calculated as a percentage of your initial investment plus fees. This metric helps you compare the performance of different trades and investment strategies. A positive ROI indicates profit, while negative ROI shows a loss. Understanding your break-even price is crucial for risk management and setting stop-loss orders.</p>
+
+<p>When tracking multiple trades, consider your average cost basis, which becomes important for tax reporting and understanding your overall position. Dollar-cost averaging strategies often result in complex calculations that benefit from systematic tracking like this calculator provides.</p>
+</section>
+
+<section class="content-section">
+<h2 class="section-title">Tax Implications of Crypto Trading</h2>
+<p>Cryptocurrency trades are taxable events in most jurisdictions. Each sale, exchange, or conversion of cryptocurrency may trigger capital gains or losses that must be reported. Short-term gains (assets held less than one year) are typically taxed as ordinary income, while long-term gains may qualify for preferential capital gains tax rates.</p>
+
+<p>Accurate profit and loss calculation is essential for tax compliance. Keep detailed records of all trades including dates, amounts, fees, and the fair market value at the time of each transaction. Consider using the specific identification accounting method to optimize your tax liability by strategically realizing gains and losses.</p>
+
+<p>This calculator provides the precise profit/loss figures needed for tax reporting, but always consult with a tax professional familiar with cryptocurrency regulations in your jurisdiction for comprehensive tax planning and compliance guidance.</p>
+</section>
+
+<section class="faq-section content-section">
+<h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
+<div class="faq-index card">
+<h3>FAQ Index</h3>
+<ul>
+<li><a href="#faq-item-1">How do I calculate cryptocurrency profit and loss?</a></li>
+<li><a href="#faq-item-2">What types of trading fees should I include?</a></li>
+<li><a href="#faq-item-3">Can I track multiple cryptocurrency trades at once?</a></li>
+<li><a href="#faq-item-4">How accurate are the ROI calculations?</a></li>
+<li><a href="#faq-item-5">What is the difference between gross and net profit?</a></li>
+<li><a href="#faq-item-6">How do I use this for tax reporting?</a></li>
+</ul>
+</div>
+<div class="faq-item" id="faq-item-1">
+<h3> 
+<button aria-controls="faq-panel-1" aria-expanded="false" class="accordion">
+How do I calculate cryptocurrency profit and loss? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-1" role="region"> 
+<p>Crypto profit/loss is calculated by subtracting your purchase price from your sale price and multiplying by the quantity traded. Include trading fees for accurate net profit: Net Profit = (Sale Price - Purchase Price) × Quantity - Buy Fees - Sell Fees. Our calculator handles both percentage and flat fee structures automatically.</p> 
+</div>
+</div>
+<div class="faq-item" id="faq-item-2">
+<h3> 
+<button aria-controls="faq-panel-2" aria-expanded="false" class="accordion">
+What types of trading fees should I include? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-2" role="region"> 
+<p>Include all trading fees: exchange fees (typically 0.1-1%), maker/taker fees, withdrawal fees, and any other transaction costs. Our calculator supports both percentage-based fees (like 0.25%) and flat dollar amounts. Including accurate fees is crucial for true profit/loss calculation.</p> 
+</div>
+</div>
+<div class="faq-item" id="faq-item-3">
+<h3> 
+<button aria-controls="faq-panel-3" aria-expanded="false" class="accordion">
+Can I track multiple cryptocurrency trades at once? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-3" role="region"> 
+<p>Yes, our calculator supports multiple trades with running totals. Add up to 10 trades per session to analyze your overall portfolio performance, average buy price, total investment, and cumulative profit/loss across all positions.</p> 
+</div>
+</div>
+<div class="faq-item" id="faq-item-4">
+<h3> 
+<button aria-controls="faq-panel-4" aria-expanded="false" class="accordion">
+How accurate are the ROI calculations? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-4" role="region"> 
+<p>ROI calculations are precise based on your input data. We calculate both gross ROI (before fees) and net ROI (after all fees). The formula is: ROI = (Net Profit ÷ Total Investment) × 100. Results update in real-time as you modify inputs.</p> 
+</div>
+</div>
+<div class="faq-item" id="faq-item-5">
+<h3> 
+<button aria-controls="faq-panel-5" aria-expanded="false" class="accordion">
+What is the difference between gross and net profit? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-5" role="region"> 
+<p>Gross profit is your raw trading gain: (Sale Price - Purchase Price) × Quantity. Net profit subtracts all trading fees from gross profit. Net profit gives you the actual money gained or lost after all costs, which is essential for tax reporting and true performance analysis.</p> 
+</div>
+</div>
+<div class="faq-item" id="faq-item-6">
+<h3> 
+<button aria-controls="faq-panel-6" aria-expanded="false" class="accordion">
+How do I use this for tax reporting? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-6" role="region"> 
+<p>Use the net profit/loss figures for tax reporting. The calculator shows your exact gains/losses per trade and total portfolio performance. Keep records of all trades with dates for proper short-term vs long-term capital gains classification. Consider consulting a tax professional for cryptocurrency tax obligations.</p> 
+</div>
+</div>
+</section>
+</article>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-columns">
+<div class="footer-column"> <h3>FreecalcHub</h3> <p>Your one-stop destination for a wide variety of free online calculators.</p> </div>
+<div class="footer-column"> <h3>Categories</h3> <ul> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date &amp; Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </div>
+<div class="footer-column"> <h3>Support</h3> <ul> <li><a href="/about/">About Us</a></li> <li><a href="/contact/">Contact</a></li> <li><a href="/privacy/">Privacy Policy</a></li> <li><a href="/terms/">Terms of Service</a></li> <li><a href="/sitemap/">Sitemap</a></li> </ul> </div>
+</div>
+<div class="footer-bottom"> <p>© <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> </div>
+</div>
+</footer>
+<script defer="" src="/js/main.js"></script>
+<script defer="" src="/js/dark-mode.js"></script>
+<script defer="" src="/js/faq-accordion-v2.js"></script>
+<script defer="" src="/finance/cryptocurrency/crypto-profit-calculator/js/crypto-profit-calculator.js"></script>
+</body>
+</html>

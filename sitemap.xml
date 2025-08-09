@@ -242,7 +242,13 @@
   </url>
   <url>
     <loc>https://www.freecalchub.com/finance/cryptocurrency/</loc>
-    <lastmod>2025-01-16T10:00:00Z</lastmod>
+    <lastmod>2025-01-09T12:00:00Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/finance/cryptocurrency/crypto-profit-calculator/</loc>
+    <lastmod>2025-01-09T12:00:00Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
