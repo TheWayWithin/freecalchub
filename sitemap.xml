@@ -128,6 +128,24 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://freecalchub.com/finance/investment/investment-goal-calculator/</loc>
+    <lastmod>2025-08-09T12:00:00Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://freecalchub.com/finance/investment/portfolio-return-calculator/</loc>
+    <lastmod>2025-08-09T12:30:00Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://freecalchub.com/finance/investment/drip-calculator/</loc>
+    <lastmod>2025-08-09T13:00:00Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://freecalchub.com/finance/loan/</loc>
     <lastmod>2025-07-14T14:41:39Z</lastmod>
     <priority>0.8</priority>

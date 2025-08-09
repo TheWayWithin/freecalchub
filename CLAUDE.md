@@ -18,9 +18,9 @@ FreecalcHub is a free online calculator website (www.freecalchub.com) with calcu
 - **Automatic Deployment**: Changes to main branch trigger Netlify deployment
 
 ### Key Files
-- `calculator-template.html` - Master template for all calculator pages
-- `category-template.html` - Master template for category/subcategory pages  
-- `general-template-guidelines.md` - Comprehensive development guidelines
+- `/Users/jamiewatters/DevProjects/freecalchub/calculator-template.html` - Master template for all calculator pages
+- `/Users/jamiewatters/DevProjects/freecalchub/category-template.html` - Master template for category/subcategory pages  
+- `/Users/jamiewatters/DevProjects/freecalchub/general-template-guidelines.md` - Comprehensive development guidelines
 - `docs/SOP-CalcDev.md` - Standard operating procedure for calculator development
 
 ### Directory Structure
@@ -41,10 +41,10 @@ FreecalcHub is a free online calculator website (www.freecalchub.com) with calcu
 
 1. **ALWAYS start by reading the current page to understand what needs updating**
 2. **ALWAYS read `docs/SOP-CalcDev.md` section relevant to the task** 
-3. **ALWAYS review `general-template-guidelines.md` for implementation specifics**
+3. **ALWAYS review `/Users/jamiewatters/DevProjects/freecalchub/general-template-guidelines.md` for implementation specifics**
 4. **ALWAYS use the master templates as the source of truth:**
-   - `calculator-template.html` for calculator pages
-   - `category-template.html` for category/subcategory pages
+   - `/Users/jamiewatters/DevProjects/freecalchub/calculator-template.html` for calculator pages
+   - `/Users/jamiewatters/DevProjects/freecalchub/category-template.html` for category/subcategory pages
 5. **ALWAYS compare the current page against the template to identify discrepancies**
 6. **ALWAYS follow the template patterns exactly** (CSP headers, structure, classes, etc.)
 
@@ -66,16 +66,16 @@ FreecalcHub is a free online calculator website (www.freecalchub.com) with calcu
 ## Development Guidelines
 
 ### Creating New Calculators
-1. **Follow Templates**: Always start with `calculator-template.html`
+1. **Follow Templates**: Always start with `/Users/jamiewatters/DevProjects/freecalchub/calculator-template.html`
 2. **Follow SOP**: Reference `docs/SOP-CalcDev.md` for complete workflow
-3. **Update Sitemaps**: Add new pages to both `sitemap.xml` and `/sitemap/index.html`
-4. **Schema Markup**: Implement all required Schema.org JSON-LD markup
-5. **Category Updates**: Add calculator cards to relevant category pages
+3. **Schema Markup**: Implement all required Schema.org JSON-LD markup
+4. **Category Updates**: Add calculator cards to relevant category pages
+5. **🚨 CRITICAL: Update Sitemaps IMMEDIATELY**: After deploying each new calculator, ALWAYS update both `sitemap.xml` and `/sitemap/index.html` files - this is mandatory for SEO and site discovery
 
 ### Implementation Details Location
-- **File naming, CSS/JS organization**: See `general-template-guidelines.md`
-- **Schema requirements**: See `docs/SOP-CalcDev.md` and `general-template-guidelines.md`
-- **"Coming Soon" styling standards**: See `general-template-guidelines.md`
+- **File naming, CSS/JS organization**: See `/Users/jamiewatters/DevProjects/freecalchub/general-template-guidelines.md`
+- **Schema requirements**: See `docs/SOP-CalcDev.md` and `/Users/jamiewatters/DevProjects/freecalchub/general-template-guidelines.md`
+- **"Coming Soon" styling standards**: See `/Users/jamiewatters/DevProjects/freecalchub/general-template-guidelines.md`
 - **SEO & content standards**: See `docs/SOP-CalcDev.md`
 
 ## Key Principles
@@ -87,6 +87,10 @@ FreecalcHub is a free online calculator website (www.freecalchub.com) with calcu
 ## Development Workflow
 - **Static site**: No build process, direct file editing and serving
 - **Deployment**: Push to main branch triggers automatic Netlify deployment
+- **🚨 POST-DEPLOYMENT REQUIREMENTS**: After each calculator deployment:
+  1. Update `sitemap.xml` with new calculator URL
+  2. Update `/sitemap/index.html` with new calculator listing
+  3. Verify category page integration (remove "Coming Soon" if applicable)
 - **Testing**: See `docs/SOP-CalcDev.md` for comprehensive testing requirements
 - **Validation**: Use online HTML and Schema validators as specified in guidelines
 

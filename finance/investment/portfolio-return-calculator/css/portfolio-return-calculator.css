@@ -1,0 +1,316 @@
+/*
+ * FreecalcHub.com - Portfolio Return Calculator Styles
+ * Version: 1.0
+ * Date: August 9, 2025
+ * Description: Specific styles for the Portfolio Return Calculator
+ */
+
+/* Asset Group Styling */
+.asset-group {
+    background: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.asset-group h4 {
+    margin: 0 0 1rem 0;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.asset-group h4::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    background: var(--primary-color);
+}
+
+.asset-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+/* Asset Group Color Coding */
+.asset-group[data-asset="stocks"] h4::before { background: #3498db; }
+.asset-group[data-asset="bonds"] h4::before { background: #2ecc71; }
+.asset-group[data-asset="international"] h4::before { background: #e74c3c; }
+.asset-group[data-asset="reits"] h4::before { background: #f39c12; }
+.asset-group[data-asset="commodities"] h4::before { background: #9b59b6; }
+.asset-group[data-asset="cash"] h4::before { background: #95a5a6; }
+
+/* Allocation Summary */
+.allocation-summary {
+    background: var(--secondary-bg-color);
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.allocation-summary strong {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.allocation-error {
+    background: #ffeaa7;
+    color: #d63031;
+    border: 1px solid #d63031;
+}
+
+.allocation-success {
+    background: #d1f2eb;
+    color: #00b894;
+    border: 1px solid #00b894;
+}
+
+/* Results Grid Enhancement */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.analysis-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Asset Breakdown */
+.asset-breakdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.asset-breakdown-item {
+    background: var(--secondary-bg-color);
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.asset-breakdown-item h5 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.asset-breakdown-item .asset-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.asset-breakdown-item .asset-value {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Rebalancing Suggestions */
+.rebalancing-suggestions {
+    background: var(--warning-bg-color);
+    border: 1px solid var(--warning-border-color);
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+.rebalancing-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.rebalancing-item:last-child {
+    border-bottom: none;
+}
+
+.rebalancing-action {
+    font-weight: 600;
+}
+
+.rebalancing-action.buy {
+    color: #00b894;
+}
+
+.rebalancing-action.sell {
+    color: #e17055;
+}
+
+/* Chart Container */
+.chart-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--card-bg-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.chart-container h4 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.chart-container canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Form Actions Enhancement */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.btn-tertiary {
+    background: var(--secondary-color);
+    color: var(--white);
+    border: 1px solid var(--secondary-color);
+}
+
+.btn-tertiary:hover {
+    background: var(--secondary-color-hover);
+    border-color: var(--secondary-color-hover);
+}
+
+/* Dynamic Asset Addition */
+.asset-group.new-asset {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.remove-asset {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: auto;
+}
+
+.remove-asset:hover {
+    background: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .asset-inputs {
+        grid-template-columns: 1fr;
+    }
+    
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .asset-breakdown {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .asset-group {
+        padding: 1rem;
+    }
+}
+
+/* Dark Mode Specific Adjustments */
+[data-theme="dark"] .asset-group {
+    background: var(--card-bg-color-dark);
+    border-color: var(--border-color-dark);
+}
+
+[data-theme="dark"] .allocation-summary {
+    background: var(--secondary-bg-color-dark);
+}
+
+[data-theme="dark"] .asset-breakdown-item {
+    background: var(--secondary-bg-color-dark);
+}
+
+[data-theme="dark"] .chart-container {
+    background: var(--card-bg-color-dark);
+    border-color: var(--border-color-dark);
+}
+
+/* Loading States */
+.calculating {
+    position: relative;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.calculating::after {
+    content: "Analyzing...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--card-bg-color);
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-weight: 600;
+    z-index: 10;
+}
+
+/* Risk Indicators */
+.risk-low { color: #00b894; }
+.risk-medium { color: #fdcb6e; }
+.risk-high { color: #e17055; }
+
+.risk-indicator {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.risk-indicator.low {
+    background: rgba(0, 184, 148, 0.1);
+    color: #00b894;
+}
+
+.risk-indicator.medium {
+    background: rgba(253, 203, 110, 0.1);
+    color: #fdcb6e;
+}
+
+.risk-indicator.high {
+    background: rgba(225, 112, 85, 0.1);
+    color: #e17055;
+}
