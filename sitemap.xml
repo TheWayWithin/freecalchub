@@ -259,6 +259,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://www.freecalchub.com/finance/cryptocurrency/dca-calculator/</loc>
+    <lastmod>2025-01-09T14:30:00Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://www.freecalchub.com/finance/tax/</loc>
     <lastmod>2025-07-14T15:14:19Z</lastmod>
     <priority>0.8</priority>
