@@ -1,0 +1,261 @@
+/*
+ * Crypto Tax Calculator - Custom Styles
+ * FreecalcHub - www.freecalchub.com
+ * Version: 1.0
+ * Date: 2025-01-09
+ */
+
+/* Form enhancements for tax-specific inputs */
+.form-help {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+    display: block;
+}
+
+/* Enhanced results section */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.primary-result {
+    border: 2px solid var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color-light), var(--card-bg));
+}
+
+.primary-result h4 {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.primary-result p {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Tax breakdown section */
+.tax-breakdown {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.tax-breakdown h4 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.breakdown-content {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color-light);
+}
+
+.breakdown-item:last-child {
+    border-bottom: none;
+}
+
+.breakdown-label {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.breakdown-value {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Tax optimization section */
+.tax-optimization {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #e8f5e8, var(--card-bg));
+    border-radius: 8px;
+    border: 1px solid var(--success-color);
+}
+
+.tax-optimization h4 {
+    margin-bottom: 1rem;
+    color: var(--success-color);
+    font-size: 1.1rem;
+}
+
+.optimization-content {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.optimization-tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 6px;
+    border-left: 3px solid var(--success-color);
+}
+
+.optimization-tip .tip-icon {
+    color: var(--success-color);
+    margin-top: 0.125rem;
+}
+
+.optimization-tip .tip-content {
+    flex: 1;
+}
+
+.optimization-tip .tip-title {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.optimization-tip .tip-description {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* Disclaimer box styling */
+.disclaimer-box {
+    background: linear-gradient(135deg, #fff5f5, var(--card-bg));
+    border: 1px solid #f56565;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.disclaimer-box h3 {
+    color: #c53030;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.disclaimer-box h3 i {
+    margin-right: 0.5rem;
+}
+
+.disclaimer-box p {
+    margin-bottom: 1rem;
+}
+
+.disclaimer-box ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.disclaimer-box ul li {
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+}
+
+.disclaimer-box strong {
+    color: #c53030;
+}
+
+/* Positive/negative value styling */
+.positive-value {
+    color: var(--success-color);
+}
+
+.negative-value {
+    color: var(--error-color);
+}
+
+.neutral-value {
+    color: var(--text-muted);
+}
+
+/* Error message styling */
+.error-message {
+    background: var(--error-bg);
+    color: var(--error-color);
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid var(--error-color);
+    margin-bottom: 1rem;
+}
+
+/* Tax rate badges */
+.tax-rate-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: var(--primary-color-light);
+    color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .breakdown-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    
+    .optimization-tip {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .disclaimer-box {
+        padding: 1rem;
+    }
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .tax-optimization {
+    background: linear-gradient(135deg, #1a4d3a, var(--card-bg));
+}
+
+[data-theme="dark"] .disclaimer-box {
+    background: linear-gradient(135deg, #4a1a1a, var(--card-bg));
+}
+
+[data-theme="dark"] .optimization-tip {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Loading state */
+.calculating {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.calculating .btn-primary {
+    background: var(--text-muted);
+    cursor: not-allowed;
+}
+
+/* Form validation styles */
+.form-group.error input,
+.form-group.error select {
+    border-color: var(--error-color);
+    box-shadow: 0 0 0 0.2rem rgba(245, 101, 101, 0.25);
+}
+
+.form-group.success input,
+.form-group.success select {
+    border-color: var(--success-color);
+    box-shadow: 0 0 0 0.2rem rgba(72, 187, 120, 0.25);
+}
