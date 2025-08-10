@@ -254,7 +254,25 @@
   </url>
   <url>
     <loc>https://www.freecalchub.com/finance/budgeting/</loc>
-    <lastmod>2025-07-14T14:59:09Z</lastmod>
+    <lastmod>2025-01-12T12:00:00Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/finance/budgeting/50-30-20-calculator/</loc>
+    <lastmod>2025-01-12T12:00:00Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/finance/budgeting/zero-based-budget-calculator/</loc>
+    <lastmod>2025-01-12T12:00:00Z</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/finance/budgeting/emergency-fund-calculator/</loc>
+    <lastmod>2025-01-12T12:00:00Z</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>

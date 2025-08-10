@@ -1,0 +1,446 @@
+/* Zero-Based Budget Calculator Specific Styles */
+
+/* Budget Overview Section */
+.budget-overview {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.income-section {
+    margin-bottom: 1.5rem;
+}
+
+.income-section label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--heading-color);
+}
+
+.income-section input {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--input-bg);
+    color: var(--text-color);
+}
+
+.balance-tracker {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--border-color);
+}
+
+.balance-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    background: rgba(var(--primary-rgb), 0.03);
+}
+
+.balance-item.remaining-balance {
+    border: 2px solid var(--primary-color);
+    background: rgba(var(--primary-rgb), 0.05);
+}
+
+.balance-item .label {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.balance-item .amount {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.remaining-balance .amount.zero {
+    color: #27ae60;
+}
+
+.remaining-balance .amount.positive {
+    color: #f39c12;
+}
+
+.remaining-balance .amount.negative {
+    color: #e74c3c;
+}
+
+/* Budget Categories Section */
+.budget-categories-section {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.categories-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.categories-header h3 {
+    margin: 0;
+    color: var(--heading-color);
+}
+
+.category-controls {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.category-controls select {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--input-bg);
+    color: var(--text-color);
+    min-width: 200px;
+}
+
+/* Individual Category Items */
+.category-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background: rgba(var(--primary-rgb), 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    transition: all 0.2s ease;
+}
+
+.category-item:hover {
+    background: rgba(var(--primary-rgb), 0.04);
+    border-color: var(--primary-color);
+}
+
+.category-icon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    width: 24px;
+    text-align: center;
+}
+
+.category-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.category-name {
+    font-weight: 600;
+    color: var(--heading-color);
+    font-size: 1rem;
+}
+
+.category-description {
+    font-size: 0.85rem;
+    color: var(--muted-text);
+    font-style: italic;
+}
+
+.category-amount-input {
+    width: 120px;
+    padding: 0.5rem;
+    text-align: right;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--input-bg);
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.category-remove {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.category-remove:hover {
+    background: rgba(231, 76, 60, 0.1);
+}
+
+/* Empty State */
+.categories-empty {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted-text);
+    font-style: italic;
+}
+
+/* Results Section */
+.budget-status {
+    text-align: center;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.budget-status.balanced {
+    background: rgba(39, 174, 96, 0.1);
+    border: 2px solid #27ae60;
+    color: #27ae60;
+}
+
+.budget-status.unbalanced {
+    background: rgba(231, 76, 60, 0.1);
+    border: 2px solid #e74c3c;
+    color: #e74c3c;
+}
+
+.budget-status.over-allocated {
+    background: rgba(243, 156, 18, 0.1);
+    border: 2px solid #f39c12;
+    color: #f39c12;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.summary-item {
+    text-align: center;
+    position: relative;
+}
+
+.summary-item h4 {
+    margin: 0 0 1rem 0;
+    color: var(--heading-color);
+    font-size: 1rem;
+}
+
+.summary-item .amount {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Category Breakdown Chart */
+.category-breakdown {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.category-breakdown h4 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--heading-color);
+}
+
+.breakdown-chart-container {
+    position: relative;
+    height: 300px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Export functionality styling */
+.btn.btn-tertiary {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+}
+
+.btn.btn-tertiary:hover {
+    background: var(--secondary-color);
+    opacity: 0.9;
+}
+
+/* Custom Category Modal (if implemented) */
+.custom-category-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.custom-category-form {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.custom-category-form h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--heading-color);
+}
+
+.custom-category-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.custom-category-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.custom-category-form input,
+.custom-category-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--input-bg);
+    color: var(--text-color);
+}
+
+.custom-category-form textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.custom-category-form .form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .balance-tracker {
+        grid-template-columns: 1fr;
+    }
+    
+    .categories-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .category-controls {
+        flex-direction: column;
+    }
+    
+    .category-controls select {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .category-item {
+        grid-template-columns: auto 1fr;
+        gap: 0.75rem;
+    }
+    
+    .category-amount-input {
+        grid-column: 1 / -1;
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+    
+    .category-remove {
+        grid-column: 1 / -1;
+        justify-self: center;
+        margin-top: 0.5rem;
+    }
+    
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .breakdown-chart-container {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .budget-overview,
+    .budget-categories-section,
+    .category-breakdown {
+        padding: 1rem;
+    }
+    
+    .category-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .category-icon {
+        justify-self: center;
+    }
+    
+    .breakdown-chart-container {
+        height: 200px;
+    }
+    
+    .custom-category-form {
+        padding: 1.5rem;
+    }
+}
+
+/* Animation for adding/removing categories */
+.category-item {
+    animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.category-item.removing {
+    animation: fadeOutDown 0.3s ease forwards;
+}
+
+@keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}

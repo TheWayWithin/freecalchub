@@ -1,0 +1,240 @@
+# Page snapshot
+
+```yaml
+- link "Skip to content":
+  - /url: "#main-content"
+- banner:
+  - link "FreecalcHub Logo":
+    - /url: /
+    - img "FreecalcHub Logo"
+  - navigation:
+    - list:
+      - listitem:
+        - link "Finance":
+          - /url: /finance/
+      - listitem:
+        - link "Math":
+          - /url: /math/
+      - listitem:
+        - link "Health":
+          - /url: /health/
+      - listitem:
+        - link "Conversions":
+          - /url: /conversions/
+      - listitem:
+        - link "Date & Time":
+          - /url: /date-time/
+      - listitem:
+        - link "Business":
+          - /url: /business/
+      - listitem:
+        - link "Lifestyle":
+          - /url: /lifestyle/
+      - listitem:
+        - link "Blog":
+          - /url: /blog/
+  - button "Toggle dark mode":  
+  - button "Toggle menu": 
+  - text: Menu
+  - button "Close menu": 
+  - navigation:
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Finance":
+          - /url: /finance/
+      - listitem:
+        - link "Math":
+          - /url: /math/
+      - listitem:
+        - link "Health":
+          - /url: /health/
+      - listitem:
+        - link "Conversions":
+          - /url: /conversions/
+      - listitem:
+        - link "Date & Time":
+          - /url: /date-time/
+      - listitem:
+        - link "Business":
+          - /url: /business/
+      - listitem:
+        - link "Lifestyle":
+          - /url: /lifestyle/
+      - listitem:
+        - link "Blog":
+          - /url: /blog/
+- link "Home":
+  - /url: /
+- text: /
+- link "Finance":
+  - /url: /finance/
+- text: / Budgeting
+- link " Investment":
+  - /url: /finance/investment/
+- link " Loan":
+  - /url: /finance/loan/
+- link " Mortgage":
+  - /url: /finance/mortgage/
+- link " Retirement":
+  - /url: /finance/retirement/
+- link " Savings":
+  - /url: /finance/savings/
+- link " Budgeting":
+  - /url: /finance/budgeting/
+- link "% Taxes":
+  - /url: /finance/tax/
+- main:
+  - heading "Budgeting Calculators" [level=1]
+  - paragraph: Manage your money effectively. Our free budgeting calculators help you track your income and expenses, create a personalized budget, and work towards your financial goals.
+  - text: 
+  - heading "50/30/20 Budget Calculator" [level=3]:
+    - link "50/30/20 Budget Calculator":
+      - /url: /finance/budgeting/50-30-20-calculator/
+  - paragraph: Plan your budget using the popular 50% needs, 30% wants, 20% savings rule.
+  - text: =
+  - heading "Zero-Based Budget Calculator" [level=3]:
+    - link "Zero-Based Budget Calculator":
+      - /url: /finance/budgeting/zero-based-budget-calculator/
+  - paragraph: Allocate every dollar of income until you reach zero remaining balance.
+  - text: 
+  - heading "Emergency Fund Calculator" [level=3]:
+    - link "Emergency Fund Calculator":
+      - /url: /finance/budgeting/emergency-fund-calculator/
+  - paragraph: Calculate your target emergency fund size and savings timeline.
+  - text: 
+  - heading "Monthly Budget Calculator" [level=3]:
+    - link "Monthly Budget Calculator":
+      - /url: /finance/budgeting/monthly-budget-calculator/
+  - paragraph: Plan your monthly spending and savings goals. Coming Soon
+  - text: 
+  - heading "Expense Tracker Calculator" [level=3]:
+    - link "Expense Tracker Calculator":
+      - /url: /finance/budgeting/expense-tracker-calculator/
+  - paragraph: Monitor your daily, weekly, and monthly expenses. Coming Soon
+  - text: 
+  - heading "Debt-to-Income Ratio Calc" [level=3]:
+    - link "Debt-to-Income Ratio Calc":
+      - /url: /finance/budgeting/debt-to-income-ratio-calculator/
+  - paragraph: Understand your DTI ratio for loans and financial health. Coming Soon
+  - heading "About Budgeting Calculators" [level=2]
+  - paragraph: Understanding and managing your budget is the cornerstone of financial health. Whether you're saving for a big purchase, paying off debt, or simply want to know where your money goes, our budgeting tools provide the clarity you need. Learn how to allocate your funds, identify areas for savings, and build a secure financial future.
+  - heading "Frequently Asked Questions (FAQ)" [level=2]
+  - heading "FAQ Index" [level=3]
+  - list:
+    - listitem:
+      - link "What types of budgeting calculators does FreecalcHub offer?":
+        - /url: "#faq-cat-item-1"
+    - listitem:
+      - link "How can budgeting calculators help me manage my money?":
+        - /url: "#faq-cat-item-2"
+    - listitem:
+      - link "What is a Monthly Budget Calculator used for?":
+        - /url: "#faq-cat-item-3"
+    - listitem:
+      - link "How does an Expense Tracker Calculator work?":
+        - /url: "#faq-cat-item-4"
+    - listitem:
+      - link "Why is the Debt-to-Income Ratio important for budgeting?":
+        - /url: "#faq-cat-item-5"
+    - listitem:
+      - link "Do these budgeting calculators save my financial information?":
+        - /url: "#faq-cat-item-6"
+    - listitem:
+      - link "What is the first step in creating a budget?":
+        - /url: "#faq-cat-item-7"
+    - listitem:
+      - link "Can budgeting calculators help me save money for a big purchase?":
+        - /url: "#faq-cat-item-8"
+  - heading "What types of budgeting calculators does FreecalcHub offer?" [level=3]:
+    - button "What types of budgeting calculators does FreecalcHub offer?"
+  - region:
+    - paragraph:
+      - text: FreecalcHub provides free online budgeting calculators designed to help you manage your money effectively. Our current tools include the
+      - link "50/30/20 Budget Calculator":
+        - /url: https://www.freecalchub.com/finance/budgeting/50-30-20-calculator/
+      - text: using the popular budgeting rule, a
+      - link "Zero-Based Budget Calculator":
+        - /url: https://www.freecalchub.com/finance/budgeting/zero-based-budget-calculator/
+      - text: where every dollar gets assigned a purpose, an
+      - link "Emergency Fund Calculator":
+        - /url: https://www.freecalchub.com/finance/budgeting/emergency-fund-calculator/
+      - text: to build your financial safety net, plus additional tools for comprehensive budget management.
+  - heading "How can budgeting calculators help me manage my money?" [level=3]:
+    - button "How can budgeting calculators help me manage my money?"
+  - region:
+    - paragraph: Budgeting calculators provide clarity on where your money goes, help you identify areas for savings, and assist in building a secure financial future. They enable you to track income and expenses, create personalized budgets, and work towards financial goals.
+  - heading "What is a Monthly Budget Calculator used for?" [level=3]:
+    - button "What is a Monthly Budget Calculator used for?"
+  - region:
+    - paragraph: A Monthly Budget Calculator helps you plan your monthly spending and savings goals. It allows you to allocate your income to different categories like housing, food, transportation, and entertainment, ensuring you stay within your financial limits.
+  - heading "How does an Expense Tracker Calculator work?" [level=3]:
+    - button "How does an Expense Tracker Calculator work?"
+  - region:
+    - paragraph: An Expense Tracker Calculator is designed to help you monitor your daily, weekly, and monthly expenses. By inputting your expenditures regularly, you can gain a clear understanding of your spending habits and identify areas where you might be overspending.
+  - heading "Why is the Debt-to-Income Ratio important for budgeting?" [level=3]:
+    - button "Why is the Debt-to-Income Ratio important for budgeting?"
+  - region:
+    - paragraph: The Debt-to-Income Ratio (DTI) helps you understand your overall financial health and your capacity to take on new debt, particularly for loans like mortgages. It compares your total monthly debt payments to your gross monthly income, which lenders use to assess your ability to manage monthly payments and repay debts.
+  - heading "Do these budgeting calculators save my financial information?" [level=3]:
+    - button "Do these budgeting calculators save my financial information?"
+  - region:
+    - paragraph: No, for your privacy and security, all calculations on FreecalcHub.com's budgeting calculators are performed client-side, directly in your web browser. We do not store, track, or retain any of the personal financial data or information you enter into our tools.
+  - heading "What is the first step in creating a budget?" [level=3]:
+    - button "What is the first step in creating a budget?"
+  - region:
+    - paragraph: The first step in creating a budget is typically to understand your income and track all your expenses for a period, usually a month. This helps you see exactly where your money is going before you can start allocating it to different categories or setting financial goals.
+  - heading "Can budgeting calculators help me save money for a big purchase?" [level=3]:
+    - button "Can budgeting calculators help me save money for a big purchase?"
+  - region:
+    - paragraph: Yes, budgeting calculators are excellent tools for saving for specific financial goals, such as a down payment on a home or a large purchase. By clearly outlining your income and expenses, they help you identify surplus funds that can be allocated towards savings targets.
+- contentinfo:
+  - heading "FreecalcHub" [level=3]
+  - paragraph: Your one-stop destination for a wide variety of free online calculators.
+  - heading "Categories" [level=3]
+  - list:
+    - listitem:
+      - link "Finance":
+        - /url: /finance/
+    - listitem:
+      - link "Math":
+        - /url: /math/
+    - listitem:
+      - link "Health":
+        - /url: /health/
+    - listitem:
+      - link "Conversions":
+        - /url: /conversions/
+    - listitem:
+      - link "Date & Time":
+        - /url: /date-time/
+    - listitem:
+      - link "Business":
+        - /url: /business/
+    - listitem:
+      - link "Lifestyle":
+        - /url: /lifestyle/
+    - listitem:
+      - link "Blog":
+        - /url: /blog/
+  - heading "Support" [level=3]
+  - list:
+    - listitem:
+      - link "About Us":
+        - /url: /about/
+    - listitem:
+      - link "Contact":
+        - /url: /contact/
+    - listitem:
+      - link "Privacy Policy":
+        - /url: /privacy/
+    - listitem:
+      - link "Terms of Service":
+        - /url: /terms/
+    - listitem:
+      - link "Sitemap":
+        - /url: /sitemap/
+  - paragraph: © 2025 FreecalcHub. All rights reserved.
+```

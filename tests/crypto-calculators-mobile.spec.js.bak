@@ -1,0 +1,338 @@
+const { test, expect, devices } = require('@playwright/test');
+
+// Mobile tests for iPhone 12
+test.describe('Crypto Calculators - iPhone 12', () => {
+  test.use({ ...devices['iPhone 12'] });
+  
+  const calculators = [
+    { name: 'Tax Calculator', url: '/finance/cryptocurrency/crypto-tax-calculator/' },
+    { name: 'DCA Calculator', url: '/finance/cryptocurrency/dca-calculator/' }
+  ];
+
+  for (const calculator of calculators) {
+    test(`${calculator.name} loads and displays correctly on iPhone 12`, async ({ page }) => {
+      await page.goto(calculator.url);
+      
+      // Check if page loads without horizontal scroll
+      const viewport = page.viewportSize();
+      expect(viewport.width).toBe(390);
+      expect(viewport.height).toBe(844);
+      
+      // Check if main heading is visible
+      await expect(page.locator('h1')).toBeVisible();
+      
+      // Check if calculator form is visible and properly sized
+      const calculatorContainer = page.locator('.calculator-container, .calculator-form, #calculator');
+      if (await calculatorContainer.count() > 0) {
+        await expect(calculatorContainer.first()).toBeVisible();
+        
+        // Check if container width fits viewport
+        const containerBounds = await calculatorContainer.first().boundingBox();
+        if (containerBounds) {
+          expect(containerBounds.width).toBeLessThanOrEqual(viewport.width);
+        }
+      }
+      
+      // Check if navigation menu works on mobile
+      const mobileMenuButton = page.locator('#mobile-menu-button, .mobile-menu-toggle, [aria-label*="menu"]');
+      if (await mobileMenuButton.count() > 0) {
+        await mobileMenuButton.first().click();
+        await page.waitForTimeout(500);
+        
+        // Check if mobile menu appears
+        const mobileMenu = page.locator('.mobile-menu, #mobile-menu, .nav-mobile');
+        if (await mobileMenu.count() > 0) {
+          await expect(mobileMenu.first()).toBeVisible();
+          
+          // Close menu
+          const closeButton = page.locator('#mobile-menu-close, .close-menu, [aria-label*="close"]');
+          if (await closeButton.count() > 0) {
+            await closeButton.first().click();
+          }
+        }
+      }
+    });
+
+    test(`${calculator.name} form inputs are touch-friendly on iPhone 12`, async ({ page }) => {
+      await page.goto(calculator.url);
+      
+      // Find all input elements
+      const inputs = await page.locator('input, select, button').all();
+      
+      for (const input of inputs.slice(0, 5)) { // Test first 5 inputs
+        const bounds = await input.boundingBox();
+        if (bounds) {
+          // Check minimum touch target size (44x44 pixels for iOS)
+          expect(bounds.height).toBeGreaterThanOrEqual(40); // Allow slight tolerance
+          expect(bounds.width).toBeGreaterThanOrEqual(40);
+        }
+      }
+    });
+
+    test(`${calculator.name} calculation works on mobile touch interface`, async ({ page }) => {
+      await page.goto(calculator.url);
+      
+      if (calculator.name === 'Tax Calculator') {
+        // Fill tax calculator on mobile
+        const incomeInput = page.locator('input[id*="income"], input[name*="income"]').first();
+        if (await incomeInput.isVisible()) {
+          await incomeInput.tap();
+          await incomeInput.fill('60000');
+        }
+        
+        const gainInput = page.locator('input[id*="gain"], input[name*="gain"]').first();
+        if (await gainInput.isVisible()) {
+          await gainInput.tap();
+          await gainInput.fill('8000');
+        }
+      } else {
+        // Fill DCA calculator on mobile
+        const amountInput = page.locator('input[id*="amount"], input[name*="amount"]').first();
+        if (await amountInput.isVisible()) {
+          await amountInput.tap();
+          await amountInput.fill('500');
+        }
+      }
+      
+      // Find and tap calculate button
+      const calculateButton = page.locator('button:has-text("Calculate"), #calculate, #calculateButton').first();
+      if (await calculateButton.isVisible()) {
+        await calculateButton.tap();
+        await page.waitForTimeout(2000);
+        
+        // Verify some result is displayed
+        const pageContent = await page.textContent('body');
+        expect(pageContent).toMatch(/\$\d+|result|total|tax|value/i);
+      }
+    });
+  }
+});
+
+// Mobile tests for Android (Pixel 5)
+test.describe('Crypto Calculators - Android Pixel 5', () => {
+  test.use({ ...devices['Pixel 5'] });
+  
+  const calculators = [
+    { name: 'Tax Calculator', url: '/finance/cryptocurrency/crypto-tax-calculator/' },
+    { name: 'DCA Calculator', url: '/finance/cryptocurrency/dca-calculator/' }
+  ];
+
+  for (const calculator of calculators) {
+    test(`${calculator.name} displays correctly on Android (Pixel 5)`, async ({ page }) => {
+      await page.goto(calculator.url);
+      
+      // Check viewport
+      const viewport = page.viewportSize();
+      expect(viewport.width).toBe(393);
+      expect(viewport.height).toBe(851);
+      
+      // Check if content fits viewport
+      const body = page.locator('body');
+      const bodyBounds = await body.boundingBox();
+      if (bodyBounds) {
+        expect(bodyBounds.width).toBeLessThanOrEqual(viewport.width);
+      }
+      
+      // Check if all essential elements are visible
+      await expect(page.locator('h1')).toBeVisible();
+      
+      const calculatorForm = page.locator('.calculator-container, .calculator-form, #calculator');
+      if (await calculatorForm.count() > 0) {
+        await expect(calculatorForm.first()).toBeVisible();
+      }
+      
+      // Test scroll behavior
+      await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+      await page.waitForTimeout(500);
+      
+      // Should be able to scroll back to top
+      await page.evaluate(() => window.scrollTo(0, 0));
+      await page.waitForTimeout(500);
+      
+      await expect(page.locator('h1')).toBeVisible();
+    });
+  }
+});
+
+// Tablet tests
+test.describe('Crypto Calculators - iPad Pro', () => {
+  test.use({ ...devices['iPad Pro'] });
+  
+  const calculators = [
+    { name: 'Tax Calculator', url: '/finance/cryptocurrency/crypto-tax-calculator/' },
+    { name: 'DCA Calculator', url: '/finance/cryptocurrency/dca-calculator/' }
+  ];
+
+  for (const calculator of calculators) {
+    test(`${calculator.name} adapts correctly to tablet viewport`, async ({ page }) => {
+      await page.goto(calculator.url);
+      
+      // Check viewport
+      const viewport = page.viewportSize();
+      expect(viewport.width).toBe(1024);
+      expect(viewport.height).toBe(1366);
+      
+      // On tablet, desktop navigation should be visible
+      const desktopNav = page.locator('.main-nav, .desktop-nav');
+      if (await desktopNav.count() > 0) {
+        await expect(desktopNav.first()).toBeVisible();
+      }
+      
+      // Calculator should use full width efficiently
+      const calculatorContainer = page.locator('.calculator-container, .calculator-form');
+      if (await calculatorContainer.count() > 0) {
+        const bounds = await calculatorContainer.first().boundingBox();
+        if (bounds) {
+          // Should use a reasonable portion of the screen width
+          expect(bounds.width).toBeGreaterThan(400);
+        }
+      }
+    });
+  }
+});
+
+// Cross-device tests
+test.describe('Cross-Device Functionality', () => {
+  test('Tax Calculator form elements scale appropriately across devices', async ({ page }) => {
+    const devices_to_test = [
+      { name: 'Mobile', viewport: devices['iPhone 12'].viewport },
+      { name: 'Tablet', viewport: devices['iPad Pro'].viewport },
+    ];
+
+    for (const deviceTest of devices_to_test) {
+      // Set device viewport
+      await page.setViewportSize(deviceTest.viewport);
+      await page.goto('/finance/cryptocurrency/crypto-tax-calculator/');
+      
+      // Test form input visibility and usability
+      const inputs = await page.locator('input, select').all();
+      let visibleInputs = 0;
+      
+      for (const input of inputs) {
+        if (await input.isVisible()) {
+          visibleInputs++;
+          const bounds = await input.boundingBox();
+          if (bounds) {
+            // Input should be reasonably sized for the device
+            if (deviceTest.name === 'Mobile') {
+              expect(bounds.height).toBeGreaterThanOrEqual(40);
+            } else {
+              expect(bounds.height).toBeGreaterThanOrEqual(30);
+            }
+          }
+        }
+      }
+      
+      expect(visibleInputs).toBeGreaterThan(0);
+      console.log(`${deviceTest.name}: Found ${visibleInputs} visible inputs`);
+    }
+  });
+
+  test('DCA Calculator charts render properly on mobile', async ({ page }) => {
+    await page.setViewportSize(devices['iPhone 12'].viewport);
+    await page.goto('/finance/cryptocurrency/dca-calculator/');
+    
+    // Fill form
+    const amountInput = page.locator('input[id*="amount"], input[name*="amount"]').first();
+    if (await amountInput.isVisible()) {
+      await amountInput.fill('1000');
+    }
+    
+    // Calculate
+    const calculateButton = page.locator('button:has-text("Calculate"), #calculate').first();
+    if (await calculateButton.isVisible()) {
+      await calculateButton.click();
+      await page.waitForTimeout(3000);
+      
+      // Check if chart renders within mobile viewport
+      const charts = await page.locator('canvas, .chart-container, svg').all();
+      for (const chart of charts) {
+        if (await chart.isVisible()) {
+          const bounds = await chart.boundingBox();
+          if (bounds) {
+            // Chart should fit within mobile viewport width
+            expect(bounds.width).toBeLessThanOrEqual(390); // iPhone 12 width
+          }
+        }
+      }
+    }
+  });
+});
+
+// Touch interaction tests
+test.describe('Touch Interactions - Mobile', () => {
+  test.use({ ...devices['iPhone 12'] });
+  
+  test('All interactive elements respond to touch events', async ({ page }) => {
+    const calculators = [
+      '/finance/cryptocurrency/crypto-tax-calculator/',
+      '/finance/cryptocurrency/dca-calculator/'
+    ];
+
+    for (const calcUrl of calculators) {
+      await page.goto(calcUrl);
+      
+      // Test button interactions
+      const buttons = await page.locator('button').all();
+      for (const button of buttons.slice(0, 3)) { // Test first 3 buttons
+        if (await button.isVisible()) {
+          // Test tap event
+          await button.tap();
+          await page.waitForTimeout(200);
+          
+          // Button should respond (visual feedback, action, etc.)
+          // This is mainly to ensure no JavaScript errors occur
+        }
+      }
+      
+      // Test input focus behavior
+      const inputs = await page.locator('input').all();
+      for (const input of inputs.slice(0, 3)) { // Test first 3 inputs
+        if (await input.isVisible()) {
+          await input.tap();
+          await page.waitForTimeout(200);
+          
+          // Input should be focused
+          const isFocused = await input.evaluate(el => el === document.activeElement);
+          expect(isFocused).toBeTruthy();
+        }
+      }
+    }
+  });
+});
+
+// Mobile performance tests
+test.describe('Mobile Performance', () => {
+  test.use({ ...devices['iPhone 12'] });
+  
+  test('Calculators load efficiently on mobile network simulation', async ({ page }) => {
+    // Simulate slower mobile network
+    await page.route('**/*', route => {
+      // Add small delay to simulate mobile network
+      setTimeout(() => route.continue(), 50);
+    });
+    
+    const calculators = [
+      '/finance/cryptocurrency/crypto-tax-calculator/',
+      '/finance/cryptocurrency/dca-calculator/'
+    ];
+
+    for (const calcUrl of calculators) {
+      const startTime = Date.now();
+      await page.goto(calcUrl);
+      await page.waitForLoadState('networkidle');
+      const loadTime = Date.now() - startTime;
+      
+      // Should still load within reasonable time even with network delay
+      expect(loadTime).toBeLessThan(8000);
+      
+      // Essential elements should be visible
+      await expect(page.locator('h1')).toBeVisible();
+      
+      const calculatorForm = page.locator('.calculator-container, .calculator-form, #calculator');
+      if (await calculatorForm.count() > 0) {
+        await expect(calculatorForm.first()).toBeVisible();
+      }
+    }
+  });
+});
