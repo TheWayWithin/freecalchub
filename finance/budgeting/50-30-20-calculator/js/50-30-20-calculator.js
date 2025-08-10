@@ -51,6 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Chart variable
     let budgetChart = null;
 
+    // Verify critical DOM elements exist
+    if (!form || !calculateButton || !resetButton || !resultsSection) {
+        console.error('Critical DOM elements not found. Calculator may not function properly.');
+        return;
+    }
+
     // Initialize Event Listeners
     initializeEventListeners();
 
@@ -155,20 +161,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function handleCalculate() {
-        if (!validateInputs()) {
-            return;
-        }
+        try {
+            if (!validateInputs()) {
+                return;
+            }
 
-        const results = calculateBudget();
-        displayResults(results);
-        displayChart(results);
-        
-        if (hasComparisonData()) {
-            displayComparison(results);
-        }
+            const results = calculateBudget();
+            displayResults(results);
+            displayChart(results);
+            
+            if (hasComparisonData()) {
+                displayComparison(results);
+            }
 
-        resultsSection.style.display = "block";
-        resultsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+            resultsSection.style.display = "block";
+            resultsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        } catch (error) {
+            console.error('Error in budget calculation:', error);
+            showError('An error occurred during calculation. Please check your inputs and try again.');
+        }
     }
 
     function calculateBudget() {
@@ -207,7 +218,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function displayChart(results) {
-        const ctx = document.getElementById('budgetChart').getContext('2d');
+        // Ensure Chart.js is loaded
+        if (typeof Chart === 'undefined') {
+            console.error('Chart.js not loaded. Skipping chart display.');
+            return;
+        }
+
+        const chartElement = document.getElementById('budgetChart');
+        if (!chartElement) {
+            console.error('Chart canvas element not found.');
+            return;
+        }
+
+        const ctx = chartElement.getContext('2d');
         
         // Destroy existing chart if it exists
         if (budgetChart) {

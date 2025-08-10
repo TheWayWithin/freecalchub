@@ -55,6 +55,12 @@ document.addEventListener("DOMContentLoaded", () => {
         insuranceCostEl, debtPaymentsEl, otherEssentialsEl
     ];
 
+    // Verify critical DOM elements exist
+    if (!calculateButton || !resetButton || !resultsSection || !totalEssentialsEl) {
+        console.error('Critical DOM elements not found. Calculator may not function properly.');
+        return;
+    }
+
     // Initialize Event Listeners
     initializeEventListeners();
 
@@ -132,15 +138,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function handleCalculate() {
-        if (!validateInputs()) {
-            return;
-        }
+        try {
+            if (!validateInputs()) {
+                return;
+            }
 
-        const calculations = calculateEmergencyFund();
-        displayResults(calculations);
-        
-        resultsSection.style.display = "block";
-        resultsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+            const calculations = calculateEmergencyFund();
+            displayResults(calculations);
+            
+            resultsSection.style.display = "block";
+            resultsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        } catch (error) {
+            console.error('Error in emergency fund calculation:', error);
+            showError('An error occurred during calculation. Please check your inputs and try again.');
+        }
     }
 
     function calculateEmergencyFund() {
@@ -272,6 +283,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function updateProgressBar(percentage, targetAmount) {
+        if (!progressFillEl || !progressTextEl || !progressEndEl) {
+            console.warn('Progress bar elements not found. Skipping progress visualization.');
+            return;
+        }
+
         progressFillEl.style.width = `${percentage}%`;
         progressTextEl.textContent = `${percentage.toFixed(1)}%`;
         progressEndEl.textContent = formatCurrency(targetAmount);

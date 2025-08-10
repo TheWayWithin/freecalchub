@@ -46,6 +46,12 @@ document.addEventListener("DOMContentLoaded", () => {
         retirement: { name: "Retirement", icon: "fas fa-chart-line", description: "401k, IRA contributions" }
     };
 
+    // Verify critical DOM elements exist
+    if (!monthlyIncomeEl || !addCategoryButtonEl || !calculateButton || !resetButton || !resultsSection) {
+        console.error('Critical DOM elements not found. Calculator may not function properly.');
+        return;
+    }
+
     // Initialize Event Listeners
     initializeEventListeners();
 
@@ -237,17 +243,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function handleCalculate() {
-        if (!validateInputs()) {
-            return;
-        }
+        try {
+            if (!validateInputs()) {
+                return;
+            }
 
-        const totals = updateTotals();
-        displayResults(totals);
-        displayChart();
-        
-        resultsSection.style.display = "block";
-        exportButton.style.display = "inline-block";
-        resultsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+            const totals = updateTotals();
+            displayResults(totals);
+            displayChart();
+            
+            resultsSection.style.display = "block";
+            exportButton.style.display = "inline-block";
+            resultsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        } catch (error) {
+            console.error('Error in zero-based budget calculation:', error);
+            showError('An error occurred during calculation. Please check your inputs and try again.');
+        }
     }
 
     function displayResults(totals) {
@@ -274,7 +285,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function displayChart() {
-        const ctx = document.getElementById('budgetBreakdownChart').getContext('2d');
+        // Ensure Chart.js is loaded
+        if (typeof Chart === 'undefined') {
+            console.error('Chart.js not loaded. Skipping chart display.');
+            return;
+        }
+
+        const chartElement = document.getElementById('budgetBreakdownChart');
+        if (!chartElement) {
+            console.error('Chart canvas element not found.');
+            return;
+        }
+
+        const ctx = chartElement.getContext('2d');
         
         // Destroy existing chart
         if (budgetChart) {
