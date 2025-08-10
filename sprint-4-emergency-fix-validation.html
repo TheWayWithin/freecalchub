@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sprint 4 Emergency Fix Validation</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 2px solid #ddd; border-radius: 5px; }
+        .success { border-color: #4CAF50; background-color: #f1f8e9; }
+        .error { border-color: #f44336; background-color: #ffebee; }
+        .calculator-link { display: block; margin: 10px 0; padding: 10px; background: #2196F3; color: white; text-decoration: none; border-radius: 5px; }
+        .calculator-link:hover { background: #1976D2; }
+        .test-steps { margin: 15px 0; }
+        .test-steps li { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h1>🚨 SPRINT 4 EMERGENCY FIX VALIDATION</h1>
+    
+    <div class="test-section">
+        <h2>EMERGENCY FIXES APPLIED ✅</h2>
+        <p><strong>Fix Pattern:</strong> Applied proven Sprint 2 emergency recovery pattern to all 3 calculators</p>
+        <ul>
+            <li>✅ Chart.js loading timing fixed (defer attribute added)</li>
+            <li>✅ DOM element validation added (prevents null reference errors)</li>
+            <li>✅ Error handling wrapped around all calculation functions</li>
+            <li>✅ Console logging added for debugging production issues</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>CALCULATOR TESTING REQUIRED</h2>
+        <p><strong>Test each calculator with the scenarios below:</strong></p>
+        
+        <h3>1. 50/30/20 Budget Calculator</h3>
+        <a href="/finance/budgeting/50-30-20-calculator/" class="calculator-link" target="_blank">
+            → Test 50/30/20 Budget Calculator
+        </a>
+        <div class="test-steps">
+            <strong>Test Scenario:</strong>
+            <ol>
+                <li>Enter Monthly Income: $5000</li>
+                <li>Verify percentages auto-calculate: Needs $2500, Wants $1500, Savings $1000</li>
+                <li>Adjust percentages (try 60/25/15) and verify recalculation</li>
+                <li>Add comparison data: Current Needs $2800, Wants $1800, Savings $400</li>
+                <li>Click Calculate and verify pie chart displays</li>
+                <li>Verify comparison shows over/under spending analysis</li>
+            </ol>
+        </div>
+
+        <h3>2. Zero-Based Budget Calculator</h3>
+        <a href="/finance/budgeting/zero-based-budget-calculator/" class="calculator-link" target="_blank">
+            → Test Zero-Based Budget Calculator
+        </a>
+        <div class="test-steps">
+            <strong>Test Scenario:</strong>
+            <ol>
+                <li>Enter Monthly Income: $4500</li>
+                <li>Add categories: Housing ($1800), Food ($500), Transportation ($400)</li>
+                <li>Add more categories until total reaches $4500 (zero balance)</li>
+                <li>Click Calculate and verify budget status shows "Perfect! Balanced"</li>
+                <li>Verify pie chart shows category breakdown</li>
+                <li>Test category removal and addition functionality</li>
+                <li>Test export functionality</li>
+            </ol>
+        </div>
+
+        <h3>3. Emergency Fund Calculator</h3>
+        <a href="/finance/budgeting/emergency-fund-calculator/" class="calculator-link" target="_blank">
+            → Test Emergency Fund Calculator
+        </a>
+        <div class="test-steps">
+            <strong>Test Scenario:</strong>
+            <ol>
+                <li>Enter expenses: Housing $1500, Utilities $200, Food $400, Transportation $300</li>
+                <li>Verify Total Monthly Essentials: $2400</li>
+                <li>Select 6 months coverage = $14,400 target</li>
+                <li>Enter Current Savings: $5000</li>
+                <li>Enter Monthly Savings: $500</li>
+                <li>Click Calculate and verify timeline shows 19 months to goal</li>
+                <li>Verify progress bar shows ~35% completion</li>
+                <li>Verify scenario analysis displays alternative timelines</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>SUCCESS CRITERIA</h2>
+        <p><strong>Each calculator must demonstrate:</strong></p>
+        <ul>
+            <li>✅ Calculate button triggers calculation (no silent failures)</li>
+            <li>✅ Results section displays (no longer stuck on display:none)</li>
+            <li>✅ Mathematical calculations are accurate</li>
+            <li>✅ Visual elements render (charts, progress bars)</li>
+            <li>✅ No JavaScript console errors</li>
+            <li>✅ Mobile-responsive design maintained</li>
+            <li>✅ Reset functionality clears all inputs and results</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>EMERGENCY RESPONSE STATUS</h2>
+        <p><strong>Applied Emergency Fixes:</strong></p>
+        <ul>
+            <li>🔧 Fixed Chart.js loading timing (same issue as Sprint 2 Portfolio/DRIP emergency)</li>
+            <li>🔧 Added defensive programming for DOM element access</li>
+            <li>🔧 Enhanced error handling with try-catch blocks</li>
+            <li>🔧 Added console logging for production debugging</li>
+        </ul>
+        
+        <p><strong>Next Steps:</strong></p>
+        <ol>
+            <li>Manual testing of all three calculators with realistic scenarios</li>
+            <li>Verification that results sections display properly</li>
+            <li>Confirmation that charts and progress bars render correctly</li>
+            <li>Cross-browser testing (Chrome, Firefox, Safari, mobile)</li>
+        </ol>
+    </div>
+
+    <script>
+        // Add timestamp when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            const timestamp = new Date().toLocaleString();
+            const footer = document.createElement('div');
+            footer.style.cssText = 'margin-top: 40px; padding: 20px; background: #f5f5f5; border-radius: 5px; text-align: center;';
+            footer.innerHTML = `<strong>Emergency Fix Validation Page</strong><br>Generated: ${timestamp}`;
+            document.body.appendChild(footer);
+        });
+    </script>
+</body>
+</html>
