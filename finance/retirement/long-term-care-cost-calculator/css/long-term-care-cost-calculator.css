@@ -1,0 +1,541 @@
+/* Long-Term Care Cost Calculator Styles */
+
+.calculator-interface {
+    margin-bottom: 2rem;
+}
+
+.calculator-form fieldset {
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: var(--fieldset-bg, #fafafa);
+}
+
+.calculator-form legend {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--primary-color, #2c5aa0);
+    padding: 0 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-color, #333);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--input-border, #ccc);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color, #2c5aa0);
+    box-shadow: 0 0 0 2px rgba(44, 90, 160, 0.1);
+}
+
+.help-text {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: var(--muted-text, #666);
+    font-style: italic;
+}
+
+/* Insurance Details */
+.insurance-details {
+    background: rgba(76, 175, 80, 0.05);
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px dashed #4caf50;
+    margin-top: 1rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--primary-color, #2c5aa0);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover, #1e3f73);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color, #2c5aa0);
+    border: 1px solid var(--primary-color, #2c5aa0);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color, #2c5aa0);
+    color: white;
+}
+
+/* Results Section */
+.results-section {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: var(--results-bg, #f8f9fa);
+    border-radius: 8px;
+    border: 1px solid var(--border-color, #ddd);
+}
+
+.results-title {
+    color: var(--primary-color, #2c5aa0);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.result-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 1px solid var(--border-color, #ddd);
+}
+
+.result-item h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color, #333);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.result-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color, #2c5aa0);
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+.result-description {
+    font-size: 0.875rem;
+    color: var(--muted-text, #666);
+    margin: 0;
+}
+
+/* Chart Section */
+.chart-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.chart-section h4 {
+    margin: 0 0 1rem 0;
+    color: var(--text-color, #333);
+    text-align: center;
+}
+
+.chart-section canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Care Breakdown */
+.care-breakdown {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.care-breakdown h4 {
+    margin: 0 0 1rem 0;
+    color: var(--text-color, #333);
+    text-align: center;
+}
+
+.breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color, #eee);
+}
+
+.breakdown-item:last-child {
+    border-bottom: none;
+}
+
+.breakdown-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0 0 0;
+    border-top: 2px solid var(--primary-color, #2c5aa0);
+    margin-top: 0.5rem;
+}
+
+.breakdown-label {
+    font-size: 0.95rem;
+    color: var(--text-color, #333);
+}
+
+.breakdown-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color, #2c5aa0);
+}
+
+/* Planning Tips */
+.planning-tips {
+    background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.planning-tips h4 {
+    margin: 0 0 1rem 0;
+    color: white;
+    text-align: center;
+}
+
+.planning-tips p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.planning-highlight {
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    border-left: 4px solid rgba(255,255,255,0.3);
+}
+
+.planning-highlight strong {
+    color: #ffd700;
+}
+
+.tip-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+}
+
+.tip-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.tip-list li::before {
+    content: "💡";
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+}
+
+/* Error Messages */
+.error-messages {
+    background: #fee;
+    border: 1px solid #fcc;
+    color: #c33;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.error-messages ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+/* Related Calculators */
+.related-calculators ul {
+    list-style: none;
+    padding: 0;
+}
+
+.related-calculators li {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color, #ddd);
+    padding-bottom: 1rem;
+}
+
+.related-calculators li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.related-calculators a {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color, #333);
+    transition: color 0.3s ease;
+}
+
+.related-calculators a:hover {
+    color: var(--primary-color, #2c5aa0);
+}
+
+.calculator-name {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--primary-color, #2c5aa0);
+}
+
+.calculator-description {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--muted-text, #666);
+    line-height: 1.4;
+}
+
+/* Care Type Icons */
+.care-type-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.care-type-option {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid var(--border-color, #ddd);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.care-type-option:hover {
+    border-color: var(--primary-color, #2c5aa0);
+    box-shadow: 0 2px 8px rgba(44, 90, 160, 0.1);
+}
+
+.care-type-option.selected {
+    border-color: var(--primary-color, #2c5aa0);
+    background: rgba(44, 90, 160, 0.05);
+}
+
+.care-type-icon {
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
+    color: var(--primary-color, #2c5aa0);
+}
+
+.care-type-info h5 {
+    margin: 0 0 0.25rem 0;
+    font-size: 0.95rem;
+    color: var(--text-color, #333);
+}
+
+.care-type-info p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--muted-text, #666);
+}
+
+/* Cost Indicators */
+.cost-indicator {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+
+.cost-low {
+    background: rgba(76, 175, 80, 0.1);
+    color: #4caf50;
+}
+
+.cost-moderate {
+    background: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+}
+
+.cost-high {
+    background: rgba(244, 67, 54, 0.1);
+    color: #f44336;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .result-value {
+        font-size: 1.5rem;
+    }
+    
+    .calculator-form fieldset {
+        padding: 1rem;
+    }
+    
+    .care-type-selector {
+        grid-template-columns: 1fr;
+    }
+    
+    .breakdown-item {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .breakdown-total {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .results-section {
+        padding: 1rem;
+    }
+    
+    .chart-section {
+        padding: 1rem;
+    }
+    
+    .planning-tips {
+        padding: 1rem;
+    }
+    
+    .care-breakdown {
+        padding: 1rem;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --fieldset-bg: #2a2a2a;
+        --results-bg: #2a2a2a;
+        --border-color: #444;
+        --input-border: #555;
+        --text-color: #e0e0e0;
+        --muted-text: #aaa;
+    }
+    
+    .result-item {
+        background: #333;
+        color: #e0e0e0;
+    }
+    
+    .chart-section {
+        background: #333;
+        color: #e0e0e0;
+    }
+    
+    .care-breakdown {
+        background: #333;
+        color: #e0e0e0;
+    }
+    
+    .care-type-option {
+        background: #333;
+        color: #e0e0e0;
+    }
+    
+    .care-type-option.selected {
+        background: rgba(44, 90, 160, 0.2);
+    }
+}
+
+/* Loading States */
+.calculating {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Validation Indicators */
+.form-group.valid input {
+    border-color: #4caf50;
+}
+
+.form-group.invalid input {
+    border-color: #f44336;
+}
+
+.validation-message {
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+}
+
+.validation-message.valid {
+    color: #4caf50;
+}
+
+.validation-message.invalid {
+    color: #f44336;
+}

@@ -23,7 +23,7 @@ module.exports = defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'https://freecalchub.com',
+    baseURL: 'http://localhost:8080',
     
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -76,8 +76,9 @@ module.exports = defineConfig({
   },
 
   /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   port: 3000,
-  // },
+  webServer: {
+    command: 'python3 -m http.server 8080',
+    port: 8080,
+    reuseExistingServer: !process.env.CI,
+  },
 });

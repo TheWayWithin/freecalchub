@@ -1,0 +1,430 @@
+/* finance/retirement/rmd-calculator/css/rmd-calculator.css */
+/* Required Minimum Distribution Calculator Styling */
+
+/* --- Fieldset Grid Layout --- */
+form#rmdForm fieldset {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px 25px;
+    border: none;
+    padding: 0;
+    margin-bottom: 30px;
+    align-items: start;
+}
+
+/* --- Legend Styling --- */
+form#rmdForm fieldset legend {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* --- Form Actions & Errors Spanning --- */
+form#rmdForm .form-actions,
+form#rmdForm .error-messages {
+    grid-column: 1 / -1;
+}
+
+/* --- Form Row Layout --- */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    grid-column: 1 / -1;
+}
+
+/* --- Account Management Styling --- */
+.account-entry {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: var(--card-bg);
+    position: relative;
+}
+
+.account-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.account-header h4 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.remove-account-btn {
+    background: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: var(--border-radius);
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.remove-account-btn:hover {
+    background: #dc2626;
+}
+
+#addAccountBtn {
+    margin-top: 15px;
+    width: auto;
+    align-self: start;
+}
+
+/* --- Form Styling --- */
+.calculator-form .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.calculator-form .form-group label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.calculator-form .form-group input,
+.calculator-form .form-group select {
+    width: 100%;
+    height: 40px;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.calculator-form .form-group input:focus,
+.calculator-form .form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.form-help {
+    color: var(--text-secondary);
+    font-size: 0.85em;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+/* --- Results Section Styling --- */
+.results-section {
+    margin-top: 30px;
+    padding: 0;
+}
+
+.rmd-summary {
+    margin-bottom: 25px;
+    padding: 20px;
+}
+
+.rmd-summary h4 {
+    margin: 0 0 15px 0;
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.summary-item {
+    text-align: center;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    background: var(--input-bg);
+}
+
+.summary-label {
+    font-size: 0.9em;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.summary-value {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* --- Results Grid --- */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.result-item {
+    padding: 20px;
+}
+
+.result-item h4 {
+    margin: 0 0 15px 0;
+    color: var(--text-color);
+    font-size: 1.1em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+/* --- Account RMD Details --- */
+.account-rmd-item {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--input-bg);
+}
+
+.account-rmd-item:last-child {
+    margin-bottom: 0;
+}
+
+.account-name {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.account-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    font-size: 0.9em;
+}
+
+.account-detail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.account-detail-label {
+    color: var(--text-secondary);
+}
+
+.account-detail-value {
+    font-weight: 600;
+}
+
+/* --- Penalty Warning Styling --- */
+#penaltyWarning {
+    border: 2px solid var(--danger-color);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+#penaltyWarning h4 {
+    color: var(--danger-color);
+}
+
+.penalty-info {
+    color: var(--text-color);
+}
+
+.penalty-amount {
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(239, 68, 68, 0.2);
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.penalty-amount span {
+    color: var(--danger-color);
+    font-size: 1.2em;
+}
+
+/* --- Chart Section --- */
+.chart-section {
+    margin-top: 30px;
+}
+
+.chart-container {
+    padding: 20px;
+}
+
+.chart-container h4 {
+    margin: 0 0 20px 0;
+    color: var(--text-color);
+    font-size: 1.1em;
+}
+
+.chart-wrapper {
+    position: relative;
+    height: 400px;
+    margin-bottom: 15px;
+}
+
+.chart-disclaimer {
+    margin: 15px 0 0 0;
+    padding: 10px;
+    background: var(--input-bg);
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+/* --- RMD Tips --- */
+.rmd-tips {
+    margin-top: 25px;
+    padding: 20px;
+}
+
+.rmd-tips h4 {
+    margin: 0 0 15px 0;
+    color: var(--primary-color);
+    font-size: 1.1em;
+}
+
+.rmd-tips ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.rmd-tips li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.rmd-tips li:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Loading State --- */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--text-secondary);
+}
+
+.loading i {
+    animation: spin 1s linear infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .summary-item {
+        padding: 12px;
+    }
+    
+    .summary-value {
+        font-size: 1.2em;
+    }
+    
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .account-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .chart-wrapper {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .account-entry {
+        padding: 15px;
+    }
+    
+    .account-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .remove-account-btn {
+        align-self: flex-end;
+    }
+}
+
+/* --- Dark Mode Enhancements --- */
+[data-theme="dark"] .account-entry {
+    border-color: var(--border-color-dark);
+    background-color: var(--card-bg-dark);
+}
+
+[data-theme="dark"] .summary-item {
+    background: var(--input-bg-dark);
+}
+
+[data-theme="dark"] .account-rmd-item {
+    border-color: var(--border-color-dark);
+    background: var(--input-bg-dark);
+}
+
+[data-theme="dark"] #penaltyWarning {
+    background: rgba(239, 68, 68, 0.15);
+}
+
+[data-theme="dark"] .penalty-amount {
+    background: rgba(239, 68, 68, 0.25);
+}
+
+[data-theme="dark"] .chart-disclaimer {
+    background: var(--input-bg-dark);
+}
+
+/* --- Additional Form Enhancements --- */
+.calculator-form input[type="number"]:invalid {
+    border-color: var(--danger-color);
+}
+
+.calculator-form input[type="number"]:invalid:focus {
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
+}
+
+/* --- Accessibility Enhancements --- */
+.remove-account-btn:focus,
+#addAccountBtn:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .remove-account-btn,
+    .calculator-form input,
+    .calculator-form select,
+    .loading i {
+        transition: none;
+        animation: none;
+    }
+}

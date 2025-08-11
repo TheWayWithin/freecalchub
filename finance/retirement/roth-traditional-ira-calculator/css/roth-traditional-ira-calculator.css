@@ -1,0 +1,596 @@
+/* Roth vs Traditional IRA Calculator Styles */
+
+.calculator-interface {
+    margin-bottom: 2rem;
+}
+
+.calculator-form fieldset {
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: var(--fieldset-bg, #fafafa);
+}
+
+.calculator-form legend {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--primary-color, #2c5aa0);
+    padding: 0 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-color, #333);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--input-border, #ccc);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color, #2c5aa0);
+    box-shadow: 0 0 0 2px rgba(44, 90, 160, 0.1);
+}
+
+.form-help {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: var(--muted-text, #666);
+    font-style: italic;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--primary-color, #2c5aa0);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover, #1e3f73);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color, #2c5aa0);
+    border: 1px solid var(--primary-color, #2c5aa0);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color, #2c5aa0);
+    color: white;
+}
+
+/* Results Section */
+.results-section {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: var(--results-bg, #f8f9fa);
+    border-radius: 8px;
+    border: 1px solid var(--border-color, #ddd);
+}
+
+.results-title {
+    color: var(--primary-color, #2c5aa0);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Eligibility Status Section */
+.eligibility-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.eligibility-section h4 {
+    margin: 0 0 1rem 0;
+    color: var(--text-color, #333);
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.eligibility-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.eligibility-item {
+    text-align: center;
+}
+
+.eligibility-item h5 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color, #333);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.eligibility-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+/* Eligibility Status Colors */
+.eligible {
+    background: rgba(76, 175, 80, 0.1);
+    color: #2e7d32;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.partial-eligible {
+    background: rgba(255, 152, 0, 0.1);
+    color: #f57c00;
+    border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+.not-eligible {
+    background: rgba(244, 67, 54, 0.1);
+    color: #d32f2f;
+    border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+/* IRA Comparison Grid */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.comparison-column {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 1px solid var(--border-color, #ddd);
+}
+
+.comparison-column h4 {
+    margin: 0 0 1.5rem 0;
+    color: var(--text-color, #333);
+    text-align: center;
+    font-size: 1.3rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color, #ddd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.comparison-column h4 i {
+    font-size: 1.1rem;
+}
+
+.comparison-column:first-child h4 {
+    color: #1976d2;
+}
+
+.comparison-column:first-child h4 i {
+    color: #1976d2;
+}
+
+.comparison-column:last-child h4 {
+    color: #388e3c;
+}
+
+.comparison-column:last-child h4 i {
+    color: #388e3c;
+}
+
+.result-item {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.result-item:last-child {
+    margin-bottom: 0;
+}
+
+.result-item h5 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color, #333);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.result-item p {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-color, #2c5aa0);
+}
+
+/* Recommendation Section */
+.recommendation-section {
+    background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.recommendation-section h4 {
+    margin: 0 0 1rem 0;
+    color: white;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.recommendation-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.recommendation-highlight {
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    border-left: 4px solid rgba(255,255,255,0.3);
+    text-align: left;
+}
+
+.recommendation-highlight strong {
+    color: #ffd700;
+}
+
+/* Chart Section */
+.chart-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.chart-section h4 {
+    margin: 0 0 1rem 0;
+    color: var(--text-color, #333);
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+.chart-container canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Summary Table */
+.summary-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.summary-section h4 {
+    margin: 0 0 1rem 0;
+    color: var(--text-color, #333);
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color, #ddd);
+}
+
+.comparison-table th {
+    background: var(--fieldset-bg, #fafafa);
+    font-weight: 600;
+    color: var(--text-color, #333);
+}
+
+.comparison-table td {
+    color: var(--text-color, #333);
+}
+
+.comparison-table tbody tr:hover {
+    background: rgba(44, 90, 160, 0.05);
+}
+
+/* Error Messages */
+.error-messages {
+    background: #fee;
+    border: 1px solid #fcc;
+    color: #c33;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.error-messages ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+/* Related Calculators */
+.related-calculators ul {
+    list-style: none;
+    padding: 0;
+}
+
+.related-calculators li {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color, #ddd);
+    padding-bottom: 1rem;
+}
+
+.related-calculators li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.related-calculators a {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color, #333);
+    transition: color 0.3s ease;
+}
+
+.related-calculators a:hover {
+    color: var(--primary-color, #2c5aa0);
+}
+
+.calculator-name {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--primary-color, #2c5aa0);
+}
+
+.calculator-description {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--muted-text, #666);
+    line-height: 1.4;
+}
+
+/* Loading States */
+.calculating {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .eligibility-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .calculator-form fieldset {
+        padding: 1rem;
+    }
+    
+    .results-section {
+        padding: 1rem;
+    }
+    
+    .chart-container {
+        height: 300px;
+    }
+    
+    .comparison-table {
+        font-size: 0.85rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .results-section {
+        padding: 1rem;
+    }
+    
+    .chart-section {
+        padding: 1rem;
+    }
+    
+    .recommendation-section {
+        padding: 1rem;
+    }
+    
+    .chart-container {
+        height: 250px;
+    }
+    
+    .comparison-table {
+        font-size: 0.8rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.4rem;
+    }
+    
+    .result-item p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --fieldset-bg: #2a2a2a;
+        --results-bg: #2a2a2a;
+        --border-color: #444;
+        --input-border: #555;
+        --text-color: #e0e0e0;
+        --muted-text: #aaa;
+    }
+    
+    .eligibility-section,
+    .comparison-column,
+    .chart-section,
+    .summary-section {
+        background: #333;
+        color: #e0e0e0;
+    }
+    
+    .comparison-table th {
+        background: #2a2a2a;
+        color: #e0e0e0;
+    }
+    
+    .comparison-table tbody tr:hover {
+        background: rgba(44, 90, 160, 0.2);
+    }
+}
+
+/* Validation Indicators */
+.form-group.valid input {
+    border-color: #4caf50;
+}
+
+.form-group.invalid input {
+    border-color: #f44336;
+}
+
+.validation-message {
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+}
+
+.validation-message.valid {
+    color: #4caf50;
+}
+
+.validation-message.invalid {
+    color: #f44336;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-success {
+    color: #4caf50;
+}
+
+.text-warning {
+    color: #ff9800;
+}
+
+.text-danger {
+    color: #f44336;
+}
+
+.text-primary {
+    color: var(--primary-color, #2c5aa0);
+}
+
+.bg-success {
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+.bg-warning {
+    background-color: rgba(255, 152, 0, 0.1);
+}
+
+.bg-danger {
+    background-color: rgba(244, 67, 54, 0.1);
+}
