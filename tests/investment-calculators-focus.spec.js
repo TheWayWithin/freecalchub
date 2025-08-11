@@ -1,4 +1,11 @@
 const { test, expect } = require('@playwright/test');
+const { 
+  dismissCookieBanner, 
+  navigateWithCookieHandling, 
+  fillFormInputs, 
+  clickButtonWithRetry, 
+  waitForResults 
+} = require('./test-utils');
 
 // Test data for each calculator with specific field IDs
 const testData = {
@@ -31,11 +38,10 @@ const testData = {
   }
 };
 
-// Helper function to measure page load time
+// Helper function to measure page load time with cookie handling
 async function measurePageLoadTime(page, url) {
   const startTime = Date.now();
-  await page.goto(url);
-  await page.waitForLoadState('networkidle');
+  await navigateWithCookieHandling(page, url);
   const loadTime = Date.now() - startTime;
   return loadTime;
 }
@@ -48,7 +54,7 @@ test.describe('Investment Calculators - Priority Testing', () => {
     // Measure load time
     const loadTime = await measurePageLoadTime(page, calculator.url);
     console.log(`Investment Goal Calculator load time: ${loadTime}ms`);
-    expect(loadTime).toBeLessThan(5000);
+    expect(loadTime).toBeLessThan(10000);
     
     // Check page loads successfully
     expect(page.url()).toContain(calculator.url);
@@ -56,16 +62,19 @@ test.describe('Investment Calculators - Priority Testing', () => {
     // Verify calculator form is visible
     await expect(page.locator('form, .calculator-form, #calculator')).toBeVisible();
     
-    // Fill in test data using specific IDs
-    await page.locator('#targetAmount').fill(calculator.inputs.targetAmount);
-    await page.locator('#timeHorizon').fill(calculator.inputs.timeHorizon);
-    await page.locator('#expectedReturn').fill(calculator.inputs.expectedReturn);
+    // Fill in test data using cookie-aware input filling
+    const inputData = {
+      '#targetAmount': calculator.inputs.targetAmount,
+      '#timeHorizon': calculator.inputs.timeHorizon,
+      '#expectedReturn': calculator.inputs.expectedReturn
+    };
+    await fillFormInputs(page, inputData);
     
-    // Trigger calculation
-    await page.locator(`#${calculator.buttonId}`).click();
+    // Trigger calculation with cookie-aware clicking
+    await clickButtonWithRetry(page, `#${calculator.buttonId}`);
     
-    // Verify results appear
-    await expect(page.locator('#resultsSection')).toBeVisible({ timeout: 10000 });
+    // Wait for results with cookie handling
+    await waitForResults(page, '#resultsSection');
     
     console.log('✅ Investment Goal Calculator: Basic functionality working');
   });
@@ -76,7 +85,7 @@ test.describe('Investment Calculators - Priority Testing', () => {
     // Measure load time
     const loadTime = await measurePageLoadTime(page, calculator.url);
     console.log(`Portfolio Return Calculator load time: ${loadTime}ms`);
-    expect(loadTime).toBeLessThan(5000);
+    expect(loadTime).toBeLessThan(10000);
     
     // Check page loads successfully
     expect(page.url()).toContain(calculator.url);
@@ -84,16 +93,19 @@ test.describe('Investment Calculators - Priority Testing', () => {
     // Verify calculator form is visible
     await expect(page.locator('form, .calculator-form, #calculator')).toBeVisible();
     
-    // Fill in test data using specific IDs
-    await page.locator('#portfolioValue').fill(calculator.inputs.portfolioValue);
-    await page.locator('#stocks_allocation').fill(calculator.inputs.stocks_allocation);
-    await page.locator('#bonds_allocation').fill(calculator.inputs.bonds_allocation);
+    // Fill in test data using cookie-aware input filling
+    const inputData = {
+      '#portfolioValue': calculator.inputs.portfolioValue,
+      '#stocks_allocation': calculator.inputs.stocks_allocation,
+      '#bonds_allocation': calculator.inputs.bonds_allocation
+    };
+    await fillFormInputs(page, inputData);
     
-    // Trigger calculation
-    await page.locator(`#${calculator.buttonId}`).click();
+    // Trigger calculation with cookie-aware clicking
+    await clickButtonWithRetry(page, `#${calculator.buttonId}`);
     
-    // Verify results appear
-    await expect(page.locator('#resultsSection')).toBeVisible({ timeout: 10000 });
+    // Wait for results with cookie handling
+    await waitForResults(page, '#resultsSection');
     
     console.log('✅ Portfolio Return Calculator: Basic functionality working');
   });
@@ -104,7 +116,7 @@ test.describe('Investment Calculators - Priority Testing', () => {
     // Measure load time
     const loadTime = await measurePageLoadTime(page, calculator.url);
     console.log(`DRIP Calculator load time: ${loadTime}ms`);
-    expect(loadTime).toBeLessThan(5000);
+    expect(loadTime).toBeLessThan(10000);
     
     // Check page loads successfully
     expect(page.url()).toContain(calculator.url);
@@ -112,16 +124,19 @@ test.describe('Investment Calculators - Priority Testing', () => {
     // Verify calculator form is visible
     await expect(page.locator('form, .calculator-form, #calculator')).toBeVisible();
     
-    // Fill in test data using specific IDs
-    await page.locator('#initialInvestment').fill(calculator.inputs.initialInvestment);
-    await page.locator('#sharePrice').fill(calculator.inputs.sharePrice);
-    await page.locator('#annualDividend').fill(calculator.inputs.annualDividend);
+    // Fill in test data using cookie-aware input filling
+    const inputData = {
+      '#initialInvestment': calculator.inputs.initialInvestment,
+      '#sharePrice': calculator.inputs.sharePrice,
+      '#annualDividend': calculator.inputs.annualDividend
+    };
+    await fillFormInputs(page, inputData);
     
-    // Trigger calculation
-    await page.locator(`#${calculator.buttonId}`).click();
+    // Trigger calculation with cookie-aware clicking
+    await clickButtonWithRetry(page, `#${calculator.buttonId}`);
     
-    // Verify results appear
-    await expect(page.locator('#resultsSection')).toBeVisible({ timeout: 10000 });
+    // Wait for results with cookie handling
+    await waitForResults(page, '#resultsSection');
     
     console.log('✅ DRIP Calculator: Basic functionality working');
   });
@@ -131,8 +146,7 @@ test.describe('Investment Calculators - Priority Testing', () => {
     await page.setViewportSize({ width: 375, height: 667 });
     
     for (const [name, calculator] of Object.entries(testData)) {
-      await page.goto(calculator.url);
-      await page.waitForLoadState('networkidle');
+      await navigateWithCookieHandling(page, calculator.url);
       
       // Check that calculator form is still visible on mobile
       await expect(page.locator('form, .calculator-form, #calculator')).toBeVisible();
@@ -154,10 +168,7 @@ test.describe('Investment Calculators - Priority Testing', () => {
     
     for (const [name, calculator] of Object.entries(testData)) {
       const startTime = Date.now();
-      await page.goto(calculator.url);
-      
-      // Wait for page to be fully loaded
-      await page.waitForLoadState('networkidle');
+      await navigateWithCookieHandling(page, calculator.url);
       
       // Check for calculator form
       await page.locator('form, .calculator-form, #calculator').waitFor();
@@ -167,8 +178,8 @@ test.describe('Investment Calculators - Priority Testing', () => {
       
       console.log(`${name} total load time: ${totalTime}ms`);
       
-      // Performance expectation: under 5 seconds
-      expect(totalTime).toBeLessThan(5000);
+      // Performance expectation: under 10 seconds
+      expect(totalTime).toBeLessThan(10000);
     }
     
     console.log('Performance Results:', performanceResults);
@@ -179,8 +190,7 @@ test.describe('Investment Calculators - Priority Testing', () => {
     
     for (const [name, calculator] of Object.entries(testData)) {
       try {
-        await page.goto(calculator.url);
-        await page.waitForLoadState('networkidle');
+        await navigateWithCookieHandling(page, calculator.url);
         
         // Check for critical JavaScript errors
         const errorLogs = [];

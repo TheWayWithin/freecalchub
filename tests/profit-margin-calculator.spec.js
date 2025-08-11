@@ -10,7 +10,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Profit Margin Calculator - Comprehensive Testing', () => {
   
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://freecalchub.com/finance/business/profit-margin-calculator/');
+    await page.goto('https://freecalchub.com/business/profit/profit-margin-calculator/');
     await page.waitForLoadState('networkidle');
   });
 
@@ -248,11 +248,11 @@ test.describe('Profit Margin Calculator - Comprehensive Testing', () => {
     await expect(relatedSection).toBeVisible();
     
     // Check for break-even calculator link
-    const breakEvenLink = page.locator('a[href="/finance/business/break-even-calculator/"]');
+    const breakEvenLink = page.locator('a[href="/business/break-even/break-even-calculator/"]');
     await expect(breakEvenLink).toBeVisible();
     
     // Check for ROI calculator link
-    const roiLink = page.locator('a[href="/finance/business/business-roi-calculator/"]');
+    const roiLink = page.locator('a[href="/business/roi/roi-calculator/"]');
     await expect(roiLink).toBeVisible();
     
     // Check for compound interest link

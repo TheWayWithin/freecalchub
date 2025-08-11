@@ -70,114 +70,124 @@
       - listitem:
         - link "Blog":
           - /url: /blog/
+- link "Home":
+  - /url: /
+- text: /
+- link "Finance":
+  - /url: /finance/
+- text: /
+- link "Business":
+  - /url: /finance/business/
+- text: / Break-Even Analysis Calculator
 - main:
-  - text: 404 Page Not Found The page you're looking for doesn't exist. It may have been moved, deleted, or you may have entered the wrong URL.
-  - link "Go to Homepage":
-    - /url: /
-  - link "Browse All Calculators":
-    - /url: /sitemap/
-  - heading "Looking for a Calculator?" [level=3]
-  - paragraph: If you were looking for a specific calculator, it might be "Coming Soon" or located in a different category. Browse our calculator categories below to find what you need.
-  - heading "Popular Calculator Categories" [level=2]
-  - heading "Finance" [level=3]:
-    - link "Finance":
-      - /url: /finance/
-  - list:
-    - listitem:
-      - link "Mortgage Calculator":
-        - /url: /finance/mortgage/mortgage-calculator/
-    - listitem:
-      - link "Loan Calculator":
-        - /url: /finance/loan/loan-calculator/
-    - listitem:
-      - link "Compound Interest Calculator":
-        - /url: /finance/investment/compound-interest-calculator/
-    - listitem:
-      - link "Retirement Calculator":
-        - /url: /finance/retirement/retirement-calculator/
-    - listitem:
-      - link "Cryptocurrency Tools":
-        - /url: /finance/cryptocurrency/
-  - heading "Health" [level=3]:
-    - link "Health":
-      - /url: /health/
-  - list:
-    - listitem:
-      - link "BMI Calculator":
-        - /url: /health/bmi/bmi-calculator/
-    - listitem:
-      - link "Calorie Calculator":
-        - /url: /health/nutrition/calorie-macro-calculator/
-    - listitem:
-      - link "Fitness Tools":
-        - /url: /health/fitness/
-    - listitem:
-      - link "Medical Calculators":
-        - /url: /health/medical/
-  - heading "Math" [level=3]:
-    - link "Math":
-      - /url: /math/
-  - list:
-    - listitem:
-      - link "Percentage Calculator":
-        - /url: /math/percentages/percentage-calculator/
-    - listitem:
-      - link "Basic Math Tools":
-        - /url: /math/basic/
-    - listitem:
-      - link "Algebra Calculators":
-        - /url: /math/algebra/
-    - listitem:
-      - link "Geometry Tools":
-        - /url: /math/geometry/
-  - heading "Conversions" [level=3]:
-    - link "Conversions":
-      - /url: /conversions/
-  - list:
-    - listitem:
-      - link "Currency Converter":
-        - /url: /conversions/currency/live-currency-converter/
-    - listitem:
-      - link "Length Converter":
-        - /url: /conversions/length/length-unit-calculator/
-    - listitem:
-      - link "Temperature Converter":
-        - /url: /conversions/temperature/
-    - listitem:
-      - link "Weight Converter":
-        - /url: /conversions/weight/
-  - heading "Date & Time" [level=3]:
-    - link "Date & Time":
-      - /url: /date-time/
-  - list:
-    - listitem:
-      - link "Age Calculator":
-        - /url: /date-time/age/
-    - listitem:
-      - link "Date Difference":
-        - /url: /date-time/date-difference/
-    - listitem:
-      - link "Business Days":
-        - /url: /date-time/business-days/
-    - listitem:
-      - link "Countdown Timer":
-        - /url: /date-time/countdown/
-  - heading "Business" [level=3]:
-    - link "Business":
-      - /url: /business/
-  - list:
-    - listitem:
-      - link "Profit Calculators":
-        - /url: /business/profit/
-    - listitem:
-      - link "ROI Calculator":
-        - /url: /business/roi/
-    - listitem:
-      - link "Break-Even Analysis":
-        - /url: /business/break-even/
-    - listitem:
-      - link "Payroll Tools":
-        - /url: /business/payroll/
+  - article:
+    - heading "Break-Even Analysis Calculator" [level=1]
+    - paragraph: Determine your business break-even point with our comprehensive break-even analysis calculator. Whether you're launching a new product, planning pricing strategies, or evaluating business viability, understanding your break-even point is essential for sound financial planning. Calculate the exact number of units you need to sell to cover all costs, analyze your margin of safety, and visualize your cost structure with interactive charts.
+    - heading "Calculate Your Break-Even Point" [level=2]
+    - group "Business Cost Structure":
+      - text: "Business Cost Structure Total Fixed Costs ($):"
+      - spinbutton "Total Fixed Costs ($):"
+      - text: "Monthly or annual fixed costs (rent, salaries, insurance, etc.) Variable Cost per Unit ($):"
+      - spinbutton "Variable Cost per Unit ($):"
+      - text: "Direct costs per unit (materials, labor, shipping) Selling Price per Unit ($):"
+      - spinbutton "Selling Price per Unit ($):"
+      - text: Price you charge customers per unit
+    - 'group "Optional: Current Sales Analysis"':
+      - text: "Optional: Current Sales Analysis Current Sales Volume (units):"
+      - spinbutton "Current Sales Volume (units):"
+      - text: "Optional: Current monthly/annual sales for margin of safety calculation"
+    - button "Calculate Break-Even Point"
+    - button "Reset"
+    - heading "Related Calculators" [level=2]
+    - list:
+      - listitem:
+        - link "Profit Margin Calculator Calculate gross, operating, and net profit margins to analyze your business profitability.":
+          - /url: /business/profit/profit-margin-calculator/
+      - listitem:
+        - link "Business ROI Calculator Calculate return on investment for business decisions and compare investment scenarios.":
+          - /url: /business/roi/roi-calculator/
+      - listitem:
+        - link "Business Loan Calculator Calculate monthly payments and total costs for business loans and financing options.":
+          - /url: /finance/loan/loan-calculator/
+    - heading "How to Use This Calculator" [level=2]
+    - list:
+      - listitem:
+        - strong: "Enter Fixed Costs:"
+        - text: Input your total fixed costs that remain constant regardless of sales volume (rent, salaries, insurance, loan payments).
+      - listitem:
+        - strong: "Enter Variable Cost per Unit:"
+        - text: Input the direct costs required to produce one unit (raw materials, direct labor, shipping costs).
+      - listitem:
+        - strong: "Enter Selling Price:"
+        - text: Input the price you charge customers per unit.
+      - listitem:
+        - strong: "Optional - Current Sales:"
+        - text: If you want to analyze your margin of safety, enter your current sales volume.
+      - listitem:
+        - strong: "Calculate:"
+        - text: Click the calculate button to see your break-even point in units and revenue, plus contribution margin analysis.
+    - heading "Understanding Break-Even Analysis" [level=2]
+    - paragraph: Break-even analysis is a fundamental business tool that helps you understand the relationship between your costs, volume, and profits. At the break-even point, your total revenues exactly equal your total costs, meaning you neither make a profit nor incur a loss.
+    - heading "Key Components:" [level=3]
+    - list:
+      - listitem:
+        - strong: "Fixed Costs:"
+        - text: Expenses that don't change with production volume (rent, salaries, insurance)
+      - listitem:
+        - strong: "Variable Costs:"
+        - text: Expenses that change proportionally with production (materials, direct labor)
+      - listitem:
+        - strong: "Contribution Margin:"
+        - text: The difference between selling price and variable cost per unit
+      - listitem:
+        - strong: "Break-Even Point:"
+        - text: Fixed Costs ÷ (Price per Unit - Variable Cost per Unit)
+    - heading "Business Applications" [level=2]
+    - paragraph: "Break-even analysis serves multiple strategic purposes in business planning:"
+    - heading "Pricing Decisions:" [level=3]
+    - paragraph: Use break-even analysis to set minimum pricing levels and evaluate the impact of price changes on profitability. Understanding your contribution margin helps determine pricing flexibility.
+    - heading "Product Launch Planning:" [level=3]
+    - paragraph: Before launching new products, calculate break-even points to assess market requirements and sales targets. This helps determine if a product is commercially viable.
+    - heading "Cost Control:" [level=3]
+    - paragraph: Identify the impact of reducing fixed or variable costs on your break-even point. Small reductions in costs can significantly lower your break-even requirements.
+    - heading "Frequently Asked Questions (FAQ)" [level=2]
+    - heading "FAQ Index" [level=3]
+    - list:
+      - listitem:
+        - link "What is a break-even point?":
+          - /url: "#faq-item-1"
+      - listitem:
+        - link "How do I calculate my break-even point?":
+          - /url: "#faq-item-2"
+      - listitem:
+        - link "What are fixed costs vs variable costs?":
+          - /url: "#faq-item-3"
+      - listitem:
+        - link "What is margin of safety?":
+          - /url: "#faq-item-4"
+      - listitem:
+        - link "How often should I perform break-even analysis?":
+          - /url: "#faq-item-5"
+    - heading "What is a break-even point?" [level=3]:
+      - button "What is a break-even point?"
+    - region:
+      - paragraph: The break-even point is the level of production or sales where total costs equal total revenues, resulting in zero profit or loss. It's the minimum number of units you need to sell to cover all your business costs.
+    - heading "How do I calculate my break-even point?" [level=3]:
+      - button "How do I calculate my break-even point?"
+    - region:
+      - paragraph: "Break-even point (in units) = Fixed Costs ÷ (Price per Unit - Variable Cost per Unit). For break-even in revenue: Break-even point (units) × Price per Unit."
+    - heading "What are fixed costs vs variable costs?" [level=3]:
+      - button "What are fixed costs vs variable costs?"
+    - region:
+      - paragraph: Fixed costs remain constant regardless of production volume (rent, salaries, insurance). Variable costs change with production levels (raw materials, direct labor, shipping).
+    - heading "What is margin of safety?" [level=3]:
+      - button "What is margin of safety?"
+    - region:
+      - paragraph: Margin of safety is the difference between actual sales and break-even sales, expressed as a percentage. It shows how much sales can decline before the business reaches its break-even point.
+    - heading "How often should I perform break-even analysis?" [level=3]:
+      - button "How often should I perform break-even analysis?"
+    - region:
+      - paragraph: Perform break-even analysis whenever you change prices, add new products, experience cost changes, or during regular business planning cycles (quarterly or annually).
 - contentinfo:
   - heading "FreecalcHub" [level=3]
   - paragraph: Your one-stop destination for a wide variety of free online calculators.

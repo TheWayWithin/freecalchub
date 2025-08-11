@@ -16,7 +16,7 @@ const DESKTOP_VIEWPORT = { width: 1200, height: 800 };
 test.describe('Break-Even Analysis Calculator - Comprehensive Testing', () => {
   
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://freecalchub.com/finance/business/break-even-calculator/');
+    await page.goto('https://freecalchub.com/business/break-even/break-even-calculator/');
     await page.waitForLoadState('networkidle');
   });
 
@@ -196,7 +196,7 @@ test.describe('Break-Even Analysis Calculator - Comprehensive Testing', () => {
   test('should load within acceptable time limits', async ({ page }) => {
     const startTime = Date.now();
     
-    await page.goto('https://freecalchub.com/finance/business/break-even-calculator/');
+    await page.goto('https://freecalchub.com/business/break-even/break-even-calculator/');
     await page.waitForLoadState('networkidle');
     
     const loadTime = Date.now() - startTime;
@@ -347,38 +347,38 @@ test.describe('Break-Even Analysis Calculator - Comprehensive Testing', () => {
 test.describe('Business Calculator Integration Tests', () => {
   test('should navigate between business calculators correctly', async ({ page }) => {
     // Start at break-even calculator
-    await page.goto('https://freecalchub.com/finance/business/break-even-calculator/');
+    await page.goto('https://freecalchub.com/business/break-even/break-even-calculator/');
     
     // Navigate to profit margin calculator
-    await page.click('a[href="/finance/business/profit-margin-calculator/"]');
+    await page.click('a[href="/business/profit/profit-margin-calculator/"]');
     await page.waitForLoadState('networkidle');
     await expect(page).toHaveURL(/profit-margin-calculator/);
     await expect(page).toHaveTitle(/Profit Margin Calculator/);
     
     // Navigate to ROI calculator
-    await page.click('a[href="/finance/business/business-roi-calculator/"]');
+    await page.click('a[href="/business/roi/roi-calculator/"]');
     await page.waitForLoadState('networkidle');
-    await expect(page).toHaveURL(/business-roi-calculator/);
+    await expect(page).toHaveURL(/roi-calculator/);
     await expect(page).toHaveTitle(/ROI Calculator/);
     
     // Navigate to business category page
-    await page.click('a[href="/finance/business/"]');
+    await page.click('a[href="/business/"]');
     await page.waitForLoadState('networkidle');
-    await expect(page).toHaveURL(/finance\/business\/$/);
+    await expect(page).toHaveURL(/business\/$/);
   });
 
   test('should display related calculators correctly', async ({ page }) => {
-    await page.goto('https://freecalchub.com/finance/business/break-even-calculator/');
+    await page.goto('https://freecalchub.com/business/break-even/break-even-calculator/');
     
     const relatedSection = page.locator('.related-calculators');
     await expect(relatedSection).toBeVisible();
     
     // Check for profit margin calculator link
-    const profitMarginLink = page.locator('a[href="/finance/business/profit-margin-calculator/"]');
+    const profitMarginLink = page.locator('a[href="/business/profit/profit-margin-calculator/"]');
     await expect(profitMarginLink).toBeVisible();
     
     // Check for ROI calculator link
-    const roiLink = page.locator('a[href="/finance/business/business-roi-calculator/"]');
+    const roiLink = page.locator('a[href="/business/roi/roi-calculator/"]');
     await expect(roiLink).toBeVisible();
   });
 });
