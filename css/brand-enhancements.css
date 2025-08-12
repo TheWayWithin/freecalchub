@@ -2,9 +2,9 @@
 
 /* Main Logo Styling */
 .main-logo {
-  width: auto;
-  height: 50px;
-  max-width: 200px;
+  height: 80px !important;
+  width: auto !important;
+  max-width: 280px !important;
   object-fit: contain;
   transition: opacity 0.3s ease;
 }
@@ -25,17 +25,17 @@
 /* Responsive logo switching */
 @media (max-width: 768px) {
   .main-logo {
-    content: url('/images/logos/vertical-stacked.png');
-    height: 45px;
-    max-width: 140px;
+    content: url('/images/logos/vertical-stacked.png') !important;
+    height: 65px !important;
+    max-width: 160px !important;
   }
 }
 
 @media (max-width: 480px) {
   .main-logo {
-    content: url('/images/logos/vertical-stacked.png');
-    height: 40px;
-    max-width: 120px;
+    content: url('/images/logos/vertical-stacked.png') !important;
+    height: 55px !important;
+    max-width: 140px !important;
   }
 }
 
