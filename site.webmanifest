@@ -1,0 +1,25 @@
+{
+  "name": "FreeCalcHub - Free Online Calculator Tools",
+  "short_name": "FreeCalcHub",
+  "description": "Professional online calculators for finance, math, health, conversions, and more. Free, fast, and accurate calculations for everyday use.",
+  "icons": [
+    {
+      "src": "images/favicon/android_chrome_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/favicon/android_chrome_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#4a6fa5",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "categories": ["education", "utilities", "productivity"],
+  "lang": "en-US",
+  "orientation": "portrait-primary"
+}
