@@ -12,6 +12,10 @@ class StandardCalculator {
         this.memory = 0;
         this.hasMemory = false;
         
+        // Expression queue for proper PEMDAS evaluation
+        this.expression = [];
+        this.lastOperation = null;
+        
         // Initialize event listeners
         this.initializeButtons();
         this.initializeKeyboard();
@@ -120,6 +124,7 @@ class StandardCalculator {
         if (this.waitingForNewValue) {
             this.currentValue = num;
             this.waitingForNewValue = false;
+            this.lastOperation = null; // Clear last operation when starting new number
         } else {
             this.currentValue = this.currentValue === '0' ? num : this.currentValue + num;
         }
@@ -130,6 +135,7 @@ class StandardCalculator {
         if (this.waitingForNewValue) {
             this.currentValue = '0.';
             this.waitingForNewValue = false;
+            this.lastOperation = null; // Clear last operation when starting new number
         } else if (this.currentValue.indexOf('.') === -1) {
             this.currentValue += '.';
         }
@@ -139,19 +145,25 @@ class StandardCalculator {
     setOperation(nextOperation) {
         const inputValue = parseFloat(this.currentValue);
         
-        if (this.previousValue === null) {
-            this.previousValue = inputValue;
-        } else if (this.operation) {
-            const currentValue = this.previousValue || 0;
-            const newValue = this.performCalculation();
+        // If we're changing operations on the same number, just update the operation
+        if (this.waitingForNewValue && this.lastOperation) {
+            // Replace the last operation in the expression
+            if (this.expression.length > 0) {
+                this.expression[this.expression.length - 1] = nextOperation;
+            }
+        } else {
+            // Add the current number to the expression if it's not already there
+            if (this.expression.length === 0 || typeof this.expression[this.expression.length - 1] === 'string') {
+                this.expression.push(inputValue);
+            }
             
-            this.currentValue = String(newValue);
-            this.previousValue = newValue;
-            this.updateDisplay();
+            // Add the operation to the expression
+            this.expression.push(nextOperation);
         }
         
         this.waitingForNewValue = true;
         this.operation = nextOperation;
+        this.lastOperation = nextOperation;
         
         // Visual feedback for active operation
         this.highlightActiveOperation(nextOperation);
@@ -177,7 +189,7 @@ class StandardCalculator {
             case '÷':
                 if (current === 0) {
                     this.showError('Cannot divide by zero');
-                    return 0;
+                    return null; // Return null instead of 0 for error handling
                 }
                 result = prev / current;
                 break;
@@ -189,19 +201,106 @@ class StandardCalculator {
         return Math.round((result + Number.EPSILON) * 1000000000000) / 1000000000000;
     }
     
-    calculate() {
-        const inputValue = parseFloat(this.currentValue);
-        
-        if (this.previousValue !== null && this.operation) {
-            const newValue = this.performCalculation();
-            this.currentValue = String(newValue);
-            this.previousValue = null;
-            this.operation = null;
-            this.waitingForNewValue = true;
-            
-            this.updateDisplay();
-            this.clearActiveOperation();
+    // New method: Evaluate expression with proper PEMDAS precedence
+    evaluateExpression() {
+        if (this.expression.length === 0) {
+            return parseFloat(this.currentValue);
         }
+        
+        // Create a copy of the expression to work with
+        let expr = [...this.expression];
+        
+        // Add the current value if we have a pending operation
+        if (expr.length > 0 && typeof expr[expr.length - 1] === 'string') {
+            expr.push(parseFloat(this.currentValue));
+        }
+        
+        // If expression is incomplete, return current value
+        if (expr.length === 0) {
+            return parseFloat(this.currentValue);
+        }
+        
+        // Handle single number
+        if (expr.length === 1) {
+            return expr[0];
+        }
+        
+        try {
+            // First pass: Handle multiplication and division (left to right)
+            let i = 1;
+            while (i < expr.length) {
+                const operator = expr[i];
+                if (operator === '×' || operator === '÷') {
+                    const left = expr[i - 1];
+                    const right = expr[i + 1];
+                    let result;
+                    
+                    if (operator === '×') {
+                        result = left * right;
+                    } else { // ÷
+                        if (right === 0) {
+                            this.showError('Cannot divide by zero');
+                            return null;
+                        }
+                        result = left / right;
+                    }
+                    
+                    // Replace the three elements with the result
+                    expr.splice(i - 1, 3, result);
+                    // Don't increment i since we removed elements
+                } else {
+                    i += 2; // Skip to next operator
+                }
+            }
+            
+            // Second pass: Handle addition and subtraction (left to right)
+            i = 1;
+            while (i < expr.length) {
+                const operator = expr[i];
+                if (operator === '+' || operator === '-') {
+                    const left = expr[i - 1];
+                    const right = expr[i + 1];
+                    const result = operator === '+' ? left + right : left - right;
+                    
+                    // Replace the three elements with the result
+                    expr.splice(i - 1, 3, result);
+                    // Don't increment i since we removed elements
+                } else {
+                    i += 2; // Skip to next operator
+                }
+            }
+            
+            // Should have a single result
+            const finalResult = expr[0];
+            
+            // Round to avoid floating point errors
+            return Math.round((finalResult + Number.EPSILON) * 1000000000000) / 1000000000000;
+            
+        } catch (error) {
+            console.error('Expression evaluation error:', error);
+            return parseFloat(this.currentValue);
+        }
+    }
+    
+    calculate() {
+        // Evaluate the complete expression with PEMDAS precedence
+        const result = this.evaluateExpression();
+        
+        // Handle division by zero error
+        if (result === null) {
+            return; // Error already shown in evaluateExpression
+        }
+        
+        // Update state
+        this.currentValue = String(result);
+        this.previousValue = null;
+        this.operation = null;
+        this.waitingForNewValue = true;
+        this.expression = []; // Clear the expression
+        this.lastOperation = null;
+        
+        this.updateDisplay();
+        this.clearActiveOperation();
     }
     
     clearAll() {
@@ -209,6 +308,8 @@ class StandardCalculator {
         this.previousValue = null;
         this.operation = null;
         this.waitingForNewValue = false;
+        this.expression = []; // Clear expression queue
+        this.lastOperation = null;
         this.updateDisplay();
         this.clearActiveOperation();
     }
@@ -231,13 +332,17 @@ class StandardCalculator {
     memoryStore() {
         this.memory = parseFloat(this.currentValue) || 0;
         this.hasMemory = true;
+        this.waitingForNewValue = true; // After storing, next input should start fresh
         this.updateMemoryIndicator();
     }
     
     memoryRecall() {
         if (this.hasMemory) {
+            // Memory recall should behave like inputting a complete new number
             this.currentValue = String(this.memory);
-            this.waitingForNewValue = true;
+            // Set waitingForNewValue to false so that subsequent number inputs will append
+            this.waitingForNewValue = false;
+            this.lastOperation = null; // Clear any operation state
             this.updateDisplay();
         }
     }
