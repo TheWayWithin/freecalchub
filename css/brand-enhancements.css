@@ -2,9 +2,9 @@
 
 /* Main Logo Styling */
 .main-logo {
-  max-width: 300px;
-  height: auto;
-  max-height: 60px;
+  width: auto;
+  height: 50px;
+  max-width: 200px;
   object-fit: contain;
   transition: opacity 0.3s ease;
 }
@@ -26,16 +26,16 @@
 @media (max-width: 768px) {
   .main-logo {
     content: url('/images/logos/vertical-stacked.png');
-    max-width: 120px;
-    max-height: 50px;
+    height: 45px;
+    max-width: 140px;
   }
 }
 
 @media (max-width: 480px) {
   .main-logo {
     content: url('/images/logos/vertical-stacked.png');
-    max-width: 100px;
-    max-height: 45px;
+    height: 40px;
+    max-width: 120px;
   }
 }
 
