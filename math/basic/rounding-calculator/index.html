@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KNHC9TZ5');</script>
+<meta charset="utf-8"/><meta content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn-cookieyes.com https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https://www.googletagmanager.com https://cdn-cookieyes.com; connect-src 'self' https://open.er-api.com https://www.google-analytics.com https://log.cookieyes.com https://cdn-cookieyes.com" http-equiv="Content-Security-Policy"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rounding Calculator | FreecalcHub</title>
+<meta content="Free online rounding calculator to round numbers to decimal places, significant figures, or nearest values. Includes batch processing and educational examples." name="description"/>
+<link href="https://www.freecalchub.com/math/basic/rounding-calculator/" rel="canonical"/>
+<link href="/css/styles.css" rel="stylesheet"/>
+<link href="/css/dark-mode.css" rel="stylesheet"/>
+<link href="/css/dark-mode-button.css" rel="stylesheet"/>
+<link href="/css/breadcrumb-styles.css" rel="stylesheet"/>
+<link href="/css/calchub-consolidated-fixes.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<link href="/css/navigation-ribbon.css" rel="stylesheet"/>
+<link href="/css/faq-styles-v2.css" rel="stylesheet"/>
+<link href="/math/basic/rounding-calculator/css/rounding-calculator.css" rel="stylesheet"/>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Rounding Calculator",
+          "applicationCategory": "UtilityApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Free online rounding calculator to round numbers to decimal places, significant figures, or nearest values. Includes batch processing and educational examples.",
+          "url": "https://www.freecalchub.com/math/basic/rounding-calculator/",
+          "relatedLink": [
+            {
+              "@type": "SoftwareApplication",
+              "name": "Standard Calculator",
+              "url": "https://www.freecalchub.com/math/basic/standard-calculator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Random Number Generator",
+              "url": "https://www.freecalchub.com/math/basic/random-number-generator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Percentage Calculator",
+              "url": "https://www.freecalchub.com/math/percentages/percentage-calculator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Scientific Calculator",
+              "url": "https://www.freecalchub.com/math/scientific/scientific-calculator/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question", "name": "What is the difference between rounding methods?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Different rounding methods serve different purposes: decimal places rounds to a specific number of digits after the decimal, significant figures considers total meaningful digits, nearest values rounds to multiples like 10 or 100, and ceiling/floor always rounds up or down respectively." }
+            },
+            {
+              "@type": "Question", "name": "How do significant figures work?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Significant figures count all meaningful digits in a number. For example, 1234.5 has 5 significant figures, while 0.00123 has 3 significant figures. Leading zeros don't count, but trailing zeros after a decimal do." }
+            },
+            {
+              "@type": "Question", "name": "When should I use ceiling vs floor rounding?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Use ceiling (round up) when you need the next whole number regardless of decimal value, like calculating required containers. Use floor (round down) when you need the current whole number, like calculating complete items from materials." }
+            },
+            {
+              "@type": "Question", "name": "Can I round multiple numbers at once?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes! Enter multiple numbers separated by commas in the input field. The calculator will apply your selected rounding method to all numbers and display results in an organized format." }
+            },
+            {
+              "@type": "Question", "name": "How does the calculator handle very large or small numbers?",
+              "acceptedAnswer": { "@type": "Answer", "text": "The calculator supports scientific notation and handles very large and small numbers accurately. It uses proper precision handling to avoid floating-point errors that can occur with extreme values." }
+            },
+            {
+              "@type": "Question", "name": "What's the difference between 'Round to Nearest' and standard rounding?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Standard rounding rounds to decimal places (like 2.345 to 2.35), while 'Round to Nearest' rounds to specific values like 10, 100, or 1000. For example, 123 rounded to nearest 10 is 120." }
+            }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Use the Rounding Calculator",
+          "description": "Step-by-step guide to using the Rounding Calculator.",
+          "step": [
+            { "@type": "HowToStep", "name": "Enter Numbers", "text": "Type your number(s) in the input field. For multiple numbers, separate them with commas." },
+            { "@type": "HowToStep", "name": "Select Rounding Method", "text": "Choose from decimal places, significant figures, nearest values, or ceiling/floor methods." },
+            { "@type": "HowToStep", "name": "Set Precision", "text": "Specify the number of decimal places, significant figures, or nearest value as needed." },
+            { "@type": "HowToStep", "name": "Calculate Results", "text": "Click the Calculate button to see your rounded results with explanations." },
+            { "@type": "HowToStep", "name": "Copy or Reset", "text": "Copy results to clipboard or reset to start with new numbers." }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Math", "item": "https://www.freecalchub.com/math/" },
+            { "@type": "ListItem", "position": 3, "name": "Basic Math", "item": "https://www.freecalchub.com/math/basic/" },
+            { "@type": "ListItem", "position": 4, "name": "Rounding Calculator", "item": "https://www.freecalchub.com/math/basic/rounding-calculator/" }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "name": "Rounding Calculator | FreecalcHub",
+          "description": "Free online rounding calculator to round numbers to decimal places, significant figures, or nearest values. Includes batch processing and educational examples.",
+          "url": "https://www.freecalchub.com/math/basic/rounding-calculator/",
+           "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
+           "inLanguage": "en-US", 
+           "datePublished": "2025-08-12T12:00:00Z",
+           "dateModified": "2025-08-12T12:00:00Z"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-KNHC9TZ5" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+<div class="header-container">
+<div class="logo-container">
+<a href="/"><img alt="FreecalcHub Logo" src="/images/logo.svg"/></a>
+</div>
+<nav class="main-nav">
+<ul>
+<li><a href="/finance/">Finance</a></li>
+<li><a class="active" href="/math/">Math</a></li>
+<li><a href="/health/">Health</a></li>
+<li><a href="/conversions/">Conversions</a></li>
+<li><a href="/date-time/">Date &amp; Time</a></li>
+<li><a href="/business/">Business</a></li>
+<li><a href="/lifestyle/">Lifestyle</a></li>
+<li><a href="/blog/">Blog</a></li>
+</ul>
+</nav>
+<div class="header-controls">
+<button aria-label="Toggle dark mode" id="dark-mode-toggle">
+<i class="fas fa-moon"></i> <i class="fas fa-sun"></i> </button>
+<button aria-label="Toggle menu" id="mobile-menu-button">
+<i class="fas fa-bars menu-icon"></i> </button>
+</div>
+</div>
+<div class="mobile-menu" id="mobile-menu">
+<div class="mobile-menu-header">
+<span>Menu</span>
+<button aria-label="Close menu" id="mobile-menu-close">
+<i class="fas fa-times"></i> </button>
+</div>
+<nav class="mobile-nav">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/finance/">Finance</a></li>
+<li><a class="active" href="/math/">Math</a></li>
+<li><a href="/health/">Health</a></li>
+<li><a href="/conversions/">Conversions</a></li>
+<li><a href="/date-time/">Date &amp; Time</a></li>
+<li><a href="/business/">Business</a></li>
+<li><a href="/lifestyle/">Lifestyle</a></li>
+<li><a href="/blog/">Blog</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="breadcrumbs">
+<div class="breadcrumbs-container">
+<a href="/">Home</a>
+<span class="separator">/</span>
+<a href="/math/">Math</a>
+<span class="separator">/</span>
+<a href="/math/basic/">Basic Math</a>
+<span class="separator">/</span>
+<span class="current">Rounding Calculator</span>
+</div>
+</div>
+<div class="navigation-ribbon">
+<div class="navigation-ribbon-container">
+<a class="active" href="/math/basic/"><i class="fas fa-plus-minus"></i>Basic Math</a>
+<a href="/math/percentages/"><i class="fas fa-percent"></i>Percentages</a>
+<a href="/math/fractions/"><i class="fas fa-divide"></i>Fractions</a>
+<a href="/math/algebra/"><i class="fas fa-superscript"></i>Algebra</a>
+<a href="/math/geometry/"><i class="fas fa-shapes"></i>Geometry</a>
+<a href="/math/statistics/"><i class="fas fa-chart-bar"></i>Statistics</a>
+<a href="/math/calculus/"><i class="fas fa-integral"></i>Calculus</a>
+<a href="/math/scientific/"><i class="fas fa-calculator"></i>Scientific</a>
+</div>
+</div>
+<main class="main-content" id="main-content">
+<div class="content-container">
+<article class="calculator-page-content">
+<h1 class="page-title">Rounding Calculator</h1>
+<section class="calculator-description-section content-section">
+<p>Round numbers with precision and confidence using our comprehensive rounding calculator. Whether you need to round to decimal places, significant figures, or nearest values, this tool handles all common rounding methods. Perfect for students, professionals, and anyone working with numerical data that requires specific precision levels.</p>
+</section>
+<section class="calculator-interface content-section card" id="calculator-section">
+<h2 class="section-title">Round Your Numbers</h2>
+<div class="error-messages" id="errorMessages" style="display:none;"></div>
+<form class="calculator-form" id="calculatorForm">
+<fieldset>
+<legend>Input Numbers</legend>
+<div class="form-group">
+<label for="numbersInput">Number(s) to Round:</label>
+<input id="numbersInput" placeholder="Enter numbers (e.g., 3.14159 or 1.23, 4.56, 7.89)" required="" type="text"/>
+<small class="form-help">Enter a single number or multiple numbers separated by commas</small>
+</div>
+</fieldset>
+<fieldset>
+<legend>Rounding Method</legend>
+<div class="form-group">
+<div class="radio-group">
+<label class="radio-label">
+<input type="radio" name="roundingMethod" value="decimal" checked>
+<span class="radio-custom"></span>
+Round to Decimal Places
+</label>
+<label class="radio-label">
+<input type="radio" name="roundingMethod" value="significant">
+<span class="radio-custom"></span>
+Round to Significant Figures
+</label>
+<label class="radio-label">
+<input type="radio" name="roundingMethod" value="nearest">
+<span class="radio-custom"></span>
+Round to Nearest Value
+</label>
+<label class="radio-label">
+<input type="radio" name="roundingMethod" value="ceiling">
+<span class="radio-custom"></span>
+Round Up (Ceiling)
+</label>
+<label class="radio-label">
+<input type="radio" name="roundingMethod" value="floor">
+<span class="radio-custom"></span>
+Round Down (Floor)
+</label>
+</div>
+</div>
+</fieldset>
+<fieldset id="precisionFieldset">
+<legend>Precision Settings</legend>
+<div class="form-group" id="decimalPlacesGroup">
+<label for="decimalPlaces">Decimal Places:</label>
+<input id="decimalPlaces" min="0" max="10" type="number" value="2"/>
+<small class="form-help">Round to 0-10 decimal places</small>
+</div>
+<div class="form-group" id="significantFiguresGroup" style="display: none;">
+<label for="significantFigures">Significant Figures:</label>
+<input id="significantFigures" min="1" max="15" type="number" value="3"/>
+<small class="form-help">Round to 1-15 significant figures</small>
+</div>
+<div class="form-group" id="nearestValueGroup" style="display: none;">
+<label for="nearestValue">Nearest Value:</label>
+<select id="nearestValue">
+<option value="10">10</option>
+<option value="100">100</option>
+<option value="1000">1000</option>
+<option value="10000">10000</option>
+<option value="0.1">0.1</option>
+<option value="0.01">0.01</option>
+<option value="5">5</option>
+<option value="25">25</option>
+<option value="50">50</option>
+</select>
+<small class="form-help">Select the value to round to</small>
+</div>
+</fieldset>
+<div class="form-actions">
+<button class="btn btn-primary" id="calculateButton" type="button">Calculate</button>
+<button class="btn btn-secondary" id="resetButton" type="reset">Reset</button>
+<button class="btn btn-secondary" id="copyButton" type="button" style="display: none;">Copy Results</button>
+</div>
+</form>
+<div class="results-section" id="resultsSection" style="display:none;">
+<h3 class="results-title">Rounded Results</h3>
+<div class="results-grid" id="resultsGrid">
+<!-- Results will be populated here -->
+</div>
+</div>
+</section>
+
+<section class="related-calculators content-section card">
+<h2 class="section-title">Related Calculators</h2>
+<ul>
+<li>
+<a href="/math/basic/standard-calculator/">
+<span class="calculator-name">Standard Calculator</span>
+<span class="calculator-description">Perform basic arithmetic operations with memory functions and keyboard support.</span>
+</a>
+</li>
+<li>
+<a href="/math/basic/random-number-generator/">
+<span class="calculator-name">Random Number Generator</span>
+<span class="calculator-description">Generate random numbers within specified ranges for games, statistics, or decision making.</span>
+</a>
+</li>
+<li>
+<a href="/math/percentages/percentage-calculator/">
+<span class="calculator-name">Percentage Calculator</span>
+<span class="calculator-description">Calculate percentages, percentage changes, and solve percentage problems.</span>
+</a>
+</li>
+<li>
+<a href="/math/scientific/scientific-calculator/">
+<span class="calculator-name">Scientific Calculator</span>
+<span class="calculator-description">Advanced mathematical functions including trigonometry, logarithms, and exponentials.</span>
+</a>
+</li>
+</ul>
+</section>
+
+<section class="how-to-use-section content-section">
+<h2 class="section-title">How to Use This Calculator</h2>
+<ol>
+<li><strong>Enter Numbers:</strong> Type your number(s) in the input field. For multiple numbers, separate them with commas (e.g., "1.234, 5.678, 9.012").</li>
+<li><strong>Select Rounding Method:</strong> Choose from decimal places, significant figures, nearest values, ceiling (round up), or floor (round down).</li>
+<li><strong>Set Precision:</strong> Specify the number of decimal places (0-10), significant figures (1-15), or select a nearest value.</li>
+<li><strong>Calculate Results:</strong> Click the "Calculate" button to see your rounded results with step-by-step explanations.</li>
+<li><strong>Copy Results:</strong> Use the "Copy Results" button to copy the rounded numbers to your clipboard for easy pasting.</li>
+</ol>
+</section>
+
+<section class="content-section">
+<h2 class="section-title">Understanding Rounding Methods</h2>
+<div class="rounding-methods">
+<div class="method-card card">
+<h3><i class="fas fa-decimal"></i> Decimal Places</h3>
+<p>Rounds to a specific number of digits after the decimal point. For example, 3.14159 rounded to 2 decimal places is 3.14.</p>
+<div class="method-example">
+<strong>Example:</strong> 123.456 → 123.46 (2 decimal places)
+</div>
+</div>
+<div class="method-card card">
+<h3><i class="fas fa-hashtag"></i> Significant Figures</h3>
+<p>Rounds to a specific number of meaningful digits, counting from the first non-zero digit. Leading zeros don't count as significant.</p>
+<div class="method-example">
+<strong>Example:</strong> 0.00123456 → 0.00123 (3 significant figures)
+</div>
+</div>
+<div class="method-card card">
+<h3><i class="fas fa-crosshairs"></i> Nearest Value</h3>
+<p>Rounds to the nearest multiple of a specified value like 10, 100, or 0.1. Useful for practical applications.</p>
+<div class="method-example">
+<strong>Example:</strong> 123 → 120 (nearest 10)
+</div>
+</div>
+<div class="method-card card">
+<h3><i class="fas fa-arrow-up"></i> Ceiling (Round Up)</h3>
+<p>Always rounds up to the next whole number, regardless of the decimal value. Useful when you need the "next" complete unit.</p>
+<div class="method-example">
+<strong>Example:</strong> 3.1 → 4, 3.9 → 4
+</div>
+</div>
+<div class="method-card card">
+<h3><i class="fas fa-arrow-down"></i> Floor (Round Down)</h3>
+<p>Always rounds down to the current whole number, discarding any decimal portion. Useful for counting complete units.</p>
+<div class="method-example">
+<strong>Example:</strong> 3.1 → 3, 3.9 → 3
+</div>
+</div>
+</div>
+</section>
+
+<section class="content-section">
+<h2 class="section-title">Practical Applications</h2>
+<div class="applications-grid">
+<div class="application-card card">
+<h3>Financial Calculations</h3>
+<p>Round monetary amounts to 2 decimal places for currency precision, or use significant figures for financial modeling and analysis.</p>
+</div>
+<div class="application-card card">
+<h3>Scientific Measurements</h3>
+<p>Use significant figures to maintain measurement precision and avoid false accuracy in experimental data and calculations.</p>
+</div>
+<div class="application-card card">
+<h3>Engineering Specifications</h3>
+<p>Round to appropriate precision levels for manufacturing tolerances and engineering specifications.</p>
+</div>
+<div class="application-card card">
+<h3>Inventory Management</h3>
+<p>Use ceiling rounding to determine minimum containers needed, or floor rounding for counting complete units available.</p>
+</div>
+</div>
+</section>
+
+<section class="faq-section content-section">
+<h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
+<div class="faq-index card">
+<h3>FAQ Index</h3>
+<ul>
+<li><a href="#faq-item-1">What is the difference between rounding methods?</a></li>
+<li><a href="#faq-item-2">How do significant figures work?</a></li>
+<li><a href="#faq-item-3">When should I use ceiling vs floor rounding?</a></li>
+<li><a href="#faq-item-4">Can I round multiple numbers at once?</a></li>
+<li><a href="#faq-item-5">How does the calculator handle very large or small numbers?</a></li>
+<li><a href="#faq-item-6">What's the difference between 'Round to Nearest' and standard rounding?</a></li>
+</ul>
+</div>
+<div class="faq-item" id="faq-item-1">
+<h3>
+<button aria-controls="faq-panel-1" aria-expanded="false" class="accordion">
+What is the difference between rounding methods?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-1" role="region">
+<p>Different rounding methods serve different purposes: decimal places rounds to a specific number of digits after the decimal, significant figures considers total meaningful digits, nearest values rounds to multiples like 10 or 100, and ceiling/floor always rounds up or down respectively.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-item-2">
+<h3>
+<button aria-controls="faq-panel-2" aria-expanded="false" class="accordion">
+How do significant figures work?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-2" role="region">
+<p>Significant figures count all meaningful digits in a number. For example, 1234.5 has 5 significant figures, while 0.00123 has 3 significant figures. Leading zeros don't count, but trailing zeros after a decimal do.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-item-3">
+<h3>
+<button aria-controls="faq-panel-3" aria-expanded="false" class="accordion">
+When should I use ceiling vs floor rounding?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-3" role="region">
+<p>Use ceiling (round up) when you need the next whole number regardless of decimal value, like calculating required containers. Use floor (round down) when you need the current whole number, like calculating complete items from materials.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-item-4">
+<h3>
+<button aria-controls="faq-panel-4" aria-expanded="false" class="accordion">
+Can I round multiple numbers at once?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-4" role="region">
+<p>Yes! Enter multiple numbers separated by commas in the input field. The calculator will apply your selected rounding method to all numbers and display results in an organized format.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-item-5">
+<h3>
+<button aria-controls="faq-panel-5" aria-expanded="false" class="accordion">
+How does the calculator handle very large or small numbers?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-5" role="region">
+<p>The calculator supports scientific notation and handles very large and small numbers accurately. It uses proper precision handling to avoid floating-point errors that can occur with extreme values.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-item-6">
+<h3>
+<button aria-controls="faq-panel-6" aria-expanded="false" class="accordion">
+What's the difference between 'Round to Nearest' and standard rounding?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-6" role="region">
+<p>Standard rounding rounds to decimal places (like 2.345 to 2.35), while 'Round to Nearest' rounds to specific values like 10, 100, or 1000. For example, 123 rounded to nearest 10 is 120.</p>
+</div>
+</div>
+</section>
+</article>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-columns">
+<div class="footer-column"> <h3>FreecalcHub</h3> <p>Your one-stop destination for a wide variety of free online calculators.</p> </div>
+<div class="footer-column"> <h3>Categories</h3> <ul> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date &amp; Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </div>
+<div class="footer-column"> <h3>Support</h3> <ul> <li><a href="/about/">About Us</a></li> <li><a href="/contact/">Contact</a></li> <li><a href="/privacy/">Privacy Policy</a></li> <li><a href="/terms/">Terms of Service</a></li> <li><a href="/sitemap/">Sitemap</a></li> </ul> </div>
+</div>
+<div class="footer-bottom"> <p>© <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> </div>
+</div>
+</footer>
+<script defer="" src="/js/main.js"></script>
+<script defer="" src="/js/dark-mode.js"></script>
+<script defer="" src="/js/faq-accordion-v2.js"></script>
+<script defer="" src="/math/basic/rounding-calculator/js/rounding-calculator.js"></script>
+</body>
+</html>

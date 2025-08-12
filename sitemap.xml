@@ -704,6 +704,18 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://www.freecalchub.com/math/basic/rounding-calculator/</loc>
+    <lastmod>2025-01-12T00:00:00Z</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/math/basic/number-sequence-calculator/</loc>
+    <lastmod>2025-01-12T00:00:00Z</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://www.freecalchub.com/math/fractions/</loc>
     <lastmod>2025-07-15T19:15:00Z</lastmod>
     <priority>0.8</priority>

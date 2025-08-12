@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KNHC9TZ5');</script>
+<meta charset="utf-8"/><meta content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn-cookieyes.com https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https://www.googletagmanager.com https://cdn-cookieyes.com; connect-src 'self' https://open.er-api.com https://www.google-analytics.com https://log.cookieyes.com https://cdn-cookieyes.com" http-equiv="Content-Security-Policy"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Number Sequence Calculator | FreecalcHub</title>
+<meta content="Analyze and generate number sequences with pattern recognition. Detect arithmetic, geometric, Fibonacci, prime, and square sequences. Find missing terms and calculate formulas." name="description"/>
+<link href="/css/styles.css" rel="stylesheet"/>
+<link href="/css/dark-mode.css" rel="stylesheet"/>
+<link href="/css/dark-mode-button.css" rel="stylesheet"/>
+<link href="/css/breadcrumb-styles.css" rel="stylesheet"/>
+<link href="/css/calchub-consolidated-fixes.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<link href="/css/navigation-ribbon.css" rel="stylesheet"/>
+<link href="/css/faq-styles-v2.css" rel="stylesheet"/>
+<link href="/math/basic/number-sequence-calculator/css/number-sequence-calculator.css" rel="stylesheet"/>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Number Sequence Calculator",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Analyze and generate number sequences with pattern recognition. Detect arithmetic, geometric, Fibonacci, prime, and square sequences. Find missing terms and calculate formulas.",
+          "url": "https://www.freecalchub.com/math/basic/number-sequence-calculator/",
+          "relatedLink": [
+            {
+              "@type": "SoftwareApplication",
+              "name": "Standard Calculator",
+              "url": "https://www.freecalchub.com/math/basic/standard-calculator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Random Number Generator",
+              "url": "https://www.freecalchub.com/math/basic/random-number-generator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Rounding Calculator",
+              "url": "https://www.freecalchub.com/math/basic/rounding-calculator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Percentage Calculator",
+              "url": "https://www.freecalchub.com/math/percentages/percentage-calculator/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question", "name": "What types of number sequences can this calculator detect?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Our calculator can detect and analyze arithmetic sequences (constant difference), geometric sequences (constant ratio), Fibonacci sequences (sum of previous two terms), prime number sequences, square number sequences, and other mathematical patterns." }
+            },
+            {
+              "@type": "Question", "name": "How do I input a sequence for analysis?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Enter your sequence numbers separated by commas in the input field (e.g., 2,4,6,8). You can also select from common sequence types or use our pattern generation tools to create sequences." }
+            },
+            {
+              "@type": "Question", "name": "Can the calculator find missing terms in a sequence?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes! Enter your incomplete sequence with gaps (e.g., 2,4,_,8,10) and our calculator will identify the pattern and fill in the missing terms based on the detected sequence type." }
+            },
+            {
+              "@type": "Question", "name": "What is the difference between arithmetic and geometric sequences?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Arithmetic sequences have a constant difference between consecutive terms (e.g., 2,5,8,11 with difference +3). Geometric sequences have a constant ratio between consecutive terms (e.g., 2,6,18,54 with ratio ×3)." }
+            },
+            {
+              "@type": "Question", "name": "How are Fibonacci sequences generated?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Fibonacci sequences start with two initial numbers (usually 0,1 or 1,1) and each subsequent term is the sum of the two preceding terms. For example: 1,1,2,3,5,8,13,21..." }
+            },
+            {
+              "@type": "Question", "name": "Can I export the generated sequences?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes! Use the export functionality to copy sequence data to your clipboard. You can then paste the results into spreadsheets, documents, or other applications." }
+            }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Use the Number Sequence Calculator",
+          "description": "Step-by-step guide to using the Number Sequence Calculator for pattern analysis and sequence generation.",
+          "step": [
+            { "@type": "HowToStep", "name": "Enter Your Sequence", "text": "Input numbers separated by commas or select a sequence type from the dropdown menu." },
+            { "@type": "HowToStep", "name": "Analyze the Pattern", "text": "Click 'Analyze Sequence' to detect the mathematical pattern and sequence type." },
+            { "@type": "HowToStep", "name": "Generate Additional Terms", "text": "Specify how many terms you want to generate and click 'Generate Next Terms'." },
+            { "@type": "HowToStep", "name": "Review Results", "text": "Examine the pattern analysis, formula, and generated sequence terms." },
+            { "@type": "HowToStep", "name": "Export or Use Results", "text": "Copy the results to clipboard or use them for your mathematical work." }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Math", "item": "https://www.freecalchub.com/math/" },
+            { "@type": "ListItem", "position": 3, "name": "Basic Math", "item": "https://www.freecalchub.com/math/basic/" },
+            { "@type": "ListItem", "position": 4, "name": "Number Sequence Calculator", "item": "https://www.freecalchub.com/math/basic/number-sequence-calculator/" }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "name": "Number Sequence Calculator | FreecalcHub",
+          "description": "Analyze and generate number sequences with pattern recognition. Detect arithmetic, geometric, Fibonacci, prime, and square sequences. Find missing terms and calculate formulas.",
+          "url": "https://www.freecalchub.com/math/basic/number-sequence-calculator/",
+           "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
+           "inLanguage": "en-US", 
+           "datePublished": "2025-08-12T16:00:00Z",
+           "dateModified": "2025-08-12T16:00:00Z"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-KNHC9TZ5" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+<div class="header-container">
+<div class="logo-container">
+<a href="/"><img alt="FreecalcHub Logo" src="/images/logo.svg"/></a>
+</div>
+<nav class="main-nav">
+<ul>
+<li><a href="/finance/">Finance</a></li>
+<li><a href="/math/">Math</a></li>
+<li><a href="/health/">Health</a></li>
+<li><a href="/conversions/">Conversions</a></li>
+<li><a href="/date-time/">Date &amp; Time</a></li>
+<li><a href="/business/">Business</a></li>
+<li><a href="/lifestyle/">Lifestyle</a></li>
+<li><a href="/blog/">Blog</a></li>
+</ul>
+</nav>
+<div class="header-controls">
+<button aria-label="Toggle dark mode" id="dark-mode-toggle">
+<i class="fas fa-moon"></i> <i class="fas fa-sun"></i> </button>
+<button aria-label="Toggle menu" id="mobile-menu-button">
+<i class="fas fa-bars menu-icon"></i> </button>
+</div>
+</div>
+<div class="mobile-menu" id="mobile-menu">
+<div class="mobile-menu-header">
+<span>Menu</span>
+<button aria-label="Close menu" id="mobile-menu-close">
+<i class="fas fa-times"></i> </button>
+</div>
+<nav class="mobile-nav">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/finance/">Finance</a></li>
+<li><a href="/math/">Math</a></li>
+<li><a href="/health/">Health</a></li>
+<li><a href="/conversions/">Conversions</a></li>
+<li><a href="/date-time/">Date &amp; Time</a></li>
+<li><a href="/business/">Business</a></li>
+<li><a href="/lifestyle/">Lifestyle</a></li>
+<li><a href="/blog/">Blog</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="breadcrumbs">
+<div class="breadcrumbs-container">
+<a href="/">Home</a>
+<span class="separator">/</span>
+<a href="/math/">Math</a>
+<span class="separator">/</span>
+<a href="/math/basic/">Basic Math</a>
+<span class="separator">/</span>
+<span class="current">Number Sequence Calculator</span>
+</div>
+</div>
+<main class="main-content" id="main-content">
+<div class="content-container"> 
+<article class="calculator-page-content"> 
+<h1 class="page-title">Number Sequence Calculator</h1>
+
+<section class="calculator-description-section content-section">
+<p>Analyze mathematical sequences and discover patterns with our comprehensive Number Sequence Calculator. This powerful tool can detect arithmetic sequences, geometric sequences, Fibonacci patterns, prime numbers, perfect squares, and other mathematical sequences. Whether you're a student learning about patterns, a teacher creating examples, or a mathematician working with complex sequences, our calculator provides pattern recognition, missing term detection, formula generation, and sequence extension capabilities.</p>
+</section>
+
+<section class="calculator-interface content-section card" id="calculator-section">
+<h2 class="section-title">Sequence Analysis & Generation</h2>
+<div class="error-messages" id="errorMessages" style="display:none;"></div>
+
+<form class="calculator-form" id="calculatorForm">
+<fieldset>
+<legend>Sequence Input</legend>
+<div class="form-group">
+<label for="sequenceInput">Enter Sequence (comma-separated):</label>
+<input id="sequenceInput" placeholder="e.g., 2,4,6,8,10 or 1,1,2,3,5,8" type="text"/>
+<small>Use underscore (_) for missing terms: 2,4,_,8,10</small>
+</div>
+<div class="form-group">
+<label for="sequenceType">Or Select Sequence Type:</label>
+<select id="sequenceType">
+<option value="">Choose a pattern...</option>
+<option value="arithmetic">Arithmetic Sequence</option>
+<option value="geometric">Geometric Sequence</option>
+<option value="fibonacci">Fibonacci Sequence</option>
+<option value="prime">Prime Numbers</option>
+<option value="square">Perfect Squares</option>
+<option value="custom">Custom Pattern</option>
+</select>
+</div>
+</fieldset>
+
+<fieldset id="generationOptions" style="display:none;">
+<legend>Generation Options</legend>
+<div class="form-group">
+<label for="startValue">Starting Value:</label>
+<input id="startValue" type="number" value="1" min="-1000" max="1000"/>
+</div>
+<div class="form-group">
+<label for="secondValue">Second Value (for arithmetic/geometric):</label>
+<input id="secondValue" type="number" value="2" min="-1000" max="1000"/>
+</div>
+<div class="form-group">
+<label for="termCount">Number of Terms to Generate:</label>
+<input id="termCount" type="number" value="10" min="1" max="50"/>
+</div>
+</fieldset>
+
+<fieldset id="analysisOptions">
+<legend>Analysis Options</legend>
+<div class="form-group">
+<label for="nextTerms">Generate Next Terms:</label>
+<input id="nextTerms" type="number" value="5" min="1" max="20"/>
+</div>
+<div class="checkbox-group">
+<label>
+<input type="checkbox" id="showFormula" checked/>
+Show Mathematical Formula
+</label>
+</div>
+<div class="checkbox-group">
+<label>
+<input type="checkbox" id="showExplanation" checked/>
+Show Pattern Explanation
+</label>
+</div>
+</fieldset>
+
+<div class="form-actions">
+<button class="btn btn-primary" id="analyzeButton" type="button">Analyze Sequence</button>
+<button class="btn btn-secondary" id="generateButton" type="button">Generate Sequence</button>
+<button class="btn btn-secondary" id="resetButton" type="reset">Reset</button>
+</div>
+</form>
+
+<div class="results-section" id="resultsSection" style="display:none;">
+<h3 class="results-title">Sequence Analysis Results</h3>
+<div class="results-grid">
+<div class="result-item card">
+<h4>Pattern Type</h4>
+<p id="patternType">--</p>
+</div>
+<div class="result-item card">
+<h4>Generated Sequence</h4>
+<div id="sequenceDisplay" class="sequence-display">--</div>
+</div>
+<div class="result-item card" id="formulaSection" style="display:none;">
+<h4>Mathematical Formula</h4>
+<p id="formulaDisplay">--</p>
+</div>
+<div class="result-item card" id="explanationSection" style="display:none;">
+<h4>Pattern Explanation</h4>
+<p id="explanationDisplay">--</p>
+</div>
+<div class="result-item card" id="missingTermsSection" style="display:none;">
+<h4>Missing Terms Found</h4>
+<p id="missingTermsDisplay">--</p>
+</div>
+<div class="result-item card" id="statisticsSection" style="display:none;">
+<h4>Sequence Statistics</h4>
+<div id="statisticsDisplay">--</div>
+</div>
+</div>
+
+<div class="export-section">
+<button class="btn btn-secondary" id="copySequenceButton" style="display:none;">
+<i class="fas fa-copy"></i> Copy Sequence
+</button>
+<button class="btn btn-secondary" id="exportDataButton" style="display:none;">
+<i class="fas fa-download"></i> Export Data
+</button>
+</div>
+</div>
+</section>
+
+<section class="related-calculators content-section card">
+<h2 class="section-title">Related Calculators</h2> 
+<ul>
+<li>
+<a href="/math/basic/standard-calculator/">
+<span class="calculator-name">Standard Calculator</span>
+<span class="calculator-description">Perform basic arithmetic operations including addition, subtraction, multiplication, and division with memory functions.</span>
+</a>
+</li>
+<li>
+<a href="/math/basic/random-number-generator/">
+<span class="calculator-name">Random Number Generator</span>
+<span class="calculator-description">Generate random numbers within specified ranges for statistical analysis, gaming, or mathematical research.</span>
+</a>
+</li>
+<li>
+<a href="/math/basic/rounding-calculator/">
+<span class="calculator-name">Rounding Calculator</span>
+<span class="calculator-description">Round numbers to nearest whole numbers, decimals, or significant figures with multiple rounding methods.</span>
+</a>
+</li>
+<li>
+<a href="/math/percentages/percentage-calculator/">
+<span class="calculator-name">Percentage Calculator</span>
+<span class="calculator-description">Calculate percentages, percentage increases, decreases, and percentage of numbers for various applications.</span>
+</a>
+</li>
+</ul>
+</section>
+
+<section class="how-to-use-section content-section">
+<h2 class="section-title">How to Use This Calculator</h2>
+<ol>
+<li><strong>Input Your Sequence:</strong> Enter numbers separated by commas in the sequence input field, or select a predefined sequence type from the dropdown menu.</li>
+<li><strong>Analyze Pattern:</strong> Click "Analyze Sequence" to automatically detect the mathematical pattern and sequence type in your input.</li>
+<li><strong>Generate Terms:</strong> Specify how many additional terms you want to generate and use the "Generate Next Terms" feature.</li>
+<li><strong>Review Results:</strong> Examine the pattern analysis, mathematical formula, and generated sequence terms in the results section.</li>
+<li><strong>Export Data:</strong> Use the copy or export buttons to save your sequence data for use in other applications.</li>
+</ol>
+</section>
+
+<section class="content-section">
+<h2 class="section-title">Understanding Mathematical Sequences</h2>
+<p>Mathematical sequences are ordered lists of numbers that follow specific patterns or rules. Understanding these patterns is fundamental to mathematics, appearing in everything from basic arithmetic to advanced calculus and discrete mathematics.</p>
+
+<h3>Types of Number Sequences</h3>
+
+<h4>Arithmetic Sequences</h4>
+<p>Arithmetic sequences have a constant difference between consecutive terms. The general formula is: <strong>an = a₁ + (n-1)d</strong>, where a₁ is the first term, n is the term number, and d is the common difference. Example: 2, 5, 8, 11, 14... (difference = +3)</p>
+
+<h4>Geometric Sequences</h4>
+<p>Geometric sequences have a constant ratio between consecutive terms. The general formula is: <strong>an = a₁ × r^(n-1)</strong>, where a₁ is the first term, n is the term number, and r is the common ratio. Example: 3, 6, 12, 24, 48... (ratio = ×2)</p>
+
+<h4>Fibonacci Sequences</h4>
+<p>Fibonacci sequences follow the rule where each term is the sum of the two preceding terms. Starting with F₀ = 0 and F₁ = 1, the formula is: <strong>Fn = Fn-1 + Fn-2</strong>. Example: 0, 1, 1, 2, 3, 5, 8, 13, 21...</p>
+
+<h4>Prime Number Sequences</h4>
+<p>Prime numbers are natural numbers greater than 1 that have no positive divisors other than 1 and themselves. The sequence of primes begins: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29...</p>
+
+<h4>Perfect Square Sequences</h4>
+<p>Perfect squares are integers that are the square of another integer. The formula is: <strong>an = n²</strong>. The sequence begins: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100...</p>
+</section>
+
+<section class="content-section">
+<h2 class="section-title">Real-World Applications</h2>
+<p>Number sequences appear frequently in real-world scenarios and practical applications:</p>
+
+<ul>
+<li><strong>Finance:</strong> Compound interest calculations use geometric sequences to model investment growth over time.</li>
+<li><strong>Computer Science:</strong> Fibonacci sequences appear in algorithms, data structures, and natural phenomena modeling.</li>
+<li><strong>Architecture:</strong> The golden ratio, derived from Fibonacci sequences, is used in building design and aesthetics.</li>
+<li><strong>Biology:</strong> Growth patterns in plants, shell spirals, and population dynamics often follow mathematical sequences.</li>
+<li><strong>Music:</strong> Musical scales and harmonic progressions are based on mathematical ratios and sequences.</li>
+<li><strong>Physics:</strong> Wave patterns, orbital mechanics, and quantum mechanics involve various mathematical sequences.</li>
+</ul>
+</section>
+
+<section class="faq-section content-section">
+<h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
+<div class="faq-index card">
+<h3>FAQ Index</h3>
+<ul>
+<li><a href="#faq-item-1">What types of number sequences can this calculator detect?</a></li>
+<li><a href="#faq-item-2">How do I input a sequence for analysis?</a></li>
+<li><a href="#faq-item-3">Can the calculator find missing terms in a sequence?</a></li>
+<li><a href="#faq-item-4">What is the difference between arithmetic and geometric sequences?</a></li>
+<li><a href="#faq-item-5">How are Fibonacci sequences generated?</a></li>
+<li><a href="#faq-item-6">Can I export the generated sequences?</a></li>
+</ul>
+</div>
+
+<div class="faq-item" id="faq-item-1">
+<h3> 
+<button aria-controls="faq-panel-1" aria-expanded="false" class="accordion"> 
+What types of number sequences can this calculator detect? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-1" role="region"> 
+<p>Our calculator can detect and analyze arithmetic sequences (constant difference), geometric sequences (constant ratio), Fibonacci sequences (sum of previous two terms), prime number sequences, square number sequences, and other mathematical patterns.</p> 
+</div>
+</div>
+
+<div class="faq-item" id="faq-item-2">
+<h3> 
+<button aria-controls="faq-panel-2" aria-expanded="false" class="accordion"> 
+How do I input a sequence for analysis? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-2" role="region"> 
+<p>Enter your sequence numbers separated by commas in the input field (e.g., 2,4,6,8). You can also select from common sequence types or use our pattern generation tools to create sequences.</p> 
+</div>
+</div>
+
+<div class="faq-item" id="faq-item-3">
+<h3> 
+<button aria-controls="faq-panel-3" aria-expanded="false" class="accordion"> 
+Can the calculator find missing terms in a sequence? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-3" role="region"> 
+<p>Yes! Enter your incomplete sequence with gaps (e.g., 2,4,_,8,10) and our calculator will identify the pattern and fill in the missing terms based on the detected sequence type.</p> 
+</div>
+</div>
+
+<div class="faq-item" id="faq-item-4">
+<h3> 
+<button aria-controls="faq-panel-4" aria-expanded="false" class="accordion"> 
+What is the difference between arithmetic and geometric sequences? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-4" role="region"> 
+<p>Arithmetic sequences have a constant difference between consecutive terms (e.g., 2,5,8,11 with difference +3). Geometric sequences have a constant ratio between consecutive terms (e.g., 2,6,18,54 with ratio ×3).</p> 
+</div>
+</div>
+
+<div class="faq-item" id="faq-item-5">
+<h3> 
+<button aria-controls="faq-panel-5" aria-expanded="false" class="accordion"> 
+How are Fibonacci sequences generated? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-5" role="region"> 
+<p>Fibonacci sequences start with two initial numbers (usually 0,1 or 1,1) and each subsequent term is the sum of the two preceding terms. For example: 1,1,2,3,5,8,13,21...</p> 
+</div>
+</div>
+
+<div class="faq-item" id="faq-item-6">
+<h3> 
+<button aria-controls="faq-panel-6" aria-expanded="false" class="accordion"> 
+Can I export the generated sequences? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-6" role="region"> 
+<p>Yes! Use the export functionality to copy sequence data to your clipboard. You can then paste the results into spreadsheets, documents, or other applications.</p> 
+</div>
+</div>
+</section>
+
+</article>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-columns">
+<div class="footer-column"> <h3>FreecalcHub</h3> <p>Your one-stop destination for a wide variety of free online calculators.</p> </div>
+<div class="footer-column"> <h3>Categories</h3> <ul> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date &amp; Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </div>
+<div class="footer-column"> <h3>Support</h3> <ul> <li><a href="/about/">About Us</a></li> <li><a href="/contact/">Contact</a></li> <li><a href="/privacy/">Privacy Policy</a></li> <li><a href="/terms/">Terms of Service</a></li> <li><a href="/sitemap/">Sitemap</a></li> </ul> </div>
+</div>
+<div class="footer-bottom"> <p>© <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> </div>
+</div>
+</footer>
+<script defer="" src="/js/main.js"></script>
+<script defer="" src="/js/dark-mode.js"></script>
+<script defer="" src="/js/faq-accordion-v2.js"></script>
+<script defer="" src="/math/basic/number-sequence-calculator/js/number-sequence-calculator.js"></script>
+</body>
+</html>
