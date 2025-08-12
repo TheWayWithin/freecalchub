@@ -1,0 +1,289 @@
+{
+  "config": {
+    "configFile": "/Users/jamiewatters/DevProjects/freecalchub/playwright.config.js",
+    "rootDir": "/Users/jamiewatters/DevProjects/freecalchub/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/jamiewatters/DevProjects/freecalchub/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/jamiewatters/DevProjects/freecalchub/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/jamiewatters/DevProjects/freecalchub/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/jamiewatters/DevProjects/freecalchub/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/jamiewatters/DevProjects/freecalchub/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/jamiewatters/DevProjects/freecalchub/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/jamiewatters/DevProjects/freecalchub/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "Mobile Chrome",
+        "name": "Mobile Chrome",
+        "testDir": "/Users/jamiewatters/DevProjects/freecalchub/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/jamiewatters/DevProjects/freecalchub/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "Mobile Safari",
+        "name": "Mobile Safari",
+        "testDir": "/Users/jamiewatters/DevProjects/freecalchub/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.54.2",
+    "workers": 5,
+    "webServer": {
+      "command": "python3 -m http.server 8080",
+      "port": 8080,
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "logo-sizing-test.spec.js",
+      "file": "logo-sizing-test.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FreecalcHub Logo Sizing Tests",
+          "file": "logo-sizing-test.spec.js",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should display logo at proper size and capture current appearance",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4691,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m80\u001b[39m\nReceived:   \u001b[31m53.328125\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m80\u001b[39m\nReceived:   \u001b[31m53.328125\u001b[39m\n    at /Users/jamiewatters/DevProjects/freecalchub/tests/logo-sizing-test.spec.js:60:35",
+                        "location": {
+                          "file": "/Users/jamiewatters/DevProjects/freecalchub/tests/logo-sizing-test.spec.js",
+                          "column": 35,
+                          "line": 60
+                        },
+                        "snippet": "  58 |     // Mobile logo should still be reasonably sized\n  59 |     if (mobileLogoBox) {\n> 60 |       expect(mobileLogoBox.width).toBeGreaterThan(80);\n     |                                   ^\n  61 |       expect(mobileLogoBox.height).toBeGreaterThan(25);\n  62 |     }\n  63 |   });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/jamiewatters/DevProjects/freecalchub/tests/logo-sizing-test.spec.js",
+                            "column": 35,
+                            "line": 60
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m80\u001b[39m\nReceived:   \u001b[31m53.328125\u001b[39m\n\n  58 |     // Mobile logo should still be reasonably sized\n  59 |     if (mobileLogoBox) {\n> 60 |       expect(mobileLogoBox.width).toBeGreaterThan(80);\n     |                                   ^\n  61 |       expect(mobileLogoBox.height).toBeGreaterThan(25);\n  62 |     }\n  63 |   });\n    at /Users/jamiewatters/DevProjects/freecalchub/tests/logo-sizing-test.spec.js:60:35"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "Current logo dimensions: { x: \u001b[33m60\u001b[39m, y: \u001b[33m-5\u001b[39m, width: \u001b[33m120\u001b[39m, height: \u001b[33m80\u001b[39m }\n"
+                        },
+                        {
+                          "text": "Logo width: 120px, height: 80px\n"
+                        },
+                        {
+                          "text": "Logo src: /images/logos/primary-horizontal.png\n"
+                        },
+                        {
+                          "text": "Mobile logo dimensions: { x: \u001b[33m286\u001b[39m, y: \u001b[33m-5\u001b[39m, width: \u001b[33m53.328125\u001b[39m, height: \u001b[33m80\u001b[39m }\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T11:22:06.278Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/jamiewatters/DevProjects/freecalchub/test-results/logo-sizing-test-FreecalcH-88e30--capture-current-appearance-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/jamiewatters/DevProjects/freecalchub/test-results/logo-sizing-test-FreecalcH-88e30--capture-current-appearance-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/jamiewatters/DevProjects/freecalchub/test-results/logo-sizing-test-FreecalcH-88e30--capture-current-appearance-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/jamiewatters/DevProjects/freecalchub/tests/logo-sizing-test.spec.js",
+                        "column": 35,
+                        "line": 60
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "476a8f65da7a6b2269d4-e1318fdbb63471bd4da5",
+              "file": "logo-sizing-test.spec.js",
+              "line": 4,
+              "column": 3
+            },
+            {
+              "title": "should verify logo visibility compared to navigation elements",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3664,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Logo box: { x: \u001b[33m60\u001b[39m, y: \u001b[33m-5\u001b[39m, width: \u001b[33m120\u001b[39m, height: \u001b[33m80\u001b[39m }\n"
+                        },
+                        {
+                          "text": "Nav link box: { x: \u001b[33m305\u001b[39m, y: \u001b[33m9.40625\u001b[39m, width: \u001b[33m82.125\u001b[39m, height: \u001b[33m25.59375\u001b[39m }\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T11:22:06.278Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "476a8f65da7a6b2269d4-e804ac8f723edf014bca",
+              "file": "logo-sizing-test.spec.js",
+              "line": 65,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-08-12T11:22:05.904Z",
+    "duration": 5181.8150000000005,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

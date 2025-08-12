@@ -2,9 +2,9 @@
 
 /* Main Logo Styling */
 .main-logo {
-  height: 80px !important;
+  height: 70px !important;
   width: auto !important;
-  max-width: 280px !important;
+  max-width: 240px !important;
   object-fit: contain;
   transition: opacity 0.3s ease;
 }

@@ -1,39 +1,19 @@
 # Page snapshot
 
 ```yaml
+- heading "We value your privacy" [level=1]
+- paragraph: We use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our traffic. By clicking "Accept All", you consent to our use of cookies.
+- button "Customise"
+- button "Reject All"
+- button "Accept All"
 - link "Skip to content":
   - /url: "#main-content"
 - banner:
-  - link "FreecalcHub Logo":
+  - link "FreeCalcHub - Free Online Calculator Tools":
     - /url: /
-    - img "FreecalcHub Logo"
-  - navigation:
-    - list:
-      - listitem:
-        - link "Finance":
-          - /url: /finance/
-      - listitem:
-        - link "Math":
-          - /url: /math/
-      - listitem:
-        - link "Health":
-          - /url: /health/
-      - listitem:
-        - link "Conversions":
-          - /url: /conversions/
-      - listitem:
-        - link "Date & Time":
-          - /url: /date-time/
-      - listitem:
-        - link "Business":
-          - /url: /business/
-      - listitem:
-        - link "Lifestyle":
-          - /url: /lifestyle/
-      - listitem:
-        - link "Blog":
-          - /url: /blog/
+    - img "FreeCalcHub - Free Online Calculator Tools"
   - button "Toggle dark mode":  
+  - button "Toggle menu": 
   - text: Menu
   - button "Close menu": 
   - navigation:
