@@ -687,8 +687,20 @@
   </url>
   <url>
     <loc>https://www.freecalchub.com/math/basic/</loc>
-    <lastmod>2025-07-15T19:05:00Z</lastmod>
+    <lastmod>2025-01-12T00:00:00Z</lastmod>
     <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/math/basic/standard-calculator/</loc>
+    <lastmod>2025-01-12T00:00:00Z</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.freecalchub.com/math/basic/random-number-generator/</loc>
+    <lastmod>2025-01-12T00:00:00Z</lastmod>
+    <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>

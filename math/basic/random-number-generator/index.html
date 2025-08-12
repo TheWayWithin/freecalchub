@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KNHC9TZ5');</script>
+<meta charset="utf-8"/><meta content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn-cookieyes.com https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https://www.googletagmanager.com https://cdn-cookieyes.com; connect-src 'self' https://open.er-api.com https://www.google-analytics.com https://log.cookieyes.com https://cdn-cookieyes.com" http-equiv="Content-Security-Policy"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Random Number Generator | FreecalcHub</title>
+<meta content="Generate random numbers within custom ranges. Perfect for games, statistics, research, and decision making. Options for integers, decimals, and multiple numbers." name="description"/>
+<link href="https://www.freecalchub.com/math/basic/random-number-generator/" rel="canonical"/>
+<link href="/css/styles.css" rel="stylesheet"/>
+<link href="/css/dark-mode.css" rel="stylesheet"/>
+<link href="/css/dark-mode-button.css" rel="stylesheet"/>
+<link href="/css/breadcrumb-styles.css" rel="stylesheet"/>
+<link href="/css/calchub-consolidated-fixes.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<link href="/css/navigation-ribbon.css" rel="stylesheet"/>
+<link href="/css/faq-styles-v2.css" rel="stylesheet"/>
+<link href="/math/basic/random-number-generator/css/random-number-generator.css" rel="stylesheet"/>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Random Number Generator",
+          "applicationCategory": "UtilityApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Generate random numbers within custom ranges. Perfect for games, statistics, research, and decision making. Options for integers, decimals, and multiple numbers.",
+          "url": "https://www.freecalchub.com/math/basic/random-number-generator/",
+          "relatedLink": [
+            {
+              "@type": "SoftwareApplication",
+              "name": "Standard Calculator",
+              "url": "https://www.freecalchub.com/math/basic/standard-calculator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Number Sequence Calculator",
+              "url": "https://www.freecalchub.com/math/basic/number-sequence-calculator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Statistics Calculator",
+              "url": "https://www.freecalchub.com/math/statistics/statistics-calculator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Lottery Number Generator",
+              "url": "https://www.freecalchub.com/lifestyle/games/lottery-number-generator/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question", "name": "How do I generate random numbers?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Enter your minimum and maximum values, choose integer or decimal format, select how many numbers you want, and click Generate. The tool creates truly random numbers within your specified range." }
+            },
+            {
+              "@type": "Question", "name": "Are the generated numbers truly random?",
+              "acceptedAnswer": { "@type": "Answer", "text": "The generator uses JavaScript's cryptographically secure random number generator (crypto.getRandomValues()) when available, providing high-quality randomness suitable for most applications including games and statistical sampling." }
+            },
+            {
+              "@type": "Question", "name": "Can I generate decimal numbers?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes! Choose 'Decimal' format to generate random decimal numbers. You can specify how many decimal places you want, from 1 to 10 decimal places for precise control over the output format." }
+            },
+            {
+              "@type": "Question", "name": "What is the seed option for?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Using a seed makes the random generation reproducible - the same seed will always produce the same sequence of numbers. This is useful for testing, simulations, or when you need consistent results." }
+            },
+            {
+              "@type": "Question", "name": "How do I prevent duplicate numbers?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Enable the 'No Duplicates' option to ensure all generated numbers are unique. This is perfect for lottery numbers, selecting unique items, or sampling without replacement." }
+            },
+            {
+              "@type": "Question", "name": "Can I export the generated numbers?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes! After generation, you can copy all numbers to clipboard, export as CSV file, or export as text file. This makes it easy to use the numbers in spreadsheets or other applications." }
+            }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Use the Random Number Generator",
+          "description": "Step-by-step guide to generating random numbers.",
+          "step": [
+            { "@type": "HowToStep", "name": "Set Range", "text": "Enter the minimum and maximum values for your desired number range." },
+            { "@type": "HowToStep", "name": "Choose Format", "text": "Select whether you want integer or decimal numbers." },
+            { "@type": "HowToStep", "name": "Set Quantity", "text": "Specify how many random numbers you want to generate." },
+            { "@type": "HowToStep", "name": "Configure Options", "text": "Optionally set decimal places, enable no duplicates, or use a seed for reproducible results." },
+            { "@type": "HowToStep", "name": "Generate Numbers", "text": "Click Generate to create your random numbers and view the results." }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freecalchub.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Math", "item": "https://www.freecalchub.com/math/" },
+            { "@type": "ListItem", "position": 3, "name": "Basic Math", "item": "https://www.freecalchub.com/math/basic/" },
+            { "@type": "ListItem", "position": 4, "name": "Random Number Generator", "item": "https://www.freecalchub.com/math/basic/random-number-generator/" }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "name": "Random Number Generator | FreecalcHub",
+          "description": "Generate random numbers within custom ranges. Perfect for games, statistics, research, and decision making. Options for integers, decimals, and multiple numbers.",
+          "url": "https://www.freecalchub.com/math/basic/random-number-generator/",
+           "isPartOf": { "@type": "WebSite", "url": "https://freecalchub.com/", "name": "FreecalcHub" },
+           "inLanguage": "en-US", 
+           "datePublished": "2025-01-12T00:00:00Z",
+           "dateModified": "2025-01-12T00:00:00Z"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-KNHC9TZ5" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+<div class="header-container">
+<div class="logo-container">
+<a href="/"><img alt="FreecalcHub Logo" src="/images/logo.svg"/></a>
+</div>
+<nav class="main-nav">
+<ul>
+<li><a href="/finance/">Finance</a></li>
+<li><a class="active" href="/math/">Math</a></li>
+<li><a href="/health/">Health</a></li>
+<li><a href="/conversions/">Conversions</a></li>
+<li><a href="/date-time/">Date &amp; Time</a></li>
+<li><a href="/business/">Business</a></li>
+<li><a href="/lifestyle/">Lifestyle</a></li>
+<li><a href="/blog/">Blog</a></li>
+</ul>
+</nav>
+<div class="header-controls">
+<button aria-label="Toggle dark mode" id="dark-mode-toggle">
+<i class="fas fa-moon"></i> <i class="fas fa-sun"></i> </button>
+<button aria-label="Toggle menu" id="mobile-menu-button">
+<i class="fas fa-bars menu-icon"></i> </button>
+</div>
+</div>
+<div class="mobile-menu" id="mobile-menu">
+<div class="mobile-menu-header">
+<span>Menu</span>
+<button aria-label="Close menu" id="mobile-menu-close">
+<i class="fas fa-times"></i> </button>
+</div>
+<nav class="mobile-nav">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/finance/">Finance</a></li>
+<li><a class="active" href="/math/">Math</a></li>
+<li><a href="/health/">Health</a></li>
+<li><a href="/conversions/">Conversions</a></li>
+<li><a href="/date-time/">Date &amp; Time</a></li>
+<li><a href="/business/">Business</a></li>
+<li><a href="/lifestyle/">Lifestyle</a></li>
+<li><a href="/blog/">Blog</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="breadcrumbs">
+<div class="breadcrumbs-container">
+<a href="/">Home</a>
+<span class="separator">/</span>
+<a href="/math/">Math</a>
+<span class="separator">/</span>
+<a href="/math/basic/">Basic Math</a>
+<span class="separator">/</span>
+<span class="current">Random Number Generator</span>
+</div>
+</div>
+<div class="navigation-ribbon">
+<div class="navigation-ribbon-container">
+<a class="active" href="/math/basic/"><i class="fas fa-plus-minus"></i>Basic Math</a>
+<a href="/math/percentages/"><i class="fas fa-percent"></i>Percentages</a>
+<a href="/math/fractions/"><i class="fas fa-divide"></i>Fractions</a>
+<a href="/math/algebra/"><i class="fas fa-superscript"></i>Algebra</a>
+<a href="/math/geometry/"><i class="fas fa-shapes"></i>Geometry</a>
+<a href="/math/statistics/"><i class="fas fa-chart-bar"></i>Statistics</a>
+<a href="/math/calculus/"><i class="fas fa-integral"></i>Calculus</a>
+<a href="/math/scientific/"><i class="fas fa-calculator"></i>Scientific</a>
+</div>
+</div>
+<main class="main-content" id="main-content">
+<div class="content-container">
+<article class="calculator-page-content">
+<h1 class="page-title">Random Number Generator</h1>
+<section class="calculator-description-section content-section">
+<p>Generate truly random numbers for any purpose with our versatile random number generator. Whether you need numbers for games, statistical sampling, research, decision making, or lottery picks, this tool provides high-quality randomness with complete customization. Choose between integers and decimals, set custom ranges, generate multiple numbers, and even use seeds for reproducible results.</p>
+</section>
+<section class="calculator-interface content-section card" id="calculator-section">
+<h2 class="section-title">Generate Random Numbers</h2>
+<div class="error-messages" id="errorMessages" style="display:none;"></div>
+<form class="calculator-form" id="calculatorForm">
+<fieldset>
+<legend>Number Range</legend>
+<div class="form-row">
+<div class="form-group">
+<label for="minValue">Minimum Value:</label>
+<input id="minValue" type="number" value="1" step="any" required/>
+</div>
+<div class="form-group">
+<label for="maxValue">Maximum Value:</label>
+<input id="maxValue" type="number" value="100" step="any" required/>
+</div>
+</div>
+</fieldset>
+<fieldset>
+<legend>Number Format</legend>
+<div class="form-row">
+<div class="form-group">
+<label for="numberType">Number Type:</label>
+<select id="numberType">
+<option value="integer">Integer</option>
+<option value="decimal">Decimal</option>
+</select>
+</div>
+<div class="form-group" id="decimalPlacesGroup" style="display:none;">
+<label for="decimalPlaces">Decimal Places:</label>
+<select id="decimalPlaces">
+<option value="1">1</option>
+<option value="2" selected>2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+</div>
+</div>
+</fieldset>
+<fieldset>
+<legend>Generation Options</legend>
+<div class="form-row">
+<div class="form-group">
+<label for="quantity">How Many Numbers:</label>
+<input id="quantity" type="number" min="1" max="10000" value="1" required/>
+</div>
+<div class="form-group">
+<label>
+<input type="checkbox" id="noDuplicates"/>
+No Duplicates
+</label>
+<small>Ensure all numbers are unique</small>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>
+<input type="checkbox" id="useSeed"/>
+Use Seed (for reproducible results)
+</label>
+</div>
+<div class="form-group" id="seedGroup" style="display:none;">
+<label for="seedValue">Seed Value:</label>
+<input id="seedValue" type="number" placeholder="Enter any number"/>
+</div>
+</div>
+</fieldset>
+<div class="form-actions">
+<button class="btn btn-primary" id="generateButton" type="button">
+<i class="fas fa-dice"></i> Generate Numbers
+</button>
+<button class="btn btn-secondary" id="resetButton" type="reset">Reset</button>
+</div>
+</form>
+<div class="results-section" id="resultsSection" style="display:none;">
+<h3 class="results-title">Generated Numbers</h3>
+<div class="results-display">
+<div class="numbers-grid" id="numbersGrid"></div>
+</div>
+<div class="results-actions">
+<button class="btn btn-outline" id="copyButton">
+<i class="fas fa-copy"></i> Copy to Clipboard
+</button>
+<button class="btn btn-outline" id="exportCsvButton">
+<i class="fas fa-file-csv"></i> Export CSV
+</button>
+<button class="btn btn-outline" id="exportTxtButton">
+<i class="fas fa-file-alt"></i> Export TXT
+</button>
+</div>
+<div class="results-summary" id="resultsSummary"></div>
+</div>
+</section>
+
+<section class="related-calculators content-section card">
+<h2 class="section-title">Related Calculators</h2>
+<ul>
+<li>
+<a href="/math/basic/standard-calculator/">
+<span class="calculator-name">Standard Calculator</span>
+<span class="calculator-description">Basic arithmetic operations for everyday calculations.</span>
+</a>
+</li>
+<li>
+<a href="/math/basic/number-sequence-calculator/">
+<span class="calculator-name">Number Sequence Calculator</span>
+<span class="calculator-description">Identify patterns and generate arithmetic or geometric sequences.</span>
+</a>
+</li>
+<li>
+<a href="/math/statistics/statistics-calculator/">
+<span class="calculator-name">Statistics Calculator</span>
+<span class="calculator-description">Calculate mean, median, mode, and other statistical measures.</span>
+</a>
+</li>
+<li>
+<a href="/lifestyle/games/lottery-number-generator/">
+<span class="calculator-name">Lottery Number Generator</span>
+<span class="calculator-description">Generate lottery numbers for popular games and custom formats.</span>
+</a>
+</li>
+</ul>
+</section>
+
+<section class="how-to-use-section content-section">
+<h2 class="section-title">How to Use This Generator</h2>
+<ol>
+<li><strong>Set Your Range:</strong> Enter the minimum and maximum values for your desired number range. You can use negative numbers and decimals.</li>
+<li><strong>Choose Format:</strong> Select "Integer" for whole numbers or "Decimal" for numbers with decimal places. For decimals, choose how many decimal places you want.</li>
+<li><strong>Set Quantity:</strong> Specify how many random numbers you want to generate (1 to 10,000).</li>
+<li><strong>Configure Options:</strong> Optionally enable "No Duplicates" for unique numbers, or use a seed for reproducible results.</li>
+<li><strong>Generate:</strong> Click "Generate Numbers" to create your random numbers instantly.</li>
+<li><strong>Export Results:</strong> Copy to clipboard, or export as CSV or text file for use in other applications.</li>
+</ol>
+</section>
+
+<section class="content-section">
+<h2 class="section-title">Understanding Random Number Generation</h2>
+<p>Random number generation is crucial in many fields including statistics, computer science, gaming, and research. Our generator uses JavaScript's cryptographically secure random number generator when available, providing high-quality randomness suitable for most applications.</p>
+
+<h3>Types of Random Numbers</h3>
+<p><strong>True Random vs Pseudo-Random:</strong> Our generator produces pseudo-random numbers, which are generated by mathematical algorithms. While not truly random like quantum processes, they are sufficient for virtually all practical applications including games, simulations, and statistical sampling.</p>
+
+<h3>Using Seeds for Reproducible Results</h3>
+<p>When you enable the seed option and provide a seed value, the generator will produce the same sequence of numbers every time you use that seed. This is valuable for:</p>
+<ul>
+<li><strong>Testing:</strong> Ensuring consistent results across multiple test runs</li>
+<li><strong>Simulations:</strong> Reproducing specific scenarios for analysis</li>
+<li><strong>Debugging:</strong> Tracking down issues with consistent data</li>
+<li><strong>Research:</strong> Ensuring reproducible experiments</li>
+</ul>
+
+<h3>Applications</h3>
+<p>Random numbers have countless applications: statistical sampling, game development, lottery systems, password generation, scientific simulations, A/B testing, decision making, and cryptography. Choose the appropriate number type and range based on your specific needs.</p>
+</section>
+
+<section class="faq-section content-section">
+<h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
+<div class="faq-index card">
+<h3>FAQ Index</h3>
+<ul>
+<li><a href="#faq-item-1">How do I generate random numbers?</a></li>
+<li><a href="#faq-item-2">Are the generated numbers truly random?</a></li>
+<li><a href="#faq-item-3">Can I generate decimal numbers?</a></li>
+<li><a href="#faq-item-4">What is the seed option for?</a></li>
+<li><a href="#faq-item-5">How do I prevent duplicate numbers?</a></li>
+<li><a href="#faq-item-6">Can I export the generated numbers?</a></li>
+</ul>
+</div>
+<div class="faq-item" id="faq-item-1">
+<h3>
+<button aria-controls="faq-panel-1" aria-expanded="false" class="accordion">
+How do I generate random numbers?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-1" role="region">
+<p>Enter your minimum and maximum values, choose integer or decimal format, select how many numbers you want, and click Generate. The tool creates truly random numbers within your specified range.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-item-2">
+<h3>
+<button aria-controls="faq-panel-2" aria-expanded="false" class="accordion">
+Are the generated numbers truly random?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-2" role="region">
+<p>The generator uses JavaScript's cryptographically secure random number generator (crypto.getRandomValues()) when available, providing high-quality randomness suitable for most applications including games and statistical sampling.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-item-3">
+<h3>
+<button aria-controls="faq-panel-3" aria-expanded="false" class="accordion">
+Can I generate decimal numbers?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-3" role="region">
+<p>Yes! Choose 'Decimal' format to generate random decimal numbers. You can specify how many decimal places you want, from 1 to 10 decimal places for precise control over the output format.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-item-4">
+<h3>
+<button aria-controls="faq-panel-4" aria-expanded="false" class="accordion">
+What is the seed option for?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-4" role="region">
+<p>Using a seed makes the random generation reproducible - the same seed will always produce the same sequence of numbers. This is useful for testing, simulations, or when you need consistent results.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-item-5">
+<h3>
+<button aria-controls="faq-panel-5" aria-expanded="false" class="accordion">
+How do I prevent duplicate numbers?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-5" role="region">
+<p>Enable the 'No Duplicates' option to ensure all generated numbers are unique. This is perfect for lottery numbers, selecting unique items, or sampling without replacement.</p>
+</div>
+</div>
+<div class="faq-item" id="faq-item-6">
+<h3>
+<button aria-controls="faq-panel-6" aria-expanded="false" class="accordion">
+Can I export the generated numbers?
+<span class="accordion-icon"></span>
+</button>
+</h3>
+<div class="panel" id="faq-panel-6" role="region">
+<p>Yes! After generation, you can copy all numbers to clipboard, export as CSV file, or export as text file. This makes it easy to use the numbers in spreadsheets or other applications.</p>
+</div>
+</div>
+</section>
+</article>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-columns">
+<div class="footer-column"> <h3>FreecalcHub</h3> <p>Your one-stop destination for a wide variety of free online calculators.</p> </div>
+<div class="footer-column"> <h3>Categories</h3> <ul> <li><a href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date &amp; Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </div>
+<div class="footer-column"> <h3>Support</h3> <ul> <li><a href="/about/">About Us</a></li> <li><a href="/contact/">Contact</a></li> <li><a href="/privacy/">Privacy Policy</a></li> <li><a href="/terms/">Terms of Service</a></li> <li><a href="/sitemap/">Sitemap</a></li> </ul> </div>
+</div>
+<div class="footer-bottom"> <p>© <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p> </div>
+</div>
+</footer>
+<script defer="" src="/js/main.js"></script>
+<script defer="" src="/js/dark-mode.js"></script>
+<script defer="" src="/js/faq-accordion-v2.js"></script>
+<script defer="" src="/math/basic/random-number-generator/js/random-number-generator.js"></script>
+</body>
+</html>

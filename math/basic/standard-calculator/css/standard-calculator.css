@@ -1,0 +1,237 @@
+/* Standard Calculator Styles */
+.calculator-container {
+    max-width: 350px;
+    margin: 0 auto;
+    background: var(--background-alt);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-display {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.memory-indicator {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--primary-color);
+    background: rgba(0, 123, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.display-screen {
+    width: 100%;
+    height: 60px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+    padding: 15px;
+    background: var(--background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    outline: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+.button-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.btn-calc {
+    height: 50px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-calc:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-calc:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Number buttons */
+.btn-calc.number {
+    background: var(--background-alt);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+.btn-calc.number:hover {
+    background: var(--background);
+    border-color: var(--primary-color);
+}
+
+/* Operation buttons */
+.btn-calc.operation {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.btn-calc.operation:hover {
+    background: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Equals button */
+.btn-calc.equals {
+    background: #28a745;
+    color: white;
+    border-color: #28a745;
+    grid-column: span 2;
+}
+
+.btn-calc.equals:hover {
+    background: #218838;
+    border-color: #218838;
+}
+
+/* Clear buttons */
+.btn-calc.clear {
+    background: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+
+.btn-calc.clear:hover {
+    background: #c82333;
+    border-color: #c82333;
+}
+
+/* Memory buttons */
+.btn-calc.memory {
+    background: #6f42c1;
+    color: white;
+    border-color: #6f42c1;
+    font-size: 14px;
+}
+
+.btn-calc.memory:hover {
+    background: #5a32a3;
+    border-color: #5a32a3;
+}
+
+/* Active state for operations */
+.btn-calc.operation.active {
+    background: #0056b3;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Zero button spans two columns */
+.button-row:last-child .btn-calc.number:first-child {
+    grid-column: span 2;
+}
+
+/* Keyboard shortcuts display */
+.keyboard-shortcuts {
+    background: var(--background-alt);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.keyboard-shortcuts h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.keyboard-shortcuts ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.keyboard-shortcuts li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .calculator-container {
+        max-width: none;
+        margin: 0 -10px;
+        border-radius: 0;
+    }
+    
+    .btn-calc {
+        height: 45px;
+        font-size: 14px;
+    }
+    
+    .display-screen {
+        height: 55px;
+        font-size: 20px;
+    }
+}
+
+/* Dark mode specific adjustments */
+[data-theme="dark"] .calculator-container {
+    background: var(--background);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .display-screen {
+    background: var(--background-alt);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .memory-indicator {
+    background: rgba(0, 123, 255, 0.2);
+}
+
+/* Accessibility enhancements */
+.btn-calc:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Animation for button press */
+@keyframes buttonPress {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.btn-calc.pressed {
+    animation: buttonPress 0.1s ease-in-out;
+}
+
+/* Error state */
+.display-screen.error {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+/* Scientific notation display */
+.display-screen.scientific {
+    font-size: 18px;
+}
