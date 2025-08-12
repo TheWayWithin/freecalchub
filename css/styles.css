@@ -172,10 +172,16 @@ header {
     height: 100%;
 }
 
-.logo-container img {
+.logo-container img:not(.main-logo) {
     height: 40px !important;
     width: auto;
     max-height: 100%;
+}
+
+.logo-container img.main-logo {
+    height: 80px !important;
+    width: auto !important;
+    max-width: 280px !important;
 }
 
 .logo {
@@ -961,8 +967,12 @@ body.dark-mode .faq-question:hover {
     .header-container {
         padding: 0 15px;
     }
-    .logo-container img {
+    .logo-container img:not(.main-logo) {
         height: 35px !important;
+    }
+    .logo-container img.main-logo {
+        height: 65px !important;
+        max-width: 160px !important;
     }
     .hero-section {
         padding: 40px 15px;
