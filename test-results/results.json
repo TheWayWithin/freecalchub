@@ -52,7 +52,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 30000
+        "timeout": 20000
       },
       {
         "outputDir": "/Users/jamiewatters/DevProjects/freecalchub/test-results",
@@ -68,7 +68,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 30000
+        "timeout": 20000
       },
       {
         "outputDir": "/Users/jamiewatters/DevProjects/freecalchub/test-results",
@@ -84,7 +84,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 30000
+        "timeout": 20000
       },
       {
         "outputDir": "/Users/jamiewatters/DevProjects/freecalchub/test-results",
@@ -100,7 +100,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 30000
+        "timeout": 20000
       },
       {
         "outputDir": "/Users/jamiewatters/DevProjects/freecalchub/test-results",
@@ -116,7 +116,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 30000
+        "timeout": 20000
       }
     ],
     "shard": null,
@@ -150,7 +150,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 20000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
@@ -160,7 +160,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 4691,
+                      "duration": 4450,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m80\u001b[39m\nReceived:   \u001b[31m53.328125\u001b[39m",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m80\u001b[39m\nReceived:   \u001b[31m53.328125\u001b[39m\n    at /Users/jamiewatters/DevProjects/freecalchub/tests/logo-sizing-test.spec.js:60:35",
@@ -197,7 +197,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-08-12T11:22:06.278Z",
+                      "startTime": "2025-08-12T23:17:38.744Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -237,7 +237,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 20000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
@@ -247,7 +247,7 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 3664,
+                      "duration": 4093,
                       "errors": [],
                       "stdout": [
                         {
@@ -259,7 +259,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-08-12T11:22:06.278Z",
+                      "startTime": "2025-08-12T23:17:38.739Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -279,8 +279,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-08-12T11:22:05.904Z",
-    "duration": 5181.8150000000005,
+    "startTime": "2025-08-12T23:17:37.619Z",
+    "duration": 6749.95,
     "expected": 1,
     "skipped": 0,
     "unexpected": 1,
