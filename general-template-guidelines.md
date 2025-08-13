@@ -1,6 +1,11 @@
 # FreecalcHub General Page - Template Usage Guidelines
 
-**Version: 1.3 (Last Updated: 2025-06-15)**
+**Version: 1.4 (Last Updated: 2025-08-13)**
+
+**Changelog:**
+- **v1.4 (2025-08-13)**: Updated Related Calculators section to use new icon-enhanced grid layout with `<div class="related-links">` structure
+- **v1.3 (2025-06-15)**: Added standard calculator form grid layout and removed conflicting form rules
+- **v1.2**: Initial template standardization
 
 ## 1. Overview
 
@@ -132,9 +137,21 @@ This is where you add all the unique content for your calculator.
     * Include `<div id="errorMessages">`.
 * **Related Calculators Section (`<section class="related-calculators">`)**:
     * This section is placed **after** the `resultsSection` and **before** the `how-to-use-section`.
-    * Populate the `<ul>` with 3-5 links to relevant calculators. Each `<li>` should contain an `<a>` tag with:
-        * `<span class="calculator-name">[Related Calculator Name]</span>`
-        * `<span class="calculator-description">[Brief description of related calculator]</span>`
+    * Use the new grid-based structure with icons for better visual appeal:
+        ```html
+        <div class="related-links">
+            <a href="/[path]/" class="related-link">
+                <i class="fas fa-[icon]"></i> [Calculator Name]
+            </a>
+        </div>
+        ```
+    * Add 3-5 related calculators with appropriate Font Awesome icons
+    * **Icon Selection Guidelines**:
+        * Choose icons that represent the calculator's function (e.g., `fa-percent` for percentage, `fa-chart-line` for growth)
+        * Common calculator icons: `fa-calculator`, `fa-percent`, `fa-chart-line`, `fa-dollar-sign`, `fa-tag`, `fa-tags`
+        * Health icons: `fa-heartbeat`, `fa-weight`, `fa-apple-alt`
+        * Finance icons: `fa-coins`, `fa-piggy-bank`, `fa-credit-card`, `fa-chart-pie`
+        * Time icons: `fa-clock`, `fa-calendar`, `fa-hourglass`
     * Ensure the `href` paths are correct and root-relative.
     * These links should correspond to the `relatedLink` entries in your `SoftwareApplication` schema.
 * **"How to Use" Section (`<section class="how-to-use-section">`)**: Provide clear, step-by-step instructions.
@@ -276,7 +293,7 @@ Before considering any page complete:
 * Are all `[Placeholder Text]` and `TODO:` comments in the HTML template addressed?
 * Are all paths correct and root-relative?
 * Are all URLs in Schema.org markup and visible breadcrumbs absolute and correct?
-* For calculator pages: Is the "Related Calculators" section populated correctly in both the HTML and the `relatedLink` schema?
+* For calculator pages: Is the "Related Calculators" section populated correctly using the new grid format with icons (`<div class="related-links">`) and does it match the `relatedLink` schema?
 * For calculator pages: Does the `FAQPage` schema exactly match the visible V2 FAQ content?
 * For category pages: Are all `hasPart` entries in the `CollectionPage` schema accurate and complete, reflecting all listed calculators/sub-categories?
 * **For category pages: Is the `FAQPage` schema correctly implemented and does it exactly match the visible FAQ content? Are internal links included in FAQ answers?**
