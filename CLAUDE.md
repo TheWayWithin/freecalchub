@@ -72,6 +72,26 @@ FreecalcHub is a free online calculator website (www.freecalchub.com) with calcu
 4. **Category Updates**: Add calculator cards to relevant category pages
 5. **🚨 CRITICAL: Update Sitemaps IMMEDIATELY**: After deploying each new calculator, ALWAYS update both `sitemap.xml` and `/sitemap/index.html` files - this is mandatory for SEO and site discovery
 
+### Calculator Page Standards (v1.4+)
+1. **FAQ Section**: MUST include FAQ index with linked items before FAQ content
+   - Use `<div class="faq-index card">` with linked list
+   - Each FAQ item needs unique `id="faq-item-N"` for anchor linking
+2. **Related Calculators**: Use icon-enhanced grid layout (as of template v1.4)
+   - Structure: `<div class="related-links">` with `<a class="related-link">`
+   - Include Font Awesome icons for visual appeal
+   - 3-5 related calculators recommended
+3. **Breadcrumbs**: Verify correct hierarchy (especially for Business calculators)
+   - Check both HTML breadcrumbs and Schema.org BreadcrumbList
+   - Ensure paths match actual site structure
+
+### Building Multiple Related Calculators
+When creating a set of related calculators (e.g., percentage suite):
+1. **Plan the full set**: Identify all calculators needed for the subcategory
+2. **Create systematically**: Build HTML structure → Add CSS styling → Implement JS functionality
+3. **Share common patterns**: Use consistent validation, error handling, and result display
+4. **Update category pages**: Fix all "Coming Soon" statuses after deployment
+5. **Cross-link appropriately**: Ensure related calculators reference each other
+
 ### Implementation Details Location
 - **File naming, CSS/JS organization**: See `/Users/jamiewatters/DevProjects/freecalchub/general-template-guidelines.md`
 - **Schema requirements**: See `docs/SOP-CalcDev.md` and `/Users/jamiewatters/DevProjects/freecalchub/general-template-guidelines.md`
@@ -94,8 +114,26 @@ FreecalcHub is a free online calculator website (www.freecalchub.com) with calcu
 - **Testing**: See `docs/SOP-CalcDev.md` for comprehensive testing requirements
 - **Validation**: Use online HTML and Schema validators as specified in guidelines
 
+## Common Issues & Solutions
+
+### "Coming Soon" Calculator Activation
+- **Issue**: Calculator deployed but still shows as "Coming Soon" on category page
+- **Solution**: Change from `<div class="calculator-card">` to `<a class="calculator-card" href="/path/">`
+- **Check**: Both category and subcategory pages may need updating
+
+### FAQ Index Missing
+- **Issue**: FAQ section lacks navigation index
+- **Solution**: Add `<div class="faq-index card">` before FAQ items with linked list
+- **Pattern**: See percentage calculators for reference implementation
+
+### Breadcrumb Path Errors
+- **Issue**: Incorrect category hierarchy (e.g., Business calculators showing Finance path)
+- **Solution**: Verify both HTML breadcrumbs and Schema.org BreadcrumbList match actual paths
+- **Common**: Business calculators often incorrectly reference `/finance/business/` instead of `/business/`
+
 ## Current Status & Compliance
-- **Master templates**: Updated to current standards (GTM-only, CookieYes compliance)
+- **Master templates**: Updated to v1.4 with icon-enhanced related calculators
+- **Template standards**: GTM-only, CookieYes compliance, FAQ v2 system
 - **Systematic audits**: Ongoing compliance checks across all category pages
 - **Template compliance**: All new pages must follow current template standards
 - **For detailed audit checklists**: See `docs/SOP-CalcDev.md`
