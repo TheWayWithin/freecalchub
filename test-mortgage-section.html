@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mortgage Section Test - Finance Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .test-item {
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            border-left: 4px solid #4a6fa5;
+        }
+        .status {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .status.pass {
+            background: #28a745;
+            color: white;
+        }
+        .status.fail {
+            background: #dc3545;
+            color: white;
+        }
+        .status.pending {
+            background: #ffc107;
+            color: black;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        .checklist li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f8f9fa;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .checklist input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Mortgage Section Validation Checkpoint</h1>
+    
+    <div class="test-section">
+        <h2>Test Overview</h2>
+        <p><strong>Page:</strong> /finance/index.html</p>
+        <p><strong>Section:</strong> Mortgage Calculators</p>
+        <p><strong>Expected:</strong> 7 calculator cards, all functional</p>
+        <p><strong>Added Calculators:</strong></p>
+        <ul>
+            <li>✅ Mortgage Calculator (existing)</li>
+            <li>✅ Affordability Calculator (existing)</li>
+            <li>✅ Refinance Calculator (existing)</li>
+            <li>🆕 Mortgage Payoff Calculator</li>
+            <li>🆕 Biweekly Mortgage Calculator</li>
+            <li>🆕 Mortgage Points Calculator</li>
+            <li>🆕 Extra Payment Calculator</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>Visual Inspection Checklist</h2>
+        <ul class="checklist">
+            <li>
+                <input type="checkbox" id="check1">
+                <label for="check1">All 7 mortgage calculators are visible</label>
+            </li>
+            <li>
+                <input type="checkbox" id="check2">
+                <label for="check2">Icons display correctly for each calculator</label>
+            </li>
+            <li>
+                <input type="checkbox" id="check3">
+                <label for="check3">Card spacing and alignment is consistent</label>
+            </li>
+            <li>
+                <input type="checkbox" id="check4">
+                <label for="check4">Grid layout maintains proper columns</label>
+            </li>
+            <li>
+                <input type="checkbox" id="check5">
+                <label for="check5">Text is readable and properly formatted</label>
+            </li>
+            <li>
+                <input type="checkbox" id="check6">
+                <label for="check6">"View All Mortgage Calculators" button is present</label>
+            </li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>Link Validation</h2>
+        <div class="test-grid">
+            <div class="test-item">
+                <strong>Mortgage Calculator</strong><br>
+                <code>/finance/mortgage/mortgage-calculator/</code>
+                <span class="status pending">Test Link</span>
+            </div>
+            <div class="test-item">
+                <strong>Affordability Calculator</strong><br>
+                <code>/finance/mortgage/affordability-calculator/</code>
+                <span class="status pending">Test Link</span>
+            </div>
+            <div class="test-item">
+                <strong>Refinance Calculator</strong><br>
+                <code>/finance/mortgage/refinance-calculator/</code>
+                <span class="status pending">Test Link</span>
+            </div>
+            <div class="test-item">
+                <strong>Mortgage Payoff Calculator</strong><br>
+                <code>/finance/mortgage/payoff-calculator/</code>
+                <span class="status pending">Test Link</span>
+            </div>
+            <div class="test-item">
+                <strong>Biweekly Calculator</strong><br>
+                <code>/finance/mortgage/biweekly-calculator/</code>
+                <span class="status pending">Test Link</span>
+            </div>
+            <div class="test-item">
+                <strong>Points Calculator</strong><br>
+                <code>/finance/mortgage/points-calculator/</code>
+                <span class="status pending">Test Link</span>
+            </div>
+            <div class="test-item">
+                <strong>Extra Payment Calculator</strong><br>
+                <code>/finance/mortgage/extra-payment-calculator/</code>
+                <span class="status pending">Test Link</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Responsive Design Test</h2>
+        <ul class="checklist">
+            <li>
+                <input type="checkbox" id="mobile">
+                <label for="mobile">Mobile (< 480px): Single column layout</label>
+            </li>
+            <li>
+                <input type="checkbox" id="tablet">
+                <label for="tablet">Tablet (768px): 2-3 columns</label>
+            </li>
+            <li>
+                <input type="checkbox" id="desktop">
+                <label for="desktop">Desktop (> 1024px): 3-4 columns</label>
+            </li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>Dark Mode Test</h2>
+        <ul class="checklist">
+            <li>
+                <input type="checkbox" id="dark1">
+                <label for="dark1">Cards maintain readability in dark mode</label>
+            </li>
+            <li>
+                <input type="checkbox" id="dark2">
+                <label for="dark2">Icons remain visible in dark mode</label>
+            </li>
+            <li>
+                <input type="checkbox" id="dark3">
+                <label for="dark3">Hover effects work in dark mode</label>
+            </li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>Live Preview</h2>
+        <p>Open the finance page in a new tab to test: <a href="/finance/" target="_blank">Open Finance Page →</a></p>
+        <iframe src="/finance/#mortgage-calculators"></iframe>
+    </div>
+
+    <div class="test-section" style="background: #e8f4fd;">
+        <h2>✅ Validation Results</h2>
+        <p><strong>If all checkboxes above are checked, proceed with remaining sections.</strong></p>
+        <p><strong>If issues found:</strong></p>
+        <ol>
+            <li>Document the specific issue</li>
+            <li>Fix the issue in finance/index.html</li>
+            <li>Re-test before proceeding</li>
+        </ol>
+    </div>
+
+    <script>
+        // Add click handlers to update status
+        document.querySelectorAll('.status.pending').forEach(span => {
+            span.style.cursor = 'pointer';
+            span.addEventListener('click', function() {
+                const url = this.parentElement.querySelector('code').textContent;
+                window.open(url, '_blank');
+                this.textContent = 'Testing...';
+                this.className = 'status';
+                this.style.background = '#17a2b8';
+                this.style.color = 'white';
+            });
+        });
+
+        // Track checkbox completion
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        let total = checkboxes.length;
+        
+        function updateProgress() {
+            const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+            const percentage = Math.round((checked / total) * 100);
+            document.title = `[${percentage}%] Mortgage Section Test`;
+        }
+
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', updateProgress);
+        });
+    </script>
+</body>
+</html>

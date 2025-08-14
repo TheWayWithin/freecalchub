@@ -175,10 +175,6 @@
 <a class="calculator-card" href="/finance/mortgage/mortgage-calculator/"> <div class="calculator-icon"><i class="fas fa-home"></i></div> <h3>Mortgage Calculator</h3> <p>Calculate monthly payments, interest, and amortization schedule for your mortgage.</p> </a>
 <a class="calculator-card" href="/finance/mortgage/affordability-calculator/"> <div class="calculator-icon"><i class="fas fa-dollar-sign"></i></div> <h3>Mortgage Affordability Calculator</h3> <p>Determine how much house you can afford based on your income, debts, and down payment.</p> </a>
 <a class="calculator-card" href="/finance/mortgage/refinance-calculator/"> <div class="calculator-icon"><i class="fas fa-sync-alt"></i></div> <h3>Mortgage Refinance Calculator</h3> <p>Analyze whether refinancing your current mortgage can save you money or shorten your term.</p> </a>
-<a class="calculator-card" href="/finance/mortgage/payoff-calculator/"> <div class="calculator-icon"><i class="fas fa-flag-checkered"></i></div> <h3>Mortgage Payoff Calculator</h3> <p>Calculate how extra payments can help you pay off your mortgage faster and save on interest.</p> </a>
-<a class="calculator-card" href="/finance/mortgage/biweekly-calculator/"> <div class="calculator-icon"><i class="fas fa-calendar-alt"></i></div> <h3>Biweekly Mortgage Calculator</h3> <p>See how biweekly payments can reduce your mortgage term and total interest paid.</p> </a>
-<a class="calculator-card" href="/finance/mortgage/points-calculator/"> <div class="calculator-icon"><i class="fas fa-percentage"></i></div> <h3>Mortgage Points Calculator</h3> <p>Determine if buying mortgage points to lower your rate makes financial sense.</p> </a>
-<div class="calculator-card"> <div class="calculator-icon"><i class="fas fa-plus-circle"></i></div> <h3>Extra Payment Calculator</h3> <p>Calculate the impact of making additional principal payments on your mortgage.</p> <span class="coming-soon-tag">Coming Soon</span> </div>
 </div>
 <div class="subcategory-cta"> <a class="btn" href="/finance/mortgage/">View All Mortgage Calculators</a> </div>
 </section>
