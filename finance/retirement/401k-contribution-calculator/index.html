@@ -69,6 +69,30 @@
             {
               "@type": "Question", "name": "Can I contribute to both 401(k) and IRA?",
               "acceptedAnswer": { "@type": "Answer", "text": "Yes, you can contribute to both a 401(k) and IRA in the same year. However, if you have a workplace retirement plan, your IRA deduction may be reduced or eliminated based on your income level. The contribution limits are separate for each account type." }
+            },
+            {
+              "@type": "Question", "name": "What happens to my 401(k) if I change jobs?",
+              "acceptedAnswer": { "@type": "Answer", "text": "When you change jobs, you have several options: leave the money in your former employer's plan (if allowed), roll it over to your new employer's 401(k), roll it over to an IRA, or cash out (not recommended due to taxes and penalties). Rolling over to an IRA typically provides more investment options and control." }
+            },
+            {
+              "@type": "Question", "name": "When can I withdraw from my 401(k) without penalties?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Generally, you can withdraw from your 401(k) without the 10% early withdrawal penalty after age 59½. However, you'll still owe income taxes on traditional 401(k) withdrawals. Some exceptions allow penalty-free early withdrawals, such as financial hardships, first-time home purchases, or certain medical expenses, depending on your plan's rules." }
+            },
+            {
+              "@type": "Question", "name": "How do vesting schedules affect employer contributions?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Vesting schedules determine when you own 100% of your employer's contributions to your 401(k). Common schedules include immediate vesting (100% right away), cliff vesting (100% after a certain period, like 3 years), or graded vesting (increasing percentages over time). Your own contributions are always 100% vested." }
+            },
+            {
+              "@type": "Question", "name": "What are the tax implications of 401(k) loans?",
+              "acceptedAnswer": { "@type": "Answer", "text": "401(k) loans aren't taxed as income if you repay them according to the plan's terms (typically within 5 years). However, you repay the loan with after-tax dollars, and those funds will be taxed again when withdrawn in retirement. If you default or leave your job, the outstanding balance becomes a taxable distribution with potential penalties." }
+            },
+            {
+              "@type": "Question", "name": "Can I roll over my 401(k) to an IRA?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes, you can roll over your 401(k) to an IRA when you leave your job or sometimes while still employed (in-service withdrawals). A direct rollover avoids taxes and penalties. IRAs typically offer more investment choices and may have lower fees than employer plans. Consider your specific situation, including loan options and fee structures." }
+            },
+            {
+              "@type": "Question", "name": "How do 401(k) catch-up contributions work for those 50+?",
+              "acceptedAnswer": { "@type": "Answer", "text": "If you're 50 or older, you can make additional 'catch-up' contributions beyond the standard limit. For 2025, this means an extra $7,500 on top of the $23,500 regular limit, for a total of $31,000. These contributions follow the same traditional/Roth rules as regular contributions and can help accelerate retirement savings in your later working years." }
             }
           ]
         },
@@ -112,7 +136,7 @@
 <header class="site-header">
 <div class="header-container">
 <div class="logo-container">
-<a href="/"><img alt="FreecalcHub Logo" src="/images/logo.svg"/></a>
+<a class="logo" href="/"><img alt="FreecalcHub Logo" style="height: 120px !important; width: auto !important; max-height: none !important;" src="/images/FreecalcHub/logo_new_freecalchub.png?v=20250113-6"/></a>
 </div>
 <nav class="main-nav">
 <ul>
@@ -387,28 +411,25 @@
 </div>
 </section>
 
-<section class="related-calculators content-section card">
-<h2 class="section-title">Related Calculators</h2> 
-<ul>
-<li>
-<a href="/finance/retirement/retirement-calculator/">
-<span class="calculator-name">Retirement Calculator</span>
-<span class="calculator-description">Plan your complete retirement savings strategy with comprehensive income projections.</span>
+<section class="related-calculators content-section">
+<h2 class="section-title">Related Calculators</h2>
+<div class="related-links">
+<a href="/finance/retirement/retirement-calculator/" class="related-link">
+<i class="fas fa-chart-line"></i> Retirement Calculator
 </a>
-</li>
-<li>
-<a href="/finance/retirement/roth-traditional-ira-calculator/">
-<span class="calculator-name">Roth vs. Traditional IRA Calculator</span>
-<span class="calculator-description">Compare IRA options to complement your 401(k) retirement savings strategy.</span>
+<a href="/finance/retirement/roth-traditional-ira-calculator/" class="related-link">
+<i class="fas fa-balance-scale"></i> Roth vs. Traditional IRA Calculator
 </a>
-</li>
-<li>
-<a href="/finance/retirement/social-security-benefit-calculator/">
-<span class="calculator-name">Social Security Benefit Calculator</span>
-<span class="calculator-description">Calculate your Social Security benefits to complete your retirement income plan.</span>
+<a href="/finance/retirement/social-security-benefit-calculator/" class="related-link">
+<i class="fas fa-user-shield"></i> Social Security Benefit Calculator
 </a>
-</li>
-</ul>
+<a href="/finance/retirement/rmd-calculator/" class="related-link">
+<i class="fas fa-coins"></i> Required Minimum Distribution Calculator
+</a>
+<a href="/finance/retirement/long-term-care-cost-calculator/" class="related-link">
+<i class="fas fa-heart"></i> Long-Term Care Cost Calculator
+</a>
+</div>
 </section>
 
 <section class="how-to-use-section content-section">
@@ -437,6 +458,12 @@
 <li><a href="#faq-item-2">Should I contribute to traditional or Roth 401(k)?</a></li>
 <li><a href="#faq-item-3">How does employer matching work?</a></li>
 <li><a href="#faq-item-4">Can I contribute to both 401(k) and IRA?</a></li>
+<li><a href="#faq-item-5">What happens to my 401(k) if I change jobs?</a></li>
+<li><a href="#faq-item-6">When can I withdraw from my 401(k) without penalties?</a></li>
+<li><a href="#faq-item-7">How do vesting schedules affect employer contributions?</a></li>
+<li><a href="#faq-item-8">What are the tax implications of 401(k) loans?</a></li>
+<li><a href="#faq-item-9">Can I roll over my 401(k) to an IRA?</a></li>
+<li><a href="#faq-item-10">How do 401(k) catch-up contributions work for those 50+?</a></li>
 </ul>
 </div>
 
@@ -485,6 +512,78 @@ Can I contribute to both 401(k) and IRA?
 </h3>
 <div class="panel" id="faq-panel-4" role="region"> 
 <p>Yes, you can contribute to both a 401(k) and IRA in the same year. However, if you have a workplace retirement plan, your IRA deduction may be reduced or eliminated based on your income level. The contribution limits are separate for each account type.</p> 
+</div>
+</div>
+
+<div class="faq-item" id="faq-item-5">
+<h3> 
+<button aria-controls="faq-panel-5" aria-expanded="false" class="accordion"> 
+What happens to my 401(k) if I change jobs? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-5" role="region"> 
+<p>When you change jobs, you have several options: leave the money in your former employer's plan (if allowed), roll it over to your new employer's 401(k), roll it over to an IRA, or cash out (not recommended due to taxes and penalties). Rolling over to an IRA typically provides more investment options and control.</p> 
+</div>
+</div>
+
+<div class="faq-item" id="faq-item-6">
+<h3> 
+<button aria-controls="faq-panel-6" aria-expanded="false" class="accordion"> 
+When can I withdraw from my 401(k) without penalties? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-6" role="region"> 
+<p>Generally, you can withdraw from your 401(k) without the 10% early withdrawal penalty after age 59½. However, you'll still owe income taxes on traditional 401(k) withdrawals. Some exceptions allow penalty-free early withdrawals, such as financial hardships, first-time home purchases, or certain medical expenses, depending on your plan's rules.</p> 
+</div>
+</div>
+
+<div class="faq-item" id="faq-item-7">
+<h3> 
+<button aria-controls="faq-panel-7" aria-expanded="false" class="accordion"> 
+How do vesting schedules affect employer contributions? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-7" role="region"> 
+<p>Vesting schedules determine when you own 100% of your employer's contributions to your 401(k). Common schedules include immediate vesting (100% right away), cliff vesting (100% after a certain period, like 3 years), or graded vesting (increasing percentages over time). Your own contributions are always 100% vested.</p> 
+</div>
+</div>
+
+<div class="faq-item" id="faq-item-8">
+<h3> 
+<button aria-controls="faq-panel-8" aria-expanded="false" class="accordion"> 
+What are the tax implications of 401(k) loans? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-8" role="region"> 
+<p>401(k) loans aren't taxed as income if you repay them according to the plan's terms (typically within 5 years). However, you repay the loan with after-tax dollars, and those funds will be taxed again when withdrawn in retirement. If you default or leave your job, the outstanding balance becomes a taxable distribution with potential penalties.</p> 
+</div>
+</div>
+
+<div class="faq-item" id="faq-item-9">
+<h3> 
+<button aria-controls="faq-panel-9" aria-expanded="false" class="accordion"> 
+Can I roll over my 401(k) to an IRA? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-9" role="region"> 
+<p>Yes, you can roll over your 401(k) to an IRA when you leave your job or sometimes while still employed (in-service withdrawals). A direct rollover avoids taxes and penalties. IRAs typically offer more investment choices and may have lower fees than employer plans. Consider your specific situation, including loan options and fee structures.</p> 
+</div>
+</div>
+
+<div class="faq-item" id="faq-item-10">
+<h3> 
+<button aria-controls="faq-panel-10" aria-expanded="false" class="accordion"> 
+How do 401(k) catch-up contributions work for those 50+? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-10" role="region"> 
+<p>If you're 50 or older, you can make additional "catch-up" contributions beyond the standard limit. For 2025, this means an extra $7,500 on top of the $23,500 regular limit, for a total of $31,000. These contributions follow the same traditional/Roth rules as regular contributions and can help accelerate retirement savings in your later working years.</p> 
 </div>
 </div>
 </section>

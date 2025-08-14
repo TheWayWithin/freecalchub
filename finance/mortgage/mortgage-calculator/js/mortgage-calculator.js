@@ -89,6 +89,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const totalInterest = (monthlyPayment * numberOfPayments) - loanAmount;
         
         
+        // Show results section
+        document.getElementById('results-section').style.display = 'block';
+        
         // Update results in the UI
         document.getElementById('principal-interest').textContent = '$' + monthlyPayment.toFixed(2);
         document.getElementById('monthly-property-tax').textContent = '$' + monthlyPropertyTax.toFixed(2);
@@ -434,9 +437,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Trigger calculation on page load to initialize with default values
-    const calculateButton = document.querySelector('#calculateButton');
+    // Add click event listener to calculate button
+    const calculateButton = document.getElementById('calculateButton');
     if (calculateButton) {
+        calculateButton.addEventListener('click', function() {
+            // Trigger the form submission handler
+            mortgageForm.dispatchEvent(new Event('submit'));
+        });
+        
+        // Trigger calculation on page load to initialize with default values
         calculateButton.click();
     }
 });

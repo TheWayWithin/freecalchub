@@ -29,6 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // --- Your existing affordability‐calculation function, unchanged --- //
 
+// Helper for "no affordability" cases
+function showNoAffordability(reason) {
+  document.getElementById("maxHomePrice").textContent  = `N/A (${reason})`;
+  document.getElementById("monthlyPayment").textContent= "N/A";
+  document.getElementById("frontEndRatio").textContent = "N/A";
+  document.getElementById("backEndRatio").textContent  = "N/A";
+  document.getElementById("results-section").style.display = "block";
+  alert(`Calculation error: ${reason}`);
+}
+
 function calculateAffordability() {
   // Get input values
   const annualIncome = parseFloat(document.getElementById("annualIncome").value) || 0;
@@ -124,15 +134,4 @@ function calculateAffordability() {
   document.getElementById("frontEndRatio").textContent   = `${actualFrontEndRatio.toFixed(2)}%`;
   document.getElementById("backEndRatio").textContent    = `${actualBackEndRatio.toFixed(2)}%`;
   document.getElementById("results-section").style.display = "block";
-
-
-  // Helper for “no affordability” cases
-  function showNoAffordability(reason) {
-    document.getElementById("maxHomePrice").textContent  = `N/A (${reason})`;
-    document.getElementById("monthlyPayment").textContent= "N/A";
-    document.getElementById("frontEndRatio").textContent = "N/A";
-    document.getElementById("backEndRatio").textContent  = "N/A";
-    document.getElementById("results-section").style.display = "block";
-    alert(`Calculation error: ${reason}`);
-  }
 }

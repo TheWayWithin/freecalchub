@@ -86,6 +86,22 @@
             {
               "@type": "Question", "name": "How do I use this for tax reporting?",
               "acceptedAnswer": { "@type": "Answer", "text": "Use the net profit/loss figures for tax reporting. The calculator shows your exact gains/losses per trade and total portfolio performance. Keep records of all trades with dates for proper short-term vs long-term capital gains classification. Consider consulting a tax professional for cryptocurrency tax obligations." }
+            },
+            {
+              "@type": "Question", "name": "How do I calculate crypto gains for multiple transactions?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Track each buy and sell transaction separately. Calculate the gain/loss for each sale by subtracting the purchase price from the sale price. Sum all gains and losses for your total profit. This calculator helps by computing individual transaction profits and your overall portfolio performance." }
+            },
+            {
+              "@type": "Question", "name": "What's the difference between realized and unrealized gains?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Realized gains occur when you sell your cryptocurrency - these are actual profits you've locked in. Unrealized gains are paper profits from crypto you still hold. Only realized gains are typically taxable. This calculator focuses on realized gains from completed transactions." }
+            },
+            {
+              "@type": "Question", "name": "How do crypto-to-crypto trades affect profit calculations?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Crypto-to-crypto trades are taxable events in most jurisdictions. You must calculate the fair market value in your local currency at the time of the trade. The difference between this value and your original cost basis is your gain or loss, even though you didn't convert to cash." }
+            },
+            {
+              "@type": "Question", "name": "Should I include transaction fees in my profit calculations?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes, transaction fees should be included in your cost basis. When buying, add fees to your purchase price. When selling, subtract fees from your sale price. This gives you a more accurate picture of your actual profit after all costs." }
             }
           ]
         },
@@ -129,7 +145,7 @@
 <header class="site-header">
 <div class="header-container">
 <div class="logo-container">
-<a href="/"><img alt="FreecalcHub Logo" src="/images/logo.svg"/></a>
+<a class="logo" href="/"><img alt="FreecalcHub Logo" style="height: 120px !important; width: auto !important; max-height: none !important;" src="/images/FreecalcHub/logo_new_freecalchub.png?v=20250113-6"/></a>
 </div>
 <nav class="main-nav">
 <ul>
@@ -329,40 +345,26 @@
 </div>
 </section>
 
-<section class="related-calculators content-section card">
-<h2 class="section-title">Related Calculators</h2> 
-<ul>
-<li>
-<a href="/finance/investment/compound-interest-calculator/">
-<span class="calculator-name">Compound Interest Calculator</span>
-<span class="calculator-description">Calculate how your investments grow with compound interest over time, perfect for long-term crypto holdings.</span>
+<section class="related-calculators content-section">
+<h2 class="section-title">Related Calculators</h2>
+<div class="related-links">
+<a href="/finance/cryptocurrency/crypto-tax-calculator/" class="related-link">
+<i class="fas fa-receipt"></i>
+Crypto Tax Calculator
 </a>
-</li>
-<li>
-<a href="/finance/tax/tax-bracket-calculator/">
-<span class="calculator-name">Tax Bracket Calculator</span>
-<span class="calculator-description">Understand your tax obligations on cryptocurrency gains and losses for proper financial planning.</span>
+<a href="/finance/cryptocurrency/dca-calculator/" class="related-link">
+<i class="fas fa-chart-bar"></i>
+DCA Calculator
 </a>
-</li>
-<li>
-<a href="/finance/retirement/retirement-calculator/">
-<span class="calculator-name">Retirement Calculator</span>
-<span class="calculator-description">Plan your retirement savings incorporating cryptocurrency investments as part of your portfolio.</span>
+<a href="/finance/investment/compound-interest-calculator/" class="related-link">
+<i class="fas fa-chart-line"></i>
+Compound Interest Calculator
 </a>
-</li>
-<li>
-<a href="/finance/loan/loan-calculator/">
-<span class="calculator-name">Loan Calculator</span>
-<span class="calculator-description">Calculate loan payments if you're considering borrowing against crypto assets or for trading capital.</span>
+<a href="/finance/tax/tax-bracket-calculator/" class="related-link">
+<i class="fas fa-percentage"></i>
+Tax Bracket Calculator
 </a>
-</li>
-<li>
-<a href="/conversions/currency/cryptocurrency-converter/">
-<span class="calculator-name">Cryptocurrency Converter</span>
-<span class="calculator-description">Convert between different cryptocurrencies and fiat currencies with real-time exchange rates.</span>
-</a>
-</li>
-</ul>
+</div>
 </section>
 
 <section class="how-to-use-section content-section">
@@ -405,6 +407,10 @@
 <li><a href="#faq-item-4">How accurate are the ROI calculations?</a></li>
 <li><a href="#faq-item-5">What is the difference between gross and net profit?</a></li>
 <li><a href="#faq-item-6">How do I use this for tax reporting?</a></li>
+<li><a href="#faq-item-7">How do I calculate crypto gains for multiple transactions?</a></li>
+<li><a href="#faq-item-8">What's the difference between realized and unrealized gains?</a></li>
+<li><a href="#faq-item-9">How do crypto-to-crypto trades affect profit calculations?</a></li>
+<li><a href="#faq-item-10">Should I include transaction fees in my profit calculations?</a></li>
 </ul>
 </div>
 <div class="faq-item" id="faq-item-1">
@@ -471,6 +477,50 @@ How do I use this for tax reporting?
 </h3>
 <div class="panel" id="faq-panel-6" role="region"> 
 <p>Use the net profit/loss figures for tax reporting. The calculator shows your exact gains/losses per trade and total portfolio performance. Keep records of all trades with dates for proper short-term vs long-term capital gains classification. Consider consulting a tax professional for cryptocurrency tax obligations.</p> 
+</div>
+</div>
+<div class="faq-item" id="faq-item-7">
+<h3> 
+<button aria-controls="faq-panel-7" aria-expanded="false" class="accordion">
+How do I calculate crypto gains for multiple transactions? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-7" role="region"> 
+<p>Track each buy and sell transaction separately. Calculate the gain/loss for each sale by subtracting the purchase price from the sale price. Sum all gains and losses for your total profit. This calculator helps by computing individual transaction profits and your overall portfolio performance.</p> 
+</div>
+</div>
+<div class="faq-item" id="faq-item-8">
+<h3> 
+<button aria-controls="faq-panel-8" aria-expanded="false" class="accordion">
+What's the difference between realized and unrealized gains? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-8" role="region"> 
+<p>Realized gains occur when you sell your cryptocurrency - these are actual profits you've locked in. Unrealized gains are paper profits from crypto you still hold. Only realized gains are typically taxable. This calculator focuses on realized gains from completed transactions.</p> 
+</div>
+</div>
+<div class="faq-item" id="faq-item-9">
+<h3> 
+<button aria-controls="faq-panel-9" aria-expanded="false" class="accordion">
+How do crypto-to-crypto trades affect profit calculations? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-9" role="region"> 
+<p>Crypto-to-crypto trades are taxable events in most jurisdictions. You must calculate the fair market value in your local currency at the time of the trade. The difference between this value and your original cost basis is your gain or loss, even though you didn't convert to cash.</p> 
+</div>
+</div>
+<div class="faq-item" id="faq-item-10">
+<h3> 
+<button aria-controls="faq-panel-10" aria-expanded="false" class="accordion">
+Should I include transaction fees in my profit calculations? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-10" role="region"> 
+<p>Yes, transaction fees should be included in your cost basis. When buying, add fees to your purchase price. When selling, subtract fees from your sale price. This gives you a more accurate picture of your actual profit after all costs.</p> 
 </div>
 </div>
 </section>

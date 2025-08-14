@@ -9,7 +9,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-KNHC9TZ5');</script>
 <meta charset="utf-8"/><meta content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn-cookieyes.com https://cdn.jsdelivr.net; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https://www.googletagmanager.com https://cdn-cookieyes.com; connect-src 'self' https://open.er-api.com https://www.google-analytics.com https://log.cookieyes.com https://cdn-cookieyes.com" http-equiv="Content-Security-Policy"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Mortgage Calculator | CalcHub</title>
+<title>Mortgage Calculator | FreecalcHub</title>
 <!-- Global styles -->
 <link href="/css/styles.css" rel="stylesheet"/>
 <!-- Dark mode styles -->
@@ -112,7 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="header-container">
 <div class="logo-container">
 <a class="logo" href="/">
-<img alt="CalcHub Logo" src="/images/logo.svg"/>
+<img alt="FreecalcHub Logo" style="height: 120px !important; width: auto !important; max-height: none !important;" src="/images/FreecalcHub/logo_new_freecalchub.png?v=20250113-6"/>
 </a>
 </div>
 <nav class="main-nav">
@@ -274,7 +274,93 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <button class="btn btn-secondary" id="resetButton" type="reset">Reset</button>
 </div>
 </form>
-<div id="results-container"></div>
+<section class="results-section content-section card" id="results-section" style="display:none;">
+<h2 class="section-title">Your Mortgage Payment Estimate</h2>
+<div class="results-grid">
+<div class="result-item">
+<p class="result-label">Principal & Interest:</p>
+<p class="result-value" id="principal-interest">--</p>
+</div>
+<div class="result-item">
+<p class="result-label">Monthly Property Tax:</p>
+<p class="result-value" id="monthly-property-tax">--</p>
+</div>
+<div class="result-item">
+<p class="result-label">Monthly Insurance:</p>
+<p class="result-value" id="monthly-insurance">--</p>
+</div>
+<div class="result-item">
+<p class="result-label">Total Monthly Payment:</p>
+<p class="result-value total-highlight" id="total-payment">--</p>
+</div>
+<div class="result-item">
+<p class="result-label">Loan Amount:</p>
+<p class="result-value" id="loan-amount">--</p>
+</div>
+<div class="result-item">
+<p class="result-label">Total Interest Paid:</p>
+<p class="result-value" id="total-interest">--</p>
+</div>
+<div class="result-item">
+<p class="result-label">Total Cost of Loan:</p>
+<p class="result-value" id="total-cost">--</p>
+</div>
+<div class="result-item">
+<p class="result-label">Loan Payoff Date:</p>
+<p class="result-value" id="payoff-date">--</p>
+</div>
+<div class="result-item" id="hoa-container" style="display:none;">
+<p class="result-label">Monthly HOA Fees:</p>
+<p class="result-value" id="monthly-hoa">--</p>
+</div>
+</div>
+
+<div id="extra-payment-summary" style="display:none; margin-top: 20px;" class="extra-payment-section">
+<h3>Extra Payment Benefits</h3>
+<div class="results-grid">
+<div class="result-item">
+<p class="result-label">New Payoff Date:</p>
+<p class="result-value" id="new-payoff-date">--</p>
+</div>
+<div class="result-item">
+<p class="result-label">Time Saved:</p>
+<p class="result-value" id="time-saved">--</p>
+</div>
+<div class="result-item">
+<p class="result-label">Interest Saved:</p>
+<p class="result-value" id="interest-saved">--</p>
+</div>
+</div>
+</div>
+
+<div class="chart-container" style="margin-top: 30px;">
+<div class="chart-wrapper">
+<canvas id="payment-breakdown-chart"></canvas>
+</div>
+<div class="chart-wrapper" id="comparison-chart-wrapper" style="display:none;">
+<canvas id="payback-visualization-chart"></canvas>
+</div>
+</div>
+
+<div class="amortization-section" style="margin-top: 30px;">
+<h3>Yearly Amortization Schedule</h3>
+<div class="table-responsive">
+<table class="amortization-table">
+<thead>
+<tr>
+<th>Year</th>
+<th>Principal Paid</th>
+<th>Interest Paid</th>
+<th>Total Paid</th>
+<th>Remaining Balance</th>
+</tr>
+</thead>
+<tbody id="amortization-table-body">
+</tbody>
+</table>
+</div>
+</div>
+</section>
 </div>
 <!-- Enhanced Content Section -->
 <section class="calculator-info enhanced-content">
@@ -509,13 +595,25 @@ What is an escrow account?
 </div>
 </div>
 </section>
-<section class="content-section">
+<section class="related-calculators content-section">
 <h2 class="section-title">Related Calculators</h2>
-<ul>
-<li><a href="/finance/mortgage/affordability-calculator/">Mortgage Affordability Calculator</a> - Determine how much house you can afford based on your income and debt.</li>
-<li><a href="/finance/mortgage/biweekly-calculator/">Biweekly Mortgage Calculator</a> - See how biweekly payments can help you pay off your mortgage faster.</li>
-<li><a href="/finance/mortgage/payoff-calculator/">Mortgage Payoff Calculator</a> - Calculate how extra payments can shorten your loan term and save interest.</li>
-</ul>
+<div class="related-links">
+<a href="/finance/mortgage/affordability-calculator/" class="related-link">
+<i class="fas fa-home"></i> Mortgage Affordability Calculator
+</a>
+<a href="/finance/mortgage/biweekly-calculator/" class="related-link">
+<i class="fas fa-calendar-alt"></i> Biweekly Mortgage Calculator
+</a>
+<a href="/finance/mortgage/payoff-calculator/" class="related-link">
+<i class="fas fa-chart-line"></i> Mortgage Payoff Calculator
+</a>
+<a href="/finance/mortgage/refinance-calculator/" class="related-link">
+<i class="fas fa-exchange-alt"></i> Mortgage Refinance Calculator
+</a>
+<a href="/finance/mortgage/points-calculator/" class="related-link">
+<i class="fas fa-percent"></i> Mortgage Points Calculator
+</a>
+</div>
 </section>
 </section>
 </div>
@@ -523,7 +621,7 @@ What is an escrow account?
 <footer class="site-footer">
 <div class="footer-container">
 <div class="footer-column">
-<h3>CalcHub</h3>
+<h3>FreecalcHub</h3>
 <p>Free online calculators for all your needs.</p>
 </div>
 <div class="footer-column">
@@ -557,7 +655,7 @@ What is an escrow account?
 </div>
 </div>
 <div class="footer-bottom">
-<p>© 2025 CalcHub. All rights reserved.</p>
+<p>© <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved.</p>
 </div>
 </footer>
 <script defer="" src="/js/faq-accordion-v2.js"></script>

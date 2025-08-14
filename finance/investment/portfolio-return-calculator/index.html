@@ -11,12 +11,33 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Portfolio Return Calculator | FreecalcHub</title>
 <meta content="Free portfolio return calculator. Analyze mixed asset allocations, calculate returns, assess risk, and get rebalancing recommendations for your investments." name="description"/>
+<!-- Favicon and PWA Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon_16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#4a6fa5">
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.freecalchub.com/finance/investment/portfolio-return-calculator/">
+<meta property="og:title" content="Portfolio Return Calculator | FreecalcHub">
+<meta property="og:description" content="Free portfolio return calculator. Analyze mixed asset allocations, calculate returns, assess risk, and get rebalancing recommendations for your investments.">
+<meta property="og:image" content="https://www.freecalchub.com/images/social/cover_image_1200x630.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.freecalchub.com/finance/investment/portfolio-return-calculator/">
+<meta property="twitter:title" content="Portfolio Return Calculator | FreecalcHub">
+<meta property="twitter:description" content="Free portfolio return calculator. Analyze mixed asset allocations, calculate returns, assess risk, and get rebalancing recommendations for your investments.">
+<meta property="twitter:image" content="https://www.freecalchub.com/images/social/cover_image_1200x630.png">
 <link href="https://freecalchub.com/finance/investment/portfolio-return-calculator/" rel="canonical"/>
 <link href="/css/styles.css" rel="stylesheet"/>
 <link href="/css/dark-mode.css" rel="stylesheet"/>
 <link href="/css/dark-mode-button.css" rel="stylesheet"/>
 <link href="/css/breadcrumb-styles.css" rel="stylesheet"/>
 <link href="/css/calchub-consolidated-fixes.css" rel="stylesheet"/>
+<link href="/css/brand-enhancements.css" rel="stylesheet"/>
 <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
 <link href="/css/navigation-ribbon.css" rel="stylesheet"/>
 <link href="/css/faq-styles-v2.css" rel="stylesheet"/>
@@ -46,8 +67,8 @@
             },
             {
               "@type": "SoftwareApplication",
-              "name": "Asset Allocation Calculator",
-              "url": "https://freecalchub.com/finance/investment/asset-allocation-calculator/"
+              "name": "DRIP Calculator",
+              "url": "https://freecalchub.com/finance/investment/drip-calculator/"
             }
           ],
           "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "189" }
@@ -164,7 +185,7 @@
 <header class="site-header">
 <div class="header-container">
 <div class="logo-container">
-<a href="/"><img alt="FreecalcHub Logo" src="/images/logo.svg"/></a>
+<a class="logo" href="/"><img alt="FreecalcHub Logo" style="height: 120px !important; width: auto !important; max-height: none !important;" src="/images/FreecalcHub/logo_new_freecalchub.png?v=20250113-6"/></a>
 </div>
 <nav class="main-nav">
 <ul>
@@ -352,28 +373,22 @@
 </div>
 </div>
 </section>
-<section class="related-calculators content-section card">
+<section class="related-calculators content-section">
 <h2 class="section-title">Related Calculators</h2>
-<ul>
-<li>
-<a href="/finance/investment/investment-goal-calculator/">
-<span class="calculator-name">Investment Goal Calculator</span>
-<span class="calculator-description">Determine monthly contributions needed to reach specific financial targets with compound growth.</span>
+<div class="related-links">
+<a href="/finance/investment/investment-goal-calculator/" class="related-link">
+<i class="fas fa-bullseye"></i>
+Investment Goal Calculator
 </a>
-</li>
-<li>
-<a href="/finance/investment/compound-interest-calculator/">
-<span class="calculator-name">Compound Interest Calculator</span>
-<span class="calculator-description">See how your savings can grow over time with the power of compound interest and regular contributions.</span>
+<a href="/finance/investment/compound-interest-calculator/" class="related-link">
+<i class="fas fa-percentage"></i>
+Compound Interest Calculator
 </a>
-</li>
-<li>
-<a href="/finance/investment/asset-allocation-calculator/">
-<span class="calculator-name">Asset Allocation Calculator</span>
-<span class="calculator-description">Determine optimal asset allocation based on your age, risk tolerance, and investment timeline.</span>
+<a href="/finance/investment/drip-calculator/" class="related-link">
+<i class="fas fa-sync-alt"></i>
+DRIP Calculator
 </a>
-</li>
-</ul>
+</div>
 </section>
 <section class="how-to-use-section content-section">
 <h2 class="section-title">How to Use This Calculator</h2>

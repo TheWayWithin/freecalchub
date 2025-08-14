@@ -69,6 +69,14 @@
             {
               "@type": "Question", "name": "Should I buy long-term care insurance?",
               "acceptedAnswer": { "@type": "Answer", "text": "Long-term care insurance can be valuable if you have significant assets to protect but not enough to self-insure. Consider your health status, family history, assets, and income when deciding. Purchase while healthy and younger for better rates." }
+            },
+            {
+              "@type": "Question", "name": "What does Medicare cover for long-term care?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Medicare covers very limited long-term care services. It pays for short-term skilled nursing care (up to 100 days) and some home health services, but only after a qualifying hospital stay and when you need skilled medical care. Medicare does not cover custodial care, which makes up most long-term care needs, including help with daily activities like bathing, dressing, and eating." }
+            },
+            {
+              "@type": "Question", "name": "How do Medicaid and long-term care work together?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Medicaid is the largest payer of long-term care services in the US, but eligibility requires meeting strict income and asset limits. To qualify, you typically must have minimal assets (around $2,000 for individuals) and limited income. Many people spend down their assets to qualify for Medicaid coverage. Planning strategies like Medicaid trusts can help protect some assets, but must be done well in advance due to look-back periods." }
             }
           ]
         },
@@ -112,7 +120,7 @@
 <header class="site-header">
 <div class="header-container">
 <div class="logo-container">
-<a href="/"><img alt="FreecalcHub Logo" src="/images/logo.svg"/></a>
+<a class="logo" href="/"><img alt="FreecalcHub Logo" style="height: 120px !important; width: auto !important; max-height: none !important;" src="/images/FreecalcHub/logo_new_freecalchub.png?v=20250113-6"/></a>
 </div>
 <nav class="main-nav">
 <ul>
@@ -376,28 +384,25 @@
 </div>
 </section>
 
-<section class="related-calculators content-section card">
-<h2 class="section-title">Related Calculators</h2> 
-<ul>
-<li>
-<a href="/finance/retirement/retirement-calculator/">
-<span class="calculator-name">Retirement Calculator</span>
-<span class="calculator-description">Plan your complete retirement savings strategy with comprehensive income projections.</span>
+<section class="related-calculators content-section">
+<h2 class="section-title">Related Calculators</h2>
+<div class="related-links">
+<a href="/finance/retirement/retirement-calculator/" class="related-link">
+<i class="fas fa-chart-line"></i> Retirement Calculator
 </a>
-</li>
-<li>
-<a href="/finance/retirement/401k-contribution-calculator/">
-<span class="calculator-name">401(k) Contribution Calculator</span>
-<span class="calculator-description">Optimize your 401(k) contributions for maximum tax benefits and employer matching.</span>
+<a href="/finance/retirement/401k-contribution-calculator/" class="related-link">
+<i class="fas fa-piggy-bank"></i> 401(k) Contribution Calculator
 </a>
-</li>
-<li>
-<a href="/finance/retirement/social-security-benefit-calculator/">
-<span class="calculator-name">Social Security Benefit Calculator</span>
-<span class="calculator-description">Calculate your Social Security benefits and optimize your claiming strategy.</span>
+<a href="/finance/retirement/social-security-benefit-calculator/" class="related-link">
+<i class="fas fa-user-shield"></i> Social Security Benefit Calculator
 </a>
-</li>
-</ul>
+<a href="/finance/retirement/roth-traditional-ira-calculator/" class="related-link">
+<i class="fas fa-balance-scale"></i> Roth vs. Traditional IRA Calculator
+</a>
+<a href="/finance/retirement/rmd-calculator/" class="related-link">
+<i class="fas fa-coins"></i> Required Minimum Distribution Calculator
+</a>
+</div>
 </section>
 
 <section class="how-to-use-section content-section">
@@ -426,6 +431,8 @@
 <li><a href="#faq-item-2">How much should I budget for long-term care?</a></li>
 <li><a href="#faq-item-3">What factors affect long-term care costs?</a></li>
 <li><a href="#faq-item-4">Should I buy long-term care insurance?</a></li>
+<li><a href="#faq-item-5">What does Medicare cover for long-term care?</a></li>
+<li><a href="#faq-item-6">How do Medicaid and long-term care work together?</a></li>
 </ul>
 </div>
 
@@ -474,6 +481,30 @@ Should I buy long-term care insurance?
 </h3>
 <div class="panel" id="faq-panel-4" role="region"> 
 <p>Long-term care insurance can be valuable if you have significant assets to protect but not enough to self-insure. Consider your health status, family history, assets, and income when deciding. Purchase while healthy and younger for better rates.</p> 
+</div>
+</div>
+
+<div class="faq-item" id="faq-item-5">
+<h3> 
+<button aria-controls="faq-panel-5" aria-expanded="false" class="accordion"> 
+What does Medicare cover for long-term care? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-5" role="region"> 
+<p>Medicare covers very limited long-term care services. It pays for short-term skilled nursing care (up to 100 days) and some home health services, but only after a qualifying hospital stay and when you need skilled medical care. Medicare does not cover custodial care, which makes up most long-term care needs, including help with daily activities like bathing, dressing, and eating.</p> 
+</div>
+</div>
+
+<div class="faq-item" id="faq-item-6">
+<h3> 
+<button aria-controls="faq-panel-6" aria-expanded="false" class="accordion"> 
+How do Medicaid and long-term care work together? 
+<span class="accordion-icon"></span> 
+</button> 
+</h3>
+<div class="panel" id="faq-panel-6" role="region"> 
+<p>Medicaid is the largest payer of long-term care services in the US, but eligibility requires meeting strict income and asset limits. To qualify, you typically must have minimal assets (around $2,000 for individuals) and limited income. Many people spend down their assets to qualify for Medicaid coverage. Planning strategies like Medicaid trusts can help protect some assets, but must be done well in advance due to look-back periods.</p> 
 </div>
 </div>
 </section>

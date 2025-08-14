@@ -11,12 +11,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Auto Loan Calculator: Estimate Car Payments &amp; Total Costs | FreecalcHub</title>
 <meta content="Use our free Auto Loan Calculator to estimate monthly car payments, total interest, and view an amortization schedule. Plan your vehicle financing instantly." name="description"/>
+<!-- Favicon and PWA Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon_16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#4a6fa5">
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.freecalchub.com/finance/loan/auto-loan-calculator/">
+<meta property="og:title" content="Auto Loan Calculator: Estimate Car Payments & Total Costs | FreecalcHub">
+<meta property="og:description" content="Use our free Auto Loan Calculator to estimate monthly car payments, total interest, and view an amortization schedule. Plan your vehicle financing instantly.">
+<meta property="og:image" content="https://www.freecalchub.com/images/social/cover_image_1200x630.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.freecalchub.com/finance/loan/auto-loan-calculator/">
+<meta property="twitter:title" content="Auto Loan Calculator: Estimate Car Payments & Total Costs | FreecalcHub">
+<meta property="twitter:description" content="Use our free Auto Loan Calculator to estimate monthly car payments, total interest, and view an amortization schedule. Plan your vehicle financing instantly.">
+<meta property="twitter:image" content="https://www.freecalchub.com/images/social/cover_image_1200x630.png">
 <link href="https://www.freecalchub.com/finance/loan/auto-loan-calculator/" rel="canonical"/>
 <link href="/css/styles.css" rel="stylesheet"/>
 <link href="/css/dark-mode.css" rel="stylesheet"/>
 <link href="/css/dark-mode-button.css" rel="stylesheet"/>
 <link href="/css/breadcrumb-styles.css" rel="stylesheet"/>
 <link href="/css/calchub-consolidated-fixes.css" rel="stylesheet"/>
+<link href="/css/brand-enhancements.css" rel="stylesheet"/>
 <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
 <link href="/css/navigation-ribbon.css" rel="stylesheet"/>
 <link href="/css/faq-styles-v2.css" rel="stylesheet"/>
@@ -34,7 +55,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           "operatingSystem": "Web",
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
           "description": "Estimate monthly car payments, total interest, and view an amortization schedule with our free auto loan calculator.",
-          "url": "https://www.freecalchub.com/finance/loan/auto-loan-calculator/"
+          "url": "https://www.freecalchub.com/finance/loan/auto-loan-calculator/",
+          "relatedLink": [
+            {
+              "@type": "SoftwareApplication",
+              "name": "Loan Calculator",
+              "url": "https://www.freecalchub.com/finance/loan/loan-calculator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Debt Payoff Calculator",
+              "url": "https://www.freecalchub.com/finance/loan/debt-payoff-calculator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Student Loan Payoff Calculator",
+              "url": "https://www.freecalchub.com/finance/loan/student-loan-payoff-calculator/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Extra Payment Calculator",
+              "url": "https://www.freecalchub.com/finance/loan/extra-payment-calculator/"
+            }
+          ]
         },
         {
           "@type": "FAQPage",
@@ -87,7 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
-<header class="site-header"> <div class="header-container"> <div class="logo-container"> <a href="/"><img alt="FreecalcHub Logo" src="/images/logo.svg"/></a> </div> <nav class="main-nav"> <ul> <li><a class="active" href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date &amp; Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </nav> <div class="header-controls"> <button aria-label="Toggle dark mode" id="dark-mode-toggle"> <i class="fas fa-moon"></i> <i class="fas fa-sun"></i> </button> <button aria-label="Toggle menu" id="mobile-menu-button"> <i class="fas fa-bars menu-icon"></i> </button> </div> </div> <div class="mobile-menu" id="mobile-menu"> <div class="mobile-menu-header"> <span>Menu</span> <button aria-label="Close menu" id="mobile-menu-close"> <i class="fas fa-times"></i> </button> </div> <nav class="mobile-nav"> <ul> <li><a href="/">Home</a></li> <li><a class="active" href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date &amp; Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </nav> </div> </header>
+<header class="site-header"> <div class="header-container"> <div class="logo-container"> <a href="/"><img alt="FreecalcHub Logo" style="height: 120px !important; width: auto !important; max-height: none !important;" src="/images/FreecalcHub/logo_new_freecalchub.png?v=20250113-6"/></a> </div> <nav class="main-nav"> <ul> <li><a class="active" href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date &amp; Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </nav> <div class="header-controls"> <button aria-label="Toggle dark mode" id="dark-mode-toggle"> <i class="fas fa-moon"></i> <i class="fas fa-sun"></i> </button> <button aria-label="Toggle menu" id="mobile-menu-button"> <i class="fas fa-bars menu-icon"></i> </button> </div> </div> <div class="mobile-menu" id="mobile-menu"> <div class="mobile-menu-header"> <span>Menu</span> <button aria-label="Close menu" id="mobile-menu-close"> <i class="fas fa-times"></i> </button> </div> <nav class="mobile-nav"> <ul> <li><a href="/">Home</a></li> <li><a class="active" href="/finance/">Finance</a></li> <li><a href="/math/">Math</a></li> <li><a href="/health/">Health</a></li> <li><a href="/conversions/">Conversions</a></li> <li><a href="/date-time/">Date &amp; Time</a></li> <li><a href="/business/">Business</a></li> <li><a href="/lifestyle/">Lifestyle</a></li> <li><a href="/blog/">Blog</a></li> </ul> </nav> </div> </header>
 <div class="breadcrumbs">
 <div class="breadcrumbs-container">
 <a href="/">Home</a>
@@ -217,9 +260,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </section>
 <section class="content-section">
 <h2 class="section-title">Related Calculators</h2>
-<ul>
-<li><a href="/finance/loan/loan-calculator/">Generic Loan Calculator</a></li>
-</ul>
+<div class="related-links">
+<a href="/finance/loan/loan-calculator/" class="related-link">
+<i class="fas fa-calculator"></i>
+Loan Calculator
+</a>
+<a href="/finance/loan/debt-payoff-calculator/" class="related-link">
+<i class="fas fa-credit-card"></i>
+Debt Payoff Calculator
+</a>
+<a href="/finance/loan/student-loan-payoff-calculator/" class="related-link">
+<i class="fas fa-graduation-cap"></i>
+Student Loan Payoff Calculator
+</a>
+<a href="/finance/loan/extra-payment-calculator/" class="related-link">
+<i class="fas fa-plus-circle"></i>
+Extra Payment Calculator
+</a>
+<a href="/finance/loan/loan-comparison-calculator/" class="related-link">
+<i class="fas fa-balance-scale"></i>
+Loan Comparison Calculator
+</a>
+</div>
 </section>
 <section class="faq-section content-section">
 <h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
