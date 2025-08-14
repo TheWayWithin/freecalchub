@@ -1,8 +1,9 @@
 # FreecalcHub General Page - Template Usage Guidelines
 
-**Version: 1.4 (Last Updated: 2025-08-13)**
+**Version: 1.5 (Last Updated: 2025-08-13)**
 
 **Changelog:**
+- **v1.5 (2025-08-13)**: Added requirement for minimum 10 meaningful FAQs per calculator with quality guidelines
 - **v1.4 (2025-08-13)**: Updated Related Calculators section to use new icon-enhanced grid layout with `<div class="related-links">` structure
 - **v1.3 (2025-06-15)**: Added standard calculator form grid layout and removed conflicting form rules
 - **v1.2**: Initial template standardization
@@ -156,7 +157,17 @@ This is where you add all the unique content for your calculator.
     * These links should correspond to the `relatedLink` entries in your `SoftwareApplication` schema.
 * **"How to Use" Section (`<section class="how-to-use-section">`)**: Provide clear, step-by-step instructions.
 * **Educational Content Section (`<section class="content-section">`)**: Add relevant articles, explanations, etc. Add multiple such sections if needed.
-* **FAQ Section (`<section class="faq-section">`)**: **MANDATORY V2 STRUCTURE** - Add all FAQs using the required structure (FAQ Index + FAQ Items). Refer to the `calculator_template.html` for the precise HTML structure for each item (`div.faq-item`, `button.accordion`, `div.panel`).
+* **FAQ Section (`<section class="faq-section">`)**: **MANDATORY V2 STRUCTURE**
+    * **Minimum 10 FAQs required** - Each calculator must have at least 10 meaningful FAQs
+    * **Quality over quantity**: FAQs must address real user questions about:
+        - How to use the calculator effectively
+        - Understanding the calculations and formulas
+        - Common problems the calculator solves
+        - Related concepts and terminology
+        - Practical applications and use cases
+        - Common mistakes and how to avoid them
+    * **Structure**: Add all FAQs using the required structure (FAQ Index + FAQ Items)
+    * **HTML Format**: Refer to `calculator_template.html` for the precise HTML structure for each item (`div.faq-item`, `button.accordion`, `div.panel`)
 
 ### Step 8: Link Calculator-Specific JavaScript
 

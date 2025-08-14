@@ -89,7 +89,7 @@ To initiate the development of a new calculator and associated category page upd
     * SEO Elements (Title, Meta Description, Keywords).
     * Detailed Content Outline for all sections of the calculator page (Introduction, How-to-Use, Educational Material, etc.).
     * Calculator Tool Details (Input Fields, Output Fields, Calculation Logic/Formulas).
-    * FAQ Section content (Questions & Answers).
+    * FAQ Section content (Minimum 10 meaningful Questions & Answers that address real user needs).
     * Related Calculators list.
     * Visual Elements requirements (if any).
     * Related Calculators List: A curated list of 3-5 relevant calculators, including their target URLs and brief (1-2 line) descriptions suitable for the 'Related Calculators' section.

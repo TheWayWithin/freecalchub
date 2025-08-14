@@ -74,6 +74,9 @@ FreecalcHub is a free online calculator website (www.freecalchub.com) with calcu
 
 ### Calculator Page Standards (v1.4+)
 1. **FAQ Section**: MUST include FAQ index with linked items before FAQ content
+   - **Minimum 10 FAQs required** per calculator
+   - FAQs must address real user questions, not be filler content
+   - Focus on: how to use, understanding calculations, common problems, practical applications
    - Use `<div class="faq-index card">` with linked list
    - Each FAQ item needs unique `id="faq-item-N"` for anchor linking
 2. **Related Calculators**: Use icon-enhanced grid layout (as of template v1.4)
@@ -91,6 +94,21 @@ When creating a set of related calculators (e.g., percentage suite):
 3. **Share common patterns**: Use consistent validation, error handling, and result display
 4. **Update category pages**: Fix all "Coming Soon" statuses after deployment
 5. **Cross-link appropriately**: Ensure related calculators reference each other
+
+### FAQ Content Guidelines
+**Quality FAQs should cover:**
+- **Basic usage**: "How do I calculate X?" "What does Y mean?"
+- **Understanding formulas**: "What's the formula for X?" "How is Y calculated?"
+- **Common scenarios**: "When should I use this?" "What's the difference between X and Y?"
+- **Error resolution**: "Why am I getting this error?" "What if my value is zero?"
+- **Practical applications**: "How does this apply to real life?" "Can I use this for X?"
+- **Advanced features**: "Can I calculate multiple values?" "How do I handle special cases?"
+- **Related concepts**: "What's the relationship between X and Y?" "How does this compare to Z?"
+
+**Avoid generic fillers like:**
+- "Is this calculator free?" (Yes, all are free)
+- "Is this calculator accurate?" (Yes, we ensure accuracy)
+- "Can I use this on mobile?" (Yes, all are responsive)
 
 ### Implementation Details Location
 - **File naming, CSS/JS organization**: See `/Users/jamiewatters/DevProjects/freecalchub/general-template-guidelines.md`
