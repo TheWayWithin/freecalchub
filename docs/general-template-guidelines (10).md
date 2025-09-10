@@ -1,10 +1,10 @@
 # FreecalcHub General Page - Template Usage Guidelines
 
-**Version: 1.4 (Last Updated: 2025-01-09)**
+**Version: 1.3 (Last Updated: 2025-06-15)**
 
 ## 1. Overview
 
-This document provides comprehensive guidelines for using the FreecalcHub master HTML templates (`calculator_template.html` and `category_template.html`) to create new calculator pages and category/sub-category pages. Adhering to these guidelines ensures visual and structural consistency across the entire site, proper SEO markup, correct integration with global site assets (CSS/JavaScript), automatic support for standard features like Dark Mode, responsive layouts, V2 FAQ system, and **mandatory authority signals** for AI search optimization.
+This document provides comprehensive guidelines for using the FreecalcHub master HTML templates (`calculator_template.html` and `category_template.html`) to create new calculator pages and category/sub-category pages. Adhering to these guidelines ensures visual and structural consistency across the entire site, proper SEO markup, correct integration with global site assets (CSS/JavaScript), and automatic support for standard features like Dark Mode, responsive layouts, and the V2 FAQ system.
 
 ## 2. File Structure for New Pages
 
@@ -234,93 +234,7 @@ Modify the visible breadcrumbs to reflect the category's position in the site st
 * **About Category Section (`<section class="category-content-section">`)**: Add relevant introductory or educational content about the category.
 * **FAQ Section (`<section class="faq-section content-section">`)**: **MANDATORY V2 STRUCTURE** - Add all category-specific FAQs using the required structure (FAQ Index + FAQ Items). Refer to `category_template.html` for the precise HTML structure for each item (`div.faq-item`, `button.accordion`, `div.panel`). Ensure unique IDs for each FAQ item (`id="faq-cat-item-X"`) and panel (`id="faq-cat-panel-X"`), and **include internal links within the answer text to relevant calculator pages.**
 
-## 5. Authority Signals Requirements (MANDATORY)
-
-**⚠️ CRITICAL FOR AI SEARCH OPTIMIZATION**: All calculators and category pages MUST include authority signals to boost search rankings and credibility.
-
-### 5.1. Calculator Pages - Sources & Methodology Section
-
-**MANDATORY**: Every calculator page must include a "Sources & Methodology" section immediately after educational content and before FAQ section.
-
-#### Template Structure:
-```html
-<section class="methodology-section content-section">
-<h2 class="section-title">Sources &amp; Methodology</h2>
-<p>This calculator uses [type of calculations/formulas] verified through authoritative sources to ensure accuracy and reliability:</p>
-<div class="sources-list">
-<h3>Primary References:</h3>
-<ul>
-<!-- Select appropriate sources based on calculator category -->
-<li><strong><a href="[URL]" target="_blank" rel="noopener">[SOURCE NAME]</a></strong> - [Description]</li>
-</ul>
-<h3>Calculation Standards:</h3>
-<ul>
-<li>[Methodology description]</li>
-<li>All calculations cross-verified with multiple authoritative sources</li>
-</ul>
-<p><strong>Accuracy Note:</strong> This calculator provides estimates based on the information provided. [Add relevant disclaimers]</p>
-</div>
-</section>
-```
-
-#### Required Sources by Calculator Category:
-
-**FINANCE CALCULATORS** - Must include 3-5 of these:
-- **Federal Reserve** (https://www.federalreserve.gov/) - Interest rate data and monetary policy
-- **IRS** (https://www.irs.gov/) - Tax calculations and deduction guidelines  
-- **CFPB** (https://www.consumerfinance.gov/) - Consumer financial guidance
-- **Freddie Mac** (https://www.freddiemac.com/) - Mortgage calculation standards
-- **Fannie Mae** (https://www.fanniemae.com/) - Conventional loan parameters
-
-**MATH CALCULATORS** - Must include 3-4 of these:
-- **Wolfram MathWorld** (https://mathworld.wolfram.com/) - Mathematical definitions and formulas
-- **Khan Academy** (https://www.khanacademy.org/) - Educational mathematics content
-- **NIST** (https://www.nist.gov/) - Mathematical standards and precision guidelines
-- **U.S. Census Bureau** (https://www.census.gov/) - Statistical methodology
-
-**HEALTH CALCULATORS** - Must include 3-4 of these:
-- **CDC** (https://www.cdc.gov/) - Health guidelines and medical standards
-- **Mayo Clinic** (https://www.mayoclinic.org/) - Medical information and health calculations
-- **WHO** (https://www.who.int/) - International health standards
-- **NIH** (https://www.nih.gov/) - Medical research and health data
-
-**CONVERSION CALCULATORS** - Must include 2-3 of these:
-- **NIST** (https://www.nist.gov/) - Official measurement standards and conversion factors
-- **BIPM** (https://www.bipm.org/) - International measurement standards
-- **ISO** (https://www.iso.org/) - International standards for units and measurements
-
-### 5.2. Category Pages - Quality Assurance Section
-
-**MANDATORY**: Every category page must include quality assurance information in the "About [Category] Calculators" section:
-
-```html
-<div class="quality-assurance">
-<h3>Quality &amp; Accuracy</h3>
-<p>All calculators in this category are created and verified by Jamie Watters, Software Engineer, using authoritative sources and industry standards. Each calculator undergoes rigorous testing to ensure accuracy and reliability for both personal and professional use.</p>
-</div>
-```
-
-### 5.3. Footer Author Verification
-
-**MANDATORY**: All pages must include author verification in footer:
-
-```html
-<div class="footer-bottom">
-<p>© <script>document.write(new Date().getFullYear())</script> FreecalcHub. All rights reserved. | Created &amp; verified by Jamie Watters, Software Engineer</p>
-</div>
-```
-
-### 5.4. Quality Assurance Checklist
-
-Before marking any calculator or category page complete, verify:
-
-- ✅ **Sources & Methodology section** included with appropriate category-specific authoritative sources
-- ✅ **Author verification** in footer  
-- ✅ **Quality assurance** section in category pages
-- ✅ **Appropriate disclaimers** about consulting professionals when relevant
-- ✅ **External links** open in new tabs with `target="_blank" rel="noopener"`
-
-## 6. Best Practices for All Pages
+## 5. Best Practices for All Pages
 
 * **Google Tag Manager (GTM) Implementation:**
     * The GTM `script` tag must be placed as high as possible in the `<head>` of the document.
