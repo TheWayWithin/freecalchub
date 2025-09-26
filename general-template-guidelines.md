@@ -1,8 +1,9 @@
 # FreecalcHub General Page - Template Usage Guidelines
 
-**Version: 1.5 (Last Updated: 2025-08-13)**
+**Version: 1.6 (Last Updated: 2025-09-26)**
 
 **Changelog:**
+- **v1.6 (2025-09-26)**: Added comprehensive SEO requirements section including meta descriptions, transparency signals, and AImpact Scanner compliance
 - **v1.5 (2025-08-13)**: Added requirement for minimum 10 meaningful FAQs per calculator with quality guidelines
 - **v1.4 (2025-08-13)**: Updated Related Calculators section to use new icon-enhanced grid layout with `<div class="related-links">` structure
 - **v1.3 (2025-06-15)**: Added standard calculator form grid layout and removed conflicting form rules
@@ -12,7 +13,55 @@
 
 This document provides comprehensive guidelines for using the FreecalcHub master HTML templates (`calculator_template.html` and `category_template.html`) to create new calculator pages and category/sub-category pages. Adhering to these guidelines ensures visual and structural consistency across the entire site, proper SEO markup, correct integration with global site assets (CSS/JavaScript), and automatic support for standard features like Dark Mode, responsive layouts, and the V2 FAQ system.
 
-## 2. File Structure for New Pages
+## 2. SEO Requirements & Authority Signals (AImpact Scanner Compliance)
+
+### Meta Description Best Practices
+* **Character Limit**: MUST be 150-160 characters for optimal display
+* **Content Requirements**:
+    * Include primary keywords relevant to the calculator/category
+    * Add action-oriented language ("Calculate", "Find", "Discover")
+    * Highlight key benefits ("free", "instant", "accurate")
+    * End with a call-to-action ("Try now!", "Start calculating")
+* **Format**: Use standard HTML format: `<meta name="description" content="[Your description here]"/>`
+* **Uniqueness**: Each page MUST have a unique meta description
+
+### Page Title Optimization
+* **Character Limit**: Keep under 60 characters for optimal search display
+* **Format**: `[Calculator/Category Name] | FreecalcHub`
+* **Keywords**: Include primary keyword at the beginning when possible
+
+### Transparency & Trust Signals
+**All pages must include:**
+
+1. **Disclosure Statement** (Footer):
+   * Location: `footer-bottom` section
+   * Required text: "As an independent resource, FreeCalcHub provides free, unbiased calculators. Our content is for informational purposes only and is not financial or medical advice. All tools are developed and maintained by our team."
+   * Styling: Small, muted text (0.9em, #999)
+
+2. **Contact Information**:
+   * Direct email: contact@freecalchub.com
+   * Location: Footer "Support" or "Connect" section
+   * Format: Mailto link with envelope icon
+
+3. **Last Updated Date**:
+   * Location: After main heading (h1) or in content header
+   * Format: "Last Updated: [Month Year]"
+   * Styling: Small, muted text (0.9em, #666)
+   * Purpose: Signals content freshness to search engines and AI systems
+
+### Schema Markup Requirements
+* **All schema must be complete**: Fill in ALL placeholder values
+* **Dates must use ISO 8601**: Format as YYYY-MM-DDTHH:MM:SSZ
+* **URLs must be absolute**: Full https://www.freecalchub.com/... paths
+* **FAQPage schema**: Must exactly match visible FAQ content
+
+### Content Authority Markers
+* Include expertise signals in content ("professionally-recognized formulas", "CFPB guidelines")
+* Reference authoritative sources when applicable
+* Mention validation methods and accuracy standards
+* Include user trust metrics when available ("serving 10,000+ users")
+
+## 3. File Structure for New Pages
 
 When creating a new page, the typical file structure within your project would be:
 
@@ -50,7 +99,7 @@ When creating a new page, the typical file structure within your project would b
 * `faq-accordion-v2.js`: Provides the functionality for the V2 FAQ accordion.
 * All global CSS and JS files listed (and present in `calculator_template.html` and `category_template.html`) are linked directly from the template. You do not need to link them again.
 
-## 3. Creating a New Calculator Page (using `calculator_template.html`)
+## 4. Creating a New Calculator Page (using `calculator_template.html`)
 
 Follow these steps meticulously:
 
@@ -178,7 +227,7 @@ This is where you add all the unique content for your calculator.
     to the correct **full root-relative path**.
 * Create the corresponding JavaScript file.
 
-## 4. Creating a New Category/Sub-Category Page (using `category_template.html`)
+## 5. Creating a New Category/Sub-Category Page (using `category_template.html`)
 
 Follow these steps meticulously:
 
@@ -262,7 +311,7 @@ Modify the visible breadcrumbs to reflect the category's position in the site st
 * **About Category Section (`<section class="category-content-section">`)**: Add relevant introductory or educational content about the category.
 * **FAQ Section (`<section class="faq-section content-section">`)**: **MANDATORY V2 STRUCTURE** - Add all category-specific FAQs using the required structure (FAQ Index + FAQ Items). Refer to `category_template.html` for the precise HTML structure for each item (`div.faq-item`, `button.accordion`, `div.panel`). Ensure unique IDs for each FAQ item (`id="faq-cat-item-X"`) and panel (`id="faq-cat-panel-X"`), and **include internal links within the answer text to relevant calculator pages.**
 
-## 5. Best Practices for All Pages
+## 6. Best Practices for All Pages
 
 * **Google Tag Manager (GTM) Implementation:**
     * The GTM `script` tag must be placed as high as possible in the `<head>` of the document.
@@ -288,7 +337,7 @@ Modify the visible breadcrumbs to reflect the category's position in the site st
 * **Avoid Inline `<style>` Blocks for General Layout and Component Styling:** Do not add `<style>` blocks directly within individual page HTML files (`index.html`) for styling elements like `category-header`, `subcategory-cta`, or component styles. All page-specific CSS should reside in dedicated `.css` files linked in the `<head>`, and global styles should be managed in `styles.css`. If an element's styling (e.g., alignment) differs from expectations, first inspect global CSS (`styles.css`, etc.) and the relevant template, rather than adding inline overrides.
 * **"Coming Soon" Calculator Cards**: For unreleased calculators on category pages, use the standard format: `<span class="coming-soon-tag">Coming Soon</span>` positioned inline within the description paragraph after the main text. Use regular `<div class="calculator-card">` structure (not clickable links) and leverage existing `.coming-soon-tag` CSS styling (orange color, bold, smaller font, new line). This format is used consistently across all FreecalcHub category pages - research existing examples before implementing.
 
-## 6. Charting & Canvas Elements (e.g., Chart.js)
+## 7. Charting & Canvas Elements (e.g., Chart.js)
 
 *(This section applies primarily to calculator pages and remains the same as in v3.0 of calculator guidelines)*
 Many calculators benefit from visual charts. Be aware of:
@@ -298,8 +347,9 @@ Many calculators benefit from visual charts. Be aware of:
 * **Visibility:** Ensure chart container is visible before initializing/updating.
 * **Testing:** Explicitly test chart stability and responsiveness.
 
-## 7. Final Check Before Completion
+## 8. Final Check Before Completion
 
+### General Template Compliance
 Before considering any page complete:
 * Are all `[Placeholder Text]` and `TODO:` comments in the HTML template addressed?
 * Are all paths correct and root-relative?
@@ -310,4 +360,43 @@ Before considering any page complete:
 * **For category pages: Is the `FAQPage` schema correctly implemented and does it exactly match the visible FAQ content? Are internal links included in FAQ answers?**
 * Has the page been tested on a server environment?
 * Are all `datePublished`, `dateModified`, and `lastmod` (for sitemap) fields formatted using the **ISO 8601 standard (YYYY-MM-DDTHH:MM:SSZ)**?
+
+### SEO & Authority Signals Compliance Checklist (AImpact Scanner Requirements)
+
+**Meta Data & Titles:**
+- [ ] **Meta description present** and exactly 150-160 characters
+- [ ] **Meta description includes** keywords, benefits, and call-to-action
+- [ ] **Page title** is under 60 characters
+- [ ] **Canonical URL** is correctly set and absolute
+
+**Trust & Transparency Signals:**
+- [ ] **Footer disclosure statement** is present and visible
+- [ ] **Contact email** (contact@freecalchub.com) is in footer with mailto link
+- [ ] **Last Updated date** is shown after main heading or in header
+- [ ] **Last Updated format** is "Month Year" (e.g., "September 2025")
+
+**Schema Markup:**
+- [ ] **All placeholder values** in schema are filled in
+- [ ] **All URLs in schema** are absolute (https://www.freecalchub.com/...)
+- [ ] **Date fields** use ISO 8601 format (YYYY-MM-DDTHH:MM:SSZ)
+- [ ] **FAQPage schema** exactly matches visible FAQ content
+- [ ] **Organization schema** includes expertise and description fields
+
+**Content Authority:**
+- [ ] **Expertise signals** mentioned (e.g., "CFPB guidelines", "industry-standard")
+- [ ] **User metrics** included where applicable (e.g., "serving 10,000+ users")
+- [ ] **Validation methods** referenced (e.g., "99.999% accuracy")
+- [ ] **FAQ section** has minimum 10 meaningful Q&As (calculator pages)
+
+**Technical SEO:**
+- [ ] **All internal links** use root-relative paths
+- [ ] **Images have alt text** for accessibility
+- [ ] **Mobile viewport** meta tag is present
+- [ ] **CSP headers** are correctly configured
+
+**Post-Deployment:**
+- [ ] **sitemap.xml** updated with new page URL
+- [ ] **/sitemap/index.html** updated with new page listing
+- [ ] **Category pages** updated to link to new calculator (if applicable)
+- [ ] **"Coming Soon" status** removed from category pages (if applicable)
 
