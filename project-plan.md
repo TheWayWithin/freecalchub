@@ -1,348 +1,184 @@
-# PROJECT PLAN: Comprehensive Authority Signals Enhancement 🎖️
+# FreecalcHub Project Plan
 
-## Mission Overview
-Systematic deployment of Organization schema authority signals across all category pages to maximize Source Authority Signal scores and establish FreecalcHub as the authoritative calculator platform.
+## Latest Completed Mission: SEO Enhancements (October 8, 2025) ✅
 
-## Current Status
-- **Mission**: COMPLETED ✅
-- **Pages Enhanced**: 84/84 (100%)
-- **Authority Signals Deployed**: Comprehensive Organization schema
-- **Sitemap Updated**: Current timestamps for enhanced pages
+**Completed**: 2025-10-08
+**Duration**: 2 hours
+**Status**: ✅ COMPLETE
 
-## Phase Breakdown
-
-### ✅ Phase 1: MAIN CATEGORY AUTHORITY ENHANCEMENT
-**Status**: COMPLETED
-- [x] Finance category - CFPB compliance and regulatory authority
-- [x] Math category - Educational and computational authority  
-- [x] Health category - Wellness and BMI calculation authority
-- [x] Conversions category - International standards authority
-- [x] Date-Time category - Temporal calculation authority
-- [x] Business category - Analytics and ROI authority
-- [x] Lifestyle category - Personal planning authority
-
-### ✅ Phase 2: SUB-CATEGORY AUTHORITY ENHANCEMENT  
-**Status**: COMPLETED
-- [x] 8 Finance sub-categories with domain-specific expertise
-- [x] 8 Math sub-categories with educational specialization
-- [x] 7 Health sub-categories with wellness positioning
-- [x] 8 Conversion sub-categories with measurement authority
-- [x] 8 Date-Time sub-categories with temporal expertise
-- [x] 8 Business sub-categories with analytics authority
-- [x] 11 Lifestyle sub-categories with planning specialization
-
-### ✅ Phase 3: SPECIALIZED PAGE ENHANCEMENT
-**Status**: COMPLETED
-- [x] 7 Blog category pages with educational authority
-- [x] 1 Deep nested category (grading-performance) with academic authority
-- [x] Complete CollectionPage schema coverage achieved
-
-### ✅ Phase 4: SITEMAP OPTIMIZATION
-**Status**: COMPLETED
-- [x] Update sitemap.xml lastmod timestamps for all 64 enhanced category pages
-- [x] Signal fresh content to search engines for improved crawling
-- [x] Maintain sitemap accuracy for recent authority enhancements
-
-## Authority Signal Implementation Details
-
-### Organization Schema Components Deployed:
-- **Professional Identity**: CalcHub/FreecalcHub branding consistency
-- **User Base Validation**: "10,000+ users served" credibility messaging
-- **Regulatory Compliance**: CFPB-compliant formulas for financial authority
-- **Service Classification**: "Online Calculator Platform" designation
-- **Domain Expertise**: Customized knowsAbout arrays for each category
-
-### Expected SEO Impact:
-- **Main Categories**: 20-30 point authority score improvements
-- **Sub-Categories**: 15-25 point authority score improvements
-- **Specialized Pages**: 10-20 point authority score improvements
-- **Overall Platform**: Comprehensive domain authority establishment
-
-### ✅ Phase 4: RETIREMENT CALCULATORS
-**Status**: COMPLETED
-**Owner**: @tester → @developer
-- [x] Scan for existing vs "Coming Soon" calculators (6 exist, 4 missing)
-- [x] Test all functional calculators (6 tested)
-- [x] Document issues by priority (3 CRITICAL, ALL need HIGH fixes)
-- [x] Fix critical/high priority issues (@developer completed)
-- [x] Update to template v1.4 standards (ALL updated)
-- [x] Verify FAQ completeness (ALL now meet 10+ requirement)
-
-### ✅ Phase 5: BUDGETING CALCULATORS
-**Status**: TESTED - FIXES NEEDED
-**Owner**: @tester → @developer
-- [x] Scan for existing calculators (3 exist, 7 missing)
-- [x] Test all functional calculators (3 tested)
-- [x] Document and prioritize issues (HIGH: template compliance)
-- [ ] Implement fixes (Pending)
-- [ ] Ensure template compliance
-
-### ✅ Phase 6: SAVINGS CALCULATORS
-**Status**: TESTED - FIXES NEEDED
-**Owner**: @tester → @developer
-- [x] Scan for existing calculators (1 exists, 9 missing)
-- [x] Test all functional calculators (1 tested)
-- [x] Document and prioritize issues (HIGH: template compliance)
-- [ ] Implement fixes (Pending)
-- [ ] Ensure template compliance
-
-### ✅ Phase 7: CRYPTOCURRENCY CALCULATORS
-**Status**: TESTED - FIXES NEEDED
-**Owner**: @tester → @developer
-- [x] Verify which are actually implemented (3 exist, 4 missing)
-- [x] Test any functional calculators (3 tested)
-- [x] Document status (CRITICAL: FAQ violations, template issues)
-
-### ✅ Phase 8: TAX CALCULATORS
-**Status**: TESTED - FIXES NEEDED
-**Owner**: @tester → @developer
-- [x] Scan for existing calculators (3 exist, 5 missing)
-- [x] Test all functional calculators (3 tested)
-- [x] Document and prioritize issues (CRITICAL: FAQ violations)
-- [ ] Implement fixes (Pending)
-- [ ] Ensure template compliance
-
-### 📊 Phase 9: FINAL REPORT
-**Status**: COMPLETED
-**Owner**: @analyst
-- [x] Compile comprehensive test results
-- [x] Generate metrics dashboard
-- [x] Create remediation summary
-- [x] Propose future improvements
-
-## 🔧 REMEDIATION PHASES
-
-### ✅ Phase 10: IMMEDIATE TEMPLATE FIXES
-**Status**: COMPLETED
-**Owner**: @developer
-**Scope**: Fix 12 calculators in Budgeting, Savings, Crypto, Tax
-- [x] Update all logos to logo_new_freecalchub.png (7 updated)
-- [x] Add v1.4 related calculator sections with icons
-- [x] Ensure proper favicon and meta tags
-- [x] Test all changes
-**Note**: 3 tax calculators were "Coming Soon" placeholders
-
-### ✅ Phase 11: FAQ ENHANCEMENT
-**Status**: COMPLETED
-**Owner**: @developer
-**Scope**: Add missing FAQs to non-compliant calculators
-- [x] Crypto Profit Calculator: Add 4 FAQs (6→10) ✅
-- [x] Income Tax Calculator: Not applicable (Coming Soon)
-- [x] Verify all other calculators meet 10+ requirement
-- [x] Update FAQ index sections
-
-### 🚀 Phase 12: MISSING CALCULATOR CREATION
-**Status**: FUTURE SPRINT
-**Owner**: @strategist → @developer
-**Scope**: Create 42 missing calculators
-- [ ] Prioritize by user demand and category gaps
-- [ ] Create implementation roadmap
-- [ ] Estimate development timeline
-- [ ] Plan phased rollout
-
-## 🔌 Phase 13: API PILOT IMPLEMENTATION
-**Status**: IN PROGRESS - Week of Jan 21-28, 2025
-**Owner**: @architect → @developer
-**Scope**: Pilot API with Loan Calculator and create templates for agent rollout
-
-### Week 1 Objectives (Jan 21-28)
-- [ ] Select pilot calculator: **Loan Calculator** (most popular, clear value)
-- [ ] Extract calculation logic into reusable module
-- [ ] Create REST API endpoint with Vercel Functions
-- [ ] Implement basic authentication and rate limiting
-- [ ] Deploy beta API with documentation
-- [ ] Test with real-world scenarios
+### Objectives
+- [x] Update About page with personal story and transparency information
+- [x] Enhance footer links across all 162+ HTML pages
+- [x] Add author verification link with rel="me" attribute
+- [x] Improve E-E-A-T signals for SEO
+- [x] Update project tracking documentation
 
 ### Deliverables
-1. **API Module Template** (`/api-templates/calculator-module.template.js`)
-   - Standardized structure for extracting calculator logic
-   - Input validation schemas
-   - Error handling patterns
-   - Response formatting
+- ✅ [about/index.html](about/index.html) - Completely rewritten with personal story
+- ✅ 162 HTML files - Enhanced footer links (Data Protection + About the Author)
+- ✅ [progress.md](progress.md) - Updated with mission details
 
-2. **API Endpoint Template** (`/api-templates/api-endpoint.template.js`)
-   - REST endpoint boilerplate
-   - Authentication middleware
-   - Rate limiting configuration
-   - Logging and monitoring hooks
-
-3. **MCP Tool Definition Template** (`/api-templates/mcp-tool.template.json`)
-   - Tool description format
-   - Parameter definitions
-   - Example usage scenarios
-   - Error messages
-
-4. **Agent Rollout Guide** (`/docs/API-Agent-Rollout-Guide.md`)
-   - Step-by-step conversion process
-   - Testing checklist
-   - Performance benchmarks
-   - Deployment procedures
-
-### Pilot Calculator: Loan Calculator
-**Why Selected**:
-- Most complex calculation logic (good stress test)
-- High usage volume (validates demand)
-- Clear monetization potential (fintech market)
-- Existing modular structure in `/finance/loan/loan-calculator/js/`
-
-**API Endpoint**: `POST /api/v1/finance/loan`
-```json
-{
-  "principal": 100000,
-  "annual_rate": 5.5,
-  "term_months": 360,
-  "extra_payment": 0,
-  "compounding": "monthly"
-}
-```
-
-### Success Metrics
-- [ ] <100ms response time for standard calculations
-- [ ] Zero calculation errors vs. web version
-- [ ] Successfully handle 1000 requests/minute
-- [ ] Generate OpenAPI documentation
-- [ ] Complete 5 test integrations
-
-### Agent Automation Strategy
-After successful pilot, agents can:
-1. Use templates to convert remaining 57 calculators
-2. Follow standardized testing procedures
-3. Auto-generate API documentation
-4. Deploy incrementally with monitoring
-
-### Timeline
-- **Day 1-2**: Extract and modularize loan calculator logic
-- **Day 3-4**: Build API endpoint and authentication
-- **Day 5**: Create templates and documentation
-- **Day 6**: Testing and optimization
-- **Day 7**: Deploy beta and gather feedback
-
-## Success Criteria
-- ✅ 100% functional accuracy across all calculators
-- ✅ Full template v1.4 compliance
-- ✅ Minimum 10 meaningful FAQs per calculator
-- ✅ Zero console errors
-- ✅ Clean HTML/Schema validation
-- ✅ Consistent user experience
-
-## Resource Allocation
-- **@tester**: Primary testing and issue documentation
-- **@developer**: Critical/high priority fixes
-- **@analyst**: Metrics and reporting
-- **@coordinator**: Orchestration and progress tracking
-
-## Risk Mitigation
-- **Risk**: Many calculators missing (need creation)
-- **Mitigation**: Document for future sprint, focus on existing
-- **Risk**: Complex tax calculations may have errors
-- **Mitigation**: Extra validation on Phase 8
-
-## Communication Protocol
-- Update progress.md after each phase
-- Report blockers immediately
-- Mark tasks complete only when verified
-- Maintain issue priority matrix
-
-## 🔧 Phase 14: INFRASTRUCTURE ENHANCEMENT
-**Status**: COMPLETED - Aug 28, 2025
-**Owner**: DevOps/Infrastructure
-**Scope**: Configure MCP servers for enhanced development capabilities
-
-### Objectives Completed
-- [x] Configure context7 for memory management
-- [x] Set up git server for local repository operations
-- [x] Configure GitHub API server for PR/issue management
-- [x] Enable playwright for automated browser testing
-- [x] Set up firecrawl for web scraping capabilities
-
-### Configuration Applied
-- **Config File**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-- **API Keys**: Sourced from `.env.mcp`
-- **Repository**: Updated to point to `/Users/jamiewatters/DevProjects/freecalchub`
-
-### Benefits Realized
-- Automated testing capabilities with Playwright
-- Direct GitHub operations without manual CLI commands
-- Enhanced web research for competitor analysis
-- Persistent memory across sessions with context7
-- Improved development workflow efficiency
-
-## 🎯 Phase 15: SEO IMPROVEMENTS - AIMPACT SCANNER REMEDIATION
-**Status**: COMPLETED - September 26, 2025
-**Owner**: Developer
-**Scope**: Fix critical SEO issues identified by AImpact Scanner
-
-### Objectives Completed
-- [x] Update homepage meta description to optimized 160-character version
-- [x] Add transparency disclosure statement to footer
-- [x] Add "Last Updated" date for content freshness signals  
-- [x] Add direct contact email (contact@freecalchub.com) to footer
-- [x] Update calculator-template.html with SEO guidance
-- [x] Update category-template.html with SEO requirements
-- [x] Update general-template-guidelines.md to version 1.6
-- [x] Add comprehensive SEO compliance checklist
-
-### Implementation Details
-**Homepage Enhancements:**
-- Meta description: Optimized with keywords, benefits, and call-to-action
-- Transparency: Added disclosure about independent resource status
-- Freshness: Added "Last Updated: September 2025" after About section
-- Contact: Added mailto link with contact@freecalchub.com in footer
-
-**Template Updates:**
-- Both calculator and category templates enhanced with:
-  - SEO guidance comments for meta descriptions
-  - Transparency disclosure placeholders
-  - Contact email sections
-  - Last Updated date guidance
-  - AImpact Scanner compliance notes
-
-**Documentation Updates:**
-- general-template-guidelines.md updated to v1.6
-- Added comprehensive SEO Requirements section
-- Added AImpact Scanner compliance checklist
-- Documented all authority signal requirements
-
-### Expected Score Improvements
-- **Meta Description**: 0/100 → 100/100
-- **Transparency & Disclosure**: 35/100 → 80/100+
-- **Contact Information**: 45/100 → 90/100+
-- **Overall Machine Readability**: Significant improvement
-
-### Deployment
-- Commit: b56e339 - feat: Implement SEO improvements based on AImpact Scanner feedback
-- Pushed to main branch at 11:45 AM PST
-- Automatic Netlify deployment triggered
-
-## 🔍 Phase 16: SITEMAP & META OPTIMIZATION
-**Status**: COMPLETED - September 28, 2025
-**Owner**: Developer
-**Scope**: Refine meta descriptions and update sitemap for accuracy
-
-### Objectives Completed
-- [x] Optimize homepage meta description to 156 characters (150-160 range)
-- [x] Update sitemap.xml with correct lastmod dates for homepage
-- [x] Add llms.txt entry to sitemap for AI discovery
-- [x] Ensure all timestamps reflect actual modification dates
-
-### Implementation Details
-**Meta Description Refinement:**
-- Initial: 180 characters (too long)
-- First revision: 141 characters (too short)
-- Final: 156 characters (optimal range)
-- Content: "Free online calculators for finance, health, math, conversions & more. Get instant, accurate results from 100+ tools with no sign-up. Try FreeCalcHub today!"
-
-**Sitemap Updates:**
-- Homepage lastmod: Updated to 2025-09-26 (SEO improvements date)
-- llms.txt: Added new entry with lastmod 2025-09-28
-- Priority: Set to 0.7 for llms.txt (important for AI/LLM discovery)
-
-### Deployment
-- Commit 1: e8f6deb - Meta description optimization
-- Commit 2: 5c6c954 - Sitemap.xml updates
-- Both pushed to main branch successfully
+### Impact
+- Improved transparency and trust signals across entire site
+- Enhanced internal linking structure (2 new links × 162 pages = 324 new internal links)
+- Author authority verification via rel="me" microformat
+- Expected improvement in AImpactScanner "Transparency & Disclosure Standards" score
 
 ---
-*Last Updated*: Sitemap & Meta Optimization Complete - September 28, 2025
-*Coordinator*: THE COORDINATOR
-*Mission Status*: ACTIVE
+
+## Current Mission: API Architecture Documentation
+**Started**: 2025-10-03
+**Estimated Duration**: 2-3 hours
+**Status**: IN_PROGRESS
+
+## Executive Summary
+Create comprehensive architecture documentation for the FreecalcHub API platform, which will transform 58+ static calculators into API-accessible services with both REST and MCP (Model Context Protocol) interfaces for LLM integration.
+
+## Mission Objectives
+- [ ] Complete architecture.md document created
+- [ ] All major system components documented
+- [ ] Infrastructure and deployment strategy defined
+- [ ] Data architecture and flow documented
+- [ ] Security measures and compliance addressed
+- [ ] Scaling strategy and performance targets set
+- [ ] Key architectural decisions captured with rationale
+- [ ] Document reviewed and approved by technical team
+
+## Phase 1: Requirements Analysis ✅ COMPLETE
+**Lead**: @strategist
+**Support**: @architect
+**Objective**: Understand system requirements and architectural needs
+
+### Tasks
+- [x] Analyze existing system and requirements from FCH-API-PRD.md (assigned to @strategist)
+- [x] Identify key architectural characteristics (scalability, security, performance)
+- [x] Define system boundaries and scope
+- [x] Determine stakeholder concerns (developers, LLMs, enterprises)
+- [x] List non-functional requirements
+- [x] Document architectural constraints and assumptions
+
+**Status**: COMPLETE - 45 minutes
+**Blockers**: None
+**Deliverable**: `/Users/jamiewatters/DevProjects/freecalchub/requirements-analysis.md`
+
+## Phase 2: System Design ✅ COMPLETE
+**Lead**: @architect
+**Support**: @developer
+**Objective**: Design comprehensive system architecture
+
+### Tasks
+- [x] Design high-level system architecture with component diagram
+- [x] Define infrastructure architecture and deployment strategy
+- [x] Design data architecture and database schema
+- [x] Specify integration patterns and external services
+- [x] Define security architecture and measures
+- [x] Create scaling strategy and performance targets
+- [x] Document key architectural decisions and trade-offs
+- [x] Address 5 critical architectural decisions from requirements analysis
+- [x] Validate calculator extraction feasibility (CONFIRMED FEASIBLE)
+- [x] Validate performance budget achievability (CONFIRMED <100ms achievable)
+
+**Status**: COMPLETE - 2 hours
+**Blockers**: None
+**Deliverable**: `/Users/jamiewatters/DevProjects/freecalchub/architecture.md` (12,000+ lines)
+
+## Phase 3: Technical Validation & POC Implementation (Ready to Start)
+**Lead**: @developer
+**Support**: @architect
+**Objective**: Validate architecture and implement Phase 1 POC
+
+### Tasks
+
+**Week 1: Infrastructure Setup**
+- [ ] Set up Vercel project with TypeScript + Node.js 20
+- [ ] Configure Supabase PostgreSQL (10GB instance)
+- [ ] Configure Upstash Redis (1GB instance)
+- [ ] Set up AWS SQS queue (standard queue)
+- [ ] Configure environment variables and secrets
+
+**Week 2: Core Architecture**
+- [ ] Implement BaseCalculator abstract class
+- [ ] Implement shared calculator engine structure
+- [ ] Implement REST API framework (Express + middleware)
+- [ ] Implement JWT authentication (API key → access token flow)
+- [ ] Implement rate limiting (Redis token bucket algorithm)
+
+**Week 3: Calculator Extraction**
+- [ ] Extract loan calculator with 100% parity tests
+- [ ] Extract percentage calculator with tests
+- [ ] Extract BMI calculator with tests
+- [ ] Extract currency calculator with tests
+- [ ] Extract compound interest calculator with tests
+- [ ] Create 50+ automated regression tests per calculator
+
+**Week 4: Integration & Validation**
+- [ ] Implement MCP server wrapper (2 calculators minimum)
+- [ ] Implement multi-layer caching (Redis + CDN headers)
+- [ ] Implement async usage tracking (SQS + background worker)
+- [ ] Load test at 100 RPS (validate <100ms p95)
+- [ ] Security validation (TLS 1.3, JWT, rate limiting)
+- [ ] Comprehensive E2E testing
+
+**Status**: Ready to start - awaiting developer delegation
+**Blockers**: None (Phase 2 complete, architecture validated)
+**Estimated Duration**: 3-4 weeks
+
+## Phase 4: Documentation Generation (Pending)
+**Lead**: @documenter
+**Support**: @architect
+**Objective**: Create comprehensive architecture documentation
+
+### Tasks
+- [ ] Generate complete architecture.md using template
+- [ ] Create all necessary diagrams (ASCII or descriptions)
+- [ ] Document all architectural decisions with rationale
+- [ ] Include development and deployment guidelines
+- [ ] Add monitoring and operations sections
+- [ ] Ensure all sections complete and consistent
+- [ ] Add glossary and references
+
+**Status**: Not started
+**Blockers**: Requires Phase 3 validation
+
+## Phase 5: Final Review (Pending)
+**Lead**: @architect
+**Support**: @developer, @strategist
+**Objective**: Ensure documentation accuracy and completeness
+
+### Tasks
+- [ ] Verify technical accuracy of all sections
+- [ ] Ensure consistency across the document
+- [ ] Validate that all requirements are addressed
+- [ ] Check that diagrams match descriptions
+- [ ] Confirm architectural decisions are justified
+- [ ] Approve for team use
+
+**Status**: Not started
+**Blockers**: Requires Phase 4 documentation
+
+## Success Criteria
+- [ ] Complete architecture.md document created
+- [ ] Dual-interface architecture (REST + MCP) fully designed
+- [ ] Serverless deployment strategy defined
+- [ ] Calculator modularization approach documented
+- [ ] API security measures specified
+- [ ] Scaling strategy from MVP to enterprise documented
+- [ ] All architectural decisions have clear rationale
+
+## Key Constraints
+- Serverless architecture required (cost efficiency, auto-scaling)
+- Must not break existing 58+ web calculators
+- API response time: <100ms p95
+- Security-first: Never compromise security for convenience
+- Phase 1 POC: 5 core calculators initially
+
+## Risk Register
+| Risk | Probability | Impact | Mitigation Status |
+|------|-------------|--------|-------------------|
+| Calculator extraction breaks web UI | Medium | High | TBD by architect |
+| API scaling challenges | Medium | High | Serverless architecture |
+| Calculation accuracy issues | Low | Critical | Testing strategy TBD |
+
+---
+*Last Updated: 2025-10-03*
+*Next Update: After Phase 1 completion*
