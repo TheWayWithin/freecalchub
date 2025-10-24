@@ -12,10 +12,10 @@
 /health/bmi-calc/* /health/bmi/bmi-calculator/:splat 301
 /math/percent/* /math/percentages/:splat 301
 
-# Redirect trailing slashes to clean URLs (optional)
-/finance/cryptocurrency/profit-loss-calculator /finance/cryptocurrency/ 302
-/finance/cryptocurrency/dca-calculator /finance/cryptocurrency/ 302
-/finance/cryptocurrency/staking-rewards-calculator /finance/cryptocurrency/ 302
+# Removed problematic redirects (lines 16-18)
+# These calculators don't exist yet - let 404 handle missing pages
+# If these calculators are created in the future, remove this comment
+# Previous redirects sent users to category page instead of 404 (confusing UX)
 
 # Force HTTPS (optional but recommended)
 http://freecalchub.com/* https://freecalchub.com/:splat 301

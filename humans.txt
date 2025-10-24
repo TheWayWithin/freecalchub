@@ -1,0 +1,49 @@
+/* TEAM */
+
+Project Owner: FreecalcHub
+Site: https://www.freecalchub.com
+Contact: contact@freecalchub.com
+Location: Global
+
+/* THANKS */
+
+Special thanks to all the users who provide feedback and help us improve FreecalcHub.
+
+/* SITE */
+
+Last Update: 2025-10-24
+Standards: HTML5, CSS3, JavaScript ES6+
+Components: Vanilla JavaScript, Chart.js, Font Awesome
+Hosting: Netlify
+Repository: https://github.com/TheWayWithin/freecalchub
+Design: FreecalcHub Design Team
+Architecture: Static JAMstack (No Backend)
+
+/* TECHNOLOGIES */
+
+Frontend: Vanilla JavaScript (No frameworks)
+Styling: CSS3 (No preprocessors)
+Analytics: Google Tag Manager + Google Analytics 4
+Icons: Font Awesome 6.5.1
+Charts: Chart.js
+Cookie Consent: CookieYes (GDPR Compliant)
+Currency Data: ExchangeRate-API
+
+/* CALCULATORS */
+
+Total Calculators: 55+
+Categories: Finance, Math, Health, Conversions, Date-Time, Business, Lifestyle
+All Calculations: Client-Side (Privacy by Design)
+No User Accounts: 100% Anonymous Usage
+No Data Collection: Calculations Never Leave Browser
+
+/* PHILOSOPHY */
+
+Mission: Provide free, accurate, and privacy-respecting calculators for everyone
+Privacy: Data never leaves your browser
+Accessibility: No sign-up required
+Open: No paywalls, no ads (or minimal ethical ads)
+
+/* ATTRIBUTION */
+
+Inspired by the humans.txt initiative: https://humanstxt.org/

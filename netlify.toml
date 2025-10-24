@@ -1,0 +1,98 @@
+# FreecalcHub - Netlify Configuration
+# Static site deployment configuration for production
+# Last Updated: 2025-10-24
+
+# Build Configuration
+[build]
+  # Publish directory (root for static site)
+  publish = "."
+
+  # No build command needed (static files deployed as-is)
+  # Uncomment below if you add minification/optimization build step in future
+  # command = "npm run build"
+
+# Redirect Rules (Override _redirects file)
+[[redirects]]
+  from = "http://freecalchub.com/*"
+  to = "https://www.freecalchub.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://freecalchub.com/*"
+  to = "https://www.freecalchub.com/:splat"
+  status = 301
+  force = true
+
+# Category redirects (common typos)
+[[redirects]]
+  from = "/finance/crypto/*"
+  to = "/finance/cryptocurrency/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/finance/mortgages/*"
+  to = "/finance/mortgage/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/finance/loans/*"
+  to = "/finance/loan/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/health/bmi-calc/*"
+  to = "/health/bmi/bmi-calculator/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/math/percent/*"
+  to = "/math/percentages/:splat"
+  status = 301
+
+# Custom 404 page (SPA fallback if needed in future)
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# Headers (Will use _headers file instead for better organization)
+# NOTE: This netlify.toml does NOT include headers - they are in _headers file
+# Netlify applies both _headers file AND [[headers]] blocks in netlify.toml
+# Using _headers file for headers keeps this file focused on build/redirect config
+
+# Environment Variables (for future use)
+# Uncomment and configure if you add build step or serverless functions
+# [build.environment]
+#   NODE_VERSION = "18"
+#   NPM_VERSION = "9"
+
+# Context-Specific Deploys (for future staging environment)
+# Uncomment when you create a staging branch
+# [context.staging]
+#   publish = "."
+#   command = ""  # No build command for static site
+
+# [context.staging.environment]
+#   CONTEXT = "staging"
+
+# Deploy Previews Configuration
+[context.deploy-preview]
+  publish = "."
+
+# Branch Deploy Configuration
+[context.branch-deploy]
+  publish = "."
+
+# Form Handling (if you add contact forms in future)
+# [build.processing.forms]
+#   enable = true
+
+# Image Optimization (Netlify automatic optimization)
+# Available on paid plans - consider enabling if you upgrade
+# [build.processing.images]
+#   compress = true
+
+# Performance and Caching
+# Note: Netlify applies automatic optimizations for static sites
+# Additional caching rules are in _headers file
