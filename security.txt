@@ -1,0 +1,29 @@
+# FreecalcHub Security Policy
+# RFC 9116 Compliant - https://www.rfc-editor.org/rfc/rfc9116.html
+# Last Updated: 2025-10-24
+
+# Security Contact (REQUIRED)
+Contact: mailto:security@freecalchub.com
+Contact: https://www.freecalchub.com/contact/
+
+# Expiration Date (REQUIRED) - Must be renewed before this date
+Expires: 2026-10-24T00:00:00.000Z
+
+# Preferred Language for Security Reports
+Preferred-Languages: en
+
+# Canonical URL for this file
+Canonical: https://www.freecalchub.com/.well-known/security.txt
+
+# Security Policy Page (OPTIONAL but recommended)
+Policy: https://www.freecalchub.com/security-policy/
+
+# Acknowledgments Page (OPTIONAL - if you create one)
+# Acknowledgments: https://www.freecalchub.com/security-acknowledgments/
+
+# Encryption Key for Secure Communication (OPTIONAL but recommended for high-value sites)
+# Encryption: https://www.freecalchub.com/pgp-key.txt
+
+# -----BEGIN PGP SIGNATURE-----
+# (Optional: Sign file with PGP for authenticity verification)
+# -----END PGP SIGNATURE-----

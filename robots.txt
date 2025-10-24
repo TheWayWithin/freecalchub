@@ -1,5 +1,31 @@
-# Allow all well-behaved bots to crawl everything
+# FreecalcHub.com - Robots Exclusion Protocol
+# Last Updated: 2025-10-24
+# Policy: Allow all well-behaved bots to crawl public content
+
+# Default rule for all bots
 User-agent: *
 Allow: /
-# Point to your XML sitemap
-Sitemap: https://freecalchub.com/sitemap.xml
+
+# Explicitly allow important bots (redundant but explicit)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Disallow resource-intensive crawlers (optional - uncomment if needed)
+# User-agent: AhrefsBot
+# Crawl-delay: 10
+
+# User-agent: SemrushBot
+# Crawl-delay: 10
+
+# Sitemap location (use canonical www domain)
+Sitemap: https://www.freecalchub.com/sitemap.xml
+
+# Additional sitemaps (if you create category-specific ones in future)
+# Sitemap: https://www.freecalchub.com/sitemap-finance.xml
+# Sitemap: https://www.freecalchub.com/sitemap-health.xml
