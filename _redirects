@@ -12,10 +12,21 @@
 /health/bmi-calc/* /health/bmi/bmi-calculator/:splat 301
 /math/percent/* /math/percentages/:splat 301
 
-# Removed problematic redirects (lines 16-18)
-# These calculators don't exist yet - let 404 handle missing pages
-# If these calculators are created in the future, remove this comment
-# Previous redirects sent users to category page instead of 404 (confusing UX)
+# Old URL structure redirects (fixing 162 404 errors from Google Search Console)
+# Discovered 2025-10-24: Google has old URL patterns indexed
+
+# Old nested category URLs → Current category URLs
+/finance/business/* /business/:splat 301
+
+# Old calculator path variations → Current paths
+/date-time/date-difference/days-between/* /date-time/date-difference/:splat 301
+/date-time/age/age-calculator/* /date-time/age/:splat 301
+/finance/investment/compound-interest /finance/investment/compound-interest-calculator/ 301
+
+# Crypto calculator redirects (2 exist, 1 coming soon)
+/finance/cryptocurrency/profit-loss-calculator /finance/cryptocurrency/crypto-profit-calculator/ 301
+# DCA calculator already has correct URL structure
+# Staking rewards calculator shows "coming soon" - no redirect needed yet
 
 # Force HTTPS (optional but recommended)
 http://freecalchub.com/* https://freecalchub.com/:splat 301
