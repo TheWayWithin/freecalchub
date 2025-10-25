@@ -11,50 +11,10 @@
   # Uncomment below if you add minification/optimization build step in future
   # command = "npm run build"
 
-# Redirect Rules (Override _redirects file)
-[[redirects]]
-  from = "http://freecalchub.com/*"
-  to = "https://www.freecalchub.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://freecalchub.com/*"
-  to = "https://www.freecalchub.com/:splat"
-  status = 301
-  force = true
-
-# Category redirects (common typos)
-[[redirects]]
-  from = "/finance/crypto/*"
-  to = "/finance/cryptocurrency/:splat"
-  status = 301
-
-[[redirects]]
-  from = "/finance/mortgages/*"
-  to = "/finance/mortgage/:splat"
-  status = 301
-
-[[redirects]]
-  from = "/finance/loans/*"
-  to = "/finance/loan/:splat"
-  status = 301
-
-[[redirects]]
-  from = "/health/bmi-calc/*"
-  to = "/health/bmi/bmi-calculator/:splat"
-  status = 301
-
-[[redirects]]
-  from = "/math/percent/*"
-  to = "/math/percentages/:splat"
-  status = 301
-
-# Custom 404 page (SPA fallback if needed in future)
-[[redirects]]
-  from = "/*"
-  to = "/404.html"
-  status = 404
+# Redirect Rules
+# NOTE: All redirects are managed in the _redirects file for easier maintenance
+# Netlify processes netlify.toml redirects BEFORE _redirects file
+# To avoid conflicts, we keep redirects in one place: _redirects file
 
 # Headers (Will use _headers file instead for better organization)
 # NOTE: This netlify.toml does NOT include headers - they are in _headers file
