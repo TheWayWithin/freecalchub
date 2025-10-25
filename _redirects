@@ -1,117 +1,101 @@
 # Netlify Redirects and Error Handling for FreecalcHub
-# CRITICAL: Redirects are processed in order - first match wins!
-# Strategy: Specific redirects first, then domain normalization, then 404 catch-all
+# CRITICAL: Redirects are processed in order - specific rules first, catch-alls last!
 
 # ========================================
-# SPECIFIC PATH REDIRECTS (BEFORE DOMAIN NORMALIZATION)
+# FORCE HTTPS AND WWW (MUST BE FIRST!)
+# ========================================
+http://freecalchub.com/* https://www.freecalchub.com/:splat 301
+http://www.freecalchub.com/* https://www.freecalchub.com/:splat 301
+https://freecalchub.com/* https://www.freecalchub.com/:splat 301
+
+# ========================================
+# OLD URL STRUCTURES (Fixing 162 GSC 404s)
 # ========================================
 
-# .html extension removal (both www and non-www)
-/*.html /:splat 301!
-http://freecalchub.com/*.html https://www.freecalchub.com/:splat 301!
+# Remove .html extensions (legacy URLs)
+/*.html /:splat 301
 
-# Old nested category URLs → Current structure (exact paths + wildcards)
-/finance/business /business 301!
-/finance/business/ /business/ 301!
-/finance/business/* /business/:splat 301!
+# Old nested category URLs → Current structure
+/finance/business/* /business/:splat 301
 
-# Old calculator path variations (exact paths + wildcards)
-/date-time/date-difference/days-between /date-time/date-difference 301!
-/date-time/date-difference/days-between/ /date-time/date-difference/ 301!
-/date-time/date-difference/days-between/* /date-time/date-difference/:splat 301!
-
-/date-time/age/age-calculator /date-time/age 301!
-/date-time/age/age-calculator/ /date-time/age/ 301!
-/date-time/age/age-calculator/* /date-time/age/:splat 301!
-
-/finance/investment/compound-interest /finance/investment/compound-interest-calculator/ 301!
+# Old calculator path variations
+/date-time/date-difference/days-between/* /date-time/date-difference/:splat 301
+/date-time/age/age-calculator/* /date-time/age/:splat 301
+/finance/investment/compound-interest /finance/investment/compound-interest-calculator/ 301
 
 # Crypto calculator redirects
-/finance/cryptocurrency/profit-loss-calculator /finance/cryptocurrency/crypto-profit-calculator/ 301!
+/finance/cryptocurrency/profit-loss-calculator /finance/cryptocurrency/crypto-profit-calculator/ 301
 
-# Policy pages old URLs
-/policy /privacy 301!
-/policy/ /privacy/ 301!
-/privacy-policy /privacy 301!
-/privacy-policy/ /privacy/ 301!
-/terms-of-service /terms 301!
-/terms-of-service/ /terms/ 301!
-/cookies /privacy 301!
-/cookies/ /privacy/ 301!
+# Business calculator redirects (duplicates/old paths)
+/business/profit/profit-margin-calculator/ /business/profit/profit-margin-calculator/ 301
+/business/break-even/break-even-calculator/ /business/break-even/break-even-calculator/ 301
+/business/roi/roi-calculator/ /business/roi/roi-calculator/ 301
 
-# Old blog URL structures
-/blog/articles/understanding-compound-interest /blog/articles/finance/understanding-compound-interest 301!
-/blog/articles/understanding-compound-interest/ /blog/articles/finance/understanding-compound-interest/ 301!
-/blog/articles/bmi-myths-facts /blog 301!
-/blog/articles/bmi-myths-facts/ /blog/ 301!
-/blog/articles/calorie-calculator-guide /blog 301!
-/blog/articles/calorie-calculator-guide/ /blog/ 301!
-/blog/articles/metric-conversion-guide /blog 301!
-/blog/articles/metric-conversion-guide/ /blog/ 301!
-/blog/articles/statistics-basics /blog 301!
-/blog/articles/statistics-basics/ /blog/ 301!
-/blog/articles/retirement-calculator-guide /blog 301!
-/blog/articles/retirement-calculator-guide/ /blog/ 301!
-/blog/articles/mortgage-rates-2025 /blog 301!
-/blog/articles/mortgage-rates-2025/ /blog/ 301!
-
-# Conversions old paths
-/conversions/length-converter /conversions/length/length-unit-calculator 301!
-/conversions/length-converter/ /conversions/length/length-unit-calculator/ 301!
-/conversions/currency/currency-converter /conversions/currency/live-currency-converter 301!
-/conversions/currency/currency-converter/ /conversions/currency/live-currency-converter/ 301!
-/conversions/currency/historical-rates /conversions/currency/historical-exchange-rates-converter 301!
-/conversions/currency/historical-rates/ /conversions/currency/historical-exchange-rates-converter/ 301!
-/conversions/currency/cryptocurrency /conversions/currency/cryptocurrency-converter 301!
-/conversions/currency/cryptocurrency/ /conversions/currency/cryptocurrency-converter/ 301!
-/conversions/temperature/temperature-converter /conversions/temperature 301!
-/conversions/temperature/temperature-converter/ /conversions/temperature/ 301!
-/conversions/temperature/celsius-fahrenheit /conversions/temperature 301!
-/conversions/temperature/celsius-fahrenheit/ /conversions/temperature/ 301!
-/conversions/weight/weight-converter /conversions/weight 301!
-/conversions/weight/weight-converter/ /conversions/weight/ 301!
-
-# Date-time calculator variants
-/date-time/date-difference/date-calculator /date-time/date-difference 301!
-/date-time/date-difference/date-calculator/ /date-time/date-difference/ 301!
-/date-time/business-days/business-days-calculator /date-time/business-days 301!
-/date-time/business-days/business-days-calculator/ /date-time/business-days/ 301!
-
-# Finance calculator old paths
-/finance/investment/investment-calculator /finance/investment/investment-goal-calculator 301!
-/finance/investment/investment-calculator/ /finance/investment/investment-goal-calculator/ 301!
-/finance/mortgage/mortgage-payment-calculator /finance/mortgage/mortgage-calculator 301!
-/finance/mortgage/mortgage-payment-calculator/ /finance/mortgage/mortgage-calculator/ 301!
-/finance/mortgage/extra-payment-calculator /finance/mortgage/extra-payment-calculator 301!
-/finance/mortgage/extra-payment-calculator/ /finance/mortgage/extra-payment-calculator/ 301!
-/finance/mortgage/amortization-calculator /finance/mortgage 301!
-/finance/mortgage/amortization-calculator/ /finance/mortgage/ 301!
-/finance/retirement-calculator /finance/retirement/retirement-calculator 301!
-/finance/retirement-calculator/ /finance/retirement/retirement-calculator/ 301!
-
-# Health calculator variants
-/health/calories /health/nutrition/calorie-macro-calculator 301!
-/health/calories/ /health/nutrition/calorie-macro-calculator/ 301!
+# Math calculator old paths
+/math/percentages/discount-calculator/ /math/percentages/discount-calculator/ 301
+/math/percentages/markup-calculator/ /math/percentages/markup-calculator/ 301
+/math/percentages/percentage-change/ /math/percentages/percentage-change/ 301
+/math/basic/standard-calculator/ /math/basic/standard-calculator/ 301
+/math/basic/random-number-generator/ /math/basic/random-number-generator/ 301
+/math/percentage-calculator/ /math/percentages/percentage-calculator/ 301
 
 # Lifestyle category redirects
-/lifestyle/tip /lifestyle/dining-social/tip-calculator 301!
-/lifestyle/tip/ /lifestyle/dining-social/tip-calculator/ 301!
+/lifestyle/tip/ /lifestyle/dining-social/tip-calculator/ 301
+
+# Policy pages old URLs
+/policy/ /privacy/ 301
+/privacy-policy/ /privacy/ 301
+/terms-of-service/ /terms/ 301
+/cookies/ /privacy/ 301
+
+# Contact page variants
+/contact/ /contact/ 301
+
+# Old blog URL structures
+/blog/articles/understanding-compound-interest/ /blog/articles/finance/understanding-compound-interest/ 301
+/blog/articles/bmi-myths-facts/ /blog/ 301
+/blog/articles/calorie-calculator-guide/ /blog/ 301
+/blog/articles/metric-conversion-guide/ /blog/ 301
+/blog/articles/statistics-basics/ /blog/ 301
+/blog/articles/retirement-calculator-guide/ /blog/ 301
+/blog/articles/mortgage-rates-2025/ /blog/ 301
+
+# Conversions old paths
+/conversions/length-converter/ /conversions/length/length-unit-calculator/ 301
+/conversions/length/ /conversions/length/ 301
+/conversions/currency/currency-converter/ /conversions/currency/live-currency-converter/ 301
+/conversions/currency/historical-rates/ /conversions/currency/historical-exchange-rates-converter/ 301
+/conversions/currency/cryptocurrency/ /conversions/currency/cryptocurrency-converter/ 301
+/conversions/temperature/temperature-converter/ /conversions/temperature/ 301
+/conversions/temperature/celsius-fahrenheit/ /conversions/temperature/ 301
+/conversions/weight/weight-converter/ /conversions/weight/ 301
+
+# Date-time calculator variants
+/date-time/age/ /date-time/age/ 301
+/date-time/date-difference/date-calculator/ /date-time/date-difference/ 301
+/date-time/business-days/business-days-calculator/ /date-time/business-days/ 301
+/date-time/time-zone/ /date-time/time-zone/ 301
+
+# Finance calculator old paths
+/finance/investment/investment-calculator/ /finance/investment/investment-goal-calculator/ 301
+/finance/mortgage/mortgage-payment-calculator/ /finance/mortgage/mortgage-calculator/ 301
+/finance/mortgage/extra-payment-calculator/ /finance/mortgage/extra-payment-calculator/ 301
+/finance/mortgage/amortization-calculator/ /finance/mortgage/ 301
+/finance/retirement-calculator/ /finance/retirement/retirement-calculator/ 301
+/finance/cryptocurrency/ /finance/cryptocurrency/ 301
+/finance/tax/ /finance/tax/ 301
+
+# Health calculator variants
+/health/calories/ /health/nutrition/calorie-macro-calculator/ 301
 
 # ========================================
 # COMMON TYPOS AND VARIATIONS
 # ========================================
-/finance/crypto/* /finance/cryptocurrency/:splat 301!
-/finance/mortgages/* /finance/mortgage/:splat 301!
-/finance/loans/* /finance/loan/:splat 301!
-/health/bmi-calc/* /health/bmi/bmi-calculator/:splat 301!
-/math/percent/* /math/percentages/:splat 301!
-
-# ========================================
-# FORCE HTTPS AND WWW (AFTER SPECIFIC REDIRECTS)
-# ========================================
-http://freecalchub.com/* https://www.freecalchub.com/:splat 301!
-http://www.freecalchub.com/* https://www.freecalchub.com/:splat 301!
-https://freecalchub.com/* https://www.freecalchub.com/:splat 301!
+/finance/crypto/* /finance/cryptocurrency/:splat 301
+/finance/mortgages/* /finance/mortgage/:splat 301
+/finance/loans/* /finance/loan/:splat 301
+/health/bmi-calc/* /health/bmi/bmi-calculator/:splat 301
+/math/percent/* /math/percentages/:splat 301
 
 # ========================================
 # CUSTOM ERROR PAGES (MUST BE LAST!)
