@@ -70,6 +70,7 @@ https://freecalchub.com/* https://www.freecalchub.com/:splat 301
 # ========================================
 /business/tax/sales-tax-calculator/ /finance/tax/sales-tax-calculator/ 301
 /finance/debt/debt-to-income-ratio-calculator/ /finance/budgeting/debt-to-income-ratio-calculator/ 301
+/finance/mortgage/extra-payment-calculator/ /finance/loan/extra-payment-calculator/ 301
 /lifestyle/tip/ /lifestyle/dining-social/tip-calculator/ 301
 /health/calories/ /health/nutrition/calorie-macro-calculator/ 301
 
