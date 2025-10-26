@@ -1,0 +1,169 @@
+{
+  "name": "calculate_[calculator_name]",
+  "description": "[Detailed description of what this calculator does, when to use it, and what problems it solves. Be specific about use cases.]",
+  "version": "1.0.0",
+  "category": "[finance|math|health|conversions|date_time|business|lifestyle]",
+  "subcategory": "[e.g., loan|mortgage|investment|etc.]",
+  
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "param1": {
+        "type": "number",
+        "description": "[Clear description of this parameter, including units if applicable]",
+        "minimum": 0,
+        "maximum": 1000000,
+        "examples": [100000, 250000, 500000]
+      },
+      "param2": {
+        "type": "number", 
+        "description": "[Clear description with examples of valid values]",
+        "minimum": 0,
+        "maximum": 100,
+        "examples": [5.5, 6.0, 7.25]
+      },
+      "param3": {
+        "type": "integer",
+        "description": "[Description including common values]",
+        "minimum": 1,
+        "maximum": 600,
+        "default": 360,
+        "examples": [180, 360, 480]
+      },
+      "optional_param": {
+        "type": "number",
+        "description": "[Optional parameters should be clearly marked]",
+        "required": false,
+        "default": 0
+      }
+    },
+    "required": ["param1", "param2", "param3"],
+    "additionalProperties": false
+  },
+  
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "primary_result": {
+        "type": "number",
+        "description": "[Main calculation result]"
+      },
+      "formatted_result": {
+        "type": "string",
+        "description": "[Human-readable formatted result]"
+      },
+      "details": {
+        "type": "object",
+        "description": "[Additional calculation details]",
+        "properties": {
+          "breakdown": {
+            "type": "object"
+          },
+          "schedule": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "metadata": {
+        "type": "object",
+        "properties": {
+          "formula_used": {
+            "type": "string"
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  
+  "examples": [
+    {
+      "description": "[Scenario 1: Basic calculation]",
+      "input": {
+        "param1": 100000,
+        "param2": 5.5,
+        "param3": 360
+      },
+      "output": {
+        "primary_result": 567.79,
+        "formatted_result": "$567.79",
+        "details": {
+          "total_interest": 104404.40,
+          "total_paid": 204404.40
+        }
+      }
+    },
+    {
+      "description": "[Scenario 2: With optional parameters]",
+      "input": {
+        "param1": 200000,
+        "param2": 6.0,
+        "param3": 180,
+        "optional_param": 100
+      },
+      "output": {
+        "primary_result": 1687.71,
+        "formatted_result": "$1,687.71",
+        "details": {
+          "with_extra": "$1,787.71",
+          "interest_saved": 15234.50,
+          "months_saved": 24
+        }
+      }
+    }
+  ],
+  
+  "errors": {
+    "INVALID_PRINCIPAL": {
+      "message": "Principal amount must be greater than 0",
+      "suggestion": "Provide a positive number for the loan amount"
+    },
+    "INVALID_RATE": {
+      "message": "Interest rate must be between 0 and 100",
+      "suggestion": "Enter the annual interest rate as a percentage (e.g., 5.5 for 5.5%)"
+    },
+    "INVALID_TERM": {
+      "message": "Loan term must be between 1 and 600 months",
+      "suggestion": "Enter the number of months for the loan (e.g., 360 for 30 years)"
+    },
+    "CALCULATION_ERROR": {
+      "message": "Unable to calculate with provided parameters",
+      "suggestion": "Check that all input values are within valid ranges"
+    }
+  },
+  
+  "usage_notes": [
+    "[Note 1: Important information about how this calculator works]",
+    "[Note 2: Assumptions made in calculations]",
+    "[Note 3: Limitations or edge cases to be aware of]"
+  ],
+  
+  "related_tools": [
+    "calculate_[related_calculator_1]",
+    "calculate_[related_calculator_2]",
+    "calculate_[related_calculator_3]"
+  ],
+  
+  "natural_language_patterns": [
+    "Calculate the [calculator topic] for [params]",
+    "What's the [result type] if [scenario]",
+    "How much [metric] with [conditions]",
+    "Compare [option1] vs [option2] for [calculator type]"
+  ],
+  
+  "integration": {
+    "endpoint": "/api/v1/[category]/[calculator-name]",
+    "method": "POST",
+    "authentication": "Bearer token",
+    "rate_limit": "Tier-based",
+    "cache_ttl": 60
+  }
+}

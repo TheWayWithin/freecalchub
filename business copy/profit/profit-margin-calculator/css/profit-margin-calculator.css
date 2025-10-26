@@ -1,0 +1,323 @@
+/*
+ * FreecalcHub.com - Profit Margin Calculator Styles
+ * Version: 1.0
+ * Date: August 9, 2025
+ * Description: Specific styling for profit margin calculator
+ */
+
+/* Profit Margin Calculator Specific Styles */
+.profit-breakdown, .margin-analysis {
+    margin-bottom: 25px;
+}
+
+.profit-breakdown h4, .margin-analysis h4 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+/* Margin Cards Layout */
+.margin-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.margin-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.margin-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.margin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.margin-header h5 {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.margin-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.margin-description p {
+    margin: 0 0 10px 0;
+    color: var(--text-color-light);
+    font-size: 0.9rem;
+}
+
+/* Margin Indicators */
+.margin-indicator {
+    height: 6px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.margin-indicator.excellent {
+    background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.margin-indicator.good {
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+.margin-indicator.fair {
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.margin-indicator.poor {
+    background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+/* Chart Container */
+.chart-section {
+    margin-top: 30px;
+}
+
+.chart-container {
+    margin-top: 20px;
+    padding: 20px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.chart-section h4 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Improvement Suggestions */
+.improvement-suggestions {
+    margin-top: 30px;
+    padding: 20px;
+    background: var(--secondary-bg);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.improvement-suggestions h4 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.suggestions-list {
+    display: grid;
+    gap: 15px;
+}
+
+.suggestion-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.suggestion-icon {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.suggestion-content h6 {
+    margin: 0 0 5px 0;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.suggestion-content p {
+    margin: 0;
+    color: var(--text-color-light);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Results Grid Enhancements */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.result-item h5 {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: var(--text-color-light);
+    font-weight: 500;
+}
+
+.result-item p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+/* Form enhancements */
+.form-group small {
+    color: var(--text-color-light);
+    font-size: 0.85rem;
+    margin-top: 4px;
+    display: block;
+    font-style: italic;
+}
+
+/* Fieldset styling */
+fieldset {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-bg);
+}
+
+fieldset legend {
+    font-weight: 600;
+    color: var(--text-color);
+    padding: 0 10px;
+    font-size: 1rem;
+}
+
+/* Positive/Negative Values */
+.positive-value {
+    color: var(--business-success);
+}
+
+.negative-value {
+    color: var(--business-warning);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .margin-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .margin-card {
+        padding: 15px;
+    }
+    
+    .margin-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .margin-value {
+        font-size: 1.4rem;
+    }
+    
+    .chart-container {
+        padding: 15px;
+        height: 300px !important;
+    }
+    
+    .results-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .result-item p {
+        font-size: 1.2rem;
+    }
+    
+    .suggestion-item {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .chart-section h4 {
+        font-size: 1rem;
+    }
+}
+
+/* Dark mode specific adjustments */
+[data-theme="dark"] .margin-card {
+    background: var(--card-bg-dark);
+    border-color: var(--border-color-dark);
+}
+
+[data-theme="dark"] .chart-container {
+    background: var(--card-bg-dark);
+    border-color: var(--border-color-dark);
+}
+
+[data-theme="dark"] .improvement-suggestions {
+    background: var(--secondary-bg-dark);
+    border-left-color: var(--accent-color-dark);
+}
+
+[data-theme="dark"] .suggestion-item {
+    background: var(--card-bg-dark);
+    border-color: var(--border-color-dark);
+}
+
+[data-theme="dark"] fieldset {
+    background: var(--card-bg-dark);
+    border-color: var(--border-color-dark);
+}
+
+/* Business calculator specific colors */
+:root {
+    --business-primary: #2563eb;
+    --business-secondary: #1e40af;
+    --business-accent: #3b82f6;
+    --business-success: #059669;
+    --business-warning: #d97706;
+    --business-danger: #dc2626;
+}
+
+.business-highlight {
+    color: var(--business-primary);
+}
+
+/* Margin performance colors */
+.margin-excellent {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.margin-good {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.margin-fair {
+    color: #f59e0b;
+    font-weight: 600;
+}
+
+.margin-poor {
+    color: #ef4444;
+    font-weight: 600;
+}
