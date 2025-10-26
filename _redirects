@@ -14,6 +14,68 @@ https://freecalchub.com/* https://www.freecalchub.com/:splat 301
 # These are old URLs Google indexed that we can't fix at source
 # Internal links should be fixed in HTML files instead
 
+# ========================================
+# GSC 404 FIX: HTML Extension Redirects (34 URLs)
+# Added: 2025-10-26 - Legacy .html backlinks
+# ========================================
+/conversions/currency/currency-converter.html /conversions/currency/live-currency-converter/ 301
+/contact.html /contact/ 301
+/finance/retirement/401k-calculator.html /finance/retirement/401k-contribution-calculator/ 301
+/health/fitness/macro-calculator.html /health/nutrition/calorie-macro-calculator/ 301
+/math/percentages/percentage-point-calculator.html /math/percentages/percentage-calculator/ 301
+/business/profit-margin-calculator.html /business/profit/profit-margin-calculator/ 301
+/finance/investment/roi-calculator.html /business/roi/roi-calculator/ 301
+/conversions/volume/unit-converter.html /conversions/volume/ 301
+/finance/mortgage/mortgage-points-calculator.html /finance/mortgage/points-calculator/ 301
+/finance/investment/investment-return-calculator.html /finance/investment/portfolio-return-calculator/ 301
+/finance/mortgage/extra-payment-calculator.html /finance/loan/extra-payment-calculator/ 301
+/conversions/length/nautical-mile-converter.html /conversions/length/ 301
+/conversions/length/inch-to-cm.html /conversions/length/length-unit-calculator/ 301
+/conversions/length/yard-to-meter.html /conversions/length/length-unit-calculator/ 301
+/conversions/length/meter-to-feet.html /conversions/length/length-unit-calculator/ 301
+/conversions/length/km-to-mile.html /conversions/length/length-unit-calculator/ 301
+/conversions/length/micrometer-to-mm.html /conversions/length/length-unit-calculator/ 301
+/math/fractions/fraction-calculator.html /math/fractions/ 301
+/blog/math/measurement-in-everyday-life.html /blog/ 301
+/blog/finance/understanding-markup-vs-margin.html /blog/ 301
+/blog/health/nutrition-for-optimal-fitness.html /blog/ 301
+/blog/math/common-conversion-mistakes-and-how-to-avoid-them.html /blog/ 301
+/blog/math/percentage-problems-in-everyday-life.html /blog/ 301
+/blog/math/mastering-percentage-calculations.html /blog/ 301
+/blog/finance/mortgage/index.html /blog/articles/finance/complete-guide-mortgage-calculations/ 301
+/health/fitness/waist-hip-ratio-calculator.html /health/fitness/ 301
+/health/fitness/fitness-age-calculator.html /health/fitness/ 301
+/health/fitness/one-rep-max-calculator.html /health/fitness/ 301
+/date-time/date-difference/date-calculator.html /date-time/time-calculator/ 301
+/math/basic/ratio-calculator.html /math/basic/ 301
+
+# ========================================
+# GSC 404 FIX: Calculator Name Variations (14 URLs)
+# Added: 2025-10-26 - Different naming conventions
+# ========================================
+/finance/investment/investment-calculator/ /finance/investment/investment-goal-calculator/ 301
+/conversions/currency/inflation-calculator-calculator/ /conversions/currency/inflation-calculator/ 301
+/finance/mortgage/mortgage-payment-calculator/ /finance/mortgage/mortgage-calculator/ 301
+/conversions/length-converter/ /conversions/length/ 301
+/finance/retirement-calculator/ /finance/retirement/ 301
+/math/percentage-calculator/ /math/percentages/ 301
+/finance/mortgage/mortgage-refinance-calculator/ /finance/mortgage/refinance-calculator/ 301
+/conversions/currency/cryptocurrency-calculator/ /conversions/currency/cryptocurrency-converter/ 301
+/finance/investment/compound-interest/ /finance/investment/compound-interest-calculator/ 301
+/conversions/currency/currency-converter/ /conversions/currency/live-currency-converter/ 301
+
+# ========================================
+# GSC 404 FIX: Path Conflicts (6 URLs)
+# Added: 2025-10-26 - Calculators exist at different paths
+# ========================================
+/business/tax/sales-tax-calculator/ /finance/tax/sales-tax-calculator/ 301
+/finance/debt/debt-to-income-ratio-calculator/ /finance/budgeting/debt-to-income-ratio-calculator/ 301
+/lifestyle/tip/ /lifestyle/dining-social/tip-calculator/ 301
+/health/calories/ /health/nutrition/calorie-macro-calculator/ 301
+
+# ========================================
+# OLDER LEGACY REDIRECTS
+# ========================================
 # Old path restructuring (Google indexed these)
 /finance/business/* /business/:splat 301
 /date-time/date-difference/days-between/* /date-time/date-difference/:splat 301
