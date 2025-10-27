@@ -1,12 +1,13 @@
 # Security Headers for FreecalcHub (Netlify Static Site)
-# Last Updated: 2025-10-24
+# Last Updated: 2025-10-27 - CSP Hardening (removed 'unsafe-inline' from script-src)
 # Reference: OWASP Security Headers Best Practices
 
 /*
   # Content Security Policy (CSP) - Hash-based for static site
   # Using hash-based CSP (NOT nonces) because FreecalcHub is a static site
+  # GTM script hash: sha256-u5ffspgrSkhRWwNz6VVOAmiOl1KyA/SWgdJVUv4U6zA= (Google Tag Manager inline script)
   # Allows: Same-origin resources, specific external CDNs, Google Analytics, CookieYes
-  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn-cookieyes.com https://cdn.jsdelivr.net; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://cdn-cookieyes.com https://www.google-analytics.com; connect-src 'self' https://open.er-api.com https://www.google-analytics.com https://log.cookieyes.com https://cdn-cookieyes.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';
+  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; script-src 'self' 'sha256-u5ffspgrSkhRWwNz6VVOAmiOl1KyA/SWgdJVUv4U6zA=' https://www.googletagmanager.com https://www.google-analytics.com https://cdn-cookieyes.com https://cdn.jsdelivr.net; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://cdn-cookieyes.com https://www.google-analytics.com; connect-src 'self' https://open.er-api.com https://www.google-analytics.com https://log.cookieyes.com https://cdn-cookieyes.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';
 
   # HTTP Strict Transport Security (HSTS) - Force HTTPS for 1 year
   # Includes subdomains and allows preload list submission
