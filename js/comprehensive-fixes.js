@@ -645,7 +645,7 @@ function organizeFooterContent(footer) {
         addSocialLink(socialDiv, 'Facebook', '#');
         addSocialLink(socialDiv, 'Twitter', '#');
         addSocialLink(socialDiv, 'Instagram', '#');
-        addSocialLink(socialDiv, 'LinkedIn', '#');
+        addSocialLink(socialDiv, 'LinkedIn', 'https://www.linkedin.com/in/jamie-watters-solo');
     } else {
         // Use existing social links
         socialLinks.forEach(link => {
