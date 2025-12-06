@@ -258,9 +258,20 @@
 <fieldset>
 <legend>Optional: Regular Deposits</legend>
 <div class="form-group">
-<label for="deposit">Regular Deposit Per <span id="depositPeriodLabel">Day</span> ($):</label>
+<label for="deposit">Regular Deposit Amount ($):</label>
 <input id="deposit" placeholder="e.g., 100" type="number" min="0" step="0.01" value="0"/>
 <small class="form-hint">Leave at 0 for no regular deposits</small>
+</div>
+<div class="form-group">
+<label for="depositFrequency">Deposit Frequency:</label>
+<select id="depositFrequency">
+<option value="daily">Daily</option>
+<option value="weekly">Weekly</option>
+<option value="monthly" selected>Monthly</option>
+<option value="quarterly">Quarterly</option>
+<option value="annually">Annually</option>
+</select>
+<small class="form-hint">How often you add money to your investment</small>
 </div>
 </fieldset>
 <div class="form-actions">

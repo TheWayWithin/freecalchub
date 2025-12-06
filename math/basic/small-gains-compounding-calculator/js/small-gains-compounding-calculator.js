@@ -2,6 +2,7 @@
  * Small Gains Compounding Calculator
  * Shows how small, consistent gains compound over long time periods (1-30 years)
  * Supports daily (calendar/trading), weekly, and monthly compounding
+ * Supports flexible deposit frequencies (daily, weekly, monthly, quarterly, annually)
  */
 
 (function() {
@@ -42,7 +43,7 @@
         maximumFractionDigits: 0
     });
 
-    // Frequency configuration
+    // Compounding frequency configuration
     const frequencyConfig = {
         'daily-calendar': { periodsPerYear: 365, label: 'Day', labelPlural: 'Days' },
         'daily-trading': { periodsPerYear: 252, label: 'Day', labelPlural: 'Trading Days' },
@@ -50,36 +51,62 @@
         'monthly': { periodsPerYear: 12, label: 'Month', labelPlural: 'Months' }
     };
 
+    // Deposit frequency configuration (deposits per year)
+    const depositFrequencyConfig = {
+        'daily': { depositsPerYear: 365, label: 'Daily' },
+        'weekly': { depositsPerYear: 52, label: 'Weekly' },
+        'monthly': { depositsPerYear: 12, label: 'Monthly' },
+        'quarterly': { depositsPerYear: 4, label: 'Quarterly' },
+        'annually': { depositsPerYear: 1, label: 'Annually' }
+    };
+
     // Time horizons to calculate (in years)
     const timeHorizons = [1, 3, 5, 10, 20, 30];
 
     /**
      * Calculate compound growth for a given number of years
+     * Handles different compounding and deposit frequencies
      * @param {number} principal - Starting balance
-     * @param {number} ratePerPeriod - Rate per period (as decimal)
-     * @param {number} periodsPerYear - Number of periods per year
+     * @param {number} ratePerPeriod - Rate per compounding period (as decimal)
+     * @param {number} periodsPerYear - Compounding periods per year
      * @param {number} years - Number of years
-     * @param {number} depositPerPeriod - Deposit per period
+     * @param {number} depositAmount - Amount per deposit
+     * @param {number} depositsPerYear - Number of deposits per year
      * @returns {Object} Results including final balance, deposits, profit, return
      */
-    function calculateForYears(principal, ratePerPeriod, periodsPerYear, years, depositPerPeriod) {
+    function calculateForYears(principal, ratePerPeriod, periodsPerYear, years, depositAmount, depositsPerYear) {
         const totalPeriods = periodsPerYear * years;
 
         // Calculate final balance from principal compounding
         // A_principal = P × (1 + r)^n
         const principalGrowth = principal * Math.pow(1 + ratePerPeriod, totalPeriods);
 
-        // Calculate final balance from deposits (ordinary annuity - end of period)
-        // A_deposits = C × ((1 + r)^n - 1) / r
+        // Calculate deposit growth
+        // Each deposit compounds for its remaining time
         let depositGrowth = 0;
-        if (depositPerPeriod > 0 && ratePerPeriod > 0) {
-            depositGrowth = depositPerPeriod * ((Math.pow(1 + ratePerPeriod, totalPeriods) - 1) / ratePerPeriod);
-        } else if (depositPerPeriod > 0 && ratePerPeriod === 0) {
-            depositGrowth = depositPerPeriod * totalPeriods;
+        const totalDeposits = depositsPerYear * years;
+
+        if (depositAmount > 0 && depositsPerYear > 0) {
+            // Calculate periods between deposits
+            const periodsBetweenDeposits = periodsPerYear / depositsPerYear;
+
+            if (ratePerPeriod > 0) {
+                // Calculate the rate per deposit period
+                // If compounding daily (365/yr) and depositing monthly (12/yr),
+                // each deposit compounds for (365/12) periods before the next deposit
+                const ratePerDepositPeriod = Math.pow(1 + ratePerPeriod, periodsBetweenDeposits) - 1;
+
+                // Use annuity formula with the deposit-period rate
+                // FV = C × ((1 + r)^n - 1) / r
+                depositGrowth = depositAmount * ((Math.pow(1 + ratePerDepositPeriod, totalDeposits) - 1) / ratePerDepositPeriod);
+            } else {
+                // No growth, just sum deposits
+                depositGrowth = depositAmount * totalDeposits;
+            }
         }
 
         const finalBalance = principalGrowth + depositGrowth;
-        const totalDeposited = principal + (depositPerPeriod * totalPeriods);
+        const totalDeposited = principal + (depositAmount * totalDeposits);
         const totalProfit = finalBalance - totalDeposited;
         const totalReturn = totalDeposited > 0 ? (finalBalance - totalDeposited) / totalDeposited : 0;
 
@@ -89,7 +116,8 @@
             totalDeposited: totalDeposited,
             totalProfit: totalProfit,
             totalReturn: totalReturn,
-            totalPeriods: totalPeriods
+            totalPeriods: totalPeriods,
+            totalDepositCount: totalDeposits
         };
     }
 
@@ -138,7 +166,6 @@
     function updatePeriodLabels(frequency) {
         const config = frequencyConfig[frequency] || frequencyConfig['daily-calendar'];
         document.getElementById('periodLabel').textContent = config.label;
-        document.getElementById('depositPeriodLabel').textContent = config.label;
     }
 
     /**
@@ -175,10 +202,11 @@
      * @param {number} principal - Starting balance
      * @param {number} ratePerPeriod - Rate per period (as decimal)
      * @param {number} periodsPerYear - Number of periods per year
-     * @param {number} depositPerPeriod - Deposit per period
+     * @param {number} depositAmount - Deposit amount
+     * @param {number} depositsPerYear - Deposits per year
      * @returns {Array} Array of {year, balance} objects
      */
-    function generateChartData(principal, ratePerPeriod, periodsPerYear, depositPerPeriod) {
+    function generateChartData(principal, ratePerPeriod, periodsPerYear, depositAmount, depositsPerYear) {
         const data = [];
 
         // Add starting point (year 0)
@@ -186,7 +214,7 @@
 
         // Generate data for years 1-30
         for (let year = 1; year <= 30; year++) {
-            const result = calculateForYears(principal, ratePerPeriod, periodsPerYear, year, depositPerPeriod);
+            const result = calculateForYears(principal, ratePerPeriod, periodsPerYear, year, depositAmount, depositsPerYear);
             data.push({ year: year, balance: result.finalBalance });
         }
 
@@ -292,39 +320,52 @@
      * @param {number} ratePercent - Return rate as percentage
      * @param {string} frequency - Compounding frequency
      * @param {number} ear - Effective Annual Return
+     * @param {number} depositAmount - Deposit amount
+     * @param {string} depositFrequency - Deposit frequency
      * @returns {string} Insight text
      */
-    function generateInsight(results, ratePercent, frequency, ear) {
+    function generateInsight(results, ratePercent, frequency, ear, depositAmount, depositFrequency) {
         const oneYear = results.find(r => r.years === 1);
         const tenYear = results.find(r => r.years === 10);
         const thirtyYear = results.find(r => r.years === 30);
 
         const config = frequencyConfig[frequency];
         const periodLabel = config.label.toLowerCase();
+        const depositConfig = depositFrequencyConfig[depositFrequency];
 
         // Calculate how much more 30 years is vs 10 years
         const growthMultiplier = thirtyYear.finalBalance / tenYear.finalBalance;
 
         let insight = '';
 
+        // Add deposit context if applicable
+        const hasDeposits = depositAmount > 0;
+        const depositContext = hasDeposits
+            ? ` With ${depositConfig.label.toLowerCase()} deposits of ${formatCurrency(depositAmount)}, `
+            : ' ';
+
         if (ear > 1) {
             // Very high returns
-            insight = `At ${ratePercent}% per ${periodLabel}, your effective annual return is ${formatPercent(ear)}. `;
-            insight += `While the math shows dramatic growth (your money grows ${growthMultiplier.toFixed(0)}x between year 10 and 30), `;
-            insight += `sustaining such high returns for decades is extremely challenging in practice. `;
+            insight = `At ${ratePercent}% per ${periodLabel}, your effective annual return is ${formatPercent(ear)}.${depositContext}`;
+            insight += `While the math shows dramatic growth (${growthMultiplier.toFixed(0)}x between year 10 and 30), `;
+            insight += `sustaining such high returns for decades is extremely challenging. `;
             insight += `Use this as a ceiling scenario, not a realistic expectation.`;
         } else if (ear > 0.2) {
             // High returns (20%+ annually)
-            insight = `With a ${formatPercent(ear)} effective annual return, your initial investment `;
-            insight += `could grow from ${formatCurrency(oneYear.totalDeposited)} to ${formatCurrency(tenYear.finalBalance)} in 10 years. `;
+            insight = `With a ${formatPercent(ear)} effective annual return,${depositContext}`;
+            insight += `your investment could grow to ${formatCurrency(tenYear.finalBalance)} in 10 years. `;
             insight += `By year 30, compounding accelerates dramatically: your balance grows ${growthMultiplier.toFixed(1)}x `;
             insight += `in the final 20 years compared to the first 10.`;
         } else {
             // Moderate returns
-            insight = `Your ${ratePercent}% per ${periodLabel} return translates to ${formatPercent(ear)} annually. `;
+            insight = `Your ${ratePercent}% per ${periodLabel} return translates to ${formatPercent(ear)} annually.${depositContext}`;
             insight += `After 10 years, you'd have ${formatCurrency(tenYear.finalBalance)} `;
             insight += `(${formatPercent(tenYear.totalReturn)} total return). `;
-            insight += `The power of compounding really shows after 20+ years, where growth accelerates exponentially.`;
+            if (hasDeposits) {
+                insight += `Regular deposits significantly accelerate your wealth building over time.`;
+            } else {
+                insight += `The power of compounding really shows after 20+ years.`;
+            }
         }
 
         return insight;
@@ -352,6 +393,7 @@
         const frequency = document.getElementById('frequency').value;
         const returnRatePercent = parseFloat(document.getElementById('returnRate').value);
         const deposit = parseFloat(document.getElementById('deposit').value) || 0;
+        const depositFrequency = document.getElementById('depositFrequency').value;
 
         // Validate inputs
         if (isNaN(startingBalance) || startingBalance < 0) {
@@ -369,9 +411,12 @@
             return;
         }
 
-        // Get frequency configuration
-        const config = frequencyConfig[frequency] || frequencyConfig['daily-calendar'];
-        const periodsPerYear = config.periodsPerYear;
+        // Get frequency configurations
+        const compoundConfig = frequencyConfig[frequency] || frequencyConfig['daily-calendar'];
+        const periodsPerYear = compoundConfig.periodsPerYear;
+
+        const depositConfig = depositFrequencyConfig[depositFrequency] || depositFrequencyConfig['monthly'];
+        const depositsPerYear = depositConfig.depositsPerYear;
 
         // Convert rate to decimal
         const rateDecimal = returnRatePercent / 100;
@@ -381,7 +426,7 @@
 
         // Calculate results for all time horizons
         const results = timeHorizons.map(years =>
-            calculateForYears(startingBalance, rateDecimal, periodsPerYear, years, deposit)
+            calculateForYears(startingBalance, rateDecimal, periodsPerYear, years, deposit, depositsPerYear)
         );
 
         // Display key stats
@@ -392,11 +437,11 @@
         renderComparisonTable(results);
 
         // Generate and render chart data
-        const chartData = generateChartData(startingBalance, rateDecimal, periodsPerYear, deposit);
+        const chartData = generateChartData(startingBalance, rateDecimal, periodsPerYear, deposit, depositsPerYear);
         renderChart(chartData);
 
         // Generate and display insight
-        const insight = generateInsight(results, returnRatePercent, frequency, ear);
+        const insight = generateInsight(results, returnRatePercent, frequency, ear, deposit, depositFrequency);
         document.getElementById('insightText').textContent = insight;
 
         // Show results section
