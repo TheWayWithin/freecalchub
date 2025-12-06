@@ -90,11 +90,11 @@
           "mainEntity": [
             {
               "@type": "Question", "name": "What does this calculator do?",
-              "acceptedAnswer": { "@type": "Answer", "text": "This calculator shows how small, consistent percentage gains (for example, 0.2% per day or 1% per week) compound over multiple years. It displays results across 1, 3, 5, 10, 20, and 30 year timeframes so you can see the dramatic long-term impact of consistent small gains." }
+              "acceptedAnswer": { "@type": "Answer", "text": "This calculator shows how small, consistent percentage gains compound over time. You set your own time horizon (from 1 month to 50 years) and see milestone results along the way. The dual-line chart shows both your Total Value and Total Contributed, making it easy to visualize exactly how much comes from compounding." }
             },
             {
               "@type": "Question", "name": "How do I use this calculator?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Enter your starting balance, choose how often you earn a return (daily, weekly, or monthly), enter your average return per period as a percentage (for example, 0.2 for 0.2% per day), optionally add regular deposits, and click Calculate to see your results across multiple time horizons." }
+              "acceptedAnswer": { "@type": "Answer", "text": "Enter your starting balance, choose compounding frequency (daily, weekly, or monthly), set your average return per period, optionally add regular deposits with your preferred deposit frequency (daily to annually), set your time horizon in years and months, and click Calculate to see milestone comparisons and a chart comparing what you put in versus what you have." }
             },
             {
               "@type": "Question", "name": "What does average return per day/week/month mean?",
@@ -106,7 +106,7 @@
             },
             {
               "@type": "Question", "name": "How are regular deposits handled?",
-              "acceptedAnswer": { "@type": "Answer", "text": "If you enter a regular deposit amount, the calculator adds that amount once per period (for example, every day, every week, or every month depending on your selection). Each deposit then grows at the same rate for however many periods remain." }
+              "acceptedAnswer": { "@type": "Answer", "text": "You can set deposits independently from compounding: choose daily, weekly, monthly, quarterly, or annual deposits regardless of how often returns compound. Each deposit compounds for its remaining time, dramatically accelerating long-term growth. The chart's Total Contributed line shows your deposits, while the gap to Total Value shows compounding gains." }
             },
             {
               "@type": "Question", "name": "Can I use this to model trading strategies?",
@@ -138,8 +138,9 @@
             { "@type": "HowToStep", "name": "Enter Starting Balance", "text": "Input your initial investment or starting balance in the first field." },
             { "@type": "HowToStep", "name": "Choose Compounding Frequency", "text": "Select how often returns are compounded: daily (calendar or trading days), weekly, or monthly." },
             { "@type": "HowToStep", "name": "Set Return Rate", "text": "Enter your average return per period as a percentage (e.g., 0.2 for 0.2% per day)." },
-            { "@type": "HowToStep", "name": "Add Optional Deposits", "text": "If desired, enter a regular deposit amount to see how contributions accelerate growth." },
-            { "@type": "HowToStep", "name": "Calculate Results", "text": "Click Calculate to see your balance at 1, 3, 5, 10, 20, and 30 years with a growth chart." }
+            { "@type": "HowToStep", "name": "Add Optional Deposits", "text": "Enter a deposit amount and choose frequency (daily, weekly, monthly, quarterly, or annually)." },
+            { "@type": "HowToStep", "name": "Set Time Horizon", "text": "Enter years and months to analyze. Use 0 years, 1 month for short-term or up to 50 years for long-term." },
+            { "@type": "HowToStep", "name": "Calculate Results", "text": "Click Calculate to see milestone results and a dual-line chart showing Total Value vs Total Contributed." }
           ]
         },
         {
@@ -274,6 +275,20 @@
 <small class="form-hint">How often you add money to your investment</small>
 </div>
 </fieldset>
+<fieldset>
+<legend>Time Horizon</legend>
+<div class="form-row">
+<div class="form-group form-group-inline">
+<label for="years">Years:</label>
+<input id="years" type="number" min="0" max="50" step="1" value="10"/>
+</div>
+<div class="form-group form-group-inline">
+<label for="months">Months:</label>
+<input id="months" type="number" min="0" max="11" step="1" value="0"/>
+</div>
+</div>
+<small class="form-hint">Set to 0 years, 1 month to analyze just 1 month</small>
+</fieldset>
 <div class="form-actions">
 <button class="btn btn-primary" id="calculateButton" type="button">Calculate Long-Term Growth</button>
 <button class="btn btn-secondary" id="resetButton" type="reset">Reset</button>
@@ -315,7 +330,7 @@
 
 <!-- Chart Section -->
 <div class="chart-section" id="chartSection">
-<h4>Growth Visualization (30 Years)</h4>
+<h4>Growth Visualization</h4>
 <canvas id="growthChart" width="400" height="250"></canvas>
 </div>
 
@@ -349,8 +364,9 @@
 <li><strong>Enter Your Starting Balance:</strong> Input the initial amount you're starting with (e.g., $10,000).</li>
 <li><strong>Select Compounding Frequency:</strong> Choose how often returns compound. Daily is common for trading strategies, while monthly suits typical investments. For trading, select "252 trading days/year" to exclude weekends.</li>
 <li><strong>Set Your Average Return:</strong> Enter your expected average return per period as a percentage. For example, 0.2 means 0.2% per day.</li>
-<li><strong>Add Optional Deposits:</strong> If you plan to add money regularly, enter the deposit amount per period.</li>
-<li><strong>Click Calculate:</strong> View your projected balance at 1, 3, 5, 10, 20, and 30 years, plus a growth chart showing the compounding curve.</li>
+<li><strong>Add Optional Deposits:</strong> Enter a deposit amount and choose how often you'll add money (daily, weekly, monthly, quarterly, or annually). Deposit frequency is independent of compounding frequency.</li>
+<li><strong>Set Your Time Horizon:</strong> Enter the years and months you want to analyze. Set to 0 years and 1 month for short-term analysis, or up to 50 years for long-term projections.</li>
+<li><strong>Click Calculate:</strong> View milestone results, plus a dual-line chart showing your Total Value vs Total Contributed to visualize the compounding effect.</li>
 </ol>
 </section>
 <section class="content-section"> <h2 class="section-title">The Power of Small, Consistent Gains</h2>
@@ -387,11 +403,11 @@
 </div>
 <div class="faq-item" id="faq-item-1">
 <h3> <button aria-controls="faq-panel-1" aria-expanded="false" class="accordion"> What does this calculator do? <span class="accordion-icon"></span> </button> </h3>
-<div class="panel" id="faq-panel-1" role="region"> <p>This calculator shows how small, consistent percentage gains (for example, 0.2% per day or 1% per week) compound over multiple years. It displays results across 1, 3, 5, 10, 20, and 30 year timeframes so you can see the dramatic long-term impact of consistent small gains.</p> </div>
+<div class="panel" id="faq-panel-1" role="region"> <p>This calculator shows how small, consistent percentage gains (for example, 0.2% per day or 1% per week) compound over time. You set your own time horizon (from 1 month to 50 years) and see milestone results along the way. The dual-line chart shows both your Total Value and Total Contributed, making it easy to visualize exactly how much comes from compounding.</p> </div>
 </div>
 <div class="faq-item" id="faq-item-2">
 <h3> <button aria-controls="faq-panel-2" aria-expanded="false" class="accordion"> How do I use it? <span class="accordion-icon"></span> </button> </h3>
-<div class="panel" id="faq-panel-2" role="region"> <p>Enter your starting balance, choose how often you earn a return (daily, weekly, or monthly), enter your average return per period as a percentage (for example, 0.2 for 0.2% per day), optionally add regular deposits, and click Calculate to see your results across multiple time horizons from 1 to 30 years.</p> </div>
+<div class="panel" id="faq-panel-2" role="region"> <p>Enter your starting balance, choose compounding frequency (daily, weekly, or monthly), set your average return per period, optionally add regular deposits with your preferred deposit frequency (daily to annually), set your time horizon in years and months, and click Calculate. Results show milestone comparisons and a chart comparing what you put in versus what you have.</p> </div>
 </div>
 <div class="faq-item" id="faq-item-3">
 <h3> <button aria-controls="faq-panel-3" aria-expanded="false" class="accordion"> What does average return per day/week/month mean? <span class="accordion-icon"></span> </button> </h3>
@@ -403,7 +419,7 @@
 </div>
 <div class="faq-item" id="faq-item-5">
 <h3> <button aria-controls="faq-panel-5" aria-expanded="false" class="accordion"> How are regular deposits handled? <span class="accordion-icon"></span> </button> </h3>
-<div class="panel" id="faq-panel-5" role="region"> <p>If you enter a regular deposit amount, the calculator adds that amount once per period (daily, weekly, or monthly depending on your selection). Each deposit then grows at the same rate for however many periods remain. This dramatically accelerates long-term growth.</p> </div>
+<div class="panel" id="faq-panel-5" role="region"> <p>You can set deposits independently from compounding: choose daily, weekly, monthly, quarterly, or annual deposits regardless of how often returns compound. For example, you might compound daily while adding monthly deposits. Each deposit compounds for its remaining time, dramatically accelerating long-term growth. The chart's "Total Contributed" line shows your deposits, while the gap to "Total Value" shows compounding gains.</p> </div>
 </div>
 <div class="faq-item" id="faq-item-6">
 <h3> <button aria-controls="faq-panel-6" aria-expanded="false" class="accordion"> Can I use this to model trading strategies? <span class="accordion-icon"></span> </button> </h3>
