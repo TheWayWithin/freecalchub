@@ -1,7 +1,7 @@
 /**
  * Small Gains Compounding Calculator
- * Calculates compound growth with optional regular deposits
- * Supports daily, weekly, and monthly compounding frequencies
+ * Shows how small, consistent gains compound over long time periods (1-30 years)
+ * Supports daily (calendar/trading), weekly, and monthly compounding
  */
 
 (function() {
@@ -14,8 +14,18 @@
     const currencyFormatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    });
+
+    // Large currency formatter (for millions/billions)
+    const largeCurrencyFormatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
         minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        maximumFractionDigits: 2,
+        notation: 'compact',
+        compactDisplay: 'short'
     });
 
     // Percentage formatter
@@ -25,166 +35,178 @@
         maximumFractionDigits: 2
     });
 
-    // Period labels mapping
-    const periodLabels = {
-        daily: { singular: 'Day', plural: 'Days' },
-        weekly: { singular: 'Week', plural: 'Weeks' },
-        monthly: { singular: 'Month', plural: 'Months' }
+    // Large percentage formatter
+    const largePercentFormatter = new Intl.NumberFormat('en-US', {
+        style: 'percent',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    });
+
+    // Frequency configuration
+    const frequencyConfig = {
+        'daily-calendar': { periodsPerYear: 365, label: 'Day', labelPlural: 'Days' },
+        'daily-trading': { periodsPerYear: 252, label: 'Day', labelPlural: 'Trading Days' },
+        'weekly': { periodsPerYear: 52, label: 'Week', labelPlural: 'Weeks' },
+        'monthly': { periodsPerYear: 12, label: 'Month', labelPlural: 'Months' }
     };
 
-    // Periods per year for EAR calculation
-    const periodsPerYear = {
-        daily: 365,
-        weekly: 52,
-        monthly: 12
-    };
+    // Time horizons to calculate (in years)
+    const timeHorizons = [1, 3, 5, 10, 20, 30];
 
     /**
-     * Calculate compound growth with optional deposits
+     * Calculate compound growth for a given number of years
      * @param {number} principal - Starting balance
-     * @param {number} rate - Rate per period (as decimal)
-     * @param {number} periods - Number of periods
-     * @param {number} deposit - Deposit amount per period
-     * @param {string} timing - 'beginning' or 'end'
-     * @returns {Object} Results including final balance, breakdown, etc.
+     * @param {number} ratePerPeriod - Rate per period (as decimal)
+     * @param {number} periodsPerYear - Number of periods per year
+     * @param {number} years - Number of years
+     * @param {number} depositPerPeriod - Deposit per period
+     * @returns {Object} Results including final balance, deposits, profit, return
      */
-    function calculateCompounding(principal, rate, periods, deposit, timing) {
-        const breakdown = [];
-        let balance = principal;
-        let totalDeposits = 0;
+    function calculateForYears(principal, ratePerPeriod, periodsPerYear, years, depositPerPeriod) {
+        const totalPeriods = periodsPerYear * years;
 
-        for (let i = 1; i <= periods; i++) {
-            const startBalance = balance;
-            let periodDeposit = 0;
-            let periodGrowth = 0;
+        // Calculate final balance from principal compounding
+        // A_principal = P × (1 + r)^n
+        const principalGrowth = principal * Math.pow(1 + ratePerPeriod, totalPeriods);
 
-            // Add deposit at beginning of period (annuity due)
-            if (deposit > 0 && timing === 'beginning') {
-                balance += deposit;
-                periodDeposit = deposit;
-                totalDeposits += deposit;
-            }
-
-            // Calculate growth on current balance
-            periodGrowth = balance * rate;
-            balance += periodGrowth;
-
-            // Add deposit at end of period (ordinary annuity)
-            if (deposit > 0 && timing === 'end') {
-                balance += deposit;
-                periodDeposit = deposit;
-                totalDeposits += deposit;
-            }
-
-            breakdown.push({
-                period: i,
-                startBalance: startBalance,
-                deposit: periodDeposit,
-                growth: periodGrowth,
-                endBalance: balance
-            });
+        // Calculate final balance from deposits (ordinary annuity - end of period)
+        // A_deposits = C × ((1 + r)^n - 1) / r
+        let depositGrowth = 0;
+        if (depositPerPeriod > 0 && ratePerPeriod > 0) {
+            depositGrowth = depositPerPeriod * ((Math.pow(1 + ratePerPeriod, totalPeriods) - 1) / ratePerPeriod);
+        } else if (depositPerPeriod > 0 && ratePerPeriod === 0) {
+            depositGrowth = depositPerPeriod * totalPeriods;
         }
 
-        const totalContributed = principal + totalDeposits;
-        const profit = balance - totalContributed;
+        const finalBalance = principalGrowth + depositGrowth;
+        const totalDeposited = principal + (depositPerPeriod * totalPeriods);
+        const totalProfit = finalBalance - totalDeposited;
+        const totalReturn = totalDeposited > 0 ? (finalBalance - totalDeposited) / totalDeposited : 0;
 
         return {
-            finalBalance: balance,
-            totalContributed: totalContributed,
-            totalDeposits: totalDeposits,
-            profit: profit,
-            breakdown: breakdown
+            years: years,
+            finalBalance: finalBalance,
+            totalDeposited: totalDeposited,
+            totalProfit: totalProfit,
+            totalReturn: totalReturn,
+            totalPeriods: totalPeriods
         };
     }
 
     /**
      * Calculate Effective Annual Return (EAR)
      * @param {number} ratePerPeriod - Rate per period (as decimal)
-     * @param {string} frequency - 'daily', 'weekly', or 'monthly'
+     * @param {number} periodsPerYear - Number of periods per year
      * @returns {number} EAR as decimal
      */
-    function calculateEAR(ratePerPeriod, frequency) {
-        const periods = periodsPerYear[frequency] || 12;
-        return Math.pow(1 + ratePerPeriod, periods) - 1;
+    function calculateEAR(ratePerPeriod, periodsPerYear) {
+        return Math.pow(1 + ratePerPeriod, periodsPerYear) - 1;
     }
 
     /**
-     * Update the period label based on frequency
-     * @param {string} frequency - Selected frequency
+     * Format currency intelligently based on size
+     * @param {number} value - Value to format
+     * @returns {string} Formatted currency string
      */
-    function updatePeriodLabel(frequency) {
-        const label = periodLabels[frequency] || periodLabels.monthly;
-        document.getElementById('periodLabel').textContent = label.plural;
+    function formatCurrency(value) {
+        if (Math.abs(value) >= 1e12) {
+            return largeCurrencyFormatter.format(value);
+        } else if (Math.abs(value) >= 1e9) {
+            return largeCurrencyFormatter.format(value);
+        } else if (Math.abs(value) >= 1e6) {
+            return largeCurrencyFormatter.format(value);
+        }
+        return currencyFormatter.format(value);
     }
 
     /**
-     * Render the breakdown table
-     * @param {Array} breakdown - Period-by-period breakdown
+     * Format percentage intelligently based on size
+     * @param {number} value - Value to format (as decimal)
+     * @returns {string} Formatted percentage string
+     */
+    function formatPercent(value) {
+        if (Math.abs(value) >= 10) {
+            return largePercentFormatter.format(value);
+        }
+        return percentFormatter.format(value);
+    }
+
+    /**
+     * Update period labels based on frequency selection
      * @param {string} frequency - Selected frequency
      */
-    function renderBreakdownTable(breakdown, frequency) {
-        const tbody = document.getElementById('breakdownTableBody');
+    function updatePeriodLabels(frequency) {
+        const config = frequencyConfig[frequency] || frequencyConfig['daily-calendar'];
+        document.getElementById('periodLabel').textContent = config.label;
+        document.getElementById('depositPeriodLabel').textContent = config.label;
+    }
+
+    /**
+     * Populate the multi-year comparison table
+     * @param {Array} results - Array of calculation results for each time horizon
+     */
+    function renderComparisonTable(results) {
+        const tbody = document.getElementById('comparisonTableBody');
         tbody.innerHTML = '';
 
-        const label = periodLabels[frequency] || periodLabels.monthly;
-        const total = breakdown.length;
+        results.forEach((result) => {
+            const tr = document.createElement('tr');
 
-        // For large datasets, show first 12 + last 12 with ellipsis
-        let rowsToShow = breakdown;
-        let showEllipsis = false;
-
-        if (total > 24) {
-            rowsToShow = [...breakdown.slice(0, 12), ...breakdown.slice(-12)];
-            showEllipsis = true;
-        }
-
-        let lastPeriod = 0;
-
-        rowsToShow.forEach((row, index) => {
-            // Add ellipsis row if needed
-            if (showEllipsis && index === 12 && row.period !== lastPeriod + 1) {
-                const ellipsisRow = document.createElement('tr');
-                ellipsisRow.className = 'ellipsis-row';
-                ellipsisRow.innerHTML = `<td colspan="5">... ${row.period - lastPeriod - 1} ${label.plural.toLowerCase()} omitted ...</td>`;
-                tbody.appendChild(ellipsisRow);
+            // Highlight 10-year and 30-year rows
+            if (result.years === 10 || result.years === 30) {
+                tr.className = 'highlight-row';
             }
 
-            const tr = document.createElement('tr');
+            const yearLabel = result.years === 1 ? '1 Year' : `${result.years} Years`;
+
             tr.innerHTML = `
-                <td>${label.singular} ${row.period}</td>
-                <td>${currencyFormatter.format(row.startBalance)}</td>
-                <td>${currencyFormatter.format(row.deposit)}</td>
-                <td>${currencyFormatter.format(row.growth)}</td>
-                <td>${currencyFormatter.format(row.endBalance)}</td>
+                <td>${yearLabel}</td>
+                <td>${formatCurrency(result.finalBalance)}</td>
+                <td>${formatCurrency(result.totalDeposited)}</td>
+                <td class="profit-positive">${formatCurrency(result.totalProfit)}</td>
+                <td class="return-value">${formatPercent(result.totalReturn)}</td>
             `;
             tbody.appendChild(tr);
-            lastPeriod = row.period;
         });
     }
 
     /**
-     * Render the growth chart
-     * @param {Array} breakdown - Period-by-period breakdown
-     * @param {string} frequency - Selected frequency
+     * Generate yearly data points for the chart (30 years)
+     * @param {number} principal - Starting balance
+     * @param {number} ratePerPeriod - Rate per period (as decimal)
+     * @param {number} periodsPerYear - Number of periods per year
+     * @param {number} depositPerPeriod - Deposit per period
+     * @returns {Array} Array of {year, balance} objects
      */
-    function renderChart(breakdown, frequency) {
+    function generateChartData(principal, ratePerPeriod, periodsPerYear, depositPerPeriod) {
+        const data = [];
+
+        // Add starting point (year 0)
+        data.push({ year: 0, balance: principal });
+
+        // Generate data for years 1-30
+        for (let year = 1; year <= 30; year++) {
+            const result = calculateForYears(principal, ratePerPeriod, periodsPerYear, year, depositPerPeriod);
+            data.push({ year: year, balance: result.finalBalance });
+        }
+
+        return data;
+    }
+
+    /**
+     * Render the growth chart
+     * @param {Array} chartData - Array of {year, balance} objects
+     */
+    function renderChart(chartData) {
         const ctx = document.getElementById('growthChart').getContext('2d');
-        const label = periodLabels[frequency] || periodLabels.monthly;
 
         // Destroy existing chart
         if (growthChart) {
             growthChart.destroy();
         }
 
-        // Sample data for large datasets (max 100 points)
-        let chartData = breakdown;
-        if (breakdown.length > 100) {
-            const step = Math.ceil(breakdown.length / 100);
-            chartData = breakdown.filter((_, i) => i % step === 0 || i === breakdown.length - 1);
-        }
-
-        const labels = chartData.map(row => row.period);
-        const balances = chartData.map(row => row.endBalance);
+        const labels = chartData.map(d => d.year);
+        const balances = chartData.map(d => d.balance);
 
         growthChart = new Chart(ctx, {
             type: 'line',
@@ -198,8 +220,9 @@
                     borderWidth: 2,
                     fill: true,
                     tension: 0.4,
-                    pointRadius: chartData.length > 50 ? 0 : 3,
-                    pointHoverRadius: 5
+                    pointRadius: 3,
+                    pointHoverRadius: 6,
+                    pointBackgroundColor: '#4a6fa5'
                 }]
             },
             options: {
@@ -214,10 +237,11 @@
                         intersect: false,
                         callbacks: {
                             title: function(tooltipItems) {
-                                return label.singular + ' ' + tooltipItems[0].label;
+                                const year = tooltipItems[0].label;
+                                return year === '0' ? 'Start' : `Year ${year}`;
                             },
                             label: function(context) {
-                                return 'Balance: ' + currencyFormatter.format(context.parsed.y);
+                                return 'Balance: ' + formatCurrency(context.parsed.y);
                             }
                         }
                     }
@@ -226,7 +250,7 @@
                     x: {
                         title: {
                             display: true,
-                            text: label.plural
+                            text: 'Years'
                         },
                         ticks: {
                             maxTicksLimit: 10
@@ -235,14 +259,18 @@
                     y: {
                         title: {
                             display: true,
-                            text: 'Balance ($)'
+                            text: 'Balance'
                         },
                         ticks: {
                             callback: function(value) {
-                                if (value >= 1000000) {
-                                    return '$' + (value / 1000000).toFixed(1) + 'M';
-                                } else if (value >= 1000) {
-                                    return '$' + (value / 1000).toFixed(1) + 'K';
+                                if (value >= 1e12) {
+                                    return '$' + (value / 1e12).toFixed(1) + 'T';
+                                } else if (value >= 1e9) {
+                                    return '$' + (value / 1e9).toFixed(1) + 'B';
+                                } else if (value >= 1e6) {
+                                    return '$' + (value / 1e6).toFixed(1) + 'M';
+                                } else if (value >= 1e3) {
+                                    return '$' + (value / 1e3).toFixed(1) + 'K';
                                 }
                                 return '$' + value.toFixed(0);
                             }
@@ -256,6 +284,50 @@
                 }
             }
         });
+    }
+
+    /**
+     * Generate insight text based on results
+     * @param {Array} results - Calculation results
+     * @param {number} ratePercent - Return rate as percentage
+     * @param {string} frequency - Compounding frequency
+     * @param {number} ear - Effective Annual Return
+     * @returns {string} Insight text
+     */
+    function generateInsight(results, ratePercent, frequency, ear) {
+        const oneYear = results.find(r => r.years === 1);
+        const tenYear = results.find(r => r.years === 10);
+        const thirtyYear = results.find(r => r.years === 30);
+
+        const config = frequencyConfig[frequency];
+        const periodLabel = config.label.toLowerCase();
+
+        // Calculate how much more 30 years is vs 10 years
+        const growthMultiplier = thirtyYear.finalBalance / tenYear.finalBalance;
+
+        let insight = '';
+
+        if (ear > 1) {
+            // Very high returns
+            insight = `At ${ratePercent}% per ${periodLabel}, your effective annual return is ${formatPercent(ear)}. `;
+            insight += `While the math shows dramatic growth (your money grows ${growthMultiplier.toFixed(0)}x between year 10 and 30), `;
+            insight += `sustaining such high returns for decades is extremely challenging in practice. `;
+            insight += `Use this as a ceiling scenario, not a realistic expectation.`;
+        } else if (ear > 0.2) {
+            // High returns (20%+ annually)
+            insight = `With a ${formatPercent(ear)} effective annual return, your initial investment `;
+            insight += `could grow from ${formatCurrency(oneYear.totalDeposited)} to ${formatCurrency(tenYear.finalBalance)} in 10 years. `;
+            insight += `By year 30, compounding accelerates dramatically: your balance grows ${growthMultiplier.toFixed(1)}x `;
+            insight += `in the final 20 years compared to the first 10.`;
+        } else {
+            // Moderate returns
+            insight = `Your ${ratePercent}% per ${periodLabel} return translates to ${formatPercent(ear)} annually. `;
+            insight += `After 10 years, you'd have ${formatCurrency(tenYear.finalBalance)} `;
+            insight += `(${formatPercent(tenYear.totalReturn)} total return). `;
+            insight += `The power of compounding really shows after 20+ years, where growth accelerates exponentially.`;
+        }
+
+        return insight;
     }
 
     /**
@@ -279,9 +351,7 @@
         const startingBalance = parseFloat(document.getElementById('startingBalance').value);
         const frequency = document.getElementById('frequency').value;
         const returnRatePercent = parseFloat(document.getElementById('returnRate').value);
-        const periods = parseInt(document.getElementById('periods').value);
         const deposit = parseFloat(document.getElementById('deposit').value) || 0;
-        const depositTiming = document.getElementById('depositTiming').value;
 
         // Validate inputs
         if (isNaN(startingBalance) || startingBalance < 0) {
@@ -294,40 +364,40 @@
             return;
         }
 
-        if (isNaN(periods) || periods < 1 || periods > 10000) {
-            showError('Please enter a valid number of periods (1 to 10,000).');
-            return;
-        }
-
         if (isNaN(deposit) || deposit < 0) {
             showError('Please enter a valid deposit amount (0 or greater).');
             return;
         }
 
+        // Get frequency configuration
+        const config = frequencyConfig[frequency] || frequencyConfig['daily-calendar'];
+        const periodsPerYear = config.periodsPerYear;
+
         // Convert rate to decimal
         const rateDecimal = returnRatePercent / 100;
 
-        // Calculate results
-        const results = calculateCompounding(
-            startingBalance,
-            rateDecimal,
-            periods,
-            deposit,
-            depositTiming
+        // Calculate EAR
+        const ear = calculateEAR(rateDecimal, periodsPerYear);
+
+        // Calculate results for all time horizons
+        const results = timeHorizons.map(years =>
+            calculateForYears(startingBalance, rateDecimal, periodsPerYear, years, deposit)
         );
 
-        // Calculate EAR
-        const ear = calculateEAR(rateDecimal, frequency);
+        // Display key stats
+        document.getElementById('resultEAR').textContent = formatPercent(ear);
+        document.getElementById('resultPeriodsPerYear').textContent = periodsPerYear.toString();
 
-        // Display results
-        document.getElementById('resultFinalBalance').textContent = currencyFormatter.format(results.finalBalance);
-        document.getElementById('resultTotalContributed').textContent = currencyFormatter.format(results.totalContributed);
-        document.getElementById('resultProfit').textContent = currencyFormatter.format(results.profit);
-        document.getElementById('resultEAR').textContent = percentFormatter.format(ear);
+        // Render comparison table
+        renderComparisonTable(results);
 
-        // Render table and chart
-        renderBreakdownTable(results.breakdown, frequency);
-        renderChart(results.breakdown, frequency);
+        // Generate and render chart data
+        const chartData = generateChartData(startingBalance, rateDecimal, periodsPerYear, deposit);
+        renderChart(chartData);
+
+        // Generate and display insight
+        const insight = generateInsight(results, returnRatePercent, frequency, ear);
+        document.getElementById('insightText').textContent = insight;
 
         // Show results section
         document.getElementById('resultsSection').style.display = 'block';
@@ -346,7 +416,7 @@
         document.getElementById('calculatorForm').reset();
         document.getElementById('resultsSection').style.display = 'none';
         document.getElementById('errorMessages').style.display = 'none';
-        updatePeriodLabel('monthly');
+        updatePeriodLabels('daily-calendar');
 
         if (growthChart) {
             growthChart.destroy();
@@ -370,9 +440,9 @@
             reset();
         });
 
-        // Frequency change - update period label
+        // Frequency change - update period labels
         document.getElementById('frequency').addEventListener('change', function() {
-            updatePeriodLabel(this.value);
+            updatePeriodLabels(this.value);
         });
 
         // Form submit (Enter key)
@@ -381,8 +451,8 @@
             calculate();
         });
 
-        // Initialize period label
-        updatePeriodLabel('monthly');
+        // Initialize period labels
+        updatePeriodLabels('daily-calendar');
     }
 
     // Initialize when DOM is ready
