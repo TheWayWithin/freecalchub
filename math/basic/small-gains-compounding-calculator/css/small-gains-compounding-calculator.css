@@ -1,0 +1,283 @@
+/* Small Gains Compounding Calculator Styles */
+
+/* Form Enhancements */
+.calculator-form fieldset {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: var(--border-radius, 8px);
+    background-color: var(--background-alt, #f9f9f9);
+}
+
+.calculator-form fieldset legend {
+    font-weight: 600;
+    padding: 0 0.5rem;
+    color: var(--primary-color, #4a6fa5);
+}
+
+.form-hint {
+    display: block;
+    font-size: 0.85em;
+    color: var(--text-muted, #666);
+    margin-top: 0.25rem;
+}
+
+/* Results Grid */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.results-grid .result-item {
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.results-grid .result-item h4 {
+    font-size: 0.9em;
+    color: var(--text-muted, #666);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.results-grid .result-item p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color, #4a6fa5);
+    margin: 0;
+}
+
+/* Chart Section */
+.chart-section {
+    background: var(--background-alt, #f9f9f9);
+    padding: 1.5rem;
+    border-radius: var(--border-radius, 8px);
+    margin-bottom: 1.5rem;
+}
+
+.chart-section h4 {
+    margin-bottom: 1rem;
+    color: var(--text-color, #333);
+}
+
+#growthChart {
+    max-height: 300px;
+}
+
+/* Breakdown Table Section */
+.breakdown-section {
+    margin-top: 1.5rem;
+}
+
+.breakdown-section summary {
+    cursor: pointer;
+    padding: 1rem;
+    background: var(--primary-color, #4a6fa5);
+    color: white;
+    border-radius: var(--border-radius, 8px);
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.breakdown-section summary:hover {
+    background: var(--primary-hover, #3a5a8a);
+}
+
+.breakdown-section[open] summary {
+    border-radius: var(--border-radius, 8px) var(--border-radius, 8px) 0 0;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color, #ddd);
+    border-top: none;
+    border-radius: 0 0 var(--border-radius, 8px) var(--border-radius, 8px);
+}
+
+#breakdownTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+#breakdownTable thead {
+    position: sticky;
+    top: 0;
+    background: var(--background-alt, #f5f5f5);
+    z-index: 1;
+}
+
+#breakdownTable th {
+    padding: 0.75rem;
+    text-align: right;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-color, #ddd);
+    color: var(--text-color, #333);
+}
+
+#breakdownTable th:first-child {
+    text-align: left;
+}
+
+#breakdownTable td {
+    padding: 0.5rem 0.75rem;
+    text-align: right;
+    border-bottom: 1px solid var(--border-color, #eee);
+}
+
+#breakdownTable td:first-child {
+    text-align: left;
+    font-weight: 500;
+}
+
+#breakdownTable tbody tr:hover {
+    background-color: var(--background-alt, #f9f9f9);
+}
+
+#breakdownTable tbody tr.ellipsis-row {
+    background-color: var(--background-alt, #f5f5f5);
+    font-style: italic;
+    color: var(--text-muted, #666);
+}
+
+#breakdownTable tbody tr.ellipsis-row td {
+    text-align: center;
+}
+
+/* Related Calculators */
+.related-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.related-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--background-alt, #f9f9f9);
+    border-radius: var(--border-radius, 8px);
+    text-decoration: none;
+    color: var(--text-color, #333);
+    transition: all 0.2s ease;
+    border: 1px solid var(--border-color, #ddd);
+}
+
+.related-link:hover {
+    background: var(--primary-color, #4a6fa5);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.related-link i {
+    font-size: 1.25rem;
+    color: var(--primary-color, #4a6fa5);
+}
+
+.related-link:hover i {
+    color: white;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .results-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .results-grid .result-item p {
+        font-size: 1.25rem;
+    }
+
+    .chart-section {
+        padding: 1rem;
+    }
+
+    #breakdownTable {
+        font-size: 0.8em;
+    }
+
+    #breakdownTable th,
+    #breakdownTable td {
+        padding: 0.5rem 0.4rem;
+    }
+
+    .related-links {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .calculator-form fieldset {
+        padding: 1rem;
+    }
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] .calculator-form fieldset,
+.dark-mode .calculator-form fieldset {
+    background-color: var(--background-alt-dark, #2a2a2a);
+    border-color: var(--border-color-dark, #444);
+}
+
+[data-theme="dark"] .chart-section,
+.dark-mode .chart-section {
+    background-color: var(--background-alt-dark, #2a2a2a);
+}
+
+[data-theme="dark"] .breakdown-section summary,
+.dark-mode .breakdown-section summary {
+    background: var(--primary-color-dark, #5a8fc5);
+}
+
+[data-theme="dark"] #breakdownTable thead,
+.dark-mode #breakdownTable thead {
+    background: var(--background-alt-dark, #333);
+}
+
+[data-theme="dark"] #breakdownTable th,
+[data-theme="dark"] #breakdownTable td,
+.dark-mode #breakdownTable th,
+.dark-mode #breakdownTable td {
+    border-color: var(--border-color-dark, #444);
+    color: var(--text-color-dark, #e0e0e0);
+}
+
+[data-theme="dark"] .related-link,
+.dark-mode .related-link {
+    background: var(--background-alt-dark, #2a2a2a);
+    border-color: var(--border-color-dark, #444);
+    color: var(--text-color-dark, #e0e0e0);
+}
+
+[data-theme="dark"] .table-responsive,
+.dark-mode .table-responsive {
+    border-color: var(--border-color-dark, #444);
+}
+
+/* Print Styles */
+@media print {
+    .breakdown-section summary {
+        display: none;
+    }
+
+    .breakdown-section .table-responsive {
+        max-height: none;
+        overflow: visible;
+        border: 1px solid #ddd;
+        border-radius: var(--border-radius, 8px);
+    }
+
+    .chart-section {
+        page-break-inside: avoid;
+    }
+}
