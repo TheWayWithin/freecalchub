@@ -1,0 +1,8 @@
+# Environment variables (contain secrets — never commit)
+.env
+.env.*
+!.env.*.template
+!.env.example
+
+# OS files
+.DS_Store
