@@ -32,20 +32,14 @@ This mission establishes the foundation for a new greenfield project by:
 
 ## Execution Protocol
 
-### Phase 0: MCP Discovery (2 min)
-```bash
-/coord "Checking available MCPs for project setup..."
-```
+### Phase 0: MCP Setup (2 min)
+
+The user's `.mcp.json` lists configured MCP servers. Tools defer-load by default; specialists discover what they need at runtime via `tool_search_tool_regex_20251119`.
 
 **Agent Actions:**
-- @coordinator runs grep "mcp__" to identify available tools
-- Documents available MCPs in project-plan.md
-- Maps MCPs to project needs:
-  - Database: mcp__supabase
-  - Documentation: mcp__context7
-  - Testing: mcp__playwright
-  - Deployment: mcp__netlify, mcp__railway
-- Notes which agents should use which MCPs
+- @coordinator confirms which MCP servers the project will need
+- Documents required servers in project-plan.md (so user can add API keys to `.env.mcp`)
+- No profile switching required — tools auto-load on demand
 
 ### Phase 1: GitHub Setup (5 min)
 ```bash
@@ -166,36 +160,48 @@ This mission establishes the foundation for a new greenfield project by:
 ```
 
 **Agent Actions:**
-- @documenter creates `progress.md`:
+- @documenter creates `progress.md` from `/templates/progress-template.md`:
 
 **progress.md Structure:**
 ```markdown
-# Project Progress Log
+# Progress Log
+# BACKWARD-LOOKING changelog: deliverables, changes, and complete issue history
 
-## Overview
-Project Start Date: [DATE]
-Last Updated: [DATE]
+**Mission**: [Project Name]
+**Started**: [YYYY-MM-DD]
+**Last Updated**: [YYYY-MM-DD]
 
-## Completed Milestones
-_None yet - just getting started!_
+## 📦 Deliverables
+[Log what was created/changed with descriptions]
 
-## Current Sprint
-### Goals
-- [ ] Goal 1
-- [ ] Goal 2
-- [ ] Goal 3
+## 🔨 Changes Made
+[Record modifications with rationale]
 
-### Blockers
-_None currently_
+## 🐛 Issues Encountered
+[Complete issue history with ALL fix attempts - including failures]
 
-## Lessons Learned
-_To be updated as we progress_
+### Issue #[ID]: [Title]
+**Discovered**: [timestamp] by @[agent]
+**Status**: [🔴 Open | 🟡 In Progress | 🟢 Resolved]
 
-## Technical Decisions
-_Key architectural and implementation decisions will be logged here_
+#### Fix Attempts
+##### Attempt #1: [Approach]
+**Result**: [✅ Success | ❌ Failed | ⚠️ Partial]
+**Rationale**: Why we thought this would work
+**What We Tried**: Specific changes made
+**Outcome**: What actually happened
+**Learning**: What this taught us
 
-## Performance Insights
-_Optimization opportunities and performance wins_
+#### Resolution (if resolved)
+**Root Cause**: Underlying reason
+**Why Previous Attempts Failed**: Analysis
+**Prevention Strategy**: How to avoid in future
+
+## 🎓 Lessons Learned
+[Key insights and patterns]
+
+## 📊 Metrics & Progress
+[Time tracking, velocity, quality indicators]
 ```
 
 ### Phase 6: CLAUDE.md Configuration (10 min)
@@ -232,22 +238,39 @@ Key Requirements:
 - [Requirement 3]
 
 ## Progress Tracking Protocol
-After each work session or milestone:
-1. Update `project-plan.md` with completed tasks and MCPs used
-2. Log issues and resolutions in `progress.md`
-3. Document lessons learned
-4. Record performance insights
-5. Note successful MCP usage patterns
 
-## Performance Insights
-[To be updated with optimization opportunities]
+### project-plan.md (FORWARD-LOOKING)
+**What we're PLANNING to do**:
+- Update when: Mission start, phase start, task completion
+- Task lists with checkboxes [ ] → [x]
+- Milestones, success metrics, risk assessment
+
+### progress.md (BACKWARD-LOOKING CHANGELOG)
+**What we DID and what we LEARNED**:
+- Update when: After EACH deliverable, after EACH fix attempt, when issue resolved
+- Log ALL fix attempts (including failures) - not just final solutions
+- Root cause analysis for all issues
+- Prevention strategies and lessons learned
+- **CRITICAL**: Failed attempts teach us what doesn't work and why
+
+### Update After:
+1. **Each Deliverable**: Log to progress.md with description
+2. **Each Change**: Record in progress.md with rationale
+3. **Issue Discovery**: Create issue entry in progress.md immediately
+4. **EACH Fix Attempt**: Log attempt, rationale, result, learning (even if it fails)
+5. **Issue Resolution**: Add root cause analysis and prevention strategy
+6. **Task Completion**: Mark [x] in project-plan.md
+7. **Phase End**: Update both files with results and lessons
 
 ## Update Checklist
-- [ ] Milestone completed → Update project-plan.md
-- [ ] Issue resolved → Log in progress.md
-- [ ] Lesson learned → Add to progress.md
+- [ ] Deliverable created → Log in progress.md with description
+- [ ] Code/config changed → Record in progress.md with rationale
+- [ ] Issue discovered → Create issue entry in progress.md
+- [ ] Fix attempted → Log attempt with result and learning in progress.md
+- [ ] Issue resolved → Add root cause analysis to progress.md
+- [ ] Task completed → Mark [x] in project-plan.md
 - [ ] Performance insight → Update CLAUDE.md
-- [ ] MCP pattern discovered → Document usage
+- [ ] MCP pattern discovered → Document usage in CLAUDE.md
 ```
 
 ---
@@ -258,9 +281,9 @@ After each work session or milestone:
 - [ ] GitHub repository configured
 - [ ] Ideation document analyzed
 - [ ] architecture.md created from template
-- [ ] project-plan.md created with roadmap
-- [ ] progress.md initialized
-- [ ] CLAUDE.md updated with tracking instructions
+- [ ] project-plan.md created with FORWARD-LOOKING roadmap
+- [ ] progress.md initialized from template with BACKWARD-LOOKING changelog structure
+- [ ] CLAUDE.md updated with tracking instructions (including Critical Software Development Principles)
 
 ---
 
@@ -322,6 +345,45 @@ After each work session or milestone:
 # With multiple ideation sources
 /coord dev-setup "PRD.md, brand-guidelines.pdf, architecture.md"
 ```
+
+---
+
+## Post-Mission Cleanup Decision
+
+After completing this mission, decide on cleanup approach based on project status:
+
+### ✅ Milestone Transition (Every 2-4 weeks)
+**When**: This mission completes a major project milestone, but more work remains.
+
+**Actions** (30-60 min):
+1. Extract lessons to `lessons/[category]/` from progress.md
+2. Archive milestone-relevant Phase Handoff blocks from agent-context.md if needed
+3. Clean agent-context.md (retain essentials, archive historical details)
+4. Continue using agent-context.md (Phase Handoff blocks accumulate across milestones)
+5. Update project-plan.md with next milestone tasks
+
+**See**: `templates/cleanup-checklist.md` Section A for detailed steps
+
+### 🎯 Project Completion (Mission accomplished!)
+**When**: All project objectives achieved, ready for new mission.
+
+**Actions** (1-2 hours):
+1. Extract ALL lessons from entire progress.md to `lessons/`
+2. Create mission archive in `archives/missions/mission-[name]-YYYY-MM-DD/`
+3. Update CLAUDE.md with system-level learnings
+4. Archive all tracking files (project-plan.md, progress.md, etc.)
+5. Prepare fresh start for next mission
+
+**See**: `templates/cleanup-checklist.md` Section B for detailed steps
+
+### 🔄 Continue Active Work (No cleanup needed)
+**When**: Mission complete but continuing active development in same phase.
+
+**Actions**: Update progress.md and project-plan.md, continue working.
+
+---
+
+**Reference**: See `project/field-manual/project-lifecycle-guide.md` for complete lifecycle management procedures.
 
 ---
 
