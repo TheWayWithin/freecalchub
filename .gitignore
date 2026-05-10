@@ -1,8 +1,15 @@
-# Environment variables (contain secrets — never commit)
+# Sensitive credentials — never commit
 .env
 .env.*
-!.env.*.template
+!.env*.template
 !.env.example
 
-# OS files
+# OS / editor noise
 .DS_Store
+*.swp
+*.swo
+__pycache__/
+*.pyc
+
+# SEO-Agent operational notes (workspace-specific, not for the repo)
+# (Add patterns here as the SEO workflow matures and identifies non-shareable artefacts)

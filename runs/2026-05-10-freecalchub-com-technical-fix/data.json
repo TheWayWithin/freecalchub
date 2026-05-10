@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0",
+  "mission": {
+    "name": "technical-fix",
+    "mode": "default",
+    "timestamp": "2026-05-10T00:00:00Z",
+    "run_directory": "runs/2026-05-10-freecalchub-com-technical-fix/",
+    "agents_invoked": ["coordinator-direct", "seo-technical", "seo-content"]
+  },
+  "site": {
+    "domain": "freecalchub.com",
+    "scope": "Calculator pages under finance/, health/, math/, lifestyle/, conversions/, date-time/",
+    "pages_assessed": 110
+  },
+  "scorecards": {
+    "ai_search_readiness": {
+      "total": 43,
+      "llms_txt": {
+        "score": 9,
+        "status": "unchanged (present, comprehensive)",
+        "notes": "Not touched in this run."
+      },
+      "structured_data_coverage": {
+        "score": 9,
+        "status": "unchanged (100% of sampled pages)",
+        "notes": "Existing SoftwareApplication/FAQPage schema preserved verbatim. OG and Twitter tags added are in addition, not modification."
+      },
+      "answerability": {
+        "score": 9,
+        "status": "improved",
+        "notes": "Open Graph and Twitter Card properties now present on 100% of calculator pages (was 17%). LLM ingestion pipelines and social previews now read consistent og:title and og:description on every page."
+      },
+      "sitemap_freshness": {
+        "score": 6,
+        "status": "unchanged",
+        "notes": "Not touched in this run. Still recommended for future work."
+      },
+      "ai_crawler_policy": {
+        "score": 7,
+        "status": "unchanged",
+        "notes": "Explicit GPTBot/ClaudeBot/PerplexityBot/Google-Extended allow blocks deferred from this fix pass. Still on backlog."
+      }
+    },
+    "traditional_seo": {
+      "total": 41,
+      "core_web_vitals": {
+        "score": 5,
+        "status": "not measured (unchanged)",
+        "notes": "Still no Lighthouse access. Tag additions are 14 head lines per page; expected impact on CWV negligible."
+      },
+      "crawlability": {
+        "score": 8,
+        "status": "improved",
+        "notes": "100% canonical coverage achieved (was 59%). Canonical-vs-og:url cross-check now consistent."
+      },
+      "on_page": {
+        "score": 9,
+        "status": "improved",
+        "notes": "100% of calculator pages now have title + meta description + canonical + Open Graph + Twitter Card head tags (was ~17% complete for OG, 59% for canonical, 99% for description)."
+      },
+      "internal_linking": {
+        "score": 6,
+        "status": "unchanged",
+        "notes": "Not touched in this run."
+      },
+      "authority": {
+        "score": 5,
+        "status": "not measured (unchanged)",
+        "notes": "Still no Ahrefs/Moz access."
+      }
+    }
+  },
+  "fixes": [
+    {
+      "id": "fch-tf-001",
+      "title": "SOP head-tag standards strengthened (canonical promotion + Open Graph section)",
+      "category": "technical",
+      "impact": 9,
+      "effort": 2,
+      "roi": 4.5,
+      "estimated_traffic_lift": {
+        "value": 0,
+        "unit": "sessions_per_month",
+        "confidence": "low"
+      },
+      "min_diff": true,
+      "owner_agent": "@seo-technical",
+      "evidence_path": "general-template-guidelines.md (v1.6 -> v1.7, new Canonical URL Requirements + Open Graph & Social Card Tags sub-sections in Section 2). docs/SOP-CalcDev.md (v3.7 -> v3.8, new cross-reference paragraph in Section 3.1). Lock-in effect: future calculator pages built per SOP cannot ship without these tags."
+    },
+    {
+      "id": "fch-tf-002",
+      "title": "SOP filename references corrected (calculator_template -> calculator-template, category_template -> category-template)",
+      "category": "technical",
+      "impact": 4,
+      "effort": 1,
+      "roi": 4.0,
+      "estimated_traffic_lift": {
+        "value": 0,
+        "unit": "sessions_per_month",
+        "confidence": "low"
+      },
+      "min_diff": true,
+      "owner_agent": "@seo-technical",
+      "evidence_path": "general-template-guidelines.md (8 lines) + docs/SOP-CalcDev.md (15 lines). Removes the 'SOP-promised-but-missing template' phantom finding."
+    },
+    {
+      "id": "fch-tf-003",
+      "title": "Add missing Open Graph + Twitter Card head tags to 91 calculator pages",
+      "category": "technical",
+      "impact": 8,
+      "effort": 3,
+      "roi": 2.7,
+      "estimated_traffic_lift": {
+        "value": 0,
+        "unit": "sessions_per_month",
+        "confidence": "low"
+      },
+      "min_diff": true,
+      "owner_agent": "@seo-technical",
+      "evidence_path": "scripts/add-missing-head-tags.py. Bulk run: 91 pages received the OG + Twitter Card block (8 OG properties + 5 Twitter properties + 2 HTML comment markers). og:image set to site-wide default https://www.freecalchub.com/images/social/cover_image_1200x630.png."
+    },
+    {
+      "id": "fch-tf-004",
+      "title": "Add missing canonical link to 45 calculator pages",
+      "category": "technical",
+      "impact": 8,
+      "effort": 2,
+      "roi": 4.0,
+      "estimated_traffic_lift": {
+        "value": 0,
+        "unit": "keywords_top10",
+        "confidence": "low"
+      },
+      "min_diff": true,
+      "owner_agent": "@seo-technical",
+      "evidence_path": "scripts/add-missing-head-tags.py. Bulk run: 45 pages received absolute, www-prefixed, trailing-slash canonical links derived from file path. Pages with existing relative canonicals (notably BMI calculator) were left untouched - that is a separate fix (site-audit fch-002, fch-003)."
+    },
+    {
+      "id": "fch-tf-005",
+      "title": "Manual meta description fix on mortgage-calculator (the 1 page missing it sitewide)",
+      "category": "content",
+      "impact": 7,
+      "effort": 1,
+      "roi": 7.0,
+      "estimated_traffic_lift": {
+        "value": 350,
+        "unit": "sessions_per_month",
+        "confidence": "low"
+      },
+      "min_diff": true,
+      "owner_agent": "@seo-content",
+      "evidence_path": "finance/mortgage/mortgage-calculator/index.html line 13. Description reused verbatim from the SoftwareApplication schema description on the same page (115 chars, under the 150-160 SOP target but accurate and pre-vetted). This is the site-audit's fch-001 top fix."
+    }
+  ],
+  "prior_findings_referenced": [
+    {
+      "run_directory": "runs/2026-05-10-freecalchub-com-site-audit-lite/",
+      "finding": "fch-001: mortgage-calculator missing canonical + meta description + OG tags. Addressed by fixes fch-tf-003, fch-tf-004, fch-tf-005."
+    },
+    {
+      "run_directory": "runs/2026-05-10-freecalchub-com-site-audit-lite/",
+      "finding": "Scope check entry in seo-evidence.md CROSS-MISSION FINDINGS: systemic OG/canonical gap (91/110 missing OG, 45/110 missing canonical). Root cause SOP gap, not per-page. Addressed at SOP level by fixes fch-tf-001, fch-tf-002 and at page level by fixes fch-tf-003, fch-tf-004, fch-tf-005."
+    }
+  ],
+  "next_suggested_mission": "ai-search-optimize"
+}
