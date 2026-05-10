@@ -2,8 +2,11 @@
 
 **Site:** FreecalcHub (www.freecalchub.com)
 **Role:** Calculator Developer (Human or AI Agent)
-**Version: 3.7**
-**Date: June 11, 2025**
+**Version: 3.8**
+**Date: May 10, 2026**
+
+**Changelog:**
+- **v3.8 (2026-05-10)**: Strengthened head-tag references (canonical + Open Graph + Twitter Cards) via cross-reference to `general-template-guidelines.md` Section 2. Corrected filename references from `calculator_template.html` / `category_template.html` to the hyphenated filenames in the repo.
 **Status:** Active
 
 ## 1. Purpose
@@ -26,24 +29,25 @@ This SOP applies to all activities undertaken by the Calculator Developer relate
 ### 3.1. Calculator Developer
 
 * **Calculator Development:**
-    * Develop the front-end structure (HTML) for new calculator pages based on the master `calculator_template.html`.
+    * Develop the front-end structure (HTML) for new calculator pages based on the master `calculator-template.html`.
     * Implement the core calculation logic and user interface interactions using JavaScript.
     * Create calculator-specific CSS to style unique elements, ensuring consistency with global site styles.
 * **Content & SEO Integration:**
     * Integrate all provided textual content for calculator pages, including introductions, educational material, "how-to-use" sections, and FAQs, as per the Calculator Specification Document.
     * Implement all specified SEO elements (page titles, meta descriptions) and structured data (Schema.org markup in JSON-LD format) accurately on calculator pages, referencing provided Schema Markup Templates and the Calculator Specification Document.
     * Ensure selection and integration of 3-5 relevant "Related Calculators" with descriptive links, both in the visible page content (as per `general-template-guidelines.md`) and within the `relatedLink` property of the `SoftwareApplication` schema.
+    * **Head tags (canonical, Open Graph, Twitter Cards)**: every page MUST include the full head-tag set as specified in `general-template-guidelines.md` Section 2 (Canonical URL Requirements + Open Graph & Social Card Tags). The master `calculator-template.html` is the source of truth for the exact block; do not omit OG or canonical tags.
 * **Sitemap Updates:**
     * Accurately update `sitemap.xml` with the URLs of any new or modified calculator pages, category pages, or sub-category pages.
     * Add corresponding user-friendly links for these new/modified pages to the HTML sitemap page located at `/sitemap/index.html`, maintaining its hierarchical structure.
 * **Category Page Management:**
-    * Create new category or sub-category HTML pages as required for new calculator groupings, strictly following the master `category_template.html` and `general-template-guidelines.md`, as well as any specific content guidelines provided in the Category Page Update Requirements.
+    * Create new category or sub-category HTML pages as required for new calculator groupings, strictly following the master `category-template.html` and `general-template-guidelines.md`, as well as any specific content guidelines provided in the Category Page Update Requirements.
     * Update existing category and sub-category pages (HTML) to add links, descriptive "calculator cards," and any other required elements to feature newly developed calculators, as specified.
     * Ensure navigation elements (main navigation, breadcrumbs, navigation ribbons) on new and updated pages are consistent and correctly link to new and existing pages.
     * **Implement Category Page FAQs:** Integrate relevant FAQ content and schema markup (FAQPage) on category pages as per `general-template-guidelines.md`, ensuring internal linking within answers to relevant calculator pages.
 * **Template Compliance (MANDATORY):**
-    * **ALWAYS start with the latest `calculator_template.html`** - never copy from existing calculator pages
-    * **ALWAYS start with the latest `category_template.html`** - never copy from existing category pages
+    * **ALWAYS start with the latest `calculator-template.html`** - never copy from existing calculator pages
+    * **ALWAYS start with the latest `category-template.html`** - never copy from existing category pages
     * **NEVER modify CSP headers** without first updating both master templates - CSP must be consistent site-wide
     * **Enhanced CSP Security**: Templates include CookieYes compliance domains (`https://cdn-cookieyes.com`, `https://log.cookieyes.com`) for GDPR/CCPA compliance
     * **Analytics Compliance**: Use GTM-only implementation - **remove any legacy gtag.js code** from existing pages
@@ -52,7 +56,7 @@ This SOP applies to all activities undertaken by the Calculator Developer relate
     * **When debugging issues, compare with templates first** before making modifications
     * **Template updates take precedence** - if templates change, existing pages should be updated to match
 * **Adherence to Standards:**
-    * Strictly follow the `general-template-guidelines.md` and the master `calculator_template.html` for all new calculator pages.
+    * Strictly follow the `general-template-guidelines.md` and the master `calculator-template.html` for all new calculator pages.
     * Ensure all code (HTML, CSS, JS) is well-commented, clean, and maintainable.
 * **Testing & Quality Assurance:**
     * Perform thorough functional testing of calculators with a wide range of valid and invalid inputs.
@@ -71,7 +75,7 @@ This SOP applies to all activities undertaken by the Calculator Developer relate
 ### 3.2. Content/SEO Lead (or Project Manager)
 
 * Provide the Calculator Developer with all necessary inputs (see Section 4).
-* Maintain and update the master `calculator_template.html`, `general-template-guidelines.md`, and generic category page templates if applicable.
+* Maintain and update the master `calculator-template.html`, `general-template-guidelines.md`, and generic category page templates if applicable.
 * Review completed calculator pages, updated category pages, and any developer-generated supporting documents (e.g., AI-generated test plan).
 * Oversee human QA/UX testing based on the provided test plan.
 * Provide final approval before work is considered complete.
@@ -80,9 +84,9 @@ This SOP applies to all activities undertaken by the Calculator Developer relate
 
 To initiate the development of a new calculator and associated category page updates, the Calculator Developer must receive the following:
 
-* Master `calculator_template.html`: The latest approved version.
+* Master `calculator-template.html`: The latest approved version.
 * `general-template-guidelines.md`: The latest approved version of the comprehensive usage guidelines.
-* `category_template.html`: The latest approved version for category/sub-category pages
+* `category-template.html`: The latest approved version for category/sub-category pages
 * Calculator Specification Document: A detailed document (e.g., `[priority-number]_[calculator-name]_spec.md`) for each specific calculator, which must include:
     * Calculator Name and Purpose.
     * Target URL Structure for the calculator page.
@@ -117,22 +121,22 @@ The development process includes the calculator and relevant category page updat
     * **Category Page Strategy Confirmation:** Based on the target URL and provided category page updates, the Developer will explicitly state their plan for category pages (e.g., "I will update existing page X, and create new page Y") and, if not provided, request the current HTML content of any existing category pages that require modification.
 2.  **Calculator Directory & File Setup:**
     * Create the new calculator's directory structure (e.g., `/finance/loan/new-calculator-name/`) and its `css/` and `js/` subfolders.
-    * Copy `calculator_template.html` to the new directory, renaming it `index.html`.
+    * Copy `calculator-template.html` to the new directory, renaming it `index.html`.
 3.  **Calculator HTML Page Implementation (based on template and spec):**
-    * Implement Sections 1-5, 7-9, and 12 from the commented `calculator_template.html` (Metadata, CSS links, Schema, Breadcrumbs, Ribbon, Page Title, Content Sections, Calculator UI, JS link).
+    * Implement Sections 1-5, 7-9, and 12 from the commented `calculator-template.html` (Metadata, CSS links, Schema, Breadcrumbs, Ribbon, Page Title, Content Sections, Calculator UI, JS link).
 4.  **Develop Calculator-Specific CSS & JavaScript (as per spec).**
 5.  **Category Page Updates / Creation:**
     * Identify Target Category Pages: Based on requirements, identify existing category/sub-category `index.html` files that need updating, or determine if a new category page is needed.
     * When new calculator pages, category pages, or sub-category pages are created or their URLs change, their full canonical URLs must be noted by the developer for sitemap updates. The structure for calculator pages would be: [main-category]/[sub-category-if-any]/[calculator-name]-calculator/ All `lastmod` and `dateModified` properties in sitemaps and schema must use the **full ISO 8601 format including timezone (e.g., `YYYY-MM-DDTHH:MM:SSZ`)**.
     * Create New Category Page (if required):
-        * if a new category/sub-category page is needed, create its directory structure and index.html file by copying the master `category_template.html` and adapting it according to `general-template-guidelines.md` and the specific requirements.
+        * if a new category/sub-category page is needed, create its directory structure and index.html file by copying the master `category-template.html` and adapting it according to `general-template-guidelines.md` and the specific requirements.
         * Populate the new category page with its title, H1, introductory content, calculator cards, appropriate schema, **and FAQ section (if provided)** as per requirements.
     * Update Existing Category Pages:
         * Add a "calculator card" (HTML snippet including icon, title, short description, and link) for the new calculator to the relevant grid/list section of the identified category/sub-category pages.
         * Ensure the layout remains consistent (e.g., correct number of columns in a grid).
         * Update any `ItemList` or `hasPart` schema on the category page to include the new calculator.
         * Verify all links on the category page are correct.
-        * **Integrate Category Page FAQs:** Add the FAQ section HTML structure (from `category_template.html`) and populate it with the provided content and schema, ensuring internal links are correctly added to relevant calculators.
+        * **Integrate Category Page FAQs:** Add the FAQ section HTML structure (from `category-template.html`) and populate it with the provided content and schema, ensuring internal links are correctly added to relevant calculators.
 6.  **Prepare Testing Documentation (especially if Developer is an AI Agent):**
     * The Developer (or AI Agent) generates a Test Plan / QA Checklist Document.
     * This document should outline:
@@ -184,7 +188,7 @@ The primary deliverables for each new calculator development task include:
 * HTML5
 * CSS3 (including CSS Variables, Flexbox, Grid)
 * JavaScript (ES6+) (Vanilla JS, no external frameworks unless specified)
-* Master `calculator_template.html`
+* Master `calculator-template.html`
 * FreecalcHub Global Stylesheets and JavaScript files
 * Git & GitHub for version control and collaboration.
 * Netlify for continuous deployment.
@@ -198,14 +202,14 @@ The primary deliverables for each new calculator development task include:
 
 Before considering work complete (passing to human QA/final review), ensure:
 
-* All `TODO` items in the `calculator_template.html` have been addressed for the new calculator page.
+* All `TODO` items in the `calculator-template.html` have been addressed for the new calculator page.
 * All content from the specification document is accurately reflected on the calculator page.
 * All input fields on the calculator function as expected, with appropriate validation.
 * Calculator calculations are accurate for a range of test cases.
 * Calculator results are displayed clearly and correctly.
 * The new calculator page AND any modified/new category pages are fully responsive.
 * The new calculator page AND any modified/new category pages function correctly in all supported browsers.
-* If a new category page was created, does it correctly use `category_template.html` and follow `general-template-guidelines.md`?
+* If a new category page was created, does it correctly use `category-template.html` and follow `general-template-guidelines.md`?
 * Is the Navigation Ribbon correctly implemented and populated on all relevant category pages (including the active class)?
 * Does the category page Schema (CollectionPage, BreadcrumbList, hasPart) validate correctly and accurately reflect the page content?
 * Are all calculator/category cards on category pages correctly formatted and linked?

@@ -1,8 +1,9 @@
 # FreecalcHub General Page - Template Usage Guidelines
 
-**Version: 1.6 (Last Updated: 2025-09-26)**
+**Version: 1.7 (Last Updated: 2026-05-10)**
 
 **Changelog:**
+- **v1.7 (2026-05-10)**: Promoted canonical URL from checklist item to hard Head Tags requirement (new Section 2 sub-section). Added Open Graph and Twitter Card requirements (new Section 2 sub-section). Corrected filename references from `calculator_template.html` / `category_template.html` to the actual hyphenated filenames in the repo.
 - **v1.6 (2025-09-26)**: Added comprehensive SEO requirements section including meta descriptions, transparency signals, and AImpact Scanner compliance
 - **v1.5 (2025-08-13)**: Added requirement for minimum 10 meaningful FAQs per calculator with quality guidelines
 - **v1.4 (2025-08-13)**: Updated Related Calculators section to use new icon-enhanced grid layout with `<div class="related-links">` structure
@@ -11,7 +12,7 @@
 
 ## 1. Overview
 
-This document provides comprehensive guidelines for using the FreecalcHub master HTML templates (`calculator_template.html` and `category_template.html`) to create new calculator pages and category/sub-category pages. Adhering to these guidelines ensures visual and structural consistency across the entire site, proper SEO markup, correct integration with global site assets (CSS/JavaScript), and automatic support for standard features like Dark Mode, responsive layouts, and the V2 FAQ system.
+This document provides comprehensive guidelines for using the FreecalcHub master HTML templates (`calculator-template.html` and `category-template.html`) to create new calculator pages and category/sub-category pages. Adhering to these guidelines ensures visual and structural consistency across the entire site, proper SEO markup, correct integration with global site assets (CSS/JavaScript), and automatic support for standard features like Dark Mode, responsive layouts, and the V2 FAQ system.
 
 ## 2. SEO Requirements & Authority Signals (AImpact Scanner Compliance)
 
@@ -29,6 +30,53 @@ This document provides comprehensive guidelines for using the FreecalcHub master
 * **Character Limit**: Keep under 60 characters for optimal search display
 * **Format**: `[Calculator/Category Name] | FreecalcHub`
 * **Keywords**: Include primary keyword at the beginning when possible
+
+### Canonical URL Requirements
+**Every page MUST include a `<link rel="canonical">` tag in the `<head>` pointing to the absolute, www-prefixed, trailing-slash URL of itself.** (Promoted from checklist item to hard requirement, v1.7.)
+
+* **Format**: `<link rel="canonical" href="https://www.freecalchub.com/[path]/">`
+* **Absolute, not relative**: always start with `https://www.freecalchub.com/`
+* **www-prefixed**: never use the apex domain
+* **Trailing slash** for directory-style URLs (e.g. `/finance/mortgage/`)
+* **Self-referencing**: the canonical URL of a page is the page itself, except for known duplicate-content variants
+* **Must match `og:url`** in Open Graph tags (see below)
+
+Why this matters: inconsistent canonicals split ranking signals between www and non-www variants, weaken AI-crawler indexing, and break the canonical-vs-og:url cross-check that search engines and LLM ingestion pipelines apply.
+
+### Open Graph & Social Card Tags
+**All pages MUST include the full Open Graph and Twitter Card head-tag set.** (New requirement, v1.7.) The master `calculator-template.html` lines 22-34 are the canonical reference for the exact block.
+
+Required Open Graph properties:
+
+* **og:type** — `<meta property="og:type" content="website">` (use `website` for calculator and category pages)
+* **og:url** — full canonical URL with trailing slash; MUST match the `<link rel="canonical">` value
+* **og:title** — matches `<title>` exactly (e.g. `Mortgage Calculator | FreecalcHub`)
+* **og:description** — matches `<meta name="description">` exactly
+* **og:image** — site-wide default `https://www.freecalchub.com/images/social/cover_image_1200x630.png` (1200×630, with `og:image:width` and `og:image:height` declared)
+
+Required Twitter Card properties (mirror the OG values one-for-one):
+
+* **twitter:card** — `summary_large_image`
+* **twitter:url**, **twitter:title**, **twitter:description**, **twitter:image** — match the OG equivalents
+
+**Worked example** (from `calculator-template.html`):
+
+```html
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.freecalchub.com/[full-path-to-calculator]/">
+<meta property="og:title" content="[Calculator Name] | FreecalcHub">
+<meta property="og:description" content="[Brief description of the calculator and its purpose. Aim for 150-160 characters.]">
+<meta property="og:image" content="https://www.freecalchub.com/images/social/cover_image_1200x630.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.freecalchub.com/[full-path-to-calculator]/">
+<meta property="twitter:title" content="[Calculator Name] | FreecalcHub">
+<meta property="twitter:description" content="[Brief description of the calculator and its purpose. Aim for 150-160 characters.]">
+<meta property="twitter:image" content="https://www.freecalchub.com/images/social/cover_image_1200x630.png">
+```
 
 ### Transparency & Trust Signals
 **All pages must include:**
@@ -85,7 +133,7 @@ When creating a new page, the typical file structure within your project would b
 │   └── logo.svg
 ├── finance/                     # Example category folder
 │   └── loan-calculator/         # Folder for the new calculator (use lowercase, hyphens)
-│       ├── index.html           # The main HTML file for this calculator (copied from calculator_template.html)
+│       ├── index.html           # The main HTML file for this calculator (copied from calculator-template.html)
 │       ├── css/
 │       │   └── loan-calculator.css  # Specific CSS for this calculator
 │       └── js/
@@ -97,25 +145,27 @@ When creating a new page, the typical file structure within your project would b
 * `styles.css`: Now contains the **standard responsive grid layout** for fieldsets within calculator forms (targeting `.calculator-form fieldset`).
 * `faq-styles-v2.css`: Provides theme-aware (Light/Dark Mode) styling for the V2 FAQ structure.
 * `faq-accordion-v2.js`: Provides the functionality for the V2 FAQ accordion.
-* All global CSS and JS files listed (and present in `calculator_template.html` and `category_template.html`) are linked directly from the template. You do not need to link them again.
+* All global CSS and JS files listed (and present in `calculator-template.html` and `category-template.html`) are linked directly from the template. You do not need to link them again.
 
-## 4. Creating a New Calculator Page (using `calculator_template.html`)
+## 4. Creating a New Calculator Page (using `calculator-template.html`)
 
 Follow these steps meticulously:
 
 ### Step 1: Copy the Master Calculator Template
 
-1.  Take a copy of the latest `calculator_template.html`.
+1.  Take a copy of the latest `calculator-template.html`.
 2.  Place it in the appropriate new directory for your calculator (e.g., `finance/loan-calculator/index.html`).
 
 ### Step 2: Update Page Metadata (in `<head>`)
 
 * **`<title>`**: Change `[Calculator Name] | FreecalcHub` to the specific title (e.g., `Loan Calculator | FreecalcHub`). This is crucial for SEO and browser tabs.
 * **`<meta name="description">`**: Write a unique, concise description (150-160 characters) for the calculator. This is used by search engines.
+* **`<link rel="canonical">`**: Set the `href` to the absolute canonical URL of *this specific calculator page* (e.g. `https://www.freecalchub.com/finance/loan-calculator/`). REQUIRED — see Section 2 "Canonical URL Requirements".
+* **Open Graph + Twitter Card tags**: Update the full block to point at *this specific calculator page*. The five OG fields (`og:type`, `og:url`, `og:title`, `og:description`, `og:image`) and matching Twitter Card fields are all REQUIRED — see Section 2 "Open Graph & Social Card Tags". `og:url` must match the canonical exactly.
 
 ### Step 3: Link Calculator-Specific CSS
 
-* Modify the placeholder link in `calculator_template.html`:
+* Modify the placeholder link in `calculator-template.html`:
     ```html
     <link rel="stylesheet" href="/[path-to-your-calculator-folder]/css/[calculator-name].css">
     ```
@@ -216,24 +266,24 @@ This is where you add all the unique content for your calculator.
         - Practical applications and use cases
         - Common mistakes and how to avoid them
     * **Structure**: Add all FAQs using the required structure (FAQ Index + FAQ Items)
-    * **HTML Format**: Refer to `calculator_template.html` for the precise HTML structure for each item (`div.faq-item`, `button.accordion`, `div.panel`)
+    * **HTML Format**: Refer to `calculator-template.html` for the precise HTML structure for each item (`div.faq-item`, `button.accordion`, `div.panel`)
 
 ### Step 8: Link Calculator-Specific JavaScript
 
-* Modify the placeholder script tag in `calculator_template.html`:
+* Modify the placeholder script tag in `calculator-template.html`:
     ```html
     <script src="/[path-to-your-calculator-folder]/js/[calculator-name].js" defer></script>
     ```
     to the correct **full root-relative path**.
 * Create the corresponding JavaScript file.
 
-## 5. Creating a New Category/Sub-Category Page (using `category_template.html`)
+## 5. Creating a New Category/Sub-Category Page (using `category-template.html`)
 
 Follow these steps meticulously:
 
 ### Step 1: Copy the Master Category Template
 
-1.  Take a copy of the latest `category_template.html`.
+1.  Take a copy of the latest `category-template.html`.
 2.  Place it in the appropriate new directory for your category (e.g., `finance/index.html` or `finance/investments/index.html`).
 
 ### Step 2: Update Page Metadata (in `<head>`)
@@ -309,7 +359,7 @@ Modify the visible breadcrumbs to reflect the category's position in the site st
         </div>
         ```
 * **About Category Section (`<section class="category-content-section">`)**: Add relevant introductory or educational content about the category.
-* **FAQ Section (`<section class="faq-section content-section">`)**: **MANDATORY V2 STRUCTURE** - Add all category-specific FAQs using the required structure (FAQ Index + FAQ Items). Refer to `category_template.html` for the precise HTML structure for each item (`div.faq-item`, `button.accordion`, `div.panel`). Ensure unique IDs for each FAQ item (`id="faq-cat-item-X"`) and panel (`id="faq-cat-panel-X"`), and **include internal links within the answer text to relevant calculator pages.**
+* **FAQ Section (`<section class="faq-section content-section">`)**: **MANDATORY V2 STRUCTURE** - Add all category-specific FAQs using the required structure (FAQ Index + FAQ Items). Refer to `category-template.html` for the precise HTML structure for each item (`div.faq-item`, `button.accordion`, `div.panel`). Ensure unique IDs for each FAQ item (`id="faq-cat-item-X"`) and panel (`id="faq-cat-panel-X"`), and **include internal links within the answer text to relevant calculator pages.**
 
 ## 6. Best Practices for All Pages
 
@@ -318,7 +368,7 @@ Modify the visible breadcrumbs to reflect the category's position in the site st
     * The GTM `noscript` iframe must be placed immediately after the opening `<body>` tag.
     * The GTM container ID is `GTM-KNHC9TZ5`.
 * **Content Security Policy (CSP) Requirements:**
-    * **CRITICAL**: All pages must use the standard CSP from both `calculator_template.html` and `category_template.html` which support current GTM + CookieYes setup
+    * **CRITICAL**: All pages must use the standard CSP from both `calculator-template.html` and `category-template.html` which support current GTM + CookieYes setup
     * Required CSP domains for script-src: `https://www.googletagmanager.com https://www.google-analytics.com https://cdn-cookieyes.com`
     * Required CSP domains for img-src: `https://www.googletagmanager.com https://cdn-cookieyes.com` (in addition to 'self' and data:)
     * Required CSP domains for connect-src: `https://open.er-api.com https://www.google-analytics.com https://log.cookieyes.com https://cdn-cookieyes.com`
