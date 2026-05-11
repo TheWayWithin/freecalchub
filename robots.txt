@@ -1,12 +1,12 @@
 # FreecalcHub.com - Robots Exclusion Protocol
-# Last Updated: 2025-10-24
-# Policy: Allow all well-behaved bots to crawl public content
+# Last Updated: 2026-05-11
+# Policy: Allow all well-behaved bots to crawl public content (incl. AI crawlers for LLM ingestion)
 
 # Default rule for all bots
 User-agent: *
 Allow: /
 
-# Explicitly allow important bots (redundant but explicit)
+# Explicitly allow important search bots (redundant but explicit)
 User-agent: Googlebot
 Allow: /
 
@@ -14,6 +14,22 @@ User-agent: Bingbot
 Allow: /
 
 User-agent: DuckDuckBot
+Allow: /
+
+# Explicitly allow AI crawlers (LLM ingestion + AI search)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
 Allow: /
 
 # Disallow resource-intensive crawlers (optional - uncomment if needed)
