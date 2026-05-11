@@ -65,6 +65,7 @@ RE_META_DESCRIPTION_LINE = re.compile(
 RE_CONTENT_ATTR = re.compile(r"content=[\"']([^\"']*)[\"']", re.IGNORECASE)
 RE_CANONICAL = re.compile(r"<link\s+[^>]*rel=[\"']canonical[\"']", re.IGNORECASE)
 RE_OG_TITLE = re.compile(r"<meta\s+[^>]*property=[\"']og:title[\"']", re.IGNORECASE)
+RE_TWITTER_CARD = re.compile(r"<meta\s+[^>]*property=[\"']twitter:card[\"']", re.IGNORECASE)
 
 
 def canonical_for_path(rel_path: Path) -> str:
@@ -85,12 +86,15 @@ def build_insertion_block(
     description: str,
     need_canonical: bool,
     need_og: bool,
+    need_twitter: bool,
     indent: str,
 ) -> str:
     """Return the block of lines to splice in after the meta description line.
 
     Each line is prefixed with the same indentation observed on the meta
     description line, so the inserted block matches surrounding code style.
+    OG and Twitter blocks are independent: a page may have OG without Twitter
+    (or vice versa), and only the missing block(s) get inserted.
     """
     lines: list[str] = []
     if need_canonical:
@@ -104,6 +108,7 @@ def build_insertion_block(
         lines.append(f'<meta property="og:image" content="{OG_IMAGE_URL}">')
         lines.append(f'<meta property="og:image:width" content="{OG_IMAGE_WIDTH}">')
         lines.append(f'<meta property="og:image:height" content="{OG_IMAGE_HEIGHT}">')
+    if need_twitter:
         lines.append("<!-- Twitter -->")
         lines.append('<meta property="twitter:card" content="summary_large_image">')
         lines.append(f'<meta property="twitter:url" content="{canonical_url}">')
@@ -133,8 +138,9 @@ def process_file(path: Path) -> tuple[str, tuple[str, str] | None]:
 
     need_canonical = not RE_CANONICAL.search(original)
     need_og = not RE_OG_TITLE.search(original)
+    need_twitter = not RE_TWITTER_CARD.search(original)
 
-    if not need_canonical and not need_og:
+    if not need_canonical and not need_og and not need_twitter:
         return ("UNCHANGED", None)
 
     canonical_url = canonical_for_path(rel)
@@ -154,6 +160,7 @@ def process_file(path: Path) -> tuple[str, tuple[str, str] | None]:
         description=description,
         need_canonical=need_canonical,
         need_og=need_og,
+        need_twitter=need_twitter,
         indent=indent,
     )
 

@@ -1,0 +1,219 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "tracking/schemas/baseline.schema.json",
+  "title": "FreeCalcHub Metrics Snapshot",
+  "description": "Point-in-time capture of SEO/performance metrics for freecalchub.com. Used either standalone (files in tracking/baselines/ or tracking/snapshots/) or embedded inside a mission's data.json under the metrics_snapshot property (see templates/deliverables/aimpactscanner-data.schema.json). Fields representing measurements not yet collected MAY be null; the captured boolean inside each collection block signals collection status. Schema is intentionally permissive for human-edited TODO baselines.",
+  "type": "object",
+  "required": ["schema_version", "captured_at", "domain"],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1-draft",
+      "description": "Locked while tracking infrastructure is still emerging. Bump via documented migration once a track.py compare tool depends on a stable shape."
+    },
+    "schema_note": {
+      "type": "string",
+      "description": "Free-form note about schema version status or known gaps."
+    },
+    "baseline_id": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9-]+$",
+      "description": "Stable identifier. Convention: <YYYY-MM-DD>-<kebab-label>. Required by convention (not by schema) when this snapshot is intended to be referenced by later snapshots."
+    },
+    "captured_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "captured_by": {
+      "type": "string",
+      "description": "Attribution: manual, manual-via-claude-code, ci, etc."
+    },
+    "commit_sha": {
+      "type": "string",
+      "description": "Repo commit SHA at capture time. Lets you reproduce the codebase state."
+    },
+    "branch": {
+      "type": "string"
+    },
+    "deploy_status": {
+      "type": "string",
+      "enum": [
+        "local-only-not-pushed",
+        "pushed-not-deployed",
+        "deployed",
+        "rolled-back",
+        "unknown"
+      ],
+      "description": "Distinguishes local repo state from live-website state. Critical because tag-coverage figures from the local repo may NOT match what live freecalchub.com is serving."
+    },
+    "domain": {
+      "type": "string",
+      "format": "hostname"
+    },
+    "scope": {
+      "type": "string",
+      "description": "Whole domain, specific path prefix, single page URL, or freeform description."
+    },
+    "compare_due": {
+      "type": "string",
+      "description": "When the matching post-snapshot should be captured. Either an ISO date or a freeform expression like 'deploy_date + 28 days (tbd)'."
+    },
+    "tag_coverage_post_fix_local": {
+      "$ref": "#/$defs/tagCoverage",
+      "description": "Coverage as observed in the local repo at this commit. Use when the snapshot bookends a fix that has been committed but not yet deployed."
+    },
+    "tag_coverage_pre_fix": {
+      "$ref": "#/$defs/tagCoverage",
+      "description": "Coverage before the fix work began. Preserved for diff convenience."
+    },
+    "tag_coverage_live": {
+      "$ref": "#/$defs/tagCoverage",
+      "description": "Coverage as observed on the live website at capture time. Use for post-deploy snapshots (where it will diverge from any local state in the repo)."
+    },
+    "scorecards_post_fix_local": {
+      "$ref": "#/$defs/scorecards",
+      "description": "Scorecard totals for the local commit being captured."
+    },
+    "scorecards_pre_fix": {
+      "$ref": "#/$defs/scorecards",
+      "description": "Scorecard totals before the fix work began."
+    },
+    "live_metrics_pending_manual_capture": {
+      "type": "object",
+      "description": "Container for live-web measurements that need human action to populate. Each child block exposes a captured boolean to mark completion plus an instructions string explaining how.",
+      "additionalProperties": true,
+      "properties": {
+        "google_search_console_28d": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "captured": {"type": "boolean"},
+            "instructions": {"type": "string"},
+            "site_total": {"$ref": "#/$defs/gscSlice"},
+            "mortgage_filter": {"$ref": "#/$defs/gscSlice"},
+            "filters": {
+              "type": "array",
+              "description": "Optional generalisation: arbitrary named filter slices.",
+              "items": {
+                "type": "object",
+                "required": ["label", "filter_expression"],
+                "properties": {
+                  "label": {"type": "string"},
+                  "filter_expression": {"type": "string"},
+                  "data": {"$ref": "#/$defs/gscSlice"}
+                }
+              }
+            }
+          }
+        },
+        "lighthouse_scores": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "captured": {"type": "boolean"},
+            "instructions": {"type": "string"},
+            "targets": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/lighthouseTarget"}
+            }
+          }
+        },
+        "social_preview_check": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "captured": {"type": "boolean"},
+            "instructions": {"type": "string"},
+            "targets": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/socialPreviewTarget"}
+            }
+          }
+        }
+      }
+    },
+    "deploy": {
+      "type": "object",
+      "description": "Optional. Information about the deployment this snapshot brackets.",
+      "additionalProperties": true,
+      "properties": {
+        "platform_hint": {"type": "string"},
+        "trigger_hint": {"type": "string"},
+        "deploy_date_actual": {"type": ["string", "null"], "format": "date-time"},
+        "deploy_verified_live": {"type": ["boolean", "null"]}
+      }
+    },
+    "related_runs": {
+      "type": "array",
+      "description": "Mission run directories that this snapshot relates to.",
+      "items": {"type": "string"}
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "tagCoverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "pages_total": {"type": "integer", "minimum": 0},
+        "pages_with_canonical": {"type": "integer", "minimum": 0},
+        "pages_with_open_graph": {"type": "integer", "minimum": 0},
+        "pages_with_meta_description": {"type": "integer", "minimum": 0},
+        "pages_with_twitter_card": {"type": "integer", "minimum": 0},
+        "source": {
+          "type": "string",
+          "description": "How the counts were measured (grep command, commit, scope, etc.)."
+        }
+      }
+    },
+    "scorecards": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ai_search_readiness": {"type": "integer", "minimum": 0, "maximum": 50},
+        "traditional_seo": {"type": "integer", "minimum": 0, "maximum": 50},
+        "source": {"type": "string"}
+      }
+    },
+    "gscSlice": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "impressions": {"type": ["integer", "null"], "minimum": 0},
+        "clicks": {"type": ["integer", "null"], "minimum": 0},
+        "ctr_percent": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "avg_position": {"type": ["number", "null"], "minimum": 1}
+      }
+    },
+    "lighthouseTarget": {
+      "type": "object",
+      "required": ["url"],
+      "additionalProperties": false,
+      "properties": {
+        "url": {"type": "string", "format": "uri"},
+        "performance": {"type": ["integer", "null"], "minimum": 0, "maximum": 100},
+        "accessibility": {"type": ["integer", "null"], "minimum": 0, "maximum": 100},
+        "best_practices": {"type": ["integer", "null"], "minimum": 0, "maximum": 100},
+        "seo": {"type": ["integer", "null"], "minimum": 0, "maximum": 100},
+        "lcp_ms": {"type": ["number", "null"], "minimum": 0, "description": "Largest Contentful Paint in milliseconds."},
+        "inp_ms": {"type": ["number", "null"], "minimum": 0, "description": "Interaction to Next Paint in milliseconds."},
+        "cls": {"type": ["number", "null"], "minimum": 0, "description": "Cumulative Layout Shift (unitless, lower is better)."}
+      }
+    },
+    "socialPreviewTarget": {
+      "type": "object",
+      "required": ["url"],
+      "additionalProperties": false,
+      "properties": {
+        "url": {"type": "string", "format": "uri"},
+        "card_renders": {"type": ["boolean", "null"]},
+        "image_present": {"type": ["boolean", "null"]},
+        "expected_pre_fix": {"type": "string"},
+        "notes": {"type": "string"}
+      }
+    }
+  }
+}

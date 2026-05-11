@@ -1,0 +1,136 @@
+{
+  "schema_version": "0.1-draft",
+  "baseline_id": "2026-05-10-pre-technical-fix",
+  "captured_at": "2026-05-10T00:00:00Z",
+  "captured_by": "manual-via-claude-code",
+  "commit_sha": "299325c",
+  "branch": "main",
+  "deploy_status": "deployed",
+  "domain": "freecalchub.com",
+  "scope": "Calculator pages under finance/, health/, math/, lifestyle/, conversions/, date-time/",
+  "compare_due": "2026-06-07",
+  "notes": "Baseline for the technical-fix head-tag migration. Tag coverage and scorecards capture true pre-fix state. Lighthouse was captured the day AFTER deploy (2026-05-11), so it reflects post-fix Lighthouse state, not strictly pre-fix. GSC capture pending until 2026-05-12 or later (newly-verified property still processing data).",
+  "tag_coverage_post_fix_local": {
+    "pages_total": 110,
+    "pages_with_canonical": 110,
+    "pages_with_open_graph": 110,
+    "pages_with_meta_description": 110,
+    "pages_with_twitter_card": 110,
+    "source": "grep -L across finance/ health/ math/ lifestyle/ conversions/ date-time/ at commit 1e8254a (now merged into main as 299325c)"
+  },
+  "tag_coverage_pre_fix": {
+    "pages_total": 110,
+    "pages_with_canonical": 65,
+    "pages_with_open_graph": 19,
+    "pages_with_meta_description": 109,
+    "pages_with_twitter_card": 19,
+    "source": "seo-evidence.md CROSS-MISSION FINDINGS entry 2026-05-10, confirmed in runs/2026-05-10-freecalchub-com-technical-fix Phase 1"
+  },
+  "scorecards_pre_fix": {
+    "ai_search_readiness": 39,
+    "traditional_seo": 36,
+    "source": "runs/2026-05-10-freecalchub-com-site-audit-lite/data.json"
+  },
+  "scorecards_post_fix_local": {
+    "ai_search_readiness": 43,
+    "traditional_seo": 41,
+    "source": "runs/2026-05-10-freecalchub-com-technical-fix/data.json"
+  },
+  "live_metrics_pending_manual_capture": {
+    "google_search_console_28d": {
+      "captured": false,
+      "instructions": "GSC > Performance > Search Results. Filter last 28 days. Capture both whole-site and pages-contains-/finance/mortgage/ slices. Property freshly verified 2026-05-11; data should be available 2026-05-12 or 2026-05-13.",
+      "site_total": {
+        "impressions": null,
+        "clicks": null,
+        "ctr_percent": null,
+        "avg_position": null
+      },
+      "mortgage_filter": {
+        "impressions": null,
+        "clicks": null,
+        "ctr_percent": null,
+        "avg_position": null
+      }
+    },
+    "lighthouse_scores": {
+      "captured": true,
+      "captured_at": "2026-05-11T22:00:00Z",
+      "captured_via": "PageSpeed Insights API v5, mobile strategy, ephemeral API key (deleted after use)",
+      "instructions": "Captured AFTER deploy. Strict pre-deploy capture was missed for Lighthouse; these numbers reflect post-fix synthetic Lighthouse state. Compare on 2026-06-07 will diff against these. CrUX field data: not available (site below traffic threshold for CrUX inclusion).",
+      "targets": [
+        {
+          "url": "https://www.freecalchub.com/finance/mortgage/mortgage-calculator/",
+          "performance": 81,
+          "accessibility": 96,
+          "best_practices": 85,
+          "seo": 100,
+          "lcp_ms": 3650,
+          "inp_ms": null,
+          "cls": 0.002
+        },
+        {
+          "url": "https://www.freecalchub.com/health/bmi/bmi-calculator/",
+          "performance": 86,
+          "accessibility": 93,
+          "best_practices": 92,
+          "seo": 92,
+          "lcp_ms": 3199,
+          "inp_ms": null,
+          "cls": 0.000
+        },
+        {
+          "url": "https://www.freecalchub.com/math/percentages/percentage-calculator/",
+          "performance": 87,
+          "accessibility": 96,
+          "best_practices": 85,
+          "seo": 100,
+          "lcp_ms": 3190,
+          "inp_ms": null,
+          "cls": 0.000
+        },
+        {
+          "url": "https://www.freecalchub.com/conversions/length/length-unit-calculator/",
+          "performance": 87,
+          "accessibility": 93,
+          "best_practices": 92,
+          "seo": 100,
+          "lcp_ms": 3193,
+          "inp_ms": null,
+          "cls": 0.000
+        },
+        {
+          "url": "https://www.freecalchub.com/lifestyle/dining-social/tip-calculator/",
+          "performance": 78,
+          "accessibility": 92,
+          "best_practices": 92,
+          "seo": 100,
+          "lcp_ms": 4251,
+          "inp_ms": null,
+          "cls": 0.000
+        }
+      ]
+    },
+    "social_preview_check": {
+      "captured": false,
+      "instructions": "Window for pre-fix social preview check has CLOSED (deploy already live, OG tags now serving on all 5 URLs). For compare purposes, expect 5/5 cards rendering post-fix vs 4/5 not rendering pre-fix. Skip capture or do a post-deploy verification only.",
+      "targets": [
+        {"url": "https://www.freecalchub.com/finance/mortgage/mortgage-calculator/", "card_renders": null, "image_present": null, "expected_pre_fix": "no card"},
+        {"url": "https://www.freecalchub.com/health/bmi/bmi-calculator/", "card_renders": null, "image_present": null, "expected_pre_fix": "no card"},
+        {"url": "https://www.freecalchub.com/math/percentages/percentage-calculator/", "card_renders": null, "image_present": null, "expected_pre_fix": "card present (this page already had OG pre-fix)"},
+        {"url": "https://www.freecalchub.com/conversions/length/length-unit-calculator/", "card_renders": null, "image_present": null, "expected_pre_fix": "no card"},
+        {"url": "https://www.freecalchub.com/lifestyle/dining-social/tip-calculator/", "card_renders": null, "image_present": null, "expected_pre_fix": "no card"}
+      ]
+    }
+  },
+  "deploy": {
+    "platform_hint": "netlify (per docs/SOP-CalcDev.md)",
+    "trigger_hint": "push to main",
+    "deploy_date_actual": "2026-05-10T22:00:00Z",
+    "deploy_verified_live": true
+  },
+  "related_runs": [
+    "runs/2026-05-10-freecalchub-com-site-audit-lite/",
+    "runs/2026-05-10-freecalchub-com-technical-fix/"
+  ]
+}
