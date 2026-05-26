@@ -1,6 +1,54 @@
 # PROGRESS LOG 📊
 
-## Latest Mission: Sprint 1 - Small Gains Compounding Calculator (December 6, 2025) ✅
+## 2026-05-25: Sitewide verify + CalcHub branding fix + canonical standardisation
+
+### Sitewide Verification (backlog FCH-TF-003 + FCH-TF-004)
+- Ran `/coord sitewide-verify freecalchub.com` against all 110 live calculator pages
+- **OG tags**: 110/110 pass (og:title, og:description, og:url, og:type)
+- **Twitter Card tags**: 110/110 pass (twitter:card, twitter:title, twitter:description)
+- **Canonical links**: 110/110 pass
+- FCH-TF-003 and FCH-TF-004 moved from `shipped` to `verified` in seo-backlog.md
+- Verification report: `runs/2026-05-25-freecalchub-com-sitewide-verify/verification.md`
+
+### Backlog #6: CalcHub branding fix
+- Scope was wider than expected: 8 files, not just BMI
+- Fixed `| CalcHub` to `| FreecalcHub` in title, og:title, twitter:title, JSON-LD across: BMI calculator, BMI category, weight, pregnancy, privacy, terms, GDPR, mortgage template example
+- Also fixed "CalcHub's" in meta descriptions on privacy, terms, GDPR pages
+
+### Backlog #3: Canonical standardisation
+- 5 non-www canonicals fixed to absolute www form: loan-calculator, portfolio-return, investment-goal, compound-interest, drip-calculator
+- 1 relative canonical fixed in blog-article-template.html
+- All 152 canonicals across the site now use `https://www.freecalchub.com/` format
+
+### Template hardening (prevent recurrence)
+- **calculator-template.html**: Added missing `<link rel="canonical">` (root cause of the 45-page canonical gap). Fixed Organization schema name from "CalcHub" to "FreecalcHub". Removed unverifiable "10,000+ users" / "CFPB-compliant" claims.
+- **category-template.html**: Added full OG + Twitter Card block (was missing entirely). Fixed Organization schema name. Fixed non-www `isPartOf` URL.
+
+### Commits
+- `c3716b7` chore(seo-agent): tooling updates
+- `54e8487` fix(seo): CalcHub branding, canonical standardisation, template hardening
+- Both pushed to `main` (production)
+
+---
+
+## 2026-05-10 to 2026-05-11: SEO-Agent technical-fix + robots.txt + BMI canonical
+
+### Technical-fix run (2026-05-10)
+- Site-audit (lite) scored: AI 39/50, Traditional 36/50
+- Identified systemic gaps: 91/110 pages missing OG tags, 45/110 missing canonicals
+- Root cause: SOP and template didn't require these tags
+- Fixed: SOP strengthened (guidelines v1.7, SOP v3.8), migration script updated 91+45 pages
+- Post-fix scores: AI 43/50 (+4), Traditional 41/50 (+5)
+- Run output: `runs/2026-05-10-freecalchub-com-technical-fix/`
+
+### Direct fixes (2026-05-11)
+- Explicit AI crawler allow blocks in robots.txt (GPTBot, ClaudeBot, Claude-User, PerplexityBot, Google-Extended). Commit `1768045`.
+- BMI canonical relative to absolute www form. Commit `ce427f7`.
+- 2 twitter:card gaps closed. Commit `2d52f39`.
+
+---
+
+## Latest Mission: Sprint 1 - Small Gains Compounding Calculator (December 6, 2025)
 
 ### MISSION COMPLETED: 2025-12-06 ✅
 **Duration**: Single session

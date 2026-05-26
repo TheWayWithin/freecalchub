@@ -1,9 +1,10 @@
 # FreeCalcHub SEO Roadmap
 
-**Last updated**: 2026-05-11
+**Last updated**: 2026-05-25
 **Live URL**: https://www.freecalchub.com
 **Last audit**: 2026-05-10 (`runs/2026-05-10-freecalchub-com-site-audit-lite/`)
 **Last technical-fix**: 2026-05-10 (`runs/2026-05-10-freecalchub-com-technical-fix/`)
+**Last sitewide-verify**: 2026-05-25 (`runs/2026-05-25-freecalchub-com-sitewide-verify/`)
 **Tracking baseline**: `tracking/baselines/2026-05-10-pre-technical-fix.{md,json}`
 **Next measurement window**: 2026-06-07 (28 days post technical-fix deploy)
 
@@ -30,9 +31,9 @@ Two companion files keep this lean:
 
 ## Active
 
-Nothing in flight as of 2026-05-11 22:30 UTC. Last batch (BMI canonical + AI crawler allow blocks) shipped live earlier today.
+Nothing in flight as of 2026-05-25. Last batch (CalcHub branding + canonical standardisation + template hardening) shipped and pushed to production.
 
-**Next concrete action**: pull GSC numbers 2026-05-12 or 2026-05-13 (property finishes processing). Then pick the next item from Backlog or pause until 2026-06-07 compare.
+**Next concrete action**: wait for 2026-06-07 measurement window to `/track compare` against baseline. Remaining backlog items (#2 schema claims, #3 Chart.js defer, #4 Coming Soon stubs, #6 LCP, #7 sitemap lastmod) are ready to pull.
 
 ## Backlog (ROI-ranked, ready to execute)
 
@@ -40,11 +41,11 @@ Sorted: ROI descending, then effort ascending (ties broken in favour of less wor
 
 | # | Fix | Theme | Impact | Effort | ROI | Conf. | Source |
 |---|---|---|---|---|---|---|---|
-| 1 | BMI title `\| CalcHub` → `\| FreecalcHub` (also propagated to og:title and twitter:title on that page) | Content | 3 | 1 | 3.0 | M | technical-fix observation 2026-05-10 |
-| 2 | Verify or soften "10,000+ users" and "CFPB-compliant" claims in Organization schema (`index.html` line 31) | Authority | 3 | 1 | 3.0 | M | site-audit fch-008 |
+| ~~1~~ | ~~BMI title CalcHub → FreecalcHub~~ | ~~Content~~ | ~~3~~ | ~~1~~ | ~~3.0~~ | | **DONE 2026-05-25** — see Done section |
+| 2 | Verify or soften "10,000+ users" and "CFPB-compliant" claims in Organization schema (`index.html` line 31). Template claims already softened 2026-05-25. | Authority | 3 | 1 | 3.0 | M | site-audit fch-008 |
 | 3 | Defer Chart.js loading on calculator pages that use it (currently synchronous in calculator-template.html line 31) | Performance | 6 | 2 | 3.0 | M | Performance audit |
 | 4 | Noindex or ship Coming Soon stub pages: monthly-budget, expense-tracker, debt-to-income-ratio | Content | 6 | 2 | 3.0 | L | site-audit fch-005 |
-| 5 | Standardise all canonicals sitewide to absolute www form (broader sweep beyond items already shipped) | Technical | 9 | 3 | 3.0 | M | site-audit fch-002 |
+| ~~5~~ | ~~Standardise all canonicals sitewide to absolute www form~~ | ~~Technical~~ | ~~9~~ | ~~3~~ | ~~3.0~~ | | **DONE 2026-05-25** — see Done section |
 | 6 | Profile + fix LCP bottleneck on mortgage-calculator (today's LCP: 3.65s, target 2.5s) | Performance | 7 | 3 | 2.3 | M | Lighthouse 2026-05-11 |
 | 7 | Refresh `sitemap.xml` `lastmod` dates for content actually updated since 2025-10-24 | Technical | 4 | 2 | 2.0 | L | site-audit fch-007 |
 
@@ -148,8 +149,13 @@ Sorted: ROI descending, then effort ascending (ties broken in favour of less wor
 
 Latest shipped items. Older items archived after 90 days.
 
+- **2026-05-25** — Sitewide verify: 110/110 pages confirmed live for OG, Twitter Card, and canonical tags. FCH-TF-003 + FCH-TF-004 moved shipped to verified. Commit `54e8487`.
+- **2026-05-25** — CalcHub branding fix: `| CalcHub` to `| FreecalcHub` across 8 files (title, og:title, twitter:title, JSON-LD). Also fixed meta descriptions on privacy/terms/GDPR. Commit `54e8487`. Source: seo-backlog #6.
+- **2026-05-25** — Canonical standardisation: 5 non-www canonicals + 1 relative canonical fixed to absolute www form. All 152 canonicals now consistent. Commit `54e8487`. Source: seo-backlog #3 / site-audit fch-002.
+- **2026-05-25** — Template hardening: calculator-template.html (added canonical, fixed schema branding/claims), category-template.html (added OG + Twitter block, fixed schema branding/URL/claims). Prevents recurrence of backlog #3 and #6. Commit `54e8487`.
+- **2026-05-25** — SEO-Agent tooling: sitewide-verify mission, curl HTTPS allowlist, updated coord/track commands. Commit `c3716b7`.
 - **2026-05-11** — Explicit AI crawler allow blocks in `robots.txt` (5 bots). Commit `1768045`. Source: site-audit fch-006.
-- **2026-05-11** — BMI canonical relative → absolute www form. Commit `ce427f7`. Source: site-audit fch-003.
+- **2026-05-11** — BMI canonical relative to absolute www form. Commit `ce427f7`. Source: site-audit fch-003.
 - **2026-05-11** — Twitter Card gaps on 2 math/basic pages + script bug fix + tracking infra (schema, baseline, backlog). Commit `2d52f39`.
 - **2026-05-10** — Strengthen head-tag SOPs + bulk migration adds canonical/OG/Twitter to 99 calculator pages. Commit `1e8254a` merged via `299325c`. Source: technical-fix mission.
 - **2026-05-10** — Site-audit lite. AI Search 39/50, Traditional 36/50, 8-item backlog identified. Source: site-audit mission.
