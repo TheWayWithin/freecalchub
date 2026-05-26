@@ -5,6 +5,8 @@
 
 - 2026-05-10 — site-audit (lite) — freecalchub.com — `runs/2026-05-10-freecalchub-com-site-audit-lite/` — AI scorecard 39/50, Traditional 36/50, top fix: add canonical+meta+OG to mortgage-calculator (ROI 8.0). See data.json for fix list.
 - 2026-05-10 — technical-fix — freecalchub.com — `runs/2026-05-10-freecalchub-com-technical-fix/` — AI scorecard 39→43/50, Traditional 36→41/50. SOP strengthened (guidelines v1.7, SOP v3.8) + migration script + 99 pages updated. All 110 calculator pages now have canonical + OG + Twitter + meta description. Pre-existing relative canonicals on a handful of pages (incl. BMI) deferred to a separate pass.
+- 2026-05-16 — sitewide-verify — freecalchub.com — `runs/2026-05-16-freecalchub-com-sitewide-verify/` — **deferred** (0 pages checked). Phase 2 blocked at harness sandbox. Sprint 11 added curl allowlist.
+- 2026-05-25 — sitewide-verify — freecalchub.com — `runs/2026-05-25-freecalchub-com-sitewide-verify/` — **VERIFIED**. 110/110 calculator pages checked live. FCH-TF-003 (OG + Twitter Card): 110/110 pass. FCH-TF-004 (canonical): 110/110 pass. Both items moved shipped → verified in seo-backlog.md.
 
 ## CROSS-MISSION FINDINGS
 
