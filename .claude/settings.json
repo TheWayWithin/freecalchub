@@ -31,7 +31,13 @@
       "Edit(.env*)",
       "WebFetch(domain:docs.claude.com)",
       "WebFetch(domain:github.com)",
-      "SlashCommand(*)"
+      "SlashCommand(*)",
+      "Bash(curl https://freecalchub.com/*)",
+      "Bash(curl -* https://freecalchub.com/*)",
+      "Bash(curl * https://freecalchub.com/*)",
+      "Bash(curl https://www.freecalchub.com/*)",
+      "Bash(curl -* https://www.freecalchub.com/*)",
+      "Bash(curl * https://www.freecalchub.com/*)"
     ],
     "ask": [
       "Bash(rm:*)"
@@ -46,7 +52,7 @@
       "Edit(**/.env.*)",
       "Write(**/*.key)",
       "Write(**/*.pem)",
-      "Bash(curl:*)",
+      "Bash(curl http://*)",
       "Bash(wget:*)",
       "Bash(rm -rf /*)",
       "Bash(sudo:*)"

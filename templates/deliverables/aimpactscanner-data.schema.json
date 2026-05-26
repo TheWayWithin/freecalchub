@@ -114,8 +114,9 @@
       }
     },
     "metrics_snapshot": {
+      "type": "object",
       "description": "Optional. When this run also captures live metrics, embed the baseline.schema.json shape here.",
-      "$ref": "../../tracking/schemas/baseline.schema.json"
+      "$ref": "tracking/schemas/baseline.schema.json"
     },
     "prior_findings_referenced": {
       "type": "array",

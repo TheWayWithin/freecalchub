@@ -27,13 +27,14 @@ Dispatch a mission via THE COORDINATOR. Parse the arguments, validate the missio
 | `deploy`        | B2   | project-plan.md, agent-context.md, mission file   | Higher stakes |
 | `security`      | B2   | project-plan.md, agent-context.md, mission file   | Audit + fixes |
 <!-- SEO-PRODUCT-LAYER-START — re-apply after framework upgrade if overwritten -->
-| `site-audit`         | D | seo-evidence.md, mission file | SEO health audit (lite/full/deep) |
-| `content-gap`        | D | seo-evidence.md, mission file | Content gap analysis vs competitors/keywords |
-| `technical-fix`      | D | seo-evidence.md, mission file | Crawl errors, schema, performance fixes |
-| `ai-search-optimize` | D | seo-evidence.md, mission file | LLM ingestion readiness (llms.txt, schema, answerability) |
+| `site-audit`         | D | seo-evidence.md, seo-backlog.md, mission file | SEO health audit (lite/full/deep) |
+| `content-gap`        | D | seo-evidence.md, seo-backlog.md, mission file | Content gap analysis vs competitors/keywords |
+| `technical-fix`      | D | seo-evidence.md, seo-backlog.md, mission file | Crawl errors, schema, performance fixes |
+| `ai-search-optimize` | D | seo-evidence.md, seo-backlog.md, mission file | LLM ingestion readiness (llms.txt, schema, answerability) |
+| `sitewide-verify`    | D | seo-evidence.md, seo-backlog.md, mission file | Confirm shipped items are LIVE sitewide (Sprint 10) |
 <!-- SEO-PRODUCT-LAYER-END -->
 
-**Modes**: A = greenfield (long-horizon, full tracking). B1 = surgical (minimal context). B2 = maintenance (moderate context). **D = SEO product** (per-run scoped; loads `seo-evidence.md` per Constitution rule 1 "Read before scanning"). `evidence-repository.md` loads on demand only — never at start.
+**Modes**: A = greenfield (long-horizon, full tracking). B1 = surgical (minimal context). B2 = maintenance (moderate context). **D = SEO product** (per-run scoped; loads `seo-evidence.md` per Constitution rule 1, plus `seo-backlog.md` per Sprint 9 lifecycle integration). `evidence-repository.md` loads on demand only — never at start.
 
 ### Control Commands
 
@@ -62,7 +63,8 @@ Valid prefixes: `mode:greenfield` (A), `mode:surgical` (B1), `mode:maintenance` 
 3. Validate mission name against the routing table or control-command list.
 4. If unknown, print the unknown-mission error (below) and stop. No NLP inference.
 5. Load mission file if applicable: `project/missions/mission-[name].md` (or `[name].md` for `dev-setup`/`dev-alignment`). **Mode D (SEO) missions load from `.claude/missions/[name].md`.**
-6. Hand off to THE COORDINATOR with mission name, mode, and input paths. The coordinator's DYNAMIC CONTEXT LOADING protocol applies the per-mode rules.
+6. **Read mission frontmatter for `requires_tools` (Sprint 11-A)**. If the mission's frontmatter declares `requires_tools` containing any of `[Bash, Edit, Write, WebFetch]`, OR sets `run_top_level: true`, the mission MUST run in the TOP-LEVEL session — do NOT delegate via Task tool to `@coordinator` subagent. Task-tool-delegated subagents lack Bash and most non-Read tools; delegating a Bash-needing mission causes the coordinator to honestly refuse to fabricate, wasting tokens on scaffolding that can't execute. If no `requires_tools` declared or only contains `[Read, Grep, Glob]`, default delegation to coordinator is fine.
+7. Hand off to THE COORDINATOR (delegated case) OR run mission directly in top-level session (top-level case) with mission name, mode, and input paths. The coordinator's DYNAMIC CONTEXT LOADING protocol applies the per-mode rules either way.
 
 ## Routine Detection (Mode C — operational work)
 
@@ -117,7 +119,7 @@ Valid missions:
   Greenfield (Mode A):    build, mvp, dev-setup, dev-alignment, integrate, migrate
   Surgical (Mode B1):     fix
   Maintenance (Mode B2):  refactor, optimize, document, release, deploy, security
-  SEO (Mode D):           site-audit, content-gap, technical-fix, ai-search-optimize
+  SEO (Mode D):           site-audit, content-gap, technical-fix, ai-search-optimize, sitewide-verify
 
 Control:                  continue, complete phase N, vision-check
 Override:                 /coord mode:maintenance <anything>
@@ -143,4 +145,6 @@ If `/coord` is invoked with no arguments, present the routing table and ask whic
 /coord site-audit lite freecalchub.com/calculators
 /coord ai-search-optimize freecalchub.com
 /coord content-gap freecalchub.com/calculators/bmi-calculator
+/coord technical-fix freecalchub.com
+/coord sitewide-verify freecalchub.com
 ```
