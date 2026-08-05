@@ -11,34 +11,47 @@ Dispatch a mission via THE COORDINATOR. Parse the arguments, validate the missio
 
 ## Routing Table
 
-| Mission         | Mode | Context at start                                  | Notes |
-|-----------------|------|---------------------------------------------------|-------|
-| `build`         | A    | project-plan.md, agent-context.md, mission file   | Greenfield feature build |
-| `mvp`           | A    | project-plan.md, agent-context.md, mission file   | Rapid MVP from concept |
-| `dev-setup`     | A    | ideation input only                               | Greenfield bootstrap; creates tracking files |
-| `dev-alignment` | A    | existing codebase, agent-context.md if present    | Brownfield onboarding |
-| `integrate`     | A    | project-plan.md, agent-context.md, mission file   | Third-party integration |
-| `migrate`       | A    | project-plan.md, agent-context.md, mission file   | Data/schema migration |
-| `fix`           | B1   | bug report input only                             | Surgical fix; no tracking unless escalates |
-| `refactor`      | B2   | project-plan.md if exists, mission file           | Multi-step refactor |
-| `optimize`      | B2   | project-plan.md if exists, mission file           | Performance work |
-| `document`      | B2   | project-plan.md if exists, mission file           | Documentation pass |
-| `release`       | B2   | project-plan.md, agent-context.md, mission file   | Higher stakes |
-| `deploy`        | B2   | project-plan.md, agent-context.md, mission file   | Higher stakes |
-| `security`      | B2   | project-plan.md, agent-context.md, mission file   | Audit + fixes |
-<!-- SEO-PRODUCT-LAYER-START — re-apply after framework upgrade if overwritten -->
-| `site-audit`         | D | seo-evidence.md, seo-backlog.md, mission file | SEO health audit (lite/full/deep) |
-| `content-gap`        | D | seo-evidence.md, seo-backlog.md, mission file | Content gap analysis vs competitors/keywords |
-| `technical-fix`      | D | seo-evidence.md, seo-backlog.md, mission file | Crawl errors, schema, performance fixes |
-| `ai-search-optimize` | D | seo-evidence.md, seo-backlog.md, mission file | LLM ingestion readiness (llms.txt, schema, answerability) |
-| `sitewide-verify`    | D | seo-evidence.md, seo-backlog.md, mission file | Confirm shipped items are LIVE sitewide (Sprint 10) |
-<!-- SEO-PRODUCT-LAYER-END -->
+Every executable mission file has a row. The **File** column is the mapping — there is no
+name-to-filename heuristic to guess at. A mission that ships without a row here is unreachable:
+that was A11-ISS-17, where five installed missions hard-errored on `/coord`, and
+`scripts/validate-deployment-coverage.sh` now fails if this table and `project/missions/` disagree.
 
-**Modes**: A = greenfield (long-horizon, full tracking). B1 = surgical (minimal context). B2 = maintenance (moderate context). **D = SEO product** (per-run scoped; loads `seo-evidence.md` per Constitution rule 1, plus `seo-backlog.md` per Sprint 9 lifecycle integration). `evidence-repository.md` loads on demand only — never at start.
+| Mission               | Mode | File                                  | Context at start                                  | Notes |
+|-----------------------|------|---------------------------------------|---------------------------------------------------|-------|
+| `build`               | A    | `mission-build.md`                    | project-plan.md, agent-context.md, mission file   | Greenfield feature build |
+| `mvp`                 | A    | `mission-mvp.md`                      | project-plan.md, agent-context.md, mission file   | Rapid MVP from concept |
+| `dev-setup`           | A    | `dev-setup.md`                        | ideation input only                               | Greenfield bootstrap; creates tracking files |
+| `dev-alignment`       | A    | `dev-alignment.md`                    | existing codebase, agent-context.md if present    | Brownfield onboarding |
+| `integrate`           | A    | `mission-integrate.md`                | project-plan.md, agent-context.md, mission file   | Third-party integration |
+| `migrate`             | A    | `mission-migrate.md`                  | project-plan.md, agent-context.md, mission file   | Data/schema migration |
+| `architecture`        | A    | `mission-architecture.md`             | project-plan.md, agent-context.md, mission file   | Designs and documents system architecture |
+| `product-description` | A    | `mission-product-description.md`      | project-plan.md, agent-context.md, mission file   | Investor-ready product document |
+| `operation-genesis`   | A    | `operation-genesis.md`                | project-plan.md, agent-context.md, mission file   | Full feature, concept to production |
+| `fix`                 | B1   | `mission-fix.md`                      | bug report input only                             | Surgical fix; no tracking unless escalates |
+| `refactor`            | B2   | `mission-refactor.md`                 | project-plan.md if exists, mission file           | Multi-step refactor |
+| `optimize`            | B2   | `mission-optimize.md`                 | project-plan.md if exists, mission file           | Performance work |
+| `document`            | B2   | `mission-document.md`                 | project-plan.md if exists, mission file           | Documentation pass |
+| `release`             | B2   | `mission-release.md`                  | project-plan.md, agent-context.md, mission file   | Higher stakes |
+| `deploy`              | B2   | `mission-deploy.md`                   | project-plan.md, agent-context.md, mission file   | Higher stakes |
+| `security`            | B2   | `mission-security.md`                 | project-plan.md, agent-context.md, mission file   | Audit + fixes |
+| `connect-mcp`         | B2   | `connect-mcp.md`                      | project-plan.md if exists, mission file           | MCP server setup; needs your API keys |
+| `operation-recon`     | B2   | `operation-recon.md`                  | project-plan.md if exists, mission file           | UI/UX audit; reports, does not fix |
+
+**Modes**: A = greenfield (long-horizon, full tracking). B1 = surgical (minimal context). B2 = maintenance (moderate context). `evidence-repository.md` loads on demand only — never at start.
+
+**Missions that need something from you before they can finish.** Two rows above stop for a human
+rather than running clean end to end, and both stop for input the coordinator cannot invent:
+
+- `connect-mcp` writes placeholder `.env.mcp` entries and needs you to paste real API keys into them.
+- `operation-recon` needs a target scope (PR number, branch or component list) **and** a reachable
+  URL or running dev server. Without both it has nothing to audit.
+
+**Not in this table**: `project/missions/README.md` and `project/missions/library.md`. They are the
+mission catalogue, not runnable missions, which is why `/coord library` is correctly an error.
 
 ### Control Commands
 
-- `continue` — Coordinator resumes from project-plan.md until blocked.
+- `continue` — Coordinator resumes from project-plan.md until blocked. Runs as a **phase-gated meta-loop** (Sprint 6c): each phase loops delegate→verify until it converges (two clean verify rounds) or spends its per-phase error budget (default 3 cycles), at which point it escalates to you rather than burning forward. Advances only on tool-output evidence; resumes from the last evidence-passed gate, never from scratch.
 - `complete phase N` — Mark phase N complete; generate phase-(N+1) context.
 - `vision-check` — Verify current work against vision in project-plan.md.
 
@@ -62,9 +75,8 @@ Valid prefixes: `mode:greenfield` (A), `mode:surgical` (B1), `mode:maintenance` 
 2. Parse first argument. If it starts with `mode:`, consume it; the next arg is the mission name.
 3. Validate mission name against the routing table or control-command list.
 4. If unknown, print the unknown-mission error (below) and stop. No NLP inference.
-5. Load mission file if applicable: `project/missions/mission-[name].md` (or `[name].md` for `dev-setup`/`dev-alignment`). **Mode D (SEO) missions load from `.claude/missions/[name].md`.**
-6. **Read mission frontmatter for `requires_tools` (Sprint 11-A)**. If the mission's frontmatter declares `requires_tools` containing any of `[Bash, Edit, Write, WebFetch]`, OR sets `run_top_level: true`, the mission MUST run in the TOP-LEVEL session — do NOT delegate via Task tool to `@coordinator` subagent. Task-tool-delegated subagents lack Bash and most non-Read tools; delegating a Bash-needing mission causes the coordinator to honestly refuse to fabricate, wasting tokens on scaffolding that can't execute. If no `requires_tools` declared or only contains `[Read, Grep, Glob]`, default delegation to coordinator is fine.
-7. Hand off to THE COORDINATOR (delegated case) OR run mission directly in top-level session (top-level case) with mission name, mode, and input paths. The coordinator's DYNAMIC CONTEXT LOADING protocol applies the per-mode rules either way.
+5. Load the mission file named in the routing table's **File** column, from `project/missions/`. Do not derive the filename from the mission name: the `mission-` prefix is present on some and absent on others, and guessing is what left five missions unreachable (A11-ISS-17).
+6. Hand off to THE COORDINATOR with mission name, mode, and input paths. The coordinator's DYNAMIC CONTEXT LOADING protocol applies the per-mode rules.
 
 ## Routine Detection (Mode C — operational work)
 
@@ -116,10 +128,11 @@ If the mission name does not match, print exactly:
 Unknown mission: <name>
 
 Valid missions:
-  Greenfield (Mode A):    build, mvp, dev-setup, dev-alignment, integrate, migrate
+  Greenfield (Mode A):    build, mvp, dev-setup, dev-alignment, integrate, migrate,
+                          architecture, product-description, operation-genesis
   Surgical (Mode B1):     fix
-  Maintenance (Mode B2):  refactor, optimize, document, release, deploy, security
-  SEO (Mode D):           site-audit, content-gap, technical-fix, ai-search-optimize, sitewide-verify
+  Maintenance (Mode B2):  refactor, optimize, document, release, deploy, security,
+                          connect-mcp, operation-recon
 
 Control:                  continue, complete phase N, vision-check
 Override:                 /coord mode:maintenance <anything>
@@ -140,11 +153,4 @@ If `/coord` is invoked with no arguments, present the routing table and ask whic
 /coord mvp vision.md
 /coord mode:maintenance security
 /coord continue
-
-# SEO (Mode D) — positional args, no NLP
-/coord site-audit lite freecalchub.com/calculators
-/coord ai-search-optimize freecalchub.com
-/coord content-gap freecalchub.com/calculators/bmi-calculator
-/coord technical-fix freecalchub.com
-/coord sitewide-verify freecalchub.com
 ```
